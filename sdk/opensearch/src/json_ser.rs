@@ -914,7 +914,7 @@ pub fn serialize_structure_crate_model_auto_tune_maintenance_schedule(
     if let Some(var_201) = &input.start_at {
         object
             .key("StartAt")
-            .instant(var_201, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_201, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_202) = &input.duration {
         let mut object_203 = object.key("Duration").start_object();

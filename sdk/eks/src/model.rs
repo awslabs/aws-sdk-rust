@@ -12,7 +12,7 @@ pub struct Update {
     /// <p>A key-value map that contains the parameters associated with the update.</p>
     pub params: std::option::Option<std::vec::Vec<crate::model::UpdateParam>>,
     /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
 }
@@ -34,7 +34,7 @@ impl Update {
         self.params.as_deref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
@@ -64,7 +64,7 @@ pub mod update {
         pub(crate) status: std::option::Option<crate::model::UpdateStatus>,
         pub(crate) r#type: std::option::Option<crate::model::UpdateType>,
         pub(crate) params: std::option::Option<std::vec::Vec<crate::model::UpdateParam>>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
     }
     impl Builder {
@@ -121,14 +121,14 @@ pub mod update {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1168,6 +1168,25 @@ pub struct NodegroupScalingConfig {
     /// quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub max_size: std::option::Option<i32>,
     /// <p>The current number of nodes that the managed node group should maintain.</p>
+    /// <important>
+    /// <p>If you use Cluster Autoscaler, you shouldn't change the desiredSize value
+    /// directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale
+    /// down.</p>
+    /// </important>
+    /// <p>Whenever this parameter changes, the number of worker nodes in the node group is
+    /// updated to the specified size. If this parameter is given a value that is smaller than
+    /// the current number of running worker nodes, the necessary number of worker nodes are
+    /// terminated to match the given value.
+    ///
+    /// When using CloudFormation, no action occurs if you remove this parameter from your CFN
+    /// template.</p>
+    /// <p>This parameter can be different from minSize in some cases, such as when starting with
+    /// extra hosts for testing. This parameter can also be different when you want to start
+    /// with an estimated number of needed hosts, but let Cluster Autoscaler reduce the number
+    /// if there are too many. When Cluster Autoscaler is used, the desiredSize parameter is
+    /// altered by Cluster Autoscaler (but can be out-of-date for short periods of time).
+    /// Cluster Autoscaler doesn't scale a managed node group lower than minSize or higher than
+    /// maxSize.</p>
     pub desired_size: std::option::Option<i32>,
 }
 impl NodegroupScalingConfig {
@@ -1182,6 +1201,25 @@ impl NodegroupScalingConfig {
         self.max_size
     }
     /// <p>The current number of nodes that the managed node group should maintain.</p>
+    /// <important>
+    /// <p>If you use Cluster Autoscaler, you shouldn't change the desiredSize value
+    /// directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale
+    /// down.</p>
+    /// </important>
+    /// <p>Whenever this parameter changes, the number of worker nodes in the node group is
+    /// updated to the specified size. If this parameter is given a value that is smaller than
+    /// the current number of running worker nodes, the necessary number of worker nodes are
+    /// terminated to match the given value.
+    ///
+    /// When using CloudFormation, no action occurs if you remove this parameter from your CFN
+    /// template.</p>
+    /// <p>This parameter can be different from minSize in some cases, such as when starting with
+    /// extra hosts for testing. This parameter can also be different when you want to start
+    /// with an estimated number of needed hosts, but let Cluster Autoscaler reduce the number
+    /// if there are too many. When Cluster Autoscaler is used, the desiredSize parameter is
+    /// altered by Cluster Autoscaler (but can be out-of-date for short periods of time).
+    /// Cluster Autoscaler doesn't scale a managed node group lower than minSize or higher than
+    /// maxSize.</p>
     pub fn desired_size(&self) -> std::option::Option<i32> {
         self.desired_size
     }
@@ -1231,11 +1269,49 @@ pub mod nodegroup_scaling_config {
             self
         }
         /// <p>The current number of nodes that the managed node group should maintain.</p>
+        /// <important>
+        /// <p>If you use Cluster Autoscaler, you shouldn't change the desiredSize value
+        /// directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale
+        /// down.</p>
+        /// </important>
+        /// <p>Whenever this parameter changes, the number of worker nodes in the node group is
+        /// updated to the specified size. If this parameter is given a value that is smaller than
+        /// the current number of running worker nodes, the necessary number of worker nodes are
+        /// terminated to match the given value.
+        ///
+        /// When using CloudFormation, no action occurs if you remove this parameter from your CFN
+        /// template.</p>
+        /// <p>This parameter can be different from minSize in some cases, such as when starting with
+        /// extra hosts for testing. This parameter can also be different when you want to start
+        /// with an estimated number of needed hosts, but let Cluster Autoscaler reduce the number
+        /// if there are too many. When Cluster Autoscaler is used, the desiredSize parameter is
+        /// altered by Cluster Autoscaler (but can be out-of-date for short periods of time).
+        /// Cluster Autoscaler doesn't scale a managed node group lower than minSize or higher than
+        /// maxSize.</p>
         pub fn desired_size(mut self, input: i32) -> Self {
             self.desired_size = Some(input);
             self
         }
         /// <p>The current number of nodes that the managed node group should maintain.</p>
+        /// <important>
+        /// <p>If you use Cluster Autoscaler, you shouldn't change the desiredSize value
+        /// directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale
+        /// down.</p>
+        /// </important>
+        /// <p>Whenever this parameter changes, the number of worker nodes in the node group is
+        /// updated to the specified size. If this parameter is given a value that is smaller than
+        /// the current number of running worker nodes, the necessary number of worker nodes are
+        /// terminated to match the given value.
+        ///
+        /// When using CloudFormation, no action occurs if you remove this parameter from your CFN
+        /// template.</p>
+        /// <p>This parameter can be different from minSize in some cases, such as when starting with
+        /// extra hosts for testing. This parameter can also be different when you want to start
+        /// with an estimated number of needed hosts, but let Cluster Autoscaler reduce the number
+        /// if there are too many. When Cluster Autoscaler is used, the desiredSize parameter is
+        /// altered by Cluster Autoscaler (but can be out-of-date for short periods of time).
+        /// Cluster Autoscaler doesn't scale a managed node group lower than minSize or higher than
+        /// maxSize.</p>
         pub fn set_desired_size(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_size = input;
             self
@@ -2210,7 +2286,7 @@ pub struct Cluster {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Kubernetes server version for the cluster.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>The endpoint for your Kubernetes API server.</p>
@@ -2263,7 +2339,7 @@ impl Cluster {
         self.arn.as_deref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Kubernetes server version for the cluster.</p>
@@ -2370,7 +2446,7 @@ pub mod cluster {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) endpoint: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -2412,14 +2488,14 @@ pub mod cluster {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -2678,10 +2754,10 @@ pub struct ConnectorConfigResponse {
     pub activation_code: std::option::Option<std::string::String>,
     /// <p>The expiration time of the connected cluster. The cluster's YAML file must be applied through the native
     /// provider.</p>
-    pub activation_expiry: std::option::Option<aws_smithy_types::Instant>,
+    pub activation_expiry: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The cluster's cloud service provider.</p>
     pub provider: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector to communicate with AWS services from the connected Kubernetes cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role to communicate with services from the connected Kubernetes cluster.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl ConnectorConfigResponse {
@@ -2695,14 +2771,14 @@ impl ConnectorConfigResponse {
     }
     /// <p>The expiration time of the connected cluster. The cluster's YAML file must be applied through the native
     /// provider.</p>
-    pub fn activation_expiry(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn activation_expiry(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.activation_expiry.as_ref()
     }
     /// <p>The cluster's cloud service provider.</p>
     pub fn provider(&self) -> std::option::Option<&str> {
         self.provider.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector to communicate with AWS services from the connected Kubernetes cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role to communicate with services from the connected Kubernetes cluster.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -2726,7 +2802,7 @@ pub mod connector_config_response {
     pub struct Builder {
         pub(crate) activation_id: std::option::Option<std::string::String>,
         pub(crate) activation_code: std::option::Option<std::string::String>,
-        pub(crate) activation_expiry: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) activation_expiry: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) provider: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
@@ -2759,7 +2835,7 @@ pub mod connector_config_response {
         }
         /// <p>The expiration time of the connected cluster. The cluster's YAML file must be applied through the native
         /// provider.</p>
-        pub fn activation_expiry(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn activation_expiry(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.activation_expiry = Some(input);
             self
         }
@@ -2767,7 +2843,7 @@ pub mod connector_config_response {
         /// provider.</p>
         pub fn set_activation_expiry(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.activation_expiry = input;
             self
@@ -2782,12 +2858,12 @@ pub mod connector_config_response {
             self.provider = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector to communicate with AWS services from the connected Kubernetes cluster.</p>
+        /// <p>The Amazon Resource Name (ARN) of the role to communicate with services from the connected Kubernetes cluster.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector to communicate with AWS services from the connected Kubernetes cluster.</p>
+        /// <p>The Amazon Resource Name (ARN) of the role to communicate with services from the connected Kubernetes cluster.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -3816,10 +3892,10 @@ pub struct Nodegroup {
     pub release_version: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was
     /// created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was last
     /// modified.</p>
-    pub modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the managed node group.</p>
     pub status: std::option::Option<crate::model::NodegroupStatus>,
     /// <p>The capacity type of your managed node group.</p>
@@ -3906,12 +3982,12 @@ impl Nodegroup {
     }
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was
     /// created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was last
     /// modified.</p>
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
     /// <p>The current status of the managed node group.</p>
@@ -4052,8 +4128,8 @@ pub mod nodegroup {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) release_version: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::NodegroupStatus>,
         pub(crate) capacity_type: std::option::Option<crate::model::CapacityTypes>,
         pub(crate) scaling_config: std::option::Option<crate::model::NodegroupScalingConfig>,
@@ -4143,7 +4219,7 @@ pub mod nodegroup {
         }
         /// <p>The Unix epoch timestamp in seconds for when the managed node group was
         /// created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
@@ -4151,14 +4227,14 @@ pub mod nodegroup {
         /// created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the managed node group was last
         /// modified.</p>
-        pub fn modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified_at = Some(input);
             self
         }
@@ -4166,7 +4242,7 @@ pub mod nodegroup {
         /// modified.</p>
         pub fn set_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.modified_at = input;
             self
@@ -4660,7 +4736,7 @@ pub struct Issue {
     /// <p>
     /// <b>NodeCreationFailure</b>: Your launched instances
     /// are unable to register with your Amazon EKS cluster. Common causes of this failure
-    /// are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node IAM role</a>
+    /// are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">node IAM role</a>
     /// permissions or lack of outbound internet access for the nodes. </p>
     /// </li>
     /// </ul>
@@ -4765,7 +4841,7 @@ impl Issue {
     /// <p>
     /// <b>NodeCreationFailure</b>: Your launched instances
     /// are unable to register with your Amazon EKS cluster. Common causes of this failure
-    /// are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node IAM role</a>
+    /// are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">node IAM role</a>
     /// permissions or lack of outbound internet access for the nodes. </p>
     /// </li>
     /// </ul>
@@ -4895,7 +4971,7 @@ pub mod issue {
         /// <p>
         /// <b>NodeCreationFailure</b>: Your launched instances
         /// are unable to register with your Amazon EKS cluster. Common causes of this failure
-        /// are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node IAM role</a>
+        /// are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">node IAM role</a>
         /// permissions or lack of outbound internet access for the nodes. </p>
         /// </li>
         /// </ul>
@@ -4997,7 +5073,7 @@ pub mod issue {
         /// <p>
         /// <b>NodeCreationFailure</b>: Your launched instances
         /// are unable to register with your Amazon EKS cluster. Common causes of this failure
-        /// are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node IAM role</a>
+        /// are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">node IAM role</a>
         /// permissions or lack of outbound internet access for the nodes. </p>
         /// </li>
         /// </ul>
@@ -6188,7 +6264,7 @@ pub struct FargateProfile {
     /// <p>The name of the Amazon EKS cluster that the Fargate profile belongs to.</p>
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the Fargate profile was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in
     /// the Fargate profile. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
     /// Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
@@ -6220,7 +6296,7 @@ impl FargateProfile {
         self.cluster_name.as_deref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the Fargate profile was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in
@@ -6276,7 +6352,7 @@ pub mod fargate_profile {
         pub(crate) fargate_profile_name: std::option::Option<std::string::String>,
         pub(crate) fargate_profile_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) pod_execution_role_arn: std::option::Option<std::string::String>,
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) selectors:
@@ -6324,14 +6400,14 @@ pub mod fargate_profile {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the Fargate profile was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the Fargate profile was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -6952,7 +7028,8 @@ impl Compatibility {
     }
 }
 
-/// <p>An Amazon EKS add-on.</p>
+/// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
+/// the <i>Amazon EKS User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Addon {
@@ -6969,9 +7046,9 @@ pub struct Addon {
     /// <p>The Amazon Resource Name (ARN) of the add-on.</p>
     pub addon_arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the add-on was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the add-on was last modified.</p>
-    pub modified_at: std::option::Option<aws_smithy_types::Instant>,
+    pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service account used
     /// by the add-on.</p>
     pub service_account_role_arn: std::option::Option<std::string::String>,
@@ -7008,11 +7085,11 @@ impl Addon {
         self.addon_arn.as_deref()
     }
     /// <p>The date and time that the add-on was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time that the add-on was last modified.</p>
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service account used
@@ -7059,8 +7136,8 @@ pub mod addon {
         pub(crate) addon_version: std::option::Option<std::string::String>,
         pub(crate) health: std::option::Option<crate::model::AddonHealth>,
         pub(crate) addon_arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) modified_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) service_account_role_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -7131,27 +7208,27 @@ pub mod addon {
             self
         }
         /// <p>The date and time that the add-on was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the add-on was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The date and time that the add-on was last modified.</p>
-        pub fn modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified_at = Some(input);
             self
         }
         /// <p>The date and time that the add-on was last modified.</p>
         pub fn set_modified_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.modified_at = input;
             self
@@ -7576,7 +7653,7 @@ pub struct KubernetesNetworkConfigRequest {
     /// <ul>
     /// <li>
     /// <p>Within one of the following private IP address blocks: 10.0.0.0/8,
-    /// 172.16.0.0.0/12, or 192.168.0.0/16.</p>
+    /// 172.16.0.0/12, or 192.168.0.0/16.</p>
     /// </li>
     /// <li>
     /// <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for
@@ -7601,7 +7678,7 @@ impl KubernetesNetworkConfigRequest {
     /// <ul>
     /// <li>
     /// <p>Within one of the following private IP address blocks: 10.0.0.0/8,
-    /// 172.16.0.0.0/12, or 192.168.0.0/16.</p>
+    /// 172.16.0.0/12, or 192.168.0.0/16.</p>
     /// </li>
     /// <li>
     /// <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for
@@ -7643,7 +7720,7 @@ pub mod kubernetes_network_config_request {
         /// <ul>
         /// <li>
         /// <p>Within one of the following private IP address blocks: 10.0.0.0/8,
-        /// 172.16.0.0.0/12, or 192.168.0.0/16.</p>
+        /// 172.16.0.0/12, or 192.168.0.0/16.</p>
         /// </li>
         /// <li>
         /// <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for
@@ -7669,7 +7746,7 @@ pub mod kubernetes_network_config_request {
         /// <ul>
         /// <li>
         /// <p>Within one of the following private IP address blocks: 10.0.0.0/8,
-        /// 172.16.0.0.0/12, or 192.168.0.0/16.</p>
+        /// 172.16.0.0/12, or 192.168.0.0/16.</p>
         /// </li>
         /// <li>
         /// <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for

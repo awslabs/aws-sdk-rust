@@ -6970,9 +6970,9 @@ pub struct ScheduledTriggerProperties {
     /// transfer for each flow run. </p>
     pub data_pull_mode: std::option::Option<crate::model::DataPullMode>,
     /// <p> Specifies the scheduled start time for a schedule-triggered flow. </p>
-    pub schedule_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub schedule_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies the scheduled end time for a schedule-triggered flow. </p>
-    pub schedule_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub schedule_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies the time zone used when referring to the date and time of a scheduled-triggered
     /// flow, such as <code>America/New_York</code>. </p>
     pub timezone: std::option::Option<std::string::String>,
@@ -6981,7 +6981,7 @@ pub struct ScheduledTriggerProperties {
     pub schedule_offset: std::option::Option<i64>,
     /// <p> Specifies the date range for the records to import from the connector in the first flow
     /// run. </p>
-    pub first_execution_from: std::option::Option<aws_smithy_types::Instant>,
+    pub first_execution_from: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ScheduledTriggerProperties {
     /// <p> The scheduling expression that determines the rate at which the schedule will run, for
@@ -6995,11 +6995,11 @@ impl ScheduledTriggerProperties {
         self.data_pull_mode.as_ref()
     }
     /// <p> Specifies the scheduled start time for a schedule-triggered flow. </p>
-    pub fn schedule_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn schedule_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.schedule_start_time.as_ref()
     }
     /// <p> Specifies the scheduled end time for a schedule-triggered flow. </p>
-    pub fn schedule_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn schedule_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.schedule_end_time.as_ref()
     }
     /// <p> Specifies the time zone used when referring to the date and time of a scheduled-triggered
@@ -7014,7 +7014,7 @@ impl ScheduledTriggerProperties {
     }
     /// <p> Specifies the date range for the records to import from the connector in the first flow
     /// run. </p>
-    pub fn first_execution_from(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn first_execution_from(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.first_execution_from.as_ref()
     }
 }
@@ -7039,11 +7039,11 @@ pub mod scheduled_trigger_properties {
     pub struct Builder {
         pub(crate) schedule_expression: std::option::Option<std::string::String>,
         pub(crate) data_pull_mode: std::option::Option<crate::model::DataPullMode>,
-        pub(crate) schedule_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) schedule_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) schedule_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) schedule_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) timezone: std::option::Option<std::string::String>,
         pub(crate) schedule_offset: std::option::Option<i64>,
-        pub(crate) first_execution_from: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) first_execution_from: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p> The scheduling expression that determines the rate at which the schedule will run, for
@@ -7077,27 +7077,27 @@ pub mod scheduled_trigger_properties {
             self
         }
         /// <p> Specifies the scheduled start time for a schedule-triggered flow. </p>
-        pub fn schedule_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn schedule_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.schedule_start_time = Some(input);
             self
         }
         /// <p> Specifies the scheduled start time for a schedule-triggered flow. </p>
         pub fn set_schedule_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.schedule_start_time = input;
             self
         }
         /// <p> Specifies the scheduled end time for a schedule-triggered flow. </p>
-        pub fn schedule_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn schedule_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.schedule_end_time = Some(input);
             self
         }
         /// <p> Specifies the scheduled end time for a schedule-triggered flow. </p>
         pub fn set_schedule_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.schedule_end_time = input;
             self
@@ -7128,7 +7128,7 @@ pub mod scheduled_trigger_properties {
         }
         /// <p> Specifies the date range for the records to import from the connector in the first flow
         /// run. </p>
-        pub fn first_execution_from(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn first_execution_from(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.first_execution_from = Some(input);
             self
         }
@@ -7136,7 +7136,7 @@ pub mod scheduled_trigger_properties {
         /// run. </p>
         pub fn set_first_execution_from(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.first_execution_from = input;
             self
@@ -11552,9 +11552,9 @@ pub struct FlowDefinition {
     /// <code>Scheduled</code>, or <code>Event</code>. </p>
     pub trigger_type: std::option::Option<crate::model::TriggerType>,
     /// <p> Specifies when the flow was created. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies when the flow was last updated. </p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The ARN of the user who created the flow. </p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p> Specifies the account user name that most recently updated the flow. </p>
@@ -11599,11 +11599,11 @@ impl FlowDefinition {
         self.trigger_type.as_ref()
     }
     /// <p> Specifies when the flow was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> Specifies when the flow was last updated. </p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p> The ARN of the user who created the flow. </p>
@@ -11666,8 +11666,8 @@ pub mod flow_definition {
         pub(crate) source_connector_type: std::option::Option<crate::model::ConnectorType>,
         pub(crate) destination_connector_type: std::option::Option<crate::model::ConnectorType>,
         pub(crate) trigger_type: std::option::Option<crate::model::TriggerType>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) last_updated_by: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -11767,27 +11767,27 @@ pub mod flow_definition {
             self
         }
         /// <p> Specifies when the flow was created. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p> Specifies when the flow was created. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p> Specifies when the flow was last updated. </p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p> Specifies when the flow was last updated. </p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -11888,7 +11888,7 @@ pub struct ExecutionDetails {
     /// <p> Describes the details of the most recent flow run. </p>
     pub most_recent_execution_message: std::option::Option<std::string::String>,
     /// <p> Specifies the time of the most recent flow run. </p>
-    pub most_recent_execution_time: std::option::Option<aws_smithy_types::Instant>,
+    pub most_recent_execution_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies the status of the most recent flow run. </p>
     pub most_recent_execution_status: std::option::Option<crate::model::ExecutionStatus>,
 }
@@ -11898,7 +11898,7 @@ impl ExecutionDetails {
         self.most_recent_execution_message.as_deref()
     }
     /// <p> Specifies the time of the most recent flow run. </p>
-    pub fn most_recent_execution_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn most_recent_execution_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.most_recent_execution_time.as_ref()
     }
     /// <p> Specifies the status of the most recent flow run. </p>
@@ -11933,7 +11933,7 @@ pub mod execution_details {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) most_recent_execution_message: std::option::Option<std::string::String>,
-        pub(crate) most_recent_execution_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) most_recent_execution_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) most_recent_execution_status: std::option::Option<crate::model::ExecutionStatus>,
     }
     impl Builder {
@@ -11954,14 +11954,14 @@ pub mod execution_details {
             self
         }
         /// <p> Specifies the time of the most recent flow run. </p>
-        pub fn most_recent_execution_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn most_recent_execution_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.most_recent_execution_time = Some(input);
             self
         }
         /// <p> Specifies the time of the most recent flow run. </p>
         pub fn set_most_recent_execution_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.most_recent_execution_time = input;
             self
@@ -12180,15 +12180,15 @@ pub struct ExecutionRecord {
     /// <p> Describes the result of the given flow run. </p>
     pub execution_result: std::option::Option<crate::model::ExecutionResult>,
     /// <p> Specifies the start time of the flow run. </p>
-    pub started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies the time of the most recent update. </p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The timestamp that determines the first new or updated record to be transferred in the
     /// flow run. </p>
-    pub data_pull_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub data_pull_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow
     /// run. </p>
-    pub data_pull_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub data_pull_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExecutionRecord {
     /// <p> Specifies the identifier of the given flow run. </p>
@@ -12205,21 +12205,21 @@ impl ExecutionRecord {
         self.execution_result.as_ref()
     }
     /// <p> Specifies the start time of the flow run. </p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p> Specifies the time of the most recent update. </p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p> The timestamp that determines the first new or updated record to be transferred in the
     /// flow run. </p>
-    pub fn data_pull_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn data_pull_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.data_pull_start_time.as_ref()
     }
     /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow
     /// run. </p>
-    pub fn data_pull_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn data_pull_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.data_pull_end_time.as_ref()
     }
 }
@@ -12245,10 +12245,10 @@ pub mod execution_record {
         pub(crate) execution_id: std::option::Option<std::string::String>,
         pub(crate) execution_status: std::option::Option<crate::model::ExecutionStatus>,
         pub(crate) execution_result: std::option::Option<crate::model::ExecutionResult>,
-        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) data_pull_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) data_pull_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) data_pull_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) data_pull_end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p> Specifies the identifier of the given flow run. </p>
@@ -12290,34 +12290,34 @@ pub mod execution_record {
             self
         }
         /// <p> Specifies the start time of the flow run. </p>
-        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_at = Some(input);
             self
         }
         /// <p> Specifies the start time of the flow run. </p>
         pub fn set_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_at = input;
             self
         }
         /// <p> Specifies the time of the most recent update. </p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p> Specifies the time of the most recent update. </p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
         }
         /// <p> The timestamp that determines the first new or updated record to be transferred in the
         /// flow run. </p>
-        pub fn data_pull_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn data_pull_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.data_pull_start_time = Some(input);
             self
         }
@@ -12325,14 +12325,14 @@ pub mod execution_record {
         /// flow run. </p>
         pub fn set_data_pull_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.data_pull_start_time = input;
             self
         }
         /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow
         /// run. </p>
-        pub fn data_pull_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn data_pull_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.data_pull_end_time = Some(input);
             self
         }
@@ -12340,7 +12340,7 @@ pub mod execution_record {
         /// run. </p>
         pub fn set_data_pull_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.data_pull_end_time = input;
             self
@@ -14228,9 +14228,9 @@ pub struct ConnectorProfile {
     /// <p> The connector-specific properties of the profile configuration. </p>
     pub connector_profile_properties: std::option::Option<crate::model::ConnectorProfileProperties>,
     /// <p> Specifies when the connector profile was created. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies when the connector profile was last updated. </p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies the private connection provisioning state. </p>
     pub private_connection_provisioning_state:
         std::option::Option<crate::model::PrivateConnectionProvisioningState>,
@@ -14264,11 +14264,11 @@ impl ConnectorProfile {
         self.connector_profile_properties.as_ref()
     }
     /// <p> Specifies when the connector profile was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> Specifies when the connector profile was last updated. </p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p> Specifies the private connection provisioning state. </p>
@@ -14312,8 +14312,8 @@ pub mod connector_profile {
         pub(crate) credentials_arn: std::option::Option<std::string::String>,
         pub(crate) connector_profile_properties:
             std::option::Option<crate::model::ConnectorProfileProperties>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) private_connection_provisioning_state:
             std::option::Option<crate::model::PrivateConnectionProvisioningState>,
     }
@@ -14402,27 +14402,27 @@ pub mod connector_profile {
             self
         }
         /// <p> Specifies when the connector profile was created. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p> Specifies when the connector profile was created. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p> Specifies when the connector profile was last updated. </p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p> Specifies when the connector profile was last updated. </p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self

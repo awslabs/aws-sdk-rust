@@ -3228,10 +3228,10 @@ pub struct DescribeTypeOutput {
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
     /// </li>
     /// </ul>
-    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the specified private extension version was registered or activated in your
     /// account. </p>
-    pub time_created: std::option::Option<aws_smithy_types::Instant>,
+    pub time_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A JSON string that represent the current configuration data for the extension in this
     /// account and region.</p>
     /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation
@@ -3477,12 +3477,12 @@ impl DescribeTypeOutput {
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
     /// </li>
     /// </ul>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>When the specified private extension version was registered or activated in your
     /// account. </p>
-    pub fn time_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn time_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.time_created.as_ref()
     }
     /// <p>A JSON string that represent the current configuration data for the extension in this
@@ -3601,8 +3601,8 @@ pub mod describe_type_output {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
         pub(crate) source_url: std::option::Option<std::string::String>,
         pub(crate) documentation_url: std::option::Option<std::string::String>,
-        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) time_created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) time_created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) configuration_schema: std::option::Option<std::string::String>,
         pub(crate) publisher_id: std::option::Option<std::string::String>,
         pub(crate) original_type_name: std::option::Option<std::string::String>,
@@ -4082,7 +4082,7 @@ pub mod describe_type_output {
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
         /// </li>
         /// </ul>
-        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated = Some(input);
             self
         }
@@ -4099,14 +4099,14 @@ pub mod describe_type_output {
         /// </ul>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated = input;
             self
         }
         /// <p>When the specified private extension version was registered or activated in your
         /// account. </p>
-        pub fn time_created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn time_created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.time_created = Some(input);
             self
         }
@@ -4114,7 +4114,7 @@ pub mod describe_type_output {
         /// account. </p>
         pub fn set_time_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.time_created = input;
             self
@@ -4964,7 +4964,7 @@ pub struct DescribeStackDriftDetectionStatusOutput {
     /// 0 for stacks whose drift status is <code>IN_SYNC</code>.</p>
     pub drifted_stack_resource_count: std::option::Option<i32>,
     /// <p>Time at which the stack drift detection operation was initiated.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeStackDriftDetectionStatusOutput {
     /// <p>The ID of the stack.</p>
@@ -5044,7 +5044,7 @@ impl DescribeStackDriftDetectionStatusOutput {
         self.drifted_stack_resource_count
     }
     /// <p>Time at which the stack drift detection operation was initiated.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -5076,7 +5076,7 @@ pub mod describe_stack_drift_detection_status_output {
         pub(crate) detection_status: std::option::Option<crate::model::StackDriftDetectionStatus>,
         pub(crate) detection_status_reason: std::option::Option<std::string::String>,
         pub(crate) drifted_stack_resource_count: std::option::Option<i32>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the stack.</p>
@@ -5252,14 +5252,14 @@ pub mod describe_stack_drift_detection_status_output {
             self
         }
         /// <p>Time at which the stack drift detection operation was initiated.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>Time at which the stack drift detection operation was initiated.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -5431,7 +5431,7 @@ pub struct DescribeChangeSetOutput {
     /// their values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>The start time when the change set was created, in UTC.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the
     /// change set. If you can’t execute the change set, the status indicates why. For example, a
     /// change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is
@@ -5498,7 +5498,7 @@ impl DescribeChangeSetOutput {
         self.parameters.as_deref()
     }
     /// <p>The start time when the change set was created, in UTC.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the
@@ -5603,7 +5603,7 @@ pub mod describe_change_set_output {
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) execution_status: std::option::Option<crate::model::ExecutionStatus>,
         pub(crate) status: std::option::Option<crate::model::ChangeSetStatus>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
@@ -5696,14 +5696,14 @@ pub mod describe_change_set_output {
             self
         }
         /// <p>The start time when the change set was created, in UTC.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The start time when the change set was created, in UTC.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self

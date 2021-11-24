@@ -432,7 +432,7 @@ pub struct MetricDatum {
     /// <p>Internal only API.</p>
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>Internal only API.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Internal only API.</p>
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
     /// <p>Internal only API.</p>
@@ -448,7 +448,7 @@ impl MetricDatum {
         self.metric_name.as_deref()
     }
     /// <p>Internal only API.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>Internal only API.</p>
@@ -487,7 +487,7 @@ pub mod metric_datum {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
         pub(crate) value: std::option::Option<f64>,
         pub(crate) unit: std::option::Option<crate::model::Unit>,
@@ -505,14 +505,14 @@ pub mod metric_datum {
             self
         }
         /// <p>Internal only API.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>Internal only API.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -1002,7 +1002,7 @@ pub struct Environment {
     /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The day and time the environment was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow UI</a>.</p>
     pub webserver_url: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access AWS resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
@@ -1099,7 +1099,7 @@ impl Environment {
         self.arn.as_deref()
     }
     /// <p>The day and time the environment was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow UI</a>.</p>
@@ -1251,7 +1251,7 @@ pub mod environment {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EnvironmentStatus>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) webserver_url: std::option::Option<std::string::String>,
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
         pub(crate) service_role_arn: std::option::Option<std::string::String>,
@@ -1384,14 +1384,14 @@ pub mod environment {
             self
         }
         /// <p>The day and time the environment was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The day and time the environment was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1744,7 +1744,7 @@ pub struct LastUpdate {
     /// <p>The status of the last update on the environment. Valid values: <code>SUCCESS</code>, <code>PENDING</code>, <code>FAILED</code>.</p>
     pub status: std::option::Option<crate::model::UpdateStatus>,
     /// <p>The day and time of the last update on the environment.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The error that was encountered during the last update of the environment.</p>
     pub error: std::option::Option<crate::model::UpdateError>,
 }
@@ -1754,7 +1754,7 @@ impl LastUpdate {
         self.status.as_ref()
     }
     /// <p>The day and time of the last update on the environment.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The error that was encountered during the last update of the environment.</p>
@@ -1778,7 +1778,7 @@ pub mod last_update {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::UpdateStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) error: std::option::Option<crate::model::UpdateError>,
     }
     impl Builder {
@@ -1796,14 +1796,14 @@ pub mod last_update {
             self
         }
         /// <p>The day and time of the last update on the environment.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The day and time of the last update on the environment.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self

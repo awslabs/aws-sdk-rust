@@ -35,6 +35,7 @@ use http::{HeaderValue, Uri};
 use crate::cache::ExpiringCache;
 use crate::imds::client::{ImdsError, ImdsErrorPolicy, TokenError};
 use aws_smithy_client::retry;
+use aws_smithy_types::timeout::TimeoutConfig;
 use std::fmt::{Debug, Formatter};
 
 /// Token Refresh Buffer
@@ -82,9 +83,11 @@ impl TokenMiddleware {
         endpoint: Endpoint,
         token_ttl: Duration,
         retry_config: retry::Config,
+        timeout_config: TimeoutConfig,
     ) -> Self {
-        let inner_client =
-            aws_smithy_client::Client::new(connector).with_retry_config(retry_config);
+        let inner_client = aws_smithy_client::Client::new(connector)
+            .with_retry_config(retry_config)
+            .with_timeout_config(timeout_config);
         let client = Arc::new(inner_client);
         Self {
             client,
@@ -131,7 +134,7 @@ impl TokenMiddleware {
             .body(SdkBody::empty())
             .expect("valid HTTP request");
         let mut request = operation::Request::new(request);
-        request.properties_mut().insert(super::USER_AGENT);
+        request.properties_mut().insert(super::user_agent());
 
         let operation = Operation::new(request, self.token_parser.clone())
             .with_retry_policy(ImdsErrorPolicy)

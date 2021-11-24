@@ -27,7 +27,7 @@ pub struct Script {
     /// uploaded from an S3 location, this value remains at "0".</p>
     pub size_on_disk: std::option::Option<i64>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This
     /// location is specified in <a>CreateBuild</a>, <a>CreateScript</a>,
     /// and <a>UpdateScript</a> requests. </p>
@@ -57,7 +57,7 @@ impl Script {
         self.size_on_disk
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This
@@ -91,7 +91,7 @@ pub mod script {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) size_on_disk: std::option::Option<i64>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) storage_location: std::option::Option<crate::model::S3Location>,
     }
     impl Builder {
@@ -150,14 +150,14 @@ pub mod script {
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -697,7 +697,7 @@ pub struct MatchmakingConfiguration {
     /// <p>Information to attach to all events related to the matchmaking configuration. </p>
     pub custom_event_data: std::option::Option<std::string::String>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
     /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
     /// object that is created for a successful match. This parameter is not used when
@@ -798,7 +798,7 @@ impl MatchmakingConfiguration {
         self.custom_event_data.as_deref()
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
@@ -888,7 +888,7 @@ pub mod matchmaking_configuration {
         pub(crate) notification_target: std::option::Option<std::string::String>,
         pub(crate) additional_player_count: std::option::Option<i32>,
         pub(crate) custom_event_data: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) game_properties: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
         pub(crate) game_session_data: std::option::Option<std::string::String>,
         pub(crate) backfill_mode: std::option::Option<crate::model::BackfillMode>,
@@ -1067,14 +1067,14 @@ pub mod matchmaking_configuration {
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2279,9 +2279,9 @@ pub struct GameSession {
     /// </p>
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub termination_time: std::option::Option<aws_smithy_types::Instant>,
+    pub termination_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Number of players currently in the game session.</p>
     pub current_player_session_count: std::option::Option<i32>,
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
@@ -2356,11 +2356,11 @@ impl GameSession {
         self.fleet_arn.as_deref()
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn termination_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn termination_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.termination_time.as_ref()
     }
     /// <p>Number of players currently in the game session.</p>
@@ -2487,8 +2487,8 @@ pub mod game_session {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) termination_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) termination_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) current_player_session_count: std::option::Option<i32>,
         pub(crate) maximum_player_session_count: std::option::Option<i32>,
         pub(crate) status: std::option::Option<crate::model::GameSessionStatus>,
@@ -2555,27 +2555,27 @@ pub mod game_session {
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn termination_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn termination_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.termination_time = Some(input);
             self
         }
         /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_termination_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.termination_time = input;
             self
@@ -3170,9 +3170,9 @@ pub struct GameServerGroup {
     /// If this property is empty, all activities are occurring.</p>
     pub suspended_actions: std::option::Option<std::vec::Vec<crate::model::GameServerGroupAction>>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when this game server group was last updated.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GameServerGroup {
     /// <p>A developer-defined identifier for the game server group. The name is unique for each
@@ -3291,11 +3291,11 @@ impl GameServerGroup {
         self.suspended_actions.as_deref()
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp that indicates when this game server group was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -3339,8 +3339,8 @@ pub mod game_server_group {
         pub(crate) status_reason: std::option::Option<std::string::String>,
         pub(crate) suspended_actions:
             std::option::Option<std::vec::Vec<crate::model::GameServerGroupAction>>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A developer-defined identifier for the game server group. The name is unique for each
@@ -3638,27 +3638,27 @@ pub mod game_server_group {
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A timestamp that indicates when this game server group was last updated.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>A timestamp that indicates when this game server group was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -4593,17 +4593,17 @@ pub struct GameServer {
     pub utilization_status: std::option::Option<crate::model::GameServerUtilizationStatus>,
     /// <p>Timestamp that indicates when the game server was created with a <a>RegisterGameServer</a> request. The format is a number expressed in Unix
     /// time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub registration_time: std::option::Option<aws_smithy_types::Instant>,
+    pub registration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Timestamp that indicates the last time the game server was claimed with a <a>ClaimGameServer</a> request. The format is a number expressed in Unix time
     /// as milliseconds (for example <code>"1469498468.057"</code>). This value is used to
     /// calculate when a claimed game server's status should revert to null.</p>
-    pub last_claim_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_claim_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Timestamp that indicates the last time the game server was updated with health status
     /// using an <a>UpdateGameServer</a> request. The format is a number expressed in
     /// Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server
     /// registration, this property is only changed when a game server update specifies a health
     /// check value.</p>
-    pub last_health_check_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_health_check_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GameServer {
     /// <p>A unique identifier for the game server group where the game server is running.
@@ -4665,13 +4665,13 @@ impl GameServer {
     }
     /// <p>Timestamp that indicates when the game server was created with a <a>RegisterGameServer</a> request. The format is a number expressed in Unix
     /// time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn registration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn registration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.registration_time.as_ref()
     }
     /// <p>Timestamp that indicates the last time the game server was claimed with a <a>ClaimGameServer</a> request. The format is a number expressed in Unix time
     /// as milliseconds (for example <code>"1469498468.057"</code>). This value is used to
     /// calculate when a claimed game server's status should revert to null.</p>
-    pub fn last_claim_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_claim_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_claim_time.as_ref()
     }
     /// <p>Timestamp that indicates the last time the game server was updated with health status
@@ -4679,7 +4679,7 @@ impl GameServer {
     /// Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server
     /// registration, this property is only changed when a game server update specifies a health
     /// check value.</p>
-    pub fn last_health_check_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_health_check_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_health_check_time.as_ref()
     }
 }
@@ -4715,9 +4715,9 @@ pub mod game_server {
         pub(crate) claim_status: std::option::Option<crate::model::GameServerClaimStatus>,
         pub(crate) utilization_status:
             std::option::Option<crate::model::GameServerUtilizationStatus>,
-        pub(crate) registration_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_claim_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_health_check_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) registration_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_claim_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_health_check_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A unique identifier for the game server group where the game server is running.
@@ -4872,7 +4872,7 @@ pub mod game_server {
         }
         /// <p>Timestamp that indicates when the game server was created with a <a>RegisterGameServer</a> request. The format is a number expressed in Unix
         /// time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn registration_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn registration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.registration_time = Some(input);
             self
         }
@@ -4880,7 +4880,7 @@ pub mod game_server {
         /// time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_registration_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.registration_time = input;
             self
@@ -4888,7 +4888,7 @@ pub mod game_server {
         /// <p>Timestamp that indicates the last time the game server was claimed with a <a>ClaimGameServer</a> request. The format is a number expressed in Unix time
         /// as milliseconds (for example <code>"1469498468.057"</code>). This value is used to
         /// calculate when a claimed game server's status should revert to null.</p>
-        pub fn last_claim_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_claim_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_claim_time = Some(input);
             self
         }
@@ -4897,7 +4897,7 @@ pub mod game_server {
         /// calculate when a claimed game server's status should revert to null.</p>
         pub fn set_last_claim_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_claim_time = input;
             self
@@ -4907,7 +4907,7 @@ pub mod game_server {
         /// Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server
         /// registration, this property is only changed when a game server update specifies a health
         /// check value.</p>
-        pub fn last_health_check_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_health_check_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_health_check_time = Some(input);
             self
         }
@@ -4918,7 +4918,7 @@ pub mod game_server {
         /// check value.</p>
         pub fn set_last_health_check_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_health_check_time = input;
             self
@@ -5439,7 +5439,7 @@ pub struct Build {
     /// determines the type of fleet resources that you can use for this build.</p>
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Build {
     /// <p>A unique identifier for the build.</p>
@@ -5494,7 +5494,7 @@ impl Build {
         self.operating_system.as_ref()
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -5525,7 +5525,7 @@ pub mod build {
         pub(crate) status: std::option::Option<crate::model::BuildStatus>,
         pub(crate) size_on_disk: std::option::Option<i64>,
         pub(crate) operating_system: std::option::Option<crate::model::OperatingSystem>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A unique identifier for the build.</p>
@@ -5648,14 +5648,14 @@ pub mod build {
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -5827,9 +5827,9 @@ pub struct Alias {
     /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
     pub routing_strategy: std::option::Option<crate::model::RoutingStrategy>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that this data object was last modified. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Alias {
     /// <p>A unique identifier for the alias. Alias IDs are unique within a Region.</p>
@@ -5853,11 +5853,11 @@ impl Alias {
         self.routing_strategy.as_ref()
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time that this data object was last modified. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -5885,8 +5885,8 @@ pub mod alias {
         pub(crate) alias_arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) routing_strategy: std::option::Option<crate::model::RoutingStrategy>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A unique identifier for the alias. Alias IDs are unique within a Region.</p>
@@ -5943,27 +5943,27 @@ pub mod alias {
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time that this data object was last modified. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>The time that this data object was last modified. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -6402,10 +6402,10 @@ pub struct GameSessionPlacement {
     /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions.</p>
     pub player_latencies: std::option::Option<std::vec::Vec<crate::model::PlayerLatency>>,
     /// <p>Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Time stamp indicating when this request was completed, canceled, or timed
     /// out.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and port number. This value is set once the new game session is placed (placement status is
     /// <code>FULFILLED</code>). </p>
     pub ip_address: std::option::Option<std::string::String>,
@@ -6523,12 +6523,12 @@ impl GameSessionPlacement {
         self.player_latencies.as_deref()
     }
     /// <p>Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Time stamp indicating when this request was completed, canceled, or timed
     /// out.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and port number. This value is set once the new game session is placed (placement status is
@@ -6624,8 +6624,8 @@ pub mod game_session_placement {
         pub(crate) game_session_region: std::option::Option<std::string::String>,
         pub(crate) player_latencies:
             std::option::Option<std::vec::Vec<crate::model::PlayerLatency>>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) ip_address: std::option::Option<std::string::String>,
         pub(crate) dns_name: std::option::Option<std::string::String>,
         pub(crate) port: std::option::Option<i32>,
@@ -6850,21 +6850,21 @@ pub mod game_session_placement {
             self
         }
         /// <p>Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>Time stamp indicating when this request was completed, canceled, or timed
         /// out.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -6872,7 +6872,7 @@ pub mod game_session_placement {
         /// out.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -7418,10 +7418,10 @@ pub struct MatchmakingTicket {
     /// <p>Additional information about the current status.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Time stamp indicating when this matchmaking request was received. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Time stamp indicating when this matchmaking request stopped being processed due to
     /// success, failure, or cancellation. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A set of <code>Player</code> objects, each representing a player to find matches
     /// for. Players are identified by a unique player ID and may include latency data for use
     /// during matchmaking. If the ticket is in status <code>COMPLETED</code>, the
@@ -7519,12 +7519,12 @@ impl MatchmakingTicket {
         self.status_message.as_deref()
     }
     /// <p>Time stamp indicating when this matchmaking request was received. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Time stamp indicating when this matchmaking request stopped being processed due to
     /// success, failure, or cancellation. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A set of <code>Player</code> objects, each representing a player to find matches
@@ -7582,8 +7582,8 @@ pub mod matchmaking_ticket {
         pub(crate) status: std::option::Option<crate::model::MatchmakingConfigurationStatus>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) players: std::option::Option<std::vec::Vec<crate::model::Player>>,
         pub(crate) game_session_connection_info:
             std::option::Option<crate::model::GameSessionConnectionInfo>,
@@ -7778,21 +7778,21 @@ pub mod matchmaking_ticket {
             self
         }
         /// <p>Time stamp indicating when this matchmaking request was received. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>Time stamp indicating when this matchmaking request was received. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>Time stamp indicating when this matchmaking request stopped being processed due to
         /// success, failure, or cancellation. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -7800,7 +7800,7 @@ pub mod matchmaking_ticket {
         /// success, failure, or cancellation. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -9775,10 +9775,10 @@ pub struct VpcPeeringAuthorization {
     /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
     pub peer_vpc_id: std::option::Option<std::string::String>,
     /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Time stamp indicating when this authorization expires (24 hours after issuance).
     /// Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub expiration_time: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl VpcPeeringAuthorization {
     /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
@@ -9798,12 +9798,12 @@ impl VpcPeeringAuthorization {
         self.peer_vpc_id.as_deref()
     }
     /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Time stamp indicating when this authorization expires (24 hours after issuance).
     /// Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
 }
@@ -9827,8 +9827,8 @@ pub mod vpc_peering_authorization {
         pub(crate) game_lift_aws_account_id: std::option::Option<std::string::String>,
         pub(crate) peer_vpc_aws_account_id: std::option::Option<std::string::String>,
         pub(crate) peer_vpc_id: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) expiration_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
@@ -9876,21 +9876,21 @@ pub mod vpc_peering_authorization {
             self
         }
         /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>Time stamp indicating when this authorization expires (24 hours after issuance).
         /// Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn expiration_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_time = Some(input);
             self
         }
@@ -9898,7 +9898,7 @@ pub mod vpc_peering_authorization {
         /// Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_expiration_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration_time = input;
             self
@@ -10984,9 +10984,9 @@ pub struct PlayerSession {
     /// </p>
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub termination_time: std::option::Option<aws_smithy_types::Instant>,
+    pub termination_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Current status of the player session.</p>
     /// <p>Possible player session statuses include the following:</p>
     /// <ul>
@@ -11059,11 +11059,11 @@ impl PlayerSession {
         self.fleet_arn.as_deref()
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn termination_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn termination_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.termination_time.as_ref()
     }
     /// <p>Current status of the player session.</p>
@@ -11153,8 +11153,8 @@ pub mod player_session {
         pub(crate) game_session_id: std::option::Option<std::string::String>,
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) termination_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) termination_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::PlayerSessionStatus>,
         pub(crate) ip_address: std::option::Option<std::string::String>,
         pub(crate) dns_name: std::option::Option<std::string::String>,
@@ -11223,27 +11223,27 @@ pub mod player_session {
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn termination_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn termination_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.termination_time = Some(input);
             self
         }
         /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_termination_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.termination_time = input;
             self
@@ -11513,7 +11513,7 @@ pub struct MatchmakingRuleSet {
     /// allowed in JSON, but most elements support a description field.</p>
     pub rule_set_body: std::option::Option<std::string::String>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MatchmakingRuleSet {
     /// <p>A unique identifier for the matchmaking rule set</p>
@@ -11531,7 +11531,7 @@ impl MatchmakingRuleSet {
         self.rule_set_body.as_deref()
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -11554,7 +11554,7 @@ pub mod matchmaking_rule_set {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
         pub(crate) rule_set_arn: std::option::Option<std::string::String>,
         pub(crate) rule_set_body: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A unique identifier for the matchmaking rule set</p>
@@ -11598,14 +11598,14 @@ pub mod matchmaking_rule_set {
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -11689,7 +11689,7 @@ pub struct Instance {
     /// </ul>
     pub status: std::option::Option<crate::model::InstanceStatus>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The fleet location of the instance, expressed as an AWS Region
     /// code, such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
@@ -11761,7 +11761,7 @@ impl Instance {
         self.status.as_ref()
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The fleet location of the instance, expressed as an AWS Region
@@ -11800,7 +11800,7 @@ pub mod instance {
         pub(crate) operating_system: std::option::Option<crate::model::OperatingSystem>,
         pub(crate) r#type: std::option::Option<crate::model::Ec2InstanceType>,
         pub(crate) status: std::option::Option<crate::model::InstanceStatus>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -11960,14 +11960,14 @@ pub mod instance {
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -13964,7 +13964,7 @@ pub struct Event {
     /// <p>Additional information related to the event.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub event_time: std::option::Option<aws_smithy_types::Instant>,
+    pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Location of stored logs with additional detail that is related to the event. This
     /// is useful for debugging issues. The URL is valid for 15 minutes. You can also access
     /// fleet creation logs through the GameLift console.</p>
@@ -14122,7 +14122,7 @@ impl Event {
         self.message.as_deref()
     }
     /// <p>Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>Location of stored logs with additional detail that is related to the event. This
@@ -14154,7 +14154,7 @@ pub mod event {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) event_code: std::option::Option<crate::model::EventCode>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) event_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) pre_signed_log_url: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -14470,14 +14470,14 @@ pub mod event {
             self
         }
         /// <p>Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn event_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_time = Some(input);
             self
         }
         /// <p>Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_event_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.event_time = input;
             self
@@ -14779,9 +14779,9 @@ pub struct FleetAttributes {
     /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub termination_time: std::option::Option<aws_smithy_types::Instant>,
+    pub termination_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Current status of the fleet. Possible fleet statuses include the following:</p>
     /// <ul>
     /// <li>
@@ -14914,11 +14914,11 @@ impl FleetAttributes {
         self.name.as_deref()
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn termination_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn termination_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.termination_time.as_ref()
     }
     /// <p>Current status of the fleet. Possible fleet statuses include the following:</p>
@@ -15105,8 +15105,8 @@ pub mod fleet_attributes {
         pub(crate) instance_type: std::option::Option<crate::model::Ec2InstanceType>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) termination_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) termination_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::FleetStatus>,
         pub(crate) build_id: std::option::Option<std::string::String>,
         pub(crate) build_arn: std::option::Option<std::string::String>,
@@ -15202,27 +15202,27 @@ pub mod fleet_attributes {
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-        pub fn termination_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn termination_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.termination_time = Some(input);
             self
         }
         /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
         pub fn set_termination_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.termination_time = input;
             self

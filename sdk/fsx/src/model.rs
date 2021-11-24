@@ -5,7 +5,7 @@
 pub struct Volume {
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
     /// also known as Unix time.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The lifecycle status of the volume.</p>
@@ -57,7 +57,7 @@ pub struct Volume {
 impl Volume {
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
     /// also known as Unix time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
@@ -155,7 +155,7 @@ pub mod volume {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::VolumeLifecycle>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -170,7 +170,7 @@ pub mod volume {
     impl Builder {
         /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
         /// also known as Unix time.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -178,7 +178,7 @@ pub mod volume {
         /// also known as Unix time.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -1675,7 +1675,7 @@ pub struct StorageVirtualMachine {
         std::option::Option<crate::model::SvmActiveDirectoryConfiguration>,
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
     /// also known as Unix time.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The endpoints  that are used to access data or to manage the SVM
     /// using the NetApp ONTAP CLI, REST API, or NetApp CloudManager. They
     /// are the <code>Iscsi</code>, <code>Management</code>, <code>Nfs</code>,
@@ -1741,7 +1741,7 @@ impl StorageVirtualMachine {
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
     /// also known as Unix time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The endpoints  that are used to access data or to manage the SVM
@@ -1864,7 +1864,7 @@ pub mod storage_virtual_machine {
     pub struct Builder {
         pub(crate) active_directory_configuration:
             std::option::Option<crate::model::SvmActiveDirectoryConfiguration>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) endpoints: std::option::Option<crate::model::SvmEndpoints>,
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::StorageVirtualMachineLifecycle>,
@@ -1898,7 +1898,7 @@ pub mod storage_virtual_machine {
         }
         /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
         /// also known as Unix time.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -1906,7 +1906,7 @@ pub mod storage_virtual_machine {
         /// also known as Unix time.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -3136,7 +3136,7 @@ pub struct FileSystem {
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z),
     /// also known as Unix time.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The system-generated, unique 17-digit ID of the file system.</p>
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The type of Amazon FSx file system, which can be <code>LUSTRE</code>, <code>WINDOWS</code>,
@@ -3241,7 +3241,7 @@ impl FileSystem {
     }
     /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z),
     /// also known as Unix time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The system-generated, unique 17-digit ID of the file system.</p>
@@ -3415,7 +3415,7 @@ pub mod file_system {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_id: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) file_system_type: std::option::Option<crate::model::FileSystemType>,
         pub(crate) lifecycle: std::option::Option<crate::model::FileSystemLifecycle>,
@@ -3456,7 +3456,7 @@ pub mod file_system {
         }
         /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z),
         /// also known as Unix time.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -3464,7 +3464,7 @@ pub mod file_system {
         /// also known as Unix time.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -4651,7 +4651,7 @@ pub struct AdministrativeAction {
     /// Does not apply to any other administrative action type.</p>
     pub progress_percent: std::option::Option<i32>,
     /// <p>Time that the administrative action request was received.</p>
-    pub request_time: std::option::Option<aws_smithy_types::Instant>,
+    pub request_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Describes the status of the administrative action, as follows:</p>
     /// <ul>
     /// <li>
@@ -4750,7 +4750,7 @@ impl AdministrativeAction {
         self.progress_percent
     }
     /// <p>Time that the administrative action request was received.</p>
-    pub fn request_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn request_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.request_time.as_ref()
     }
     /// <p>Describes the status of the administrative action, as follows:</p>
@@ -4829,7 +4829,7 @@ pub mod administrative_action {
         pub(crate) administrative_action_type:
             std::option::Option<crate::model::AdministrativeActionType>,
         pub(crate) progress_percent: std::option::Option<i32>,
-        pub(crate) request_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) request_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::Status>,
         pub(crate) target_file_system_values: std::option::Option<crate::model::FileSystem>,
         pub(crate) failure_details:
@@ -4954,14 +4954,14 @@ pub mod administrative_action {
             self
         }
         /// <p>Time that the administrative action request was received.</p>
-        pub fn request_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn request_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.request_time = Some(input);
             self
         }
         /// <p>Time that the administrative action request was received.</p>
         pub fn set_request_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.request_time = input;
             self
@@ -9719,11 +9719,11 @@ pub struct DataRepositoryTask {
     pub r#type: std::option::Option<crate::model::DataRepositoryTaskType>,
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
     /// also known as Unix time.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that Amazon FSx began processing the task.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that Amazon FSx completed processing the task, populated after the task is complete.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services
     /// resources. We require an ARN when you need to specify a resource unambiguously across
     /// all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
@@ -9795,15 +9795,15 @@ impl DataRepositoryTask {
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
     /// also known as Unix time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time that Amazon FSx began processing the task.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time that Amazon FSx completed processing the task, populated after the task is complete.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services
@@ -9873,9 +9873,9 @@ pub mod data_repository_task {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::DataRepositoryTaskLifecycle>,
         pub(crate) r#type: std::option::Option<crate::model::DataRepositoryTaskType>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -9990,7 +9990,7 @@ pub mod data_repository_task {
         }
         /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
         /// also known as Unix time.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -9998,33 +9998,33 @@ pub mod data_repository_task {
         /// also known as Unix time.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time that Amazon FSx began processing the task.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time that Amazon FSx began processing the task.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time that Amazon FSx completed processing the task, populated after the task is complete.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time that Amazon FSx completed processing the task, populated after the task is complete.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -10448,7 +10448,7 @@ pub struct DataRepositoryTaskStatus {
     /// <p>A running total of the number of files that the task failed to process.</p>
     pub failed_count: std::option::Option<i64>,
     /// <p>The time at which the task status was last updated.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DataRepositoryTaskStatus {
     /// <p>The total number of files that the task will process. While a task is executing, the sum of
@@ -10466,7 +10466,7 @@ impl DataRepositoryTaskStatus {
         self.failed_count
     }
     /// <p>The time at which the task status was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -10489,7 +10489,7 @@ pub mod data_repository_task_status {
         pub(crate) total_count: std::option::Option<i64>,
         pub(crate) succeeded_count: std::option::Option<i64>,
         pub(crate) failed_count: std::option::Option<i64>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The total number of files that the task will process. While a task is executing, the sum of
@@ -10527,14 +10527,14 @@ pub mod data_repository_task_status {
             self
         }
         /// <p>The time at which the task status was last updated.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>The time at which the task status was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -10968,7 +10968,7 @@ pub struct Backup {
     /// <p>The current percent of progress of an asynchronous task.</p>
     pub progress_percent: std::option::Option<i32>,
     /// <p>The time when a particular backup was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt the
     /// backup of the Amazon FSx file system's data at rest.
     /// </p>
@@ -11047,7 +11047,7 @@ impl Backup {
         self.progress_percent
     }
     /// <p>The time when a particular backup was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt the
@@ -11131,7 +11131,7 @@ pub mod backup {
         pub(crate) failure_details: std::option::Option<crate::model::BackupFailureDetails>,
         pub(crate) r#type: std::option::Option<crate::model::BackupType>,
         pub(crate) progress_percent: std::option::Option<i32>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -11262,14 +11262,14 @@ pub mod backup {
             self
         }
         /// <p>The time when a particular backup was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time when a particular backup was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self

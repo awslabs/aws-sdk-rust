@@ -212,6 +212,36 @@ impl UpdateUserHierarchyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateSecurityProfileOutput {}
+impl std::fmt::Debug for UpdateSecurityProfileOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateSecurityProfileOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateSecurityProfileOutput`](crate::output::UpdateSecurityProfileOutput)
+pub mod update_security_profile_output {
+    /// A builder for [`UpdateSecurityProfileOutput`](crate::output::UpdateSecurityProfileOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateSecurityProfileOutput`](crate::output::UpdateSecurityProfileOutput)
+        pub fn build(self) -> crate::output::UpdateSecurityProfileOutput {
+            crate::output::UpdateSecurityProfileOutput {}
+        }
+    }
+}
+impl UpdateSecurityProfileOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSecurityProfileOutput`](crate::output::UpdateSecurityProfileOutput)
+    pub fn builder() -> crate::output::update_security_profile_output::Builder {
+        crate::output::update_security_profile_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoutingProfileQueuesOutput {}
 impl std::fmt::Debug for UpdateRoutingProfileQueuesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -633,6 +663,36 @@ impl UpdateHoursOfOperationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateContactScheduleOutput {}
+impl std::fmt::Debug for UpdateContactScheduleOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateContactScheduleOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateContactScheduleOutput`](crate::output::UpdateContactScheduleOutput)
+pub mod update_contact_schedule_output {
+    /// A builder for [`UpdateContactScheduleOutput`](crate::output::UpdateContactScheduleOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateContactScheduleOutput`](crate::output::UpdateContactScheduleOutput)
+        pub fn build(self) -> crate::output::UpdateContactScheduleOutput {
+            crate::output::UpdateContactScheduleOutput {}
+        }
+    }
+}
+impl UpdateContactScheduleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateContactScheduleOutput`](crate::output::UpdateContactScheduleOutput)
+    pub fn builder() -> crate::output::update_contact_schedule_output::Builder {
+        crate::output::update_contact_schedule_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactFlowNameOutput {}
 impl std::fmt::Debug for UpdateContactFlowNameOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -717,6 +777,36 @@ impl UpdateContactAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContactAttributesOutput`](crate::output::UpdateContactAttributesOutput)
     pub fn builder() -> crate::output::update_contact_attributes_output::Builder {
         crate::output::update_contact_attributes_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateContactOutput {}
+impl std::fmt::Debug for UpdateContactOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateContactOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateContactOutput`](crate::output::UpdateContactOutput)
+pub mod update_contact_output {
+    /// A builder for [`UpdateContactOutput`](crate::output::UpdateContactOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateContactOutput`](crate::output::UpdateContactOutput)
+        pub fn build(self) -> crate::output::UpdateContactOutput {
+            crate::output::UpdateContactOutput {}
+        }
+    }
+}
+impl UpdateContactOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateContactOutput`](crate::output::UpdateContactOutput)
+    pub fn builder() -> crate::output::update_contact_output::Builder {
+        crate::output::update_contact_output::Builder::default()
     }
 }
 
@@ -1676,6 +1766,88 @@ impl ListSecurityProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityProfilesOutput`](crate::output::ListSecurityProfilesOutput)
     pub fn builder() -> crate::output::list_security_profiles_output::Builder {
         crate::output::list_security_profiles_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSecurityProfilePermissionsOutput {
+    /// <p>The permissions granted to the security profile.</p>
+    pub permissions: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSecurityProfilePermissionsOutput {
+    /// <p>The permissions granted to the security profile.</p>
+    pub fn permissions(&self) -> std::option::Option<&[std::string::String]> {
+        self.permissions.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListSecurityProfilePermissionsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListSecurityProfilePermissionsOutput");
+        formatter.field("permissions", &self.permissions);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListSecurityProfilePermissionsOutput`](crate::output::ListSecurityProfilePermissionsOutput)
+pub mod list_security_profile_permissions_output {
+    /// A builder for [`ListSecurityProfilePermissionsOutput`](crate::output::ListSecurityProfilePermissionsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) permissions: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `permissions`.
+        ///
+        /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+        ///
+        /// <p>The permissions granted to the security profile.</p>
+        pub fn permissions(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.permissions.unwrap_or_default();
+            v.push(input.into());
+            self.permissions = Some(v);
+            self
+        }
+        /// <p>The permissions granted to the security profile.</p>
+        pub fn set_permissions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.permissions = input;
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSecurityProfilePermissionsOutput`](crate::output::ListSecurityProfilePermissionsOutput)
+        pub fn build(self) -> crate::output::ListSecurityProfilePermissionsOutput {
+            crate::output::ListSecurityProfilePermissionsOutput {
+                permissions: self.permissions,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListSecurityProfilePermissionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSecurityProfilePermissionsOutput`](crate::output::ListSecurityProfilePermissionsOutput)
+    pub fn builder() -> crate::output::list_security_profile_permissions_output::Builder {
+        crate::output::list_security_profile_permissions_output::Builder::default()
     }
 }
 
@@ -2999,6 +3171,104 @@ impl ListHoursOfOperationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListContactReferencesOutput {
+    /// <p>Information about the contact flows.</p>
+    pub reference_summary_list: std::option::Option<std::vec::Vec<crate::model::ReferenceSummary>>,
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    /// <important>
+    /// <p>This is always returned as null in the response.</p>
+    /// </important>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListContactReferencesOutput {
+    /// <p>Information about the contact flows.</p>
+    pub fn reference_summary_list(&self) -> std::option::Option<&[crate::model::ReferenceSummary]> {
+        self.reference_summary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    /// <important>
+    /// <p>This is always returned as null in the response.</p>
+    /// </important>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListContactReferencesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListContactReferencesOutput");
+        formatter.field("reference_summary_list", &self.reference_summary_list);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListContactReferencesOutput`](crate::output::ListContactReferencesOutput)
+pub mod list_contact_references_output {
+    /// A builder for [`ListContactReferencesOutput`](crate::output::ListContactReferencesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) reference_summary_list:
+            std::option::Option<std::vec::Vec<crate::model::ReferenceSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `reference_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_reference_summary_list`](Self::set_reference_summary_list).
+        ///
+        /// <p>Information about the contact flows.</p>
+        pub fn reference_summary_list(
+            mut self,
+            input: impl Into<crate::model::ReferenceSummary>,
+        ) -> Self {
+            let mut v = self.reference_summary_list.unwrap_or_default();
+            v.push(input.into());
+            self.reference_summary_list = Some(v);
+            self
+        }
+        /// <p>Information about the contact flows.</p>
+        pub fn set_reference_summary_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ReferenceSummary>>,
+        ) -> Self {
+            self.reference_summary_list = input;
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        /// <important>
+        /// <p>This is always returned as null in the response.</p>
+        /// </important>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        /// <important>
+        /// <p>This is always returned as null in the response.</p>
+        /// </important>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListContactReferencesOutput`](crate::output::ListContactReferencesOutput)
+        pub fn build(self) -> crate::output::ListContactReferencesOutput {
+            crate::output::ListContactReferencesOutput {
+                reference_summary_list: self.reference_summary_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListContactReferencesOutput {
+    /// Creates a new builder-style object to manufacture [`ListContactReferencesOutput`](crate::output::ListContactReferencesOutput)
+    pub fn builder() -> crate::output::list_contact_references_output::Builder {
+        crate::output::list_contact_references_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactFlowsOutput {
     /// <p>Information about the contact flows.</p>
     pub contact_flow_summary_list:
@@ -3508,7 +3778,7 @@ pub struct GetCurrentMetricDataOutput {
     /// <p>Information about the real-time metrics.</p>
     pub metric_results: std::option::Option<std::vec::Vec<crate::model::CurrentMetricResult>>,
     /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
-    pub data_snapshot_time: std::option::Option<aws_smithy_types::Instant>,
+    pub data_snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetCurrentMetricDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -3522,7 +3792,7 @@ impl GetCurrentMetricDataOutput {
         self.metric_results.as_deref()
     }
     /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
-    pub fn data_snapshot_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn data_snapshot_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.data_snapshot_time.as_ref()
     }
 }
@@ -3544,7 +3814,7 @@ pub mod get_current_metric_data_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) metric_results:
             std::option::Option<std::vec::Vec<crate::model::CurrentMetricResult>>,
-        pub(crate) data_snapshot_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) data_snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -3584,14 +3854,14 @@ pub mod get_current_metric_data_output {
             self
         }
         /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
-        pub fn data_snapshot_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn data_snapshot_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.data_snapshot_time = Some(input);
             self
         }
         /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
         pub fn set_data_snapshot_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.data_snapshot_time = input;
             self
@@ -4097,6 +4367,63 @@ impl DescribeUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeSecurityProfileOutput {
+    /// <p>The security profile.</p>
+    pub security_profile: std::option::Option<crate::model::SecurityProfile>,
+}
+impl DescribeSecurityProfileOutput {
+    /// <p>The security profile.</p>
+    pub fn security_profile(&self) -> std::option::Option<&crate::model::SecurityProfile> {
+        self.security_profile.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeSecurityProfileOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeSecurityProfileOutput");
+        formatter.field("security_profile", &self.security_profile);
+        formatter.finish()
+    }
+}
+/// See [`DescribeSecurityProfileOutput`](crate::output::DescribeSecurityProfileOutput)
+pub mod describe_security_profile_output {
+    /// A builder for [`DescribeSecurityProfileOutput`](crate::output::DescribeSecurityProfileOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) security_profile: std::option::Option<crate::model::SecurityProfile>,
+    }
+    impl Builder {
+        /// <p>The security profile.</p>
+        pub fn security_profile(mut self, input: crate::model::SecurityProfile) -> Self {
+            self.security_profile = Some(input);
+            self
+        }
+        /// <p>The security profile.</p>
+        pub fn set_security_profile(
+            mut self,
+            input: std::option::Option<crate::model::SecurityProfile>,
+        ) -> Self {
+            self.security_profile = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeSecurityProfileOutput`](crate::output::DescribeSecurityProfileOutput)
+        pub fn build(self) -> crate::output::DescribeSecurityProfileOutput {
+            crate::output::DescribeSecurityProfileOutput {
+                security_profile: self.security_profile,
+            }
+        }
+    }
+}
+impl DescribeSecurityProfileOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSecurityProfileOutput`](crate::output::DescribeSecurityProfileOutput)
+    pub fn builder() -> crate::output::describe_security_profile_output::Builder {
+        crate::output::describe_security_profile_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRoutingProfileOutput {
     /// <p>The routing profile.</p>
     pub routing_profile: std::option::Option<crate::model::RoutingProfile>,
@@ -4553,6 +4880,60 @@ impl DescribeContactFlowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeContactOutput {
+    /// <p>Information about the contact.</p>
+    pub contact: std::option::Option<crate::model::Contact>,
+}
+impl DescribeContactOutput {
+    /// <p>Information about the contact.</p>
+    pub fn contact(&self) -> std::option::Option<&crate::model::Contact> {
+        self.contact.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeContactOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeContactOutput");
+        formatter.field("contact", &self.contact);
+        formatter.finish()
+    }
+}
+/// See [`DescribeContactOutput`](crate::output::DescribeContactOutput)
+pub mod describe_contact_output {
+    /// A builder for [`DescribeContactOutput`](crate::output::DescribeContactOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) contact: std::option::Option<crate::model::Contact>,
+    }
+    impl Builder {
+        /// <p>Information about the contact.</p>
+        pub fn contact(mut self, input: crate::model::Contact) -> Self {
+            self.contact = Some(input);
+            self
+        }
+        /// <p>Information about the contact.</p>
+        pub fn set_contact(mut self, input: std::option::Option<crate::model::Contact>) -> Self {
+            self.contact = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeContactOutput`](crate::output::DescribeContactOutput)
+        pub fn build(self) -> crate::output::DescribeContactOutput {
+            crate::output::DescribeContactOutput {
+                contact: self.contact,
+            }
+        }
+    }
+}
+impl DescribeContactOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeContactOutput`](crate::output::DescribeContactOutput)
+    pub fn builder() -> crate::output::describe_contact_output::Builder {
+        crate::output::describe_contact_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAgentStatusOutput {
     /// <p>The agent status.</p>
     pub agent_status: std::option::Option<crate::model::AgentStatus>,
@@ -4694,6 +5075,36 @@ impl DeleteUseCaseOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUseCaseOutput`](crate::output::DeleteUseCaseOutput)
     pub fn builder() -> crate::output::delete_use_case_output::Builder {
         crate::output::delete_use_case_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteSecurityProfileOutput {}
+impl std::fmt::Debug for DeleteSecurityProfileOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteSecurityProfileOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteSecurityProfileOutput`](crate::output::DeleteSecurityProfileOutput)
+pub mod delete_security_profile_output {
+    /// A builder for [`DeleteSecurityProfileOutput`](crate::output::DeleteSecurityProfileOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteSecurityProfileOutput`](crate::output::DeleteSecurityProfileOutput)
+        pub fn build(self) -> crate::output::DeleteSecurityProfileOutput {
+            crate::output::DeleteSecurityProfileOutput {}
+        }
+    }
+}
+impl DeleteSecurityProfileOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSecurityProfileOutput`](crate::output::DeleteSecurityProfileOutput)
+    pub fn builder() -> crate::output::delete_security_profile_output::Builder {
+        crate::output::delete_security_profile_output::Builder::default()
     }
 }
 
@@ -5039,6 +5450,85 @@ impl CreateUseCaseOutput {
     /// Creates a new builder-style object to manufacture [`CreateUseCaseOutput`](crate::output::CreateUseCaseOutput)
     pub fn builder() -> crate::output::create_use_case_output::Builder {
         crate::output::create_use_case_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateSecurityProfileOutput {
+    /// <p>The identifier for the security profle.</p>
+    pub security_profile_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the security profile.</p>
+    pub security_profile_arn: std::option::Option<std::string::String>,
+}
+impl CreateSecurityProfileOutput {
+    /// <p>The identifier for the security profle.</p>
+    pub fn security_profile_id(&self) -> std::option::Option<&str> {
+        self.security_profile_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the security profile.</p>
+    pub fn security_profile_arn(&self) -> std::option::Option<&str> {
+        self.security_profile_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateSecurityProfileOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateSecurityProfileOutput");
+        formatter.field("security_profile_id", &self.security_profile_id);
+        formatter.field("security_profile_arn", &self.security_profile_arn);
+        formatter.finish()
+    }
+}
+/// See [`CreateSecurityProfileOutput`](crate::output::CreateSecurityProfileOutput)
+pub mod create_security_profile_output {
+    /// A builder for [`CreateSecurityProfileOutput`](crate::output::CreateSecurityProfileOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) security_profile_id: std::option::Option<std::string::String>,
+        pub(crate) security_profile_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier for the security profle.</p>
+        pub fn security_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.security_profile_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the security profle.</p>
+        pub fn set_security_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.security_profile_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the security profile.</p>
+        pub fn security_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.security_profile_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the security profile.</p>
+        pub fn set_security_profile_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.security_profile_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateSecurityProfileOutput`](crate::output::CreateSecurityProfileOutput)
+        pub fn build(self) -> crate::output::CreateSecurityProfileOutput {
+            crate::output::CreateSecurityProfileOutput {
+                security_profile_id: self.security_profile_id,
+                security_profile_arn: self.security_profile_arn,
+            }
+        }
+    }
+}
+impl CreateSecurityProfileOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSecurityProfileOutput`](crate::output::CreateSecurityProfileOutput)
+    pub fn builder() -> crate::output::create_security_profile_output::Builder {
+        crate::output::create_security_profile_output::Builder::default()
     }
 }
 

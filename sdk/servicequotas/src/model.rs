@@ -110,9 +110,9 @@ pub struct RequestedServiceQuotaChange {
     pub status: std::option::Option<crate::model::RequestStatus>,
     /// <p>The date and time when the quota increase request was received and the case ID was
     /// created.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time of the most recent change.</p>
-    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The IAM identity of the requester.</p>
     pub requester: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the quota.</p>
@@ -157,11 +157,11 @@ impl RequestedServiceQuotaChange {
     }
     /// <p>The date and time when the quota increase request was received and the case ID was
     /// created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time of the most recent change.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The IAM identity of the requester.</p>
@@ -215,8 +215,8 @@ pub mod requested_service_quota_change {
         pub(crate) quota_name: std::option::Option<std::string::String>,
         pub(crate) desired_value: std::option::Option<f64>,
         pub(crate) status: std::option::Option<crate::model::RequestStatus>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) requester: std::option::Option<std::string::String>,
         pub(crate) quota_arn: std::option::Option<std::string::String>,
         pub(crate) global_quota: std::option::Option<bool>,
@@ -308,7 +308,7 @@ pub mod requested_service_quota_change {
         }
         /// <p>The date and time when the quota increase request was received and the case ID was
         /// created.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
@@ -316,20 +316,20 @@ pub mod requested_service_quota_change {
         /// created.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
         }
         /// <p>The date and time of the most recent change.</p>
-        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated = Some(input);
             self
         }
         /// <p>The date and time of the most recent change.</p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated = input;
             self

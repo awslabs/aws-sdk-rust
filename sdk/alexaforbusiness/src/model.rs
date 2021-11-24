@@ -3307,7 +3307,7 @@ pub struct DeviceData {
     /// <p>Detailed information about a device's status.</p>
     pub device_status_info: std::option::Option<crate::model::DeviceStatusInfo>,
     /// <p>The time (in epoch) when the device data was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeviceData {
     /// <p>The ARN of a device.</p>
@@ -3359,7 +3359,7 @@ impl DeviceData {
         self.device_status_info.as_ref()
     }
     /// <p>The time (in epoch) when the device data was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
@@ -3400,7 +3400,7 @@ pub mod device_data {
         pub(crate) room_arn: std::option::Option<std::string::String>,
         pub(crate) room_name: std::option::Option<std::string::String>,
         pub(crate) device_status_info: std::option::Option<crate::model::DeviceStatusInfo>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of a device.</p>
@@ -3542,14 +3542,14 @@ pub mod device_data {
             self
         }
         /// <p>The time (in epoch) when the device data was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>The time (in epoch) when the device data was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -3590,7 +3590,7 @@ pub struct DeviceStatusInfo {
     /// <p>The latest available information about the connection status of a device. </p>
     pub connection_status: std::option::Option<crate::model::ConnectionStatus>,
     /// <p>The time (in epoch) when the device connection status changed.</p>
-    pub connection_status_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub connection_status_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeviceStatusInfo {
     /// <p>One or more device status detail descriptions.</p>
@@ -3606,7 +3606,7 @@ impl DeviceStatusInfo {
     /// <p>The time (in epoch) when the device connection status changed.</p>
     pub fn connection_status_updated_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.connection_status_updated_time.as_ref()
     }
 }
@@ -3631,7 +3631,7 @@ pub mod device_status_info {
         pub(crate) device_status_details:
             std::option::Option<std::vec::Vec<crate::model::DeviceStatusDetail>>,
         pub(crate) connection_status: std::option::Option<crate::model::ConnectionStatus>,
-        pub(crate) connection_status_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) connection_status_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// Appends an item to `device_status_details`.
@@ -3670,14 +3670,14 @@ pub mod device_status_info {
             self
         }
         /// <p>The time (in epoch) when the device connection status changed.</p>
-        pub fn connection_status_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn connection_status_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.connection_status_updated_time = Some(input);
             self
         }
         /// <p>The time (in epoch) when the device connection status changed.</p>
         pub fn set_connection_status_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.connection_status_updated_time = input;
             self
@@ -5875,7 +5875,7 @@ pub struct DeviceEvent {
     /// <p>The value of the event.</p>
     pub value: std::option::Option<std::string::String>,
     /// <p>The time (in epoch) when the event occurred. </p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeviceEvent {
     /// <p>The type of device event.</p>
@@ -5887,7 +5887,7 @@ impl DeviceEvent {
         self.value.as_deref()
     }
     /// <p>The time (in epoch) when the event occurred. </p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -5908,7 +5908,7 @@ pub mod device_event {
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::DeviceEventType>,
         pub(crate) value: std::option::Option<std::string::String>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The type of device event.</p>
@@ -5935,14 +5935,14 @@ pub mod device_event {
             self
         }
         /// <p>The time (in epoch) when the event occurred. </p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The time (in epoch) when the event occurred. </p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -6408,7 +6408,7 @@ pub struct BusinessReport {
     /// <p>The S3 location of the output reports.</p>
     pub s3_location: std::option::Option<crate::model::BusinessReportS3Location>,
     /// <p>The time of report delivery.</p>
-    pub delivery_time: std::option::Option<aws_smithy_types::Instant>,
+    pub delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The download link where a user can download the report.</p>
     pub download_url: std::option::Option<std::string::String>,
 }
@@ -6427,7 +6427,7 @@ impl BusinessReport {
         self.s3_location.as_ref()
     }
     /// <p>The time of report delivery.</p>
-    pub fn delivery_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn delivery_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.delivery_time.as_ref()
     }
     /// <p>The download link where a user can download the report.</p>
@@ -6455,7 +6455,7 @@ pub mod business_report {
         pub(crate) status: std::option::Option<crate::model::BusinessReportStatus>,
         pub(crate) failure_code: std::option::Option<crate::model::BusinessReportFailureCode>,
         pub(crate) s3_location: std::option::Option<crate::model::BusinessReportS3Location>,
-        pub(crate) delivery_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) delivery_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) download_url: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6501,14 +6501,14 @@ pub mod business_report {
             self
         }
         /// <p>The time of report delivery.</p>
-        pub fn delivery_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn delivery_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.delivery_time = Some(input);
             self
         }
         /// <p>The time of report delivery.</p>
         pub fn set_delivery_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.delivery_time = input;
             self
@@ -8603,7 +8603,7 @@ pub struct DeviceNetworkProfileInfo {
     /// <p>The ARN of the certificate associated with a device.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The time (in epoch) when the certificate expires.</p>
-    pub certificate_expiration_time: std::option::Option<aws_smithy_types::Instant>,
+    pub certificate_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeviceNetworkProfileInfo {
     /// <p>The ARN of the network profile associated with a device.</p>
@@ -8615,7 +8615,7 @@ impl DeviceNetworkProfileInfo {
         self.certificate_arn.as_deref()
     }
     /// <p>The time (in epoch) when the certificate expires.</p>
-    pub fn certificate_expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn certificate_expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.certificate_expiration_time.as_ref()
     }
 }
@@ -8639,7 +8639,7 @@ pub mod device_network_profile_info {
     pub struct Builder {
         pub(crate) network_profile_arn: std::option::Option<std::string::String>,
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
-        pub(crate) certificate_expiration_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) certificate_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the network profile associated with a device.</p>
@@ -8669,14 +8669,14 @@ pub mod device_network_profile_info {
             self
         }
         /// <p>The time (in epoch) when the certificate expires.</p>
-        pub fn certificate_expiration_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn certificate_expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.certificate_expiration_time = Some(input);
             self
         }
         /// <p>The time (in epoch) when the certificate expires.</p>
         pub fn set_certificate_expiration_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.certificate_expiration_time = input;
             self

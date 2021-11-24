@@ -71,6 +71,13 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
+    /// Constructs a fluent builder for the `CreateAutoPredictor` operation.
+    ///
+    /// See [`CreateAutoPredictor`](crate::client::fluent_builders::CreateAutoPredictor) for more information about the
+    /// operation and its arguments.
+    pub fn create_auto_predictor(&self) -> fluent_builders::CreateAutoPredictor<C, M, R> {
+        fluent_builders::CreateAutoPredictor::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CreateDataset` operation.
     ///
     /// See [`CreateDataset`](crate::client::fluent_builders::CreateDataset) for more information about the
@@ -91,6 +98,22 @@ where
     /// operation and its arguments.
     pub fn create_dataset_import_job(&self) -> fluent_builders::CreateDatasetImportJob<C, M, R> {
         fluent_builders::CreateDatasetImportJob::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateExplainability` operation.
+    ///
+    /// See [`CreateExplainability`](crate::client::fluent_builders::CreateExplainability) for more information about the
+    /// operation and its arguments.
+    pub fn create_explainability(&self) -> fluent_builders::CreateExplainability<C, M, R> {
+        fluent_builders::CreateExplainability::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateExplainabilityExport` operation.
+    ///
+    /// See [`CreateExplainabilityExport`](crate::client::fluent_builders::CreateExplainabilityExport) for more information about the
+    /// operation and its arguments.
+    pub fn create_explainability_export(
+        &self,
+    ) -> fluent_builders::CreateExplainabilityExport<C, M, R> {
+        fluent_builders::CreateExplainabilityExport::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `CreateForecast` operation.
     ///
@@ -143,6 +166,22 @@ where
     pub fn delete_dataset_import_job(&self) -> fluent_builders::DeleteDatasetImportJob<C, M, R> {
         fluent_builders::DeleteDatasetImportJob::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DeleteExplainability` operation.
+    ///
+    /// See [`DeleteExplainability`](crate::client::fluent_builders::DeleteExplainability) for more information about the
+    /// operation and its arguments.
+    pub fn delete_explainability(&self) -> fluent_builders::DeleteExplainability<C, M, R> {
+        fluent_builders::DeleteExplainability::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteExplainabilityExport` operation.
+    ///
+    /// See [`DeleteExplainabilityExport`](crate::client::fluent_builders::DeleteExplainabilityExport) for more information about the
+    /// operation and its arguments.
+    pub fn delete_explainability_export(
+        &self,
+    ) -> fluent_builders::DeleteExplainabilityExport<C, M, R> {
+        fluent_builders::DeleteExplainabilityExport::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DeleteForecast` operation.
     ///
     /// See [`DeleteForecast`](crate::client::fluent_builders::DeleteForecast) for more information about the
@@ -180,6 +219,13 @@ where
     pub fn delete_resource_tree(&self) -> fluent_builders::DeleteResourceTree<C, M, R> {
         fluent_builders::DeleteResourceTree::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DescribeAutoPredictor` operation.
+    ///
+    /// See [`DescribeAutoPredictor`](crate::client::fluent_builders::DescribeAutoPredictor) for more information about the
+    /// operation and its arguments.
+    pub fn describe_auto_predictor(&self) -> fluent_builders::DescribeAutoPredictor<C, M, R> {
+        fluent_builders::DescribeAutoPredictor::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DescribeDataset` operation.
     ///
     /// See [`DescribeDataset`](crate::client::fluent_builders::DescribeDataset) for more information about the
@@ -202,6 +248,22 @@ where
         &self,
     ) -> fluent_builders::DescribeDatasetImportJob<C, M, R> {
         fluent_builders::DescribeDatasetImportJob::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeExplainability` operation.
+    ///
+    /// See [`DescribeExplainability`](crate::client::fluent_builders::DescribeExplainability) for more information about the
+    /// operation and its arguments.
+    pub fn describe_explainability(&self) -> fluent_builders::DescribeExplainability<C, M, R> {
+        fluent_builders::DescribeExplainability::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeExplainabilityExport` operation.
+    ///
+    /// See [`DescribeExplainabilityExport`](crate::client::fluent_builders::DescribeExplainabilityExport) for more information about the
+    /// operation and its arguments.
+    pub fn describe_explainability_export(
+        &self,
+    ) -> fluent_builders::DescribeExplainabilityExport<C, M, R> {
+        fluent_builders::DescribeExplainabilityExport::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DescribeForecast` operation.
     ///
@@ -262,6 +324,22 @@ where
     /// operation and its arguments.
     pub fn list_datasets(&self) -> fluent_builders::ListDatasets<C, M, R> {
         fluent_builders::ListDatasets::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListExplainabilities` operation.
+    ///
+    /// See [`ListExplainabilities`](crate::client::fluent_builders::ListExplainabilities) for more information about the
+    /// operation and its arguments.
+    pub fn list_explainabilities(&self) -> fluent_builders::ListExplainabilities<C, M, R> {
+        fluent_builders::ListExplainabilities::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListExplainabilityExports` operation.
+    ///
+    /// See [`ListExplainabilityExports`](crate::client::fluent_builders::ListExplainabilityExports) for more information about the
+    /// operation and its arguments.
+    pub fn list_explainability_exports(
+        &self,
+    ) -> fluent_builders::ListExplainabilityExports<C, M, R> {
+        fluent_builders::ListExplainabilityExports::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListForecastExportJobs` operation.
     ///
@@ -337,6 +415,367 @@ pub mod fluent_builders {
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
     //!
+    /// Fluent builder constructing a request to `CreateAutoPredictor`.
+    ///
+    /// <p>Creates an Amazon Forecast predictor.</p>
+    /// <p>Amazon Forecast creates predictors with AutoPredictor, which involves applying the
+    /// optimal combination of algorithms to each time series in your datasets. You can use
+    /// CreateAutoPredictor to create new predictors or upgrade/retrain existing
+    /// predictors.</p>
+    /// <p>
+    /// <b>Creating new predictors</b>
+    /// </p>
+    /// <p>The following parameters are required when creating a new predictor:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PredictorName</code> - A unique name for the predictor.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DatasetGroupArn</code> - The ARN of the dataset group used to train the
+    /// predictor.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ForecastFrequency</code> - The granularity of your forecasts (hourly,
+    /// daily, weekly, etc).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ForecastHorizon</code> - The number of time steps being
+    /// forecasted.</p>
+    /// </li>
+    /// </ul>
+    /// <p>When creating a new predictor, do not specify a value for
+    /// <code>ReferencePredictorArn</code>.</p>
+    /// <p>
+    /// <b>Upgrading and retraining predictors</b>
+    /// </p>
+    /// <p>The following parameters are required when retraining or upgrading a predictor:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PredictorName</code> - A unique name for the predictor.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ReferencePredictorArn</code> - The ARN of the predictor to retrain or
+    /// upgrade.</p>
+    /// </li>
+    /// </ul>
+    /// <p>When upgrading or retraining a predictor, only specify values for the
+    /// <code>ReferencePredictorArn</code> and <code>PredictorName</code>. </p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateAutoPredictor<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_auto_predictor_input::Builder,
+    }
+    impl<C, M, R> CreateAutoPredictor<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateAutoPredictor`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateAutoPredictorOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateAutoPredictorError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateAutoPredictorInputOperationOutputAlias,
+                crate::output::CreateAutoPredictorOutput,
+                crate::error::CreateAutoPredictorError,
+                crate::input::CreateAutoPredictorInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique name for the predictor</p>
+        pub fn predictor_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_name(inp);
+            self
+        }
+        /// <p>A unique name for the predictor</p>
+        pub fn set_predictor_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_predictor_name(input);
+            self
+        }
+        /// <p>The number of time-steps that the model predicts. The forecast horizon is also called
+        /// the prediction length.</p>
+        pub fn forecast_horizon(mut self, inp: i32) -> Self {
+            self.inner = self.inner.forecast_horizon(inp);
+            self
+        }
+        /// <p>The number of time-steps that the model predicts. The forecast horizon is also called
+        /// the prediction length.</p>
+        pub fn set_forecast_horizon(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_forecast_horizon(input);
+            self
+        }
+        /// Appends an item to `ForecastTypes`.
+        ///
+        /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
+        ///
+        /// <p>The forecast types used to train a predictor. You can specify up to five forecast
+        /// types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
+        /// higher. You can also specify the mean forecast with <code>mean</code>.</p>
+        pub fn forecast_types(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_types(inp);
+            self
+        }
+        /// <p>The forecast types used to train a predictor. You can specify up to five forecast
+        /// types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
+        /// higher. You can also specify the mean forecast with <code>mean</code>.</p>
+        pub fn set_forecast_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_forecast_types(input);
+            self
+        }
+        /// Appends an item to `ForecastDimensions`.
+        ///
+        /// To override the contents of this collection use [`set_forecast_dimensions`](Self::set_forecast_dimensions).
+        ///
+        /// <p>An array of dimension (field) names that specify how to group the generated
+        /// forecast.</p>
+        /// <p>For example, if you are generating forecasts for item sales across all your stores,
+        /// and your dataset contains a <code>store_id</code> field, you would specify
+        /// <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
+        pub fn forecast_dimensions(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_dimensions(inp);
+            self
+        }
+        /// <p>An array of dimension (field) names that specify how to group the generated
+        /// forecast.</p>
+        /// <p>For example, if you are generating forecasts for item sales across all your stores,
+        /// and your dataset contains a <code>store_id</code> field, you would specify
+        /// <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
+        pub fn set_forecast_dimensions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_forecast_dimensions(input);
+            self
+        }
+        /// <p>The frequency of predictions in a forecast.</p>
+        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30
+        /// minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute).
+        /// For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+        /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
+        /// frequency.</p>
+        /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the
+        /// RELATED_TIME_SERIES dataset frequency.</p>
+        pub fn forecast_frequency(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_frequency(inp);
+            self
+        }
+        /// <p>The frequency of predictions in a forecast.</p>
+        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30
+        /// minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute).
+        /// For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+        /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
+        /// frequency.</p>
+        /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the
+        /// RELATED_TIME_SERIES dataset frequency.</p>
+        pub fn set_forecast_frequency(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_forecast_frequency(input);
+            self
+        }
+        /// <p>The data configuration for your dataset group and any additional datasets.</p>
+        pub fn data_config(mut self, inp: crate::model::DataConfig) -> Self {
+            self.inner = self.inner.data_config(inp);
+            self
+        }
+        /// <p>The data configuration for your dataset group and any additional datasets.</p>
+        pub fn set_data_config(
+            mut self,
+            input: std::option::Option<crate::model::DataConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_data_config(input);
+            self
+        }
+        /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
+        /// access the key. You can specify this optional object in the
+        /// <a>CreateDataset</a> and <a>CreatePredictor</a> requests.</p>
+        pub fn encryption_config(mut self, inp: crate::model::EncryptionConfig) -> Self {
+            self.inner = self.inner.encryption_config(inp);
+            self
+        }
+        /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
+        /// access the key. You can specify this optional object in the
+        /// <a>CreateDataset</a> and <a>CreatePredictor</a> requests.</p>
+        pub fn set_encryption_config(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_encryption_config(input);
+            self
+        }
+        /// <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when
+        /// retraining or upgrading a predictor. When creating a new predictor, do not specify a
+        /// value for this parameter.</p>
+        /// <p>When upgrading or retraining a predictor, only specify values for the
+        /// <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for
+        /// <code>PredictorName</code> must be a unique predictor name.</p>
+        pub fn reference_predictor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reference_predictor_arn(inp);
+            self
+        }
+        /// <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when
+        /// retraining or upgrading a predictor. When creating a new predictor, do not specify a
+        /// value for this parameter.</p>
+        /// <p>When upgrading or retraining a predictor, only specify values for the
+        /// <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for
+        /// <code>PredictorName</code> must be a unique predictor name.</p>
+        pub fn set_reference_predictor_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_reference_predictor_arn(input);
+            self
+        }
+        /// <p>The accuracy metric used to optimize the predictor.</p>
+        pub fn optimization_metric(mut self, inp: crate::model::OptimizationMetric) -> Self {
+            self.inner = self.inner.optimization_metric(inp);
+            self
+        }
+        /// <p>The accuracy metric used to optimize the predictor.</p>
+        pub fn set_optimization_metric(
+            mut self,
+            input: std::option::Option<crate::model::OptimizationMetric>,
+        ) -> Self {
+            self.inner = self.inner.set_optimization_metric(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn explain_predictor(mut self, inp: bool) -> Self {
+            self.inner = self.inner.explain_predictor(inp);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_explain_predictor(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_explain_predictor(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Optional metadata to help you categorize and organize your predictors. Each tag
+        /// consists of a key and an optional value, both of which you define. Tag keys and values
+        /// are case sensitive.</p>
+        /// <p>The following restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique and each tag key must have one
+        /// value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum number of tags per resource: 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
+        /// and + - = . _ : / @. If your tagging schema is used across other services and
+        /// resources, the character restrictions of those services also apply. </p>
+        /// </li>
+        /// <li>
+        /// <p>Key prefixes cannot include any upper or lowercase combination of
+        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
+        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
+        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
+        /// with only the key prefix of <code>aws</code> do not count against your tags per
+        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
+        /// </li>
+        /// </ul>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        /// <p>Optional metadata to help you categorize and organize your predictors. Each tag
+        /// consists of a key and an optional value, both of which you define. Tag keys and values
+        /// are case sensitive.</p>
+        /// <p>The following restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique and each tag key must have one
+        /// value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum number of tags per resource: 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
+        /// and + - = . _ : / @. If your tagging schema is used across other services and
+        /// resources, the character restrictions of those services also apply. </p>
+        /// </li>
+        /// <li>
+        /// <p>Key prefixes cannot include any upper or lowercase combination of
+        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
+        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
+        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
+        /// with only the key prefix of <code>aws</code> do not count against your tags per
+        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateDataset`.
     ///
     /// <p>Creates an Amazon Forecast dataset. The information about the dataset that you provide helps
@@ -1097,6 +1536,558 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateExplainability`.
+    ///
+    /// <note>
+    /// <p>Explainability is only available for Forecasts and Predictors generated from an
+    /// AutoPredictor (<a>CreateAutoPredictor</a>)</p>
+    /// </note>
+    /// <p>Creates an Amazon Forecast Explainability.</p>
+    /// <p>Explainability helps you better understand how the attributes in your datasets impact
+    /// forecast. Amazon Forecast uses a metric called Impact scores to quantify the relative
+    /// impact of each attribute and determine whether they increase or decrease forecast
+    /// values.</p>
+    /// <p>To enable Forecast Explainability, your predictor must include at least one of the
+    /// following: related time series, item metadata, or additional datasets like Holidays and
+    /// the Weather Index.</p>
+    /// <p>CreateExplainability accepts either a Predictor ARN or Forecast ARN. To receive
+    /// aggregated Impact scores for all time series and time points in your datasets, provide a
+    /// Predictor ARN. To receive Impact scores for specific time series and time points,
+    /// provide a Forecast ARN.</p>
+    /// <p>
+    /// <b>CreateExplainability with a Predictor ARN</b>
+    /// </p>
+    /// <note>
+    /// <p>You can only have one Explainability resource per predictor. If you already
+    /// enabled <code>ExplainPredictor</code> in <a>CreateAutoPredictor</a>, that
+    /// predictor already has an Explainability resource.</p>
+    /// </note>
+    /// <p>The following parameters are required when providing a Predictor ARN:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ExplainabilityName</code> - A unique name for the Explainability.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ResourceArn</code> - The Arn of the predictor.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TimePointGranularity</code> - Must be set to “ALL”.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TimeSeriesGranularity</code> - Must be set to “ALL”.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Do not specify a value for the following parameters:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DataSource</code> - Only valid when TimeSeriesGranularity is
+    /// “SPECIFIC”.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Schema</code> - Only valid when TimeSeriesGranularity is
+    /// “SPECIFIC”.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>StartDateTime</code> - Only valid when TimePointGranularity is
+    /// “SPECIFIC”.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EndDateTime</code> - Only valid when TimePointGranularity is
+    /// “SPECIFIC”.</p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// <b>CreateExplainability with a Forecast ARN</b>
+    /// </p>
+    /// <note>
+    /// <p>You can specify a maximum of 50 time series and 1500 time points.</p>
+    /// </note>
+    /// <p>The following parameters are required when providing a Predictor ARN:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ExplainabilityName</code> - A unique name for the Explainability.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ResourceArn</code> - The Arn of the forecast.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TimePointGranularity</code> - Either “ALL” or “SPECIFIC”.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TimeSeriesGranularity</code> - Either “ALL” or “SPECIFIC”.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you set TimeSeriesGranularity to “SPECIFIC”, you must also provide the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DataSource</code> - The S3 location of the CSV file specifying your time
+    /// series.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Schema</code> - The Schema defines the attributes and attribute types
+    /// listed in the Data Source.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you set TimePointGranularity to “SPECIFIC”, you must also provide the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>StartDateTime</code> - The first timestamp in the range of time
+    /// points.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EndDateTime</code> - The last timestamp in the range of time
+    /// points.</p>
+    /// </li>
+    /// </ul>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateExplainability<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_explainability_input::Builder,
+    }
+    impl<C, M, R> CreateExplainability<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateExplainability`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateExplainabilityOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateExplainabilityError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateExplainabilityInputOperationOutputAlias,
+                crate::output::CreateExplainabilityOutput,
+                crate::error::CreateExplainabilityError,
+                crate::input::CreateExplainabilityInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique name for the Explainability.</p>
+        pub fn explainability_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_name(inp);
+            self
+        }
+        /// <p>A unique name for the Explainability.</p>
+        pub fn set_explainability_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_explainability_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
+        /// Explainability.</p>
+        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
+        /// Explainability.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// <p>The configuration settings that define the granularity of time series and time points
+        /// for the Explainability.</p>
+        pub fn explainability_config(mut self, inp: crate::model::ExplainabilityConfig) -> Self {
+            self.inner = self.inner.explainability_config(inp);
+            self
+        }
+        /// <p>The configuration settings that define the granularity of time series and time points
+        /// for the Explainability.</p>
+        pub fn set_explainability_config(
+            mut self,
+            input: std::option::Option<crate::model::ExplainabilityConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_explainability_config(input);
+            self
+        }
+        /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to
+        /// access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the
+        /// <a>CreateDatasetImportJob</a> request.</p>
+        pub fn data_source(mut self, inp: crate::model::DataSource) -> Self {
+            self.inner = self.inner.data_source(inp);
+            self
+        }
+        /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to
+        /// access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the
+        /// <a>CreateDatasetImportJob</a> request.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.inner = self.inner.set_data_source(input);
+            self
+        }
+        /// <p>Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.</p>
+        pub fn schema(mut self, inp: crate::model::Schema) -> Self {
+            self.inner = self.inner.schema(inp);
+            self
+        }
+        /// <p>Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.</p>
+        pub fn set_schema(mut self, input: std::option::Option<crate::model::Schema>) -> Self {
+            self.inner = self.inner.set_schema(input);
+            self
+        }
+        /// <p>Create an Expainability visualization that is viewable within the AWS console.</p>
+        pub fn enable_visualization(mut self, inp: bool) -> Self {
+            self.inner = self.inner.enable_visualization(inp);
+            self
+        }
+        /// <p>Create an Expainability visualization that is viewable within the AWS console.</p>
+        pub fn set_enable_visualization(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_visualization(input);
+            self
+        }
+        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first
+        /// point for the Explainability.</p>
+        pub fn start_date_time(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_date_time(inp);
+            self
+        }
+        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first
+        /// point for the Explainability.</p>
+        pub fn set_start_date_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_start_date_time(input);
+            self
+        }
+        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last
+        /// time point for the Explainability.</p>
+        pub fn end_date_time(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.end_date_time(inp);
+            self
+        }
+        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last
+        /// time point for the Explainability.</p>
+        pub fn set_end_date_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_end_date_time(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Optional metadata to help you categorize and organize your resources. Each tag
+        /// consists of a key and an optional value, both of which you define. Tag keys and values
+        /// are case sensitive.</p>
+        /// <p>The following restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique and each tag key must have one
+        /// value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum number of tags per resource: 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
+        /// and + - = . _ : / @. If your tagging schema is used across other services and
+        /// resources, the character restrictions of those services also apply. </p>
+        /// </li>
+        /// <li>
+        /// <p>Key prefixes cannot include any upper or lowercase combination of
+        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
+        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
+        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
+        /// with only the key prefix of <code>aws</code> do not count against your tags per
+        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
+        /// </li>
+        /// </ul>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        /// <p>Optional metadata to help you categorize and organize your resources. Each tag
+        /// consists of a key and an optional value, both of which you define. Tag keys and values
+        /// are case sensitive.</p>
+        /// <p>The following restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique and each tag key must have one
+        /// value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum number of tags per resource: 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
+        /// and + - = . _ : / @. If your tagging schema is used across other services and
+        /// resources, the character restrictions of those services also apply. </p>
+        /// </li>
+        /// <li>
+        /// <p>Key prefixes cannot include any upper or lowercase combination of
+        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
+        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
+        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
+        /// with only the key prefix of <code>aws</code> do not count against your tags per
+        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateExplainabilityExport`.
+    ///
+    /// <p>Exports an Explainability resource created by the <a>CreateExplainability</a> operation. Exported files are exported to an Amazon Simple Storage Service (Amazon
+    /// S3) bucket.</p>
+    /// <p>You must specify a <a>DataDestination</a> object that includes an Amazon S3
+    /// bucket and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3
+    /// bucket. For more information, see <a>aws-forecast-iam-roles</a>.</p>
+    /// <note>
+    /// <p>The <code>Status</code> of the export job must be <code>ACTIVE</code> before you
+    /// can access the export in your Amazon S3 bucket. To get the status, use the <a>DescribeExplainabilityExport</a> operation.</p>
+    /// </note>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateExplainabilityExport<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_explainability_export_input::Builder,
+    }
+    impl<C, M, R> CreateExplainabilityExport<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateExplainabilityExport`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateExplainabilityExportOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateExplainabilityExportError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateExplainabilityExportInputOperationOutputAlias,
+                crate::output::CreateExplainabilityExportOutput,
+                crate::error::CreateExplainabilityExportError,
+                crate::input::CreateExplainabilityExportInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique name for the Explainability export.</p>
+        pub fn explainability_export_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_export_name(inp);
+            self
+        }
+        /// <p>A unique name for the Explainability export.</p>
+        pub fn set_explainability_export_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_explainability_export_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Explainability to export.</p>
+        pub fn explainability_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Explainability to export.</p>
+        pub fn set_explainability_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_explainability_arn(input);
+            self
+        }
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
+        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        pub fn destination(mut self, inp: crate::model::DataDestination) -> Self {
+            self.inner = self.inner.destination(inp);
+            self
+        }
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
+        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        pub fn set_destination(
+            mut self,
+            input: std::option::Option<crate::model::DataDestination>,
+        ) -> Self {
+            self.inner = self.inner.set_destination(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Optional metadata to help you categorize and organize your resources. Each tag
+        /// consists of a key and an optional value, both of which you define. Tag keys and values
+        /// are case sensitive.</p>
+        /// <p>The following restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique and each tag key must have one
+        /// value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum number of tags per resource: 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
+        /// and + - = . _ : / @. If your tagging schema is used across other services and
+        /// resources, the character restrictions of those services also apply. </p>
+        /// </li>
+        /// <li>
+        /// <p>Key prefixes cannot include any upper or lowercase combination of
+        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
+        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
+        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
+        /// with only the key prefix of <code>aws</code> do not count against your tags per
+        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
+        /// </li>
+        /// </ul>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        /// <p>Optional metadata to help you categorize and organize your resources. Each tag
+        /// consists of a key and an optional value, both of which you define. Tag keys and values
+        /// are case sensitive.</p>
+        /// <p>The following restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique and each tag key must have one
+        /// value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum number of tags per resource: 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
+        /// and + - = . _ : / @. If your tagging schema is used across other services and
+        /// resources, the character restrictions of those services also apply. </p>
+        /// </li>
+        /// <li>
+        /// <p>Key prefixes cannot include any upper or lowercase combination of
+        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
+        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
+        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
+        /// with only the key prefix of <code>aws</code> do not count against your tags per
+        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateForecast`.
     ///
     /// <p>Creates a forecast for each item in the <code>TARGET_TIME_SERIES</code> dataset that was
@@ -1475,35 +2466,36 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePredictor`.
     ///
+    /// <note>
+    /// <p> This operation creates a legacy predictor that does not include all the predictor
+    /// functionalities provided by Amazon Forecast. To create a predictor that is compatible with all
+    /// aspects of Forecast, use CreateAutoPredictor.</p>
+    /// </note>
     /// <p>Creates an Amazon Forecast predictor.</p>
-    /// <p>In the request, provide a dataset group and either specify an algorithm or let
-    /// Amazon Forecast choose an algorithm for you using AutoML. If you specify an algorithm, you also can
-    /// override algorithm-specific hyperparameters.</p>
-    /// <p>Amazon Forecast uses the algorithm to train a predictor using the latest version of the
-    /// datasets in the specified dataset group. You can then generate a
-    /// forecast using the <a>CreateForecast</a> operation.</p>
-    /// <p>
-    /// To see the evaluation metrics, use the <a>GetAccuracyMetrics</a> operation.
-    /// </p>
-    /// <p>You can specify a featurization configuration to fill and aggregate the data
-    /// fields in the <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more
-    /// information, see <a>FeaturizationConfig</a>.</p>
+    /// <p>In the request, provide a dataset group and either specify an algorithm or let Amazon Forecast
+    /// choose an algorithm for you using AutoML. If you specify an algorithm, you also can override
+    /// algorithm-specific hyperparameters.</p>
+    /// <p>Amazon Forecast uses the algorithm to train a predictor using the latest version of the datasets
+    /// in the specified dataset group. You can then generate a forecast using the <a>CreateForecast</a> operation.</p>
+    /// <p> To see the evaluation metrics, use the <a>GetAccuracyMetrics</a> operation. </p>
+    /// <p>You can specify a featurization configuration to fill and aggregate the data fields in the
+    /// <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more information, see
+    /// <a>FeaturizationConfig</a>.</p>
     /// <p>For RELATED_TIME_SERIES datasets, <code>CreatePredictor</code> verifies that the
     /// <code>DataFrequency</code> specified when the dataset was created matches the
     /// <code>ForecastFrequency</code>. TARGET_TIME_SERIES datasets don't have this restriction.
     /// Amazon Forecast also verifies the delimiter and timestamp format. For more information, see <a>howitworks-datasets-groups</a>.</p>
     /// <p>By default, predictors are trained and evaluated at the 0.1 (P10), 0.5 (P50), and 0.9
-    /// (P90) quantiles. You can choose custom forecast types to train and evaluate your predictor
-    /// by setting the <code>ForecastTypes</code>.
-    /// </p>
+    /// (P90) quantiles. You can choose custom forecast types to train and evaluate your predictor by
+    /// setting the <code>ForecastTypes</code>. </p>
     /// <p>
     /// <b>AutoML</b>
     /// </p>
     /// <p>If you want Amazon Forecast to evaluate each algorithm and choose the one that minimizes the
     /// <code>objective function</code>, set <code>PerformAutoML</code> to <code>true</code>. The
     /// <code>objective function</code> is defined as the mean of the weighted losses over the
-    /// forecast types. By default, these are the p10, p50, and p90
-    /// quantile losses. For more information, see <a>EvaluationResult</a>.</p>
+    /// forecast types. By default, these are the p10, p50, and p90 quantile losses. For more
+    /// information, see <a>EvaluationResult</a>.</p>
     /// <p>When AutoML is enabled, the following properties are disallowed:</p>
     /// <ul>
     /// <li>
@@ -1717,19 +2709,17 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
         ///
-        /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types.
-        /// Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify
-        /// the mean forecast with <code>mean</code>.
-        /// </p>
+        /// <p>Specifies the forecast types used to train a predictor. You can specify up to five
+        /// forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
+        /// higher. You can also specify the mean forecast with <code>mean</code>. </p>
         /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
         pub fn forecast_types(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.forecast_types(inp);
             self
         }
-        /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types.
-        /// Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify
-        /// the mean forecast with <code>mean</code>.
-        /// </p>
+        /// <p>Specifies the forecast types used to train a predictor. You can specify up to five
+        /// forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
+        /// higher. You can also specify the mean forecast with <code>mean</code>. </p>
         /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
         pub fn set_forecast_types(
             mut self,
@@ -2449,6 +3439,154 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteExplainability`.
+    ///
+    /// <p>Deletes an Explainability resource.</p>
+    /// <p>You can delete only predictor that have a status of <code>ACTIVE</code> or
+    /// <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeExplainability</a> operation.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteExplainability<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_explainability_input::Builder,
+    }
+    impl<C, M, R> DeleteExplainability<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteExplainability`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteExplainabilityOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteExplainabilityError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteExplainabilityInputOperationOutputAlias,
+                crate::output::DeleteExplainabilityOutput,
+                crate::error::DeleteExplainabilityError,
+                crate::input::DeleteExplainabilityInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
+        pub fn explainability_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
+        pub fn set_explainability_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_explainability_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteExplainabilityExport`.
+    ///
+    /// <p>Deletes an Explainability export job.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteExplainabilityExport<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_explainability_export_input::Builder,
+    }
+    impl<C, M, R> DeleteExplainabilityExport<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteExplainabilityExport`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteExplainabilityExportOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteExplainabilityExportError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteExplainabilityExportInputOperationOutputAlias,
+                crate::output::DeleteExplainabilityExportOutput,
+                crate::error::DeleteExplainabilityExportError,
+                crate::input::DeleteExplainabilityExportInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
+        pub fn explainability_export_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_export_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
+        pub fn set_explainability_export_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_explainability_export_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteForecast`.
     ///
     /// <p>Deletes a forecast created using the <a>CreateForecast</a> operation. You can
@@ -2852,6 +3990,79 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeAutoPredictor`.
+    ///
+    /// <p>Describes a predictor created using the CreateAutoPredictor operation.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeAutoPredictor<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_auto_predictor_input::Builder,
+    }
+    impl<C, M, R> DescribeAutoPredictor<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeAutoPredictor`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeAutoPredictorOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeAutoPredictorError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeAutoPredictorInputOperationOutputAlias,
+                crate::output::DescribeAutoPredictorOutput,
+                crate::error::DescribeAutoPredictorError,
+                crate::input::DescribeAutoPredictorInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
+        pub fn predictor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
+        pub fn set_predictor_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_predictor_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeDataset`.
     ///
     /// <p>Describes an Amazon Forecast dataset created using the <a>CreateDataset</a>
@@ -3146,6 +4357,152 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeExplainability`.
+    ///
+    /// <p>Describes an Explainability resource created using the <a>CreateExplainability</a> operation.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeExplainability<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_explainability_input::Builder,
+    }
+    impl<C, M, R> DescribeExplainability<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeExplainability`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeExplainabilityOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeExplainabilityError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeExplainabilityInputOperationOutputAlias,
+                crate::output::DescribeExplainabilityOutput,
+                crate::error::DescribeExplainabilityError,
+                crate::input::DescribeExplainabilityInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
+        pub fn explainability_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
+        pub fn set_explainability_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_explainability_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeExplainabilityExport`.
+    ///
+    /// <p>Describes an Explainability export created using the <a>CreateExplainabilityExport</a> operation.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeExplainabilityExport<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_explainability_export_input::Builder,
+    }
+    impl<C, M, R> DescribeExplainabilityExport<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeExplainabilityExport`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeExplainabilityExportOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeExplainabilityExportError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeExplainabilityExportInputOperationOutputAlias,
+                crate::output::DescribeExplainabilityExportOutput,
+                crate::error::DescribeExplainabilityExportError,
+                crate::input::DescribeExplainabilityExportInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
+        pub fn explainability_export_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_export_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
+        pub fn set_explainability_export_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_explainability_export_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeForecast`.
     ///
     /// <p>Describes a forecast created using the <a>CreateForecast</a> operation.</p>
@@ -3343,6 +4700,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribePredictor`.
     ///
+    /// <note>
+    /// <p> This operation is only valid for legacy predictors created with CreatePredictor. If you
+    /// are not using a legacy predictor, use DescribeAutoPredictor.</p>
+    /// <p>To upgrade a legacy predictor to AutoPredictor, see Upgrading to AutoPredictor.</p>
+    /// </note>
     /// <p>Describes a predictor created using the <a>CreatePredictor</a>
     /// operation.</p>
     /// <p>In addition to listing the properties provided in the <code>CreatePredictor</code>
@@ -3972,6 +5334,303 @@ pub mod fluent_builders {
         /// <p>The number of items to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListExplainabilities`.
+    ///
+    /// <p>Returns a list of Explainability resources created using the <a>CreateExplainability</a> operation. This operation returns a summary for
+    /// each Explainability. You can filter the list using an array of <a>Filter</a>
+    /// objects.</p>
+    /// <p>To retrieve the complete set of properties for a particular Explainability resource,
+    /// use the ARN with the <a>DescribeExplainability</a> operation.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListExplainabilities<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_explainabilities_input::Builder,
+    }
+    impl<C, M, R> ListExplainabilities<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListExplainabilities`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListExplainabilitiesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListExplainabilitiesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListExplainabilitiesInputOperationOutputAlias,
+                crate::output::ListExplainabilitiesOutput,
+                crate::error::ListExplainabilitiesError,
+                crate::input::ListExplainabilitiesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a
+        /// NextToken. To retrieve the next set of results, use the token in the next request.
+        /// Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a
+        /// NextToken. To retrieve the next set of results, use the token in the next request.
+        /// Tokens expire after 24 hours.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The number of items returned in the response.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The number of items returned in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
+        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
+        /// include or exclude the resources that match the statement from the list. The match
+        /// statement consists of a key and a value.</p>
+        /// <p>
+        /// <b>Filter properties</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Condition</code> - The condition to apply. Valid values are
+        /// <code>IS</code> and <code>IS_NOT</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+        /// <code>PredictorArn</code> and <code>Status</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Value</code> - The value to match.</p>
+        /// </li>
+        /// </ul>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
+        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
+        /// include or exclude the resources that match the statement from the list. The match
+        /// statement consists of a key and a value.</p>
+        /// <p>
+        /// <b>Filter properties</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Condition</code> - The condition to apply. Valid values are
+        /// <code>IS</code> and <code>IS_NOT</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+        /// <code>PredictorArn</code> and <code>Status</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Value</code> - The value to match.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListExplainabilityExports`.
+    ///
+    /// <p>Returns a list of Explainability exports created using the <a>CreateExplainabilityExport</a> operation. This operation returns a summary
+    /// for each Explainability export. You can filter the list using an array of <a>Filter</a> objects.</p>
+    /// <p>To retrieve the complete set of properties for a particular Explainability export, use
+    /// the ARN with the <a>DescribeExplainability</a> operation.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListExplainabilityExports<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_explainability_exports_input::Builder,
+    }
+    impl<C, M, R> ListExplainabilityExports<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListExplainabilityExports`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListExplainabilityExportsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListExplainabilityExportsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListExplainabilityExportsInputOperationOutputAlias,
+                crate::output::ListExplainabilityExportsOutput,
+                crate::error::ListExplainabilityExportsError,
+                crate::input::ListExplainabilityExportsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a
+        /// NextToken. To retrieve the next set of results, use the token in the next request.
+        /// Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a
+        /// NextToken. To retrieve the next set of results, use the token in the next request.
+        /// Tokens expire after 24 hours.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The number of items to return in the response.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The number of items to return in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
+        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
+        /// include or exclude resources that match the statement from the list. The match statement
+        /// consists of a key and a value.</p>
+        /// <p>
+        /// <b>Filter properties</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Condition</code> - The condition to apply. Valid values are
+        /// <code>IS</code> and <code>IS_NOT</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+        /// <code>PredictorArn</code> and <code>Status</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Value</code> - The value to match.</p>
+        /// </li>
+        /// </ul>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
+        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
+        /// include or exclude resources that match the statement from the list. The match statement
+        /// consists of a key and a value.</p>
+        /// <p>
+        /// <b>Filter properties</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Condition</code> - The condition to apply. Valid values are
+        /// <code>IS</code> and <code>IS_NOT</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+        /// <code>PredictorArn</code> and <code>Status</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Value</code> - The value to match.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
             self
         }
     }
@@ -5105,7 +6764,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -5128,7 +6793,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

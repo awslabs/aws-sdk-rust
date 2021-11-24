@@ -52,6 +52,7 @@ pub type AssociateConnectionAliasInputOperationRetryAlias = aws_http::AwsErrorRe
 impl AssociateConnectionAliasInput {
     /// Consumes the builder and constructs an Operation<[`AssociateConnectionAlias`](crate::operation::AssociateConnectionAlias)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -110,11 +111,14 @@ impl AssociateConnectionAliasInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -225,6 +229,7 @@ pub type AssociateIpGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl AssociateIpGroupsInput {
     /// Consumes the builder and constructs an Operation<[`AssociateIpGroups`](crate::operation::AssociateIpGroups)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -281,11 +286,14 @@ impl AssociateIpGroupsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -396,6 +404,7 @@ pub type AuthorizeIpRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl AuthorizeIpRulesInput {
     /// Consumes the builder and constructs an Operation<[`AuthorizeIpRules`](crate::operation::AuthorizeIpRules)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -452,11 +461,14 @@ impl AuthorizeIpRulesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -609,6 +621,7 @@ pub type CopyWorkspaceImageInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl CopyWorkspaceImageInput {
     /// Consumes the builder and constructs an Operation<[`CopyWorkspaceImage`](crate::operation::CopyWorkspaceImage)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -665,11 +678,14 @@ impl CopyWorkspaceImageInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -795,6 +811,7 @@ pub type CreateConnectionAliasInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl CreateConnectionAliasInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnectionAlias`](crate::operation::CreateConnectionAlias)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -853,11 +870,14 @@ impl CreateConnectionAliasInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1001,6 +1021,7 @@ pub type CreateIpGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateIpGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateIpGroup`](crate::operation::CreateIpGroup)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1057,11 +1078,14 @@ impl CreateIpGroupInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1174,6 +1198,7 @@ pub type CreateTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateTagsInput {
     /// Consumes the builder and constructs an Operation<[`CreateTags`](crate::operation::CreateTags)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1229,11 +1254,14 @@ impl CreateTagsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1382,6 +1410,7 @@ pub type CreateUpdatedWorkspaceImageInputOperationRetryAlias = aws_http::AwsErro
 impl CreateUpdatedWorkspaceImageInput {
     /// Consumes the builder and constructs an Operation<[`CreateUpdatedWorkspaceImage`](crate::operation::CreateUpdatedWorkspaceImage)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1439,11 +1468,14 @@ impl CreateUpdatedWorkspaceImageInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1636,6 +1668,7 @@ pub type CreateWorkspaceBundleInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl CreateWorkspaceBundleInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkspaceBundle`](crate::operation::CreateWorkspaceBundle)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1694,11 +1727,14 @@ impl CreateWorkspaceBundleInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1797,6 +1833,7 @@ pub type CreateWorkspacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl CreateWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkspaces`](crate::operation::CreateWorkspaces)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1853,11 +1890,14 @@ impl CreateWorkspacesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1947,6 +1987,7 @@ pub type DeleteConnectionAliasInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DeleteConnectionAliasInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnectionAlias`](crate::operation::DeleteConnectionAlias)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2005,11 +2046,14 @@ impl DeleteConnectionAliasInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2099,6 +2143,7 @@ pub type DeleteIpGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteIpGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIpGroup`](crate::operation::DeleteIpGroup)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2155,11 +2200,14 @@ impl DeleteIpGroupInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2272,6 +2320,7 @@ pub type DeleteTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteTagsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTags`](crate::operation::DeleteTags)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2327,11 +2376,14 @@ impl DeleteTagsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2421,6 +2473,7 @@ pub type DeleteWorkspaceBundleInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DeleteWorkspaceBundleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkspaceBundle`](crate::operation::DeleteWorkspaceBundle)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2479,11 +2532,14 @@ impl DeleteWorkspaceBundleInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2573,6 +2629,7 @@ pub type DeleteWorkspaceImageInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DeleteWorkspaceImageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkspaceImage`](crate::operation::DeleteWorkspaceImage)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2631,11 +2688,14 @@ impl DeleteWorkspaceImageInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2730,6 +2790,7 @@ pub type DeregisterWorkspaceDirectoryInputOperationRetryAlias = aws_http::AwsErr
 impl DeregisterWorkspaceDirectoryInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterWorkspaceDirectory`](crate::operation::DeregisterWorkspaceDirectory)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2787,11 +2848,14 @@ impl DeregisterWorkspaceDirectoryInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2867,6 +2931,7 @@ pub type DescribeAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl DescribeAccountInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccount`](crate::operation::DescribeAccount)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2923,11 +2988,14 @@ impl DescribeAccountInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3012,6 +3080,7 @@ pub type DescribeAccountModificationsInputOperationRetryAlias = aws_http::AwsErr
 impl DescribeAccountModificationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountModifications`](crate::operation::DescribeAccountModifications)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3069,11 +3138,14 @@ impl DescribeAccountModificationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3173,6 +3245,7 @@ pub type DescribeClientPropertiesInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DescribeClientPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClientProperties`](crate::operation::DescribeClientProperties)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3231,11 +3304,14 @@ impl DescribeClientPropertiesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3373,6 +3449,7 @@ pub type DescribeConnectionAliasesInputOperationRetryAlias = aws_http::AwsErrorR
 impl DescribeConnectionAliasesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnectionAliases`](crate::operation::DescribeConnectionAliases)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3431,11 +3508,14 @@ impl DescribeConnectionAliasesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3552,6 +3632,7 @@ pub type DescribeConnectionAliasPermissionsInputOperationRetryAlias = aws_http::
 impl DescribeConnectionAliasPermissionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnectionAliasPermissions`](crate::operation::DescribeConnectionAliasPermissions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3609,11 +3690,14 @@ impl DescribeConnectionAliasPermissionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3738,6 +3822,7 @@ pub type DescribeIpGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DescribeIpGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIpGroups`](crate::operation::DescribeIpGroups)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3794,11 +3879,14 @@ impl DescribeIpGroupsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3890,6 +3978,7 @@ pub type DescribeTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeTagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTags`](crate::operation::DescribeTags)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3945,11 +4034,14 @@ impl DescribeTagsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4077,6 +4169,7 @@ pub type DescribeWorkspaceBundlesInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DescribeWorkspaceBundlesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceBundles`](crate::operation::DescribeWorkspaceBundles)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4135,11 +4228,14 @@ impl DescribeWorkspaceBundlesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4267,6 +4363,7 @@ pub type DescribeWorkspaceDirectoriesInputOperationRetryAlias = aws_http::AwsErr
 impl DescribeWorkspaceDirectoriesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceDirectories`](crate::operation::DescribeWorkspaceDirectories)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4324,11 +4421,14 @@ impl DescribeWorkspaceDirectoriesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4445,6 +4545,7 @@ pub type DescribeWorkspaceImagePermissionsInputOperationRetryAlias = aws_http::A
 impl DescribeWorkspaceImagePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceImagePermissions`](crate::operation::DescribeWorkspaceImagePermissions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4502,11 +4603,14 @@ impl DescribeWorkspaceImagePermissionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4647,6 +4751,7 @@ pub type DescribeWorkspaceImagesInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DescribeWorkspaceImagesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceImages`](crate::operation::DescribeWorkspaceImages)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4705,11 +4810,14 @@ impl DescribeWorkspaceImagesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4884,6 +4992,7 @@ pub type DescribeWorkspacesInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl DescribeWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaces`](crate::operation::DescribeWorkspaces)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4940,11 +5049,14 @@ impl DescribeWorkspacesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5058,6 +5170,7 @@ pub type DescribeWorkspacesConnectionStatusInputOperationRetryAlias = aws_http::
 impl DescribeWorkspacesConnectionStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspacesConnectionStatus`](crate::operation::DescribeWorkspacesConnectionStatus)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5115,11 +5228,14 @@ impl DescribeWorkspacesConnectionStatusInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5210,6 +5326,7 @@ pub type DescribeWorkspaceSnapshotsInputOperationRetryAlias = aws_http::AwsError
 impl DescribeWorkspaceSnapshotsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceSnapshots`](crate::operation::DescribeWorkspaceSnapshots)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5268,11 +5385,14 @@ impl DescribeWorkspaceSnapshotsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5363,6 +5483,7 @@ pub type DisassociateConnectionAliasInputOperationRetryAlias = aws_http::AwsErro
 impl DisassociateConnectionAliasInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateConnectionAlias`](crate::operation::DisassociateConnectionAlias)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5420,11 +5541,14 @@ impl DisassociateConnectionAliasInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5535,6 +5659,7 @@ pub type DisassociateIpGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DisassociateIpGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateIpGroups`](crate::operation::DisassociateIpGroups)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5593,11 +5718,14 @@ impl DisassociateIpGroupsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5801,6 +5929,7 @@ pub type ImportWorkspaceImageInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl ImportWorkspaceImageInput {
     /// Consumes the builder and constructs an Operation<[`ImportWorkspaceImage`](crate::operation::ImportWorkspaceImage)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5859,11 +5988,14 @@ impl ImportWorkspaceImageInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5988,6 +6120,7 @@ pub type ListAvailableManagementCidrRangesInputOperationRetryAlias = aws_http::A
 impl ListAvailableManagementCidrRangesInput {
     /// Consumes the builder and constructs an Operation<[`ListAvailableManagementCidrRanges`](crate::operation::ListAvailableManagementCidrRanges)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6045,11 +6178,14 @@ impl ListAvailableManagementCidrRangesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6154,6 +6290,7 @@ pub type MigrateWorkspaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl MigrateWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`MigrateWorkspace`](crate::operation::MigrateWorkspace)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6210,11 +6347,14 @@ impl MigrateWorkspaceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6339,6 +6479,7 @@ pub type ModifyAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ModifyAccountInput {
     /// Consumes the builder and constructs an Operation<[`ModifyAccount`](crate::operation::ModifyAccount)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6394,11 +6535,14 @@ impl ModifyAccountInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6503,6 +6647,7 @@ pub type ModifyClientPropertiesInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl ModifyClientPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyClientProperties`](crate::operation::ModifyClientProperties)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6561,11 +6706,14 @@ impl ModifyClientPropertiesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6675,6 +6823,7 @@ pub type ModifySelfservicePermissionsInputOperationRetryAlias = aws_http::AwsErr
 impl ModifySelfservicePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`ModifySelfservicePermissions`](crate::operation::ModifySelfservicePermissions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6732,11 +6881,14 @@ impl ModifySelfservicePermissionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6846,6 +6998,7 @@ pub type ModifyWorkspaceAccessPropertiesInputOperationRetryAlias = aws_http::Aws
 impl ModifyWorkspaceAccessPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyWorkspaceAccessProperties`](crate::operation::ModifyWorkspaceAccessProperties)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6903,11 +7056,14 @@ impl ModifyWorkspaceAccessPropertiesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7017,6 +7173,7 @@ pub type ModifyWorkspaceCreationPropertiesInputOperationRetryAlias = aws_http::A
 impl ModifyWorkspaceCreationPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyWorkspaceCreationProperties`](crate::operation::ModifyWorkspaceCreationProperties)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7074,11 +7231,14 @@ impl ModifyWorkspaceCreationPropertiesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7184,6 +7344,7 @@ pub type ModifyWorkspacePropertiesInputOperationRetryAlias = aws_http::AwsErrorR
 impl ModifyWorkspacePropertiesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyWorkspaceProperties`](crate::operation::ModifyWorkspaceProperties)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7242,11 +7403,14 @@ impl ModifyWorkspacePropertiesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7351,6 +7515,7 @@ pub type ModifyWorkspaceStateInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl ModifyWorkspaceStateInput {
     /// Consumes the builder and constructs an Operation<[`ModifyWorkspaceState`](crate::operation::ModifyWorkspaceState)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7409,11 +7574,14 @@ impl ModifyWorkspaceStateInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7516,6 +7684,7 @@ pub type RebootWorkspacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl RebootWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`RebootWorkspaces`](crate::operation::RebootWorkspaces)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7572,11 +7741,14 @@ impl RebootWorkspacesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7679,6 +7851,7 @@ pub type RebuildWorkspacesInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl RebuildWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`RebuildWorkspaces`](crate::operation::RebuildWorkspaces)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7735,11 +7908,14 @@ impl RebuildWorkspacesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7932,6 +8108,7 @@ pub type RegisterWorkspaceDirectoryInputOperationRetryAlias = aws_http::AwsError
 impl RegisterWorkspaceDirectoryInput {
     /// Consumes the builder and constructs an Operation<[`RegisterWorkspaceDirectory`](crate::operation::RegisterWorkspaceDirectory)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7990,11 +8167,14 @@ impl RegisterWorkspaceDirectoryInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8084,6 +8264,7 @@ pub type RestoreWorkspaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl RestoreWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`RestoreWorkspace`](crate::operation::RestoreWorkspace)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8140,11 +8321,14 @@ impl RestoreWorkspaceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8255,6 +8439,7 @@ pub type RevokeIpRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl RevokeIpRulesInput {
     /// Consumes the builder and constructs an Operation<[`RevokeIpRules`](crate::operation::RevokeIpRules)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8311,11 +8496,14 @@ impl RevokeIpRulesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8418,6 +8606,7 @@ pub type StartWorkspacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl StartWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`StartWorkspaces`](crate::operation::StartWorkspaces)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8474,11 +8663,14 @@ impl StartWorkspacesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8581,6 +8773,7 @@ pub type StopWorkspacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StopWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`StopWorkspaces`](crate::operation::StopWorkspaces)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8637,11 +8830,14 @@ impl StopWorkspacesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8744,6 +8940,7 @@ pub type TerminateWorkspacesInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl TerminateWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`TerminateWorkspaces`](crate::operation::TerminateWorkspaces)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8800,11 +8997,14 @@ impl TerminateWorkspacesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8914,6 +9114,7 @@ pub type UpdateConnectionAliasPermissionInputOperationRetryAlias = aws_http::Aws
 impl UpdateConnectionAliasPermissionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnectionAliasPermission`](crate::operation::UpdateConnectionAliasPermission)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8971,11 +9172,14 @@ impl UpdateConnectionAliasPermissionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -9086,6 +9290,7 @@ pub type UpdateRulesOfIpGroupInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl UpdateRulesOfIpGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRulesOfIpGroup`](crate::operation::UpdateRulesOfIpGroup)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9144,11 +9349,14 @@ impl UpdateRulesOfIpGroupInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -9250,6 +9458,7 @@ pub type UpdateWorkspaceBundleInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl UpdateWorkspaceBundleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkspaceBundle`](crate::operation::UpdateWorkspaceBundle)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9308,11 +9517,14 @@ impl UpdateWorkspaceBundleInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -9440,6 +9652,7 @@ pub type UpdateWorkspaceImagePermissionInputOperationRetryAlias = aws_http::AwsE
 impl UpdateWorkspaceImagePermissionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkspaceImagePermission`](crate::operation::UpdateWorkspaceImagePermission)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9497,11 +9710,14 @@ impl UpdateWorkspaceImagePermissionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);

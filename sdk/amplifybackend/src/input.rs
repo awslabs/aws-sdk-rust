@@ -69,6 +69,7 @@ pub type CloneBackendInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CloneBackendInput {
     /// Consumes the builder and constructs an Operation<[`CloneBackend`](crate::operation::CloneBackend)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -155,11 +156,14 @@ impl CloneBackendInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -256,12 +260,12 @@ pub mod create_backend_input {
             self.backend_environment_name = input;
             self
         }
-        /// <p>The resource configuration for the create backend request.</p>
+        /// <p>The resource configuration for creating backend storage.</p>
         pub fn resource_config(mut self, input: crate::model::ResourceConfig) -> Self {
             self.resource_config = Some(input);
             self
         }
-        /// <p>The resource configuration for the create backend request.</p>
+        /// <p>The resource configuration for creating backend storage.</p>
         pub fn set_resource_config(
             mut self,
             input: std::option::Option<crate::model::ResourceConfig>,
@@ -306,6 +310,7 @@ pub type CreateBackendInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateBackendInput {
     /// Consumes the builder and constructs an Operation<[`CreateBackend`](crate::operation::CreateBackend)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -356,11 +361,14 @@ impl CreateBackendInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -495,6 +503,7 @@ pub type CreateBackendApiInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl CreateBackendApiInput {
     /// Consumes the builder and constructs an Operation<[`CreateBackendAPI`](crate::operation::CreateBackendAPI)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -562,11 +571,14 @@ impl CreateBackendApiInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -705,6 +717,7 @@ pub type CreateBackendAuthInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl CreateBackendAuthInput {
     /// Consumes the builder and constructs an Operation<[`CreateBackendAuth`](crate::operation::CreateBackendAuth)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -772,11 +785,14 @@ impl CreateBackendAuthInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -881,6 +897,7 @@ pub type CreateBackendConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl CreateBackendConfigInput {
     /// Consumes the builder and constructs an Operation<[`CreateBackendConfig`](crate::operation::CreateBackendConfig)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -948,11 +965,14 @@ impl CreateBackendConfigInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1003,6 +1023,222 @@ impl CreateBackendConfigInput {
     }
 }
 
+/// See [`CreateBackendStorageInput`](crate::input::CreateBackendStorageInput)
+pub mod create_backend_storage_input {
+    /// A builder for [`CreateBackendStorageInput`](crate::input::CreateBackendStorageInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_id: std::option::Option<std::string::String>,
+        pub(crate) backend_environment_name: std::option::Option<std::string::String>,
+        pub(crate) resource_config:
+            std::option::Option<crate::model::CreateBackendStorageResourceConfig>,
+        pub(crate) resource_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The app ID.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_id = Some(input.into());
+            self
+        }
+        /// <p>The app ID.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_id = input;
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backend_environment_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn set_backend_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backend_environment_name = input;
+            self
+        }
+        /// <p>The resource configuration for creating backend storage.</p>
+        pub fn resource_config(
+            mut self,
+            input: crate::model::CreateBackendStorageResourceConfig,
+        ) -> Self {
+            self.resource_config = Some(input);
+            self
+        }
+        /// <p>The resource configuration for creating backend storage.</p>
+        pub fn set_resource_config(
+            mut self,
+            input: std::option::Option<crate::model::CreateBackendStorageResourceConfig>,
+        ) -> Self {
+            self.resource_config = input;
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateBackendStorageInput`](crate::input::CreateBackendStorageInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateBackendStorageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateBackendStorageInput {
+                app_id: self.app_id,
+                backend_environment_name: self.backend_environment_name,
+                resource_config: self.resource_config,
+                resource_name: self.resource_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateBackendStorageInputOperationOutputAlias = crate::operation::CreateBackendStorage;
+#[doc(hidden)]
+pub type CreateBackendStorageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateBackendStorageInput {
+    /// Consumes the builder and constructs an Operation<[`CreateBackendStorage`](crate::operation::CreateBackendStorage)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateBackendStorage,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreateBackendStorageInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_6 = &_input.app_id;
+            let input_6 =
+                input_6
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "app_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let app_id = aws_smithy_http::label::fmt_string(input_6, false);
+            if app_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "app_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/backend/{AppId}/storage", AppId = app_id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateBackendStorageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateBackendStorageInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_backend_storage(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateBackendStorage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateBackendStorage",
+            "amplifybackend",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateBackendStorageInput`](crate::input::CreateBackendStorageInput)
+    pub fn builder() -> crate::input::create_backend_storage_input::Builder {
+        crate::input::create_backend_storage_input::Builder::default()
+    }
+}
+
 /// See [`CreateTokenInput`](crate::input::CreateTokenInput)
 pub mod create_token_input {
     /// A builder for [`CreateTokenInput`](crate::input::CreateTokenInput)
@@ -1042,6 +1278,7 @@ pub type CreateTokenInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateTokenInput {
     /// Consumes the builder and constructs an Operation<[`CreateToken`](crate::operation::CreateToken)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1056,15 +1293,15 @@ impl CreateTokenInput {
             _input: &crate::input::CreateTokenInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_6 = &_input.app_id;
-            let input_6 =
-                input_6
+            let input_7 = &_input.app_id;
+            let input_7 =
+                input_7
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_6, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_7, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
@@ -1103,11 +1340,14 @@ impl CreateTokenInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1204,6 +1444,7 @@ pub type DeleteBackendInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteBackendInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBackend`](crate::operation::DeleteBackend)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1218,30 +1459,30 @@ impl DeleteBackendInput {
             _input: &crate::input::DeleteBackendInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_7 = &_input.app_id;
-            let input_7 =
-                input_7
+            let input_8 = &_input.app_id;
+            let input_8 =
+                input_8
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_7, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_8, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_8 = &_input.backend_environment_name;
-            let input_8 =
-                input_8
+            let input_9 = &_input.backend_environment_name;
+            let input_9 =
+                input_9
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backend_environment_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backend_environment_name = aws_smithy_http::label::fmt_string(input_8, false);
+            let backend_environment_name = aws_smithy_http::label::fmt_string(input_9, false);
             if backend_environment_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backend_environment_name",
@@ -1285,11 +1526,14 @@ impl DeleteBackendInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1416,6 +1660,7 @@ pub type DeleteBackendApiInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DeleteBackendApiInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBackendAPI`](crate::operation::DeleteBackendAPI)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1430,30 +1675,30 @@ impl DeleteBackendApiInput {
             _input: &crate::input::DeleteBackendApiInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_9 = &_input.app_id;
-            let input_9 =
-                input_9
+            let input_10 = &_input.app_id;
+            let input_10 =
+                input_10
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_9, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_10, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_10 = &_input.backend_environment_name;
-            let input_10 =
-                input_10
+            let input_11 = &_input.backend_environment_name;
+            let input_11 =
+                input_11
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backend_environment_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backend_environment_name = aws_smithy_http::label::fmt_string(input_10, false);
+            let backend_environment_name = aws_smithy_http::label::fmt_string(input_11, false);
             if backend_environment_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backend_environment_name",
@@ -1503,11 +1748,14 @@ impl DeleteBackendApiInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1627,6 +1875,7 @@ pub type DeleteBackendAuthInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl DeleteBackendAuthInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBackendAuth`](crate::operation::DeleteBackendAuth)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1641,30 +1890,30 @@ impl DeleteBackendAuthInput {
             _input: &crate::input::DeleteBackendAuthInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_11 = &_input.app_id;
-            let input_11 =
-                input_11
+            let input_12 = &_input.app_id;
+            let input_12 =
+                input_12
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_11, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_12, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_12 = &_input.backend_environment_name;
-            let input_12 =
-                input_12
+            let input_13 = &_input.backend_environment_name;
+            let input_13 =
+                input_13
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backend_environment_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backend_environment_name = aws_smithy_http::label::fmt_string(input_12, false);
+            let backend_environment_name = aws_smithy_http::label::fmt_string(input_13, false);
             if backend_environment_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backend_environment_name",
@@ -1714,11 +1963,14 @@ impl DeleteBackendAuthInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1766,6 +2018,238 @@ impl DeleteBackendAuthInput {
     /// Creates a new builder-style object to manufacture [`DeleteBackendAuthInput`](crate::input::DeleteBackendAuthInput)
     pub fn builder() -> crate::input::delete_backend_auth_input::Builder {
         crate::input::delete_backend_auth_input::Builder::default()
+    }
+}
+
+/// See [`DeleteBackendStorageInput`](crate::input::DeleteBackendStorageInput)
+pub mod delete_backend_storage_input {
+    /// A builder for [`DeleteBackendStorageInput`](crate::input::DeleteBackendStorageInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_id: std::option::Option<std::string::String>,
+        pub(crate) backend_environment_name: std::option::Option<std::string::String>,
+        pub(crate) resource_name: std::option::Option<std::string::String>,
+        pub(crate) service_name: std::option::Option<crate::model::ServiceName>,
+    }
+    impl Builder {
+        /// <p>The app ID.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_id = Some(input.into());
+            self
+        }
+        /// <p>The app ID.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_id = input;
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backend_environment_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn set_backend_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backend_environment_name = input;
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_name = input;
+            self
+        }
+        /// <p>The name of the storage service.</p>
+        pub fn service_name(mut self, input: crate::model::ServiceName) -> Self {
+            self.service_name = Some(input);
+            self
+        }
+        /// <p>The name of the storage service.</p>
+        pub fn set_service_name(
+            mut self,
+            input: std::option::Option<crate::model::ServiceName>,
+        ) -> Self {
+            self.service_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteBackendStorageInput`](crate::input::DeleteBackendStorageInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteBackendStorageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteBackendStorageInput {
+                app_id: self.app_id,
+                backend_environment_name: self.backend_environment_name,
+                resource_name: self.resource_name,
+                service_name: self.service_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteBackendStorageInputOperationOutputAlias = crate::operation::DeleteBackendStorage;
+#[doc(hidden)]
+pub type DeleteBackendStorageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteBackendStorageInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteBackendStorage`](crate::operation::DeleteBackendStorage)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteBackendStorage,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteBackendStorageInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_14 = &_input.app_id;
+            let input_14 =
+                input_14
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "app_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let app_id = aws_smithy_http::label::fmt_string(input_14, false);
+            if app_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "app_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_15 = &_input.backend_environment_name;
+            let input_15 =
+                input_15
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "backend_environment_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let backend_environment_name = aws_smithy_http::label::fmt_string(input_15, false);
+            if backend_environment_name.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "backend_environment_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/backend/{AppId}/storage/{BackendEnvironmentName}/remove",
+                AppId = app_id,
+                BackendEnvironmentName = backend_environment_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteBackendStorageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteBackendStorageInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_backend_storage(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteBackendStorage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteBackendStorage",
+            "amplifybackend",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteBackendStorageInput`](crate::input::DeleteBackendStorageInput)
+    pub fn builder() -> crate::input::delete_backend_storage_input::Builder {
+        crate::input::delete_backend_storage_input::Builder::default()
     }
 }
 
@@ -1820,6 +2304,7 @@ pub type DeleteTokenInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteTokenInput {
     /// Consumes the builder and constructs an Operation<[`DeleteToken`](crate::operation::DeleteToken)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1834,30 +2319,30 @@ impl DeleteTokenInput {
             _input: &crate::input::DeleteTokenInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_13 = &_input.app_id;
-            let input_13 =
-                input_13
+            let input_16 = &_input.app_id;
+            let input_16 =
+                input_16
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_13, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_16, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_14 = &_input.session_id;
-            let input_14 =
-                input_14
+            let input_17 = &_input.session_id;
+            let input_17 =
+                input_17
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "session_id",
                         details: "cannot be empty or unset",
                     })?;
-            let session_id = aws_smithy_http::label::fmt_string(input_14, false);
+            let session_id = aws_smithy_http::label::fmt_string(input_17, false);
             if session_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "session_id",
@@ -1901,11 +2386,14 @@ impl DeleteTokenInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2018,6 +2506,7 @@ pub type GenerateBackendApiModelsInputOperationRetryAlias = aws_http::AwsErrorRe
 impl GenerateBackendApiModelsInput {
     /// Consumes the builder and constructs an Operation<[`GenerateBackendAPIModels`](crate::operation::GenerateBackendAPIModels)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2032,30 +2521,30 @@ impl GenerateBackendApiModelsInput {
             _input: &crate::input::GenerateBackendApiModelsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_15 = &_input.app_id;
-            let input_15 =
-                input_15
+            let input_18 = &_input.app_id;
+            let input_18 =
+                input_18
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_15, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_18, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_16 = &_input.backend_environment_name;
-            let input_16 =
-                input_16
+            let input_19 = &_input.backend_environment_name;
+            let input_19 =
+                input_19
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backend_environment_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backend_environment_name = aws_smithy_http::label::fmt_string(input_16, false);
+            let backend_environment_name = aws_smithy_http::label::fmt_string(input_19, false);
             if backend_environment_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backend_environment_name",
@@ -2107,11 +2596,14 @@ impl GenerateBackendApiModelsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2216,6 +2708,7 @@ pub type GetBackendInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetBackendInput {
     /// Consumes the builder and constructs an Operation<[`GetBackend`](crate::operation::GetBackend)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2230,15 +2723,15 @@ impl GetBackendInput {
             _input: &crate::input::GetBackendInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_17 = &_input.app_id;
-            let input_17 =
-                input_17
+            let input_20 = &_input.app_id;
+            let input_20 =
+                input_20
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_17, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_20, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
@@ -2282,11 +2775,14 @@ impl GetBackendInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2421,6 +2917,7 @@ pub type GetBackendApiInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetBackendApiInput {
     /// Consumes the builder and constructs an Operation<[`GetBackendAPI`](crate::operation::GetBackendAPI)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2435,30 +2932,30 @@ impl GetBackendApiInput {
             _input: &crate::input::GetBackendApiInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_18 = &_input.app_id;
-            let input_18 =
-                input_18
+            let input_21 = &_input.app_id;
+            let input_21 =
+                input_21
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_18, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_21, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_19 = &_input.backend_environment_name;
-            let input_19 =
-                input_19
+            let input_22 = &_input.backend_environment_name;
+            let input_22 =
+                input_22
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backend_environment_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backend_environment_name = aws_smithy_http::label::fmt_string(input_19, false);
+            let backend_environment_name = aws_smithy_http::label::fmt_string(input_22, false);
             if backend_environment_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backend_environment_name",
@@ -2508,11 +3005,14 @@ impl GetBackendApiInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2632,6 +3132,7 @@ pub type GetBackendApiModelsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl GetBackendApiModelsInput {
     /// Consumes the builder and constructs an Operation<[`GetBackendAPIModels`](crate::operation::GetBackendAPIModels)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2646,30 +3147,30 @@ impl GetBackendApiModelsInput {
             _input: &crate::input::GetBackendApiModelsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_20 = &_input.app_id;
-            let input_20 =
-                input_20
+            let input_23 = &_input.app_id;
+            let input_23 =
+                input_23
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_20, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_23, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_21 = &_input.backend_environment_name;
-            let input_21 =
-                input_21
+            let input_24 = &_input.backend_environment_name;
+            let input_24 =
+                input_24
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backend_environment_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backend_environment_name = aws_smithy_http::label::fmt_string(input_21, false);
+            let backend_environment_name = aws_smithy_http::label::fmt_string(input_24, false);
             if backend_environment_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backend_environment_name",
@@ -2721,11 +3222,14 @@ impl GetBackendApiModelsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2845,6 +3349,7 @@ pub type GetBackendAuthInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetBackendAuthInput {
     /// Consumes the builder and constructs an Operation<[`GetBackendAuth`](crate::operation::GetBackendAuth)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2859,30 +3364,30 @@ impl GetBackendAuthInput {
             _input: &crate::input::GetBackendAuthInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_22 = &_input.app_id;
-            let input_22 =
-                input_22
+            let input_25 = &_input.app_id;
+            let input_25 =
+                input_25
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_22, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_25, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_23 = &_input.backend_environment_name;
-            let input_23 =
-                input_23
+            let input_26 = &_input.backend_environment_name;
+            let input_26 =
+                input_26
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backend_environment_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backend_environment_name = aws_smithy_http::label::fmt_string(input_23, false);
+            let backend_environment_name = aws_smithy_http::label::fmt_string(input_26, false);
             if backend_environment_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backend_environment_name",
@@ -2932,11 +3437,14 @@ impl GetBackendAuthInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3053,6 +3561,7 @@ pub type GetBackendJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetBackendJobInput {
     /// Consumes the builder and constructs an Operation<[`GetBackendJob`](crate::operation::GetBackendJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3067,45 +3576,45 @@ impl GetBackendJobInput {
             _input: &crate::input::GetBackendJobInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_24 = &_input.app_id;
-            let input_24 =
-                input_24
+            let input_27 = &_input.app_id;
+            let input_27 =
+                input_27
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_24, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_27, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_25 = &_input.backend_environment_name;
-            let input_25 =
-                input_25
+            let input_28 = &_input.backend_environment_name;
+            let input_28 =
+                input_28
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backend_environment_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backend_environment_name = aws_smithy_http::label::fmt_string(input_25, false);
+            let backend_environment_name = aws_smithy_http::label::fmt_string(input_28, false);
             if backend_environment_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backend_environment_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_26 = &_input.job_id;
-            let input_26 =
-                input_26
+            let input_29 = &_input.job_id;
+            let input_29 =
+                input_29
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let job_id = aws_smithy_http::label::fmt_string(input_26, false);
+            let job_id = aws_smithy_http::label::fmt_string(input_29, false);
             if job_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
@@ -3150,11 +3659,14 @@ impl GetBackendJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3194,6 +3706,221 @@ impl GetBackendJobInput {
     /// Creates a new builder-style object to manufacture [`GetBackendJobInput`](crate::input::GetBackendJobInput)
     pub fn builder() -> crate::input::get_backend_job_input::Builder {
         crate::input::get_backend_job_input::Builder::default()
+    }
+}
+
+/// See [`GetBackendStorageInput`](crate::input::GetBackendStorageInput)
+pub mod get_backend_storage_input {
+    /// A builder for [`GetBackendStorageInput`](crate::input::GetBackendStorageInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_id: std::option::Option<std::string::String>,
+        pub(crate) backend_environment_name: std::option::Option<std::string::String>,
+        pub(crate) resource_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The app ID.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_id = Some(input.into());
+            self
+        }
+        /// <p>The app ID.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_id = input;
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backend_environment_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn set_backend_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backend_environment_name = input;
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetBackendStorageInput`](crate::input::GetBackendStorageInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetBackendStorageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetBackendStorageInput {
+                app_id: self.app_id,
+                backend_environment_name: self.backend_environment_name,
+                resource_name: self.resource_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetBackendStorageInputOperationOutputAlias = crate::operation::GetBackendStorage;
+#[doc(hidden)]
+pub type GetBackendStorageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetBackendStorageInput {
+    /// Consumes the builder and constructs an Operation<[`GetBackendStorage`](crate::operation::GetBackendStorage)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetBackendStorage,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetBackendStorageInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_30 = &_input.app_id;
+            let input_30 =
+                input_30
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "app_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let app_id = aws_smithy_http::label::fmt_string(input_30, false);
+            if app_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "app_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_31 = &_input.backend_environment_name;
+            let input_31 =
+                input_31
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "backend_environment_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let backend_environment_name = aws_smithy_http::label::fmt_string(input_31, false);
+            if backend_environment_name.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "backend_environment_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/backend/{AppId}/storage/{BackendEnvironmentName}/details",
+                AppId = app_id,
+                BackendEnvironmentName = backend_environment_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetBackendStorageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetBackendStorageInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_backend_storage(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetBackendStorage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetBackendStorage",
+            "amplifybackend",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetBackendStorageInput`](crate::input::GetBackendStorageInput)
+    pub fn builder() -> crate::input::get_backend_storage_input::Builder {
+        crate::input::get_backend_storage_input::Builder::default()
     }
 }
 
@@ -3246,6 +3973,7 @@ pub type GetTokenInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetTokenInput {
     /// Consumes the builder and constructs an Operation<[`GetToken`](crate::operation::GetToken)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3260,30 +3988,30 @@ impl GetTokenInput {
             _input: &crate::input::GetTokenInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_27 = &_input.app_id;
-            let input_27 =
-                input_27
+            let input_32 = &_input.app_id;
+            let input_32 =
+                input_32
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_27, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_32, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_28 = &_input.session_id;
-            let input_28 =
-                input_28
+            let input_33 = &_input.session_id;
+            let input_33 =
+                input_33
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "session_id",
                         details: "cannot be empty or unset",
                     })?;
-            let session_id = aws_smithy_http::label::fmt_string(input_28, false);
+            let session_id = aws_smithy_http::label::fmt_string(input_33, false);
             if session_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "session_id",
@@ -3327,11 +4055,14 @@ impl GetTokenInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3483,6 +4214,7 @@ pub type ImportBackendAuthInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ImportBackendAuthInput {
     /// Consumes the builder and constructs an Operation<[`ImportBackendAuth`](crate::operation::ImportBackendAuth)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3497,30 +4229,30 @@ impl ImportBackendAuthInput {
             _input: &crate::input::ImportBackendAuthInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_29 = &_input.app_id;
-            let input_29 =
-                input_29
+            let input_34 = &_input.app_id;
+            let input_34 =
+                input_34
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_29, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_34, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_30 = &_input.backend_environment_name;
-            let input_30 =
-                input_30
+            let input_35 = &_input.backend_environment_name;
+            let input_35 =
+                input_35
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backend_environment_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backend_environment_name = aws_smithy_http::label::fmt_string(input_30, false);
+            let backend_environment_name = aws_smithy_http::label::fmt_string(input_35, false);
             if backend_environment_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backend_environment_name",
@@ -3570,11 +4302,14 @@ impl ImportBackendAuthInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3622,6 +4357,235 @@ impl ImportBackendAuthInput {
     /// Creates a new builder-style object to manufacture [`ImportBackendAuthInput`](crate::input::ImportBackendAuthInput)
     pub fn builder() -> crate::input::import_backend_auth_input::Builder {
         crate::input::import_backend_auth_input::Builder::default()
+    }
+}
+
+/// See [`ImportBackendStorageInput`](crate::input::ImportBackendStorageInput)
+pub mod import_backend_storage_input {
+    /// A builder for [`ImportBackendStorageInput`](crate::input::ImportBackendStorageInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_id: std::option::Option<std::string::String>,
+        pub(crate) backend_environment_name: std::option::Option<std::string::String>,
+        pub(crate) bucket_name: std::option::Option<std::string::String>,
+        pub(crate) service_name: std::option::Option<crate::model::ServiceName>,
+    }
+    impl Builder {
+        /// <p>The app ID.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_id = Some(input.into());
+            self
+        }
+        /// <p>The app ID.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_id = input;
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backend_environment_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn set_backend_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backend_environment_name = input;
+            self
+        }
+        /// <p>The name of the S3 bucket.</p>
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the S3 bucket.</p>
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket_name = input;
+            self
+        }
+        /// <p>The name of the storage service.</p>
+        pub fn service_name(mut self, input: crate::model::ServiceName) -> Self {
+            self.service_name = Some(input);
+            self
+        }
+        /// <p>The name of the storage service.</p>
+        pub fn set_service_name(
+            mut self,
+            input: std::option::Option<crate::model::ServiceName>,
+        ) -> Self {
+            self.service_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportBackendStorageInput`](crate::input::ImportBackendStorageInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ImportBackendStorageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ImportBackendStorageInput {
+                app_id: self.app_id,
+                backend_environment_name: self.backend_environment_name,
+                bucket_name: self.bucket_name,
+                service_name: self.service_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ImportBackendStorageInputOperationOutputAlias = crate::operation::ImportBackendStorage;
+#[doc(hidden)]
+pub type ImportBackendStorageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ImportBackendStorageInput {
+    /// Consumes the builder and constructs an Operation<[`ImportBackendStorage`](crate::operation::ImportBackendStorage)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ImportBackendStorage,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ImportBackendStorageInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_36 = &_input.app_id;
+            let input_36 =
+                input_36
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "app_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let app_id = aws_smithy_http::label::fmt_string(input_36, false);
+            if app_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "app_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_37 = &_input.backend_environment_name;
+            let input_37 =
+                input_37
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "backend_environment_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let backend_environment_name = aws_smithy_http::label::fmt_string(input_37, false);
+            if backend_environment_name.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "backend_environment_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/backend/{AppId}/storage/{BackendEnvironmentName}/import",
+                AppId = app_id,
+                BackendEnvironmentName = backend_environment_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ImportBackendStorageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ImportBackendStorageInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_import_backend_storage(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ImportBackendStorage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ImportBackendStorage",
+            "amplifybackend",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ImportBackendStorageInput`](crate::input::ImportBackendStorageInput)
+    pub fn builder() -> crate::input::import_backend_storage_input::Builder {
+        crate::input::import_backend_storage_input::Builder::default()
     }
 }
 
@@ -3739,6 +4703,7 @@ pub type ListBackendJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl ListBackendJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListBackendJobs`](crate::operation::ListBackendJobs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3753,30 +4718,30 @@ impl ListBackendJobsInput {
             _input: &crate::input::ListBackendJobsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_31 = &_input.app_id;
-            let input_31 =
-                input_31
+            let input_38 = &_input.app_id;
+            let input_38 =
+                input_38
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_31, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_38, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_32 = &_input.backend_environment_name;
-            let input_32 =
-                input_32
+            let input_39 = &_input.backend_environment_name;
+            let input_39 =
+                input_39
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backend_environment_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backend_environment_name = aws_smithy_http::label::fmt_string(input_32, false);
+            let backend_environment_name = aws_smithy_http::label::fmt_string(input_39, false);
             if backend_environment_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backend_environment_name",
@@ -3826,11 +4791,14 @@ impl ListBackendJobsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3878,6 +4846,155 @@ impl ListBackendJobsInput {
     /// Creates a new builder-style object to manufacture [`ListBackendJobsInput`](crate::input::ListBackendJobsInput)
     pub fn builder() -> crate::input::list_backend_jobs_input::Builder {
         crate::input::list_backend_jobs_input::Builder::default()
+    }
+}
+
+/// See [`ListS3BucketsInput`](crate::input::ListS3BucketsInput)
+pub mod list_s3_buckets_input {
+    /// A builder for [`ListS3BucketsInput`](crate::input::ListS3BucketsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Reserved for future use.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Reserved for future use.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListS3BucketsInput`](crate::input::ListS3BucketsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListS3BucketsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListS3BucketsInput {
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListS3BucketsInputOperationOutputAlias = crate::operation::ListS3Buckets;
+#[doc(hidden)]
+pub type ListS3BucketsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListS3BucketsInput {
+    /// Consumes the builder and constructs an Operation<[`ListS3Buckets`](crate::operation::ListS3Buckets)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListS3Buckets,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListS3BucketsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/s3Buckets").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListS3BucketsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListS3BucketsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_s3_buckets(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListS3Buckets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListS3Buckets",
+            "amplifybackend",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListS3BucketsInput`](crate::input::ListS3BucketsInput)
+    pub fn builder() -> crate::input::list_s3_buckets_input::Builder {
+        crate::input::list_s3_buckets_input::Builder::default()
     }
 }
 
@@ -3932,6 +5049,7 @@ pub type RemoveAllBackendsInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl RemoveAllBackendsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveAllBackends`](crate::operation::RemoveAllBackends)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3946,15 +5064,15 @@ impl RemoveAllBackendsInput {
             _input: &crate::input::RemoveAllBackendsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_33 = &_input.app_id;
-            let input_33 =
-                input_33
+            let input_40 = &_input.app_id;
+            let input_40 =
+                input_40
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_33, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_40, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
@@ -3999,11 +5117,14 @@ impl RemoveAllBackendsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4093,6 +5214,7 @@ pub type RemoveBackendConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl RemoveBackendConfigInput {
     /// Consumes the builder and constructs an Operation<[`RemoveBackendConfig`](crate::operation::RemoveBackendConfig)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4107,15 +5229,15 @@ impl RemoveBackendConfigInput {
             _input: &crate::input::RemoveBackendConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_34 = &_input.app_id;
-            let input_34 =
-                input_34
+            let input_41 = &_input.app_id;
+            let input_41 =
+                input_41
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_34, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_41, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
@@ -4154,11 +5276,14 @@ impl RemoveBackendConfigInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4285,6 +5410,7 @@ pub type UpdateBackendApiInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl UpdateBackendApiInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBackendAPI`](crate::operation::UpdateBackendAPI)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4299,30 +5425,30 @@ impl UpdateBackendApiInput {
             _input: &crate::input::UpdateBackendApiInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_35 = &_input.app_id;
-            let input_35 =
-                input_35
+            let input_42 = &_input.app_id;
+            let input_42 =
+                input_42
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_35, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_42, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_36 = &_input.backend_environment_name;
-            let input_36 =
-                input_36
+            let input_43 = &_input.backend_environment_name;
+            let input_43 =
+                input_43
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backend_environment_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backend_environment_name = aws_smithy_http::label::fmt_string(input_36, false);
+            let backend_environment_name = aws_smithy_http::label::fmt_string(input_43, false);
             if backend_environment_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backend_environment_name",
@@ -4372,11 +5498,14 @@ impl UpdateBackendApiInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4515,6 +5644,7 @@ pub type UpdateBackendAuthInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl UpdateBackendAuthInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBackendAuth`](crate::operation::UpdateBackendAuth)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4529,30 +5659,30 @@ impl UpdateBackendAuthInput {
             _input: &crate::input::UpdateBackendAuthInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_37 = &_input.app_id;
-            let input_37 =
-                input_37
+            let input_44 = &_input.app_id;
+            let input_44 =
+                input_44
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_37, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_44, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_38 = &_input.backend_environment_name;
-            let input_38 =
-                input_38
+            let input_45 = &_input.backend_environment_name;
+            let input_45 =
+                input_45
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backend_environment_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backend_environment_name = aws_smithy_http::label::fmt_string(input_38, false);
+            let backend_environment_name = aws_smithy_http::label::fmt_string(input_45, false);
             if backend_environment_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backend_environment_name",
@@ -4602,11 +5732,14 @@ impl UpdateBackendAuthInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4711,6 +5844,7 @@ pub type UpdateBackendConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl UpdateBackendConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBackendConfig`](crate::operation::UpdateBackendConfig)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4725,15 +5859,15 @@ impl UpdateBackendConfigInput {
             _input: &crate::input::UpdateBackendConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_39 = &_input.app_id;
-            let input_39 =
-                input_39
+            let input_46 = &_input.app_id;
+            let input_46 =
+                input_46
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_39, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_46, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
@@ -4778,11 +5912,14 @@ impl UpdateBackendConfigInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4923,6 +6060,7 @@ pub type UpdateBackendJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl UpdateBackendJobInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBackendJob`](crate::operation::UpdateBackendJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4937,45 +6075,45 @@ impl UpdateBackendJobInput {
             _input: &crate::input::UpdateBackendJobInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_40 = &_input.app_id;
-            let input_40 =
-                input_40
+            let input_47 = &_input.app_id;
+            let input_47 =
+                input_47
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     })?;
-            let app_id = aws_smithy_http::label::fmt_string(input_40, false);
+            let app_id = aws_smithy_http::label::fmt_string(input_47, false);
             if app_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_41 = &_input.backend_environment_name;
-            let input_41 =
-                input_41
+            let input_48 = &_input.backend_environment_name;
+            let input_48 =
+                input_48
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backend_environment_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backend_environment_name = aws_smithy_http::label::fmt_string(input_41, false);
+            let backend_environment_name = aws_smithy_http::label::fmt_string(input_48, false);
             if backend_environment_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backend_environment_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_42 = &_input.job_id;
-            let input_42 =
-                input_42
+            let input_49 = &_input.job_id;
+            let input_49 =
+                input_49
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let job_id = aws_smithy_http::label::fmt_string(input_42, false);
+            let job_id = aws_smithy_http::label::fmt_string(input_49, false);
             if job_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
@@ -5026,11 +6164,14 @@ impl UpdateBackendJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5078,6 +6219,286 @@ impl UpdateBackendJobInput {
     /// Creates a new builder-style object to manufacture [`UpdateBackendJobInput`](crate::input::UpdateBackendJobInput)
     pub fn builder() -> crate::input::update_backend_job_input::Builder {
         crate::input::update_backend_job_input::Builder::default()
+    }
+}
+
+/// See [`UpdateBackendStorageInput`](crate::input::UpdateBackendStorageInput)
+pub mod update_backend_storage_input {
+    /// A builder for [`UpdateBackendStorageInput`](crate::input::UpdateBackendStorageInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_id: std::option::Option<std::string::String>,
+        pub(crate) backend_environment_name: std::option::Option<std::string::String>,
+        pub(crate) resource_config:
+            std::option::Option<crate::model::UpdateBackendStorageResourceConfig>,
+        pub(crate) resource_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The app ID.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_id = Some(input.into());
+            self
+        }
+        /// <p>The app ID.</p>
+        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_id = input;
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backend_environment_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the backend environment.</p>
+        pub fn set_backend_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backend_environment_name = input;
+            self
+        }
+        /// <p>The resource configuration for updating backend storage.</p>
+        pub fn resource_config(
+            mut self,
+            input: crate::model::UpdateBackendStorageResourceConfig,
+        ) -> Self {
+            self.resource_config = Some(input);
+            self
+        }
+        /// <p>The resource configuration for updating backend storage.</p>
+        pub fn set_resource_config(
+            mut self,
+            input: std::option::Option<crate::model::UpdateBackendStorageResourceConfig>,
+        ) -> Self {
+            self.resource_config = input;
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the storage resource.</p>
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateBackendStorageInput`](crate::input::UpdateBackendStorageInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateBackendStorageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateBackendStorageInput {
+                app_id: self.app_id,
+                backend_environment_name: self.backend_environment_name,
+                resource_config: self.resource_config,
+                resource_name: self.resource_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateBackendStorageInputOperationOutputAlias = crate::operation::UpdateBackendStorage;
+#[doc(hidden)]
+pub type UpdateBackendStorageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateBackendStorageInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateBackendStorage`](crate::operation::UpdateBackendStorage)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateBackendStorage,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateBackendStorageInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_50 = &_input.app_id;
+            let input_50 =
+                input_50
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "app_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let app_id = aws_smithy_http::label::fmt_string(input_50, false);
+            if app_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "app_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_51 = &_input.backend_environment_name;
+            let input_51 =
+                input_51
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "backend_environment_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let backend_environment_name = aws_smithy_http::label::fmt_string(input_51, false);
+            if backend_environment_name.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "backend_environment_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/backend/{AppId}/storage/{BackendEnvironmentName}",
+                AppId = app_id,
+                BackendEnvironmentName = backend_environment_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateBackendStorageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateBackendStorageInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_backend_storage(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateBackendStorage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateBackendStorage",
+            "amplifybackend",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateBackendStorageInput`](crate::input::UpdateBackendStorageInput)
+    pub fn builder() -> crate::input::update_backend_storage_input::Builder {
+        crate::input::update_backend_storage_input::Builder::default()
+    }
+}
+
+/// <p>The request body for UpdateBackendStorage.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateBackendStorageInput {
+    /// <p>The app ID.</p>
+    pub app_id: std::option::Option<std::string::String>,
+    /// <p>The name of the backend environment.</p>
+    pub backend_environment_name: std::option::Option<std::string::String>,
+    /// <p>The resource configuration for updating backend storage.</p>
+    pub resource_config: std::option::Option<crate::model::UpdateBackendStorageResourceConfig>,
+    /// <p>The name of the storage resource.</p>
+    pub resource_name: std::option::Option<std::string::String>,
+}
+impl UpdateBackendStorageInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The resource configuration for updating backend storage.</p>
+    pub fn resource_config(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateBackendStorageResourceConfig> {
+        self.resource_config.as_ref()
+    }
+    /// <p>The name of the storage resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateBackendStorageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateBackendStorageInput");
+        formatter.field("app_id", &self.app_id);
+        formatter.field("backend_environment_name", &self.backend_environment_name);
+        formatter.field("resource_config", &self.resource_config);
+        formatter.field("resource_name", &self.resource_name);
+        formatter.finish()
     }
 }
 
@@ -5293,6 +6714,27 @@ impl std::fmt::Debug for RemoveAllBackendsInput {
     }
 }
 
+/// <p>The request body for S3Buckets.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListS3BucketsInput {
+    /// <p>Reserved for future use.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListS3BucketsInput {
+    /// <p>Reserved for future use.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListS3BucketsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListS3BucketsInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
 /// <p>The request body for ListBackendJobs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5352,6 +6794,48 @@ impl std::fmt::Debug for ListBackendJobsInput {
         formatter.field("next_token", &self.next_token);
         formatter.field("operation", &self.operation);
         formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+
+/// <p>The request body for ImportBackendStorage.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportBackendStorageInput {
+    /// <p>The app ID.</p>
+    pub app_id: std::option::Option<std::string::String>,
+    /// <p>The name of the backend environment.</p>
+    pub backend_environment_name: std::option::Option<std::string::String>,
+    /// <p>The name of the S3 bucket.</p>
+    pub bucket_name: std::option::Option<std::string::String>,
+    /// <p>The name of the storage service.</p>
+    pub service_name: std::option::Option<crate::model::ServiceName>,
+}
+impl ImportBackendStorageInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The name of the S3 bucket.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The name of the storage service.</p>
+    pub fn service_name(&self) -> std::option::Option<&crate::model::ServiceName> {
+        self.service_name.as_ref()
+    }
+}
+impl std::fmt::Debug for ImportBackendStorageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportBackendStorageInput");
+        formatter.field("app_id", &self.app_id);
+        formatter.field("backend_environment_name", &self.backend_environment_name);
+        formatter.field("bucket_name", &self.bucket_name);
+        formatter.field("service_name", &self.service_name);
         formatter.finish()
     }
 }
@@ -5436,6 +6920,41 @@ impl std::fmt::Debug for GetTokenInput {
         let mut formatter = f.debug_struct("GetTokenInput");
         formatter.field("app_id", &self.app_id);
         formatter.field("session_id", &self.session_id);
+        formatter.finish()
+    }
+}
+
+/// <p>The request body for GetBackendStorage.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetBackendStorageInput {
+    /// <p>The app ID.</p>
+    pub app_id: std::option::Option<std::string::String>,
+    /// <p>The name of the backend environment.</p>
+    pub backend_environment_name: std::option::Option<std::string::String>,
+    /// <p>The name of the storage resource.</p>
+    pub resource_name: std::option::Option<std::string::String>,
+}
+impl GetBackendStorageInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The name of the storage resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
+impl std::fmt::Debug for GetBackendStorageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetBackendStorageInput");
+        formatter.field("app_id", &self.app_id);
+        formatter.field("backend_environment_name", &self.backend_environment_name);
+        formatter.field("resource_name", &self.resource_name);
         formatter.finish()
     }
 }
@@ -5678,6 +7197,48 @@ impl std::fmt::Debug for DeleteTokenInput {
     }
 }
 
+/// <p>The request body for DeleteBackendStorage.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteBackendStorageInput {
+    /// <p>The app ID.</p>
+    pub app_id: std::option::Option<std::string::String>,
+    /// <p>The name of the backend environment.</p>
+    pub backend_environment_name: std::option::Option<std::string::String>,
+    /// <p>The name of the storage resource.</p>
+    pub resource_name: std::option::Option<std::string::String>,
+    /// <p>The name of the storage service.</p>
+    pub service_name: std::option::Option<crate::model::ServiceName>,
+}
+impl DeleteBackendStorageInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The name of the storage resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The name of the storage service.</p>
+    pub fn service_name(&self) -> std::option::Option<&crate::model::ServiceName> {
+        self.service_name.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteBackendStorageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteBackendStorageInput");
+        formatter.field("app_id", &self.app_id);
+        formatter.field("backend_environment_name", &self.backend_environment_name);
+        formatter.field("resource_name", &self.resource_name);
+        formatter.field("service_name", &self.service_name);
+        formatter.finish()
+    }
+}
+
 /// <p>The request body for DeleteBackendAuth.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5800,6 +7361,50 @@ impl std::fmt::Debug for CreateTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTokenInput");
         formatter.field("app_id", &self.app_id);
+        formatter.finish()
+    }
+}
+
+/// <p>The request body for CreateBackendStorage.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateBackendStorageInput {
+    /// <p>The app ID.</p>
+    pub app_id: std::option::Option<std::string::String>,
+    /// <p>The name of the backend environment.</p>
+    pub backend_environment_name: std::option::Option<std::string::String>,
+    /// <p>The resource configuration for creating backend storage.</p>
+    pub resource_config: std::option::Option<crate::model::CreateBackendStorageResourceConfig>,
+    /// <p>The name of the storage resource.</p>
+    pub resource_name: std::option::Option<std::string::String>,
+}
+impl CreateBackendStorageInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The resource configuration for creating backend storage.</p>
+    pub fn resource_config(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateBackendStorageResourceConfig> {
+        self.resource_config.as_ref()
+    }
+    /// <p>The name of the storage resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateBackendStorageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateBackendStorageInput");
+        formatter.field("app_id", &self.app_id);
+        formatter.field("backend_environment_name", &self.backend_environment_name);
+        formatter.field("resource_config", &self.resource_config);
+        formatter.field("resource_name", &self.resource_name);
         formatter.finish()
     }
 }
@@ -5928,7 +7533,7 @@ pub struct CreateBackendInput {
     pub app_name: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
     pub backend_environment_name: std::option::Option<std::string::String>,
-    /// <p>The resource configuration for the create backend request.</p>
+    /// <p>The resource configuration for creating backend storage.</p>
     pub resource_config: std::option::Option<crate::model::ResourceConfig>,
     /// <p>The name of the resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
@@ -5946,7 +7551,7 @@ impl CreateBackendInput {
     pub fn backend_environment_name(&self) -> std::option::Option<&str> {
         self.backend_environment_name.as_deref()
     }
-    /// <p>The resource configuration for the create backend request.</p>
+    /// <p>The resource configuration for creating backend storage.</p>
     pub fn resource_config(&self) -> std::option::Option<&crate::model::ResourceConfig> {
         self.resource_config.as_ref()
     }

@@ -1144,9 +1144,9 @@ pub fn deser_operation_crate_operation_describe_change_set(
             s if s.matches("CreationTime") /* CreationTime com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$CreationTime */ =>  {
                 let var_36 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#CreationTime`)"))
                         ?
@@ -1518,9 +1518,9 @@ pub fn deser_operation_crate_operation_describe_stack_drift_detection_status(
             s if s.matches("Timestamp") /* Timestamp com.amazonaws.cloudformation.synthetic#DescribeStackDriftDetectionStatusOutput$Timestamp */ =>  {
                 let var_59 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -2295,9 +2295,9 @@ pub fn deser_operation_crate_operation_describe_type(
             s if s.matches("LastUpdated") /* LastUpdated com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$LastUpdated */ =>  {
                 let var_90 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -2309,9 +2309,9 @@ pub fn deser_operation_crate_operation_describe_type(
             s if s.matches("TimeCreated") /* TimeCreated com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$TimeCreated */ =>  {
                 let var_91 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -4876,9 +4876,9 @@ pub fn deser_structure_crate_model_stack_instance(
             s if s.matches("LastDriftCheckTimestamp") /* LastDriftCheckTimestamp com.amazonaws.cloudformation#StackInstance$LastDriftCheckTimestamp */ =>  {
                 let var_175 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -4968,9 +4968,9 @@ pub fn deser_structure_crate_model_stack_resource_detail(
             s if s.matches("LastUpdatedTimestamp") /* LastUpdatedTimestamp com.amazonaws.cloudformation#StackResourceDetail$LastUpdatedTimestamp */ =>  {
                 let var_181 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -5422,9 +5422,9 @@ pub fn deser_structure_crate_model_stack_set_operation(
             s if s.matches("CreationTimestamp") /* CreationTimestamp com.amazonaws.cloudformation#StackSetOperation$CreationTimestamp */ =>  {
                 let var_211 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -5436,9 +5436,9 @@ pub fn deser_structure_crate_model_stack_set_operation(
             s if s.matches("EndTimestamp") /* EndTimestamp com.amazonaws.cloudformation#StackSetOperation$EndTimestamp */ =>  {
                 let var_212 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -5653,9 +5653,9 @@ pub fn deser_structure_crate_model_stack_resource_drift(
             s if s.matches("Timestamp") /* Timestamp com.amazonaws.cloudformation#StackResourceDrift$Timestamp */ =>  {
                 let var_226 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -6220,9 +6220,9 @@ pub fn deser_structure_crate_model_type_configuration_details(
             s if s.matches("LastUpdated") /* LastUpdated com.amazonaws.cloudformation#TypeConfigurationDetails$LastUpdated */ =>  {
                 let var_239 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -6569,9 +6569,9 @@ pub fn deser_structure_crate_model_stack_event(
             s if s.matches("Timestamp") /* Timestamp com.amazonaws.cloudformation#StackEvent$Timestamp */ =>  {
                 let var_259 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -6690,9 +6690,9 @@ pub fn deser_structure_crate_model_stack_resource_drift_information(
             s if s.matches("LastCheckTimestamp") /* LastCheckTimestamp com.amazonaws.cloudformation#StackResourceDriftInformation$LastCheckTimestamp */ =>  {
                 let var_266 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -6821,9 +6821,9 @@ pub fn deser_structure_crate_model_stack_resource(
             s if s.matches("Timestamp") /* Timestamp com.amazonaws.cloudformation#StackResource$Timestamp */ =>  {
                 let var_274 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -6970,9 +6970,9 @@ pub fn deser_structure_crate_model_stack(
             s if s.matches("CreationTime") /* CreationTime com.amazonaws.cloudformation#Stack$CreationTime */ =>  {
                 let var_285 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#CreationTime`)"))
                         ?
@@ -6984,9 +6984,9 @@ pub fn deser_structure_crate_model_stack(
             s if s.matches("DeletionTime") /* DeletionTime com.amazonaws.cloudformation#Stack$DeletionTime */ =>  {
                 let var_286 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#DeletionTime`)"))
                         ?
@@ -6998,9 +6998,9 @@ pub fn deser_structure_crate_model_stack(
             s if s.matches("LastUpdatedTime") /* LastUpdatedTime com.amazonaws.cloudformation#Stack$LastUpdatedTime */ =>  {
                 let var_287 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#LastUpdatedTime`)"))
                         ?
@@ -7224,9 +7224,9 @@ pub fn deser_structure_crate_model_stack_set_drift_detection_details(
             s if s.matches("LastDriftCheckTimestamp") /* LastDriftCheckTimestamp com.amazonaws.cloudformation#StackSetDriftDetectionDetails$LastDriftCheckTimestamp */ =>  {
                 let var_304 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -7866,9 +7866,9 @@ pub fn deser_structure_crate_model_change_set_summary(
             s if s.matches("CreationTime") /* CreationTime com.amazonaws.cloudformation#ChangeSetSummary$CreationTime */ =>  {
                 let var_341 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#CreationTime`)"))
                         ?
@@ -8115,9 +8115,9 @@ pub fn deser_structure_crate_model_stack_instance_summary(
             s if s.matches("LastDriftCheckTimestamp") /* LastDriftCheckTimestamp com.amazonaws.cloudformation#StackInstanceSummary$LastDriftCheckTimestamp */ =>  {
                 let var_358 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -8181,9 +8181,9 @@ pub fn deser_structure_crate_model_stack_resource_summary(
             s if s.matches("LastUpdatedTimestamp") /* LastUpdatedTimestamp com.amazonaws.cloudformation#StackResourceSummary$LastUpdatedTimestamp */ =>  {
                 let var_362 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -8294,9 +8294,9 @@ pub fn deser_structure_crate_model_stack_summary(
             s if s.matches("CreationTime") /* CreationTime com.amazonaws.cloudformation#StackSummary$CreationTime */ =>  {
                 let var_370 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#CreationTime`)"))
                         ?
@@ -8308,9 +8308,9 @@ pub fn deser_structure_crate_model_stack_summary(
             s if s.matches("LastUpdatedTime") /* LastUpdatedTime com.amazonaws.cloudformation#StackSummary$LastUpdatedTime */ =>  {
                 let var_371 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#LastUpdatedTime`)"))
                         ?
@@ -8322,9 +8322,9 @@ pub fn deser_structure_crate_model_stack_summary(
             s if s.matches("DeletionTime") /* DeletionTime com.amazonaws.cloudformation#StackSummary$DeletionTime */ =>  {
                 let var_372 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#DeletionTime`)"))
                         ?
@@ -8542,9 +8542,9 @@ pub fn deser_structure_crate_model_stack_set_operation_summary(
             s if s.matches("CreationTimestamp") /* CreationTimestamp com.amazonaws.cloudformation#StackSetOperationSummary$CreationTimestamp */ =>  {
                 let var_387 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -8556,9 +8556,9 @@ pub fn deser_structure_crate_model_stack_set_operation_summary(
             s if s.matches("EndTimestamp") /* EndTimestamp com.amazonaws.cloudformation#StackSetOperationSummary$EndTimestamp */ =>  {
                 let var_388 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -8674,9 +8674,9 @@ pub fn deser_structure_crate_model_stack_set_summary(
             s if s.matches("LastDriftCheckTimestamp") /* LastDriftCheckTimestamp com.amazonaws.cloudformation#StackSetSummary$LastDriftCheckTimestamp */ =>  {
                 let var_396 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -8754,9 +8754,9 @@ pub fn deser_structure_crate_model_type_summary(
             s if s.matches("LastUpdated") /* LastUpdated com.amazonaws.cloudformation#TypeSummary$LastUpdated */ =>  {
                 let var_401 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -8956,9 +8956,9 @@ pub fn deser_structure_crate_model_type_version_summary(
             s if s.matches("TimeCreated") /* TimeCreated com.amazonaws.cloudformation#TypeVersionSummary$TimeCreated */ =>  {
                 let var_415 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -9271,9 +9271,9 @@ pub fn deser_structure_crate_model_stack_drift_information(
             s if s.matches("LastCheckTimestamp") /* LastCheckTimestamp com.amazonaws.cloudformation#StackDriftInformation$LastCheckTimestamp */ =>  {
                 let var_434 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -9552,9 +9552,9 @@ pub fn deser_structure_crate_model_stack_resource_drift_information_summary(
             s if s.matches("LastCheckTimestamp") /* LastCheckTimestamp com.amazonaws.cloudformation#StackResourceDriftInformationSummary$LastCheckTimestamp */ =>  {
                 let var_443 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
@@ -9593,9 +9593,9 @@ pub fn deser_structure_crate_model_stack_drift_information_summary(
             s if s.matches("LastCheckTimestamp") /* LastCheckTimestamp com.amazonaws.cloudformation#StackDriftInformationSummary$LastCheckTimestamp */ =>  {
                 let var_445 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?

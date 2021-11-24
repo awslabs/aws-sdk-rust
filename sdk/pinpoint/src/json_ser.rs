@@ -1554,12 +1554,12 @@ pub fn serialize_structure_crate_model_journey_schedule(
     if let Some(var_355) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_355, aws_smithy_types::instant::Format::DateTime);
+            .date_time(var_355, aws_smithy_types::date_time::Format::DateTime)?;
     }
     if let Some(var_356) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_356, aws_smithy_types::instant::Format::DateTime);
+            .date_time(var_356, aws_smithy_types::date_time::Format::DateTime)?;
     }
     if let Some(var_357) = &input.timezone {
         object.key("Timezone").string(var_357);

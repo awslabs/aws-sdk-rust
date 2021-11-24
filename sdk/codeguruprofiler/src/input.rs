@@ -64,6 +64,7 @@ pub type AddNotificationChannelsInputOperationRetryAlias = aws_http::AwsErrorRet
 impl AddNotificationChannelsInput {
     /// Consumes the builder and constructs an Operation<[`AddNotificationChannels`](crate::operation::AddNotificationChannels)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -137,11 +138,14 @@ impl AddNotificationChannelsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -199,8 +203,8 @@ pub mod batch_get_frame_metric_data_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) period: std::option::Option<std::string::String>,
         pub(crate) target_resolution: std::option::Option<crate::model::AggregationPeriod>,
         pub(crate) frame_metrics: std::option::Option<std::vec::Vec<crate::model::FrameMetric>>,
@@ -231,7 +235,7 @@ pub mod batch_get_frame_metric_data_input {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -243,7 +247,7 @@ pub mod batch_get_frame_metric_data_input {
         /// </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -254,7 +258,7 @@ pub mod batch_get_frame_metric_data_input {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -266,7 +270,7 @@ pub mod batch_get_frame_metric_data_input {
         /// </p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -395,6 +399,7 @@ pub type BatchGetFrameMetricDataInputOperationRetryAlias = aws_http::AwsErrorRet
 impl BatchGetFrameMetricDataInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetFrameMetricData`](crate::operation::BatchGetFrameMetricData)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -432,15 +437,18 @@ impl BatchGetFrameMetricDataInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::BatchGetFrameMetricDataInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::BatchGetFrameMetricDataInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_3) = &_input.start_time {
                 query.push_kv(
                     "startTime",
                     &aws_smithy_http::query::fmt_timestamp(
                         inner_3,
-                        aws_smithy_types::instant::Format::DateTime,
-                    ),
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
                 );
             }
             if let Some(inner_4) = &_input.end_time {
@@ -448,8 +456,8 @@ impl BatchGetFrameMetricDataInput {
                     "endTime",
                     &aws_smithy_http::query::fmt_timestamp(
                         inner_4,
-                        aws_smithy_types::instant::Format::DateTime,
-                    ),
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
                 );
             }
             if let Some(inner_5) = &_input.period {
@@ -461,6 +469,7 @@ impl BatchGetFrameMetricDataInput {
                     &aws_smithy_http::query::fmt_string(&inner_6),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -470,7 +479,7 @@ impl BatchGetFrameMetricDataInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -499,11 +508,14 @@ impl BatchGetFrameMetricDataInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -744,6 +756,7 @@ pub type ConfigureAgentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ConfigureAgentInput {
     /// Consumes the builder and constructs an Operation<[`ConfigureAgent`](crate::operation::ConfigureAgent)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -815,11 +828,14 @@ impl ConfigureAgentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1007,6 +1023,7 @@ pub type CreateProfilingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl CreateProfilingGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateProfilingGroup`](crate::operation::CreateProfilingGroup)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -1024,11 +1041,15 @@ impl CreateProfilingGroupInput {
             write!(output, "/profilingGroups").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::CreateProfilingGroupInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::CreateProfilingGroupInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_8) = &_input.client_token {
                 query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_8));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -1038,7 +1059,7 @@ impl CreateProfilingGroupInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1070,11 +1091,14 @@ impl CreateProfilingGroupInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1167,6 +1191,7 @@ pub type DeleteProfilingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DeleteProfilingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProfilingGroup`](crate::operation::DeleteProfilingGroup)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1232,11 +1257,14 @@ impl DeleteProfilingGroupInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1325,6 +1353,7 @@ pub type DescribeProfilingGroupInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl DescribeProfilingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProfilingGroup`](crate::operation::DescribeProfilingGroup)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1390,11 +1419,14 @@ impl DescribeProfilingGroupInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1527,6 +1559,7 @@ pub type GetFindingsReportAccountSummaryInputOperationRetryAlias = aws_http::Aws
 impl GetFindingsReportAccountSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetFindingsReportAccountSummary`](crate::operation::GetFindingsReportAccountSummary)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1547,7 +1580,7 @@ impl GetFindingsReportAccountSummaryInput {
         fn uri_query(
             _input: &crate::input::GetFindingsReportAccountSummaryInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_11) = &_input.next_token {
                 query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_11));
@@ -1555,15 +1588,16 @@ impl GetFindingsReportAccountSummaryInput {
             if let Some(inner_12) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
                 );
             }
             if let Some(inner_13) = &_input.daily_reports_only {
                 query.push_kv(
                     "dailyReportsOnly",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_13).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_13).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -1573,7 +1607,7 @@ impl GetFindingsReportAccountSummaryInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1594,11 +1628,14 @@ impl GetFindingsReportAccountSummaryInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1684,6 +1721,7 @@ pub type GetNotificationConfigurationInputOperationRetryAlias = aws_http::AwsErr
 impl GetNotificationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetNotificationConfiguration`](crate::operation::GetNotificationConfiguration)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1749,11 +1787,14 @@ impl GetNotificationConfigurationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1836,6 +1877,7 @@ pub type GetPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetPolicy`](crate::operation::GetPolicy)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1901,11 +1943,14 @@ impl GetPolicyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1953,9 +1998,9 @@ pub mod get_profile_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) period: std::option::Option<std::string::String>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) max_depth: std::option::Option<i32>,
         pub(crate) accept: std::option::Option<std::string::String>,
     }
@@ -1981,7 +2026,7 @@ pub mod get_profile_input {
         /// If you specify <code>startTime</code>, then you must also specify <code>period</code>
         /// or <code>endTime</code>, but not both.
         /// </p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -1995,7 +2040,7 @@ pub mod get_profile_input {
         /// </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -2035,7 +2080,7 @@ pub mod get_profile_input {
         /// If you specify <code>endTime</code>, then you must also specify <code>period</code>
         /// or <code>startTime</code>, but not both.
         /// </p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -2050,7 +2095,7 @@ pub mod get_profile_input {
         /// </p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -2152,6 +2197,7 @@ pub type GetProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetProfile`](crate::operation::GetProfile)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2212,15 +2258,18 @@ impl GetProfileInput {
             }
             Ok(builder)
         }
-        fn uri_query(_input: &crate::input::GetProfileInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::GetProfileInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_19) = &_input.start_time {
                 query.push_kv(
                     "startTime",
                     &aws_smithy_http::query::fmt_timestamp(
                         inner_19,
-                        aws_smithy_types::instant::Format::DateTime,
-                    ),
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
                 );
             }
             if let Some(inner_20) = &_input.period {
@@ -2231,16 +2280,17 @@ impl GetProfileInput {
                     "endTime",
                     &aws_smithy_http::query::fmt_timestamp(
                         inner_21,
-                        aws_smithy_types::instant::Format::DateTime,
-                    ),
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
                 );
             }
             if let Some(inner_22) = &_input.max_depth {
                 query.push_kv(
                     "maxDepth",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -2250,7 +2300,7 @@ impl GetProfileInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             let builder = add_headers(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
@@ -2272,11 +2322,14 @@ impl GetProfileInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2326,8 +2379,8 @@ pub mod get_recommendations_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) locale: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2354,7 +2407,7 @@ pub mod get_recommendations_input {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -2366,7 +2419,7 @@ pub mod get_recommendations_input {
         /// </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -2377,7 +2430,7 @@ pub mod get_recommendations_input {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -2389,7 +2442,7 @@ pub mod get_recommendations_input {
         /// </p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -2547,6 +2600,7 @@ pub type GetRecommendationsInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl GetRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetRecommendations`](crate::operation::GetRecommendations)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2584,15 +2638,18 @@ impl GetRecommendationsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::GetRecommendationsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::GetRecommendationsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_24) = &_input.start_time {
                 query.push_kv(
                     "startTime",
                     &aws_smithy_http::query::fmt_timestamp(
                         inner_24,
-                        aws_smithy_types::instant::Format::DateTime,
-                    ),
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
                 );
             }
             if let Some(inner_25) = &_input.end_time {
@@ -2600,13 +2657,14 @@ impl GetRecommendationsInput {
                     "endTime",
                     &aws_smithy_http::query::fmt_timestamp(
                         inner_25,
-                        aws_smithy_types::instant::Format::DateTime,
-                    ),
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
                 );
             }
             if let Some(inner_26) = &_input.locale {
                 query.push_kv("locale", &aws_smithy_http::query::fmt_string(&inner_26));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -2616,7 +2674,7 @@ impl GetRecommendationsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2637,11 +2695,14 @@ impl GetRecommendationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2691,8 +2752,8 @@ pub mod list_findings_reports_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) daily_reports_only: std::option::Option<bool>,
@@ -2717,7 +2778,7 @@ pub mod list_findings_reports_input {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -2729,7 +2790,7 @@ pub mod list_findings_reports_input {
         /// </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -2740,7 +2801,7 @@ pub mod list_findings_reports_input {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -2752,7 +2813,7 @@ pub mod list_findings_reports_input {
         /// </p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -2840,6 +2901,7 @@ pub type ListFindingsReportsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListFindingsReportsInput {
     /// Consumes the builder and constructs an Operation<[`ListFindingsReports`](crate::operation::ListFindingsReports)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2877,15 +2939,18 @@ impl ListFindingsReportsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListFindingsReportsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListFindingsReportsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_28) = &_input.start_time {
                 query.push_kv(
                     "startTime",
                     &aws_smithy_http::query::fmt_timestamp(
                         inner_28,
-                        aws_smithy_types::instant::Format::DateTime,
-                    ),
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
                 );
             }
             if let Some(inner_29) = &_input.end_time {
@@ -2893,8 +2958,8 @@ impl ListFindingsReportsInput {
                     "endTime",
                     &aws_smithy_http::query::fmt_timestamp(
                         inner_29,
-                        aws_smithy_types::instant::Format::DateTime,
-                    ),
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
                 );
             }
             if let Some(inner_30) = &_input.next_token {
@@ -2903,15 +2968,16 @@ impl ListFindingsReportsInput {
             if let Some(inner_31) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
                 );
             }
             if let Some(inner_32) = &_input.daily_reports_only {
                 query.push_kv(
                     "dailyReportsOnly",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_32).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_32).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -2921,7 +2987,7 @@ impl ListFindingsReportsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2942,11 +3008,14 @@ impl ListFindingsReportsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2996,8 +3065,8 @@ pub mod list_profile_times_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) period: std::option::Option<crate::model::AggregationPeriod>,
         pub(crate) order_by: std::option::Option<crate::model::OrderBy>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3018,27 +3087,27 @@ pub mod list_profile_times_input {
             self
         }
         /// <p>The start time of the time range from which to list the profiles.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The start time of the time range from which to list the profiles.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end time of the time range from which to list the profiles.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The end time of the time range from which to list the profiles.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -3184,6 +3253,7 @@ pub type ListProfileTimesInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ListProfileTimesInput {
     /// Consumes the builder and constructs an Operation<[`ListProfileTimes`](crate::operation::ListProfileTimes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3221,15 +3291,18 @@ impl ListProfileTimesInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListProfileTimesInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListProfileTimesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_34) = &_input.start_time {
                 query.push_kv(
                     "startTime",
                     &aws_smithy_http::query::fmt_timestamp(
                         inner_34,
-                        aws_smithy_types::instant::Format::DateTime,
-                    ),
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
                 );
             }
             if let Some(inner_35) = &_input.end_time {
@@ -3237,8 +3310,8 @@ impl ListProfileTimesInput {
                     "endTime",
                     &aws_smithy_http::query::fmt_timestamp(
                         inner_35,
-                        aws_smithy_types::instant::Format::DateTime,
-                    ),
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
                 );
             }
             if let Some(inner_36) = &_input.period {
@@ -3250,12 +3323,13 @@ impl ListProfileTimesInput {
             if let Some(inner_38) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_38).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_38).encode(),
                 );
             }
             if let Some(inner_39) = &_input.next_token {
                 query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_39));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -3265,7 +3339,7 @@ impl ListProfileTimesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3286,11 +3360,14 @@ impl ListProfileTimesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3436,6 +3513,7 @@ pub type ListProfilingGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListProfilingGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListProfilingGroups`](crate::operation::ListProfilingGroups)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3453,7 +3531,10 @@ impl ListProfilingGroupsInput {
             write!(output, "/profilingGroups").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListProfilingGroupsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListProfilingGroupsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_40) = &_input.next_token {
                 query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
@@ -3461,15 +3542,16 @@ impl ListProfilingGroupsInput {
             if let Some(inner_41) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
                 );
             }
             if let Some(inner_42) = &_input.include_description {
                 query.push_kv(
                     "includeDescription",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_42).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_42).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -3479,7 +3561,7 @@ impl ListProfilingGroupsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3500,11 +3582,14 @@ impl ListProfilingGroupsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3590,6 +3675,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3651,11 +3737,14 @@ impl ListTagsForResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3832,6 +3921,7 @@ pub type PostAgentProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl PostAgentProfileInput {
     /// Consumes the builder and constructs an Operation<[`PostAgentProfile`](crate::operation::PostAgentProfile)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -3892,7 +3982,10 @@ impl PostAgentProfileInput {
             }
             Ok(builder)
         }
-        fn uri_query(_input: &crate::input::PostAgentProfileInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::PostAgentProfileInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_47) = &_input.profile_token {
                 query.push_kv(
@@ -3900,6 +3993,7 @@ impl PostAgentProfileInput {
                     &aws_smithy_http::query::fmt_string(&inner_47),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -3909,7 +4003,7 @@ impl PostAgentProfileInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             let builder = add_headers(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
@@ -3939,11 +4033,14 @@ impl PostAgentProfileInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4110,6 +4207,7 @@ pub type PutPermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl PutPermissionInput {
     /// Consumes the builder and constructs an Operation<[`PutPermission`](crate::operation::PutPermission)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4196,11 +4294,14 @@ impl PutPermissionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4306,6 +4407,7 @@ pub type RemoveNotificationChannelInputOperationRetryAlias = aws_http::AwsErrorR
 impl RemoveNotificationChannelInput {
     /// Consumes the builder and constructs an Operation<[`RemoveNotificationChannel`](crate::operation::RemoveNotificationChannel)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4387,11 +4489,14 @@ impl RemoveNotificationChannelInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4517,6 +4622,7 @@ pub type RemovePermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl RemovePermissionInput {
     /// Consumes the builder and constructs an Operation<[`RemovePermission`](crate::operation::RemovePermission)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4570,11 +4676,15 @@ impl RemovePermissionInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::RemovePermissionInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::RemovePermissionInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_54) = &_input.revision_id {
                 query.push_kv("revisionId", &aws_smithy_http::query::fmt_string(&inner_54));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -4584,7 +4694,7 @@ impl RemovePermissionInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4605,11 +4715,14 @@ impl RemovePermissionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4745,6 +4858,7 @@ pub type SubmitFeedbackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SubmitFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`SubmitFeedback`](crate::operation::SubmitFeedback)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4826,11 +4940,14 @@ impl SubmitFeedbackInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4957,6 +5074,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5023,11 +5141,14 @@ impl TagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5148,6 +5269,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5181,13 +5303,17 @@ impl UntagResourceInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::UntagResourceInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_59) = &_input.tag_keys {
                 for inner_60 in inner_59 {
                     query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_60));
                 }
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -5197,7 +5323,7 @@ impl UntagResourceInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5218,11 +5344,14 @@ impl UntagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5330,6 +5459,7 @@ pub type UpdateProfilingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl UpdateProfilingGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProfilingGroup`](crate::operation::UpdateProfilingGroup)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5403,11 +5533,14 @@ impl UpdateProfilingGroupInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5758,9 +5891,9 @@ pub struct ListProfileTimesInput {
     /// <p>The name of the profiling group.</p>
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p>The start time of the time range from which to list the profiles.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the time range from which to list the profiles.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The aggregation period. This specifies the period during which an aggregation profile
     /// collects posted agent profiles for a profiling group. There are 3 valid values.
@@ -5812,11 +5945,11 @@ impl ListProfileTimesInput {
         self.profiling_group_name.as_deref()
     }
     /// <p>The start time of the time range from which to list the profiles.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the time range from which to list the profiles.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>
@@ -5898,14 +6031,14 @@ pub struct ListFindingsReportsInput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
     /// This is specified
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code>
     /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
     /// Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
@@ -5938,7 +6071,7 @@ impl ListFindingsReportsInput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>
@@ -5947,7 +6080,7 @@ impl ListFindingsReportsInput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code>
@@ -6004,14 +6137,14 @@ pub struct GetRecommendationsInput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
     /// This is specified
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The language used to provide analysis. Specify using a string that is one
     /// of the following <code>BCP 47</code> language codes.
@@ -6088,7 +6221,7 @@ impl GetRecommendationsInput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>
@@ -6097,7 +6230,7 @@ impl GetRecommendationsInput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>
@@ -6190,7 +6323,7 @@ pub struct GetProfileInput {
     /// If you specify <code>startTime</code>, then you must also specify <code>period</code>
     /// or <code>endTime</code>, but not both.
     /// </p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// Used with <code>startTime</code> or <code>endTime</code> to specify
     /// the time range for the returned aggregated profile. Specify using
@@ -6210,7 +6343,7 @@ pub struct GetProfileInput {
     /// If you specify <code>endTime</code>, then you must also specify <code>period</code>
     /// or <code>startTime</code>, but not both.
     /// </p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The maximum depth of the stacks in the code that is represented in
     /// the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>,
@@ -6255,7 +6388,7 @@ impl GetProfileInput {
     /// If you specify <code>startTime</code>, then you must also specify <code>period</code>
     /// or <code>endTime</code>, but not both.
     /// </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>
@@ -6279,7 +6412,7 @@ impl GetProfileInput {
     /// If you specify <code>endTime</code>, then you must also specify <code>period</code>
     /// or <code>startTime</code>, but not both.
     /// </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>
@@ -6534,14 +6667,14 @@ pub struct BatchGetFrameMetricDataInput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The end time of the time period for the returned time series values.
     /// This is specified
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The duration of the frame metrics used to return the time series values.
     /// Specify using the ISO 8601 format. The maximum period duration
@@ -6591,7 +6724,7 @@ impl BatchGetFrameMetricDataInput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>
@@ -6600,7 +6733,7 @@ impl BatchGetFrameMetricDataInput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>

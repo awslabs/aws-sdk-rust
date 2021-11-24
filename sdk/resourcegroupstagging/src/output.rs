@@ -215,8 +215,8 @@ pub struct GetTagValuesOutput {
     /// response contains. To receive the next part of the response, specify this response value
     /// as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub pagination_token: std::option::Option<std::string::String>,
-    /// <p>A list of all tag values for the specified key currently used in the specified AWS
-    /// Region for the calling AWS account.</p>
+    /// <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services
+    /// Region for the calling account.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetTagValuesOutput {
@@ -226,8 +226,8 @@ impl GetTagValuesOutput {
     pub fn pagination_token(&self) -> std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
-    /// <p>A list of all tag values for the specified key currently used in the specified AWS
-    /// Region for the calling AWS account.</p>
+    /// <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services
+    /// Region for the calling account.</p>
     pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_values.as_deref()
     }
@@ -271,16 +271,16 @@ pub mod get_tag_values_output {
         ///
         /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
         ///
-        /// <p>A list of all tag values for the specified key currently used in the specified AWS
-        /// Region for the calling AWS account.</p>
+        /// <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services
+        /// Region for the calling account.</p>
         pub fn tag_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_values.unwrap_or_default();
             v.push(input.into());
             self.tag_values = Some(v);
             self
         }
-        /// <p>A list of all tag values for the specified key currently used in the specified AWS
-        /// Region for the calling AWS account.</p>
+        /// <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services
+        /// Region for the calling account.</p>
         pub fn set_tag_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -312,7 +312,7 @@ pub struct GetTagKeysOutput {
     /// response contains. To receive the next part of the response, specify this response value
     /// as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub pagination_token: std::option::Option<std::string::String>,
-    /// <p>A list of all tag keys in the AWS account.</p>
+    /// <p>A list of all tag keys in the Amazon Web Services account.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetTagKeysOutput {
@@ -322,7 +322,7 @@ impl GetTagKeysOutput {
     pub fn pagination_token(&self) -> std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
-    /// <p>A list of all tag keys in the AWS account.</p>
+    /// <p>A list of all tag keys in the Amazon Web Services account.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -366,14 +366,14 @@ pub mod get_tag_keys_output {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A list of all tag keys in the AWS account.</p>
+        /// <p>A list of all tag keys in the Amazon Web Services account.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>A list of all tag keys in the AWS account.</p>
+        /// <p>A list of all tag keys in the Amazon Web Services account.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -406,7 +406,7 @@ pub struct GetResourcesOutput {
     /// as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub pagination_token: std::option::Option<std::string::String>,
     /// <p>A list of resource ARNs and the tags (keys and values) associated with
-    /// those ARNs.</p>
+    /// each.</p>
     pub resource_tag_mapping_list:
         std::option::Option<std::vec::Vec<crate::model::ResourceTagMapping>>,
 }
@@ -418,7 +418,7 @@ impl GetResourcesOutput {
         self.pagination_token.as_deref()
     }
     /// <p>A list of resource ARNs and the tags (keys and values) associated with
-    /// those ARNs.</p>
+    /// each.</p>
     pub fn resource_tag_mapping_list(
         &self,
     ) -> std::option::Option<&[crate::model::ResourceTagMapping]> {
@@ -466,7 +466,7 @@ pub mod get_resources_output {
         /// To override the contents of this collection use [`set_resource_tag_mapping_list`](Self::set_resource_tag_mapping_list).
         ///
         /// <p>A list of resource ARNs and the tags (keys and values) associated with
-        /// those ARNs.</p>
+        /// each.</p>
         pub fn resource_tag_mapping_list(
             mut self,
             input: impl Into<crate::model::ResourceTagMapping>,
@@ -477,7 +477,7 @@ pub mod get_resources_output {
             self
         }
         /// <p>A list of resource ARNs and the tags (keys and values) associated with
-        /// those ARNs.</p>
+        /// each.</p>
         pub fn set_resource_tag_mapping_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceTagMapping>>,

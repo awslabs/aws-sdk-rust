@@ -11,7 +11,7 @@ pub struct Operation {
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The timestamp when the operation was initialized (e.g.,
     /// <code>1479816991.349</code>).</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The AWS Region and Availability Zone.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>A Boolean value indicating whether the operation is terminal.</p>
@@ -23,7 +23,7 @@ pub struct Operation {
     /// <p>The status of the operation. </p>
     pub status: std::option::Option<crate::model::OperationStatus>,
     /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
-    pub status_changed_at: std::option::Option<aws_smithy_types::Instant>,
+    pub status_changed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The error code.</p>
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error details.</p>
@@ -44,7 +44,7 @@ impl Operation {
     }
     /// <p>The timestamp when the operation was initialized (e.g.,
     /// <code>1479816991.349</code>).</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The AWS Region and Availability Zone.</p>
@@ -68,7 +68,7 @@ impl Operation {
         self.status.as_ref()
     }
     /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
-    pub fn status_changed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn status_changed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.status_changed_at.as_ref()
     }
     /// <p>The error code.</p>
@@ -107,13 +107,13 @@ pub mod operation {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) resource_name: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) is_terminal: std::option::Option<bool>,
         pub(crate) operation_details: std::option::Option<std::string::String>,
         pub(crate) operation_type: std::option::Option<crate::model::OperationType>,
         pub(crate) status: std::option::Option<crate::model::OperationStatus>,
-        pub(crate) status_changed_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) status_changed_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_details: std::option::Option<std::string::String>,
     }
@@ -156,7 +156,7 @@ pub mod operation {
         }
         /// <p>The timestamp when the operation was initialized (e.g.,
         /// <code>1479816991.349</code>).</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
@@ -164,7 +164,7 @@ pub mod operation {
         /// <code>1479816991.349</code>).</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -232,14 +232,14 @@ pub mod operation {
             self
         }
         /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
-        pub fn status_changed_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn status_changed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.status_changed_at = Some(input);
             self
         }
         /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
         pub fn set_status_changed_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.status_changed_at = input;
             self
@@ -3542,7 +3542,7 @@ pub struct ContainerService {
     /// <p>The Amazon Resource Name (ARN) of the container service.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when the container service was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that describes the location of the container service, such as the AWS Region
     /// and Availability Zone.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
@@ -3665,7 +3665,7 @@ impl ContainerService {
         self.arn.as_deref()
     }
     /// <p>The timestamp when the container service was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>An object that describes the location of the container service, such as the AWS Region
@@ -3848,7 +3848,7 @@ pub mod container_service {
     pub struct Builder {
         pub(crate) container_service_name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3893,14 +3893,14 @@ pub mod container_service {
             self
         }
         /// <p>The timestamp when the container service was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the container service was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -4343,7 +4343,7 @@ pub struct ContainerServiceDeployment {
     /// <p>An object that describes the endpoint of the deployment.</p>
     pub public_endpoint: std::option::Option<crate::model::ContainerServiceEndpoint>,
     /// <p>The timestamp when the deployment was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ContainerServiceDeployment {
     /// <p>The version number of the deployment.</p>
@@ -4391,7 +4391,7 @@ impl ContainerServiceDeployment {
         self.public_endpoint.as_ref()
     }
     /// <p>The timestamp when the deployment was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -4418,7 +4418,7 @@ pub mod container_service_deployment {
             std::collections::HashMap<std::string::String, crate::model::Container>,
         >,
         pub(crate) public_endpoint: std::option::Option<crate::model::ContainerServiceEndpoint>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The version number of the deployment.</p>
@@ -4533,14 +4533,14 @@ pub mod container_service_deployment {
             self
         }
         /// <p>The timestamp when the deployment was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the deployment was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -5899,7 +5899,7 @@ pub struct Bucket {
     /// bucket.</p>
     pub bundle_id: std::option::Option<std::string::String>,
     /// <p>The timestamp when the distribution was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The URL of the bucket.</p>
     pub url: std::option::Option<std::string::String>,
     /// <p>Describes the resource location.</p>
@@ -5979,7 +5979,7 @@ impl Bucket {
         self.bundle_id.as_deref()
     }
     /// <p>The timestamp when the distribution was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The URL of the bucket.</p>
@@ -6095,7 +6095,7 @@ pub mod bucket {
         pub(crate) access_rules: std::option::Option<crate::model::AccessRules>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) bundle_id: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6170,14 +6170,14 @@ pub mod bucket {
             self
         }
         /// <p>The timestamp when the distribution was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the distribution was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -7276,7 +7276,7 @@ pub struct ContainerImage {
     /// <p>The digest of the container image.</p>
     pub digest: std::option::Option<std::string::String>,
     /// <p>The timestamp when the container image was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ContainerImage {
     /// <p>The name of the container image.</p>
@@ -7288,7 +7288,7 @@ impl ContainerImage {
         self.digest.as_deref()
     }
     /// <p>The timestamp when the container image was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -7309,7 +7309,7 @@ pub mod container_image {
     pub struct Builder {
         pub(crate) image: std::option::Option<std::string::String>,
         pub(crate) digest: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the container image.</p>
@@ -7333,14 +7333,14 @@ pub mod container_image {
             self
         }
         /// <p>The timestamp when the container image was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the container image was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -8374,7 +8374,7 @@ pub struct StaticIp {
     /// your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The region and Availability Zone where the static IP was created.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The resource type (usually <code>StaticIp</code>).</p>
@@ -8404,7 +8404,7 @@ impl StaticIp {
         self.support_code.as_deref()
     }
     /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The region and Availability Zone where the static IP was created.</p>
@@ -8453,7 +8453,7 @@ pub mod static_ip {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) ip_address: std::option::Option<std::string::String>,
@@ -8498,14 +8498,14 @@ pub mod static_ip {
             self
         }
         /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -8604,7 +8604,7 @@ pub struct RelationalDatabaseSnapshot {
     /// support team to look up your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The timestamp when the database snapshot was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Region name and Availability Zone where the database snapshot is located.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type.</p>
@@ -8649,7 +8649,7 @@ impl RelationalDatabaseSnapshot {
         self.support_code.as_deref()
     }
     /// <p>The timestamp when the database snapshot was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Region name and Availability Zone where the database snapshot is located.</p>
@@ -8744,7 +8744,7 @@ pub mod relational_database_snapshot {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8793,14 +8793,14 @@ pub mod relational_database_snapshot {
             self
         }
         /// <p>The timestamp when the database snapshot was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the database snapshot was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -9009,7 +9009,7 @@ pub struct RelationalDatabase {
     /// your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The timestamp when the database was created. Formatted in Unix time.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Region name and Availability Zone where the database is located.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type for the database (for example,
@@ -9047,7 +9047,7 @@ pub struct RelationalDatabase {
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The latest point in time to which the database can be restored. Formatted in Unix
     /// time.</p>
-    pub latest_restorable_time: std::option::Option<aws_smithy_types::Instant>,
+    pub latest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The master user name of the database.</p>
     pub master_username: std::option::Option<std::string::String>,
     /// <p>The status of parameter updates for the database.</p>
@@ -9085,7 +9085,7 @@ impl RelationalDatabase {
         self.support_code.as_deref()
     }
     /// <p>The timestamp when the database was created. Formatted in Unix time.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Region name and Availability Zone where the database is located.</p>
@@ -9152,7 +9152,7 @@ impl RelationalDatabase {
     }
     /// <p>The latest point in time to which the database can be restored. Formatted in Unix
     /// time.</p>
-    pub fn latest_restorable_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn latest_restorable_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_restorable_time.as_ref()
     }
     /// <p>The master user name of the database.</p>
@@ -9251,7 +9251,7 @@ pub mod relational_database {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9266,7 +9266,7 @@ pub mod relational_database {
             std::option::Option<crate::model::PendingModifiedRelationalDatabaseValues>,
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
-        pub(crate) latest_restorable_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) latest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) master_username: std::option::Option<std::string::String>,
         pub(crate) parameter_apply_status: std::option::Option<std::string::String>,
         pub(crate) preferred_backup_window: std::option::Option<std::string::String>,
@@ -9313,14 +9313,14 @@ pub mod relational_database {
             self
         }
         /// <p>The timestamp when the database was created. Formatted in Unix time.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the database was created. Formatted in Unix time.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -9521,7 +9521,7 @@ pub mod relational_database {
         }
         /// <p>The latest point in time to which the database can be restored. Formatted in Unix
         /// time.</p>
-        pub fn latest_restorable_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn latest_restorable_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_restorable_time = Some(input);
             self
         }
@@ -9529,7 +9529,7 @@ pub mod relational_database {
         /// time.</p>
         pub fn set_latest_restorable_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.latest_restorable_time = input;
             self
@@ -9702,7 +9702,7 @@ pub struct PendingMaintenanceAction {
     /// <p>Additional detail about the pending database maintenance action.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The effective date of the pending database maintenance action.</p>
-    pub current_apply_date: std::option::Option<aws_smithy_types::Instant>,
+    pub current_apply_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PendingMaintenanceAction {
     /// <p>The type of pending database maintenance action.</p>
@@ -9714,7 +9714,7 @@ impl PendingMaintenanceAction {
         self.description.as_deref()
     }
     /// <p>The effective date of the pending database maintenance action.</p>
-    pub fn current_apply_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn current_apply_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.current_apply_date.as_ref()
     }
 }
@@ -9735,7 +9735,7 @@ pub mod pending_maintenance_action {
     pub struct Builder {
         pub(crate) action: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) current_apply_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) current_apply_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The type of pending database maintenance action.</p>
@@ -9759,14 +9759,14 @@ pub mod pending_maintenance_action {
             self
         }
         /// <p>The effective date of the pending database maintenance action.</p>
-        pub fn current_apply_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn current_apply_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.current_apply_date = Some(input);
             self
         }
         /// <p>The effective date of the pending database maintenance action.</p>
         pub fn set_current_apply_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.current_apply_date = input;
             self
@@ -10066,7 +10066,7 @@ pub struct MetricDatapoint {
     /// <p>The sum.</p>
     pub sum: std::option::Option<f64>,
     /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unit. </p>
     pub unit: std::option::Option<crate::model::MetricUnit>,
 }
@@ -10092,7 +10092,7 @@ impl MetricDatapoint {
         self.sum
     }
     /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The unit. </p>
@@ -10124,7 +10124,7 @@ pub mod metric_datapoint {
         pub(crate) minimum: std::option::Option<f64>,
         pub(crate) sample_count: std::option::Option<f64>,
         pub(crate) sum: std::option::Option<f64>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) unit: std::option::Option<crate::model::MetricUnit>,
     }
     impl Builder {
@@ -10179,14 +10179,14 @@ pub mod metric_datapoint {
             self
         }
         /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -10614,13 +10614,13 @@ impl AsRef<str> for RelationalDatabasePasswordVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogEvent {
     /// <p>The timestamp when the database log event was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message of the database log event.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl LogEvent {
     /// <p>The timestamp when the database log event was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The message of the database log event.</p>
@@ -10642,19 +10642,19 @@ pub mod log_event {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The timestamp when the database log event was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the database log event was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -10692,7 +10692,7 @@ pub struct RelationalDatabaseEvent {
     /// <p>The database that the database event relates to.</p>
     pub resource: std::option::Option<std::string::String>,
     /// <p>The timestamp when the database event was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message of the database event.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The category that the database event belongs to.</p>
@@ -10704,7 +10704,7 @@ impl RelationalDatabaseEvent {
         self.resource.as_deref()
     }
     /// <p>The timestamp when the database event was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The message of the database event.</p>
@@ -10733,7 +10733,7 @@ pub mod relational_database_event {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -10749,14 +10749,14 @@ pub mod relational_database_event {
             self
         }
         /// <p>The timestamp when the database event was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the database event was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -11528,7 +11528,7 @@ pub struct LoadBalancerTlsCertificate {
     /// look up your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The time when you created your SSL/TLS certificate.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The AWS Region and Availability Zone where you created your certificate.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
@@ -11685,15 +11685,15 @@ pub struct LoadBalancerTlsCertificate {
     /// </ul>
     pub failure_reason: std::option::Option<crate::model::LoadBalancerTlsCertificateFailureReason>,
     /// <p>The time when the SSL/TLS certificate was issued.</p>
-    pub issued_at: std::option::Option<aws_smithy_types::Instant>,
+    pub issued_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The issuer of the certificate.</p>
     pub issuer: std::option::Option<std::string::String>,
     /// <p>The algorithm used to generate the key pair (the public and private key).</p>
     pub key_algorithm: std::option::Option<std::string::String>,
     /// <p>The timestamp when the SSL/TLS certificate expires.</p>
-    pub not_after: std::option::Option<aws_smithy_types::Instant>,
+    pub not_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the SSL/TLS certificate is first valid.</p>
-    pub not_before: std::option::Option<aws_smithy_types::Instant>,
+    pub not_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that describes the status of the certificate renewal managed by
     /// Lightsail.</p>
     pub renewal_summary:
@@ -11704,7 +11704,7 @@ pub struct LoadBalancerTlsCertificate {
         std::option::Option<crate::model::LoadBalancerTlsCertificateRevocationReason>,
     /// <p>The timestamp when the certificate was revoked. This value is present only when the
     /// certificate status is <code>REVOKED</code>.</p>
-    pub revoked_at: std::option::Option<aws_smithy_types::Instant>,
+    pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The serial number of the certificate.</p>
     pub serial: std::option::Option<std::string::String>,
     /// <p>The algorithm that was used to sign the certificate.</p>
@@ -11732,7 +11732,7 @@ impl LoadBalancerTlsCertificate {
         self.support_code.as_deref()
     }
     /// <p>The time when you created your SSL/TLS certificate.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The AWS Region and Availability Zone where you created your certificate.</p>
@@ -11912,7 +11912,7 @@ impl LoadBalancerTlsCertificate {
         self.failure_reason.as_ref()
     }
     /// <p>The time when the SSL/TLS certificate was issued.</p>
-    pub fn issued_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn issued_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.issued_at.as_ref()
     }
     /// <p>The issuer of the certificate.</p>
@@ -11924,11 +11924,11 @@ impl LoadBalancerTlsCertificate {
         self.key_algorithm.as_deref()
     }
     /// <p>The timestamp when the SSL/TLS certificate expires.</p>
-    pub fn not_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn not_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.not_after.as_ref()
     }
     /// <p>The timestamp when the SSL/TLS certificate is first valid.</p>
-    pub fn not_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn not_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.not_before.as_ref()
     }
     /// <p>An object that describes the status of the certificate renewal managed by
@@ -11947,7 +11947,7 @@ impl LoadBalancerTlsCertificate {
     }
     /// <p>The timestamp when the certificate was revoked. This value is present only when the
     /// certificate status is <code>REVOKED</code>.</p>
-    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
     }
     /// <p>The serial number of the certificate.</p>
@@ -12009,7 +12009,7 @@ pub mod load_balancer_tls_certificate {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -12022,16 +12022,16 @@ pub mod load_balancer_tls_certificate {
         >,
         pub(crate) failure_reason:
             std::option::Option<crate::model::LoadBalancerTlsCertificateFailureReason>,
-        pub(crate) issued_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) issued_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) issuer: std::option::Option<std::string::String>,
         pub(crate) key_algorithm: std::option::Option<std::string::String>,
-        pub(crate) not_after: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) not_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) not_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) not_before: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) renewal_summary:
             std::option::Option<crate::model::LoadBalancerTlsCertificateRenewalSummary>,
         pub(crate) revocation_reason:
             std::option::Option<crate::model::LoadBalancerTlsCertificateRevocationReason>,
-        pub(crate) revoked_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) revoked_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) serial: std::option::Option<std::string::String>,
         pub(crate) signature_algorithm: std::option::Option<std::string::String>,
         pub(crate) subject: std::option::Option<std::string::String>,
@@ -12074,14 +12074,14 @@ pub mod load_balancer_tls_certificate {
             self
         }
         /// <p>The time when you created your SSL/TLS certificate.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when you created your SSL/TLS certificate.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -12488,14 +12488,14 @@ pub mod load_balancer_tls_certificate {
             self
         }
         /// <p>The time when the SSL/TLS certificate was issued.</p>
-        pub fn issued_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn issued_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.issued_at = Some(input);
             self
         }
         /// <p>The time when the SSL/TLS certificate was issued.</p>
         pub fn set_issued_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.issued_at = input;
             self
@@ -12524,27 +12524,27 @@ pub mod load_balancer_tls_certificate {
             self
         }
         /// <p>The timestamp when the SSL/TLS certificate expires.</p>
-        pub fn not_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn not_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.not_after = Some(input);
             self
         }
         /// <p>The timestamp when the SSL/TLS certificate expires.</p>
         pub fn set_not_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.not_after = input;
             self
         }
         /// <p>The timestamp when the SSL/TLS certificate is first valid.</p>
-        pub fn not_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn not_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.not_before = Some(input);
             self
         }
         /// <p>The timestamp when the SSL/TLS certificate is first valid.</p>
         pub fn set_not_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.not_before = input;
             self
@@ -12587,7 +12587,7 @@ pub mod load_balancer_tls_certificate {
         }
         /// <p>The timestamp when the certificate was revoked. This value is present only when the
         /// certificate status is <code>REVOKED</code>.</p>
-        pub fn revoked_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn revoked_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.revoked_at = Some(input);
             self
         }
@@ -12595,7 +12595,7 @@ pub mod load_balancer_tls_certificate {
         /// certificate status is <code>REVOKED</code>.</p>
         pub fn set_revoked_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.revoked_at = input;
             self
@@ -13639,7 +13639,7 @@ pub struct LoadBalancer {
     /// information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The date when your load balancer was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The AWS Region where your load balancer was created (e.g., <code>us-east-2a</code>).
     /// Lightsail automatically creates your load balancer across Availability Zones.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
@@ -13701,7 +13701,7 @@ impl LoadBalancer {
         self.support_code.as_deref()
     }
     /// <p>The date when your load balancer was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The AWS Region where your load balancer was created (e.g., <code>us-east-2a</code>).
@@ -13811,7 +13811,7 @@ pub mod load_balancer {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -13866,14 +13866,14 @@ pub mod load_balancer {
             self
         }
         /// <p>The date when your load balancer was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date when your load balancer was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -15247,7 +15247,7 @@ pub struct KeyPair {
     /// your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The timestamp when the key pair was created (e.g., <code>1479816991.349</code>).</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The region name and Availability Zone where the key pair was created.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The resource type (usually <code>KeyPair</code>).</p>
@@ -15275,7 +15275,7 @@ impl KeyPair {
         self.support_code.as_deref()
     }
     /// <p>The timestamp when the key pair was created (e.g., <code>1479816991.349</code>).</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The region name and Availability Zone where the key pair was created.</p>
@@ -15319,7 +15319,7 @@ pub mod key_pair {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -15363,14 +15363,14 @@ pub mod key_pair {
             self
         }
         /// <p>The timestamp when the key pair was created (e.g., <code>1479816991.349</code>).</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the key pair was created (e.g., <code>1479816991.349</code>).</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -15541,7 +15541,7 @@ pub struct InstanceSnapshot {
     /// your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The region name and Availability Zone where you created the snapshot.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The type of resource (usually <code>InstanceSnapshot</code>).</p>
@@ -15593,7 +15593,7 @@ impl InstanceSnapshot {
         self.support_code.as_deref()
     }
     /// <p>The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The region name and Availability Zone where you created the snapshot.</p>
@@ -15685,7 +15685,7 @@ pub mod instance_snapshot {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -15737,14 +15737,14 @@ pub mod instance_snapshot {
             self
         }
         /// <p>The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -15969,7 +15969,7 @@ pub struct Disk {
     /// your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The date when the disk was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The AWS Region and Availability Zone where the disk is located.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
@@ -16024,7 +16024,7 @@ impl Disk {
         self.support_code.as_deref()
     }
     /// <p>The date when the disk was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The AWS Region and Availability Zone where the disk is located.</p>
@@ -16123,7 +16123,7 @@ pub mod disk {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -16174,14 +16174,14 @@ pub mod disk {
             self
         }
         /// <p>The date when the disk was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date when the disk was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -16686,7 +16686,7 @@ pub struct Instance {
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix
     /// time format.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The region name and Availability Zone where the instance is located.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The type of resource (usually <code>Instance</code>).</p>
@@ -16746,7 +16746,7 @@ impl Instance {
     }
     /// <p>The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix
     /// time format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The region name and Availability Zone where the instance is located.</p>
@@ -16860,7 +16860,7 @@ pub mod instance {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -16918,7 +16918,7 @@ pub mod instance {
         }
         /// <p>The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix
         /// time format.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
@@ -16926,7 +16926,7 @@ pub mod instance {
         /// time format.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -18897,7 +18897,7 @@ pub struct InstanceAccessDetails {
     /// (e.g., command line SSH), you should save this value to <code>tempkey-cert.pub</code>.</p>
     pub cert_key: std::option::Option<std::string::String>,
     /// <p>For SSH access, the date on which the temporary keys expire.</p>
-    pub expires_at: std::option::Option<aws_smithy_types::Instant>,
+    pub expires_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The public IP address of the Amazon Lightsail instance.</p>
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>For RDP access, the password for your Amazon Lightsail instance. Password will be an empty
@@ -18936,7 +18936,7 @@ impl InstanceAccessDetails {
         self.cert_key.as_deref()
     }
     /// <p>For SSH access, the date on which the temporary keys expire.</p>
-    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires_at.as_ref()
     }
     /// <p>The public IP address of the Amazon Lightsail instance.</p>
@@ -19009,7 +19009,7 @@ pub mod instance_access_details {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cert_key: std::option::Option<std::string::String>,
-        pub(crate) expires_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expires_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) ip_address: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
         pub(crate) password_data: std::option::Option<crate::model::PasswordData>,
@@ -19033,14 +19033,14 @@ pub mod instance_access_details {
             self
         }
         /// <p>For SSH access, the date on which the temporary keys expire.</p>
-        pub fn expires_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expires_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expires_at = Some(input);
             self
         }
         /// <p>For SSH access, the date on which the temporary keys expire.</p>
         pub fn set_expires_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expires_at = input;
             self
@@ -19207,7 +19207,7 @@ pub struct HostKeyAttributes {
     /// <p>The public SSH host key or the RDP certificate.</p>
     pub public_key: std::option::Option<std::string::String>,
     /// <p>The time that the SSH host key or RDP certificate was recorded by Lightsail.</p>
-    pub witnessed_at: std::option::Option<aws_smithy_types::Instant>,
+    pub witnessed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The SHA-1 fingerprint of the returned SSH host key or RDP certificate.</p>
     /// <ul>
     /// <li>
@@ -19242,10 +19242,10 @@ pub struct HostKeyAttributes {
     pub fingerprint_sha256: std::option::Option<std::string::String>,
     /// <p>The returned RDP certificate is valid after this point in time.</p>
     /// <p>This value is listed only for RDP certificates.</p>
-    pub not_valid_before: std::option::Option<aws_smithy_types::Instant>,
+    pub not_valid_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The returned RDP certificate is not valid after this point in time.</p>
     /// <p>This value is listed only for RDP certificates.</p>
-    pub not_valid_after: std::option::Option<aws_smithy_types::Instant>,
+    pub not_valid_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl HostKeyAttributes {
     /// <p>The SSH host key algorithm or the RDP certificate format.</p>
@@ -19260,7 +19260,7 @@ impl HostKeyAttributes {
         self.public_key.as_deref()
     }
     /// <p>The time that the SSH host key or RDP certificate was recorded by Lightsail.</p>
-    pub fn witnessed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn witnessed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.witnessed_at.as_ref()
     }
     /// <p>The SHA-1 fingerprint of the returned SSH host key or RDP certificate.</p>
@@ -19301,12 +19301,12 @@ impl HostKeyAttributes {
     }
     /// <p>The returned RDP certificate is valid after this point in time.</p>
     /// <p>This value is listed only for RDP certificates.</p>
-    pub fn not_valid_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn not_valid_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.not_valid_before.as_ref()
     }
     /// <p>The returned RDP certificate is not valid after this point in time.</p>
     /// <p>This value is listed only for RDP certificates.</p>
-    pub fn not_valid_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn not_valid_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.not_valid_after.as_ref()
     }
 }
@@ -19331,11 +19331,11 @@ pub mod host_key_attributes {
     pub struct Builder {
         pub(crate) algorithm: std::option::Option<std::string::String>,
         pub(crate) public_key: std::option::Option<std::string::String>,
-        pub(crate) witnessed_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) witnessed_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) fingerprint_sha1: std::option::Option<std::string::String>,
         pub(crate) fingerprint_sha256: std::option::Option<std::string::String>,
-        pub(crate) not_valid_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) not_valid_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) not_valid_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) not_valid_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The SSH host key algorithm or the RDP certificate format.</p>
@@ -19365,14 +19365,14 @@ pub mod host_key_attributes {
             self
         }
         /// <p>The time that the SSH host key or RDP certificate was recorded by Lightsail.</p>
-        pub fn witnessed_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn witnessed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.witnessed_at = Some(input);
             self
         }
         /// <p>The time that the SSH host key or RDP certificate was recorded by Lightsail.</p>
         pub fn set_witnessed_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.witnessed_at = input;
             self
@@ -19461,7 +19461,7 @@ pub mod host_key_attributes {
         }
         /// <p>The returned RDP certificate is valid after this point in time.</p>
         /// <p>This value is listed only for RDP certificates.</p>
-        pub fn not_valid_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn not_valid_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.not_valid_before = Some(input);
             self
         }
@@ -19469,14 +19469,14 @@ pub mod host_key_attributes {
         /// <p>This value is listed only for RDP certificates.</p>
         pub fn set_not_valid_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.not_valid_before = input;
             self
         }
         /// <p>The returned RDP certificate is not valid after this point in time.</p>
         /// <p>This value is listed only for RDP certificates.</p>
-        pub fn not_valid_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn not_valid_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.not_valid_after = Some(input);
             self
         }
@@ -19484,7 +19484,7 @@ pub mod host_key_attributes {
         /// <p>This value is listed only for RDP certificates.</p>
         pub fn set_not_valid_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.not_valid_after = input;
             self
@@ -19711,7 +19711,7 @@ pub struct ExportSnapshotRecord {
     /// <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date when the export snapshot record was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The AWS Region and Availability Zone where the export snapshot record is located.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
@@ -19733,7 +19733,7 @@ impl ExportSnapshotRecord {
         self.arn.as_deref()
     }
     /// <p>The date when the export snapshot record was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The AWS Region and Availability Zone where the export snapshot record is located.</p>
@@ -19781,7 +19781,7 @@ pub mod export_snapshot_record {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) state: std::option::Option<crate::model::RecordState>,
@@ -19810,14 +19810,14 @@ pub mod export_snapshot_record {
             self
         }
         /// <p>The date when the export snapshot record was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date when the export snapshot record was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -19987,7 +19987,7 @@ pub struct ExportSnapshotRecordSourceInfo {
     /// <code>DiskSnapshot</code>).</p>
     pub resource_type: std::option::Option<crate::model::ExportSnapshotRecordSourceType>,
     /// <p>The date when the source instance or disk snapshot was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source instance or disk snapshot.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source instance or disk snapshot.</p>
@@ -20010,7 +20010,7 @@ impl ExportSnapshotRecordSourceInfo {
         self.resource_type.as_ref()
     }
     /// <p>The date when the source instance or disk snapshot was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The name of the source instance or disk snapshot.</p>
@@ -20061,7 +20061,7 @@ pub mod export_snapshot_record_source_info {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ExportSnapshotRecordSourceType>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) from_resource_name: std::option::Option<std::string::String>,
@@ -20089,14 +20089,14 @@ pub mod export_snapshot_record_source_info {
             self
         }
         /// <p>The date when the source instance or disk snapshot was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date when the source instance or disk snapshot was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -20603,7 +20603,7 @@ pub struct Domain {
     /// your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The date when the domain recordset was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The AWS Region and Availability Zones where the domain recordset was created.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The resource type. </p>
@@ -20631,7 +20631,7 @@ impl Domain {
         self.support_code.as_deref()
     }
     /// <p>The date when the domain recordset was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The AWS Region and Availability Zones where the domain recordset was created.</p>
@@ -20675,7 +20675,7 @@ pub mod domain {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -20719,14 +20719,14 @@ pub mod domain {
             self
         }
         /// <p>The date when the domain recordset was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date when the domain recordset was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -20832,7 +20832,7 @@ pub struct LightsailDistribution {
     /// information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The timestamp when the distribution was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that describes the location of the distribution, such as the AWS Region and
     /// Availability Zone.</p>
     /// <note>
@@ -20897,7 +20897,7 @@ impl LightsailDistribution {
         self.support_code.as_deref()
     }
     /// <p>The timestamp when the distribution was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>An object that describes the location of the distribution, such as the AWS Region and
@@ -21015,7 +21015,7 @@ pub mod lightsail_distribution {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) alternative_domain_names:
@@ -21071,14 +21071,14 @@ pub mod lightsail_distribution {
             self
         }
         /// <p>The timestamp when the distribution was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the distribution was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -21711,7 +21711,7 @@ pub struct DiskSnapshot {
     /// your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The date when the disk snapshot was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The AWS Region and Availability Zone where the disk snapshot was created.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
@@ -21756,7 +21756,7 @@ impl DiskSnapshot {
         self.support_code.as_deref()
     }
     /// <p>The date when the disk snapshot was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The AWS Region and Availability Zone where the disk snapshot was created.</p>
@@ -21839,7 +21839,7 @@ pub mod disk_snapshot {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -21888,14 +21888,14 @@ pub mod disk_snapshot {
             self
         }
         /// <p>The date when the disk snapshot was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date when the disk snapshot was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -22359,13 +22359,13 @@ impl AsRef<str> for ContainerServiceMetricName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerServiceLogEvent {
     /// <p>The timestamp when the container service log event was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message of the container service log event.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl ContainerServiceLogEvent {
     /// <p>The timestamp when the container service log event was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The message of the container service log event.</p>
@@ -22387,19 +22387,19 @@ pub mod container_service_log_event {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The timestamp when the container service log event was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the container service log event was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -22464,7 +22464,7 @@ pub struct ContactMethod {
     /// <p>The Amazon Resource Name (ARN) of the contact method.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when the contact method was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Describes the resource location.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>ContactMethod</code>).</p>
@@ -22514,7 +22514,7 @@ impl ContactMethod {
         self.arn.as_deref()
     }
     /// <p>The timestamp when the contact method was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Describes the resource location.</p>
@@ -22558,7 +22558,7 @@ pub mod contact_method {
         pub(crate) protocol: std::option::Option<crate::model::ContactProtocol>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) support_code: std::option::Option<std::string::String>,
@@ -22660,14 +22660,14 @@ pub mod contact_method {
             self
         }
         /// <p>The timestamp when the contact method was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the contact method was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -22807,7 +22807,7 @@ pub struct CloudFormationStackRecord {
     /// <p>The Amazon Resource Name (ARN) of the CloudFormation stack record.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date when the CloudFormation stack record was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of objects describing the Availability Zone and AWS Region of the CloudFormation
     /// stack record.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
@@ -22833,7 +22833,7 @@ impl CloudFormationStackRecord {
         self.arn.as_deref()
     }
     /// <p>The date when the CloudFormation stack record was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A list of objects describing the Availability Zone and AWS Region of the CloudFormation
@@ -22883,7 +22883,7 @@ pub mod cloud_formation_stack_record {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) state: std::option::Option<crate::model::RecordState>,
@@ -22915,14 +22915,14 @@ pub mod cloud_formation_stack_record {
             self
         }
         /// <p>The date when the CloudFormation stack record was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date when the CloudFormation stack record was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -23426,15 +23426,15 @@ pub struct Certificate {
     /// certificate.</p>
     pub key_algorithm: std::option::Option<std::string::String>,
     /// <p>The timestamp when the certificate was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the certificate was issued.</p>
-    pub issued_at: std::option::Option<aws_smithy_types::Instant>,
+    pub issued_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The certificate authority that issued the certificate.</p>
     pub issuer_ca: std::option::Option<std::string::String>,
     /// <p>The timestamp when the certificate is first valid.</p>
-    pub not_before: std::option::Option<aws_smithy_types::Instant>,
+    pub not_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the certificate expires.</p>
-    pub not_after: std::option::Option<aws_smithy_types::Instant>,
+    pub not_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The renewal eligibility of the certificate.</p>
     pub eligible_to_renew: std::option::Option<std::string::String>,
     /// <p>An object that describes the status of the certificate renewal managed by
@@ -23442,7 +23442,7 @@ pub struct Certificate {
     pub renewal_summary: std::option::Option<crate::model::RenewalSummary>,
     /// <p>The timestamp when the certificate was revoked. This value is present only when the
     /// certificate status is <code>REVOKED</code>.</p>
-    pub revoked_at: std::option::Option<aws_smithy_types::Instant>,
+    pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason the certificate was revoked. This value is present only when the certificate
     /// status is <code>REVOKED</code>.</p>
     pub revocation_reason: std::option::Option<std::string::String>,
@@ -23562,11 +23562,11 @@ impl Certificate {
         self.key_algorithm.as_deref()
     }
     /// <p>The timestamp when the certificate was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp when the certificate was issued.</p>
-    pub fn issued_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn issued_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.issued_at.as_ref()
     }
     /// <p>The certificate authority that issued the certificate.</p>
@@ -23574,11 +23574,11 @@ impl Certificate {
         self.issuer_ca.as_deref()
     }
     /// <p>The timestamp when the certificate is first valid.</p>
-    pub fn not_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn not_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.not_before.as_ref()
     }
     /// <p>The timestamp when the certificate expires.</p>
-    pub fn not_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn not_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.not_after.as_ref()
     }
     /// <p>The renewal eligibility of the certificate.</p>
@@ -23592,7 +23592,7 @@ impl Certificate {
     }
     /// <p>The timestamp when the certificate was revoked. This value is present only when the
     /// certificate status is <code>REVOKED</code>.</p>
-    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
     }
     /// <p>The reason the certificate was revoked. This value is present only when the certificate
@@ -23657,14 +23657,14 @@ pub mod certificate {
         pub(crate) request_failure_reason: std::option::Option<std::string::String>,
         pub(crate) in_use_resource_count: std::option::Option<i32>,
         pub(crate) key_algorithm: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) issued_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) issued_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) issuer_ca: std::option::Option<std::string::String>,
-        pub(crate) not_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) not_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) not_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) not_after: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) eligible_to_renew: std::option::Option<std::string::String>,
         pub(crate) renewal_summary: std::option::Option<crate::model::RenewalSummary>,
-        pub(crate) revoked_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) revoked_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) revocation_reason: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) support_code: std::option::Option<std::string::String>,
@@ -23932,27 +23932,27 @@ pub mod certificate {
             self
         }
         /// <p>The timestamp when the certificate was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the certificate was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The timestamp when the certificate was issued.</p>
-        pub fn issued_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn issued_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.issued_at = Some(input);
             self
         }
         /// <p>The timestamp when the certificate was issued.</p>
         pub fn set_issued_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.issued_at = input;
             self
@@ -23968,27 +23968,27 @@ pub mod certificate {
             self
         }
         /// <p>The timestamp when the certificate is first valid.</p>
-        pub fn not_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn not_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.not_before = Some(input);
             self
         }
         /// <p>The timestamp when the certificate is first valid.</p>
         pub fn set_not_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.not_before = input;
             self
         }
         /// <p>The timestamp when the certificate expires.</p>
-        pub fn not_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn not_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.not_after = Some(input);
             self
         }
         /// <p>The timestamp when the certificate expires.</p>
         pub fn set_not_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.not_after = input;
             self
@@ -24023,7 +24023,7 @@ pub mod certificate {
         }
         /// <p>The timestamp when the certificate was revoked. This value is present only when the
         /// certificate status is <code>REVOKED</code>.</p>
-        pub fn revoked_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn revoked_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.revoked_at = Some(input);
             self
         }
@@ -24031,7 +24031,7 @@ pub mod certificate {
         /// certificate status is <code>REVOKED</code>.</p>
         pub fn set_revoked_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.revoked_at = input;
             self
@@ -24171,7 +24171,7 @@ pub struct RenewalSummary {
     /// <p>The reason for the renewal status of the certificate.</p>
     pub renewal_status_reason: std::option::Option<std::string::String>,
     /// <p>The timestamp when the certificate was last updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RenewalSummary {
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
@@ -24227,7 +24227,7 @@ impl RenewalSummary {
         self.renewal_status_reason.as_deref()
     }
     /// <p>The timestamp when the certificate was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -24251,7 +24251,7 @@ pub mod renewal_summary {
             std::option::Option<std::vec::Vec<crate::model::DomainValidationRecord>>,
         pub(crate) renewal_status: std::option::Option<crate::model::RenewalStatus>,
         pub(crate) renewal_status_reason: std::option::Option<std::string::String>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// Appends an item to `domain_validation_records`.
@@ -24379,14 +24379,14 @@ pub mod renewal_summary {
             self
         }
         /// <p>The timestamp when the certificate was last updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The timestamp when the certificate was last updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -25318,7 +25318,7 @@ pub struct AccessKey {
     /// means it is not.</p>
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The timestamp when the access key was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that describes the last time the access key was used.</p>
     ///
     /// <note>
@@ -25348,7 +25348,7 @@ impl AccessKey {
         self.status.as_ref()
     }
     /// <p>The timestamp when the access key was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>An object that describes the last time the access key was used.</p>
@@ -25382,7 +25382,7 @@ pub mod access_key {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
         pub(crate) secret_access_key: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatusType>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_used: std::option::Option<crate::model::AccessKeyLastUsed>,
     }
     impl Builder {
@@ -25435,14 +25435,14 @@ pub mod access_key {
             self
         }
         /// <p>The timestamp when the access key was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the access key was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -25501,7 +25501,7 @@ impl AccessKey {
 pub struct AccessKeyLastUsed {
     /// <p>The date and time when the access key was most recently used.</p>
     /// <p>This value is null if the access key has not been used.</p>
-    pub last_used_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_used_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The AWS Region where this access key was most recently used.</p>
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
     pub region: std::option::Option<std::string::String>,
@@ -25512,7 +25512,7 @@ pub struct AccessKeyLastUsed {
 impl AccessKeyLastUsed {
     /// <p>The date and time when the access key was most recently used.</p>
     /// <p>This value is null if the access key has not been used.</p>
-    pub fn last_used_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_used_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_used_date.as_ref()
     }
     /// <p>The AWS Region where this access key was most recently used.</p>
@@ -25541,14 +25541,14 @@ pub mod access_key_last_used {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_used_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_used_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The date and time when the access key was most recently used.</p>
         /// <p>This value is null if the access key has not been used.</p>
-        pub fn last_used_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_used_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_used_date = Some(input);
             self
         }
@@ -25556,7 +25556,7 @@ pub mod access_key_last_used {
         /// <p>This value is null if the access key has not been used.</p>
         pub fn set_last_used_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_used_date = input;
             self
@@ -26021,7 +26021,7 @@ pub struct AutoSnapshotDetails {
     /// <p>The date of the automatic snapshot in <code>YYYY-MM-DD</code> format.</p>
     pub date: std::option::Option<std::string::String>,
     /// <p>The timestamp when the automatic snapshot was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the automatic snapshot.</p>
     pub status: std::option::Option<crate::model::AutoSnapshotStatus>,
     /// <p>An array of objects that describe the block storage disks attached to the instance when
@@ -26034,7 +26034,7 @@ impl AutoSnapshotDetails {
         self.date.as_deref()
     }
     /// <p>The timestamp when the automatic snapshot was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The status of the automatic snapshot.</p>
@@ -26064,7 +26064,7 @@ pub mod auto_snapshot_details {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) date: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::AutoSnapshotStatus>,
         pub(crate) from_attached_disks:
             std::option::Option<std::vec::Vec<crate::model::AttachedDisk>>,
@@ -26081,14 +26081,14 @@ pub mod auto_snapshot_details {
             self
         }
         /// <p>The timestamp when the automatic snapshot was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the automatic snapshot was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -26293,7 +26293,7 @@ pub struct Alarm {
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when the alarm was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that lists information about the location of the alarm.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>Alarm</code>).</p>
@@ -26413,7 +26413,7 @@ impl Alarm {
         self.arn.as_deref()
     }
     /// <p>The timestamp when the alarm was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>An object that lists information about the location of the alarm.</p>
@@ -26595,7 +26595,7 @@ pub mod alarm {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) support_code: std::option::Option<std::string::String>,
@@ -26639,14 +26639,14 @@ pub mod alarm {
             self
         }
         /// <p>The timestamp when the alarm was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when the alarm was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -27543,7 +27543,7 @@ pub struct ContainerServiceRegistryLogin {
     /// <p>The log in credentials expire 12 hours after they are created, at which point you will
     /// need to create a new set of log in credentials using the
     /// <code>CreateContainerServiceRegistryLogin</code> action.</p>
-    pub expires_at: std::option::Option<aws_smithy_types::Instant>,
+    pub expires_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The address to use to push container images to the container image registry of a
     /// Lightsail account.</p>
     pub registry: std::option::Option<std::string::String>,
@@ -27564,7 +27564,7 @@ impl ContainerServiceRegistryLogin {
     /// <p>The log in credentials expire 12 hours after they are created, at which point you will
     /// need to create a new set of log in credentials using the
     /// <code>CreateContainerServiceRegistryLogin</code> action.</p>
-    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires_at.as_ref()
     }
     /// <p>The address to use to push container images to the container image registry of a
@@ -27591,7 +27591,7 @@ pub mod container_service_registry_login {
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
-        pub(crate) expires_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expires_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) registry: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -27624,7 +27624,7 @@ pub mod container_service_registry_login {
         /// <p>The log in credentials expire 12 hours after they are created, at which point you will
         /// need to create a new set of log in credentials using the
         /// <code>CreateContainerServiceRegistryLogin</code> action.</p>
-        pub fn expires_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expires_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expires_at = Some(input);
             self
         }
@@ -27635,7 +27635,7 @@ pub mod container_service_registry_login {
         /// <code>CreateContainerServiceRegistryLogin</code> action.</p>
         pub fn set_expires_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expires_at = input;
             self

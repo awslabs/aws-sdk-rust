@@ -3,6 +3,11 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
+    /// <p>You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that
+    /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+    /// Management</a> in the <i>IAM User Guide</i>. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>This exception is thrown if the request contains a semantic error. The precise meaning
     /// will depend on the API, and will be documented in the error message.</p>
     BadRequestException(crate::error::BadRequestException),
@@ -42,6 +47,7 @@ pub enum Error {
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::BadRequestException(inner) => inner.fmt(f),
             Error::ClientException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
@@ -366,6 +372,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeregisterClusterErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
                 crate::error::DeregisterClusterErrorKind::ClientException(inner) => {
                     Error::ClientException(inner)
                 }
@@ -806,6 +815,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterClusterError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::RegisterClusterErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
                 crate::error::RegisterClusterErrorKind::ClientException(inner) => {
                     Error::ClientException(inner)
                 }

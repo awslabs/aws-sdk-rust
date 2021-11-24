@@ -79,7 +79,7 @@ impl ProviderChain {
     }
 
     pub fn chain(&self) -> &[AssumeRoleProvider] {
-        &self.chain.as_slice()
+        self.chain.as_slice()
     }
 }
 
@@ -189,7 +189,7 @@ mod test {
         let mut base = HashMap::new();
         base.insert(
             "Environment".into(),
-            Arc::new(Credentials::from_keys("key", "secret", None)) as _,
+            Arc::new(Credentials::new("key", "secret", None, None, "test")) as _,
         );
         let provider = NamedProviderFactory::new(base);
         assert!(provider.provider("environment").is_some());

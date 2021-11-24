@@ -590,11 +590,11 @@ pub struct ProposalSummary {
     /// <p>
     /// The date and time that the proposal was created.
     /// </p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>.  After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out.
     /// </p>
-    pub expiration_date: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub arn: std::option::Option<std::string::String>,
 }
@@ -652,13 +652,13 @@ impl ProposalSummary {
     /// <p>
     /// The date and time that the proposal was created.
     /// </p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>
     /// The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>.  After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out.
     /// </p>
-    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -691,8 +691,8 @@ pub mod proposal_summary {
         pub(crate) proposed_by_member_id: std::option::Option<std::string::String>,
         pub(crate) proposed_by_member_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ProposalStatus>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) expiration_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) expiration_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -818,7 +818,7 @@ pub mod proposal_summary {
         /// <p>
         /// The date and time that the proposal was created.
         /// </p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -827,7 +827,7 @@ pub mod proposal_summary {
         /// </p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -835,7 +835,7 @@ pub mod proposal_summary {
         /// <p>
         /// The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>.  After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out.
         /// </p>
-        pub fn expiration_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_date = Some(input);
             self
         }
@@ -844,7 +844,7 @@ pub mod proposal_summary {
         /// </p>
         pub fn set_expiration_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration_date = input;
             self
@@ -963,7 +963,7 @@ pub struct NodeSummary {
     /// <p>The status of the node.</p>
     pub status: std::option::Option<crate::model::NodeStatus>,
     /// <p>The date and time that the node was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Availability Zone in which the node exists.</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The EC2 instance type for the node.</p>
@@ -981,7 +981,7 @@ impl NodeSummary {
         self.status.as_ref()
     }
     /// <p>The date and time that the node was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The Availability Zone in which the node exists.</p>
@@ -1017,7 +1017,7 @@ pub mod node_summary {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::NodeStatus>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
         pub(crate) instance_type: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1044,14 +1044,14 @@ pub mod node_summary {
             self
         }
         /// <p>The date and time that the node was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time that the node was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -1222,7 +1222,7 @@ pub struct NetworkSummary {
     /// <p>The current status of the network.</p>
     pub status: std::option::Option<crate::model::NetworkStatus>,
     /// <p>The date and time that the network was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub arn: std::option::Option<std::string::String>,
 }
@@ -1252,7 +1252,7 @@ impl NetworkSummary {
         self.status.as_ref()
     }
     /// <p>The date and time that the network was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -1286,7 +1286,7 @@ pub mod network_summary {
         pub(crate) framework: std::option::Option<crate::model::Framework>,
         pub(crate) framework_version: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::NetworkStatus>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1360,14 +1360,14 @@ pub mod network_summary {
             self
         }
         /// <p>The date and time that the network was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time that the network was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -1579,7 +1579,7 @@ pub struct MemberSummary {
     /// </ul>
     pub status: std::option::Option<crate::model::MemberStatus>,
     /// <p>The date and time that the member was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An indicator of whether the member is owned by your AWS account or a different AWS account.</p>
     pub is_owned: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -1636,7 +1636,7 @@ impl MemberSummary {
         self.status.as_ref()
     }
     /// <p>The date and time that the member was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>An indicator of whether the member is owned by your AWS account or a different AWS account.</p>
@@ -1671,7 +1671,7 @@ pub mod member_summary {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::MemberStatus>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) is_owned: std::option::Option<bool>,
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -1786,14 +1786,14 @@ pub mod member_summary {
             self
         }
         /// <p>The date and time that the member was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time that the member was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -1930,9 +1930,9 @@ pub struct Invitation {
     /// <p>The unique identifier for the invitation.</p>
     pub invitation_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the invitation was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the invitation expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, the invitee can no longer create a member and join the network using this <code>InvitationId</code>.</p>
-    pub expiration_date: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the invitation:</p>
     /// <ul>
     /// <li>
@@ -1968,11 +1968,11 @@ impl Invitation {
         self.invitation_id.as_deref()
     }
     /// <p>The date and time that the invitation was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time that the invitation expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, the invitee can no longer create a member and join the network using this <code>InvitationId</code>.</p>
-    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
     /// <p>The status of the invitation:</p>
@@ -2029,8 +2029,8 @@ pub mod invitation {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) invitation_id: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) expiration_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) expiration_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::InvitationStatus>,
         pub(crate) network_summary: std::option::Option<crate::model::NetworkSummary>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2050,27 +2050,27 @@ pub mod invitation {
             self
         }
         /// <p>The date and time that the invitation was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time that the invitation was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date and time that the invitation expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, the invitee can no longer create a member and join the network using this <code>InvitationId</code>.</p>
-        pub fn expiration_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_date = Some(input);
             self
         }
         /// <p>The date and time that the invitation expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, the invitee can no longer create a member and join the network using this <code>InvitationId</code>.</p>
         pub fn set_expiration_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration_date = input;
             self
@@ -2286,11 +2286,11 @@ pub struct Proposal {
     /// <p>
     /// The date and time that the proposal was created.
     /// </p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out.
     /// </p>
-    pub expiration_date: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// The current total of <code>YES</code> votes cast on the proposal by members.
     /// </p>
@@ -2364,13 +2364,13 @@ impl Proposal {
     /// <p>
     /// The date and time that the proposal was created.
     /// </p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>
     /// The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out.
     /// </p>
-    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
     /// <p>
@@ -2437,8 +2437,8 @@ pub mod proposal {
         pub(crate) proposed_by_member_id: std::option::Option<std::string::String>,
         pub(crate) proposed_by_member_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ProposalStatus>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) expiration_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) expiration_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) yes_vote_count: std::option::Option<i32>,
         pub(crate) no_vote_count: std::option::Option<i32>,
         pub(crate) outstanding_vote_count: std::option::Option<i32>,
@@ -2577,7 +2577,7 @@ pub mod proposal {
         /// <p>
         /// The date and time that the proposal was created.
         /// </p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -2586,7 +2586,7 @@ pub mod proposal {
         /// </p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -2594,7 +2594,7 @@ pub mod proposal {
         /// <p>
         /// The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out.
         /// </p>
-        pub fn expiration_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_date = Some(input);
             self
         }
@@ -2603,7 +2603,7 @@ pub mod proposal {
         /// </p>
         pub fn set_expiration_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration_date = input;
             self
@@ -3000,7 +3000,7 @@ pub struct Node {
     /// </ul>
     pub status: std::option::Option<crate::model::NodeStatus>,
     /// <p>The date and time that the node was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     pub tags:
@@ -3094,7 +3094,7 @@ impl Node {
         self.status.as_ref()
     }
     /// <p>The date and time that the node was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p>
@@ -3153,7 +3153,7 @@ pub mod node {
             std::option::Option<crate::model::NodeLogPublishingConfiguration>,
         pub(crate) state_db: std::option::Option<crate::model::StateDbType>,
         pub(crate) status: std::option::Option<crate::model::NodeStatus>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -3355,14 +3355,14 @@ pub mod node {
             self
         }
         /// <p>The date and time that the node was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time that the node was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -3758,7 +3758,7 @@ pub struct Network {
     /// <p>The current status of the network.</p>
     pub status: std::option::Option<crate::model::NetworkStatus>,
     /// <p>The date and time that the network was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     pub tags:
@@ -3806,7 +3806,7 @@ impl Network {
         self.status.as_ref()
     }
     /// <p>The date and time that the network was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p>
@@ -3856,7 +3856,7 @@ pub mod network {
         pub(crate) vpc_endpoint_service_name: std::option::Option<std::string::String>,
         pub(crate) voting_policy: std::option::Option<crate::model::VotingPolicy>,
         pub(crate) status: std::option::Option<crate::model::NetworkStatus>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -3975,14 +3975,14 @@ pub mod network {
             self
         }
         /// <p>The date and time that the network was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time that the network was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -4644,7 +4644,7 @@ pub struct Member {
     /// </ul>
     pub status: std::option::Option<crate::model::MemberStatus>,
     /// <p>The date and time that the member was created.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Tags assigned to the member. Tags consist of a key and optional value. For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -4720,7 +4720,7 @@ impl Member {
         self.status.as_ref()
     }
     /// <p>The date and time that the member was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Tags assigned to the member. Tags consist of a key and optional value. For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
@@ -4774,7 +4774,7 @@ pub mod member {
         pub(crate) log_publishing_configuration:
             std::option::Option<crate::model::MemberLogPublishingConfiguration>,
         pub(crate) status: std::option::Option<crate::model::MemberStatus>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -4934,14 +4934,14 @@ pub mod member {
             self
         }
         /// <p>The date and time that the member was created.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time that the member was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self

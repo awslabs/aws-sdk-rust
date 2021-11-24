@@ -1868,7 +1868,7 @@ pub mod fluent_builders {
         /// the iterator returned is for the next (later) record. If the time stamp is older than
         /// the current trim horizon, the iterator returned is for the oldest untrimmed data record
         /// (TRIM_HORIZON).</p>
-        pub fn timestamp(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.timestamp(inp);
             self
         }
@@ -1881,7 +1881,7 @@ pub mod fluent_builders {
         /// (TRIM_HORIZON).</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_timestamp(input);
             self
@@ -2161,7 +2161,7 @@ pub mod fluent_builders {
         /// which of the two streams you want to list the shards for.</p>
         /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
         /// parameter.</p>
-        pub fn stream_creation_timestamp(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn stream_creation_timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.stream_creation_timestamp(inp);
             self
         }
@@ -2173,7 +2173,7 @@ pub mod fluent_builders {
         /// parameter.</p>
         pub fn set_stream_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_stream_creation_timestamp(input);
             self
@@ -2336,7 +2336,7 @@ pub mod fluent_builders {
         /// data stream with the same name, you can use this input parameter to specify which of the
         /// two streams you want to list the consumers for. </p>
         /// <p>You can't specify this parameter if you specify the NextToken parameter. </p>
-        pub fn stream_creation_timestamp(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn stream_creation_timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.stream_creation_timestamp(inp);
             self
         }
@@ -2347,7 +2347,7 @@ pub mod fluent_builders {
         /// <p>You can't specify this parameter if you specify the NextToken parameter. </p>
         pub fn set_stream_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_stream_creation_timestamp(input);
             self
@@ -3868,7 +3868,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -3891,7 +3897,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

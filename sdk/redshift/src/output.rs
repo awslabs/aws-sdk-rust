@@ -194,7 +194,7 @@ pub struct RevokeEndpointAccessOutput {
     /// <p>The cluster identifier.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The time (UTC) when the authorization was created.</p>
-    pub authorize_time: std::option::Option<aws_smithy_types::Instant>,
+    pub authorize_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the cluster.</p>
     pub cluster_status: std::option::Option<std::string::String>,
     /// <p>The status of the authorization action.</p>
@@ -220,7 +220,7 @@ impl RevokeEndpointAccessOutput {
         self.cluster_identifier.as_deref()
     }
     /// <p>The time (UTC) when the authorization was created.</p>
-    pub fn authorize_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn authorize_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.authorize_time.as_ref()
     }
     /// <p>The status of the cluster.</p>
@@ -268,7 +268,7 @@ pub mod revoke_endpoint_access_output {
         pub(crate) grantor: std::option::Option<std::string::String>,
         pub(crate) grantee: std::option::Option<std::string::String>,
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
-        pub(crate) authorize_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) authorize_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) cluster_status: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::AuthorizationStatus>,
         pub(crate) allowed_all_vp_cs: std::option::Option<bool>,
@@ -310,14 +310,14 @@ pub mod revoke_endpoint_access_output {
             self
         }
         /// <p>The time (UTC) when the authorization was created.</p>
-        pub fn authorize_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn authorize_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.authorize_time = Some(input);
             self
         }
         /// <p>The time (UTC) when the authorization was created.</p>
         pub fn set_authorize_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.authorize_time = input;
             self
@@ -1370,7 +1370,7 @@ pub struct ModifySnapshotScheduleOutput {
     /// <p>An optional set of tags describing the schedule.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p></p>
-    pub next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+    pub next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The number of clusters associated with the schedule.</p>
     pub associated_cluster_count: std::option::Option<i32>,
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
@@ -1395,7 +1395,7 @@ impl ModifySnapshotScheduleOutput {
         self.tags.as_deref()
     }
     /// <p></p>
-    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
         self.next_invocations.as_deref()
     }
     /// <p>The number of clusters associated with the schedule.</p>
@@ -1432,7 +1432,7 @@ pub mod modify_snapshot_schedule_output {
         pub(crate) schedule_identifier: std::option::Option<std::string::String>,
         pub(crate) schedule_description: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        pub(crate) next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+        pub(crate) next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         pub(crate) associated_cluster_count: std::option::Option<i32>,
         pub(crate) associated_clusters:
             std::option::Option<std::vec::Vec<crate::model::ClusterAssociatedToSchedule>>,
@@ -1507,7 +1507,7 @@ pub mod modify_snapshot_schedule_output {
         /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
         ///
         /// <p></p>
-        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::Instant>) -> Self {
+        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
             v.push(input.into());
             self.next_invocations = Some(v);
@@ -1516,7 +1516,7 @@ pub mod modify_snapshot_schedule_output {
         /// <p></p>
         pub fn set_next_invocations(
             mut self,
-            input: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+            input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         ) -> Self {
             self.next_invocations = input;
             self
@@ -1660,11 +1660,11 @@ pub struct ModifyScheduledActionOutput {
     /// <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
     pub state: std::option::Option<crate::model::ScheduledActionState>,
     /// <p>List of times when the scheduled action will run. </p>
-    pub next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+    pub next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ModifyScheduledActionOutput {
     /// <p>The name of the scheduled action. </p>
@@ -1706,15 +1706,15 @@ impl ModifyScheduledActionOutput {
         self.state.as_ref()
     }
     /// <p>List of times when the scheduled action will run. </p>
-    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
         self.next_invocations.as_deref()
     }
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -1748,9 +1748,9 @@ pub mod modify_scheduled_action_output {
         pub(crate) iam_role: std::option::Option<std::string::String>,
         pub(crate) scheduled_action_description: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ScheduledActionState>,
-        pub(crate) next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the scheduled action. </p>
@@ -1861,7 +1861,7 @@ pub mod modify_scheduled_action_output {
         /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
         ///
         /// <p>List of times when the scheduled action will run. </p>
-        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::Instant>) -> Self {
+        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
             v.push(input.into());
             self.next_invocations = Some(v);
@@ -1870,33 +1870,33 @@ pub mod modify_scheduled_action_output {
         /// <p>List of times when the scheduled action will run. </p>
         pub fn set_next_invocations(
             mut self,
-            input: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+            input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         ) -> Self {
             self.next_invocations = input;
             self
         }
         /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -1996,7 +1996,7 @@ pub struct ModifyEndpointAccessOutput {
     /// <p>The name of the endpoint.</p>
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The time (UTC) that the endpoint was created.</p>
-    pub endpoint_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub endpoint_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The port number on which the cluster accepts incoming connections.</p>
     pub port: i32,
     /// <p>The DNS address of the endpoint.</p>
@@ -2029,7 +2029,7 @@ impl ModifyEndpointAccessOutput {
         self.endpoint_name.as_deref()
     }
     /// <p>The time (UTC) that the endpoint was created.</p>
-    pub fn endpoint_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn endpoint_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.endpoint_create_time.as_ref()
     }
     /// <p>The port number on which the cluster accepts incoming connections.</p>
@@ -2078,7 +2078,7 @@ pub mod modify_endpoint_access_output {
         pub(crate) subnet_group_name: std::option::Option<std::string::String>,
         pub(crate) endpoint_status: std::option::Option<std::string::String>,
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
-        pub(crate) endpoint_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) endpoint_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) port: std::option::Option<i32>,
         pub(crate) address: std::option::Option<std::string::String>,
         pub(crate) vpc_security_groups:
@@ -2152,14 +2152,14 @@ pub mod modify_endpoint_access_output {
             self
         }
         /// <p>The time (UTC) that the endpoint was created.</p>
-        pub fn endpoint_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn endpoint_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.endpoint_create_time = Some(input);
             self
         }
         /// <p>The time (UTC) that the endpoint was created.</p>
         pub fn set_endpoint_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.endpoint_create_time = input;
             self
@@ -2960,7 +2960,7 @@ pub struct GetClusterCredentialsOutput {
     /// to log on to the database <code>DbName</code>. </p>
     pub db_password: std::option::Option<std::string::String>,
     /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
-    pub expiration: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetClusterCredentialsOutput {
     /// <p>A database user name that is authorized to log on to the database
@@ -2978,7 +2978,7 @@ impl GetClusterCredentialsOutput {
         self.db_password.as_deref()
     }
     /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
-    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
 }
@@ -2999,7 +2999,7 @@ pub mod get_cluster_credentials_output {
     pub struct Builder {
         pub(crate) db_user: std::option::Option<std::string::String>,
         pub(crate) db_password: std::option::Option<std::string::String>,
-        pub(crate) expiration: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiration: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A database user name that is authorized to log on to the database
@@ -3035,14 +3035,14 @@ pub mod get_cluster_credentials_output {
             self
         }
         /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
-        pub fn expiration(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration = Some(input);
             self
         }
         /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
         pub fn set_expiration(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration = input;
             self
@@ -3130,9 +3130,9 @@ pub struct EnableLoggingOutput {
     /// <p>The prefix applied to the log file names.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>The last time that logs were delivered.</p>
-    pub last_successful_delivery_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_successful_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time when logs failed to be delivered.</p>
-    pub last_failure_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_failure_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message indicating that logs failed to be delivered.</p>
     pub last_failure_message: std::option::Option<std::string::String>,
 }
@@ -3151,11 +3151,13 @@ impl EnableLoggingOutput {
         self.s3_key_prefix.as_deref()
     }
     /// <p>The last time that logs were delivered.</p>
-    pub fn last_successful_delivery_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_successful_delivery_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_successful_delivery_time.as_ref()
     }
     /// <p>The last time when logs failed to be delivered.</p>
-    pub fn last_failure_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_failure_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_failure_time.as_ref()
     }
     /// <p>The message indicating that logs failed to be delivered.</p>
@@ -3187,8 +3189,8 @@ pub mod enable_logging_output {
         pub(crate) logging_enabled: std::option::Option<bool>,
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) s3_key_prefix: std::option::Option<std::string::String>,
-        pub(crate) last_successful_delivery_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_failure_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_successful_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_failure_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_failure_message: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3228,27 +3230,27 @@ pub mod enable_logging_output {
             self
         }
         /// <p>The last time that logs were delivered.</p>
-        pub fn last_successful_delivery_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_successful_delivery_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_successful_delivery_time = Some(input);
             self
         }
         /// <p>The last time that logs were delivered.</p>
         pub fn set_last_successful_delivery_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_successful_delivery_time = input;
             self
         }
         /// <p>The last time when logs failed to be delivered.</p>
-        pub fn last_failure_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_failure_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_failure_time = Some(input);
             self
         }
         /// <p>The last time when logs failed to be delivered.</p>
         pub fn set_last_failure_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_failure_time = input;
             self
@@ -3490,9 +3492,9 @@ pub struct DisableLoggingOutput {
     /// <p>The prefix applied to the log file names.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>The last time that logs were delivered.</p>
-    pub last_successful_delivery_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_successful_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time when logs failed to be delivered.</p>
-    pub last_failure_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_failure_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message indicating that logs failed to be delivered.</p>
     pub last_failure_message: std::option::Option<std::string::String>,
 }
@@ -3511,11 +3513,13 @@ impl DisableLoggingOutput {
         self.s3_key_prefix.as_deref()
     }
     /// <p>The last time that logs were delivered.</p>
-    pub fn last_successful_delivery_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_successful_delivery_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_successful_delivery_time.as_ref()
     }
     /// <p>The last time when logs failed to be delivered.</p>
-    pub fn last_failure_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_failure_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_failure_time.as_ref()
     }
     /// <p>The message indicating that logs failed to be delivered.</p>
@@ -3547,8 +3551,8 @@ pub mod disable_logging_output {
         pub(crate) logging_enabled: std::option::Option<bool>,
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) s3_key_prefix: std::option::Option<std::string::String>,
-        pub(crate) last_successful_delivery_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_failure_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_successful_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_failure_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_failure_message: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3588,27 +3592,27 @@ pub mod disable_logging_output {
             self
         }
         /// <p>The last time that logs were delivered.</p>
-        pub fn last_successful_delivery_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_successful_delivery_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_successful_delivery_time = Some(input);
             self
         }
         /// <p>The last time that logs were delivered.</p>
         pub fn set_last_successful_delivery_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_successful_delivery_time = input;
             self
         }
         /// <p>The last time when logs failed to be delivered.</p>
-        pub fn last_failure_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_failure_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_failure_time = Some(input);
             self
         }
         /// <p>The last time when logs failed to be delivered.</p>
         pub fn set_last_failure_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_failure_time = input;
             self
@@ -5355,9 +5359,9 @@ pub struct DescribeLoggingStatusOutput {
     /// <p>The prefix applied to the log file names.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>The last time that logs were delivered.</p>
-    pub last_successful_delivery_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_successful_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time when logs failed to be delivered.</p>
-    pub last_failure_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_failure_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message indicating that logs failed to be delivered.</p>
     pub last_failure_message: std::option::Option<std::string::String>,
 }
@@ -5376,11 +5380,13 @@ impl DescribeLoggingStatusOutput {
         self.s3_key_prefix.as_deref()
     }
     /// <p>The last time that logs were delivered.</p>
-    pub fn last_successful_delivery_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_successful_delivery_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_successful_delivery_time.as_ref()
     }
     /// <p>The last time when logs failed to be delivered.</p>
-    pub fn last_failure_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_failure_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_failure_time.as_ref()
     }
     /// <p>The message indicating that logs failed to be delivered.</p>
@@ -5412,8 +5418,8 @@ pub mod describe_logging_status_output {
         pub(crate) logging_enabled: std::option::Option<bool>,
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) s3_key_prefix: std::option::Option<std::string::String>,
-        pub(crate) last_successful_delivery_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_failure_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_successful_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_failure_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_failure_message: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5453,27 +5459,27 @@ pub mod describe_logging_status_output {
             self
         }
         /// <p>The last time that logs were delivered.</p>
-        pub fn last_successful_delivery_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_successful_delivery_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_successful_delivery_time = Some(input);
             self
         }
         /// <p>The last time that logs were delivered.</p>
         pub fn set_last_successful_delivery_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_successful_delivery_time = input;
             self
         }
         /// <p>The last time when logs failed to be delivered.</p>
-        pub fn last_failure_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_failure_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_failure_time = Some(input);
             self
         }
         /// <p>The last time when logs failed to be delivered.</p>
         pub fn set_last_failure_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_failure_time = input;
             self
@@ -7934,7 +7940,7 @@ pub struct DeleteEndpointAccessOutput {
     /// <p>The name of the endpoint.</p>
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The time (UTC) that the endpoint was created.</p>
-    pub endpoint_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub endpoint_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The port number on which the cluster accepts incoming connections.</p>
     pub port: i32,
     /// <p>The DNS address of the endpoint.</p>
@@ -7967,7 +7973,7 @@ impl DeleteEndpointAccessOutput {
         self.endpoint_name.as_deref()
     }
     /// <p>The time (UTC) that the endpoint was created.</p>
-    pub fn endpoint_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn endpoint_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.endpoint_create_time.as_ref()
     }
     /// <p>The port number on which the cluster accepts incoming connections.</p>
@@ -8016,7 +8022,7 @@ pub mod delete_endpoint_access_output {
         pub(crate) subnet_group_name: std::option::Option<std::string::String>,
         pub(crate) endpoint_status: std::option::Option<std::string::String>,
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
-        pub(crate) endpoint_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) endpoint_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) port: std::option::Option<i32>,
         pub(crate) address: std::option::Option<std::string::String>,
         pub(crate) vpc_security_groups:
@@ -8090,14 +8096,14 @@ pub mod delete_endpoint_access_output {
             self
         }
         /// <p>The time (UTC) that the endpoint was created.</p>
-        pub fn endpoint_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn endpoint_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.endpoint_create_time = Some(input);
             self
         }
         /// <p>The time (UTC) that the endpoint was created.</p>
         pub fn set_endpoint_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.endpoint_create_time = input;
             self
@@ -8894,7 +8900,7 @@ pub struct CreateSnapshotScheduleOutput {
     /// <p>An optional set of tags describing the schedule.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p></p>
-    pub next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+    pub next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The number of clusters associated with the schedule.</p>
     pub associated_cluster_count: std::option::Option<i32>,
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
@@ -8919,7 +8925,7 @@ impl CreateSnapshotScheduleOutput {
         self.tags.as_deref()
     }
     /// <p></p>
-    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
         self.next_invocations.as_deref()
     }
     /// <p>The number of clusters associated with the schedule.</p>
@@ -8956,7 +8962,7 @@ pub mod create_snapshot_schedule_output {
         pub(crate) schedule_identifier: std::option::Option<std::string::String>,
         pub(crate) schedule_description: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        pub(crate) next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+        pub(crate) next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         pub(crate) associated_cluster_count: std::option::Option<i32>,
         pub(crate) associated_clusters:
             std::option::Option<std::vec::Vec<crate::model::ClusterAssociatedToSchedule>>,
@@ -9031,7 +9037,7 @@ pub mod create_snapshot_schedule_output {
         /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
         ///
         /// <p></p>
-        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::Instant>) -> Self {
+        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
             v.push(input.into());
             self.next_invocations = Some(v);
@@ -9040,7 +9046,7 @@ pub mod create_snapshot_schedule_output {
         /// <p></p>
         pub fn set_next_invocations(
             mut self,
-            input: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+            input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         ) -> Self {
             self.next_invocations = input;
             self
@@ -9215,11 +9221,11 @@ pub struct CreateScheduledActionOutput {
     /// <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
     pub state: std::option::Option<crate::model::ScheduledActionState>,
     /// <p>List of times when the scheduled action will run. </p>
-    pub next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+    pub next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateScheduledActionOutput {
     /// <p>The name of the scheduled action. </p>
@@ -9261,15 +9267,15 @@ impl CreateScheduledActionOutput {
         self.state.as_ref()
     }
     /// <p>List of times when the scheduled action will run. </p>
-    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
         self.next_invocations.as_deref()
     }
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -9303,9 +9309,9 @@ pub mod create_scheduled_action_output {
         pub(crate) iam_role: std::option::Option<std::string::String>,
         pub(crate) scheduled_action_description: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ScheduledActionState>,
-        pub(crate) next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the scheduled action. </p>
@@ -9416,7 +9422,7 @@ pub mod create_scheduled_action_output {
         /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
         ///
         /// <p>List of times when the scheduled action will run. </p>
-        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::Instant>) -> Self {
+        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
             v.push(input.into());
             self.next_invocations = Some(v);
@@ -9425,33 +9431,33 @@ pub mod create_scheduled_action_output {
         /// <p>List of times when the scheduled action will run. </p>
         pub fn set_next_invocations(
             mut self,
-            input: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+            input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         ) -> Self {
             self.next_invocations = input;
             self
         }
         /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -9683,7 +9689,7 @@ pub struct CreateEndpointAccessOutput {
     /// <p>The name of the endpoint.</p>
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The time (UTC) that the endpoint was created.</p>
-    pub endpoint_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub endpoint_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The port number on which the cluster accepts incoming connections.</p>
     pub port: i32,
     /// <p>The DNS address of the endpoint.</p>
@@ -9716,7 +9722,7 @@ impl CreateEndpointAccessOutput {
         self.endpoint_name.as_deref()
     }
     /// <p>The time (UTC) that the endpoint was created.</p>
-    pub fn endpoint_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn endpoint_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.endpoint_create_time.as_ref()
     }
     /// <p>The port number on which the cluster accepts incoming connections.</p>
@@ -9765,7 +9771,7 @@ pub mod create_endpoint_access_output {
         pub(crate) subnet_group_name: std::option::Option<std::string::String>,
         pub(crate) endpoint_status: std::option::Option<std::string::String>,
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
-        pub(crate) endpoint_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) endpoint_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) port: std::option::Option<i32>,
         pub(crate) address: std::option::Option<std::string::String>,
         pub(crate) vpc_security_groups:
@@ -9839,14 +9845,14 @@ pub mod create_endpoint_access_output {
             self
         }
         /// <p>The time (UTC) that the endpoint was created.</p>
-        pub fn endpoint_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn endpoint_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.endpoint_create_time = Some(input);
             self
         }
         /// <p>The time (UTC) that the endpoint was created.</p>
         pub fn set_endpoint_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.endpoint_create_time = input;
             self
@@ -11112,7 +11118,7 @@ pub struct AuthorizeEndpointAccessOutput {
     /// <p>The cluster identifier.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The time (UTC) when the authorization was created.</p>
-    pub authorize_time: std::option::Option<aws_smithy_types::Instant>,
+    pub authorize_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the cluster.</p>
     pub cluster_status: std::option::Option<std::string::String>,
     /// <p>The status of the authorization action.</p>
@@ -11138,7 +11144,7 @@ impl AuthorizeEndpointAccessOutput {
         self.cluster_identifier.as_deref()
     }
     /// <p>The time (UTC) when the authorization was created.</p>
-    pub fn authorize_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn authorize_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.authorize_time.as_ref()
     }
     /// <p>The status of the cluster.</p>
@@ -11186,7 +11192,7 @@ pub mod authorize_endpoint_access_output {
         pub(crate) grantor: std::option::Option<std::string::String>,
         pub(crate) grantee: std::option::Option<std::string::String>,
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
-        pub(crate) authorize_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) authorize_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) cluster_status: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::AuthorizationStatus>,
         pub(crate) allowed_all_vp_cs: std::option::Option<bool>,
@@ -11228,14 +11234,14 @@ pub mod authorize_endpoint_access_output {
             self
         }
         /// <p>The time (UTC) when the authorization was created.</p>
-        pub fn authorize_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn authorize_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.authorize_time = Some(input);
             self
         }
         /// <p>The time (UTC) when the authorization was created.</p>
         pub fn set_authorize_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.authorize_time = input;
             self

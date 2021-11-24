@@ -35,3 +35,15 @@ name = "parse_date_time"
 path = "fuzz_targets/parse_date_time.rs"
 test = false
 doc = false
+
+[[bin]]
+name = "read_date_time"
+path = "fuzz_targets/read_date_time.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "read_http_date"
+path = "fuzz_targets/read_http_date.rs"
+test = false
+doc = false

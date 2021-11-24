@@ -97,13 +97,15 @@ impl ResolveCustomerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterUsageOutput {
     /// <p>(Optional) Only included when public key version has expired</p>
-    pub public_key_rotation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub public_key_rotation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>JWT Token</p>
     pub signature: std::option::Option<std::string::String>,
 }
 impl RegisterUsageOutput {
     /// <p>(Optional) Only included when public key version has expired</p>
-    pub fn public_key_rotation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn public_key_rotation_timestamp(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.public_key_rotation_timestamp.as_ref()
     }
     /// <p>JWT Token</p>
@@ -128,19 +130,19 @@ pub mod register_usage_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) public_key_rotation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) public_key_rotation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) signature: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>(Optional) Only included when public key version has expired</p>
-        pub fn public_key_rotation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn public_key_rotation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.public_key_rotation_timestamp = Some(input);
             self
         }
         /// <p>(Optional) Only included when public key version has expired</p>
         pub fn set_public_key_rotation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.public_key_rotation_timestamp = input;
             self

@@ -3442,7 +3442,7 @@ where
                                     .set_replication_task_assessment_run_creation_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -3812,6 +3812,11 @@ where
                                     )?,
                                 );
                             }
+                            "GcpMySQLSettings" => {
+                                builder = builder.set_gcp_my_sql_settings(
+                                    crate::json_deser::deser_structure_crate_model_gcp_my_sql_settings(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -3996,7 +4001,7 @@ where
                                 builder = builder.set_instance_create_time(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -4122,7 +4127,7 @@ where
                                 builder = builder.set_free_until(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -4348,7 +4353,7 @@ where
                                 builder = builder.set_replication_task_creation_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -4356,7 +4361,7 @@ where
                                 builder = builder.set_replication_task_start_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -4469,7 +4474,7 @@ where
                                 builder = builder.set_certificate_creation_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -4511,7 +4516,7 @@ where
                                 builder = builder.set_valid_from_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -4519,7 +4524,7 @@ where
                                 builder = builder.set_valid_to_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -5167,7 +5172,7 @@ where
                                 builder = builder.set_last_refresh_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -6025,6 +6030,13 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "UseTaskStartTimeForFullLoadTimestamp" => {
+                                builder = builder.set_use_task_start_time_for_full_load_timestamp(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             "CannedAclForObjects" => {
@@ -8443,6 +8455,166 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_gcp_my_sql_settings<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::GcpMySqlSettings>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::GcpMySqlSettings::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "AfterConnectScript" => {
+                                builder = builder.set_after_connect_script(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "CleanSourceMetadataOnMismatch" => {
+                                builder = builder.set_clean_source_metadata_on_mismatch(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "DatabaseName" => {
+                                builder = builder.set_database_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "EventsPollInterval" => {
+                                builder = builder.set_events_poll_interval(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "TargetDbType" => {
+                                builder = builder.set_target_db_type(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::TargetDbType::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "MaxFileSize" => {
+                                builder = builder.set_max_file_size(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "ParallelLoadThreads" => {
+                                builder = builder.set_parallel_load_threads(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "Password" => {
+                                builder = builder.set_password(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Port" => {
+                                builder = builder.set_port(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "ServerName" => {
+                                builder = builder.set_server_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ServerTimezone" => {
+                                builder = builder.set_server_timezone(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Username" => {
+                                builder = builder.set_username(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SecretsManagerAccessRoleArn" => {
+                                builder = builder.set_secrets_manager_access_role_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SecretsManagerSecretId" => {
+                                builder = builder.set_secrets_manager_secret_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 #[allow(clippy::type_complexity, non_snake_case)]
 pub fn deser_list_com_amazonaws_databasemigrationservice_source_ids_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
@@ -8823,7 +8995,7 @@ where
                                 builder = builder.set_fresh_start_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -8831,7 +9003,7 @@ where
                                 builder = builder.set_start_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -8839,7 +9011,7 @@ where
                                 builder = builder.set_stop_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -8847,7 +9019,7 @@ where
                                 builder = builder.set_full_load_start_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -8855,7 +9027,7 @@ where
                                 builder = builder.set_full_load_finish_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -9248,7 +9420,7 @@ where
                                 builder = builder.set_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -9491,7 +9663,7 @@ where
                                 builder = builder.set_replication_task_last_assessment_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -9612,7 +9784,7 @@ where
                                     .set_replication_task_individual_assessment_start_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -9731,7 +9903,7 @@ where
                                 builder = builder.set_full_load_start_time(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -9739,7 +9911,7 @@ where
                                 builder = builder.set_full_load_end_time(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -9754,7 +9926,7 @@ where
                                 builder = builder.set_last_update_time(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -9923,7 +10095,7 @@ where
                                 builder = builder.set_auto_applied_after_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -9931,7 +10103,7 @@ where
                                 builder = builder.set_forced_apply_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }
@@ -9948,7 +10120,7 @@ where
                                 builder = builder.set_current_apply_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
                                 );
                             }

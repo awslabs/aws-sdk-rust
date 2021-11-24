@@ -135,6 +135,7 @@ pub type BatchCreateTableRowsInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl BatchCreateTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`BatchCreateTableRows`](crate::operation::BatchCreateTableRows)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -224,11 +225,14 @@ impl BatchCreateTableRowsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -410,6 +414,7 @@ pub type BatchDeleteTableRowsInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl BatchDeleteTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteTableRows`](crate::operation::BatchDeleteTableRows)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -499,11 +504,14 @@ impl BatchDeleteTableRowsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -691,6 +699,7 @@ pub type BatchUpdateTableRowsInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl BatchUpdateTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateTableRows`](crate::operation::BatchUpdateTableRows)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -780,11 +789,14 @@ impl BatchUpdateTableRowsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -974,6 +986,7 @@ pub type BatchUpsertTableRowsInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl BatchUpsertTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpsertTableRows`](crate::operation::BatchUpsertTableRows)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1063,11 +1076,14 @@ impl BatchUpsertTableRowsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1200,6 +1216,7 @@ pub type DescribeTableDataImportJobInputOperationRetryAlias = aws_http::AwsError
 impl DescribeTableDataImportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTableDataImportJob`](crate::operation::DescribeTableDataImportJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1297,11 +1314,14 @@ impl DescribeTableDataImportJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1494,6 +1514,7 @@ pub type GetScreenDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetScreenDataInput {
     /// Consumes the builder and constructs an Operation<[`GetScreenData`](crate::operation::GetScreenData)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1545,11 +1566,14 @@ impl GetScreenDataInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1766,6 +1790,7 @@ pub type InvokeScreenAutomationInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl InvokeScreenAutomationInput {
     /// Consumes the builder and constructs an Operation<[`InvokeScreenAutomation`](crate::operation::InvokeScreenAutomation)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1879,11 +1904,14 @@ impl InvokeScreenAutomationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2021,6 +2049,7 @@ pub type ListTableColumnsInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ListTableColumnsInput {
     /// Consumes the builder and constructs an Operation<[`ListTableColumns`](crate::operation::ListTableColumns)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2074,11 +2103,15 @@ impl ListTableColumnsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListTableColumnsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListTableColumnsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_18) = &_input.next_token {
                 query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_18));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -2088,7 +2121,7 @@ impl ListTableColumnsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2109,11 +2142,14 @@ impl ListTableColumnsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2284,6 +2320,7 @@ pub type ListTableRowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`ListTableRows`](crate::operation::ListTableRows)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2371,11 +2408,14 @@ impl ListTableRowsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2507,6 +2547,7 @@ pub type ListTablesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListTablesInput {
     /// Consumes the builder and constructs an Operation<[`ListTables`](crate::operation::ListTables)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2544,17 +2585,21 @@ impl ListTablesInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListTablesInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListTablesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_22) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
                 );
             }
             if let Some(inner_23) = &_input.next_token {
                 query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_23));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -2564,7 +2609,7 @@ impl ListTablesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2585,11 +2630,14 @@ impl ListTablesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2748,6 +2796,7 @@ pub type QueryTableRowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl QueryTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`QueryTableRows`](crate::operation::QueryTableRows)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2835,11 +2884,14 @@ impl QueryTableRowsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3051,6 +3103,7 @@ pub type StartTableDataImportJobInputOperationRetryAlias = aws_http::AwsErrorRet
 impl StartTableDataImportJobInput {
     /// Consumes the builder and constructs an Operation<[`StartTableDataImportJob`](crate::operation::StartTableDataImportJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3140,11 +3193,14 @@ impl StartTableDataImportJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);

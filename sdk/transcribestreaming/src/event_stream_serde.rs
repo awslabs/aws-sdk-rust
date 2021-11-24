@@ -65,7 +65,7 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage
         aws_smithy_eventstream::frame::UnmarshalledMessage<Self::Output, Self::Error>,
         aws_smithy_eventstream::error::Error,
     > {
-        let response_headers = aws_smithy_eventstream::smithy::parse_response_headers(&message)?;
+        let response_headers = aws_smithy_eventstream::smithy::parse_response_headers(message)?;
         match response_headers.message_type.as_str() {
             "event" => match response_headers.smithy_type.as_str() {
                 "TranscriptEvent" => {
@@ -193,7 +193,7 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage for TranscriptResultStream
         aws_smithy_eventstream::frame::UnmarshalledMessage<Self::Output, Self::Error>,
         aws_smithy_eventstream::error::Error,
     > {
-        let response_headers = aws_smithy_eventstream::smithy::parse_response_headers(&message)?;
+        let response_headers = aws_smithy_eventstream::smithy::parse_response_headers(message)?;
         match response_headers.message_type.as_str() {
             "event" => {
                 match response_headers.smithy_type.as_str() {

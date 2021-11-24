@@ -526,7 +526,7 @@ pub struct MigrationTaskSummary {
     /// <p>Detail information of what is being done within the overall status state.</p>
     pub status_detail: std::option::Option<std::string::String>,
     /// <p>The timestamp when the task was gathered.</p>
-    pub update_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MigrationTaskSummary {
     /// <p>An AWS resource used for access control. It should uniquely identify the migration tool
@@ -553,7 +553,7 @@ impl MigrationTaskSummary {
         self.status_detail.as_deref()
     }
     /// <p>The timestamp when the task was gathered.</p>
-    pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
     }
 }
@@ -580,7 +580,7 @@ pub mod migration_task_summary {
         pub(crate) status: std::option::Option<crate::model::Status>,
         pub(crate) progress_percent: std::option::Option<i32>,
         pub(crate) status_detail: std::option::Option<std::string::String>,
-        pub(crate) update_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>An AWS resource used for access control. It should uniquely identify the migration tool
@@ -649,14 +649,14 @@ pub mod migration_task_summary {
             self
         }
         /// <p>The timestamp when the task was gathered.</p>
-        pub fn update_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_date_time = Some(input);
             self
         }
         /// <p>The timestamp when the task was gathered.</p>
         pub fn set_update_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_date_time = input;
             self
@@ -854,7 +854,7 @@ pub struct ApplicationState {
     /// <p>The current status of an application.</p>
     pub application_status: std::option::Option<crate::model::ApplicationStatus>,
     /// <p>The timestamp when the application status was last updated.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ApplicationState {
     /// <p>The configurationId from the Application Discovery Service that uniquely identifies an
@@ -867,7 +867,7 @@ impl ApplicationState {
         self.application_status.as_ref()
     }
     /// <p>The timestamp when the application status was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -888,7 +888,7 @@ pub mod application_state {
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) application_status: std::option::Option<crate::model::ApplicationStatus>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The configurationId from the Application Discovery Service that uniquely identifies an
@@ -920,14 +920,14 @@ pub mod application_state {
             self
         }
         /// <p>The timestamp when the application status was last updated.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>The timestamp when the application status was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -962,7 +962,7 @@ pub struct MigrationTask {
     /// <p>Task object encapsulating task information.</p>
     pub task: std::option::Option<crate::model::Task>,
     /// <p>The timestamp when the task was gathered.</p>
-    pub update_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the resource that is being migrated. This data will be used to map the
     /// task to a resource in the Application Discovery Service repository.</p>
     pub resource_attribute_list:
@@ -984,7 +984,7 @@ impl MigrationTask {
         self.task.as_ref()
     }
     /// <p>The timestamp when the task was gathered.</p>
-    pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
     }
     /// <p>Information about the resource that is being migrated. This data will be used to map the
@@ -1015,7 +1015,7 @@ pub mod migration_task {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
         pub(crate) migration_task_name: std::option::Option<std::string::String>,
         pub(crate) task: std::option::Option<crate::model::Task>,
-        pub(crate) update_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resource_attribute_list:
             std::option::Option<std::vec::Vec<crate::model::ResourceAttribute>>,
     }
@@ -1061,14 +1061,14 @@ pub mod migration_task {
             self
         }
         /// <p>The timestamp when the task was gathered.</p>
-        pub fn update_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_date_time = Some(input);
             self
         }
         /// <p>The timestamp when the task was gathered.</p>
         pub fn set_update_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_date_time = input;
             self

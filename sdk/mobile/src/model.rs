@@ -24,11 +24,11 @@ pub struct ProjectDetails {
     /// <p>
     /// Date the project was created.
     /// </p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// Date of the last modification of the project.
     /// </p>
-    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// Website URL for this project in the AWS Mobile Hub console.
     /// </p>
@@ -66,13 +66,13 @@ impl ProjectDetails {
     /// <p>
     /// Date the project was created.
     /// </p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>
     /// Date of the last modification of the project.
     /// </p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>
@@ -112,8 +112,8 @@ pub mod project_details {
         pub(crate) project_id: std::option::Option<std::string::String>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ProjectState>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) console_url: std::option::Option<std::string::String>,
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     }
@@ -177,7 +177,7 @@ pub mod project_details {
         /// <p>
         /// Date the project was created.
         /// </p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
@@ -186,7 +186,7 @@ pub mod project_details {
         /// </p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -194,7 +194,7 @@ pub mod project_details {
         /// <p>
         /// Date of the last modification of the project.
         /// </p>
-        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date = Some(input);
             self
         }
@@ -203,7 +203,7 @@ pub mod project_details {
         /// </p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date = input;
             self

@@ -183,9 +183,9 @@ pub struct Domain {
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>The timestamp at which the domain is created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp showing the domain's last update.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Domain {
     /// <p>The service-generated identifier for the domain.</p>
@@ -216,11 +216,11 @@ impl Domain {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>The timestamp at which the domain is created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp showing the domain's last update.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -254,8 +254,8 @@ pub mod domain {
         pub(crate) domain_status: std::option::Option<crate::model::DomainStatus>,
         pub(crate) server_side_encryption_configuration:
             std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The service-generated identifier for the domain.</p>
@@ -330,27 +330,27 @@ pub mod domain {
             self
         }
         /// <p>The timestamp at which the domain is created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp at which the domain is created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The timestamp showing the domain's last update.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The timestamp showing the domain's last update.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -605,9 +605,9 @@ pub struct SpeakerEnrollmentJob {
     /// also include a KMS Key ID to encrypt the file.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>A timestamp showing the creation of the speaker enrollment job.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing when the speaker enrollment job ended. </p>
-    pub ended_at: std::option::Option<aws_smithy_types::Instant>,
+    pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
     /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
     /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
@@ -655,11 +655,11 @@ impl SpeakerEnrollmentJob {
         self.output_data_config.as_ref()
     }
     /// <p>A timestamp showing the creation of the speaker enrollment job.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A timestamp showing when the speaker enrollment job ended. </p>
-    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
@@ -707,8 +707,8 @@ pub mod speaker_enrollment_job {
         pub(crate) enrollment_config: std::option::Option<crate::model::EnrollmentConfig>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) ended_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) ended_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_details: std::option::Option<crate::model::FailureDetails>,
         pub(crate) job_progress: std::option::Option<crate::model::JobProgress>,
     }
@@ -817,27 +817,27 @@ pub mod speaker_enrollment_job {
             self
         }
         /// <p>A timestamp showing the creation of the speaker enrollment job.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>A timestamp showing the creation of the speaker enrollment job.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>A timestamp showing when the speaker enrollment job ended. </p>
-        pub fn ended_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.ended_at = Some(input);
             self
         }
         /// <p>A timestamp showing when the speaker enrollment job ended. </p>
         pub fn set_ended_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.ended_at = input;
             self
@@ -1582,9 +1582,9 @@ pub struct FraudsterRegistrationJob {
     /// file; you must also include a KMS Key ID in order to encrypt the file.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>A timestamp showing the creation time of the fraudster registration job.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing when the fraudster registration job ended.</p>
-    pub ended_at: std::option::Option<aws_smithy_types::Instant>,
+    pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
     /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
     /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
@@ -1631,11 +1631,11 @@ impl FraudsterRegistrationJob {
         self.output_data_config.as_ref()
     }
     /// <p>A timestamp showing the creation time of the fraudster registration job.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A timestamp showing when the fraudster registration job ended.</p>
-    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
@@ -1682,8 +1682,8 @@ pub mod fraudster_registration_job {
         pub(crate) registration_config: std::option::Option<crate::model::RegistrationConfig>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) ended_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) ended_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_details: std::option::Option<crate::model::FailureDetails>,
         pub(crate) job_progress: std::option::Option<crate::model::JobProgress>,
     }
@@ -1792,27 +1792,27 @@ pub mod fraudster_registration_job {
             self
         }
         /// <p>A timestamp showing the creation time of the fraudster registration job.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>A timestamp showing the creation time of the fraudster registration job.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>A timestamp showing when the fraudster registration job ended.</p>
-        pub fn ended_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.ended_at = Some(input);
             self
         }
         /// <p>A timestamp showing when the fraudster registration job ended.</p>
         pub fn set_ended_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.ended_at = input;
             self
@@ -2121,9 +2121,9 @@ pub struct Speaker {
     /// <p>The current status of the speaker.</p>
     pub status: std::option::Option<crate::model::SpeakerStatus>,
     /// <p>A timestamp showing when the speaker is created. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing the speaker's last update.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Speaker {
     /// <p>The identifier of the domain that contains the speaker.</p>
@@ -2143,11 +2143,11 @@ impl Speaker {
         self.status.as_ref()
     }
     /// <p>A timestamp showing when the speaker is created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A timestamp showing the speaker's last update.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -2173,8 +2173,8 @@ pub mod speaker {
         pub(crate) customer_speaker_id: std::option::Option<std::string::String>,
         pub(crate) generated_speaker_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::SpeakerStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the domain that contains the speaker.</p>
@@ -2227,27 +2227,27 @@ pub mod speaker {
             self
         }
         /// <p>A timestamp showing when the speaker is created. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>A timestamp showing when the speaker is created. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>A timestamp showing the speaker's last update.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>A timestamp showing the speaker's last update.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -2348,9 +2348,9 @@ pub struct SpeakerSummary {
     /// <p>The current status of the speaker.</p>
     pub status: std::option::Option<crate::model::SpeakerStatus>,
     /// <p>A timestamp showing the speaker's creation time. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing the speaker's last update.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SpeakerSummary {
     /// <p>The identifier of the domain that contains the speaker.</p>
@@ -2370,11 +2370,11 @@ impl SpeakerSummary {
         self.status.as_ref()
     }
     /// <p>A timestamp showing the speaker's creation time. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A timestamp showing the speaker's last update.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -2400,8 +2400,8 @@ pub mod speaker_summary {
         pub(crate) customer_speaker_id: std::option::Option<std::string::String>,
         pub(crate) generated_speaker_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::SpeakerStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the domain that contains the speaker.</p>
@@ -2454,27 +2454,27 @@ pub mod speaker_summary {
             self
         }
         /// <p>A timestamp showing the speaker's creation time. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>A timestamp showing the speaker's creation time. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>A timestamp showing the speaker's last update.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>A timestamp showing the speaker's last update.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -2512,9 +2512,9 @@ pub struct SpeakerEnrollmentJobSummary {
     /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>A timestamp showing the creation time of the speaker enrollment job.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing when the speaker enrollment job ended.</p>
-    pub ended_at: std::option::Option<aws_smithy_types::Instant>,
+    pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
     /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
     /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
@@ -2542,11 +2542,11 @@ impl SpeakerEnrollmentJobSummary {
         self.domain_id.as_deref()
     }
     /// <p>A timestamp showing the creation time of the speaker enrollment job.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A timestamp showing when the speaker enrollment job ended.</p>
-    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
@@ -2586,8 +2586,8 @@ pub mod speaker_enrollment_job_summary {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::SpeakerEnrollmentJobStatus>,
         pub(crate) domain_id: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) ended_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) ended_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_details: std::option::Option<crate::model::FailureDetails>,
         pub(crate) job_progress: std::option::Option<crate::model::JobProgress>,
     }
@@ -2636,27 +2636,27 @@ pub mod speaker_enrollment_job_summary {
             self
         }
         /// <p>A timestamp showing the creation time of the speaker enrollment job.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>A timestamp showing the creation time of the speaker enrollment job.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>A timestamp showing when the speaker enrollment job ended.</p>
-        pub fn ended_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.ended_at = Some(input);
             self
         }
         /// <p>A timestamp showing when the speaker enrollment job ended.</p>
         pub fn set_ended_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.ended_at = input;
             self
@@ -2730,9 +2730,9 @@ pub struct FraudsterRegistrationJobSummary {
     /// <p>The identifier of the domain containing the fraudster registration job.</p>
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>A timestamp showing when the fraudster registration job is created. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing when the fraudster registration job ended.</p>
-    pub ended_at: std::option::Option<aws_smithy_types::Instant>,
+    pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
     /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
     /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
@@ -2759,11 +2759,11 @@ impl FraudsterRegistrationJobSummary {
         self.domain_id.as_deref()
     }
     /// <p>A timestamp showing when the fraudster registration job is created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A timestamp showing when the fraudster registration job ended.</p>
-    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
@@ -2802,8 +2802,8 @@ pub mod fraudster_registration_job_summary {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::FraudsterRegistrationJobStatus>,
         pub(crate) domain_id: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) ended_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) ended_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_details: std::option::Option<crate::model::FailureDetails>,
         pub(crate) job_progress: std::option::Option<crate::model::JobProgress>,
     }
@@ -2852,27 +2852,27 @@ pub mod fraudster_registration_job_summary {
             self
         }
         /// <p>A timestamp showing when the fraudster registration job is created. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>A timestamp showing when the fraudster registration job is created. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>A timestamp showing when the fraudster registration job ended.</p>
-        pub fn ended_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.ended_at = Some(input);
             self
         }
         /// <p>A timestamp showing when the fraudster registration job ended.</p>
         pub fn set_ended_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.ended_at = input;
             self
@@ -2950,9 +2950,9 @@ pub struct DomainSummary {
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>The timestamp showing when the domain is created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp showing the domain's last update.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DomainSummary {
     /// <p>The service-generated identifier for the domain.</p>
@@ -2983,11 +2983,11 @@ impl DomainSummary {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>The timestamp showing when the domain is created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp showing the domain's last update.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -3021,8 +3021,8 @@ pub mod domain_summary {
         pub(crate) domain_status: std::option::Option<crate::model::DomainStatus>,
         pub(crate) server_side_encryption_configuration:
             std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The service-generated identifier for the domain.</p>
@@ -3097,27 +3097,27 @@ pub mod domain_summary {
             self
         }
         /// <p>The timestamp showing when the domain is created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp showing when the domain is created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The timestamp showing the domain's last update.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The timestamp showing the domain's last update.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -3155,9 +3155,9 @@ pub struct FraudDetectionResult {
     /// changes, Voice ID always returns cached Fraud Detection result for this API.</p>
     pub fraud_detection_result_id: std::option::Option<std::string::String>,
     /// <p>A timestamp indicating when audio aggregation started for this fraud detection result.</p>
-    pub audio_aggregation_started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub audio_aggregation_started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating when audio aggregation ended for this fraud detection result.</p>
-    pub audio_aggregation_ended_at: std::option::Option<aws_smithy_types::Instant>,
+    pub audio_aggregation_ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>FraudDetectionConfiguration</code> used to generate this fraud detection result.</p>
     pub configuration: std::option::Option<crate::model::FraudDetectionConfiguration>,
     /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and
@@ -3179,11 +3179,11 @@ impl FraudDetectionResult {
         self.fraud_detection_result_id.as_deref()
     }
     /// <p>A timestamp indicating when audio aggregation started for this fraud detection result.</p>
-    pub fn audio_aggregation_started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn audio_aggregation_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.audio_aggregation_started_at.as_ref()
     }
     /// <p>A timestamp indicating when audio aggregation ended for this fraud detection result.</p>
-    pub fn audio_aggregation_ended_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn audio_aggregation_ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.audio_aggregation_ended_at.as_ref()
     }
     /// <p>The <code>FraudDetectionConfiguration</code> used to generate this fraud detection result.</p>
@@ -3232,8 +3232,8 @@ pub mod fraud_detection_result {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fraud_detection_result_id: std::option::Option<std::string::String>,
-        pub(crate) audio_aggregation_started_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) audio_aggregation_ended_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) audio_aggregation_started_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) audio_aggregation_ended_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) configuration: std::option::Option<crate::model::FraudDetectionConfiguration>,
         pub(crate) decision: std::option::Option<crate::model::FraudDetectionDecision>,
         pub(crate) reasons: std::option::Option<std::vec::Vec<crate::model::FraudDetectionReason>>,
@@ -3260,27 +3260,27 @@ pub mod fraud_detection_result {
             self
         }
         /// <p>A timestamp indicating when audio aggregation started for this fraud detection result.</p>
-        pub fn audio_aggregation_started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn audio_aggregation_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.audio_aggregation_started_at = Some(input);
             self
         }
         /// <p>A timestamp indicating when audio aggregation started for this fraud detection result.</p>
         pub fn set_audio_aggregation_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.audio_aggregation_started_at = input;
             self
         }
         /// <p>A timestamp indicating when audio aggregation ended for this fraud detection result.</p>
-        pub fn audio_aggregation_ended_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn audio_aggregation_ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.audio_aggregation_ended_at = Some(input);
             self
         }
         /// <p>A timestamp indicating when audio aggregation ended for this fraud detection result.</p>
         pub fn set_audio_aggregation_ended_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.audio_aggregation_ended_at = input;
             self
@@ -3692,9 +3692,9 @@ pub struct AuthenticationResult {
     /// always returns cached Authentication Result for this API.</p>
     pub authentication_result_id: std::option::Option<std::string::String>,
     /// <p>A timestamp indicating when audio aggregation started for this authentication result.</p>
-    pub audio_aggregation_started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub audio_aggregation_started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating when audio aggregation ended for this authentication result.</p>
-    pub audio_aggregation_ended_at: std::option::Option<aws_smithy_types::Instant>,
+    pub audio_aggregation_ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a
     /// <code>SpeakerId</code> is provided for the session.</p>
     pub customer_speaker_id: std::option::Option<std::string::String>,
@@ -3719,11 +3719,11 @@ impl AuthenticationResult {
         self.authentication_result_id.as_deref()
     }
     /// <p>A timestamp indicating when audio aggregation started for this authentication result.</p>
-    pub fn audio_aggregation_started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn audio_aggregation_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.audio_aggregation_started_at.as_ref()
     }
     /// <p>A timestamp indicating when audio aggregation ended for this authentication result.</p>
-    pub fn audio_aggregation_ended_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn audio_aggregation_ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.audio_aggregation_ended_at.as_ref()
     }
     /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a
@@ -3777,8 +3777,8 @@ pub mod authentication_result {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authentication_result_id: std::option::Option<std::string::String>,
-        pub(crate) audio_aggregation_started_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) audio_aggregation_ended_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) audio_aggregation_started_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) audio_aggregation_ended_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) customer_speaker_id: std::option::Option<std::string::String>,
         pub(crate) generated_speaker_id: std::option::Option<std::string::String>,
         pub(crate) decision: std::option::Option<crate::model::AuthenticationDecision>,
@@ -3808,27 +3808,27 @@ pub mod authentication_result {
             self
         }
         /// <p>A timestamp indicating when audio aggregation started for this authentication result.</p>
-        pub fn audio_aggregation_started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn audio_aggregation_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.audio_aggregation_started_at = Some(input);
             self
         }
         /// <p>A timestamp indicating when audio aggregation started for this authentication result.</p>
         pub fn set_audio_aggregation_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.audio_aggregation_started_at = input;
             self
         }
         /// <p>A timestamp indicating when audio aggregation ended for this authentication result.</p>
-        pub fn audio_aggregation_ended_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn audio_aggregation_ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.audio_aggregation_ended_at = Some(input);
             self
         }
         /// <p>A timestamp indicating when audio aggregation ended for this authentication result.</p>
         pub fn set_audio_aggregation_ended_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.audio_aggregation_ended_at = input;
             self
@@ -4123,7 +4123,7 @@ pub struct Fraudster {
     /// <p>The service-generated identifier for the fraudster.</p>
     pub generated_fraudster_id: std::option::Option<std::string::String>,
     /// <p>The timestamp when Voice ID identified the fraudster.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Fraudster {
     /// <p>The identifier for the domain containing the fraudster.</p>
@@ -4135,7 +4135,7 @@ impl Fraudster {
         self.generated_fraudster_id.as_deref()
     }
     /// <p>The timestamp when Voice ID identified the fraudster.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -4156,7 +4156,7 @@ pub mod fraudster {
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
         pub(crate) generated_fraudster_id: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier for the domain containing the fraudster.</p>
@@ -4183,14 +4183,14 @@ pub mod fraudster {
             self
         }
         /// <p>The timestamp when Voice ID identified the fraudster.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The timestamp when Voice ID identified the fraudster.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self

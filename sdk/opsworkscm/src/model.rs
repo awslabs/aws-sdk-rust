@@ -15,7 +15,7 @@ pub struct Server {
     pub server_name: std::option::Option<std::string::String>,
     /// <p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code>
     /// </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the CloudFormation stack that was used to create the server.
     /// </p>
     pub cloud_formation_stack_arn: std::option::Option<std::string::String>,
@@ -143,7 +143,7 @@ impl Server {
     }
     /// <p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code>
     /// </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The ARN of the CloudFormation stack that was used to create the server.
@@ -340,7 +340,7 @@ pub mod server {
         pub(crate) associate_public_ip_address: std::option::Option<bool>,
         pub(crate) backup_retention_count: std::option::Option<i32>,
         pub(crate) server_name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) cloud_formation_stack_arn: std::option::Option<std::string::String>,
         pub(crate) custom_domain: std::option::Option<std::string::String>,
         pub(crate) disable_automated_backup: std::option::Option<bool>,
@@ -402,7 +402,7 @@ pub mod server {
         }
         /// <p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code>
         /// </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
@@ -410,7 +410,7 @@ pub mod server {
         /// </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1283,7 +1283,7 @@ impl AsRef<str> for NodeAssociationStatus {
 pub struct ServerEvent {
     /// <p>The time when the event occurred.
     /// </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the server on or for which the event occurred.
     /// </p>
     pub server_name: std::option::Option<std::string::String>,
@@ -1295,7 +1295,7 @@ pub struct ServerEvent {
 impl ServerEvent {
     /// <p>The time when the event occurred.
     /// </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The name of the server on or for which the event occurred.
@@ -1328,7 +1328,7 @@ pub mod server_event {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) server_name: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) log_url: std::option::Option<std::string::String>,
@@ -1336,7 +1336,7 @@ pub mod server_event {
     impl Builder {
         /// <p>The time when the event occurred.
         /// </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
@@ -1344,7 +1344,7 @@ pub mod server_event {
         /// </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1418,7 +1418,7 @@ pub struct Backup {
     /// <p>
     /// The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code>
     /// </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     /// A user-provided description for a manual backup. This field is empty for automated backups.
     /// </p>
@@ -1521,7 +1521,7 @@ impl Backup {
     /// <p>
     /// The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code>
     /// </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>
@@ -1687,7 +1687,7 @@ pub mod backup {
         pub(crate) backup_arn: std::option::Option<std::string::String>,
         pub(crate) backup_id: std::option::Option<std::string::String>,
         pub(crate) backup_type: std::option::Option<crate::model::BackupType>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) engine_model: std::option::Option<std::string::String>,
@@ -1756,7 +1756,7 @@ pub mod backup {
         /// <p>
         /// The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code>
         /// </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
@@ -1765,7 +1765,7 @@ pub mod backup {
         /// </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self

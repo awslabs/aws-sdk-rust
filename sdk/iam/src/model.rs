@@ -19,7 +19,7 @@ pub struct SshPublicKey {
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the SSH public key was uploaded.</p>
-    pub upload_date: std::option::Option<aws_smithy_types::Instant>,
+    pub upload_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SshPublicKey {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
@@ -46,7 +46,7 @@ impl SshPublicKey {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the SSH public key was uploaded.</p>
-    pub fn upload_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn upload_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.upload_date.as_ref()
     }
 }
@@ -73,7 +73,7 @@ pub mod ssh_public_key {
         pub(crate) fingerprint: std::option::Option<std::string::String>,
         pub(crate) ssh_public_key_body: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatusType>,
-        pub(crate) upload_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) upload_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the IAM user associated with the SSH public key.</p>
@@ -138,7 +138,7 @@ pub mod ssh_public_key {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the SSH public key was uploaded.</p>
-        pub fn upload_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn upload_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.upload_date = Some(input);
             self
         }
@@ -146,7 +146,7 @@ pub mod ssh_public_key {
         /// format</a>, when the SSH public key was uploaded.</p>
         pub fn set_upload_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.upload_date = input;
             self
@@ -242,7 +242,7 @@ pub struct SigningCertificate {
     /// for API calls, while <code>Inactive</code> means it is not.</p>
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The date when the signing certificate was uploaded.</p>
-    pub upload_date: std::option::Option<aws_smithy_types::Instant>,
+    pub upload_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SigningCertificate {
     /// <p>The name of the user the signing certificate is associated with.</p>
@@ -263,7 +263,7 @@ impl SigningCertificate {
         self.status.as_ref()
     }
     /// <p>The date when the signing certificate was uploaded.</p>
-    pub fn upload_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn upload_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.upload_date.as_ref()
     }
 }
@@ -288,7 +288,7 @@ pub mod signing_certificate {
         pub(crate) certificate_id: std::option::Option<std::string::String>,
         pub(crate) certificate_body: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatusType>,
-        pub(crate) upload_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) upload_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the user the signing certificate is associated with.</p>
@@ -340,14 +340,14 @@ pub mod signing_certificate {
             self
         }
         /// <p>The date when the signing certificate was uploaded.</p>
-        pub fn upload_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn upload_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.upload_date = Some(input);
             self
         }
         /// <p>The date when the signing certificate was uploaded.</p>
         pub fn set_upload_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.upload_date = input;
             self
@@ -510,9 +510,9 @@ pub struct ServerCertificateMetadata {
     /// <i>IAM User Guide</i>. </p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date when the server certificate was uploaded.</p>
-    pub upload_date: std::option::Option<aws_smithy_types::Instant>,
+    pub upload_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date on which the certificate is set to expire.</p>
-    pub expiration: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ServerCertificateMetadata {
     /// <p> The path to the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -536,11 +536,11 @@ impl ServerCertificateMetadata {
         self.arn.as_deref()
     }
     /// <p>The date when the server certificate was uploaded.</p>
-    pub fn upload_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn upload_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.upload_date.as_ref()
     }
     /// <p>The date on which the certificate is set to expire.</p>
-    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
 }
@@ -566,8 +566,8 @@ pub mod server_certificate_metadata {
         pub(crate) server_certificate_name: std::option::Option<std::string::String>,
         pub(crate) server_certificate_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) upload_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) expiration: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) upload_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) expiration: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p> The path to the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -625,27 +625,27 @@ pub mod server_certificate_metadata {
             self
         }
         /// <p>The date when the server certificate was uploaded.</p>
-        pub fn upload_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn upload_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.upload_date = Some(input);
             self
         }
         /// <p>The date when the server certificate was uploaded.</p>
         pub fn set_upload_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.upload_date = input;
             self
         }
         /// <p>The date on which the certificate is set to expire.</p>
-        pub fn expiration(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration = Some(input);
             self
         }
         /// <p>The date on which the certificate is set to expire.</p>
         pub fn set_expiration(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration = input;
             self
@@ -690,7 +690,7 @@ pub struct Role {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the role was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The policy that grants an entity permission to assume the role.</p>
     pub assume_role_policy_document: std::option::Option<std::string::String>,
     /// <p>A description of the role that you provide.</p>
@@ -739,7 +739,7 @@ impl Role {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the role was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The policy that grants an entity permission to assume the role.</p>
@@ -810,7 +810,7 @@ pub mod role {
         pub(crate) role_name: std::option::Option<std::string::String>,
         pub(crate) role_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) assume_role_policy_document: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) max_session_duration: std::option::Option<i32>,
@@ -872,7 +872,7 @@ pub mod role {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the role was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
@@ -880,7 +880,7 @@ pub mod role {
         /// format</a>, when the role was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -1031,7 +1031,7 @@ pub struct RoleLastUsed {
     /// format</a> that the role was last used.</p>
     /// <p>This field is null if the role has not been used within the IAM tracking period. For
     /// more information about the tracking period, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User Guide</i>. </p>
-    pub last_used_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_used_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the Amazon Web Services Region in which the role was last used.</p>
     pub region: std::option::Option<std::string::String>,
 }
@@ -1040,7 +1040,7 @@ impl RoleLastUsed {
     /// format</a> that the role was last used.</p>
     /// <p>This field is null if the role has not been used within the IAM tracking period. For
     /// more information about the tracking period, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User Guide</i>. </p>
-    pub fn last_used_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_used_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_used_date.as_ref()
     }
     /// <p>The name of the Amazon Web Services Region in which the role was last used.</p>
@@ -1062,7 +1062,7 @@ pub mod role_last_used {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_used_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_used_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) region: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1070,7 +1070,7 @@ pub mod role_last_used {
         /// format</a> that the role was last used.</p>
         /// <p>This field is null if the role has not been used within the IAM tracking period. For
         /// more information about the tracking period, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User Guide</i>. </p>
-        pub fn last_used_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_used_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_used_date = Some(input);
             self
         }
@@ -1080,7 +1080,7 @@ pub mod role_last_used {
         /// more information about the tracking period, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User Guide</i>. </p>
         pub fn set_last_used_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_used_date = input;
             self
@@ -2746,7 +2746,7 @@ impl AsRef<str> for GlobalEndpointTokenVersion {
 pub struct ServiceSpecificCredential {
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the service-specific credential were created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the service associated with the service-specific credential.</p>
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The generated user name for the service-specific credential. This value is generated by
@@ -2767,7 +2767,7 @@ pub struct ServiceSpecificCredential {
 impl ServiceSpecificCredential {
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the service-specific credential were created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The name of the service associated with the service-specific credential.</p>
@@ -2821,7 +2821,7 @@ pub mod service_specific_credential {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) service_user_name: std::option::Option<std::string::String>,
         pub(crate) service_password: std::option::Option<std::string::String>,
@@ -2832,7 +2832,7 @@ pub mod service_specific_credential {
     impl Builder {
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the service-specific credential were created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
@@ -2840,7 +2840,7 @@ pub mod service_specific_credential {
         /// format</a>, when the service-specific credential were created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -2964,7 +2964,7 @@ pub struct VirtualMfaDevice {
     /// <p>The IAM user associated with this virtual MFA device.</p>
     pub user: std::option::Option<crate::model::User>,
     /// <p>The date and time on which the virtual MFA device was enabled.</p>
-    pub enable_date: std::option::Option<aws_smithy_types::Instant>,
+    pub enable_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags that are attached to the virtual MFA device. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2992,7 +2992,7 @@ impl VirtualMfaDevice {
         self.user.as_ref()
     }
     /// <p>The date and time on which the virtual MFA device was enabled.</p>
-    pub fn enable_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn enable_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enable_date.as_ref()
     }
     /// <p>A list of tags that are attached to the virtual MFA device. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
@@ -3023,7 +3023,7 @@ pub mod virtual_mfa_device {
         pub(crate) base32_string_seed: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) qr_code_png: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) user: std::option::Option<crate::model::User>,
-        pub(crate) enable_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) enable_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -3087,14 +3087,14 @@ pub mod virtual_mfa_device {
             self
         }
         /// <p>The date and time on which the virtual MFA device was enabled.</p>
-        pub fn enable_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn enable_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.enable_date = Some(input);
             self
         }
         /// <p>The date and time on which the virtual MFA device was enabled.</p>
         pub fn set_enable_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.enable_date = input;
             self
@@ -3178,7 +3178,7 @@ pub struct User {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the user was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For
     /// a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
@@ -3199,7 +3199,7 @@ pub struct User {
     /// Also, if the user does not currently have a password but had one in the past, then this
     /// field contains the date and time the most recent password was used.</p>
     /// <p>This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
-    pub password_last_used: std::option::Option<aws_smithy_types::Instant>,
+    pub password_last_used: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
     /// identities </a> in the <i>IAM User Guide</i>.</p>
     pub permissions_boundary: std::option::Option<crate::model::AttachedPermissionsBoundary>,
@@ -3232,7 +3232,7 @@ impl User {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the user was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
@@ -3255,7 +3255,7 @@ impl User {
     /// Also, if the user does not currently have a password but had one in the past, then this
     /// field contains the date and time the most recent password was used.</p>
     /// <p>This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
-    pub fn password_last_used(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn password_last_used(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.password_last_used.as_ref()
     }
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
@@ -3295,8 +3295,8 @@ pub mod user {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) password_last_used: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) password_last_used: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) permissions_boundary:
             std::option::Option<crate::model::AttachedPermissionsBoundary>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3356,7 +3356,7 @@ pub mod user {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the user was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
@@ -3364,7 +3364,7 @@ pub mod user {
         /// format</a>, when the user was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -3389,7 +3389,7 @@ pub mod user {
         /// Also, if the user does not currently have a password but had one in the past, then this
         /// field contains the date and time the most recent password was used.</p>
         /// <p>This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
-        pub fn password_last_used(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn password_last_used(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.password_last_used = Some(input);
             self
         }
@@ -3415,7 +3415,7 @@ pub mod user {
         /// <p>This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
         pub fn set_password_last_used(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.password_last_used = input;
             self
@@ -3557,7 +3557,7 @@ pub struct SshPublicKeyMetadata {
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the SSH public key was uploaded.</p>
-    pub upload_date: std::option::Option<aws_smithy_types::Instant>,
+    pub upload_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SshPublicKeyMetadata {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
@@ -3576,7 +3576,7 @@ impl SshPublicKeyMetadata {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the SSH public key was uploaded.</p>
-    pub fn upload_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn upload_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.upload_date.as_ref()
     }
 }
@@ -3599,7 +3599,7 @@ pub mod ssh_public_key_metadata {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) ssh_public_key_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatusType>,
-        pub(crate) upload_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) upload_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the IAM user associated with the SSH public key.</p>
@@ -3641,7 +3641,7 @@ pub mod ssh_public_key_metadata {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the SSH public key was uploaded.</p>
-        pub fn upload_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn upload_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.upload_date = Some(input);
             self
         }
@@ -3649,7 +3649,7 @@ pub mod ssh_public_key_metadata {
         /// format</a>, when the SSH public key was uploaded.</p>
         pub fn set_upload_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.upload_date = input;
             self
@@ -3685,7 +3685,7 @@ pub struct ServiceSpecificCredentialMetadata {
     pub service_user_name: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the service-specific credential were created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the service-specific credential.</p>
     pub service_specific_credential_id: std::option::Option<std::string::String>,
     /// <p>The name of the service associated with the service-specific credential.</p>
@@ -3707,7 +3707,7 @@ impl ServiceSpecificCredentialMetadata {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the service-specific credential were created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The unique identifier for the service-specific credential.</p>
@@ -3743,7 +3743,7 @@ pub mod service_specific_credential_metadata {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatusType>,
         pub(crate) service_user_name: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) service_specific_credential_id: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
     }
@@ -3785,7 +3785,7 @@ pub mod service_specific_credential_metadata {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the service-specific credential were created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
@@ -3793,7 +3793,7 @@ pub mod service_specific_credential_metadata {
         /// format</a>, when the service-specific credential were created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -3851,9 +3851,9 @@ pub struct SamlProviderListEntry {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The expiration date and time for the SAML provider.</p>
-    pub valid_until: std::option::Option<aws_smithy_types::Instant>,
+    pub valid_until: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the SAML provider was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SamlProviderListEntry {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
@@ -3861,11 +3861,11 @@ impl SamlProviderListEntry {
         self.arn.as_deref()
     }
     /// <p>The expiration date and time for the SAML provider.</p>
-    pub fn valid_until(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn valid_until(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.valid_until.as_ref()
     }
     /// <p>The date and time when the SAML provider was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
 }
@@ -3885,8 +3885,8 @@ pub mod saml_provider_list_entry {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) valid_until: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) valid_until: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
@@ -3900,27 +3900,27 @@ pub mod saml_provider_list_entry {
             self
         }
         /// <p>The expiration date and time for the SAML provider.</p>
-        pub fn valid_until(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn valid_until(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.valid_until = Some(input);
             self
         }
         /// <p>The expiration date and time for the SAML provider.</p>
         pub fn set_valid_until(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.valid_until = input;
             self
         }
         /// <p>The date and time when the SAML provider was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
         /// <p>The date and time when the SAML provider was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -3965,7 +3965,7 @@ pub struct PolicyVersion {
     pub is_default_version: bool,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the policy version was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PolicyVersion {
     /// <p>The policy document.</p>
@@ -3990,7 +3990,7 @@ impl PolicyVersion {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the policy version was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
 }
@@ -4013,7 +4013,7 @@ pub mod policy_version {
         pub(crate) document: std::option::Option<std::string::String>,
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) is_default_version: std::option::Option<bool>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The policy document.</p>
@@ -4064,7 +4064,7 @@ pub mod policy_version {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the policy version was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
@@ -4072,7 +4072,7 @@ pub mod policy_version {
         /// format</a>, when the policy version was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -4549,13 +4549,13 @@ pub struct Policy {
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the policy was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the policy was last updated.</p>
     /// <p>When a policy has only one version, this field contains the date and time when the
     /// policy was created. When a policy has more than one version, this field contains the date
     /// and time when the most recent policy version was created.</p>
-    pub update_date: std::option::Option<aws_smithy_types::Instant>,
+    pub update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4610,7 +4610,7 @@ impl Policy {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the policy was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
@@ -4618,7 +4618,7 @@ impl Policy {
     /// <p>When a policy has only one version, this field contains the date and time when the
     /// policy was created. When a policy has more than one version, this field contains the date
     /// and time when the most recent policy version was created.</p>
-    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
     /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
@@ -4663,8 +4663,8 @@ pub mod policy {
         pub(crate) permissions_boundary_usage_count: std::option::Option<i32>,
         pub(crate) is_attachable: std::option::Option<bool>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -4788,7 +4788,7 @@ pub mod policy {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the policy was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
@@ -4796,7 +4796,7 @@ pub mod policy {
         /// format</a>, when the policy was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -4806,7 +4806,7 @@ pub mod policy {
         /// <p>When a policy has only one version, this field contains the date and time when the
         /// policy was created. When a policy has more than one version, this field contains the date
         /// and time when the most recent policy version was created.</p>
-        pub fn update_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_date = Some(input);
             self
         }
@@ -4817,7 +4817,7 @@ pub mod policy {
         /// and time when the most recent policy version was created.</p>
         pub fn set_update_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_date = input;
             self
@@ -5058,7 +5058,7 @@ pub struct MfaDevice {
     /// serial number is the device ARN.</p>
     pub serial_number: std::option::Option<std::string::String>,
     /// <p>The date when the MFA device was enabled for the user.</p>
-    pub enable_date: std::option::Option<aws_smithy_types::Instant>,
+    pub enable_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MfaDevice {
     /// <p>The user with whom the MFA device is associated.</p>
@@ -5071,7 +5071,7 @@ impl MfaDevice {
         self.serial_number.as_deref()
     }
     /// <p>The date when the MFA device was enabled for the user.</p>
-    pub fn enable_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn enable_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enable_date.as_ref()
     }
 }
@@ -5092,7 +5092,7 @@ pub mod mfa_device {
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) serial_number: std::option::Option<std::string::String>,
-        pub(crate) enable_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) enable_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The user with whom the MFA device is associated.</p>
@@ -5121,14 +5121,14 @@ pub mod mfa_device {
             self
         }
         /// <p>The date when the MFA device was enabled for the user.</p>
-        pub fn enable_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn enable_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.enable_date = Some(input);
             self
         }
         /// <p>The date when the MFA device was enabled for the user.</p>
         pub fn set_enable_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.enable_date = input;
             self
@@ -5190,7 +5190,7 @@ pub struct InstanceProfile {
     /// <i>IAM User Guide</i>. </p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date when the instance profile was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The role associated with the instance profile.</p>
     pub roles: std::option::Option<std::vec::Vec<crate::model::Role>>,
     /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
@@ -5219,7 +5219,7 @@ impl InstanceProfile {
         self.arn.as_deref()
     }
     /// <p>The date when the instance profile was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The role associated with the instance profile.</p>
@@ -5255,7 +5255,7 @@ pub mod instance_profile {
         pub(crate) instance_profile_name: std::option::Option<std::string::String>,
         pub(crate) instance_profile_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) roles: std::option::Option<std::vec::Vec<crate::model::Role>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -5315,14 +5315,14 @@ pub mod instance_profile {
             self
         }
         /// <p>The date when the instance profile was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
         /// <p>The date when the instance profile was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -5425,7 +5425,7 @@ pub struct Group {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the group was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Group {
     /// <p>The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
@@ -5451,7 +5451,7 @@ impl Group {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the group was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
 }
@@ -5476,7 +5476,7 @@ pub mod group {
         pub(crate) group_name: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
@@ -5531,7 +5531,7 @@ pub mod group {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the group was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
@@ -5539,7 +5539,7 @@ pub mod group {
         /// format</a>, when the group was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -5987,7 +5987,7 @@ pub struct AccessKeyMetadata {
     /// calls; <code>Inactive</code> means it is not.</p>
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The date when the access key was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AccessKeyMetadata {
     /// <p>The name of the IAM user that the key is associated with.</p>
@@ -6004,7 +6004,7 @@ impl AccessKeyMetadata {
         self.status.as_ref()
     }
     /// <p>The date when the access key was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
 }
@@ -6027,7 +6027,7 @@ pub mod access_key_metadata {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) access_key_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatusType>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the IAM user that the key is associated with.</p>
@@ -6066,14 +6066,14 @@ pub mod access_key_metadata {
             self
         }
         /// <p>The date when the access key was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
         /// <p>The date when the access key was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -6489,7 +6489,7 @@ pub struct EntityDetails {
     /// not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-    pub last_authenticated: std::option::Option<aws_smithy_types::Instant>,
+    pub last_authenticated: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EntityDetails {
     /// <p>The <code>EntityInfo</code> object that contains details about the entity (user or
@@ -6502,7 +6502,7 @@ impl EntityDetails {
     /// not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-    pub fn last_authenticated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_authenticated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_authenticated.as_ref()
     }
 }
@@ -6521,7 +6521,7 @@ pub mod entity_details {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_info: std::option::Option<crate::model::EntityInfo>,
-        pub(crate) last_authenticated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_authenticated: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The <code>EntityInfo</code> object that contains details about the entity (user or
@@ -6544,7 +6544,7 @@ pub mod entity_details {
         /// not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn last_authenticated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_authenticated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_authenticated = Some(input);
             self
         }
@@ -6555,7 +6555,7 @@ pub mod entity_details {
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn set_last_authenticated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_authenticated = input;
             self
@@ -6793,7 +6793,7 @@ pub struct ServiceLastAccessed {
     /// service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-    pub last_authenticated: std::option::Option<aws_smithy_types::Instant>,
+    pub last_authenticated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The namespace of the service in which access was attempted.</p>
     /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
     /// <i>Service Authorization Reference</i>. Choose the name of the service to
@@ -6835,7 +6835,7 @@ impl ServiceLastAccessed {
     /// service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-    pub fn last_authenticated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_authenticated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_authenticated.as_ref()
     }
     /// <p>The namespace of the service in which access was attempted.</p>
@@ -6906,7 +6906,7 @@ pub mod service_last_accessed {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
-        pub(crate) last_authenticated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_authenticated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) service_namespace: std::option::Option<std::string::String>,
         pub(crate) last_authenticated_entity: std::option::Option<std::string::String>,
         pub(crate) last_authenticated_region: std::option::Option<std::string::String>,
@@ -6930,7 +6930,7 @@ pub mod service_last_accessed {
         /// service. Amazon Web Services does not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn last_authenticated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_authenticated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_authenticated = Some(input);
             self
         }
@@ -6941,7 +6941,7 @@ pub mod service_last_accessed {
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn set_last_authenticated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_authenticated = input;
             self
@@ -7093,7 +7093,7 @@ pub struct TrackedActionLastAccessed {
     /// tracked service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-    pub last_accessed_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_accessed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Region from which the authenticated entity (user or role) last attempted to access
     /// the tracked action. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the
@@ -7117,7 +7117,7 @@ impl TrackedActionLastAccessed {
     /// tracked service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-    pub fn last_accessed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_accessed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_accessed_time.as_ref()
     }
     /// <p>The Region from which the authenticated entity (user or role) last attempted to access
@@ -7146,7 +7146,7 @@ pub mod tracked_action_last_accessed {
     pub struct Builder {
         pub(crate) action_name: std::option::Option<std::string::String>,
         pub(crate) last_accessed_entity: std::option::Option<std::string::String>,
-        pub(crate) last_accessed_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_accessed_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_accessed_region: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7184,7 +7184,7 @@ pub mod tracked_action_last_accessed {
         /// tracked service. Amazon Web Services does not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn last_accessed_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_accessed_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_accessed_time = Some(input);
             self
         }
@@ -7195,7 +7195,7 @@ pub mod tracked_action_last_accessed {
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn set_last_accessed_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_accessed_time = input;
             self
@@ -7471,7 +7471,7 @@ pub struct AccessDetail {
     /// service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no principals in the reported Organizations entity attempted to access the
     /// service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-    pub last_authenticated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_authenticated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of accounts with authenticated principals (root users, IAM users, and IAM
     /// roles) that attempted to access the service in the reporting period.</p>
     pub total_authenticated_entities: std::option::Option<i32>,
@@ -7510,7 +7510,7 @@ impl AccessDetail {
     /// service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no principals in the reported Organizations entity attempted to access the
     /// service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-    pub fn last_authenticated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_authenticated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_authenticated_time.as_ref()
     }
     /// <p>The number of accounts with authenticated principals (root users, IAM users, and IAM
@@ -7544,7 +7544,7 @@ pub mod access_detail {
         pub(crate) service_namespace: std::option::Option<std::string::String>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) entity_path: std::option::Option<std::string::String>,
-        pub(crate) last_authenticated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_authenticated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) total_authenticated_entities: std::option::Option<i32>,
     }
     impl Builder {
@@ -7620,7 +7620,7 @@ pub mod access_detail {
         /// service. Amazon Web Services does not report unauthenticated requests.</p>
         /// <p>This field is null if no principals in the reported Organizations entity attempted to access the
         /// service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn last_authenticated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_authenticated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_authenticated_time = Some(input);
             self
         }
@@ -7631,7 +7631,7 @@ pub mod access_detail {
         /// service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn set_last_authenticated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_authenticated_time = input;
             self
@@ -7744,7 +7744,7 @@ pub struct LoginProfile {
     /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The date when the password for the user was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     pub password_reset_required: bool,
 }
@@ -7754,7 +7754,7 @@ impl LoginProfile {
         self.user_name.as_deref()
     }
     /// <p>The date when the password for the user was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
@@ -7778,7 +7778,7 @@ pub mod login_profile {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) password_reset_required: std::option::Option<bool>,
     }
     impl Builder {
@@ -7793,14 +7793,14 @@ pub mod login_profile {
             self
         }
         /// <p>The date when the password for the user was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
         /// <p>The date when the password for the user was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -8373,13 +8373,13 @@ pub struct ManagedPolicyDetail {
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the policy was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the policy was last updated.</p>
     /// <p>When a policy has only one version, this field contains the date and time when the
     /// policy was created. When a policy has more than one version, this field contains the date
     /// and time when the most recent policy version was created.</p>
-    pub update_date: std::option::Option<aws_smithy_types::Instant>,
+    pub update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list containing information about the versions of the policy.</p>
     pub policy_version_list: std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>,
 }
@@ -8435,7 +8435,7 @@ impl ManagedPolicyDetail {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the policy was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
@@ -8443,7 +8443,7 @@ impl ManagedPolicyDetail {
     /// <p>When a policy has only one version, this field contains the date and time when the
     /// policy was created. When a policy has more than one version, this field contains the date
     /// and time when the most recent policy version was created.</p>
-    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
     /// <p>A list containing information about the versions of the policy.</p>
@@ -8487,8 +8487,8 @@ pub mod managed_policy_detail {
         pub(crate) permissions_boundary_usage_count: std::option::Option<i32>,
         pub(crate) is_attachable: std::option::Option<bool>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) update_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) policy_version_list:
             std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>,
     }
@@ -8617,7 +8617,7 @@ pub mod managed_policy_detail {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the policy was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
@@ -8625,7 +8625,7 @@ pub mod managed_policy_detail {
         /// format</a>, when the policy was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -8635,7 +8635,7 @@ pub mod managed_policy_detail {
         /// <p>When a policy has only one version, this field contains the date and time when the
         /// policy was created. When a policy has more than one version, this field contains the date
         /// and time when the most recent policy version was created.</p>
-        pub fn update_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_date = Some(input);
             self
         }
@@ -8646,7 +8646,7 @@ pub mod managed_policy_detail {
         /// and time when the most recent policy version was created.</p>
         pub fn set_update_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_date = input;
             self
@@ -8719,7 +8719,7 @@ pub struct RoleDetail {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the role was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The trust policy that grants permission to assume the role.</p>
     pub assume_role_policy_document: std::option::Option<std::string::String>,
     /// <p>A list of instance profiles that contain this role.</p>
@@ -8769,7 +8769,7 @@ impl RoleDetail {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the role was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The trust policy that grants permission to assume the role.</p>
@@ -8846,7 +8846,7 @@ pub mod role_detail {
         pub(crate) role_name: std::option::Option<std::string::String>,
         pub(crate) role_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) assume_role_policy_document: std::option::Option<std::string::String>,
         pub(crate) instance_profile_list:
             std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
@@ -8911,7 +8911,7 @@ pub mod role_detail {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the role was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
@@ -8919,7 +8919,7 @@ pub mod role_detail {
         /// format</a>, when the role was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -9194,7 +9194,7 @@ pub struct GroupDetail {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the group was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of the inline policies embedded in the group.</p>
     pub group_policy_list: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
     /// <p>A list of the managed policies attached to the group.</p>
@@ -9224,7 +9224,7 @@ impl GroupDetail {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the group was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>A list of the inline policies embedded in the group.</p>
@@ -9261,7 +9261,7 @@ pub mod group_detail {
         pub(crate) group_name: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) group_policy_list:
             std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
         pub(crate) attached_managed_policies:
@@ -9320,7 +9320,7 @@ pub mod group_detail {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the group was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
@@ -9328,7 +9328,7 @@ pub mod group_detail {
         /// format</a>, when the group was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -9416,7 +9416,7 @@ pub struct UserDetail {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the user was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of the inline policies embedded in the user.</p>
     pub user_policy_list: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
     /// <p>A list of IAM groups that the user is in.</p>
@@ -9455,7 +9455,7 @@ impl UserDetail {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the user was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>A list of the inline policies embedded in the user.</p>
@@ -9512,7 +9512,7 @@ pub mod user_detail {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) user_policy_list: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
         pub(crate) group_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) attached_managed_policies:
@@ -9574,7 +9574,7 @@ pub mod user_detail {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the user was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
@@ -9582,7 +9582,7 @@ pub mod user_detail {
         /// format</a>, when the user was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -9733,7 +9733,7 @@ pub struct AccessKeyLastUsed {
     /// <p>There is no sign-in data associated with the user.</p>
     /// </li>
     /// </ul>
-    pub last_used_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_used_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the Amazon Web Services service with which this access key was most recently used. The value
     /// of this field is "N/A" in the following situations:</p>
     /// <ul>
@@ -9783,7 +9783,7 @@ impl AccessKeyLastUsed {
     /// <p>There is no sign-in data associated with the user.</p>
     /// </li>
     /// </ul>
-    pub fn last_used_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_used_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_used_date.as_ref()
     }
     /// <p>The name of the Amazon Web Services service with which this access key was most recently used. The value
@@ -9838,7 +9838,7 @@ pub mod access_key_last_used {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_used_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_used_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) region: std::option::Option<std::string::String>,
     }
@@ -9858,7 +9858,7 @@ pub mod access_key_last_used {
         /// <p>There is no sign-in data associated with the user.</p>
         /// </li>
         /// </ul>
-        pub fn last_used_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_used_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_used_date = Some(input);
             self
         }
@@ -9879,7 +9879,7 @@ pub mod access_key_last_used {
         /// </ul>
         pub fn set_last_used_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_used_date = input;
             self
@@ -10057,7 +10057,7 @@ pub struct AccessKey {
     /// <p>The secret key used to sign requests.</p>
     pub secret_access_key: std::option::Option<std::string::String>,
     /// <p>The date when the access key was created.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AccessKey {
     /// <p>The name of the IAM user that the access key is associated with.</p>
@@ -10078,7 +10078,7 @@ impl AccessKey {
         self.secret_access_key.as_deref()
     }
     /// <p>The date when the access key was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
 }
@@ -10103,7 +10103,7 @@ pub mod access_key {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatusType>,
         pub(crate) secret_access_key: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the IAM user that the access key is associated with.</p>
@@ -10155,14 +10155,14 @@ pub mod access_key {
             self
         }
         /// <p>The date when the access key was created.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
         /// <p>The date when the access key was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self

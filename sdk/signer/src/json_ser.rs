@@ -90,7 +90,7 @@ pub fn serialize_structure_crate_input_revoke_signing_profile_input(
     if let Some(var_23) = &input.effective_time {
         object
             .key("effectiveTime")
-            .instant(var_23, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_23, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_24) = &input.profile_version {
         object.key("profileVersion").string(var_24);

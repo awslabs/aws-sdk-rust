@@ -1026,6 +1026,72 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEvidenceFoldersByAsse
     }
 }
 
+/// Operation shape for `GetInsights`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_insights`](crate::client::Client::get_insights).
+///
+/// See [`crate::client::fluent_builders::GetInsights`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetInsights {
+    _private: (),
+}
+impl GetInsights {
+    /// Creates a new builder-style object to manufacture [`GetInsightsInput`](crate::input::GetInsightsInput)
+    pub fn builder() -> crate::input::get_insights_input::Builder {
+        crate::input::get_insights_input::Builder::default()
+    }
+    /// Creates a new `GetInsights` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetInsights {
+    type Output =
+        std::result::Result<crate::output::GetInsightsOutput, crate::error::GetInsightsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_insights_error(response)
+        } else {
+            crate::operation_deser::parse_get_insights_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetInsightsByAssessment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_insights_by_assessment`](crate::client::Client::get_insights_by_assessment).
+///
+/// See [`crate::client::fluent_builders::GetInsightsByAssessment`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetInsightsByAssessment {
+    _private: (),
+}
+impl GetInsightsByAssessment {
+    /// Creates a new builder-style object to manufacture [`GetInsightsByAssessmentInput`](crate::input::GetInsightsByAssessmentInput)
+    pub fn builder() -> crate::input::get_insights_by_assessment_input::Builder {
+        crate::input::get_insights_by_assessment_input::Builder::default()
+    }
+    /// Creates a new `GetInsightsByAssessment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetInsightsByAssessment {
+    type Output = std::result::Result<
+        crate::output::GetInsightsByAssessmentOutput,
+        crate::error::GetInsightsByAssessmentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_insights_by_assessment_error(response)
+        } else {
+            crate::operation_deser::parse_get_insights_by_assessment_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetOrganizationAdminAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1122,6 +1188,45 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSettings {
             crate::operation_deser::parse_get_settings_error(response)
         } else {
             crate::operation_deser::parse_get_settings_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListAssessmentControlInsightsByControlDomain`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_assessment_control_insights_by_control_domain`](crate::client::Client::list_assessment_control_insights_by_control_domain).
+///
+/// See [`crate::client::fluent_builders::ListAssessmentControlInsightsByControlDomain`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListAssessmentControlInsightsByControlDomain {
+    _private: (),
+}
+impl ListAssessmentControlInsightsByControlDomain {
+    /// Creates a new builder-style object to manufacture [`ListAssessmentControlInsightsByControlDomainInput`](crate::input::ListAssessmentControlInsightsByControlDomainInput)
+    pub fn builder(
+    ) -> crate::input::list_assessment_control_insights_by_control_domain_input::Builder {
+        crate::input::list_assessment_control_insights_by_control_domain_input::Builder::default()
+    }
+    /// Creates a new `ListAssessmentControlInsightsByControlDomain` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse
+    for ListAssessmentControlInsightsByControlDomain
+{
+    type Output = std::result::Result<
+        crate::output::ListAssessmentControlInsightsByControlDomainOutput,
+        crate::error::ListAssessmentControlInsightsByControlDomainError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_assessment_control_insights_by_control_domain_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_list_assessment_control_insights_by_control_domain_response(response)
         }
     }
 }
@@ -1260,6 +1365,110 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssessments {
             crate::operation_deser::parse_list_assessments_error(response)
         } else {
             crate::operation_deser::parse_list_assessments_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListControlDomainInsights`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_control_domain_insights`](crate::client::Client::list_control_domain_insights).
+///
+/// See [`crate::client::fluent_builders::ListControlDomainInsights`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListControlDomainInsights {
+    _private: (),
+}
+impl ListControlDomainInsights {
+    /// Creates a new builder-style object to manufacture [`ListControlDomainInsightsInput`](crate::input::ListControlDomainInsightsInput)
+    pub fn builder() -> crate::input::list_control_domain_insights_input::Builder {
+        crate::input::list_control_domain_insights_input::Builder::default()
+    }
+    /// Creates a new `ListControlDomainInsights` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListControlDomainInsights {
+    type Output = std::result::Result<
+        crate::output::ListControlDomainInsightsOutput,
+        crate::error::ListControlDomainInsightsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_control_domain_insights_error(response)
+        } else {
+            crate::operation_deser::parse_list_control_domain_insights_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListControlDomainInsightsByAssessment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_control_domain_insights_by_assessment`](crate::client::Client::list_control_domain_insights_by_assessment).
+///
+/// See [`crate::client::fluent_builders::ListControlDomainInsightsByAssessment`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListControlDomainInsightsByAssessment {
+    _private: (),
+}
+impl ListControlDomainInsightsByAssessment {
+    /// Creates a new builder-style object to manufacture [`ListControlDomainInsightsByAssessmentInput`](crate::input::ListControlDomainInsightsByAssessmentInput)
+    pub fn builder() -> crate::input::list_control_domain_insights_by_assessment_input::Builder {
+        crate::input::list_control_domain_insights_by_assessment_input::Builder::default()
+    }
+    /// Creates a new `ListControlDomainInsightsByAssessment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListControlDomainInsightsByAssessment {
+    type Output = std::result::Result<
+        crate::output::ListControlDomainInsightsByAssessmentOutput,
+        crate::error::ListControlDomainInsightsByAssessmentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_control_domain_insights_by_assessment_error(response)
+        } else {
+            crate::operation_deser::parse_list_control_domain_insights_by_assessment_response(
+                response,
+            )
+        }
+    }
+}
+
+/// Operation shape for `ListControlInsightsByControlDomain`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_control_insights_by_control_domain`](crate::client::Client::list_control_insights_by_control_domain).
+///
+/// See [`crate::client::fluent_builders::ListControlInsightsByControlDomain`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListControlInsightsByControlDomain {
+    _private: (),
+}
+impl ListControlInsightsByControlDomain {
+    /// Creates a new builder-style object to manufacture [`ListControlInsightsByControlDomainInput`](crate::input::ListControlInsightsByControlDomainInput)
+    pub fn builder() -> crate::input::list_control_insights_by_control_domain_input::Builder {
+        crate::input::list_control_insights_by_control_domain_input::Builder::default()
+    }
+    /// Creates a new `ListControlInsightsByControlDomain` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListControlInsightsByControlDomain {
+    type Output = std::result::Result<
+        crate::output::ListControlInsightsByControlDomainOutput,
+        crate::error::ListControlInsightsByControlDomainError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_control_insights_by_control_domain_error(response)
+        } else {
+            crate::operation_deser::parse_list_control_insights_by_control_domain_response(response)
         }
     }
 }

@@ -1687,12 +1687,12 @@ pub fn serialize_operation_crate_operation_describe_events(
     #[allow(unused_mut)]
     let mut scope_498 = writer.prefix("StartTime");
     if let Some(var_499) = &input.start_time {
-        scope_498.instant(var_499, aws_smithy_types::instant::Format::DateTime);
+        scope_498.date_time(var_499, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_500 = writer.prefix("EndTime");
     if let Some(var_501) = &input.end_time {
-        scope_500.instant(var_501, aws_smithy_types::instant::Format::DateTime);
+        scope_500.date_time(var_501, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_502 = writer.prefix("Duration");
@@ -2837,7 +2837,7 @@ pub fn serialize_operation_crate_operation_restore_db_cluster_to_point_in_time(
     #[allow(unused_mut)]
     let mut scope_842 = writer.prefix("RestoreToTime");
     if let Some(var_843) = &input.restore_to_time {
-        scope_842.instant(var_843, aws_smithy_types::instant::Format::DateTime);
+        scope_842.date_time(var_843, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_844 = writer.prefix("UseLatestRestorableTime");

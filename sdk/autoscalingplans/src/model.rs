@@ -2740,13 +2740,13 @@ impl TagFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Datapoint {
     /// <p>The time stamp for the data point in UTC format.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The value of the data point.</p>
     pub value: std::option::Option<f64>,
 }
 impl Datapoint {
     /// <p>The time stamp for the data point in UTC format.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The value of the data point.</p>
@@ -2768,19 +2768,19 @@ pub mod datapoint {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) value: std::option::Option<f64>,
     }
     impl Builder {
         /// <p>The time stamp for the data point in UTC format.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The time stamp for the data point in UTC format.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -2932,9 +2932,9 @@ pub struct ScalingPlan {
     /// <p>A simple message about the current status of the scaling plan.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
-    pub status_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub status_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix time stamp when the scaling plan was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ScalingPlan {
     /// <p>The name of the scaling plan.</p>
@@ -2998,11 +2998,11 @@ impl ScalingPlan {
         self.status_message.as_deref()
     }
     /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
-    pub fn status_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn status_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.status_start_time.as_ref()
     }
     /// <p>The Unix time stamp when the scaling plan was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -3033,8 +3033,8 @@ pub mod scaling_plan {
             std::option::Option<std::vec::Vec<crate::model::ScalingInstruction>>,
         pub(crate) status_code: std::option::Option<crate::model::ScalingPlanStatusCode>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) status_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) status_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the scaling plan.</p>
@@ -3194,27 +3194,27 @@ pub mod scaling_plan {
             self
         }
         /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
-        pub fn status_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn status_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.status_start_time = Some(input);
             self
         }
         /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
         pub fn set_status_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.status_start_time = input;
             self
         }
         /// <p>The Unix time stamp when the scaling plan was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The Unix time stamp when the scaling plan was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self

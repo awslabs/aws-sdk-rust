@@ -2062,7 +2062,7 @@ pub struct DomainDeliverabilityTrackingOption {
     pub domain: std::option::Option<std::string::String>,
     /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the
     /// domain.</p>
-    pub subscription_start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub subscription_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that contains information about the inbox placement data settings for the
     /// domain.</p>
     pub inbox_placement_tracking_option:
@@ -2076,7 +2076,7 @@ impl DomainDeliverabilityTrackingOption {
     }
     /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the
     /// domain.</p>
-    pub fn subscription_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn subscription_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.subscription_start_date.as_ref()
     }
     /// <p>An object that contains information about the inbox placement data settings for the
@@ -2106,7 +2106,7 @@ pub mod domain_deliverability_tracking_option {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
-        pub(crate) subscription_start_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) subscription_start_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) inbox_placement_tracking_option:
             std::option::Option<crate::model::InboxPlacementTrackingOption>,
     }
@@ -2125,7 +2125,7 @@ pub mod domain_deliverability_tracking_option {
         }
         /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the
         /// domain.</p>
-        pub fn subscription_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn subscription_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.subscription_start_date = Some(input);
             self
         }
@@ -2133,7 +2133,7 @@ pub mod domain_deliverability_tracking_option {
         /// domain.</p>
         pub fn set_subscription_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.subscription_start_date = input;
             self
@@ -2583,11 +2583,11 @@ pub struct DomainDeliverabilityCampaign {
     /// <p>The first time, in Unix time format, when the email message was delivered to any
     /// recipient's inbox. This value can help you determine how long it took for a campaign to
     /// deliver an email message.</p>
-    pub first_seen_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub first_seen_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time, in Unix time format, when the email message was delivered to any
     /// recipient's inbox. This value can help you determine how long it took for a campaign to
     /// deliver an email message.</p>
-    pub last_seen_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_seen_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of email messages that were delivered to recipients’ inboxes.</p>
     pub inbox_count: std::option::Option<i64>,
     /// <p>The number of email messages that were delivered to recipients' spam or junk mail
@@ -2638,13 +2638,13 @@ impl DomainDeliverabilityCampaign {
     /// <p>The first time, in Unix time format, when the email message was delivered to any
     /// recipient's inbox. This value can help you determine how long it took for a campaign to
     /// deliver an email message.</p>
-    pub fn first_seen_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn first_seen_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.first_seen_date_time.as_ref()
     }
     /// <p>The last time, in Unix time format, when the email message was delivered to any
     /// recipient's inbox. This value can help you determine how long it took for a campaign to
     /// deliver an email message.</p>
-    pub fn last_seen_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_seen_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_seen_date_time.as_ref()
     }
     /// <p>The number of email messages that were delivered to recipients’ inboxes.</p>
@@ -2714,8 +2714,8 @@ pub mod domain_deliverability_campaign {
         pub(crate) subject: std::option::Option<std::string::String>,
         pub(crate) from_address: std::option::Option<std::string::String>,
         pub(crate) sending_ips: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) first_seen_date_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_seen_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) first_seen_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_seen_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) inbox_count: std::option::Option<i64>,
         pub(crate) spam_count: std::option::Option<i64>,
         pub(crate) read_rate: std::option::Option<f64>,
@@ -2795,7 +2795,7 @@ pub mod domain_deliverability_campaign {
         /// <p>The first time, in Unix time format, when the email message was delivered to any
         /// recipient's inbox. This value can help you determine how long it took for a campaign to
         /// deliver an email message.</p>
-        pub fn first_seen_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn first_seen_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.first_seen_date_time = Some(input);
             self
         }
@@ -2804,7 +2804,7 @@ pub mod domain_deliverability_campaign {
         /// deliver an email message.</p>
         pub fn set_first_seen_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.first_seen_date_time = input;
             self
@@ -2812,7 +2812,7 @@ pub mod domain_deliverability_campaign {
         /// <p>The last time, in Unix time format, when the email message was delivered to any
         /// recipient's inbox. This value can help you determine how long it took for a campaign to
         /// deliver an email message.</p>
-        pub fn last_seen_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_seen_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_seen_date_time = Some(input);
             self
         }
@@ -2821,7 +2821,7 @@ pub mod domain_deliverability_campaign {
         /// deliver an email message.</p>
         pub fn set_last_seen_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_seen_date_time = input;
             self
@@ -2960,7 +2960,7 @@ pub struct DeliverabilityTestReport {
     /// <p>The sender address that you specified for the predictive inbox placement test.</p>
     pub from_email_address: std::option::Option<std::string::String>,
     /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
-    pub create_date: std::option::Option<aws_smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test
     /// is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the
     /// test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use
@@ -2985,7 +2985,7 @@ impl DeliverabilityTestReport {
         self.from_email_address.as_deref()
     }
     /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test
@@ -3023,7 +3023,7 @@ pub mod deliverability_test_report {
         pub(crate) report_name: std::option::Option<std::string::String>,
         pub(crate) subject: std::option::Option<std::string::String>,
         pub(crate) from_email_address: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deliverability_test_status:
             std::option::Option<crate::model::DeliverabilityTestStatus>,
     }
@@ -3072,14 +3072,14 @@ pub mod deliverability_test_report {
             self
         }
         /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
-        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_date = Some(input);
             self
         }
         /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_date = input;
             self
@@ -3849,7 +3849,7 @@ impl AsRef<str> for DkimStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DailyVolume {
     /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
-    pub start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that contains inbox placement metrics for a specific day in the analysis
     /// period.</p>
     pub volume_statistics: std::option::Option<crate::model::VolumeStatistics>,
@@ -3859,7 +3859,7 @@ pub struct DailyVolume {
 }
 impl DailyVolume {
     /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>An object that contains inbox placement metrics for a specific day in the analysis
@@ -3890,21 +3890,21 @@ pub mod daily_volume {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) volume_statistics: std::option::Option<crate::model::VolumeStatistics>,
         pub(crate) domain_isp_placements:
             std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
     }
     impl Builder {
         /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
-        pub fn start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date = Some(input);
             self
         }
         /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
         pub fn set_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_date = input;
             self
@@ -5186,7 +5186,7 @@ pub struct ReputationOptions {
     /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh
     /// start. When your account is given a fresh start, your reputation metrics are calculated
     /// starting from the date of the fresh start.</p>
-    pub last_fresh_start: std::option::Option<aws_smithy_types::Instant>,
+    pub last_fresh_start: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReputationOptions {
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
@@ -5198,7 +5198,7 @@ impl ReputationOptions {
     /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh
     /// start. When your account is given a fresh start, your reputation metrics are calculated
     /// starting from the date of the fresh start.</p>
-    pub fn last_fresh_start(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_fresh_start(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_fresh_start.as_ref()
     }
 }
@@ -5220,7 +5220,7 @@ pub mod reputation_options {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reputation_metrics_enabled: std::option::Option<bool>,
-        pub(crate) last_fresh_start: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_fresh_start: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
@@ -5240,7 +5240,7 @@ pub mod reputation_options {
         /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh
         /// start. When your account is given a fresh start, your reputation metrics are calculated
         /// starting from the date of the fresh start.</p>
-        pub fn last_fresh_start(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_fresh_start(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_fresh_start = Some(input);
             self
         }
@@ -5249,7 +5249,7 @@ pub mod reputation_options {
         /// starting from the date of the fresh start.</p>
         pub fn set_last_fresh_start(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_fresh_start = input;
             self
@@ -5436,7 +5436,7 @@ pub struct BlacklistEntry {
     /// <p>The name of the blacklist that the IP address appears on.</p>
     pub rbl_name: std::option::Option<std::string::String>,
     /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
-    pub listing_time: std::option::Option<aws_smithy_types::Instant>,
+    pub listing_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Additional information about the blacklisting event, as provided by the blacklist
     /// maintainer.</p>
     pub description: std::option::Option<std::string::String>,
@@ -5447,7 +5447,7 @@ impl BlacklistEntry {
         self.rbl_name.as_deref()
     }
     /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
-    pub fn listing_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn listing_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.listing_time.as_ref()
     }
     /// <p>Additional information about the blacklisting event, as provided by the blacklist
@@ -5472,7 +5472,7 @@ pub mod blacklist_entry {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rbl_name: std::option::Option<std::string::String>,
-        pub(crate) listing_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) listing_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5487,14 +5487,14 @@ pub mod blacklist_entry {
             self
         }
         /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
-        pub fn listing_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn listing_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.listing_time = Some(input);
             self
         }
         /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
         pub fn set_listing_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.listing_time = input;
             self

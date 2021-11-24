@@ -116,7 +116,7 @@ pub struct Item {
     /// <p>The ETag that represents a unique instance of the item.</p>
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The date and time that the item was last modified.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The content type of the item.</p>
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The length of the item in bytes.</p>
@@ -136,7 +136,7 @@ impl Item {
         self.e_tag.as_deref()
     }
     /// <p>The date and time that the item was last modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The content type of the item.</p>
@@ -169,7 +169,7 @@ pub mod item {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ItemType>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) content_length: std::option::Option<i64>,
     }
@@ -205,14 +205,14 @@ pub mod item {
             self
         }
         /// <p>The date and time that the item was last modified.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date and time that the item was last modified.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self

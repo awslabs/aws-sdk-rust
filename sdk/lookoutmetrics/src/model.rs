@@ -1932,9 +1932,9 @@ pub struct MetricSetSummary {
     /// <p>The name of the dataset.</p>
     pub metric_set_name: std::option::Option<std::string::String>,
     /// <p>The time at which the dataset was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the dataset was last modified.</p>
-    pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1957,11 +1957,11 @@ impl MetricSetSummary {
         self.metric_set_name.as_deref()
     }
     /// <p>The time at which the dataset was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time at which the dataset was last modified.</p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
     /// <p>The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
@@ -1995,8 +1995,8 @@ pub mod metric_set_summary {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
         pub(crate) metric_set_description: std::option::Option<std::string::String>,
         pub(crate) metric_set_name: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -2055,27 +2055,27 @@ pub mod metric_set_summary {
             self
         }
         /// <p>The time at which the dataset was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time at which the dataset was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time at which the dataset was last modified.</p>
-        pub fn last_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
         /// <p>The time at which the dataset was last modified.</p>
         pub fn set_last_modification_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modification_time = input;
             self
@@ -2657,9 +2657,9 @@ pub struct AnomalyDetectorSummary {
     /// <p>A description of the detector.</p>
     pub anomaly_detector_description: std::option::Option<std::string::String>,
     /// <p>The time at which the detector was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the detector was last modified.</p>
-    pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of detector.</p>
     pub status: std::option::Option<crate::model::AnomalyDetectorStatus>,
     /// <p>The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
@@ -2680,11 +2680,11 @@ impl AnomalyDetectorSummary {
         self.anomaly_detector_description.as_deref()
     }
     /// <p>The time at which the detector was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time at which the detector was last modified.</p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
     /// <p>The status of detector.</p>
@@ -2724,8 +2724,8 @@ pub mod anomaly_detector_summary {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
         pub(crate) anomaly_detector_name: std::option::Option<std::string::String>,
         pub(crate) anomaly_detector_description: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::AnomalyDetectorStatus>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2775,27 +2775,27 @@ pub mod anomaly_detector_summary {
             self
         }
         /// <p>The time at which the detector was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time at which the detector was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time at which the detector was last modified.</p>
-        pub fn last_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
         /// <p>The time at which the detector was last modified.</p>
         pub fn set_last_modification_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modification_time = input;
             self
@@ -2969,9 +2969,9 @@ pub struct AlertSummary {
     /// <p>The status of the alert.</p>
     pub alert_status: std::option::Option<crate::model::AlertStatus>,
     /// <p>The time at which the alert was last modified.</p>
-    pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the alert was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -3002,11 +3002,11 @@ impl AlertSummary {
         self.alert_status.as_ref()
     }
     /// <p>The time at which the alert was last modified.</p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
     /// <p>The time at which the alert was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
@@ -3047,8 +3047,8 @@ pub mod alert_summary {
         pub(crate) alert_sensitivity_threshold: std::option::Option<i32>,
         pub(crate) alert_type: std::option::Option<crate::model::AlertType>,
         pub(crate) alert_status: std::option::Option<crate::model::AlertStatus>,
-        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -3124,27 +3124,27 @@ pub mod alert_summary {
             self
         }
         /// <p>The time at which the alert was last modified.</p>
-        pub fn last_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
         /// <p>The time at which the alert was last modified.</p>
         pub fn set_last_modification_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modification_time = input;
             self
         }
         /// <p>The time at which the alert was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time at which the alert was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -4359,9 +4359,9 @@ pub struct Alert {
     /// <p>The status of the alert.</p>
     pub alert_status: std::option::Option<crate::model::AlertStatus>,
     /// <p>The time at which the alert was last modified.</p>
-    pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the alert was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Alert {
     /// <p>Action that will be triggered when there is an alert.</p>
@@ -4397,11 +4397,11 @@ impl Alert {
         self.alert_status.as_ref()
     }
     /// <p>The time at which the alert was last modified.</p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
     /// <p>The time at which the alert was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -4438,8 +4438,8 @@ pub mod alert {
         pub(crate) alert_sensitivity_threshold: std::option::Option<i32>,
         pub(crate) alert_type: std::option::Option<crate::model::AlertType>,
         pub(crate) alert_status: std::option::Option<crate::model::AlertStatus>,
-        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Action that will be triggered when there is an alert.</p>
@@ -4535,27 +4535,27 @@ pub mod alert {
             self
         }
         /// <p>The time at which the alert was last modified.</p>
-        pub fn last_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
         /// <p>The time at which the alert was last modified.</p>
         pub fn set_last_modification_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modification_time = input;
             self
         }
         /// <p>The time at which the alert was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time at which the alert was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self

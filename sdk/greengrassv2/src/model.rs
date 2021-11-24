@@ -762,10 +762,10 @@ pub struct EffectiveDeployment {
     /// <p>The reason code for the update, if the job was updated.</p>
     pub reason: std::option::Option<std::string::String>,
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the deployment job was last modified, expressed in ISO 8601
     /// format.</p>
-    pub modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EffectiveDeployment {
     /// <p>The ID of the deployment.</p>
@@ -803,12 +803,12 @@ impl EffectiveDeployment {
         self.reason.as_deref()
     }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The time at which the deployment job was last modified, expressed in ISO 8601
     /// format.</p>
-    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_timestamp.as_ref()
     }
 }
@@ -846,8 +846,8 @@ pub mod effective_deployment {
         pub(crate) core_device_execution_status:
             std::option::Option<crate::model::EffectiveDeploymentExecutionStatus>,
         pub(crate) reason: std::option::Option<std::string::String>,
-        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the deployment.</p>
@@ -943,21 +943,21 @@ pub mod effective_deployment {
             self
         }
         /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
         /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_timestamp = input;
             self
         }
         /// <p>The time at which the deployment job was last modified, expressed in ISO 8601
         /// format.</p>
-        pub fn modified_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified_timestamp = Some(input);
             self
         }
@@ -965,7 +965,7 @@ pub mod effective_deployment {
         /// format.</p>
         pub fn set_modified_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.modified_timestamp = input;
             self
@@ -1090,7 +1090,7 @@ pub struct Deployment {
     /// <p>The name of the deployment.</p>
     pub deployment_name: std::option::Option<std::string::String>,
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the deployment.</p>
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
@@ -1114,7 +1114,7 @@ impl Deployment {
         self.deployment_name.as_deref()
     }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The status of the deployment.</p>
@@ -1149,7 +1149,7 @@ pub mod deployment {
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) deployment_name: std::option::Option<std::string::String>,
-        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deployment_status: std::option::Option<crate::model::DeploymentStatus>,
         pub(crate) is_latest_for_target: std::option::Option<bool>,
     }
@@ -1201,14 +1201,14 @@ pub mod deployment {
             self
         }
         /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
         /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_timestamp = input;
             self
@@ -1401,7 +1401,7 @@ pub struct CoreDevice {
     pub status: std::option::Option<crate::model::CoreDeviceStatus>,
     /// <p>The time at which the core device's status last updated, expressed in ISO 8601
     /// format.</p>
-    pub last_status_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_status_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CoreDevice {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
@@ -1425,7 +1425,7 @@ impl CoreDevice {
     }
     /// <p>The time at which the core device's status last updated, expressed in ISO 8601
     /// format.</p>
-    pub fn last_status_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_status_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_status_update_timestamp.as_ref()
     }
 }
@@ -1449,7 +1449,7 @@ pub mod core_device {
     pub struct Builder {
         pub(crate) core_device_thing_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::CoreDeviceStatus>,
-        pub(crate) last_status_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_status_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the core device. This is also the name of the IoT thing.</p>
@@ -1502,7 +1502,7 @@ pub mod core_device {
         }
         /// <p>The time at which the core device's status last updated, expressed in ISO 8601
         /// format.</p>
-        pub fn last_status_update_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_status_update_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_status_update_timestamp = Some(input);
             self
         }
@@ -1510,7 +1510,7 @@ pub mod core_device {
         /// format.</p>
         pub fn set_last_status_update_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_status_update_timestamp = input;
             self
@@ -1792,7 +1792,7 @@ pub struct ComponentLatestVersion {
     /// <p>The version of the component.</p>
     pub component_version: std::option::Option<std::string::String>,
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the component version.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The publisher of the component version.</p>
@@ -1810,7 +1810,7 @@ impl ComponentLatestVersion {
         self.component_version.as_deref()
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The description of the component version.</p>
@@ -1846,7 +1846,7 @@ pub mod component_latest_version {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) component_version: std::option::Option<std::string::String>,
-        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) publisher: std::option::Option<std::string::String>,
         pub(crate) platforms: std::option::Option<std::vec::Vec<crate::model::ComponentPlatform>>,
@@ -1876,14 +1876,14 @@ pub mod component_latest_version {
             self
         }
         /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
         /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_timestamp = input;
             self
@@ -2010,7 +2010,7 @@ pub struct AssociatedClientDevice {
     /// <p>The name of the IoT thing that represents the associated client device.</p>
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
-    pub association_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub association_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AssociatedClientDevice {
     /// <p>The name of the IoT thing that represents the associated client device.</p>
@@ -2018,7 +2018,7 @@ impl AssociatedClientDevice {
         self.thing_name.as_deref()
     }
     /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
-    pub fn association_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn association_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.association_timestamp.as_ref()
     }
 }
@@ -2037,7 +2037,7 @@ pub mod associated_client_device {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
-        pub(crate) association_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) association_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the IoT thing that represents the associated client device.</p>
@@ -2051,14 +2051,14 @@ pub mod associated_client_device {
             self
         }
         /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
-        pub fn association_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn association_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.association_timestamp = Some(input);
             self
         }
         /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
         pub fn set_association_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.association_timestamp = input;
             self
@@ -3533,21 +3533,30 @@ impl ComponentDeploymentSpecification {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentRunWith {
-    /// <p>The POSIX system user and (optional) group to use to run this component. Specify the user
-    /// and group separated by a colon (<code>:</code>) in the following format:
+    /// <p>The POSIX system user and, optionally, group to use to run this component on Linux core
+    /// devices. The user, and group if specified, must exist on each Linux core device. Specify the
+    /// user and group separated by a colon (<code>:</code>) in the following format:
     /// <code>user:group</code>. The group is optional. If you don't specify a group, the IoT Greengrass Core
     /// software uses the primary user for the group.</p>
     /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system user and group that
     /// you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
     pub posix_user: std::option::Option<std::string::String>,
-    /// <p>The system resource limits to apply to this component's process on the core device.</p>
+    /// <p>The system resource limits to apply to this component's process on the core device. IoT Greengrass
+    /// currently supports this feature on only Linux core devices.</p>
     /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits
     /// that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
     pub system_resource_limits: std::option::Option<crate::model::SystemResourceLimits>,
+    /// <p>The Windows user to use to run this component on Windows core devices. The user must exist
+    /// on each Windows core device, and its name and password must be in the LocalSystem account's
+    /// Credentials Manager instance.</p>
+    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default Windows user that you
+    /// configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
+    pub windows_user: std::option::Option<std::string::String>,
 }
 impl ComponentRunWith {
-    /// <p>The POSIX system user and (optional) group to use to run this component. Specify the user
-    /// and group separated by a colon (<code>:</code>) in the following format:
+    /// <p>The POSIX system user and, optionally, group to use to run this component on Linux core
+    /// devices. The user, and group if specified, must exist on each Linux core device. Specify the
+    /// user and group separated by a colon (<code>:</code>) in the following format:
     /// <code>user:group</code>. The group is optional. If you don't specify a group, the IoT Greengrass Core
     /// software uses the primary user for the group.</p>
     /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system user and group that
@@ -3555,7 +3564,8 @@ impl ComponentRunWith {
     pub fn posix_user(&self) -> std::option::Option<&str> {
         self.posix_user.as_deref()
     }
-    /// <p>The system resource limits to apply to this component's process on the core device.</p>
+    /// <p>The system resource limits to apply to this component's process on the core device. IoT Greengrass
+    /// currently supports this feature on only Linux core devices.</p>
     /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits
     /// that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
     pub fn system_resource_limits(
@@ -3563,12 +3573,21 @@ impl ComponentRunWith {
     ) -> std::option::Option<&crate::model::SystemResourceLimits> {
         self.system_resource_limits.as_ref()
     }
+    /// <p>The Windows user to use to run this component on Windows core devices. The user must exist
+    /// on each Windows core device, and its name and password must be in the LocalSystem account's
+    /// Credentials Manager instance.</p>
+    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default Windows user that you
+    /// configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
+    pub fn windows_user(&self) -> std::option::Option<&str> {
+        self.windows_user.as_deref()
+    }
 }
 impl std::fmt::Debug for ComponentRunWith {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComponentRunWith");
         formatter.field("posix_user", &self.posix_user);
         formatter.field("system_resource_limits", &self.system_resource_limits);
+        formatter.field("windows_user", &self.windows_user);
         formatter.finish()
     }
 }
@@ -3580,10 +3599,12 @@ pub mod component_run_with {
     pub struct Builder {
         pub(crate) posix_user: std::option::Option<std::string::String>,
         pub(crate) system_resource_limits: std::option::Option<crate::model::SystemResourceLimits>,
+        pub(crate) windows_user: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The POSIX system user and (optional) group to use to run this component. Specify the user
-        /// and group separated by a colon (<code>:</code>) in the following format:
+        /// <p>The POSIX system user and, optionally, group to use to run this component on Linux core
+        /// devices. The user, and group if specified, must exist on each Linux core device. Specify the
+        /// user and group separated by a colon (<code>:</code>) in the following format:
         /// <code>user:group</code>. The group is optional. If you don't specify a group, the IoT Greengrass Core
         /// software uses the primary user for the group.</p>
         /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system user and group that
@@ -3592,8 +3613,9 @@ pub mod component_run_with {
             self.posix_user = Some(input.into());
             self
         }
-        /// <p>The POSIX system user and (optional) group to use to run this component. Specify the user
-        /// and group separated by a colon (<code>:</code>) in the following format:
+        /// <p>The POSIX system user and, optionally, group to use to run this component on Linux core
+        /// devices. The user, and group if specified, must exist on each Linux core device. Specify the
+        /// user and group separated by a colon (<code>:</code>) in the following format:
         /// <code>user:group</code>. The group is optional. If you don't specify a group, the IoT Greengrass Core
         /// software uses the primary user for the group.</p>
         /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system user and group that
@@ -3602,14 +3624,16 @@ pub mod component_run_with {
             self.posix_user = input;
             self
         }
-        /// <p>The system resource limits to apply to this component's process on the core device.</p>
+        /// <p>The system resource limits to apply to this component's process on the core device. IoT Greengrass
+        /// currently supports this feature on only Linux core devices.</p>
         /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits
         /// that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
         pub fn system_resource_limits(mut self, input: crate::model::SystemResourceLimits) -> Self {
             self.system_resource_limits = Some(input);
             self
         }
-        /// <p>The system resource limits to apply to this component's process on the core device.</p>
+        /// <p>The system resource limits to apply to this component's process on the core device. IoT Greengrass
+        /// currently supports this feature on only Linux core devices.</p>
         /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits
         /// that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
         pub fn set_system_resource_limits(
@@ -3619,11 +3643,30 @@ pub mod component_run_with {
             self.system_resource_limits = input;
             self
         }
+        /// <p>The Windows user to use to run this component on Windows core devices. The user must exist
+        /// on each Windows core device, and its name and password must be in the LocalSystem account's
+        /// Credentials Manager instance.</p>
+        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default Windows user that you
+        /// configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
+        pub fn windows_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.windows_user = Some(input.into());
+            self
+        }
+        /// <p>The Windows user to use to run this component on Windows core devices. The user must exist
+        /// on each Windows core device, and its name and password must be in the LocalSystem account's
+        /// Credentials Manager instance.</p>
+        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default Windows user that you
+        /// configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
+        pub fn set_windows_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.windows_user = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ComponentRunWith`](crate::model::ComponentRunWith)
         pub fn build(self) -> crate::model::ComponentRunWith {
             crate::model::ComponentRunWith {
                 posix_user: self.posix_user,
                 system_resource_limits: self.system_resource_limits,
+                windows_user: self.windows_user,
             }
         }
     }

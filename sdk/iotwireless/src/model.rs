@@ -78,6 +78,357 @@ impl LoRaWanUpdateDevice {
     }
 }
 
+/// <p>Proximity event configuration object for enabling and disabling relevant topics.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ProximityEventConfiguration {
+    /// <p>Proximity event configuration object for enabling or disabling Sidewalk related event topics.</p>
+    pub sidewalk: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
+}
+impl ProximityEventConfiguration {
+    /// <p>Proximity event configuration object for enabling or disabling Sidewalk related event topics.</p>
+    pub fn sidewalk(
+        &self,
+    ) -> std::option::Option<&crate::model::SidewalkEventNotificationConfigurations> {
+        self.sidewalk.as_ref()
+    }
+}
+impl std::fmt::Debug for ProximityEventConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ProximityEventConfiguration");
+        formatter.field("sidewalk", &self.sidewalk);
+        formatter.finish()
+    }
+}
+/// See [`ProximityEventConfiguration`](crate::model::ProximityEventConfiguration)
+pub mod proximity_event_configuration {
+    /// A builder for [`ProximityEventConfiguration`](crate::model::ProximityEventConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sidewalk:
+            std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
+    }
+    impl Builder {
+        /// <p>Proximity event configuration object for enabling or disabling Sidewalk related event topics.</p>
+        pub fn sidewalk(
+            mut self,
+            input: crate::model::SidewalkEventNotificationConfigurations,
+        ) -> Self {
+            self.sidewalk = Some(input);
+            self
+        }
+        /// <p>Proximity event configuration object for enabling or disabling Sidewalk related event topics.</p>
+        pub fn set_sidewalk(
+            mut self,
+            input: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
+        ) -> Self {
+            self.sidewalk = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ProximityEventConfiguration`](crate::model::ProximityEventConfiguration)
+        pub fn build(self) -> crate::model::ProximityEventConfiguration {
+            crate::model::ProximityEventConfiguration {
+                sidewalk: self.sidewalk,
+            }
+        }
+    }
+}
+impl ProximityEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`ProximityEventConfiguration`](crate::model::ProximityEventConfiguration)
+    pub fn builder() -> crate::model::proximity_event_configuration::Builder {
+        crate::model::proximity_event_configuration::Builder::default()
+    }
+}
+
+/// <p> SidewalkEventNotificationConfigurations object
+/// Event configuration object for Sidewalk related event topics.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SidewalkEventNotificationConfigurations {
+    /// <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+    pub amazon_id_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
+}
+impl SidewalkEventNotificationConfigurations {
+    /// <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+    pub fn amazon_id_event_topic(
+        &self,
+    ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
+        self.amazon_id_event_topic.as_ref()
+    }
+}
+impl std::fmt::Debug for SidewalkEventNotificationConfigurations {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SidewalkEventNotificationConfigurations");
+        formatter.field("amazon_id_event_topic", &self.amazon_id_event_topic);
+        formatter.finish()
+    }
+}
+/// See [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations)
+pub mod sidewalk_event_notification_configurations {
+    /// A builder for [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) amazon_id_event_topic:
+            std::option::Option<crate::model::EventNotificationTopicStatus>,
+    }
+    impl Builder {
+        /// <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+        pub fn amazon_id_event_topic(
+            mut self,
+            input: crate::model::EventNotificationTopicStatus,
+        ) -> Self {
+            self.amazon_id_event_topic = Some(input);
+            self
+        }
+        /// <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+        pub fn set_amazon_id_event_topic(
+            mut self,
+            input: std::option::Option<crate::model::EventNotificationTopicStatus>,
+        ) -> Self {
+            self.amazon_id_event_topic = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations)
+        pub fn build(self) -> crate::model::SidewalkEventNotificationConfigurations {
+            crate::model::SidewalkEventNotificationConfigurations {
+                amazon_id_event_topic: self.amazon_id_event_topic,
+            }
+        }
+    }
+}
+impl SidewalkEventNotificationConfigurations {
+    /// Creates a new builder-style object to manufacture [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations)
+    pub fn builder() -> crate::model::sidewalk_event_notification_configurations::Builder {
+        crate::model::sidewalk_event_notification_configurations::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EventNotificationTopicStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EventNotificationTopicStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Disabled" => EventNotificationTopicStatus::Disabled,
+            "Enabled" => EventNotificationTopicStatus::Enabled,
+            other => EventNotificationTopicStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EventNotificationTopicStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EventNotificationTopicStatus::from(s))
+    }
+}
+impl EventNotificationTopicStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EventNotificationTopicStatus::Disabled => "Disabled",
+            EventNotificationTopicStatus::Enabled => "Enabled",
+            EventNotificationTopicStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
+    }
+}
+impl AsRef<str> for EventNotificationTopicStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Device registration state event configuration object for enabling and disabling relevant topics.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeviceRegistrationStateEventConfiguration {
+    /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event
+    /// topics.</p>
+    pub sidewalk: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
+}
+impl DeviceRegistrationStateEventConfiguration {
+    /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event
+    /// topics.</p>
+    pub fn sidewalk(
+        &self,
+    ) -> std::option::Option<&crate::model::SidewalkEventNotificationConfigurations> {
+        self.sidewalk.as_ref()
+    }
+}
+impl std::fmt::Debug for DeviceRegistrationStateEventConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeviceRegistrationStateEventConfiguration");
+        formatter.field("sidewalk", &self.sidewalk);
+        formatter.finish()
+    }
+}
+/// See [`DeviceRegistrationStateEventConfiguration`](crate::model::DeviceRegistrationStateEventConfiguration)
+pub mod device_registration_state_event_configuration {
+    /// A builder for [`DeviceRegistrationStateEventConfiguration`](crate::model::DeviceRegistrationStateEventConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sidewalk:
+            std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
+    }
+    impl Builder {
+        /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event
+        /// topics.</p>
+        pub fn sidewalk(
+            mut self,
+            input: crate::model::SidewalkEventNotificationConfigurations,
+        ) -> Self {
+            self.sidewalk = Some(input);
+            self
+        }
+        /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event
+        /// topics.</p>
+        pub fn set_sidewalk(
+            mut self,
+            input: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
+        ) -> Self {
+            self.sidewalk = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeviceRegistrationStateEventConfiguration`](crate::model::DeviceRegistrationStateEventConfiguration)
+        pub fn build(self) -> crate::model::DeviceRegistrationStateEventConfiguration {
+            crate::model::DeviceRegistrationStateEventConfiguration {
+                sidewalk: self.sidewalk,
+            }
+        }
+    }
+}
+impl DeviceRegistrationStateEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeviceRegistrationStateEventConfiguration`](crate::model::DeviceRegistrationStateEventConfiguration)
+    pub fn builder() -> crate::model::device_registration_state_event_configuration::Builder {
+        crate::model::device_registration_state_event_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EventNotificationPartnerType {
+    #[allow(missing_docs)] // documentation missing in model
+    Sidewalk,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EventNotificationPartnerType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Sidewalk" => EventNotificationPartnerType::Sidewalk,
+            other => EventNotificationPartnerType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EventNotificationPartnerType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EventNotificationPartnerType::from(s))
+    }
+}
+impl EventNotificationPartnerType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EventNotificationPartnerType::Sidewalk => "Sidewalk",
+            EventNotificationPartnerType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Sidewalk"]
+    }
+}
+impl AsRef<str> for EventNotificationPartnerType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum IdentifierType {
+    #[allow(missing_docs)] // documentation missing in model
+    PartnerAccountId,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for IdentifierType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PartnerAccountId" => IdentifierType::PartnerAccountId,
+            other => IdentifierType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for IdentifierType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(IdentifierType::from(s))
+    }
+}
+impl IdentifierType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            IdentifierType::PartnerAccountId => "PartnerAccountId",
+            IdentifierType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["PartnerAccountId"]
+    }
+}
+impl AsRef<str> for IdentifierType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -183,6 +534,200 @@ impl SidewalkUpdateAccount {
     /// Creates a new builder-style object to manufacture [`SidewalkUpdateAccount`](crate::model::SidewalkUpdateAccount)
     pub fn builder() -> crate::model::sidewalk_update_account::Builder {
         crate::model::sidewalk_update_account::Builder::default()
+    }
+}
+
+/// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LoRaWanMulticast {
+    /// <p>Supported RfRegions</p>
+    pub rf_region: std::option::Option<crate::model::SupportedRfRegion>,
+    /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
+    pub dl_class: std::option::Option<crate::model::DlClass>,
+}
+impl LoRaWanMulticast {
+    /// <p>Supported RfRegions</p>
+    pub fn rf_region(&self) -> std::option::Option<&crate::model::SupportedRfRegion> {
+        self.rf_region.as_ref()
+    }
+    /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
+    pub fn dl_class(&self) -> std::option::Option<&crate::model::DlClass> {
+        self.dl_class.as_ref()
+    }
+}
+impl std::fmt::Debug for LoRaWanMulticast {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LoRaWanMulticast");
+        formatter.field("rf_region", &self.rf_region);
+        formatter.field("dl_class", &self.dl_class);
+        formatter.finish()
+    }
+}
+/// See [`LoRaWanMulticast`](crate::model::LoRaWanMulticast)
+pub mod lo_ra_wan_multicast {
+    /// A builder for [`LoRaWanMulticast`](crate::model::LoRaWanMulticast)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rf_region: std::option::Option<crate::model::SupportedRfRegion>,
+        pub(crate) dl_class: std::option::Option<crate::model::DlClass>,
+    }
+    impl Builder {
+        /// <p>Supported RfRegions</p>
+        pub fn rf_region(mut self, input: crate::model::SupportedRfRegion) -> Self {
+            self.rf_region = Some(input);
+            self
+        }
+        /// <p>Supported RfRegions</p>
+        pub fn set_rf_region(
+            mut self,
+            input: std::option::Option<crate::model::SupportedRfRegion>,
+        ) -> Self {
+            self.rf_region = input;
+            self
+        }
+        /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
+        pub fn dl_class(mut self, input: crate::model::DlClass) -> Self {
+            self.dl_class = Some(input);
+            self
+        }
+        /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
+        pub fn set_dl_class(mut self, input: std::option::Option<crate::model::DlClass>) -> Self {
+            self.dl_class = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LoRaWanMulticast`](crate::model::LoRaWanMulticast)
+        pub fn build(self) -> crate::model::LoRaWanMulticast {
+            crate::model::LoRaWanMulticast {
+                rf_region: self.rf_region,
+                dl_class: self.dl_class,
+            }
+        }
+    }
+}
+impl LoRaWanMulticast {
+    /// Creates a new builder-style object to manufacture [`LoRaWanMulticast`](crate::model::LoRaWanMulticast)
+    pub fn builder() -> crate::model::lo_ra_wan_multicast::Builder {
+        crate::model::lo_ra_wan_multicast::Builder::default()
+    }
+}
+
+/// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DlClass {
+    #[allow(missing_docs)] // documentation missing in model
+    ClassB,
+    #[allow(missing_docs)] // documentation missing in model
+    ClassC,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DlClass {
+    fn from(s: &str) -> Self {
+        match s {
+            "ClassB" => DlClass::ClassB,
+            "ClassC" => DlClass::ClassC,
+            other => DlClass::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DlClass {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DlClass::from(s))
+    }
+}
+impl DlClass {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DlClass::ClassB => "ClassB",
+            DlClass::ClassC => "ClassC",
+            DlClass::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ClassB", "ClassC"]
+    }
+}
+impl AsRef<str> for DlClass {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Supported RfRegions</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SupportedRfRegion {
+    #[allow(missing_docs)] // documentation missing in model
+    As9231,
+    #[allow(missing_docs)] // documentation missing in model
+    Au915,
+    #[allow(missing_docs)] // documentation missing in model
+    Eu868,
+    #[allow(missing_docs)] // documentation missing in model
+    Us915,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SupportedRfRegion {
+    fn from(s: &str) -> Self {
+        match s {
+            "AS923-1" => SupportedRfRegion::As9231,
+            "AU915" => SupportedRfRegion::Au915,
+            "EU868" => SupportedRfRegion::Eu868,
+            "US915" => SupportedRfRegion::Us915,
+            other => SupportedRfRegion::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SupportedRfRegion {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SupportedRfRegion::from(s))
+    }
+}
+impl SupportedRfRegion {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SupportedRfRegion::As9231 => "AS923-1",
+            SupportedRfRegion::Au915 => "AU915",
+            SupportedRfRegion::Eu868 => "EU868",
+            SupportedRfRegion::Us915 => "US915",
+            SupportedRfRegion::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AS923-1", "AU915", "EU868", "US915"]
+    }
+}
+impl AsRef<str> for SupportedRfRegion {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -851,6 +1396,63 @@ impl AsRef<str> for WirelessDeviceType {
     }
 }
 
+/// <p>The LoRaWAN information used with a FUOTA task.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LoRaWanFuotaTask {
+    /// <p>Supported RfRegions</p>
+    pub rf_region: std::option::Option<crate::model::SupportedRfRegion>,
+}
+impl LoRaWanFuotaTask {
+    /// <p>Supported RfRegions</p>
+    pub fn rf_region(&self) -> std::option::Option<&crate::model::SupportedRfRegion> {
+        self.rf_region.as_ref()
+    }
+}
+impl std::fmt::Debug for LoRaWanFuotaTask {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LoRaWanFuotaTask");
+        formatter.field("rf_region", &self.rf_region);
+        formatter.finish()
+    }
+}
+/// See [`LoRaWanFuotaTask`](crate::model::LoRaWanFuotaTask)
+pub mod lo_ra_wan_fuota_task {
+    /// A builder for [`LoRaWanFuotaTask`](crate::model::LoRaWanFuotaTask)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rf_region: std::option::Option<crate::model::SupportedRfRegion>,
+    }
+    impl Builder {
+        /// <p>Supported RfRegions</p>
+        pub fn rf_region(mut self, input: crate::model::SupportedRfRegion) -> Self {
+            self.rf_region = Some(input);
+            self
+        }
+        /// <p>Supported RfRegions</p>
+        pub fn set_rf_region(
+            mut self,
+            input: std::option::Option<crate::model::SupportedRfRegion>,
+        ) -> Self {
+            self.rf_region = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LoRaWanFuotaTask`](crate::model::LoRaWanFuotaTask)
+        pub fn build(self) -> crate::model::LoRaWanFuotaTask {
+            crate::model::LoRaWanFuotaTask {
+                rf_region: self.rf_region,
+            }
+        }
+    }
+}
+impl LoRaWanFuotaTask {
+    /// Creates a new builder-style object to manufacture [`LoRaWanFuotaTask`](crate::model::LoRaWanFuotaTask)
+    pub fn builder() -> crate::model::lo_ra_wan_fuota_task::Builder {
+        crate::model::lo_ra_wan_fuota_task::Builder::default()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -976,6 +1578,177 @@ impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
+    }
+}
+
+/// <p>The LoRaWAN information used with the multicast session.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LoRaWanMulticastSession {
+    /// <p>Downlink data rate.</p>
+    pub dl_dr: std::option::Option<i32>,
+    /// <p>Downlink frequency.</p>
+    pub dl_freq: std::option::Option<i32>,
+    /// <p>Timestamp of when the multicast group session is to start.</p>
+    pub session_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>How long before a multicast group session is to timeout.</p>
+    pub session_timeout: std::option::Option<i32>,
+}
+impl LoRaWanMulticastSession {
+    /// <p>Downlink data rate.</p>
+    pub fn dl_dr(&self) -> std::option::Option<i32> {
+        self.dl_dr
+    }
+    /// <p>Downlink frequency.</p>
+    pub fn dl_freq(&self) -> std::option::Option<i32> {
+        self.dl_freq
+    }
+    /// <p>Timestamp of when the multicast group session is to start.</p>
+    pub fn session_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.session_start_time.as_ref()
+    }
+    /// <p>How long before a multicast group session is to timeout.</p>
+    pub fn session_timeout(&self) -> std::option::Option<i32> {
+        self.session_timeout
+    }
+}
+impl std::fmt::Debug for LoRaWanMulticastSession {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LoRaWanMulticastSession");
+        formatter.field("dl_dr", &self.dl_dr);
+        formatter.field("dl_freq", &self.dl_freq);
+        formatter.field("session_start_time", &self.session_start_time);
+        formatter.field("session_timeout", &self.session_timeout);
+        formatter.finish()
+    }
+}
+/// See [`LoRaWanMulticastSession`](crate::model::LoRaWanMulticastSession)
+pub mod lo_ra_wan_multicast_session {
+    /// A builder for [`LoRaWanMulticastSession`](crate::model::LoRaWanMulticastSession)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dl_dr: std::option::Option<i32>,
+        pub(crate) dl_freq: std::option::Option<i32>,
+        pub(crate) session_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) session_timeout: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Downlink data rate.</p>
+        pub fn dl_dr(mut self, input: i32) -> Self {
+            self.dl_dr = Some(input);
+            self
+        }
+        /// <p>Downlink data rate.</p>
+        pub fn set_dl_dr(mut self, input: std::option::Option<i32>) -> Self {
+            self.dl_dr = input;
+            self
+        }
+        /// <p>Downlink frequency.</p>
+        pub fn dl_freq(mut self, input: i32) -> Self {
+            self.dl_freq = Some(input);
+            self
+        }
+        /// <p>Downlink frequency.</p>
+        pub fn set_dl_freq(mut self, input: std::option::Option<i32>) -> Self {
+            self.dl_freq = input;
+            self
+        }
+        /// <p>Timestamp of when the multicast group session is to start.</p>
+        pub fn session_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.session_start_time = Some(input);
+            self
+        }
+        /// <p>Timestamp of when the multicast group session is to start.</p>
+        pub fn set_session_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.session_start_time = input;
+            self
+        }
+        /// <p>How long before a multicast group session is to timeout.</p>
+        pub fn session_timeout(mut self, input: i32) -> Self {
+            self.session_timeout = Some(input);
+            self
+        }
+        /// <p>How long before a multicast group session is to timeout.</p>
+        pub fn set_session_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.session_timeout = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LoRaWanMulticastSession`](crate::model::LoRaWanMulticastSession)
+        pub fn build(self) -> crate::model::LoRaWanMulticastSession {
+            crate::model::LoRaWanMulticastSession {
+                dl_dr: self.dl_dr,
+                dl_freq: self.dl_freq,
+                session_start_time: self.session_start_time,
+                session_timeout: self.session_timeout,
+            }
+        }
+    }
+}
+impl LoRaWanMulticastSession {
+    /// Creates a new builder-style object to manufacture [`LoRaWanMulticastSession`](crate::model::LoRaWanMulticastSession)
+    pub fn builder() -> crate::model::lo_ra_wan_multicast_session::Builder {
+        crate::model::lo_ra_wan_multicast_session::Builder::default()
+    }
+}
+
+/// <p>The LoRaWAN information used to start a FUOTA task.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LoRaWanStartFuotaTask {
+    /// <p>Start time of a FUOTA task.</p>
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl LoRaWanStartFuotaTask {
+    /// <p>Start time of a FUOTA task.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+}
+impl std::fmt::Debug for LoRaWanStartFuotaTask {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LoRaWanStartFuotaTask");
+        formatter.field("start_time", &self.start_time);
+        formatter.finish()
+    }
+}
+/// See [`LoRaWanStartFuotaTask`](crate::model::LoRaWanStartFuotaTask)
+pub mod lo_ra_wan_start_fuota_task {
+    /// A builder for [`LoRaWanStartFuotaTask`](crate::model::LoRaWanStartFuotaTask)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>Start time of a FUOTA task.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p>Start time of a FUOTA task.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LoRaWanStartFuotaTask`](crate::model::LoRaWanStartFuotaTask)
+        pub fn build(self) -> crate::model::LoRaWanStartFuotaTask {
+            crate::model::LoRaWanStartFuotaTask {
+                start_time: self.start_time,
+            }
+        }
+    }
+}
+impl LoRaWanStartFuotaTask {
+    /// Creates a new builder-style object to manufacture [`LoRaWanStartFuotaTask`](crate::model::LoRaWanStartFuotaTask)
+    pub fn builder() -> crate::model::lo_ra_wan_start_fuota_task::Builder {
+        crate::model::lo_ra_wan_start_fuota_task::Builder::default()
     }
 }
 
@@ -1253,6 +2026,117 @@ impl LoRaWanSendDataToDevice {
     /// Creates a new builder-style object to manufacture [`LoRaWanSendDataToDevice`](crate::model::LoRaWanSendDataToDevice)
     pub fn builder() -> crate::model::lo_ra_wan_send_data_to_device::Builder {
         crate::model::lo_ra_wan_send_data_to_device::Builder::default()
+    }
+}
+
+/// <p>Wireless metadata that is to be sent to multicast group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MulticastWirelessMetadata {
+    /// <p>The metadata information of the LoRaWAN multicast group.</p>
+    pub lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastMetadata>,
+}
+impl MulticastWirelessMetadata {
+    /// <p>The metadata information of the LoRaWAN multicast group.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanMulticastMetadata> {
+        self.lo_ra_wan.as_ref()
+    }
+}
+impl std::fmt::Debug for MulticastWirelessMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MulticastWirelessMetadata");
+        formatter.field("lo_ra_wan", &self.lo_ra_wan);
+        formatter.finish()
+    }
+}
+/// See [`MulticastWirelessMetadata`](crate::model::MulticastWirelessMetadata)
+pub mod multicast_wireless_metadata {
+    /// A builder for [`MulticastWirelessMetadata`](crate::model::MulticastWirelessMetadata)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastMetadata>,
+    }
+    impl Builder {
+        /// <p>The metadata information of the LoRaWAN multicast group.</p>
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanMulticastMetadata) -> Self {
+            self.lo_ra_wan = Some(input);
+            self
+        }
+        /// <p>The metadata information of the LoRaWAN multicast group.</p>
+        pub fn set_lo_ra_wan(
+            mut self,
+            input: std::option::Option<crate::model::LoRaWanMulticastMetadata>,
+        ) -> Self {
+            self.lo_ra_wan = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MulticastWirelessMetadata`](crate::model::MulticastWirelessMetadata)
+        pub fn build(self) -> crate::model::MulticastWirelessMetadata {
+            crate::model::MulticastWirelessMetadata {
+                lo_ra_wan: self.lo_ra_wan,
+            }
+        }
+    }
+}
+impl MulticastWirelessMetadata {
+    /// Creates a new builder-style object to manufacture [`MulticastWirelessMetadata`](crate::model::MulticastWirelessMetadata)
+    pub fn builder() -> crate::model::multicast_wireless_metadata::Builder {
+        crate::model::multicast_wireless_metadata::Builder::default()
+    }
+}
+
+/// <p>The metadata information of the LoRaWAN multicast group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LoRaWanMulticastMetadata {
+    /// <p>The Fport value.</p>
+    pub f_port: std::option::Option<i32>,
+}
+impl LoRaWanMulticastMetadata {
+    /// <p>The Fport value.</p>
+    pub fn f_port(&self) -> std::option::Option<i32> {
+        self.f_port
+    }
+}
+impl std::fmt::Debug for LoRaWanMulticastMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LoRaWanMulticastMetadata");
+        formatter.field("f_port", &self.f_port);
+        formatter.finish()
+    }
+}
+/// See [`LoRaWanMulticastMetadata`](crate::model::LoRaWanMulticastMetadata)
+pub mod lo_ra_wan_multicast_metadata {
+    /// A builder for [`LoRaWanMulticastMetadata`](crate::model::LoRaWanMulticastMetadata)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) f_port: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The Fport value.</p>
+        pub fn f_port(mut self, input: i32) -> Self {
+            self.f_port = Some(input);
+            self
+        }
+        /// <p>The Fport value.</p>
+        pub fn set_f_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.f_port = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LoRaWanMulticastMetadata`](crate::model::LoRaWanMulticastMetadata)
+        pub fn build(self) -> crate::model::LoRaWanMulticastMetadata {
+            crate::model::LoRaWanMulticastMetadata {
+                f_port: self.f_port,
+            }
+        }
+    }
+}
+impl LoRaWanMulticastMetadata {
+    /// Creates a new builder-style object to manufacture [`LoRaWanMulticastMetadata`](crate::model::LoRaWanMulticastMetadata)
+    pub fn builder() -> crate::model::lo_ra_wan_multicast_metadata::Builder {
+        crate::model::lo_ra_wan_multicast_metadata::Builder::default()
     }
 }
 
@@ -1909,6 +2793,12 @@ pub struct WirelessDeviceStatistics {
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanListDevice>,
     /// <p>The Sidewalk account credentials.</p>
     pub sidewalk: std::option::Option<crate::model::SidewalkListDevice>,
+    /// <p>The status of a wireless device in a FUOTA task.</p>
+    pub fuota_device_status: std::option::Option<crate::model::FuotaDeviceStatus>,
+    /// <p>The status of the wireless device in the multicast group.</p>
+    pub multicast_device_status: std::option::Option<std::string::String>,
+    /// <p>Id of the multicast group.</p>
+    pub mc_group_id: std::option::Option<i32>,
 }
 impl WirelessDeviceStatistics {
     /// <p>The Amazon Resource Name of the resource.</p>
@@ -1943,6 +2833,18 @@ impl WirelessDeviceStatistics {
     pub fn sidewalk(&self) -> std::option::Option<&crate::model::SidewalkListDevice> {
         self.sidewalk.as_ref()
     }
+    /// <p>The status of a wireless device in a FUOTA task.</p>
+    pub fn fuota_device_status(&self) -> std::option::Option<&crate::model::FuotaDeviceStatus> {
+        self.fuota_device_status.as_ref()
+    }
+    /// <p>The status of the wireless device in the multicast group.</p>
+    pub fn multicast_device_status(&self) -> std::option::Option<&str> {
+        self.multicast_device_status.as_deref()
+    }
+    /// <p>Id of the multicast group.</p>
+    pub fn mc_group_id(&self) -> std::option::Option<i32> {
+        self.mc_group_id
+    }
 }
 impl std::fmt::Debug for WirelessDeviceStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1955,6 +2857,9 @@ impl std::fmt::Debug for WirelessDeviceStatistics {
         formatter.field("last_uplink_received_at", &self.last_uplink_received_at);
         formatter.field("lo_ra_wan", &self.lo_ra_wan);
         formatter.field("sidewalk", &self.sidewalk);
+        formatter.field("fuota_device_status", &self.fuota_device_status);
+        formatter.field("multicast_device_status", &self.multicast_device_status);
+        formatter.field("mc_group_id", &self.mc_group_id);
         formatter.finish()
     }
 }
@@ -1972,6 +2877,9 @@ pub mod wireless_device_statistics {
         pub(crate) last_uplink_received_at: std::option::Option<std::string::String>,
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanListDevice>,
         pub(crate) sidewalk: std::option::Option<crate::model::SidewalkListDevice>,
+        pub(crate) fuota_device_status: std::option::Option<crate::model::FuotaDeviceStatus>,
+        pub(crate) multicast_device_status: std::option::Option<std::string::String>,
+        pub(crate) mc_group_id: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name of the resource.</p>
@@ -2069,6 +2977,42 @@ pub mod wireless_device_statistics {
             self.sidewalk = input;
             self
         }
+        /// <p>The status of a wireless device in a FUOTA task.</p>
+        pub fn fuota_device_status(mut self, input: crate::model::FuotaDeviceStatus) -> Self {
+            self.fuota_device_status = Some(input);
+            self
+        }
+        /// <p>The status of a wireless device in a FUOTA task.</p>
+        pub fn set_fuota_device_status(
+            mut self,
+            input: std::option::Option<crate::model::FuotaDeviceStatus>,
+        ) -> Self {
+            self.fuota_device_status = input;
+            self
+        }
+        /// <p>The status of the wireless device in the multicast group.</p>
+        pub fn multicast_device_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.multicast_device_status = Some(input.into());
+            self
+        }
+        /// <p>The status of the wireless device in the multicast group.</p>
+        pub fn set_multicast_device_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.multicast_device_status = input;
+            self
+        }
+        /// <p>Id of the multicast group.</p>
+        pub fn mc_group_id(mut self, input: i32) -> Self {
+            self.mc_group_id = Some(input);
+            self
+        }
+        /// <p>Id of the multicast group.</p>
+        pub fn set_mc_group_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.mc_group_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WirelessDeviceStatistics`](crate::model::WirelessDeviceStatistics)
         pub fn build(self) -> crate::model::WirelessDeviceStatistics {
             crate::model::WirelessDeviceStatistics {
@@ -2080,6 +3024,9 @@ pub mod wireless_device_statistics {
                 last_uplink_received_at: self.last_uplink_received_at,
                 lo_ra_wan: self.lo_ra_wan,
                 sidewalk: self.sidewalk,
+                fuota_device_status: self.fuota_device_status,
+                multicast_device_status: self.multicast_device_status,
+                mc_group_id: self.mc_group_id,
             }
         }
     }
@@ -2088,6 +3035,109 @@ impl WirelessDeviceStatistics {
     /// Creates a new builder-style object to manufacture [`WirelessDeviceStatistics`](crate::model::WirelessDeviceStatistics)
     pub fn builder() -> crate::model::wireless_device_statistics::Builder {
         crate::model::wireless_device_statistics::Builder::default()
+    }
+}
+
+/// <p>The status of a wireless device in a FUOTA task.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FuotaDeviceStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    FragAlgoUnsupported,
+    #[allow(missing_docs)] // documentation missing in model
+    FragIndexUnsupported,
+    #[allow(missing_docs)] // documentation missing in model
+    Initial,
+    #[allow(missing_docs)] // documentation missing in model
+    MicError,
+    #[allow(missing_docs)] // documentation missing in model
+    MemoryError,
+    #[allow(missing_docs)] // documentation missing in model
+    MissingFrag,
+    #[allow(missing_docs)] // documentation missing in model
+    NotEnoughMemory,
+    #[allow(missing_docs)] // documentation missing in model
+    PackageNotSupported,
+    #[allow(missing_docs)] // documentation missing in model
+    SessionCntReplay,
+    #[allow(missing_docs)] // documentation missing in model
+    Successful,
+    #[allow(missing_docs)] // documentation missing in model
+    WrongDescriptor,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FuotaDeviceStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "FragAlgo_unsupported" => FuotaDeviceStatus::FragAlgoUnsupported,
+            "FragIndex_unsupported" => FuotaDeviceStatus::FragIndexUnsupported,
+            "Initial" => FuotaDeviceStatus::Initial,
+            "MICError" => FuotaDeviceStatus::MicError,
+            "MemoryError" => FuotaDeviceStatus::MemoryError,
+            "MissingFrag" => FuotaDeviceStatus::MissingFrag,
+            "Not_enough_memory" => FuotaDeviceStatus::NotEnoughMemory,
+            "Package_Not_Supported" => FuotaDeviceStatus::PackageNotSupported,
+            "SessionCnt_replay" => FuotaDeviceStatus::SessionCntReplay,
+            "Successful" => FuotaDeviceStatus::Successful,
+            "Wrong_descriptor" => FuotaDeviceStatus::WrongDescriptor,
+            other => FuotaDeviceStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FuotaDeviceStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FuotaDeviceStatus::from(s))
+    }
+}
+impl FuotaDeviceStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FuotaDeviceStatus::FragAlgoUnsupported => "FragAlgo_unsupported",
+            FuotaDeviceStatus::FragIndexUnsupported => "FragIndex_unsupported",
+            FuotaDeviceStatus::Initial => "Initial",
+            FuotaDeviceStatus::MicError => "MICError",
+            FuotaDeviceStatus::MemoryError => "MemoryError",
+            FuotaDeviceStatus::MissingFrag => "MissingFrag",
+            FuotaDeviceStatus::NotEnoughMemory => "Not_enough_memory",
+            FuotaDeviceStatus::PackageNotSupported => "Package_Not_Supported",
+            FuotaDeviceStatus::SessionCntReplay => "SessionCnt_replay",
+            FuotaDeviceStatus::Successful => "Successful",
+            FuotaDeviceStatus::WrongDescriptor => "Wrong_descriptor",
+            FuotaDeviceStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FragAlgo_unsupported",
+            "FragIndex_unsupported",
+            "Initial",
+            "MICError",
+            "MemoryError",
+            "MissingFrag",
+            "Not_enough_memory",
+            "Package_Not_Supported",
+            "SessionCnt_replay",
+            "Successful",
+            "Wrong_descriptor",
+        ]
+    }
+}
+impl AsRef<str> for FuotaDeviceStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2584,6 +3634,242 @@ impl SidewalkAccountInfoWithFingerprint {
     /// Creates a new builder-style object to manufacture [`SidewalkAccountInfoWithFingerprint`](crate::model::SidewalkAccountInfoWithFingerprint)
     pub fn builder() -> crate::model::sidewalk_account_info_with_fingerprint::Builder {
         crate::model::sidewalk_account_info_with_fingerprint::Builder::default()
+    }
+}
+
+/// <p>A multicast group that is associated with a FUOTA task.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MulticastGroupByFuotaTask {
+    /// <p>The ID of the multicast group.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl MulticastGroupByFuotaTask {
+    /// <p>The ID of the multicast group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for MulticastGroupByFuotaTask {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MulticastGroupByFuotaTask");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+/// See [`MulticastGroupByFuotaTask`](crate::model::MulticastGroupByFuotaTask)
+pub mod multicast_group_by_fuota_task {
+    /// A builder for [`MulticastGroupByFuotaTask`](crate::model::MulticastGroupByFuotaTask)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MulticastGroupByFuotaTask`](crate::model::MulticastGroupByFuotaTask)
+        pub fn build(self) -> crate::model::MulticastGroupByFuotaTask {
+            crate::model::MulticastGroupByFuotaTask { id: self.id }
+        }
+    }
+}
+impl MulticastGroupByFuotaTask {
+    /// Creates a new builder-style object to manufacture [`MulticastGroupByFuotaTask`](crate::model::MulticastGroupByFuotaTask)
+    pub fn builder() -> crate::model::multicast_group_by_fuota_task::Builder {
+        crate::model::multicast_group_by_fuota_task::Builder::default()
+    }
+}
+
+/// <p>A multicast group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MulticastGroup {
+    /// <p>The ID of the multicast group.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The arn of the multicast group.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of the multicast group.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl MulticastGroup {
+    /// <p>The ID of the multicast group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The arn of the multicast group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the multicast group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for MulticastGroup {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MulticastGroup");
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`MulticastGroup`](crate::model::MulticastGroup)
+pub mod multicast_group {
+    /// A builder for [`MulticastGroup`](crate::model::MulticastGroup)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The arn of the multicast group.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The arn of the multicast group.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of the multicast group.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the multicast group.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MulticastGroup`](crate::model::MulticastGroup)
+        pub fn build(self) -> crate::model::MulticastGroup {
+            crate::model::MulticastGroup {
+                id: self.id,
+                arn: self.arn,
+                name: self.name,
+            }
+        }
+    }
+}
+impl MulticastGroup {
+    /// Creates a new builder-style object to manufacture [`MulticastGroup`](crate::model::MulticastGroup)
+    pub fn builder() -> crate::model::multicast_group::Builder {
+        crate::model::multicast_group::Builder::default()
+    }
+}
+
+/// <p>A FUOTA task.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FuotaTask {
+    /// <p>The ID of a FUOTA task.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The arn of a FUOTA task.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of a FUOTA task.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl FuotaTask {
+    /// <p>The ID of a FUOTA task.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The arn of a FUOTA task.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of a FUOTA task.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for FuotaTask {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FuotaTask");
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`FuotaTask`](crate::model::FuotaTask)
+pub mod fuota_task {
+    /// A builder for [`FuotaTask`](crate::model::FuotaTask)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The arn of a FUOTA task.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The arn of a FUOTA task.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of a FUOTA task.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of a FUOTA task.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FuotaTask`](crate::model::FuotaTask)
+        pub fn build(self) -> crate::model::FuotaTask {
+            crate::model::FuotaTask {
+                id: self.id,
+                arn: self.arn,
+                name: self.name,
+            }
+        }
+    }
+}
+impl FuotaTask {
+    /// Creates a new builder-style object to manufacture [`FuotaTask`](crate::model::FuotaTask)
+    pub fn builder() -> crate::model::fuota_task::Builder {
+        crate::model::fuota_task::Builder::default()
     }
 }
 
@@ -4008,6 +5294,8 @@ pub struct LoRaWanDevice {
     pub abp_v1_1: std::option::Option<crate::model::AbpV11>,
     /// <p>LoRaWAN object for create APIs</p>
     pub abp_v1_0_x: std::option::Option<crate::model::AbpV10X>,
+    /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
+    pub f_ports: std::option::Option<crate::model::FPorts>,
 }
 impl LoRaWanDevice {
     /// <p>The DevEUI value.</p>
@@ -4038,6 +5326,10 @@ impl LoRaWanDevice {
     pub fn abp_v1_0_x(&self) -> std::option::Option<&crate::model::AbpV10X> {
         self.abp_v1_0_x.as_ref()
     }
+    /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
+    pub fn f_ports(&self) -> std::option::Option<&crate::model::FPorts> {
+        self.f_ports.as_ref()
+    }
 }
 impl std::fmt::Debug for LoRaWanDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4049,6 +5341,7 @@ impl std::fmt::Debug for LoRaWanDevice {
         formatter.field("otaa_v1_0_x", &self.otaa_v1_0_x);
         formatter.field("abp_v1_1", &self.abp_v1_1);
         formatter.field("abp_v1_0_x", &self.abp_v1_0_x);
+        formatter.field("f_ports", &self.f_ports);
         formatter.finish()
     }
 }
@@ -4065,6 +5358,7 @@ pub mod lo_ra_wan_device {
         pub(crate) otaa_v1_0_x: std::option::Option<crate::model::OtaaV10X>,
         pub(crate) abp_v1_1: std::option::Option<crate::model::AbpV11>,
         pub(crate) abp_v1_0_x: std::option::Option<crate::model::AbpV10X>,
+        pub(crate) f_ports: std::option::Option<crate::model::FPorts>,
     }
     impl Builder {
         /// <p>The DevEUI value.</p>
@@ -4146,6 +5440,16 @@ pub mod lo_ra_wan_device {
             self.abp_v1_0_x = input;
             self
         }
+        /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
+        pub fn f_ports(mut self, input: crate::model::FPorts) -> Self {
+            self.f_ports = Some(input);
+            self
+        }
+        /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
+        pub fn set_f_ports(mut self, input: std::option::Option<crate::model::FPorts>) -> Self {
+            self.f_ports = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LoRaWanDevice`](crate::model::LoRaWanDevice)
         pub fn build(self) -> crate::model::LoRaWanDevice {
             crate::model::LoRaWanDevice {
@@ -4156,6 +5460,7 @@ pub mod lo_ra_wan_device {
                 otaa_v1_0_x: self.otaa_v1_0_x,
                 abp_v1_1: self.abp_v1_1,
                 abp_v1_0_x: self.abp_v1_0_x,
+                f_ports: self.f_ports,
             }
         }
     }
@@ -4164,6 +5469,98 @@ impl LoRaWanDevice {
     /// Creates a new builder-style object to manufacture [`LoRaWanDevice`](crate::model::LoRaWanDevice)
     pub fn builder() -> crate::model::lo_ra_wan_device::Builder {
         crate::model::lo_ra_wan_device::Builder::default()
+    }
+}
+
+/// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FPorts {
+    /// <p>The Fport value.</p>
+    pub fuota: std::option::Option<i32>,
+    /// <p>The Fport value.</p>
+    pub multicast: std::option::Option<i32>,
+    /// <p>The Fport value.</p>
+    pub clock_sync: std::option::Option<i32>,
+}
+impl FPorts {
+    /// <p>The Fport value.</p>
+    pub fn fuota(&self) -> std::option::Option<i32> {
+        self.fuota
+    }
+    /// <p>The Fport value.</p>
+    pub fn multicast(&self) -> std::option::Option<i32> {
+        self.multicast
+    }
+    /// <p>The Fport value.</p>
+    pub fn clock_sync(&self) -> std::option::Option<i32> {
+        self.clock_sync
+    }
+}
+impl std::fmt::Debug for FPorts {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FPorts");
+        formatter.field("fuota", &self.fuota);
+        formatter.field("multicast", &self.multicast);
+        formatter.field("clock_sync", &self.clock_sync);
+        formatter.finish()
+    }
+}
+/// See [`FPorts`](crate::model::FPorts)
+pub mod f_ports {
+    /// A builder for [`FPorts`](crate::model::FPorts)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) fuota: std::option::Option<i32>,
+        pub(crate) multicast: std::option::Option<i32>,
+        pub(crate) clock_sync: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The Fport value.</p>
+        pub fn fuota(mut self, input: i32) -> Self {
+            self.fuota = Some(input);
+            self
+        }
+        /// <p>The Fport value.</p>
+        pub fn set_fuota(mut self, input: std::option::Option<i32>) -> Self {
+            self.fuota = input;
+            self
+        }
+        /// <p>The Fport value.</p>
+        pub fn multicast(mut self, input: i32) -> Self {
+            self.multicast = Some(input);
+            self
+        }
+        /// <p>The Fport value.</p>
+        pub fn set_multicast(mut self, input: std::option::Option<i32>) -> Self {
+            self.multicast = input;
+            self
+        }
+        /// <p>The Fport value.</p>
+        pub fn clock_sync(mut self, input: i32) -> Self {
+            self.clock_sync = Some(input);
+            self
+        }
+        /// <p>The Fport value.</p>
+        pub fn set_clock_sync(mut self, input: std::option::Option<i32>) -> Self {
+            self.clock_sync = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FPorts`](crate::model::FPorts)
+        pub fn build(self) -> crate::model::FPorts {
+            crate::model::FPorts {
+                fuota: self.fuota,
+                multicast: self.multicast,
+                clock_sync: self.clock_sync,
+            }
+        }
+    }
+}
+impl FPorts {
+    /// Creates a new builder-style object to manufacture [`FPorts`](crate::model::FPorts)
+    pub fn builder() -> crate::model::f_ports::Builder {
+        crate::model::f_ports::Builder::default()
     }
 }
 
@@ -4520,6 +5917,8 @@ pub struct OtaaV10X {
     pub app_key: std::option::Option<std::string::String>,
     /// <p>The AppEUI value.</p>
     pub app_eui: std::option::Option<std::string::String>,
+    /// <p>The GenAppKey value.</p>
+    pub gen_app_key: std::option::Option<std::string::String>,
 }
 impl OtaaV10X {
     /// <p>The AppKey value.</p>
@@ -4530,12 +5929,17 @@ impl OtaaV10X {
     pub fn app_eui(&self) -> std::option::Option<&str> {
         self.app_eui.as_deref()
     }
+    /// <p>The GenAppKey value.</p>
+    pub fn gen_app_key(&self) -> std::option::Option<&str> {
+        self.gen_app_key.as_deref()
+    }
 }
 impl std::fmt::Debug for OtaaV10X {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OtaaV10X");
         formatter.field("app_key", &self.app_key);
         formatter.field("app_eui", &self.app_eui);
+        formatter.field("gen_app_key", &self.gen_app_key);
         formatter.finish()
     }
 }
@@ -4547,6 +5951,7 @@ pub mod otaa_v10_x {
     pub struct Builder {
         pub(crate) app_key: std::option::Option<std::string::String>,
         pub(crate) app_eui: std::option::Option<std::string::String>,
+        pub(crate) gen_app_key: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The AppKey value.</p>
@@ -4569,11 +5974,22 @@ pub mod otaa_v10_x {
             self.app_eui = input;
             self
         }
+        /// <p>The GenAppKey value.</p>
+        pub fn gen_app_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.gen_app_key = Some(input.into());
+            self
+        }
+        /// <p>The GenAppKey value.</p>
+        pub fn set_gen_app_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.gen_app_key = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OtaaV10X`](crate::model::OtaaV10X)
         pub fn build(self) -> crate::model::OtaaV10X {
             crate::model::OtaaV10X {
                 app_key: self.app_key,
                 app_eui: self.app_eui,
+                gen_app_key: self.gen_app_key,
             }
         }
     }
@@ -5197,6 +6613,275 @@ impl WirelessGatewayServiceType {
     }
 }
 impl AsRef<str> for WirelessGatewayServiceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LoRaWanMulticastGet {
+    /// <p>Supported RfRegions</p>
+    pub rf_region: std::option::Option<crate::model::SupportedRfRegion>,
+    /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
+    pub dl_class: std::option::Option<crate::model::DlClass>,
+    /// <p>Number of devices that are requested to be associated with the multicast group.</p>
+    pub number_of_devices_requested: std::option::Option<i32>,
+    /// <p>Number of devices that are associated to the multicast group.</p>
+    pub number_of_devices_in_group: std::option::Option<i32>,
+}
+impl LoRaWanMulticastGet {
+    /// <p>Supported RfRegions</p>
+    pub fn rf_region(&self) -> std::option::Option<&crate::model::SupportedRfRegion> {
+        self.rf_region.as_ref()
+    }
+    /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
+    pub fn dl_class(&self) -> std::option::Option<&crate::model::DlClass> {
+        self.dl_class.as_ref()
+    }
+    /// <p>Number of devices that are requested to be associated with the multicast group.</p>
+    pub fn number_of_devices_requested(&self) -> std::option::Option<i32> {
+        self.number_of_devices_requested
+    }
+    /// <p>Number of devices that are associated to the multicast group.</p>
+    pub fn number_of_devices_in_group(&self) -> std::option::Option<i32> {
+        self.number_of_devices_in_group
+    }
+}
+impl std::fmt::Debug for LoRaWanMulticastGet {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LoRaWanMulticastGet");
+        formatter.field("rf_region", &self.rf_region);
+        formatter.field("dl_class", &self.dl_class);
+        formatter.field(
+            "number_of_devices_requested",
+            &self.number_of_devices_requested,
+        );
+        formatter.field(
+            "number_of_devices_in_group",
+            &self.number_of_devices_in_group,
+        );
+        formatter.finish()
+    }
+}
+/// See [`LoRaWanMulticastGet`](crate::model::LoRaWanMulticastGet)
+pub mod lo_ra_wan_multicast_get {
+    /// A builder for [`LoRaWanMulticastGet`](crate::model::LoRaWanMulticastGet)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rf_region: std::option::Option<crate::model::SupportedRfRegion>,
+        pub(crate) dl_class: std::option::Option<crate::model::DlClass>,
+        pub(crate) number_of_devices_requested: std::option::Option<i32>,
+        pub(crate) number_of_devices_in_group: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Supported RfRegions</p>
+        pub fn rf_region(mut self, input: crate::model::SupportedRfRegion) -> Self {
+            self.rf_region = Some(input);
+            self
+        }
+        /// <p>Supported RfRegions</p>
+        pub fn set_rf_region(
+            mut self,
+            input: std::option::Option<crate::model::SupportedRfRegion>,
+        ) -> Self {
+            self.rf_region = input;
+            self
+        }
+        /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
+        pub fn dl_class(mut self, input: crate::model::DlClass) -> Self {
+            self.dl_class = Some(input);
+            self
+        }
+        /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
+        pub fn set_dl_class(mut self, input: std::option::Option<crate::model::DlClass>) -> Self {
+            self.dl_class = input;
+            self
+        }
+        /// <p>Number of devices that are requested to be associated with the multicast group.</p>
+        pub fn number_of_devices_requested(mut self, input: i32) -> Self {
+            self.number_of_devices_requested = Some(input);
+            self
+        }
+        /// <p>Number of devices that are requested to be associated with the multicast group.</p>
+        pub fn set_number_of_devices_requested(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_devices_requested = input;
+            self
+        }
+        /// <p>Number of devices that are associated to the multicast group.</p>
+        pub fn number_of_devices_in_group(mut self, input: i32) -> Self {
+            self.number_of_devices_in_group = Some(input);
+            self
+        }
+        /// <p>Number of devices that are associated to the multicast group.</p>
+        pub fn set_number_of_devices_in_group(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_devices_in_group = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LoRaWanMulticastGet`](crate::model::LoRaWanMulticastGet)
+        pub fn build(self) -> crate::model::LoRaWanMulticastGet {
+            crate::model::LoRaWanMulticastGet {
+                rf_region: self.rf_region,
+                dl_class: self.dl_class,
+                number_of_devices_requested: self.number_of_devices_requested,
+                number_of_devices_in_group: self.number_of_devices_in_group,
+            }
+        }
+    }
+}
+impl LoRaWanMulticastGet {
+    /// Creates a new builder-style object to manufacture [`LoRaWanMulticastGet`](crate::model::LoRaWanMulticastGet)
+    pub fn builder() -> crate::model::lo_ra_wan_multicast_get::Builder {
+        crate::model::lo_ra_wan_multicast_get::Builder::default()
+    }
+}
+
+/// <p>The LoRaWAN information returned from getting a FUOTA task.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LoRaWanFuotaTaskGetInfo {
+    /// <p>The frequency band (RFRegion) value.</p>
+    pub rf_region: std::option::Option<std::string::String>,
+    /// <p>Start time of a FUOTA task.</p>
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl LoRaWanFuotaTaskGetInfo {
+    /// <p>The frequency band (RFRegion) value.</p>
+    pub fn rf_region(&self) -> std::option::Option<&str> {
+        self.rf_region.as_deref()
+    }
+    /// <p>Start time of a FUOTA task.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+}
+impl std::fmt::Debug for LoRaWanFuotaTaskGetInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LoRaWanFuotaTaskGetInfo");
+        formatter.field("rf_region", &self.rf_region);
+        formatter.field("start_time", &self.start_time);
+        formatter.finish()
+    }
+}
+/// See [`LoRaWanFuotaTaskGetInfo`](crate::model::LoRaWanFuotaTaskGetInfo)
+pub mod lo_ra_wan_fuota_task_get_info {
+    /// A builder for [`LoRaWanFuotaTaskGetInfo`](crate::model::LoRaWanFuotaTaskGetInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rf_region: std::option::Option<std::string::String>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The frequency band (RFRegion) value.</p>
+        pub fn rf_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rf_region = Some(input.into());
+            self
+        }
+        /// <p>The frequency band (RFRegion) value.</p>
+        pub fn set_rf_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rf_region = input;
+            self
+        }
+        /// <p>Start time of a FUOTA task.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p>Start time of a FUOTA task.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LoRaWanFuotaTaskGetInfo`](crate::model::LoRaWanFuotaTaskGetInfo)
+        pub fn build(self) -> crate::model::LoRaWanFuotaTaskGetInfo {
+            crate::model::LoRaWanFuotaTaskGetInfo {
+                rf_region: self.rf_region,
+                start_time: self.start_time,
+            }
+        }
+    }
+}
+impl LoRaWanFuotaTaskGetInfo {
+    /// Creates a new builder-style object to manufacture [`LoRaWanFuotaTaskGetInfo`](crate::model::LoRaWanFuotaTaskGetInfo)
+    pub fn builder() -> crate::model::lo_ra_wan_fuota_task_get_info::Builder {
+        crate::model::lo_ra_wan_fuota_task_get_info::Builder::default()
+    }
+}
+
+/// <p>The status of a FUOTA task.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FuotaTaskStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteWaiting,
+    #[allow(missing_docs)] // documentation missing in model
+    FuotaDone,
+    #[allow(missing_docs)] // documentation missing in model
+    FuotaSessionWaiting,
+    #[allow(missing_docs)] // documentation missing in model
+    InFuotaSession,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FuotaTaskStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Delete_Waiting" => FuotaTaskStatus::DeleteWaiting,
+            "FuotaDone" => FuotaTaskStatus::FuotaDone,
+            "FuotaSession_Waiting" => FuotaTaskStatus::FuotaSessionWaiting,
+            "In_FuotaSession" => FuotaTaskStatus::InFuotaSession,
+            "Pending" => FuotaTaskStatus::Pending,
+            other => FuotaTaskStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FuotaTaskStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FuotaTaskStatus::from(s))
+    }
+}
+impl FuotaTaskStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FuotaTaskStatus::DeleteWaiting => "Delete_Waiting",
+            FuotaTaskStatus::FuotaDone => "FuotaDone",
+            FuotaTaskStatus::FuotaSessionWaiting => "FuotaSession_Waiting",
+            FuotaTaskStatus::InFuotaSession => "In_FuotaSession",
+            FuotaTaskStatus::Pending => "Pending",
+            FuotaTaskStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Delete_Waiting",
+            "FuotaDone",
+            "FuotaSession_Waiting",
+            "In_FuotaSession",
+            "Pending",
+        ]
+    }
+}
+impl AsRef<str> for FuotaTaskStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -42,6 +42,7 @@ pub type CancelTaskExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl CancelTaskExecutionInput {
     /// Consumes the builder and constructs an Operation<[`CancelTaskExecution`](crate::operation::CancelTaskExecution)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -98,11 +99,14 @@ impl CancelTaskExecutionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -337,6 +341,7 @@ pub type CreateAgentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateAgentInput {
     /// Consumes the builder and constructs an Operation<[`CreateAgent`](crate::operation::CreateAgent)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -392,11 +397,14 @@ impl CreateAgentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -601,6 +609,7 @@ pub type CreateLocationEfsInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl CreateLocationEfsInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationEfs`](crate::operation::CreateLocationEfs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -657,11 +666,14 @@ impl CreateLocationEfsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -863,6 +875,7 @@ pub type CreateLocationFsxWindowsInputOperationRetryAlias = aws_http::AwsErrorRe
 impl CreateLocationFsxWindowsInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationFsxWindows`](crate::operation::CreateLocationFsxWindows)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -921,11 +934,14 @@ impl CreateLocationFsxWindowsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -973,6 +989,419 @@ impl CreateLocationFsxWindowsInput {
     /// Creates a new builder-style object to manufacture [`CreateLocationFsxWindowsInput`](crate::input::CreateLocationFsxWindowsInput)
     pub fn builder() -> crate::input::create_location_fsx_windows_input::Builder {
         crate::input::create_location_fsx_windows_input::Builder::default()
+    }
+}
+
+/// See [`CreateLocationHdfsInput`](crate::input::CreateLocationHdfsInput)
+pub mod create_location_hdfs_input {
+    /// A builder for [`CreateLocationHdfsInput`](crate::input::CreateLocationHdfsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) subdirectory: std::option::Option<std::string::String>,
+        pub(crate) name_nodes: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
+        pub(crate) block_size: std::option::Option<i32>,
+        pub(crate) replication_factor: std::option::Option<i32>,
+        pub(crate) kms_key_provider_uri: std::option::Option<std::string::String>,
+        pub(crate) qop_configuration: std::option::Option<crate::model::QopConfiguration>,
+        pub(crate) authentication_type: std::option::Option<crate::model::HdfsAuthenticationType>,
+        pub(crate) simple_user: std::option::Option<std::string::String>,
+        pub(crate) kerberos_principal: std::option::Option<std::string::String>,
+        pub(crate) kerberos_keytab: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) kerberos_krb5_conf: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+    }
+    impl Builder {
+        /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
+        /// data to the HDFS cluster. If the subdirectory isn't specified, it will default to
+        /// <code>/</code>.</p>
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subdirectory = Some(input.into());
+            self
+        }
+        /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
+        /// data to the HDFS cluster. If the subdirectory isn't specified, it will default to
+        /// <code>/</code>.</p>
+        pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subdirectory = input;
+            self
+        }
+        /// Appends an item to `name_nodes`.
+        ///
+        /// To override the contents of this collection use [`set_name_nodes`](Self::set_name_nodes).
+        ///
+        /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
+        /// opening, closing, and renaming files and directories. The NameNode contains the information to
+        /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
+        pub fn name_nodes(mut self, input: impl Into<crate::model::HdfsNameNode>) -> Self {
+            let mut v = self.name_nodes.unwrap_or_default();
+            v.push(input.into());
+            self.name_nodes = Some(v);
+            self
+        }
+        /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
+        /// opening, closing, and renaming files and directories. The NameNode contains the information to
+        /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
+        pub fn set_name_nodes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
+        ) -> Self {
+            self.name_nodes = input;
+            self
+        }
+        /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple
+        /// of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
+        pub fn block_size(mut self, input: i32) -> Self {
+            self.block_size = Some(input);
+            self
+        }
+        /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple
+        /// of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
+        pub fn set_block_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.block_size = input;
+            self
+        }
+        /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By
+        /// default, data is replicated to three DataNodes.</p>
+        pub fn replication_factor(mut self, input: i32) -> Self {
+            self.replication_factor = Some(input);
+            self
+        }
+        /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By
+        /// default, data is replicated to three DataNodes.</p>
+        pub fn set_replication_factor(mut self, input: std::option::Option<i32>) -> Self {
+            self.replication_factor = input;
+            self
+        }
+        /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
+        pub fn kms_key_provider_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_provider_uri = Some(input.into());
+            self
+        }
+        /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
+        pub fn set_kms_key_provider_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.kms_key_provider_uri = input;
+            self
+        }
+        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
+        /// and data transfer protection settings configured on the Hadoop Distributed File System (HDFS)
+        /// cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and
+        /// <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set
+        /// <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter
+        /// assumes the same value. </p>
+        pub fn qop_configuration(mut self, input: crate::model::QopConfiguration) -> Self {
+            self.qop_configuration = Some(input);
+            self
+        }
+        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
+        /// and data transfer protection settings configured on the Hadoop Distributed File System (HDFS)
+        /// cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and
+        /// <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set
+        /// <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter
+        /// assumes the same value. </p>
+        pub fn set_qop_configuration(
+            mut self,
+            input: std::option::Option<crate::model::QopConfiguration>,
+        ) -> Self {
+            self.qop_configuration = input;
+            self
+        }
+        /// <p>The type of authentication used to determine the identity of the user. </p>
+        pub fn authentication_type(mut self, input: crate::model::HdfsAuthenticationType) -> Self {
+            self.authentication_type = Some(input);
+            self
+        }
+        /// <p>The type of authentication used to determine the identity of the user. </p>
+        pub fn set_authentication_type(
+            mut self,
+            input: std::option::Option<crate::model::HdfsAuthenticationType>,
+        ) -> Self {
+            self.authentication_type = input;
+            self
+        }
+        /// <p>The user name used to identify the client on the host operating system. </p>
+        /// <note>
+        /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter
+        /// is required. </p>
+        /// </note>
+        pub fn simple_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.simple_user = Some(input.into());
+            self
+        }
+        /// <p>The user name used to identify the client on the host operating system. </p>
+        /// <note>
+        /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter
+        /// is required. </p>
+        /// </note>
+        pub fn set_simple_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.simple_user = input;
+            self
+        }
+        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
+        /// <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+        /// parameter is required.</p>
+        /// </note>
+        pub fn kerberos_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kerberos_principal = Some(input.into());
+            self
+        }
+        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
+        /// <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+        /// parameter is required.</p>
+        /// </note>
+        pub fn set_kerberos_principal(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.kerberos_principal = input;
+            self
+        }
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
+        /// principal and the encrypted keys. You can load the keytab from a file by providing the file's
+        /// address. If you're using the CLI, it performs base64 encoding for you.
+        /// Otherwise, provide the base64-encoded text. </p>
+        /// <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+        /// parameter is required. </p>
+        /// </note>
+        pub fn kerberos_keytab(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.kerberos_keytab = Some(input);
+            self
+        }
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
+        /// principal and the encrypted keys. You can load the keytab from a file by providing the file's
+        /// address. If you're using the CLI, it performs base64 encoding for you.
+        /// Otherwise, provide the base64-encoded text. </p>
+        /// <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+        /// parameter is required. </p>
+        /// </note>
+        pub fn set_kerberos_keytab(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.kerberos_keytab = input;
+            self
+        }
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
+        /// can load the <code>krb5.conf</code> file by providing the file's address. If you're using the
+        /// CLI, it performs the base64 encoding for you. Otherwise, provide the
+        /// base64-encoded text. </p>
+        /// <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+        /// parameter is required.</p>
+        /// </note>
+        pub fn kerberos_krb5_conf(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.kerberos_krb5_conf = Some(input);
+            self
+        }
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
+        /// can load the <code>krb5.conf</code> file by providing the file's address. If you're using the
+        /// CLI, it performs the base64 encoding for you. Otherwise, provide the
+        /// base64-encoded text. </p>
+        /// <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+        /// parameter is required.</p>
+        /// </note>
+        pub fn set_kerberos_krb5_conf(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.kerberos_krb5_conf = input;
+            self
+        }
+        /// Appends an item to `agent_arns`.
+        ///
+        /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS
+        /// cluster.</p>
+        pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.agent_arns.unwrap_or_default();
+            v.push(input.into());
+            self.agent_arns = Some(v);
+            self
+        }
+        /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS
+        /// cluster.</p>
+        pub fn set_agent_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.agent_arns = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The key-value pair that represents the tag that you want to add to the location. The value
+        /// can be an empty string. We recommend using tags to name your resources. </p>
+        pub fn tags(mut self, input: impl Into<crate::model::TagListEntry>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The key-value pair that represents the tag that you want to add to the location. The value
+        /// can be an empty string. We recommend using tags to name your resources. </p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLocationHdfsInput`](crate::input::CreateLocationHdfsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateLocationHdfsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateLocationHdfsInput {
+                subdirectory: self.subdirectory,
+                name_nodes: self.name_nodes,
+                block_size: self.block_size,
+                replication_factor: self.replication_factor,
+                kms_key_provider_uri: self.kms_key_provider_uri,
+                qop_configuration: self.qop_configuration,
+                authentication_type: self.authentication_type,
+                simple_user: self.simple_user,
+                kerberos_principal: self.kerberos_principal,
+                kerberos_keytab: self.kerberos_keytab,
+                kerberos_krb5_conf: self.kerberos_krb5_conf,
+                agent_arns: self.agent_arns,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateLocationHdfsInputOperationOutputAlias = crate::operation::CreateLocationHdfs;
+#[doc(hidden)]
+pub type CreateLocationHdfsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateLocationHdfsInput {
+    /// Consumes the builder and constructs an Operation<[`CreateLocationHdfs`](crate::operation::CreateLocationHdfs)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateLocationHdfs,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreateLocationHdfsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateLocationHdfsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateLocationHdfsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "FmrsService.CreateLocationHdfs",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_location_hdfs(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateLocationHdfs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateLocationHdfs",
+            "datasync",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateLocationHdfsInput`](crate::input::CreateLocationHdfsInput)
+    pub fn builder() -> crate::input::create_location_hdfs_input::Builder {
+        crate::input::create_location_hdfs_input::Builder::default()
     }
 }
 
@@ -1135,6 +1564,7 @@ pub type CreateLocationNfsInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl CreateLocationNfsInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationNfs`](crate::operation::CreateLocationNfs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1191,11 +1621,14 @@ impl CreateLocationNfsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1436,6 +1869,7 @@ pub type CreateLocationObjectStorageInputOperationRetryAlias = aws_http::AwsErro
 impl CreateLocationObjectStorageInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationObjectStorage`](crate::operation::CreateLocationObjectStorage)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1493,11 +1927,14 @@ impl CreateLocationObjectStorageInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1699,6 +2136,7 @@ pub type CreateLocationS3InputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl CreateLocationS3Input {
     /// Consumes the builder and constructs an Operation<[`CreateLocationS3`](crate::operation::CreateLocationS3)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1755,11 +2193,14 @@ impl CreateLocationS3Input {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2013,6 +2454,7 @@ pub type CreateLocationSmbInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl CreateLocationSmbInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationSmb`](crate::operation::CreateLocationSmb)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2069,11 +2511,14 @@ impl CreateLocationSmbInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2284,9 +2729,8 @@ pub mod create_task_input {
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
         /// <p>A list of filter rules that determines which files to include when running a task. The
-        /// pattern should contain a single filter string that consists of the patterns to include. The
-        /// patterns are delimited by "|" (that is, a pipe). For example:
-        /// <code>"/folder1|/folder2</code>"</p>
+        /// pattern contains a single filter string that consists of the patterns to include. The patterns
+        /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         pub fn includes(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
             let mut v = self.includes.unwrap_or_default();
             v.push(input.into());
@@ -2294,9 +2738,8 @@ pub mod create_task_input {
             self
         }
         /// <p>A list of filter rules that determines which files to include when running a task. The
-        /// pattern should contain a single filter string that consists of the patterns to include. The
-        /// patterns are delimited by "|" (that is, a pipe). For example:
-        /// <code>"/folder1|/folder2</code>"</p>
+        /// pattern contains a single filter string that consists of the patterns to include. The patterns
+        /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -2332,6 +2775,7 @@ pub type CreateTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateTaskInput {
     /// Consumes the builder and constructs an Operation<[`CreateTask`](crate::operation::CreateTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2387,11 +2831,14 @@ impl CreateTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2483,6 +2930,7 @@ pub type DeleteAgentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteAgentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAgent`](crate::operation::DeleteAgent)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2538,11 +2986,14 @@ impl DeleteAgentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2632,6 +3083,7 @@ pub type DeleteLocationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteLocationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLocation`](crate::operation::DeleteLocation)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2688,11 +3140,14 @@ impl DeleteLocationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2782,6 +3237,7 @@ pub type DeleteTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteTaskInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTask`](crate::operation::DeleteTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2837,11 +3293,14 @@ impl DeleteTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2931,6 +3390,7 @@ pub type DescribeAgentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeAgentInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAgent`](crate::operation::DescribeAgent)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2986,11 +3446,14 @@ impl DescribeAgentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3080,6 +3543,7 @@ pub type DescribeLocationEfsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DescribeLocationEfsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationEfs`](crate::operation::DescribeLocationEfs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3136,11 +3600,14 @@ impl DescribeLocationEfsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3233,6 +3700,7 @@ pub type DescribeLocationFsxWindowsInputOperationRetryAlias = aws_http::AwsError
 impl DescribeLocationFsxWindowsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationFsxWindows`](crate::operation::DescribeLocationFsxWindows)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3290,11 +3758,14 @@ impl DescribeLocationFsxWindowsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3345,6 +3816,162 @@ impl DescribeLocationFsxWindowsInput {
     }
 }
 
+/// See [`DescribeLocationHdfsInput`](crate::input::DescribeLocationHdfsInput)
+pub mod describe_location_hdfs_input {
+    /// A builder for [`DescribeLocationHdfsInput`](crate::input::DescribeLocationHdfsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) location_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
+        pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeLocationHdfsInput`](crate::input::DescribeLocationHdfsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeLocationHdfsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeLocationHdfsInput {
+                location_arn: self.location_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeLocationHdfsInputOperationOutputAlias = crate::operation::DescribeLocationHdfs;
+#[doc(hidden)]
+pub type DescribeLocationHdfsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeLocationHdfsInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeLocationHdfs`](crate::operation::DescribeLocationHdfs)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeLocationHdfs,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeLocationHdfsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeLocationHdfsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeLocationHdfsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "FmrsService.DescribeLocationHdfs",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_location_hdfs(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeLocationHdfs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeLocationHdfs",
+            "datasync",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeLocationHdfsInput`](crate::input::DescribeLocationHdfsInput)
+    pub fn builder() -> crate::input::describe_location_hdfs_input::Builder {
+        crate::input::describe_location_hdfs_input::Builder::default()
+    }
+}
+
 /// See [`DescribeLocationNfsInput`](crate::input::DescribeLocationNfsInput)
 pub mod describe_location_nfs_input {
     /// A builder for [`DescribeLocationNfsInput`](crate::input::DescribeLocationNfsInput)
@@ -3384,6 +4011,7 @@ pub type DescribeLocationNfsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DescribeLocationNfsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationNfs`](crate::operation::DescribeLocationNfs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3440,11 +4068,14 @@ impl DescribeLocationNfsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3535,6 +4166,7 @@ pub type DescribeLocationObjectStorageInputOperationRetryAlias = aws_http::AwsEr
 impl DescribeLocationObjectStorageInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationObjectStorage`](crate::operation::DescribeLocationObjectStorage)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3592,11 +4224,14 @@ impl DescribeLocationObjectStorageInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3686,6 +4321,7 @@ pub type DescribeLocationS3InputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl DescribeLocationS3Input {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationS3`](crate::operation::DescribeLocationS3)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3742,11 +4378,14 @@ impl DescribeLocationS3Input {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3836,6 +4475,7 @@ pub type DescribeLocationSmbInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DescribeLocationSmbInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationSmb`](crate::operation::DescribeLocationSmb)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3892,11 +4532,14 @@ impl DescribeLocationSmbInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3986,6 +4629,7 @@ pub type DescribeTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeTaskInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTask`](crate::operation::DescribeTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4041,11 +4685,14 @@ impl DescribeTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4138,6 +4785,7 @@ pub type DescribeTaskExecutionInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DescribeTaskExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTaskExecution`](crate::operation::DescribeTaskExecution)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4196,11 +4844,14 @@ impl DescribeTaskExecutionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4304,6 +4955,7 @@ pub type ListAgentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListAgentsInput {
     /// Consumes the builder and constructs an Operation<[`ListAgents`](crate::operation::ListAgents)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4359,11 +5011,14 @@ impl ListAgentsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4492,6 +5147,7 @@ pub type ListLocationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListLocationsInput {
     /// Consumes the builder and constructs an Operation<[`ListLocations`](crate::operation::ListLocations)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4547,11 +5203,14 @@ impl ListLocationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4667,6 +5326,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4725,11 +5385,14 @@ impl ListTagsForResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4845,6 +5508,7 @@ pub type ListTaskExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl ListTaskExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListTaskExecutions`](crate::operation::ListTaskExecutions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4901,11 +5565,14 @@ impl ListTaskExecutionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5034,6 +5701,7 @@ pub type ListTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListTasks`](crate::operation::ListTasks)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5089,11 +5757,14 @@ impl ListTasksInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5201,8 +5872,8 @@ pub mod start_task_execution_input {
         ///
         /// <p>A list of filter rules that determines which files to include when running a task. The
         /// pattern should contain a single filter string that consists of the patterns to include. The
-        /// patterns are delimited by "|" (that is, a pipe). For example: <code>"/folder1|/folder2"</code>
-        /// </p>
+        /// patterns are delimited by "|" (that is, a pipe), for example,
+        /// <code>"/folder1|/folder2"</code>. </p>
         ///
         /// <p>
         /// </p>
@@ -5214,8 +5885,8 @@ pub mod start_task_execution_input {
         }
         /// <p>A list of filter rules that determines which files to include when running a task. The
         /// pattern should contain a single filter string that consists of the patterns to include. The
-        /// patterns are delimited by "|" (that is, a pipe). For example: <code>"/folder1|/folder2"</code>
-        /// </p>
+        /// patterns are delimited by "|" (that is, a pipe), for example,
+        /// <code>"/folder1|/folder2"</code>. </p>
         ///
         /// <p>
         /// </p>
@@ -5231,9 +5902,8 @@ pub mod start_task_execution_input {
         /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
         ///
         /// <p>A list of filter rules that determines which files to exclude from a task. The list
-        /// should contain a single filter string that consists of the patterns to exclude. The
-        /// patterns are delimited by "|" (that is, a pipe), for example,
-        /// <code>"/folder1|/folder2"</code>. </p>
+        /// contains a single filter string that consists of the patterns to exclude. The patterns are
+        /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         pub fn excludes(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
             let mut v = self.excludes.unwrap_or_default();
             v.push(input.into());
@@ -5241,9 +5911,8 @@ pub mod start_task_execution_input {
             self
         }
         /// <p>A list of filter rules that determines which files to exclude from a task. The list
-        /// should contain a single filter string that consists of the patterns to exclude. The
-        /// patterns are delimited by "|" (that is, a pipe), for example,
-        /// <code>"/folder1|/folder2"</code>. </p>
+        /// contains a single filter string that consists of the patterns to exclude. The patterns are
+        /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         pub fn set_excludes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -5274,6 +5943,7 @@ pub type StartTaskExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl StartTaskExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartTaskExecution`](crate::operation::StartTaskExecution)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5330,11 +6000,14 @@ impl StartTaskExecutionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5445,6 +6118,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5500,11 +6174,14 @@ impl TagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5615,6 +6292,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5670,11 +6348,14 @@ impl UntagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5776,6 +6457,7 @@ pub type UpdateAgentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateAgentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAgent`](crate::operation::UpdateAgent)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5831,11 +6513,14 @@ impl UpdateAgentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5883,6 +6568,362 @@ impl UpdateAgentInput {
     /// Creates a new builder-style object to manufacture [`UpdateAgentInput`](crate::input::UpdateAgentInput)
     pub fn builder() -> crate::input::update_agent_input::Builder {
         crate::input::update_agent_input::Builder::default()
+    }
+}
+
+/// See [`UpdateLocationHdfsInput`](crate::input::UpdateLocationHdfsInput)
+pub mod update_location_hdfs_input {
+    /// A builder for [`UpdateLocationHdfsInput`](crate::input::UpdateLocationHdfsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) location_arn: std::option::Option<std::string::String>,
+        pub(crate) subdirectory: std::option::Option<std::string::String>,
+        pub(crate) name_nodes: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
+        pub(crate) block_size: std::option::Option<i32>,
+        pub(crate) replication_factor: std::option::Option<i32>,
+        pub(crate) kms_key_provider_uri: std::option::Option<std::string::String>,
+        pub(crate) qop_configuration: std::option::Option<crate::model::QopConfiguration>,
+        pub(crate) authentication_type: std::option::Option<crate::model::HdfsAuthenticationType>,
+        pub(crate) simple_user: std::option::Option<std::string::String>,
+        pub(crate) kerberos_principal: std::option::Option<std::string::String>,
+        pub(crate) kerberos_keytab: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) kerberos_krb5_conf: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
+        pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location_arn = input;
+            self
+        }
+        /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
+        /// data to the HDFS cluster.</p>
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subdirectory = Some(input.into());
+            self
+        }
+        /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
+        /// data to the HDFS cluster.</p>
+        pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subdirectory = input;
+            self
+        }
+        /// Appends an item to `name_nodes`.
+        ///
+        /// To override the contents of this collection use [`set_name_nodes`](Self::set_name_nodes).
+        ///
+        /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
+        /// opening, closing, and renaming files and directories. The NameNode contains the information to
+        /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
+        pub fn name_nodes(mut self, input: impl Into<crate::model::HdfsNameNode>) -> Self {
+            let mut v = self.name_nodes.unwrap_or_default();
+            v.push(input.into());
+            self.name_nodes = Some(v);
+            self
+        }
+        /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
+        /// opening, closing, and renaming files and directories. The NameNode contains the information to
+        /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
+        pub fn set_name_nodes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
+        ) -> Self {
+            self.name_nodes = input;
+            self
+        }
+        /// <p>The size of the data blocks to write into the HDFS cluster. </p>
+        pub fn block_size(mut self, input: i32) -> Self {
+            self.block_size = Some(input);
+            self
+        }
+        /// <p>The size of the data blocks to write into the HDFS cluster. </p>
+        pub fn set_block_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.block_size = input;
+            self
+        }
+        /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
+        pub fn replication_factor(mut self, input: i32) -> Self {
+            self.replication_factor = Some(input);
+            self
+        }
+        /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
+        pub fn set_replication_factor(mut self, input: std::option::Option<i32>) -> Self {
+            self.replication_factor = input;
+            self
+        }
+        /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
+        pub fn kms_key_provider_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_provider_uri = Some(input.into());
+            self
+        }
+        /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
+        pub fn set_kms_key_provider_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.kms_key_provider_uri = input;
+            self
+        }
+        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
+        /// and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS)
+        /// cluster. </p>
+        pub fn qop_configuration(mut self, input: crate::model::QopConfiguration) -> Self {
+            self.qop_configuration = Some(input);
+            self
+        }
+        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
+        /// and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS)
+        /// cluster. </p>
+        pub fn set_qop_configuration(
+            mut self,
+            input: std::option::Option<crate::model::QopConfiguration>,
+        ) -> Self {
+            self.qop_configuration = input;
+            self
+        }
+        /// <p>The type of authentication used to determine the identity of the user. </p>
+        pub fn authentication_type(mut self, input: crate::model::HdfsAuthenticationType) -> Self {
+            self.authentication_type = Some(input);
+            self
+        }
+        /// <p>The type of authentication used to determine the identity of the user. </p>
+        pub fn set_authentication_type(
+            mut self,
+            input: std::option::Option<crate::model::HdfsAuthenticationType>,
+        ) -> Self {
+            self.authentication_type = input;
+            self
+        }
+        /// <p>The user name used to identify the client on the host operating system.</p>
+        pub fn simple_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.simple_user = Some(input.into());
+            self
+        }
+        /// <p>The user name used to identify the client on the host operating system.</p>
+        pub fn set_simple_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.simple_user = input;
+            self
+        }
+        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
+        pub fn kerberos_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kerberos_principal = Some(input.into());
+            self
+        }
+        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
+        pub fn set_kerberos_principal(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.kerberos_principal = input;
+            self
+        }
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
+        /// principal and the encrypted keys. You can load the keytab from a file by providing the file's
+        /// address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the
+        /// base64-encoded text.</p>
+        pub fn kerberos_keytab(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.kerberos_keytab = Some(input);
+            self
+        }
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
+        /// principal and the encrypted keys. You can load the keytab from a file by providing the file's
+        /// address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the
+        /// base64-encoded text.</p>
+        pub fn set_kerberos_keytab(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.kerberos_keytab = input;
+            self
+        }
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
+        /// can load the <code>krb5.conf</code> file by providing the file's address. If you're using the
+        /// AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded
+        /// text.</p>
+        pub fn kerberos_krb5_conf(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.kerberos_krb5_conf = Some(input);
+            self
+        }
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
+        /// can load the <code>krb5.conf</code> file by providing the file's address. If you're using the
+        /// AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded
+        /// text.</p>
+        pub fn set_kerberos_krb5_conf(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.kerberos_krb5_conf = input;
+            self
+        }
+        /// Appends an item to `agent_arns`.
+        ///
+        /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
+        ///
+        /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+        pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.agent_arns.unwrap_or_default();
+            v.push(input.into());
+            self.agent_arns = Some(v);
+            self
+        }
+        /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+        pub fn set_agent_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.agent_arns = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateLocationHdfsInput`](crate::input::UpdateLocationHdfsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateLocationHdfsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateLocationHdfsInput {
+                location_arn: self.location_arn,
+                subdirectory: self.subdirectory,
+                name_nodes: self.name_nodes,
+                block_size: self.block_size,
+                replication_factor: self.replication_factor,
+                kms_key_provider_uri: self.kms_key_provider_uri,
+                qop_configuration: self.qop_configuration,
+                authentication_type: self.authentication_type,
+                simple_user: self.simple_user,
+                kerberos_principal: self.kerberos_principal,
+                kerberos_keytab: self.kerberos_keytab,
+                kerberos_krb5_conf: self.kerberos_krb5_conf,
+                agent_arns: self.agent_arns,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateLocationHdfsInputOperationOutputAlias = crate::operation::UpdateLocationHdfs;
+#[doc(hidden)]
+pub type UpdateLocationHdfsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateLocationHdfsInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateLocationHdfs`](crate::operation::UpdateLocationHdfs)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateLocationHdfs,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateLocationHdfsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateLocationHdfsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateLocationHdfsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "FmrsService.UpdateLocationHdfs",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_location_hdfs(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateLocationHdfs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateLocationHdfs",
+            "datasync",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateLocationHdfsInput`](crate::input::UpdateLocationHdfsInput)
+    pub fn builder() -> crate::input::update_location_hdfs_input::Builder {
+        crate::input::update_location_hdfs_input::Builder::default()
     }
 }
 
@@ -6007,6 +7048,7 @@ pub type UpdateLocationNfsInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl UpdateLocationNfsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLocationNfs`](crate::operation::UpdateLocationNfs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6063,11 +7105,14 @@ impl UpdateLocationNfsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6264,6 +7309,7 @@ pub type UpdateLocationObjectStorageInputOperationRetryAlias = aws_http::AwsErro
 impl UpdateLocationObjectStorageInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLocationObjectStorage`](crate::operation::UpdateLocationObjectStorage)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6321,11 +7367,14 @@ impl UpdateLocationObjectStorageInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6555,6 +7604,7 @@ pub type UpdateLocationSmbInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl UpdateLocationSmbInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLocationSmb`](crate::operation::UpdateLocationSmb)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6611,11 +7661,14 @@ impl UpdateLocationSmbInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6725,8 +7778,7 @@ pub mod update_task_input {
         ///
         /// <p>A list of filter rules that determines which files to exclude from a task. The list should
         /// contain a single filter string that consists of the patterns to exclude. The patterns are
-        /// delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
-        /// </p>
+        /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         /// <p>
         /// </p>
         pub fn excludes(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
@@ -6737,8 +7789,7 @@ pub mod update_task_input {
         }
         /// <p>A list of filter rules that determines which files to exclude from a task. The list should
         /// contain a single filter string that consists of the patterns to exclude. The patterns are
-        /// delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
-        /// </p>
+        /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         /// <p>
         /// </p>
         pub fn set_excludes(
@@ -6777,14 +7828,14 @@ pub mod update_task_input {
             self.name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource name of the CloudWatch
-        /// LogGroup.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log
+        /// group.</p>
         pub fn cloud_watch_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloud_watch_log_group_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource name of the CloudWatch
-        /// LogGroup.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log
+        /// group.</p>
         pub fn set_cloud_watch_log_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6797,9 +7848,8 @@ pub mod update_task_input {
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
         /// <p>A list of filter rules that determines which files to include when running a task. The
-        /// pattern should contain a single filter string that consists of the patterns to include. The
-        /// patterns are delimited by "|" (that is, a pipe). For example:
-        /// <code>"/folder1|/folder2</code>"</p>
+        /// pattern contains a single filter string that consists of the patterns to include. The patterns
+        /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         pub fn includes(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
             let mut v = self.includes.unwrap_or_default();
             v.push(input.into());
@@ -6807,9 +7857,8 @@ pub mod update_task_input {
             self
         }
         /// <p>A list of filter rules that determines which files to include when running a task. The
-        /// pattern should contain a single filter string that consists of the patterns to include. The
-        /// patterns are delimited by "|" (that is, a pipe). For example:
-        /// <code>"/folder1|/folder2</code>"</p>
+        /// pattern contains a single filter string that consists of the patterns to include. The patterns
+        /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -6843,6 +7892,7 @@ pub type UpdateTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateTaskInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTask`](crate::operation::UpdateTask)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6898,11 +7948,14 @@ impl UpdateTaskInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7025,6 +8078,7 @@ pub type UpdateTaskExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl UpdateTaskExecutionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTaskExecution`](crate::operation::UpdateTaskExecution)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7081,11 +8135,14 @@ impl UpdateTaskExecutionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7201,8 +8258,7 @@ pub struct UpdateTaskInput {
     pub options: std::option::Option<crate::model::Options>,
     /// <p>A list of filter rules that determines which files to exclude from a task. The list should
     /// contain a single filter string that consists of the patterns to exclude. The patterns are
-    /// delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
-    /// </p>
+    /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
     /// <p>
     /// </p>
     pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -7213,13 +8269,12 @@ pub struct UpdateTaskInput {
     pub schedule: std::option::Option<crate::model::TaskSchedule>,
     /// <p>The name of the task to update.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the resource name of the CloudWatch
-    /// LogGroup.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log
+    /// group.</p>
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
     /// <p>A list of filter rules that determines which files to include when running a task. The
-    /// pattern should contain a single filter string that consists of the patterns to include. The
-    /// patterns are delimited by "|" (that is, a pipe). For example:
-    /// <code>"/folder1|/folder2</code>"</p>
+    /// pattern contains a single filter string that consists of the patterns to include. The patterns
+    /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
 impl UpdateTaskInput {
@@ -7242,8 +8297,7 @@ impl UpdateTaskInput {
     }
     /// <p>A list of filter rules that determines which files to exclude from a task. The list should
     /// contain a single filter string that consists of the patterns to exclude. The patterns are
-    /// delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
-    /// </p>
+    /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
     /// <p>
     /// </p>
     pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
@@ -7260,15 +8314,14 @@ impl UpdateTaskInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource name of the CloudWatch
-    /// LogGroup.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log
+    /// group.</p>
     pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
     /// <p>A list of filter rules that determines which files to include when running a task. The
-    /// pattern should contain a single filter string that consists of the patterns to include. The
-    /// patterns are delimited by "|" (that is, a pipe). For example:
-    /// <code>"/folder1|/folder2</code>"</p>
+    /// pattern contains a single filter string that consists of the patterns to include. The patterns
+    /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
     pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.includes.as_deref()
     }
@@ -7575,6 +8628,135 @@ impl std::fmt::Debug for UpdateLocationNfsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateLocationHdfsInput {
+    /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
+    pub location_arn: std::option::Option<std::string::String>,
+    /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
+    /// data to the HDFS cluster.</p>
+    pub subdirectory: std::option::Option<std::string::String>,
+    /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
+    /// opening, closing, and renaming files and directories. The NameNode contains the information to
+    /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
+    pub name_nodes: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
+    /// <p>The size of the data blocks to write into the HDFS cluster. </p>
+    pub block_size: std::option::Option<i32>,
+    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
+    pub replication_factor: std::option::Option<i32>,
+    /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
+    pub kms_key_provider_uri: std::option::Option<std::string::String>,
+    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
+    /// and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS)
+    /// cluster. </p>
+    pub qop_configuration: std::option::Option<crate::model::QopConfiguration>,
+    /// <p>The type of authentication used to determine the identity of the user. </p>
+    pub authentication_type: std::option::Option<crate::model::HdfsAuthenticationType>,
+    /// <p>The user name used to identify the client on the host operating system.</p>
+    pub simple_user: std::option::Option<std::string::String>,
+    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
+    pub kerberos_principal: std::option::Option<std::string::String>,
+    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
+    /// principal and the encrypted keys. You can load the keytab from a file by providing the file's
+    /// address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the
+    /// base64-encoded text.</p>
+    pub kerberos_keytab: std::option::Option<aws_smithy_types::Blob>,
+    /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
+    /// can load the <code>krb5.conf</code> file by providing the file's address. If you're using the
+    /// AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded
+    /// text.</p>
+    pub kerberos_krb5_conf: std::option::Option<aws_smithy_types::Blob>,
+    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+    pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateLocationHdfsInput {
+    /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+    /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
+    /// data to the HDFS cluster.</p>
+    pub fn subdirectory(&self) -> std::option::Option<&str> {
+        self.subdirectory.as_deref()
+    }
+    /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
+    /// opening, closing, and renaming files and directories. The NameNode contains the information to
+    /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
+    pub fn name_nodes(&self) -> std::option::Option<&[crate::model::HdfsNameNode]> {
+        self.name_nodes.as_deref()
+    }
+    /// <p>The size of the data blocks to write into the HDFS cluster. </p>
+    pub fn block_size(&self) -> std::option::Option<i32> {
+        self.block_size
+    }
+    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
+    pub fn replication_factor(&self) -> std::option::Option<i32> {
+        self.replication_factor
+    }
+    /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
+    pub fn kms_key_provider_uri(&self) -> std::option::Option<&str> {
+        self.kms_key_provider_uri.as_deref()
+    }
+    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
+    /// and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS)
+    /// cluster. </p>
+    pub fn qop_configuration(&self) -> std::option::Option<&crate::model::QopConfiguration> {
+        self.qop_configuration.as_ref()
+    }
+    /// <p>The type of authentication used to determine the identity of the user. </p>
+    pub fn authentication_type(
+        &self,
+    ) -> std::option::Option<&crate::model::HdfsAuthenticationType> {
+        self.authentication_type.as_ref()
+    }
+    /// <p>The user name used to identify the client on the host operating system.</p>
+    pub fn simple_user(&self) -> std::option::Option<&str> {
+        self.simple_user.as_deref()
+    }
+    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
+    pub fn kerberos_principal(&self) -> std::option::Option<&str> {
+        self.kerberos_principal.as_deref()
+    }
+    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
+    /// principal and the encrypted keys. You can load the keytab from a file by providing the file's
+    /// address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the
+    /// base64-encoded text.</p>
+    pub fn kerberos_keytab(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.kerberos_keytab.as_ref()
+    }
+    /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
+    /// can load the <code>krb5.conf</code> file by providing the file's address. If you're using the
+    /// AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded
+    /// text.</p>
+    pub fn kerberos_krb5_conf(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.kerberos_krb5_conf.as_ref()
+    }
+    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.agent_arns.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateLocationHdfsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateLocationHdfsInput");
+        formatter.field("location_arn", &self.location_arn);
+        formatter.field("subdirectory", &self.subdirectory);
+        formatter.field("name_nodes", &self.name_nodes);
+        formatter.field("block_size", &self.block_size);
+        formatter.field("replication_factor", &self.replication_factor);
+        formatter.field("kms_key_provider_uri", &self.kms_key_provider_uri);
+        formatter.field("qop_configuration", &self.qop_configuration);
+        formatter.field("authentication_type", &self.authentication_type);
+        formatter.field("simple_user", &self.simple_user);
+        formatter.field("kerberos_principal", &self.kerberos_principal);
+        formatter.field("kerberos_keytab", &self.kerberos_keytab);
+        formatter.field("kerberos_krb5_conf", &self.kerberos_krb5_conf);
+        formatter.field("agent_arns", &self.agent_arns);
+        formatter.finish()
+    }
+}
+
 /// <p>UpdateAgentRequest</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7678,16 +8860,15 @@ pub struct StartTaskExecutionInput {
     pub override_options: std::option::Option<crate::model::Options>,
     /// <p>A list of filter rules that determines which files to include when running a task. The
     /// pattern should contain a single filter string that consists of the patterns to include. The
-    /// patterns are delimited by "|" (that is, a pipe). For example: <code>"/folder1|/folder2"</code>
-    /// </p>
+    /// patterns are delimited by "|" (that is, a pipe), for example,
+    /// <code>"/folder1|/folder2"</code>. </p>
     ///
     /// <p>
     /// </p>
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     /// <p>A list of filter rules that determines which files to exclude from a task. The list
-    /// should contain a single filter string that consists of the patterns to exclude. The
-    /// patterns are delimited by "|" (that is, a pipe), for example,
-    /// <code>"/folder1|/folder2"</code>. </p>
+    /// contains a single filter string that consists of the patterns to exclude. The patterns are
+    /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
 impl StartTaskExecutionInput {
@@ -7710,8 +8891,8 @@ impl StartTaskExecutionInput {
     }
     /// <p>A list of filter rules that determines which files to include when running a task. The
     /// pattern should contain a single filter string that consists of the patterns to include. The
-    /// patterns are delimited by "|" (that is, a pipe). For example: <code>"/folder1|/folder2"</code>
-    /// </p>
+    /// patterns are delimited by "|" (that is, a pipe), for example,
+    /// <code>"/folder1|/folder2"</code>. </p>
     ///
     /// <p>
     /// </p>
@@ -7719,9 +8900,8 @@ impl StartTaskExecutionInput {
         self.includes.as_deref()
     }
     /// <p>A list of filter rules that determines which files to exclude from a task. The list
-    /// should contain a single filter string that consists of the patterns to exclude. The
-    /// patterns are delimited by "|" (that is, a pipe), for example,
-    /// <code>"/folder1|/folder2"</code>. </p>
+    /// contains a single filter string that consists of the patterns to exclude. The patterns are
+    /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.excludes.as_deref()
     }
@@ -8054,6 +9234,27 @@ impl std::fmt::Debug for DescribeLocationNfsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLocationHdfsInput {
+    /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
+    pub location_arn: std::option::Option<std::string::String>,
+}
+impl DescribeLocationHdfsInput {
+    /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeLocationHdfsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeLocationHdfsInput");
+        formatter.field("location_arn", &self.location_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationFsxWindowsInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to
     /// describe.</p>
@@ -8216,9 +9417,8 @@ pub struct CreateTaskInput {
     /// value can be an empty string. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
     /// <p>A list of filter rules that determines which files to include when running a task. The
-    /// pattern should contain a single filter string that consists of the patterns to include. The
-    /// patterns are delimited by "|" (that is, a pipe). For example:
-    /// <code>"/folder1|/folder2</code>"</p>
+    /// pattern contains a single filter string that consists of the patterns to include. The patterns
+    /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
 impl CreateTaskInput {
@@ -8269,9 +9469,8 @@ impl CreateTaskInput {
         self.tags.as_deref()
     }
     /// <p>A list of filter rules that determines which files to include when running a task. The
-    /// pattern should contain a single filter string that consists of the patterns to include. The
-    /// patterns are delimited by "|" (that is, a pipe). For example:
-    /// <code>"/folder1|/folder2</code>"</p>
+    /// pattern contains a single filter string that consists of the patterns to include. The patterns
+    /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
     pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.includes.as_deref()
     }
@@ -8709,6 +9908,183 @@ impl std::fmt::Debug for CreateLocationNfsInput {
         formatter.field("server_hostname", &self.server_hostname);
         formatter.field("on_prem_config", &self.on_prem_config);
         formatter.field("mount_options", &self.mount_options);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLocationHdfsInput {
+    /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
+    /// data to the HDFS cluster. If the subdirectory isn't specified, it will default to
+    /// <code>/</code>.</p>
+    pub subdirectory: std::option::Option<std::string::String>,
+    /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
+    /// opening, closing, and renaming files and directories. The NameNode contains the information to
+    /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
+    pub name_nodes: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
+    /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple
+    /// of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
+    pub block_size: std::option::Option<i32>,
+    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By
+    /// default, data is replicated to three DataNodes.</p>
+    pub replication_factor: std::option::Option<i32>,
+    /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
+    pub kms_key_provider_uri: std::option::Option<std::string::String>,
+    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
+    /// and data transfer protection settings configured on the Hadoop Distributed File System (HDFS)
+    /// cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and
+    /// <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set
+    /// <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter
+    /// assumes the same value. </p>
+    pub qop_configuration: std::option::Option<crate::model::QopConfiguration>,
+    /// <p>The type of authentication used to determine the identity of the user. </p>
+    pub authentication_type: std::option::Option<crate::model::HdfsAuthenticationType>,
+    /// <p>The user name used to identify the client on the host operating system. </p>
+    /// <note>
+    /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter
+    /// is required. </p>
+    /// </note>
+    pub simple_user: std::option::Option<std::string::String>,
+    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
+    /// <note>
+    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+    /// parameter is required.</p>
+    /// </note>
+    pub kerberos_principal: std::option::Option<std::string::String>,
+    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
+    /// principal and the encrypted keys. You can load the keytab from a file by providing the file's
+    /// address. If you're using the CLI, it performs base64 encoding for you.
+    /// Otherwise, provide the base64-encoded text. </p>
+    /// <note>
+    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+    /// parameter is required. </p>
+    /// </note>
+    pub kerberos_keytab: std::option::Option<aws_smithy_types::Blob>,
+    /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
+    /// can load the <code>krb5.conf</code> file by providing the file's address. If you're using the
+    /// CLI, it performs the base64 encoding for you. Otherwise, provide the
+    /// base64-encoded text. </p>
+    /// <note>
+    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+    /// parameter is required.</p>
+    /// </note>
+    pub kerberos_krb5_conf: std::option::Option<aws_smithy_types::Blob>,
+    /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS
+    /// cluster.</p>
+    pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The key-value pair that represents the tag that you want to add to the location. The value
+    /// can be an empty string. We recommend using tags to name your resources. </p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+}
+impl CreateLocationHdfsInput {
+    /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
+    /// data to the HDFS cluster. If the subdirectory isn't specified, it will default to
+    /// <code>/</code>.</p>
+    pub fn subdirectory(&self) -> std::option::Option<&str> {
+        self.subdirectory.as_deref()
+    }
+    /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
+    /// opening, closing, and renaming files and directories. The NameNode contains the information to
+    /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
+    pub fn name_nodes(&self) -> std::option::Option<&[crate::model::HdfsNameNode]> {
+        self.name_nodes.as_deref()
+    }
+    /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple
+    /// of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
+    pub fn block_size(&self) -> std::option::Option<i32> {
+        self.block_size
+    }
+    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By
+    /// default, data is replicated to three DataNodes.</p>
+    pub fn replication_factor(&self) -> std::option::Option<i32> {
+        self.replication_factor
+    }
+    /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
+    pub fn kms_key_provider_uri(&self) -> std::option::Option<&str> {
+        self.kms_key_provider_uri.as_deref()
+    }
+    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
+    /// and data transfer protection settings configured on the Hadoop Distributed File System (HDFS)
+    /// cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and
+    /// <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set
+    /// <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter
+    /// assumes the same value. </p>
+    pub fn qop_configuration(&self) -> std::option::Option<&crate::model::QopConfiguration> {
+        self.qop_configuration.as_ref()
+    }
+    /// <p>The type of authentication used to determine the identity of the user. </p>
+    pub fn authentication_type(
+        &self,
+    ) -> std::option::Option<&crate::model::HdfsAuthenticationType> {
+        self.authentication_type.as_ref()
+    }
+    /// <p>The user name used to identify the client on the host operating system. </p>
+    /// <note>
+    /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter
+    /// is required. </p>
+    /// </note>
+    pub fn simple_user(&self) -> std::option::Option<&str> {
+        self.simple_user.as_deref()
+    }
+    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
+    /// <note>
+    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+    /// parameter is required.</p>
+    /// </note>
+    pub fn kerberos_principal(&self) -> std::option::Option<&str> {
+        self.kerberos_principal.as_deref()
+    }
+    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
+    /// principal and the encrypted keys. You can load the keytab from a file by providing the file's
+    /// address. If you're using the CLI, it performs base64 encoding for you.
+    /// Otherwise, provide the base64-encoded text. </p>
+    /// <note>
+    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+    /// parameter is required. </p>
+    /// </note>
+    pub fn kerberos_keytab(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.kerberos_keytab.as_ref()
+    }
+    /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
+    /// can load the <code>krb5.conf</code> file by providing the file's address. If you're using the
+    /// CLI, it performs the base64 encoding for you. Otherwise, provide the
+    /// base64-encoded text. </p>
+    /// <note>
+    /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+    /// parameter is required.</p>
+    /// </note>
+    pub fn kerberos_krb5_conf(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.kerberos_krb5_conf.as_ref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS
+    /// cluster.</p>
+    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.agent_arns.as_deref()
+    }
+    /// <p>The key-value pair that represents the tag that you want to add to the location. The value
+    /// can be an empty string. We recommend using tags to name your resources. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateLocationHdfsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLocationHdfsInput");
+        formatter.field("subdirectory", &self.subdirectory);
+        formatter.field("name_nodes", &self.name_nodes);
+        formatter.field("block_size", &self.block_size);
+        formatter.field("replication_factor", &self.replication_factor);
+        formatter.field("kms_key_provider_uri", &self.kms_key_provider_uri);
+        formatter.field("qop_configuration", &self.qop_configuration);
+        formatter.field("authentication_type", &self.authentication_type);
+        formatter.field("simple_user", &self.simple_user);
+        formatter.field("kerberos_principal", &self.kerberos_principal);
+        formatter.field("kerberos_keytab", &self.kerberos_keytab);
+        formatter.field("kerberos_krb5_conf", &self.kerberos_krb5_conf);
+        formatter.field("agent_arns", &self.agent_arns);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

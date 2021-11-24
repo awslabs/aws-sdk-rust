@@ -18,7 +18,7 @@ async fn test_success() {
     let replayer = ReplayingConnection::new(events);
 
     let region = Region::from_static("us-east-2");
-    let credentials = Credentials::from_keys("test", "test", None);
+    let credentials = Credentials::new("test", "test", None, None, "test");
     let config = Config::builder()
         .region(region)
         .credentials_provider(credentials)

@@ -4,7 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceSummary {
     /// <p>The date that the workspace was created.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The customer-entered description of the workspace.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
@@ -14,7 +14,7 @@ pub struct WorkspaceSummary {
     /// <p>The unique ID of the workspace.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The most recent date that the workspace was modified.</p>
-    pub modified: std::option::Option<aws_smithy_types::Instant>,
+    pub modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the workspace.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically
@@ -30,7 +30,7 @@ pub struct WorkspaceSummary {
 }
 impl WorkspaceSummary {
     /// <p>The date that the workspace was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The customer-entered description of the workspace.</p>
@@ -50,7 +50,7 @@ impl WorkspaceSummary {
         self.id.as_deref()
     }
     /// <p>The most recent date that the workspace was modified.</p>
-    pub fn modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified.as_ref()
     }
     /// <p>The name of the workspace.</p>
@@ -97,12 +97,12 @@ pub mod workspace_summary {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) endpoint: std::option::Option<std::string::String>,
         pub(crate) grafana_version: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) notification_destinations:
             std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
@@ -111,14 +111,14 @@ pub mod workspace_summary {
     }
     impl Builder {
         /// <p>The date that the workspace was created.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>The date that the workspace was created.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
@@ -167,14 +167,14 @@ pub mod workspace_summary {
             self
         }
         /// <p>The most recent date that the workspace was modified.</p>
-        pub fn modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified = Some(input);
             self
         }
         /// <p>The most recent date that the workspace was modified.</p>
         pub fn set_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.modified = input;
             self
@@ -782,7 +782,7 @@ pub struct WorkspaceDescription {
     /// the workspace can access.</p>
     pub account_access_type: std::option::Option<crate::model::AccountAccessType>,
     /// <p>The date that the workspace was created.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM
     /// roles and permissions created to allow
     /// Amazon Managed Grafana to read data from these sources.</p>
@@ -796,7 +796,7 @@ pub struct WorkspaceDescription {
     /// <p>The unique ID of this workspace.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The most recent date that the workspace was modified.</p>
-    pub modified: std::option::Option<aws_smithy_types::Instant>,
+    pub modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the workspace.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the IAM role that is used to access resources through Organizations.</p>
@@ -834,10 +834,10 @@ pub struct WorkspaceDescription {
     pub free_trial_consumed: std::option::Option<bool>,
     /// <p>If this workspace has a full Grafana Enterprise license, this specifies when the license ends and
     /// will need to be renewed.</p>
-    pub license_expiration: std::option::Option<aws_smithy_types::Instant>,
+    pub license_expiration: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies
     /// when that free trial ends.</p>
-    pub free_trial_expiration: std::option::Option<aws_smithy_types::Instant>,
+    pub free_trial_expiration: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods
     /// for user authentication.</p>
     pub authentication: std::option::Option<crate::model::AuthenticationSummary>,
@@ -851,7 +851,7 @@ impl WorkspaceDescription {
         self.account_access_type.as_ref()
     }
     /// <p>The date that the workspace was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM
@@ -877,7 +877,7 @@ impl WorkspaceDescription {
         self.id.as_deref()
     }
     /// <p>The most recent date that the workspace was modified.</p>
-    pub fn modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified.as_ref()
     }
     /// <p>The name of the workspace.</p>
@@ -938,12 +938,12 @@ impl WorkspaceDescription {
     }
     /// <p>If this workspace has a full Grafana Enterprise license, this specifies when the license ends and
     /// will need to be renewed.</p>
-    pub fn license_expiration(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn license_expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.license_expiration.as_ref()
     }
     /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies
     /// when that free trial ends.</p>
-    pub fn free_trial_expiration(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn free_trial_expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.free_trial_expiration.as_ref()
     }
     /// <p>A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods
@@ -986,13 +986,13 @@ pub mod workspace_description {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_access_type: std::option::Option<crate::model::AccountAccessType>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_sources: std::option::Option<std::vec::Vec<crate::model::DataSourceType>>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) endpoint: std::option::Option<std::string::String>,
         pub(crate) grafana_version: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) organization_role_name: std::option::Option<std::string::String>,
         pub(crate) notification_destinations:
@@ -1004,8 +1004,8 @@ pub mod workspace_description {
         pub(crate) workspace_role_arn: std::option::Option<std::string::String>,
         pub(crate) license_type: std::option::Option<crate::model::LicenseType>,
         pub(crate) free_trial_consumed: std::option::Option<bool>,
-        pub(crate) license_expiration: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) free_trial_expiration: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) license_expiration: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) free_trial_expiration: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) authentication: std::option::Option<crate::model::AuthenticationSummary>,
     }
     impl Builder {
@@ -1029,14 +1029,14 @@ pub mod workspace_description {
             self
         }
         /// <p>The date that the workspace was created.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>The date that the workspace was created.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
@@ -1108,14 +1108,14 @@ pub mod workspace_description {
             self
         }
         /// <p>The most recent date that the workspace was modified.</p>
-        pub fn modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified = Some(input);
             self
         }
         /// <p>The most recent date that the workspace was modified.</p>
         pub fn set_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.modified = input;
             self
@@ -1289,7 +1289,7 @@ pub mod workspace_description {
         }
         /// <p>If this workspace has a full Grafana Enterprise license, this specifies when the license ends and
         /// will need to be renewed.</p>
-        pub fn license_expiration(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn license_expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.license_expiration = Some(input);
             self
         }
@@ -1297,14 +1297,14 @@ pub mod workspace_description {
         /// will need to be renewed.</p>
         pub fn set_license_expiration(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.license_expiration = input;
             self
         }
         /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies
         /// when that free trial ends.</p>
-        pub fn free_trial_expiration(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn free_trial_expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.free_trial_expiration = Some(input);
             self
         }
@@ -1312,7 +1312,7 @@ pub mod workspace_description {
         /// when that free trial ends.</p>
         pub fn set_free_trial_expiration(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.free_trial_expiration = input;
             self
@@ -2837,9 +2837,9 @@ impl IdpMetadata {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_url(&self) -> std::result::Result<&std::string::String, &Self> {
         if let IdpMetadata::Url(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Url`](crate::model::IdpMetadata::Url).
@@ -2850,9 +2850,9 @@ impl IdpMetadata {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_xml(&self) -> std::result::Result<&std::string::String, &Self> {
         if let IdpMetadata::Xml(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Xml`](crate::model::IdpMetadata::Xml).

@@ -104,6 +104,7 @@ pub type CreateEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreateEndpoint`](crate::operation::CreateEndpoint)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -155,11 +156,14 @@ impl CreateEndpointInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -261,6 +265,7 @@ pub type DeleteEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEndpoint`](crate::operation::DeleteEndpoint)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -278,7 +283,10 @@ impl DeleteEndpointInput {
             write!(output, "/S3Outposts/DeleteEndpoint").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::DeleteEndpointInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::DeleteEndpointInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_1) = &_input.endpoint_id {
                 query.push_kv("endpointId", &aws_smithy_http::query::fmt_string(&inner_1));
@@ -286,6 +294,7 @@ impl DeleteEndpointInput {
             if let Some(inner_2) = &_input.outpost_id {
                 query.push_kv("outpostId", &aws_smithy_http::query::fmt_string(&inner_2));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -295,7 +304,7 @@ impl DeleteEndpointInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -316,11 +325,14 @@ impl DeleteEndpointInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -414,6 +426,7 @@ pub type ListEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`ListEndpoints`](crate::operation::ListEndpoints)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -431,7 +444,10 @@ impl ListEndpointsInput {
             write!(output, "/S3Outposts/ListEndpoints").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListEndpointsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListEndpointsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_3) = &_input.next_token {
                 query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_3));
@@ -439,9 +455,10 @@ impl ListEndpointsInput {
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -451,7 +468,7 @@ impl ListEndpointsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -472,11 +489,14 @@ impl ListEndpointsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);

@@ -3962,7 +3962,7 @@ impl AsRef<str> for DecisionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HistoryEvent {
     /// <p>The date and time when the event occurred.</p>
-    pub event_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub event_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of the history event.</p>
     pub event_type: std::option::Option<crate::model::EventType>,
     /// <p>The system generated ID of the event. This ID uniquely identifies the event with in the workflow execution history.</p>
@@ -4187,7 +4187,7 @@ pub struct HistoryEvent {
 }
 impl HistoryEvent {
     /// <p>The date and time when the event occurred.</p>
-    pub fn event_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn event_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_timestamp.as_ref()
     }
     /// <p>The type of the history event.</p>
@@ -4840,7 +4840,7 @@ pub mod history_event {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) event_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) event_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_type: std::option::Option<crate::model::EventType>,
         pub(crate) event_id: std::option::Option<i64>,
         pub(crate) workflow_execution_started_event_attributes:
@@ -4962,14 +4962,14 @@ pub mod history_event {
     }
     impl Builder {
         /// <p>The date and time when the event occurred.</p>
-        pub fn event_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn event_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_timestamp = Some(input);
             self
         }
         /// <p>The date and time when the event occurred.</p>
         pub fn set_event_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.event_timestamp = input;
             self
@@ -15770,9 +15770,9 @@ pub struct WorkflowTypeInfo {
     /// <p>The description of the type registered through <a>RegisterWorkflowType</a>.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date when this type was registered.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the type is in deprecated state, then it is set to the date when the type was deprecated.</p>
-    pub deprecation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub deprecation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl WorkflowTypeInfo {
     /// <p>The workflow type this information is about.</p>
@@ -15788,11 +15788,11 @@ impl WorkflowTypeInfo {
         self.description.as_deref()
     }
     /// <p>The date when this type was registered.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>If the type is in deprecated state, then it is set to the date when the type was deprecated.</p>
-    pub fn deprecation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn deprecation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deprecation_date.as_ref()
     }
 }
@@ -15816,8 +15816,8 @@ pub mod workflow_type_info {
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
         pub(crate) status: std::option::Option<crate::model::RegistrationStatus>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) deprecation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deprecation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The workflow type this information is about.</p>
@@ -15857,27 +15857,27 @@ pub mod workflow_type_info {
             self
         }
         /// <p>The date when this type was registered.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date when this type was registered.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>If the type is in deprecated state, then it is set to the date when the type was deprecated.</p>
-        pub fn deprecation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn deprecation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deprecation_date = Some(input);
             self
         }
         /// <p>If the type is in deprecated state, then it is set to the date when the type was deprecated.</p>
         pub fn set_deprecation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.deprecation_date = input;
             self
@@ -15965,9 +15965,9 @@ pub struct WorkflowExecutionInfo {
     /// <p>The type of the workflow execution.</p>
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>The time when the execution was started.</p>
-    pub start_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the workflow execution was closed. Set only if the execution status is CLOSED.</p>
-    pub close_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub close_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the execution.</p>
     pub execution_status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>If the execution status is closed then this specifies how the execution was closed:</p>
@@ -16018,11 +16018,11 @@ impl WorkflowExecutionInfo {
         self.workflow_type.as_ref()
     }
     /// <p>The time when the execution was started.</p>
-    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
     /// <p>The time when the workflow execution was closed. Set only if the execution status is CLOSED.</p>
-    pub fn close_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn close_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.close_timestamp.as_ref()
     }
     /// <p>The current status of the execution.</p>
@@ -16098,8 +16098,8 @@ pub mod workflow_execution_info {
     pub struct Builder {
         pub(crate) execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
-        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) close_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) close_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) execution_status: std::option::Option<crate::model::ExecutionStatus>,
         pub(crate) close_status: std::option::Option<crate::model::CloseStatus>,
         pub(crate) parent: std::option::Option<crate::model::WorkflowExecution>,
@@ -16134,27 +16134,27 @@ pub mod workflow_execution_info {
             self
         }
         /// <p>The time when the execution was started.</p>
-        pub fn start_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_timestamp = Some(input);
             self
         }
         /// <p>The time when the execution was started.</p>
         pub fn set_start_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_timestamp = input;
             self
         }
         /// <p>The time when the workflow execution was closed. Set only if the execution status is CLOSED.</p>
-        pub fn close_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn close_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.close_timestamp = Some(input);
             self
         }
         /// <p>The time when the workflow execution was closed. Set only if the execution status is CLOSED.</p>
         pub fn set_close_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.close_timestamp = input;
             self
@@ -16644,17 +16644,17 @@ impl WorkflowTypeFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionTimeFilter {
     /// <p>Specifies the oldest start or close date and time to return.</p>
-    pub oldest_date: std::option::Option<aws_smithy_types::Instant>,
+    pub oldest_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the latest start or close date and time to return.</p>
-    pub latest_date: std::option::Option<aws_smithy_types::Instant>,
+    pub latest_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExecutionTimeFilter {
     /// <p>Specifies the oldest start or close date and time to return.</p>
-    pub fn oldest_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn oldest_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.oldest_date.as_ref()
     }
     /// <p>Specifies the latest start or close date and time to return.</p>
-    pub fn latest_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn latest_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_date.as_ref()
     }
 }
@@ -16672,32 +16672,32 @@ pub mod execution_time_filter {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) oldest_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) latest_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) oldest_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) latest_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Specifies the oldest start or close date and time to return.</p>
-        pub fn oldest_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn oldest_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.oldest_date = Some(input);
             self
         }
         /// <p>Specifies the oldest start or close date and time to return.</p>
         pub fn set_oldest_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.oldest_date = input;
             self
         }
         /// <p>Specifies the latest start or close date and time to return.</p>
-        pub fn latest_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn latest_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_date = Some(input);
             self
         }
         /// <p>Specifies the latest start or close date and time to return.</p>
         pub fn set_latest_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.latest_date = input;
             self
@@ -16961,9 +16961,9 @@ pub struct ActivityTypeInfo {
     /// <p>The description of the activity type provided in <a>RegisterActivityType</a>.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time this activity type was created through <a>RegisterActivityType</a>.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called.</p>
-    pub deprecation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub deprecation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ActivityTypeInfo {
     /// <p>The <a>ActivityType</a> type structure representing the activity type.</p>
@@ -16979,11 +16979,11 @@ impl ActivityTypeInfo {
         self.description.as_deref()
     }
     /// <p>The date and time this activity type was created through <a>RegisterActivityType</a>.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called.</p>
-    pub fn deprecation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn deprecation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deprecation_date.as_ref()
     }
 }
@@ -17007,8 +17007,8 @@ pub mod activity_type_info {
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
         pub(crate) status: std::option::Option<crate::model::RegistrationStatus>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) deprecation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deprecation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The <a>ActivityType</a> type structure representing the activity type.</p>
@@ -17048,27 +17048,27 @@ pub mod activity_type_info {
             self
         }
         /// <p>The date and time this activity type was created through <a>RegisterActivityType</a>.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date and time this activity type was created through <a>RegisterActivityType</a>.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called.</p>
-        pub fn deprecation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn deprecation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deprecation_date = Some(input);
             self
         }
         /// <p>If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called.</p>
         pub fn set_deprecation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.deprecation_date = input;
             self

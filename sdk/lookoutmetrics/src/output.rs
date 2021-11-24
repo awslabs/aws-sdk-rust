@@ -1076,9 +1076,9 @@ pub struct DescribeMetricSetOutput {
     /// <p>The dataset's description.</p>
     pub metric_set_description: std::option::Option<std::string::String>,
     /// <p>The time at which the dataset was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the dataset was last modified.</p>
-    pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The offset in seconds. Only supported for S3 and Redshift datasources.</p>
     pub offset: std::option::Option<i32>,
     /// <p>A list of the metrics defined by the dataset.</p>
@@ -1112,11 +1112,11 @@ impl DescribeMetricSetOutput {
         self.metric_set_description.as_deref()
     }
     /// <p>The time at which the dataset was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time at which the dataset was last modified.</p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
     /// <p>The offset in seconds. Only supported for S3 and Redshift datasources.</p>
@@ -1177,8 +1177,8 @@ pub mod describe_metric_set_output {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
         pub(crate) metric_set_name: std::option::Option<std::string::String>,
         pub(crate) metric_set_description: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) offset: std::option::Option<i32>,
         pub(crate) metric_list: std::option::Option<std::vec::Vec<crate::model::Metric>>,
         pub(crate) timestamp_column: std::option::Option<crate::model::TimestampColumn>,
@@ -1241,27 +1241,27 @@ pub mod describe_metric_set_output {
             self
         }
         /// <p>The time at which the dataset was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time at which the dataset was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time at which the dataset was last modified.</p>
-        pub fn last_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
         /// <p>The time at which the dataset was last modified.</p>
         pub fn set_last_modification_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modification_time = input;
             self
@@ -1403,9 +1403,9 @@ pub struct DescribeAnomalyDetectorOutput {
     /// <p>Contains information about the detector's configuration.</p>
     pub anomaly_detector_config: std::option::Option<crate::model::AnomalyDetectorConfigSummary>,
     /// <p>The time at which the detector was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the detector was last modified.</p>
-    pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the detector.</p>
     pub status: std::option::Option<crate::model::AnomalyDetectorStatus>,
     /// <p>The reason that the detector failed, if any.</p>
@@ -1433,11 +1433,11 @@ impl DescribeAnomalyDetectorOutput {
         self.anomaly_detector_config.as_ref()
     }
     /// <p>The time at which the detector was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time at which the detector was last modified.</p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
     /// <p>The status of the detector.</p>
@@ -1482,8 +1482,8 @@ pub mod describe_anomaly_detector_output {
         pub(crate) anomaly_detector_description: std::option::Option<std::string::String>,
         pub(crate) anomaly_detector_config:
             std::option::Option<crate::model::AnomalyDetectorConfigSummary>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::AnomalyDetectorStatus>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
@@ -1548,27 +1548,27 @@ pub mod describe_anomaly_detector_output {
             self
         }
         /// <p>The time at which the detector was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time at which the detector was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time at which the detector was last modified.</p>
-        pub fn last_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
         /// <p>The time at which the detector was last modified.</p>
         pub fn set_last_modification_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modification_time = input;
             self

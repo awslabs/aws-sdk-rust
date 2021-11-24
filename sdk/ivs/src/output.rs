@@ -249,6 +249,96 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListStreamSessionsOutput {
+    /// <p/>
+    pub stream_sessions: std::option::Option<std::vec::Vec<crate::model::StreamSessionSummary>>,
+    /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the
+    /// request to get the next set.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListStreamSessionsOutput {
+    /// <p/>
+    pub fn stream_sessions(&self) -> std::option::Option<&[crate::model::StreamSessionSummary]> {
+        self.stream_sessions.as_deref()
+    }
+    /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the
+    /// request to get the next set.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListStreamSessionsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListStreamSessionsOutput");
+        formatter.field("stream_sessions", &self.stream_sessions);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListStreamSessionsOutput`](crate::output::ListStreamSessionsOutput)
+pub mod list_stream_sessions_output {
+    /// A builder for [`ListStreamSessionsOutput`](crate::output::ListStreamSessionsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stream_sessions:
+            std::option::Option<std::vec::Vec<crate::model::StreamSessionSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `stream_sessions`.
+        ///
+        /// To override the contents of this collection use [`set_stream_sessions`](Self::set_stream_sessions).
+        ///
+        /// <p/>
+        pub fn stream_sessions(
+            mut self,
+            input: impl Into<crate::model::StreamSessionSummary>,
+        ) -> Self {
+            let mut v = self.stream_sessions.unwrap_or_default();
+            v.push(input.into());
+            self.stream_sessions = Some(v);
+            self
+        }
+        /// <p/>
+        pub fn set_stream_sessions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::StreamSessionSummary>>,
+        ) -> Self {
+            self.stream_sessions = input;
+            self
+        }
+        /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the
+        /// request to get the next set.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the
+        /// request to get the next set.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListStreamSessionsOutput`](crate::output::ListStreamSessionsOutput)
+        pub fn build(self) -> crate::output::ListStreamSessionsOutput {
+            crate::output::ListStreamSessionsOutput {
+                stream_sessions: self.stream_sessions,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListStreamSessionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListStreamSessionsOutput`](crate::output::ListStreamSessionsOutput)
+    pub fn builder() -> crate::output::list_stream_sessions_output::Builder {
+        crate::output::list_stream_sessions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamsOutput {
     /// <p>List of streams.</p>
     pub streams: std::option::Option<std::vec::Vec<crate::model::StreamSummary>>,
@@ -738,6 +828,63 @@ impl ImportPlaybackKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`ImportPlaybackKeyPairOutput`](crate::output::ImportPlaybackKeyPairOutput)
     pub fn builder() -> crate::output::import_playback_key_pair_output::Builder {
         crate::output::import_playback_key_pair_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetStreamSessionOutput {
+    /// <p>List of stream details.</p>
+    pub stream_session: std::option::Option<crate::model::StreamSession>,
+}
+impl GetStreamSessionOutput {
+    /// <p>List of stream details.</p>
+    pub fn stream_session(&self) -> std::option::Option<&crate::model::StreamSession> {
+        self.stream_session.as_ref()
+    }
+}
+impl std::fmt::Debug for GetStreamSessionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetStreamSessionOutput");
+        formatter.field("stream_session", &self.stream_session);
+        formatter.finish()
+    }
+}
+/// See [`GetStreamSessionOutput`](crate::output::GetStreamSessionOutput)
+pub mod get_stream_session_output {
+    /// A builder for [`GetStreamSessionOutput`](crate::output::GetStreamSessionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stream_session: std::option::Option<crate::model::StreamSession>,
+    }
+    impl Builder {
+        /// <p>List of stream details.</p>
+        pub fn stream_session(mut self, input: crate::model::StreamSession) -> Self {
+            self.stream_session = Some(input);
+            self
+        }
+        /// <p>List of stream details.</p>
+        pub fn set_stream_session(
+            mut self,
+            input: std::option::Option<crate::model::StreamSession>,
+        ) -> Self {
+            self.stream_session = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetStreamSessionOutput`](crate::output::GetStreamSessionOutput)
+        pub fn build(self) -> crate::output::GetStreamSessionOutput {
+            crate::output::GetStreamSessionOutput {
+                stream_session: self.stream_session,
+            }
+        }
+    }
+}
+impl GetStreamSessionOutput {
+    /// Creates a new builder-style object to manufacture [`GetStreamSessionOutput`](crate::output::GetStreamSessionOutput)
+    pub fn builder() -> crate::output::get_stream_session_output::Builder {
+        crate::output::get_stream_session_output::Builder::default()
     }
 }
 

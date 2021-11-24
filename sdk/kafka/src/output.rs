@@ -154,6 +154,82 @@ impl UpdateMonitoringOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateConnectivityOutput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub cluster_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    pub cluster_operation_arn: std::option::Option<std::string::String>,
+}
+impl UpdateConnectivityOutput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+        self.cluster_operation_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateConnectivityOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateConnectivityOutput");
+        formatter.field("cluster_arn", &self.cluster_arn);
+        formatter.field("cluster_operation_arn", &self.cluster_operation_arn);
+        formatter.finish()
+    }
+}
+/// See [`UpdateConnectivityOutput`](crate::output::UpdateConnectivityOutput)
+pub mod update_connectivity_output {
+    /// A builder for [`UpdateConnectivityOutput`](crate::output::UpdateConnectivityOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cluster_arn: std::option::Option<std::string::String>,
+        pub(crate) cluster_operation_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+        pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+        pub fn cluster_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_operation_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+        pub fn set_cluster_operation_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cluster_operation_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateConnectivityOutput`](crate::output::UpdateConnectivityOutput)
+        pub fn build(self) -> crate::output::UpdateConnectivityOutput {
+            crate::output::UpdateConnectivityOutput {
+                cluster_arn: self.cluster_arn,
+                cluster_operation_arn: self.cluster_operation_arn,
+            }
+        }
+    }
+}
+impl UpdateConnectivityOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectivityOutput`](crate::output::UpdateConnectivityOutput)
+    pub fn builder() -> crate::output::update_connectivity_output::Builder {
+        crate::output::update_connectivity_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -1494,6 +1570,12 @@ pub struct GetBootstrapBrokersOutput {
     pub bootstrap_broker_string_sasl_scram: std::option::Option<std::string::String>,
     /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
     pub bootstrap_broker_string_sasl_iam: std::option::Option<std::string::String>,
+    /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
+    pub bootstrap_broker_string_public_tls: std::option::Option<std::string::String>,
+    /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
+    pub bootstrap_broker_string_public_sasl_scram: std::option::Option<std::string::String>,
+    /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
+    pub bootstrap_broker_string_public_sasl_iam: std::option::Option<std::string::String>,
 }
 impl GetBootstrapBrokersOutput {
     /// <p>A string containing one or more hostname:port pairs.</p>
@@ -1512,6 +1594,18 @@ impl GetBootstrapBrokersOutput {
     pub fn bootstrap_broker_string_sasl_iam(&self) -> std::option::Option<&str> {
         self.bootstrap_broker_string_sasl_iam.as_deref()
     }
+    /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
+    pub fn bootstrap_broker_string_public_tls(&self) -> std::option::Option<&str> {
+        self.bootstrap_broker_string_public_tls.as_deref()
+    }
+    /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
+    pub fn bootstrap_broker_string_public_sasl_scram(&self) -> std::option::Option<&str> {
+        self.bootstrap_broker_string_public_sasl_scram.as_deref()
+    }
+    /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
+    pub fn bootstrap_broker_string_public_sasl_iam(&self) -> std::option::Option<&str> {
+        self.bootstrap_broker_string_public_sasl_iam.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBootstrapBrokersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1529,6 +1623,18 @@ impl std::fmt::Debug for GetBootstrapBrokersOutput {
             "bootstrap_broker_string_sasl_iam",
             &self.bootstrap_broker_string_sasl_iam,
         );
+        formatter.field(
+            "bootstrap_broker_string_public_tls",
+            &self.bootstrap_broker_string_public_tls,
+        );
+        formatter.field(
+            "bootstrap_broker_string_public_sasl_scram",
+            &self.bootstrap_broker_string_public_sasl_scram,
+        );
+        formatter.field(
+            "bootstrap_broker_string_public_sasl_iam",
+            &self.bootstrap_broker_string_public_sasl_iam,
+        );
         formatter.finish()
     }
 }
@@ -1542,6 +1648,11 @@ pub mod get_bootstrap_brokers_output {
         pub(crate) bootstrap_broker_string_tls: std::option::Option<std::string::String>,
         pub(crate) bootstrap_broker_string_sasl_scram: std::option::Option<std::string::String>,
         pub(crate) bootstrap_broker_string_sasl_iam: std::option::Option<std::string::String>,
+        pub(crate) bootstrap_broker_string_public_tls: std::option::Option<std::string::String>,
+        pub(crate) bootstrap_broker_string_public_sasl_scram:
+            std::option::Option<std::string::String>,
+        pub(crate) bootstrap_broker_string_public_sasl_iam:
+            std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A string containing one or more hostname:port pairs.</p>
@@ -1605,6 +1716,54 @@ pub mod get_bootstrap_brokers_output {
             self.bootstrap_broker_string_sasl_iam = input;
             self
         }
+        /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
+        pub fn bootstrap_broker_string_public_tls(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.bootstrap_broker_string_public_tls = Some(input.into());
+            self
+        }
+        /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
+        pub fn set_bootstrap_broker_string_public_tls(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bootstrap_broker_string_public_tls = input;
+            self
+        }
+        /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
+        pub fn bootstrap_broker_string_public_sasl_scram(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.bootstrap_broker_string_public_sasl_scram = Some(input.into());
+            self
+        }
+        /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
+        pub fn set_bootstrap_broker_string_public_sasl_scram(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bootstrap_broker_string_public_sasl_scram = input;
+            self
+        }
+        /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
+        pub fn bootstrap_broker_string_public_sasl_iam(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.bootstrap_broker_string_public_sasl_iam = Some(input.into());
+            self
+        }
+        /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
+        pub fn set_bootstrap_broker_string_public_sasl_iam(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bootstrap_broker_string_public_sasl_iam = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBootstrapBrokersOutput`](crate::output::GetBootstrapBrokersOutput)
         pub fn build(self) -> crate::output::GetBootstrapBrokersOutput {
             crate::output::GetBootstrapBrokersOutput {
@@ -1612,6 +1771,11 @@ pub mod get_bootstrap_brokers_output {
                 bootstrap_broker_string_tls: self.bootstrap_broker_string_tls,
                 bootstrap_broker_string_sasl_scram: self.bootstrap_broker_string_sasl_scram,
                 bootstrap_broker_string_sasl_iam: self.bootstrap_broker_string_sasl_iam,
+                bootstrap_broker_string_public_tls: self.bootstrap_broker_string_public_tls,
+                bootstrap_broker_string_public_sasl_scram: self
+                    .bootstrap_broker_string_public_sasl_scram,
+                bootstrap_broker_string_public_sasl_iam: self
+                    .bootstrap_broker_string_public_sasl_iam,
             }
         }
     }
@@ -1630,7 +1794,7 @@ pub struct DescribeConfigurationRevisionOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the configuration was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the configuration.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The revision number.</p>
@@ -1645,7 +1809,7 @@ impl DescribeConfigurationRevisionOutput {
         self.arn.as_deref()
     }
     /// <p>The time when the configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of the configuration.</p>
@@ -1680,7 +1844,7 @@ pub mod describe_configuration_revision_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) revision: std::option::Option<i64>,
         pub(crate) server_properties: std::option::Option<aws_smithy_types::Blob>,
@@ -1697,14 +1861,14 @@ pub mod describe_configuration_revision_output {
             self
         }
         /// <p>The time when the configuration was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time when the configuration was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -1770,7 +1934,7 @@ pub struct DescribeConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the configuration was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the configuration.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
@@ -1788,7 +1952,7 @@ impl DescribeConfigurationOutput {
         self.arn.as_deref()
     }
     /// <p>The time when the configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of the configuration.</p>
@@ -1832,7 +1996,7 @@ pub mod describe_configuration_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) kafka_versions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
@@ -1851,14 +2015,14 @@ pub mod describe_configuration_output {
             self
         }
         /// <p>The time when the configuration was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time when the configuration was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2221,7 +2385,7 @@ pub struct CreateConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the configuration was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Latest revision of the configuration.</p>
     pub latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
     /// <p>The name of the configuration.</p>
@@ -2235,7 +2399,7 @@ impl CreateConfigurationOutput {
         self.arn.as_deref()
     }
     /// <p>The time when the configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Latest revision of the configuration.</p>
@@ -2269,7 +2433,7 @@ pub mod create_configuration_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ConfigurationState>,
@@ -2286,14 +2450,14 @@ pub mod create_configuration_output {
             self
         }
         /// <p>The time when the configuration was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time when the configuration was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self

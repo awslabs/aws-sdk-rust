@@ -165,6 +165,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackendConfig {
     }
 }
 
+/// Operation shape for `CreateBackendStorage`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_backend_storage`](crate::client::Client::create_backend_storage).
+///
+/// See [`crate::client::fluent_builders::CreateBackendStorage`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateBackendStorage {
+    _private: (),
+}
+impl CreateBackendStorage {
+    /// Creates a new builder-style object to manufacture [`CreateBackendStorageInput`](crate::input::CreateBackendStorageInput)
+    pub fn builder() -> crate::input::create_backend_storage_input::Builder {
+        crate::input::create_backend_storage_input::Builder::default()
+    }
+    /// Creates a new `CreateBackendStorage` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateBackendStorage {
+    type Output = std::result::Result<
+        crate::output::CreateBackendStorageOutput,
+        crate::error::CreateBackendStorageError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_backend_storage_error(response)
+        } else {
+            crate::operation_deser::parse_create_backend_storage_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateToken`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -293,6 +327,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackendAuth {
             crate::operation_deser::parse_delete_backend_auth_error(response)
         } else {
             crate::operation_deser::parse_delete_backend_auth_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteBackendStorage`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_backend_storage`](crate::client::Client::delete_backend_storage).
+///
+/// See [`crate::client::fluent_builders::DeleteBackendStorage`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteBackendStorage {
+    _private: (),
+}
+impl DeleteBackendStorage {
+    /// Creates a new builder-style object to manufacture [`DeleteBackendStorageInput`](crate::input::DeleteBackendStorageInput)
+    pub fn builder() -> crate::input::delete_backend_storage_input::Builder {
+        crate::input::delete_backend_storage_input::Builder::default()
+    }
+    /// Creates a new `DeleteBackendStorage` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteBackendStorage {
+    type Output = std::result::Result<
+        crate::output::DeleteBackendStorageOutput,
+        crate::error::DeleteBackendStorageError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_backend_storage_error(response)
+        } else {
+            crate::operation_deser::parse_delete_backend_storage_response(response)
         }
     }
 }
@@ -525,6 +593,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackendJob {
     }
 }
 
+/// Operation shape for `GetBackendStorage`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_backend_storage`](crate::client::Client::get_backend_storage).
+///
+/// See [`crate::client::fluent_builders::GetBackendStorage`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetBackendStorage {
+    _private: (),
+}
+impl GetBackendStorage {
+    /// Creates a new builder-style object to manufacture [`GetBackendStorageInput`](crate::input::GetBackendStorageInput)
+    pub fn builder() -> crate::input::get_backend_storage_input::Builder {
+        crate::input::get_backend_storage_input::Builder::default()
+    }
+    /// Creates a new `GetBackendStorage` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetBackendStorage {
+    type Output = std::result::Result<
+        crate::output::GetBackendStorageOutput,
+        crate::error::GetBackendStorageError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_backend_storage_error(response)
+        } else {
+            crate::operation_deser::parse_get_backend_storage_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetToken`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -590,6 +692,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportBackendAuth {
     }
 }
 
+/// Operation shape for `ImportBackendStorage`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`import_backend_storage`](crate::client::Client::import_backend_storage).
+///
+/// See [`crate::client::fluent_builders::ImportBackendStorage`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ImportBackendStorage {
+    _private: (),
+}
+impl ImportBackendStorage {
+    /// Creates a new builder-style object to manufacture [`ImportBackendStorageInput`](crate::input::ImportBackendStorageInput)
+    pub fn builder() -> crate::input::import_backend_storage_input::Builder {
+        crate::input::import_backend_storage_input::Builder::default()
+    }
+    /// Creates a new `ImportBackendStorage` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ImportBackendStorage {
+    type Output = std::result::Result<
+        crate::output::ImportBackendStorageOutput,
+        crate::error::ImportBackendStorageError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_import_backend_storage_error(response)
+        } else {
+            crate::operation_deser::parse_import_backend_storage_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListBackendJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -620,6 +756,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackendJobs {
             crate::operation_deser::parse_list_backend_jobs_error(response)
         } else {
             crate::operation_deser::parse_list_backend_jobs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListS3Buckets`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_s3_buckets`](crate::client::Client::list_s3_buckets).
+///
+/// See [`crate::client::fluent_builders::ListS3Buckets`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListS3Buckets {
+    _private: (),
+}
+impl ListS3Buckets {
+    /// Creates a new builder-style object to manufacture [`ListS3BucketsInput`](crate::input::ListS3BucketsInput)
+    pub fn builder() -> crate::input::list_s3_buckets_input::Builder {
+        crate::input::list_s3_buckets_input::Builder::default()
+    }
+    /// Creates a new `ListS3Buckets` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListS3Buckets {
+    type Output =
+        std::result::Result<crate::output::ListS3BucketsOutput, crate::error::ListS3BucketsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_s3_buckets_error(response)
+        } else {
+            crate::operation_deser::parse_list_s3_buckets_response(response)
         }
     }
 }
@@ -824,6 +992,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBackendJob {
             crate::operation_deser::parse_update_backend_job_error(response)
         } else {
             crate::operation_deser::parse_update_backend_job_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateBackendStorage`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_backend_storage`](crate::client::Client::update_backend_storage).
+///
+/// See [`crate::client::fluent_builders::UpdateBackendStorage`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateBackendStorage {
+    _private: (),
+}
+impl UpdateBackendStorage {
+    /// Creates a new builder-style object to manufacture [`UpdateBackendStorageInput`](crate::input::UpdateBackendStorageInput)
+    pub fn builder() -> crate::input::update_backend_storage_input::Builder {
+        crate::input::update_backend_storage_input::Builder::default()
+    }
+    /// Creates a new `UpdateBackendStorage` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateBackendStorage {
+    type Output = std::result::Result<
+        crate::output::UpdateBackendStorageOutput,
+        crate::error::UpdateBackendStorageError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_backend_storage_error(response)
+        } else {
+            crate::operation_deser::parse_update_backend_storage_response(response)
         }
     }
 }

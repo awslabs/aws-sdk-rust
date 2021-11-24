@@ -12,9 +12,9 @@ pub struct AttributeGroup {
     /// <p>The description of the attribute group that the user provides.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Key-value pairs you can use to associate with the attribute group.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -37,11 +37,11 @@ impl AttributeGroup {
         self.description.as_deref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>Key-value pairs you can use to associate with the attribute group.</p>
@@ -75,8 +75,8 @@ pub mod attribute_group {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -123,27 +123,27 @@ pub mod attribute_group {
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -208,9 +208,9 @@ pub struct Application {
     /// <p>The description of the application.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Key-value pairs you can use to associate with the application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -233,11 +233,11 @@ impl Application {
         self.description.as_deref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>Key-value pairs you can use to associate with the application.</p>
@@ -271,8 +271,8 @@ pub mod application {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -319,27 +319,27 @@ pub mod application {
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -509,9 +509,9 @@ pub struct AttributeGroupSummary {
     /// <p>The description of the attribute group that the user provides.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AttributeGroupSummary {
     /// <p>The globally unique attribute group identifier of the attribute group.</p>
@@ -531,11 +531,11 @@ impl AttributeGroupSummary {
         self.description.as_deref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -561,8 +561,8 @@ pub mod attribute_group_summary {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The globally unique attribute group identifier of the attribute group.</p>
@@ -606,27 +606,27 @@ pub mod attribute_group_summary {
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -737,9 +737,9 @@ pub struct ApplicationSummary {
     /// <p>The description of the application.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ApplicationSummary {
     /// <p>The identifier of the application.</p>
@@ -759,11 +759,11 @@ impl ApplicationSummary {
         self.description.as_deref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -789,8 +789,8 @@ pub mod application_summary {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the application.</p>
@@ -834,27 +834,27 @@ pub mod application_summary {
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -888,7 +888,7 @@ pub struct Resource {
     /// <p>The Amazon resource name (ARN) of the resource.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time the resource was associated with the application.</p>
-    pub association_time: std::option::Option<aws_smithy_types::Instant>,
+    pub association_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The service integration information about the resource.
     /// </p>
     pub integrations: std::option::Option<crate::model::ResourceIntegrations>,
@@ -903,7 +903,7 @@ impl Resource {
         self.arn.as_deref()
     }
     /// <p>The time the resource was associated with the application.</p>
-    pub fn association_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn association_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.association_time.as_ref()
     }
     /// <p>The service integration information about the resource.
@@ -930,7 +930,7 @@ pub mod resource {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) association_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) association_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) integrations: std::option::Option<crate::model::ResourceIntegrations>,
     }
     impl Builder {
@@ -955,14 +955,14 @@ pub mod resource {
             self
         }
         /// <p>The time the resource was associated with the application.</p>
-        pub fn association_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn association_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.association_time = Some(input);
             self
         }
         /// <p>The time the resource was associated with the application.</p>
         pub fn set_association_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.association_time = input;
             self

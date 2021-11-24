@@ -1707,7 +1707,7 @@ pub struct GetDeliverabilityDashboardOptionsOutput {
     /// is scheduled to expire, if your subscription is scheduled to expire at the end of the
     /// current calendar month. This value is null if you have an active subscription that isn’t
     /// due to expire at the end of the month.</p>
-    pub subscription_expiry_date: std::option::Option<aws_smithy_types::Instant>,
+    pub subscription_expiry_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of your Deliverability dashboard subscription. If this value is
     /// <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end
     /// of the current calendar month.</p>
@@ -1733,7 +1733,7 @@ impl GetDeliverabilityDashboardOptionsOutput {
     /// is scheduled to expire, if your subscription is scheduled to expire at the end of the
     /// current calendar month. This value is null if you have an active subscription that isn’t
     /// due to expire at the end of the month.</p>
-    pub fn subscription_expiry_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn subscription_expiry_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.subscription_expiry_date.as_ref()
     }
     /// <p>The current status of your Deliverability dashboard subscription. If this value is
@@ -1782,7 +1782,7 @@ pub mod get_deliverability_dashboard_options_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dashboard_enabled: std::option::Option<bool>,
-        pub(crate) subscription_expiry_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) subscription_expiry_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) account_status:
             std::option::Option<crate::model::DeliverabilityDashboardAccountStatus>,
         pub(crate) active_subscribed_domains:
@@ -1807,7 +1807,7 @@ pub mod get_deliverability_dashboard_options_output {
         /// is scheduled to expire, if your subscription is scheduled to expire at the end of the
         /// current calendar month. This value is null if you have an active subscription that isn’t
         /// due to expire at the end of the month.</p>
-        pub fn subscription_expiry_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn subscription_expiry_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.subscription_expiry_date = Some(input);
             self
         }
@@ -1817,7 +1817,7 @@ pub mod get_deliverability_dashboard_options_output {
         /// due to expire at the end of the month.</p>
         pub fn set_subscription_expiry_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.subscription_expiry_date = input;
             self

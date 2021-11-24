@@ -1000,9 +1000,9 @@ pub fn deser_structure_crate_model_credentials(
             s if s.matches("Expiration") /* Expiration com.amazonaws.sts#Credentials$Expiration */ =>  {
                 let var_41 =
                     Some(
-                        aws_smithy_types::Instant::from_str(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::instant::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.sts#dateType`)"))
                         ?

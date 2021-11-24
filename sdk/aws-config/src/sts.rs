@@ -12,6 +12,7 @@ pub(crate) mod util {
     use aws_sdk_sts::model::Credentials as StsCredentials;
     use aws_types::credentials::{self, CredentialsError};
     use aws_types::Credentials as AwsCredentials;
+    use std::convert::TryFrom;
     use std::time::{SystemTime, UNIX_EPOCH};
 
     /// Convert STS credentials to aws_auth::Credentials
@@ -21,14 +22,15 @@ pub(crate) mod util {
     ) -> credentials::Result {
         let sts_credentials = sts_credentials
             .ok_or_else(|| CredentialsError::unhandled("STS credentials must be defined"))?;
-        let expiration = sts_credentials
-            .expiration
-            .ok_or_else(|| CredentialsError::unhandled("missing expiration"))?;
-        let expiration = expiration.to_system_time().ok_or_else(|| {
-            CredentialsError::unhandled(format!(
-                "expiration is before unix epoch: {:?}",
-                &expiration
-            ))
+        let expiration = SystemTime::try_from(
+            sts_credentials
+                .expiration
+                .ok_or_else(|| CredentialsError::unhandled("missing expiration"))?,
+        )
+        .map_err(|_| {
+            CredentialsError::unhandled(
+                "credential expiration time cannot be represented by a SystemTime",
+            )
         })?;
         Ok(AwsCredentials::new(
             sts_credentials

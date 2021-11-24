@@ -224,7 +224,7 @@ pub struct Event {
     /// 'NUMBER_OF_RATINGS' field defined in the Interactions schema.</p>
     pub properties: std::option::Option<std::string::String>,
     /// <p>The timestamp (in Unix time) on the client side when the event occurred.</p>
-    pub sent_at: std::option::Option<aws_smithy_types::Instant>,
+    pub sent_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the recommendation.</p>
     pub recommendation_id: std::option::Option<std::string::String>,
     /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>.</p>
@@ -266,7 +266,7 @@ impl Event {
         self.properties.as_deref()
     }
     /// <p>The timestamp (in Unix time) on the client side when the event occurred.</p>
-    pub fn sent_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn sent_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.sent_at.as_ref()
     }
     /// <p>The ID of the recommendation.</p>
@@ -303,7 +303,7 @@ pub mod event {
         pub(crate) event_value: std::option::Option<f32>,
         pub(crate) item_id: std::option::Option<std::string::String>,
         pub(crate) properties: std::option::Option<std::string::String>,
-        pub(crate) sent_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) sent_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
         pub(crate) impression: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -387,14 +387,14 @@ pub mod event {
             self
         }
         /// <p>The timestamp (in Unix time) on the client side when the event occurred.</p>
-        pub fn sent_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn sent_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.sent_at = Some(input);
             self
         }
         /// <p>The timestamp (in Unix time) on the client side when the event occurred.</p>
         pub fn set_sent_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.sent_at = input;
             self

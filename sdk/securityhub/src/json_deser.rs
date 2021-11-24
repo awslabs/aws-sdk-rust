@@ -2552,7 +2552,7 @@ where
                                 builder = builder.set_invited_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -3560,7 +3560,7 @@ where
                                 builder = builder.set_control_status_updated_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -4145,7 +4145,7 @@ where
                                 builder = builder.set_invited_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -4153,7 +4153,7 @@ where
                                 builder = builder.set_updated_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }

@@ -82,6 +82,30 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSchedulingPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateSchedulingPolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateSchedulingPolicyErrorKind::ClientException(inner) => {
+                    Error::ClientException(inner)
+                }
+                crate::error::CreateSchedulingPolicyErrorKind::ServerException(inner) => {
+                    Error::ServerException(inner)
+                }
+                crate::error::CreateSchedulingPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteComputeEnvironmentError, R>>
     for Error
 where
@@ -120,6 +144,30 @@ where
                     Error::ServerException(inner)
                 }
                 crate::error::DeleteJobQueueErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSchedulingPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteSchedulingPolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteSchedulingPolicyErrorKind::ClientException(inner) => {
+                    Error::ClientException(inner)
+                }
+                crate::error::DeleteSchedulingPolicyErrorKind::ServerException(inner) => {
+                    Error::ServerException(inner)
+                }
+                crate::error::DeleteSchedulingPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -239,6 +287,30 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSchedulingPoliciesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeSchedulingPoliciesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeSchedulingPoliciesErrorKind::ClientException(inner) => {
+                    Error::ClientException(inner)
+                }
+                crate::error::DescribeSchedulingPoliciesErrorKind::ServerException(inner) => {
+                    Error::ServerException(inner)
+                }
+                crate::error::DescribeSchedulingPoliciesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -253,6 +325,30 @@ where
                     Error::ServerException(inner)
                 }
                 crate::error::ListJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSchedulingPoliciesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListSchedulingPoliciesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListSchedulingPoliciesErrorKind::ClientException(inner) => {
+                    Error::ClientException(inner)
+                }
+                crate::error::ListSchedulingPoliciesErrorKind::ServerException(inner) => {
+                    Error::ServerException(inner)
+                }
+                crate::error::ListSchedulingPoliciesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -419,6 +515,30 @@ where
                     Error::ServerException(inner)
                 }
                 crate::error::UpdateJobQueueErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSchedulingPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateSchedulingPolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateSchedulingPolicyErrorKind::ClientException(inner) => {
+                    Error::ClientException(inner)
+                }
+                crate::error::UpdateSchedulingPolicyErrorKind::ServerException(inner) => {
+                    Error::ServerException(inner)
+                }
+                crate::error::UpdateSchedulingPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

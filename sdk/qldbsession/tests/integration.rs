@@ -21,10 +21,12 @@ use std::time::{Duration, UNIX_EPOCH};
 
 #[tokio::test]
 async fn signv4_use_correct_service_name() {
-    let creds = Credentials::from_keys(
+    let creds = Credentials::new(
         "ANOTREAL",
         "notrealrnrELgWzOk3IfjzDKtFBhDby",
         Some("notarealsessiontoken".to_string()),
+        None,
+        "test",
     );
     let conn = TestConnection::new(vec![(
         http::Request::builder()

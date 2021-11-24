@@ -112,6 +112,7 @@ pub type DescribeRecommendationExportJobsInputOperationRetryAlias = aws_http::Aw
 impl DescribeRecommendationExportJobsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRecommendationExportJobs`](crate::operation::DescribeRecommendationExportJobs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -169,11 +170,14 @@ impl DescribeRecommendationExportJobsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -465,6 +469,7 @@ pub type ExportAutoScalingGroupRecommendationsInputOperationRetryAlias =
 impl ExportAutoScalingGroupRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ExportAutoScalingGroupRecommendations`](crate::operation::ExportAutoScalingGroupRecommendations)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -522,11 +527,14 @@ impl ExportAutoScalingGroupRecommendationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -794,6 +802,7 @@ pub type ExportEbsVolumeRecommendationsInputOperationRetryAlias = aws_http::AwsE
 impl ExportEbsVolumeRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ExportEBSVolumeRecommendations`](crate::operation::ExportEBSVolumeRecommendations)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -851,11 +860,14 @@ impl ExportEbsVolumeRecommendationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1140,6 +1152,7 @@ pub type ExportEc2InstanceRecommendationsInputOperationRetryAlias = aws_http::Aw
 impl ExportEc2InstanceRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ExportEC2InstanceRecommendations`](crate::operation::ExportEC2InstanceRecommendations)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1197,11 +1210,14 @@ impl ExportEc2InstanceRecommendationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1476,6 +1492,7 @@ pub type ExportLambdaFunctionRecommendationsInputOperationRetryAlias =
 impl ExportLambdaFunctionRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ExportLambdaFunctionRecommendations`](crate::operation::ExportLambdaFunctionRecommendations)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1533,11 +1550,14 @@ impl ExportLambdaFunctionRecommendationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1750,6 +1770,7 @@ pub type GetAutoScalingGroupRecommendationsInputOperationRetryAlias = aws_http::
 impl GetAutoScalingGroupRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetAutoScalingGroupRecommendations`](crate::operation::GetAutoScalingGroupRecommendations)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1807,11 +1828,14 @@ impl GetAutoScalingGroupRecommendationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1999,6 +2023,7 @@ pub type GetEbsVolumeRecommendationsInputOperationRetryAlias = aws_http::AwsErro
 impl GetEbsVolumeRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetEBSVolumeRecommendations`](crate::operation::GetEBSVolumeRecommendations)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2056,11 +2081,14 @@ impl GetEbsVolumeRecommendationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2269,6 +2297,7 @@ pub type GetEc2InstanceRecommendationsInputOperationRetryAlias = aws_http::AwsEr
 impl GetEc2InstanceRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetEC2InstanceRecommendations`](crate::operation::GetEC2InstanceRecommendations)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2326,11 +2355,14 @@ impl GetEc2InstanceRecommendationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2390,8 +2422,8 @@ pub mod get_ec2_recommendation_projected_metrics_input {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
         pub(crate) stat: std::option::Option<crate::model::MetricStatistic>,
         pub(crate) period: std::option::Option<i32>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) recommendation_preferences:
             std::option::Option<crate::model::RecommendationPreferences>,
     }
@@ -2432,27 +2464,27 @@ pub mod get_ec2_recommendation_projected_metrics_input {
             self
         }
         /// <p>The timestamp of the first projected metrics data point to return.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The timestamp of the first projected metrics data point to return.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The timestamp of the last projected metrics data point to return.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The timestamp of the last projected metrics data point to return.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -2502,6 +2534,7 @@ pub type GetEc2RecommendationProjectedMetricsInputOperationRetryAlias =
 impl GetEc2RecommendationProjectedMetricsInput {
     /// Consumes the builder and constructs an Operation<[`GetEC2RecommendationProjectedMetrics`](crate::operation::GetEC2RecommendationProjectedMetrics)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2559,11 +2592,14 @@ impl GetEc2RecommendationProjectedMetricsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2639,6 +2675,7 @@ pub type GetEnrollmentStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl GetEnrollmentStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetEnrollmentStatus`](crate::operation::GetEnrollmentStatus)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2695,11 +2732,14 @@ impl GetEnrollmentStatusInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2826,6 +2866,7 @@ pub type GetEnrollmentStatusesForOrganizationInputOperationRetryAlias =
 impl GetEnrollmentStatusesForOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`GetEnrollmentStatusesForOrganization`](crate::operation::GetEnrollmentStatusesForOrganization)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2883,11 +2924,14 @@ impl GetEnrollmentStatusesForOrganizationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3097,6 +3141,7 @@ pub type GetLambdaFunctionRecommendationsInputOperationRetryAlias = aws_http::Aw
 impl GetLambdaFunctionRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetLambdaFunctionRecommendations`](crate::operation::GetLambdaFunctionRecommendations)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3154,11 +3199,14 @@ impl GetLambdaFunctionRecommendationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3300,6 +3348,7 @@ pub type GetRecommendationSummariesInputOperationRetryAlias = aws_http::AwsError
 impl GetRecommendationSummariesInput {
     /// Consumes the builder and constructs an Operation<[`GetRecommendationSummaries`](crate::operation::GetRecommendationSummaries)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3358,11 +3407,14 @@ impl GetRecommendationSummariesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3514,6 +3566,7 @@ pub type UpdateEnrollmentStatusInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl UpdateEnrollmentStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEnrollmentStatus`](crate::operation::UpdateEnrollmentStatus)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3572,11 +3625,14 @@ impl UpdateEnrollmentStatusInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3916,9 +3972,9 @@ pub struct GetEc2RecommendationProjectedMetricsInput {
     /// <p>The granularity, in seconds, of the projected metrics data points.</p>
     pub period: i32,
     /// <p>The timestamp of the first projected metrics data point to return.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of the last projected metrics data point to return.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object to specify the preferences for the Amazon EC2 recommendation
     /// projected metrics to return in the response.</p>
     pub recommendation_preferences: std::option::Option<crate::model::RecommendationPreferences>,
@@ -3938,11 +3994,11 @@ impl GetEc2RecommendationProjectedMetricsInput {
         self.period
     }
     /// <p>The timestamp of the first projected metrics data point to return.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp of the last projected metrics data point to return.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>An object to specify the preferences for the Amazon EC2 recommendation

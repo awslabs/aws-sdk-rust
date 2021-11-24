@@ -537,11 +537,11 @@ impl PutJobFailureResultOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutApprovalResultOutput {
     /// <p>The timestamp showing when the approval or rejection was submitted.</p>
-    pub approved_at: std::option::Option<aws_smithy_types::Instant>,
+    pub approved_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PutApprovalResultOutput {
     /// <p>The timestamp showing when the approval or rejection was submitted.</p>
-    pub fn approved_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn approved_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.approved_at.as_ref()
     }
 }
@@ -558,18 +558,18 @@ pub mod put_approval_result_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) approved_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) approved_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The timestamp showing when the approval or rejection was submitted.</p>
-        pub fn approved_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn approved_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.approved_at = Some(input);
             self
         }
         /// <p>The timestamp showing when the approval or rejection was submitted.</p>
         pub fn set_approved_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.approved_at = input;
             self
@@ -1433,9 +1433,9 @@ pub struct GetPipelineStateOutput {
     /// recent run details, whether the stage is disabled, and other data.</p>
     pub stage_states: std::option::Option<std::vec::Vec<crate::model::StageState>>,
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-    pub updated: std::option::Option<aws_smithy_types::Instant>,
+    pub updated: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetPipelineStateOutput {
     /// <p>The name of the pipeline for which you want to get the state.</p>
@@ -1456,11 +1456,11 @@ impl GetPipelineStateOutput {
         self.stage_states.as_deref()
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-    pub fn updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated.as_ref()
     }
 }
@@ -1484,8 +1484,8 @@ pub mod get_pipeline_state_output {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
         pub(crate) pipeline_version: std::option::Option<i32>,
         pub(crate) stage_states: std::option::Option<std::vec::Vec<crate::model::StageState>>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the pipeline for which you want to get the state.</p>
@@ -1541,27 +1541,27 @@ pub mod get_pipeline_state_output {
             self
         }
         /// <p>The date and time the pipeline was created, in timestamp format.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>The date and time the pipeline was created, in timestamp format.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
         }
         /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-        pub fn updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated = Some(input);
             self
         }
         /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
         pub fn set_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated = input;
             self

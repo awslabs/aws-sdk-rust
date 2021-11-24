@@ -226,11 +226,11 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestCustomDataIdentifierOutput {
-    /// <p>The number of instances of sample text that matched the detection criteria specified in the custom data identifier.</p>
+    /// <p>The number of occurrences of sample text that matched the criteria specified by the custom data identifier.</p>
     pub match_count: i32,
 }
 impl TestCustomDataIdentifierOutput {
-    /// <p>The number of instances of sample text that matched the detection criteria specified in the custom data identifier.</p>
+    /// <p>The number of occurrences of sample text that matched the criteria specified by the custom data identifier.</p>
     pub fn match_count(&self) -> i32 {
         self.match_count
     }
@@ -251,12 +251,12 @@ pub mod test_custom_data_identifier_output {
         pub(crate) match_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The number of instances of sample text that matched the detection criteria specified in the custom data identifier.</p>
+        /// <p>The number of occurrences of sample text that matched the criteria specified by the custom data identifier.</p>
         pub fn match_count(mut self, input: i32) -> Self {
             self.match_count = Some(input);
             self
         }
-        /// <p>The number of instances of sample text that matched the detection criteria specified in the custom data identifier.</p>
+        /// <p>The number of occurrences of sample text that matched the criteria specified by the custom data identifier.</p>
         pub fn set_match_count(mut self, input: std::option::Option<i32>) -> Self {
             self.match_count = input;
             self
@@ -1434,7 +1434,7 @@ pub struct GetMemberOutput {
     /// <p>The email address for the account.</p>
     pub email: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
-    pub invited_at: std::option::Option<aws_smithy_types::Instant>,
+    pub invited_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
     pub master_account_id: std::option::Option<std::string::String>,
     /// <p>The current status of the relationship between the account and the administrator account.</p>
@@ -1443,7 +1443,7 @@ pub struct GetMemberOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetMemberOutput {
     /// <p>The Amazon Web Services account ID for the account.</p>
@@ -1463,7 +1463,7 @@ impl GetMemberOutput {
         self.email.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
-    pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.invited_at.as_ref()
     }
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
@@ -1482,7 +1482,7 @@ impl GetMemberOutput {
         self.tags.as_ref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -1511,13 +1511,13 @@ pub mod get_member_output {
         pub(crate) administrator_account_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) email: std::option::Option<std::string::String>,
-        pub(crate) invited_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) invited_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) master_account_id: std::option::Option<std::string::String>,
         pub(crate) relationship_status: std::option::Option<crate::model::RelationshipStatus>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Web Services account ID for the account.</p>
@@ -1564,14 +1564,14 @@ pub mod get_member_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
-        pub fn invited_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn invited_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.invited_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
         pub fn set_invited_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.invited_at = input;
             self
@@ -1628,14 +1628,14 @@ pub mod get_member_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -1722,7 +1722,7 @@ impl GetMasterAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMacieSessionOutput {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie account was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The frequency with which Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
     pub finding_publishing_frequency: std::option::Option<crate::model::FindingPublishingFrequency>,
     /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
@@ -1730,11 +1730,11 @@ pub struct GetMacieSessionOutput {
     /// <p>The current status of the Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
     pub status: std::option::Option<crate::model::MacieStatus>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Macie account.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetMacieSessionOutput {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie account was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The frequency with which Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
@@ -1752,7 +1752,7 @@ impl GetMacieSessionOutput {
         self.status.as_ref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Macie account.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -1776,23 +1776,23 @@ pub mod get_macie_session_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) finding_publishing_frequency:
             std::option::Option<crate::model::FindingPublishingFrequency>,
         pub(crate) service_role: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::MacieStatus>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie account was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie account was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1834,14 +1834,14 @@ pub mod get_macie_session_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Macie account.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Macie account.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -2332,23 +2332,25 @@ pub struct GetCustomDataIdentifierOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
     pub deleted: bool,
     /// <p>The custom description of the custom data identifier.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the custom data identifier.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
+    /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
     pub ignore_words: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An array that lists specific character sequences (keywords), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
+    /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
     pub keywords: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern.</p>
+    /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression.</p>
     pub maximum_match_distance: i32,
     /// <p>The custom name of the custom data identifier.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
     pub regex: std::option::Option<std::string::String>,
+    /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+    pub severity_levels: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2359,7 +2361,7 @@ impl GetCustomDataIdentifierOutput {
         self.arn.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
@@ -2374,15 +2376,15 @@ impl GetCustomDataIdentifierOutput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
+    /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
     pub fn ignore_words(&self) -> std::option::Option<&[std::string::String]> {
         self.ignore_words.as_deref()
     }
-    /// <p>An array that lists specific character sequences (keywords), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
+    /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
     pub fn keywords(&self) -> std::option::Option<&[std::string::String]> {
         self.keywords.as_deref()
     }
-    /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern.</p>
+    /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression.</p>
     pub fn maximum_match_distance(&self) -> i32 {
         self.maximum_match_distance
     }
@@ -2393,6 +2395,10 @@ impl GetCustomDataIdentifierOutput {
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
     pub fn regex(&self) -> std::option::Option<&str> {
         self.regex.as_deref()
+    }
+    /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+    pub fn severity_levels(&self) -> std::option::Option<&[crate::model::SeverityLevel]> {
+        self.severity_levels.as_deref()
     }
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
     pub fn tags(
@@ -2415,6 +2421,7 @@ impl std::fmt::Debug for GetCustomDataIdentifierOutput {
         formatter.field("maximum_match_distance", &self.maximum_match_distance);
         formatter.field("name", &self.name);
         formatter.field("regex", &self.regex);
+        formatter.field("severity_levels", &self.severity_levels);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -2426,7 +2433,7 @@ pub mod get_custom_data_identifier_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deleted: std::option::Option<bool>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2435,6 +2442,7 @@ pub mod get_custom_data_identifier_output {
         pub(crate) maximum_match_distance: std::option::Option<i32>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) regex: std::option::Option<std::string::String>,
+        pub(crate) severity_levels: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -2451,14 +2459,14 @@ pub mod get_custom_data_identifier_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -2497,14 +2505,14 @@ pub mod get_custom_data_identifier_output {
         ///
         /// To override the contents of this collection use [`set_ignore_words`](Self::set_ignore_words).
         ///
-        /// <p>An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
+        /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
         pub fn ignore_words(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ignore_words.unwrap_or_default();
             v.push(input.into());
             self.ignore_words = Some(v);
             self
         }
-        /// <p>An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
+        /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
         pub fn set_ignore_words(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2516,14 +2524,14 @@ pub mod get_custom_data_identifier_output {
         ///
         /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
         ///
-        /// <p>An array that lists specific character sequences (keywords), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
+        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
         pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.keywords.unwrap_or_default();
             v.push(input.into());
             self.keywords = Some(v);
             self
         }
-        /// <p>An array that lists specific character sequences (keywords), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
+        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
         pub fn set_keywords(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2531,12 +2539,12 @@ pub mod get_custom_data_identifier_output {
             self.keywords = input;
             self
         }
-        /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern.</p>
+        /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression.</p>
         pub fn maximum_match_distance(mut self, input: i32) -> Self {
             self.maximum_match_distance = Some(input);
             self
         }
-        /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern.</p>
+        /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression.</p>
         pub fn set_maximum_match_distance(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_match_distance = input;
             self
@@ -2559,6 +2567,25 @@ pub mod get_custom_data_identifier_output {
         /// <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
         pub fn set_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.regex = input;
+            self
+        }
+        /// Appends an item to `severity_levels`.
+        ///
+        /// To override the contents of this collection use [`set_severity_levels`](Self::set_severity_levels).
+        ///
+        /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+        pub fn severity_levels(mut self, input: impl Into<crate::model::SeverityLevel>) -> Self {
+            let mut v = self.severity_levels.unwrap_or_default();
+            v.push(input.into());
+            self.severity_levels = Some(v);
+            self
+        }
+        /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+        pub fn set_severity_levels(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
+        ) -> Self {
+            self.severity_levels = input;
             self
         }
         /// Adds a key-value pair to `tags`.
@@ -2599,6 +2626,7 @@ pub mod get_custom_data_identifier_output {
                 maximum_match_distance: self.maximum_match_distance.unwrap_or_default(),
                 name: self.name,
                 regex: self.regex,
+                severity_levels: self.severity_levels,
                 tags: self.tags,
             }
         }
@@ -2697,7 +2725,7 @@ pub struct GetBucketStatisticsOutput {
     /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p> <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
     pub classifiable_size_in_bytes: i64,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the buckets.</p>
-    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total number of objects in the buckets.</p>
     pub object_count: i64,
     /// <p>The total storage size, in bytes, of the buckets.</p> <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
@@ -2748,7 +2776,7 @@ impl GetBucketStatisticsOutput {
         self.classifiable_size_in_bytes
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the buckets.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The total number of objects in the buckets.</p>
@@ -2833,7 +2861,7 @@ pub mod get_bucket_statistics_output {
             std::option::Option<crate::model::BucketCountBySharedAccessType>,
         pub(crate) classifiable_object_count: std::option::Option<i64>,
         pub(crate) classifiable_size_in_bytes: std::option::Option<i64>,
-        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) object_count: std::option::Option<i64>,
         pub(crate) size_in_bytes: std::option::Option<i64>,
         pub(crate) size_in_bytes_compressed: std::option::Option<i64>,
@@ -2940,14 +2968,14 @@ pub mod get_bucket_statistics_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the buckets.</p>
-        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the buckets.</p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -3389,7 +3417,7 @@ pub struct DescribeClassificationJobOutput {
     /// <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value is null if the job uses only managed data identifiers to analyze data.</p>
     pub custom_data_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The custom description of the job.</p>
@@ -3407,7 +3435,7 @@ pub struct DescribeClassificationJobOutput {
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
     pub last_run_error_status: std::option::Option<crate::model::LastRunErrorStatus>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started.</p>
-    pub last_run_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_run_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
     pub managed_data_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers.</p></li></ul> <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
@@ -3435,7 +3463,7 @@ impl DescribeClassificationJobOutput {
         self.client_token.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value is null if the job uses only managed data identifiers to analyze data.</p>
@@ -3471,7 +3499,7 @@ impl DescribeClassificationJobOutput {
         self.last_run_error_status.as_ref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started.</p>
-    pub fn last_run_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_run_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_run_time.as_ref()
     }
     /// <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
@@ -3558,7 +3586,7 @@ pub mod describe_classification_job_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) custom_data_identifier_ids:
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3568,7 +3596,7 @@ pub mod describe_classification_job_output {
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) job_type: std::option::Option<crate::model::JobType>,
         pub(crate) last_run_error_status: std::option::Option<crate::model::LastRunErrorStatus>,
-        pub(crate) last_run_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_run_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) managed_data_identifier_ids:
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) managed_data_identifier_selector:
@@ -3595,14 +3623,14 @@ pub mod describe_classification_job_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -3703,14 +3731,14 @@ pub mod describe_classification_job_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started.</p>
-        pub fn last_run_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_run_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_run_time = Some(input);
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started.</p>
         pub fn set_last_run_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_run_time = input;
             self

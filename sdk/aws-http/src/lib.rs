@@ -3,7 +3,20 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+//! Provides user agent and credentials middleware for the AWS SDK.
+
+#![warn(
+    missing_docs,
+    missing_crate_level_docs,
+    missing_debug_implementations,
+    rust_2018_idioms,
+    unreachable_pub
+)]
+
+/// Credentials middleware
 pub mod auth;
+
+/// User agent middleware
 pub mod user_agent;
 
 use aws_smithy_http::result::SdkError;
@@ -19,7 +32,7 @@ use std::time::Duration;
 /// 3. The code is checked against a predetermined list of throttling errors & transient error codes
 /// 4. The status code is checked against a predetermined list of status codes
 #[non_exhaustive]
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct AwsErrorRetryPolicy;
 
 const TRANSIENT_ERROR_STATUS_CODES: &[u16] = &[500, 502, 503, 504];

@@ -4,7 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFunctionEventInvokeConfigOutput {
     /// <p>The date and time that the configuration was last updated.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of times to retry when the function returns an error.</p>
@@ -37,7 +37,7 @@ pub struct UpdateFunctionEventInvokeConfigOutput {
 }
 impl UpdateFunctionEventInvokeConfigOutput {
     /// <p>The date and time that the configuration was last updated.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
@@ -98,7 +98,7 @@ pub mod update_function_event_invoke_config_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) function_arn: std::option::Option<std::string::String>,
         pub(crate) maximum_retry_attempts: std::option::Option<i32>,
         pub(crate) maximum_event_age_in_seconds: std::option::Option<i32>,
@@ -106,14 +106,14 @@ pub mod update_function_event_invoke_config_output {
     }
     impl Builder {
         /// <p>The date and time that the configuration was last updated.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date and time that the configuration was last updated.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -257,11 +257,11 @@ pub struct UpdateFunctionConfigurationOutput {
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed CMK.</p>
+    /// configured a customer managed key.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfigResponse>,
-    /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+    /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
     pub master_arn: std::option::Option<std::string::String>,
     /// <p>The latest updated revision of the function or alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
@@ -360,7 +360,7 @@ impl UpdateFunctionConfigurationOutput {
         self.environment.as_ref()
     }
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed CMK.</p>
+    /// configured a customer managed key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -368,7 +368,7 @@ impl UpdateFunctionConfigurationOutput {
     pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfigResponse> {
         self.tracing_config.as_ref()
     }
-    /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+    /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
     pub fn master_arn(&self) -> std::option::Option<&str> {
         self.master_arn.as_deref()
     }
@@ -688,13 +688,13 @@ pub mod update_function_configuration_output {
             self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed CMK.</p>
+        /// configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed CMK.</p>
+        /// configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -712,12 +712,12 @@ pub mod update_function_configuration_output {
             self.tracing_config = input;
             self
         }
-        /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+        /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn master_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_arn = Some(input.into());
             self
         }
-        /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+        /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn set_master_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.master_arn = input;
             self
@@ -1013,11 +1013,11 @@ pub struct UpdateFunctionCodeOutput {
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed CMK.</p>
+    /// configured a customer managed key.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfigResponse>,
-    /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+    /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
     pub master_arn: std::option::Option<std::string::String>,
     /// <p>The latest updated revision of the function or alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
@@ -1116,7 +1116,7 @@ impl UpdateFunctionCodeOutput {
         self.environment.as_ref()
     }
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed CMK.</p>
+    /// configured a customer managed key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -1124,7 +1124,7 @@ impl UpdateFunctionCodeOutput {
     pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfigResponse> {
         self.tracing_config.as_ref()
     }
-    /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+    /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
     pub fn master_arn(&self) -> std::option::Option<&str> {
         self.master_arn.as_deref()
     }
@@ -1444,13 +1444,13 @@ pub mod update_function_code_output {
             self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed CMK.</p>
+        /// configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed CMK.</p>
+        /// configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -1468,12 +1468,12 @@ pub mod update_function_code_output {
             self.tracing_config = input;
             self
         }
-        /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+        /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn master_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_arn = Some(input.into());
             self
         }
-        /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+        /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn set_master_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.master_arn = input;
             self
@@ -1745,7 +1745,7 @@ pub struct UpdateEventSourceMappingOutput {
     pub starting_position: std::option::Option<crate::model::EventSourcePosition>,
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
     /// reading.</p>
-    pub starting_position_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
@@ -1761,7 +1761,7 @@ pub struct UpdateEventSourceMappingOutput {
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The result of the last Lambda invocation of your function.</p>
     pub last_processing_result: std::option::Option<std::string::String>,
     /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
@@ -1807,7 +1807,7 @@ impl UpdateEventSourceMappingOutput {
     }
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
     /// reading.</p>
-    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.starting_position_timestamp.as_ref()
     }
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
@@ -1835,7 +1835,7 @@ impl UpdateEventSourceMappingOutput {
         self.function_arn.as_deref()
     }
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The result of the last Lambda invocation of your function.</p>
@@ -1955,13 +1955,13 @@ pub mod update_event_source_mapping_output {
     pub struct Builder {
         pub(crate) uuid: std::option::Option<std::string::String>,
         pub(crate) starting_position: std::option::Option<crate::model::EventSourcePosition>,
-        pub(crate) starting_position_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) batch_size: std::option::Option<i32>,
         pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
         pub(crate) parallelization_factor: std::option::Option<i32>,
         pub(crate) event_source_arn: std::option::Option<std::string::String>,
         pub(crate) function_arn: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_processing_result: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<std::string::String>,
         pub(crate) state_transition_reason: std::option::Option<std::string::String>,
@@ -2007,7 +2007,7 @@ pub mod update_event_source_mapping_output {
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
         /// reading.</p>
-        pub fn starting_position_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn starting_position_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.starting_position_timestamp = Some(input);
             self
         }
@@ -2015,7 +2015,7 @@ pub mod update_event_source_mapping_output {
         /// reading.</p>
         pub fn set_starting_position_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.starting_position_timestamp = input;
             self
@@ -2085,14 +2085,14 @@ pub mod update_event_source_mapping_output {
             self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -2854,7 +2854,7 @@ impl PutProvisionedConcurrencyConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutFunctionEventInvokeConfigOutput {
     /// <p>The date and time that the configuration was last updated.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of times to retry when the function returns an error.</p>
@@ -2887,7 +2887,7 @@ pub struct PutFunctionEventInvokeConfigOutput {
 }
 impl PutFunctionEventInvokeConfigOutput {
     /// <p>The date and time that the configuration was last updated.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
@@ -2948,7 +2948,7 @@ pub mod put_function_event_invoke_config_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) function_arn: std::option::Option<std::string::String>,
         pub(crate) maximum_retry_attempts: std::option::Option<i32>,
         pub(crate) maximum_event_age_in_seconds: std::option::Option<i32>,
@@ -2956,14 +2956,14 @@ pub mod put_function_event_invoke_config_output {
     }
     impl Builder {
         /// <p>The date and time that the configuration was last updated.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date and time that the configuration was last updated.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -3322,11 +3322,11 @@ pub struct PublishVersionOutput {
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed CMK.</p>
+    /// configured a customer managed key.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfigResponse>,
-    /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+    /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
     pub master_arn: std::option::Option<std::string::String>,
     /// <p>The latest updated revision of the function or alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
@@ -3425,7 +3425,7 @@ impl PublishVersionOutput {
         self.environment.as_ref()
     }
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed CMK.</p>
+    /// configured a customer managed key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -3433,7 +3433,7 @@ impl PublishVersionOutput {
     pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfigResponse> {
         self.tracing_config.as_ref()
     }
-    /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+    /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
     pub fn master_arn(&self) -> std::option::Option<&str> {
         self.master_arn.as_deref()
     }
@@ -3753,13 +3753,13 @@ pub mod publish_version_output {
             self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed CMK.</p>
+        /// configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed CMK.</p>
+        /// configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -3777,12 +3777,12 @@ pub mod publish_version_output {
             self.tracing_config = input;
             self
         }
-        /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+        /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn master_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_arn = Some(input.into());
             self
         }
-        /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+        /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn set_master_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.master_arn = input;
             self
@@ -6227,7 +6227,7 @@ impl GetLayerVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFunctionEventInvokeConfigOutput {
     /// <p>The date and time that the configuration was last updated.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of times to retry when the function returns an error.</p>
@@ -6260,7 +6260,7 @@ pub struct GetFunctionEventInvokeConfigOutput {
 }
 impl GetFunctionEventInvokeConfigOutput {
     /// <p>The date and time that the configuration was last updated.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
@@ -6321,7 +6321,7 @@ pub mod get_function_event_invoke_config_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) function_arn: std::option::Option<std::string::String>,
         pub(crate) maximum_retry_attempts: std::option::Option<i32>,
         pub(crate) maximum_event_age_in_seconds: std::option::Option<i32>,
@@ -6329,14 +6329,14 @@ pub mod get_function_event_invoke_config_output {
     }
     impl Builder {
         /// <p>The date and time that the configuration was last updated.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date and time that the configuration was last updated.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -6480,11 +6480,11 @@ pub struct GetFunctionConfigurationOutput {
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed CMK.</p>
+    /// configured a customer managed key.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfigResponse>,
-    /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+    /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
     pub master_arn: std::option::Option<std::string::String>,
     /// <p>The latest updated revision of the function or alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
@@ -6583,7 +6583,7 @@ impl GetFunctionConfigurationOutput {
         self.environment.as_ref()
     }
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed CMK.</p>
+    /// configured a customer managed key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -6591,7 +6591,7 @@ impl GetFunctionConfigurationOutput {
     pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfigResponse> {
         self.tracing_config.as_ref()
     }
-    /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+    /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
     pub fn master_arn(&self) -> std::option::Option<&str> {
         self.master_arn.as_deref()
     }
@@ -6911,13 +6911,13 @@ pub mod get_function_configuration_output {
             self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed CMK.</p>
+        /// configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed CMK.</p>
+        /// configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -6935,12 +6935,12 @@ pub mod get_function_configuration_output {
             self.tracing_config = input;
             self
         }
-        /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+        /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn master_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_arn = Some(input.into());
             self
         }
-        /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+        /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn set_master_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.master_arn = input;
             self
@@ -7572,7 +7572,7 @@ pub struct GetEventSourceMappingOutput {
     pub starting_position: std::option::Option<crate::model::EventSourcePosition>,
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
     /// reading.</p>
-    pub starting_position_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
@@ -7588,7 +7588,7 @@ pub struct GetEventSourceMappingOutput {
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The result of the last Lambda invocation of your function.</p>
     pub last_processing_result: std::option::Option<std::string::String>,
     /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
@@ -7634,7 +7634,7 @@ impl GetEventSourceMappingOutput {
     }
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
     /// reading.</p>
-    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.starting_position_timestamp.as_ref()
     }
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
@@ -7662,7 +7662,7 @@ impl GetEventSourceMappingOutput {
         self.function_arn.as_deref()
     }
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The result of the last Lambda invocation of your function.</p>
@@ -7782,13 +7782,13 @@ pub mod get_event_source_mapping_output {
     pub struct Builder {
         pub(crate) uuid: std::option::Option<std::string::String>,
         pub(crate) starting_position: std::option::Option<crate::model::EventSourcePosition>,
-        pub(crate) starting_position_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) batch_size: std::option::Option<i32>,
         pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
         pub(crate) parallelization_factor: std::option::Option<i32>,
         pub(crate) event_source_arn: std::option::Option<std::string::String>,
         pub(crate) function_arn: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_processing_result: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<std::string::String>,
         pub(crate) state_transition_reason: std::option::Option<std::string::String>,
@@ -7834,7 +7834,7 @@ pub mod get_event_source_mapping_output {
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
         /// reading.</p>
-        pub fn starting_position_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn starting_position_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.starting_position_timestamp = Some(input);
             self
         }
@@ -7842,7 +7842,7 @@ pub mod get_event_source_mapping_output {
         /// reading.</p>
         pub fn set_starting_position_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.starting_position_timestamp = input;
             self
@@ -7912,14 +7912,14 @@ pub mod get_event_source_mapping_output {
             self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -8647,7 +8647,7 @@ pub struct DeleteEventSourceMappingOutput {
     pub starting_position: std::option::Option<crate::model::EventSourcePosition>,
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
     /// reading.</p>
-    pub starting_position_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
@@ -8663,7 +8663,7 @@ pub struct DeleteEventSourceMappingOutput {
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The result of the last Lambda invocation of your function.</p>
     pub last_processing_result: std::option::Option<std::string::String>,
     /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
@@ -8709,7 +8709,7 @@ impl DeleteEventSourceMappingOutput {
     }
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
     /// reading.</p>
-    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.starting_position_timestamp.as_ref()
     }
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
@@ -8737,7 +8737,7 @@ impl DeleteEventSourceMappingOutput {
         self.function_arn.as_deref()
     }
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The result of the last Lambda invocation of your function.</p>
@@ -8857,13 +8857,13 @@ pub mod delete_event_source_mapping_output {
     pub struct Builder {
         pub(crate) uuid: std::option::Option<std::string::String>,
         pub(crate) starting_position: std::option::Option<crate::model::EventSourcePosition>,
-        pub(crate) starting_position_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) batch_size: std::option::Option<i32>,
         pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
         pub(crate) parallelization_factor: std::option::Option<i32>,
         pub(crate) event_source_arn: std::option::Option<std::string::String>,
         pub(crate) function_arn: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_processing_result: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<std::string::String>,
         pub(crate) state_transition_reason: std::option::Option<std::string::String>,
@@ -8909,7 +8909,7 @@ pub mod delete_event_source_mapping_output {
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
         /// reading.</p>
-        pub fn starting_position_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn starting_position_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.starting_position_timestamp = Some(input);
             self
         }
@@ -8917,7 +8917,7 @@ pub mod delete_event_source_mapping_output {
         /// reading.</p>
         pub fn set_starting_position_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.starting_position_timestamp = input;
             self
@@ -8987,14 +8987,14 @@ pub mod delete_event_source_mapping_output {
             self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -9331,11 +9331,11 @@ pub struct CreateFunctionOutput {
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed CMK.</p>
+    /// configured a customer managed key.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfigResponse>,
-    /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+    /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
     pub master_arn: std::option::Option<std::string::String>,
     /// <p>The latest updated revision of the function or alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
@@ -9434,7 +9434,7 @@ impl CreateFunctionOutput {
         self.environment.as_ref()
     }
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed CMK.</p>
+    /// configured a customer managed key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -9442,7 +9442,7 @@ impl CreateFunctionOutput {
     pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfigResponse> {
         self.tracing_config.as_ref()
     }
-    /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+    /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
     pub fn master_arn(&self) -> std::option::Option<&str> {
         self.master_arn.as_deref()
     }
@@ -9762,13 +9762,13 @@ pub mod create_function_output {
             self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed CMK.</p>
+        /// configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed CMK.</p>
+        /// configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -9786,12 +9786,12 @@ pub mod create_function_output {
             self.tracing_config = input;
             self
         }
-        /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+        /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn master_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_arn = Some(input.into());
             self
         }
-        /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+        /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn set_master_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.master_arn = input;
             self
@@ -10063,7 +10063,7 @@ pub struct CreateEventSourceMappingOutput {
     pub starting_position: std::option::Option<crate::model::EventSourcePosition>,
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
     /// reading.</p>
-    pub starting_position_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
@@ -10079,7 +10079,7 @@ pub struct CreateEventSourceMappingOutput {
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The result of the last Lambda invocation of your function.</p>
     pub last_processing_result: std::option::Option<std::string::String>,
     /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
@@ -10125,7 +10125,7 @@ impl CreateEventSourceMappingOutput {
     }
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
     /// reading.</p>
-    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.starting_position_timestamp.as_ref()
     }
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
@@ -10153,7 +10153,7 @@ impl CreateEventSourceMappingOutput {
         self.function_arn.as_deref()
     }
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The result of the last Lambda invocation of your function.</p>
@@ -10273,13 +10273,13 @@ pub mod create_event_source_mapping_output {
     pub struct Builder {
         pub(crate) uuid: std::option::Option<std::string::String>,
         pub(crate) starting_position: std::option::Option<crate::model::EventSourcePosition>,
-        pub(crate) starting_position_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) batch_size: std::option::Option<i32>,
         pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
         pub(crate) parallelization_factor: std::option::Option<i32>,
         pub(crate) event_source_arn: std::option::Option<std::string::String>,
         pub(crate) function_arn: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_processing_result: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<std::string::String>,
         pub(crate) state_transition_reason: std::option::Option<std::string::String>,
@@ -10325,7 +10325,7 @@ pub mod create_event_source_mapping_output {
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
         /// reading.</p>
-        pub fn starting_position_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn starting_position_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.starting_position_timestamp = Some(input);
             self
         }
@@ -10333,7 +10333,7 @@ pub mod create_event_source_mapping_output {
         /// reading.</p>
         pub fn set_starting_position_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.starting_position_timestamp = input;
             self
@@ -10403,14 +10403,14 @@ pub mod create_event_source_mapping_output {
             self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self

@@ -114,9 +114,9 @@ pub struct StatementData {
     /// <p>The name of the SQL statement. </p>
     pub statement_name: std::option::Option<std::string::String>,
     /// <p>The date and time (UTC) the statement was created. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (UTC) that the statement metadata was last updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The parameters used in a SQL statement.</p>
     pub query_parameters: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
     /// <p>A value that indicates whether the statement is a batch query request.</p>
@@ -150,11 +150,11 @@ impl StatementData {
         self.statement_name.as_deref()
     }
     /// <p>The date and time (UTC) the statement was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time (UTC) that the statement metadata was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The parameters used in a SQL statement.</p>
@@ -194,8 +194,8 @@ pub mod statement_data {
         pub(crate) secret_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatusString>,
         pub(crate) statement_name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) query_parameters: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
         pub(crate) is_batch_statement: std::option::Option<bool>,
     }
@@ -280,27 +280,27 @@ pub mod statement_data {
             self
         }
         /// <p>The date and time (UTC) the statement was created. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time (UTC) the statement was created. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The date and time (UTC) that the statement metadata was last updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time (UTC) that the statement metadata was last updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -842,9 +842,9 @@ impl Field {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_blob_value(&self) -> std::result::Result<&aws_smithy_types::Blob, &Self> {
         if let Field::BlobValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`BlobValue`](crate::model::Field::BlobValue).
@@ -855,9 +855,9 @@ impl Field {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
         if let Field::BooleanValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`BooleanValue`](crate::model::Field::BooleanValue).
@@ -868,9 +868,9 @@ impl Field {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
         if let Field::DoubleValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`DoubleValue`](crate::model::Field::DoubleValue).
@@ -881,9 +881,9 @@ impl Field {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_is_null(&self) -> std::result::Result<&bool, &Self> {
         if let Field::IsNull(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`IsNull`](crate::model::Field::IsNull).
@@ -894,9 +894,9 @@ impl Field {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_long_value(&self) -> std::result::Result<&i64, &Self> {
         if let Field::LongValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`LongValue`](crate::model::Field::LongValue).
@@ -907,9 +907,9 @@ impl Field {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let Field::StringValue(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`StringValue`](crate::model::Field::StringValue).
@@ -939,9 +939,9 @@ pub struct SubStatementData {
     /// </p>
     pub status: std::option::Option<crate::model::StatementStatusString>,
     /// <p>The date and time (UTC) the statement was created. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (UTC) that the statement metadata was last updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The SQL statement text.</p>
     pub query_string: std::option::Option<std::string::String>,
     /// <p>Either the number of rows returned from the SQL statement or the number of rows affected.
@@ -977,11 +977,11 @@ impl SubStatementData {
         self.status.as_ref()
     }
     /// <p>The date and time (UTC) the statement was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time (UTC) that the statement metadata was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The SQL statement text.</p>
@@ -1034,8 +1034,8 @@ pub mod sub_statement_data {
         pub(crate) duration: std::option::Option<i64>,
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatementStatusString>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) query_string: std::option::Option<std::string::String>,
         pub(crate) result_rows: std::option::Option<i64>,
         pub(crate) result_size: std::option::Option<i64>,
@@ -1095,27 +1095,27 @@ pub mod sub_statement_data {
             self
         }
         /// <p>The date and time (UTC) the statement was created. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time (UTC) the statement was created. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The date and time (UTC) that the statement metadata was last updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time (UTC) that the statement metadata was last updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self

@@ -12,7 +12,7 @@ pub struct UpdateReportPlanOutput {
     /// Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateReportPlanOutput {
     /// <p>The unique name of the report plan.</p>
@@ -28,7 +28,7 @@ impl UpdateReportPlanOutput {
     /// Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -49,7 +49,7 @@ pub mod update_report_plan_output {
     pub struct Builder {
         pub(crate) report_plan_name: std::option::Option<std::string::String>,
         pub(crate) report_plan_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique name of the report plan.</p>
@@ -84,7 +84,7 @@ pub mod update_report_plan_output {
         /// Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -94,7 +94,7 @@ pub mod update_report_plan_output {
         /// AM.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -353,7 +353,7 @@ pub struct UpdateFrameworkOutput {
     /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateFrameworkOutput {
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with
@@ -370,7 +370,7 @@ impl UpdateFrameworkOutput {
     /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -391,7 +391,7 @@ pub mod update_framework_output {
     pub struct Builder {
         pub(crate) framework_name: std::option::Option<std::string::String>,
         pub(crate) framework_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with
@@ -428,7 +428,7 @@ pub mod update_framework_output {
         /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -438,7 +438,7 @@ pub mod update_framework_output {
         /// AM.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -473,7 +473,7 @@ pub struct UpdateBackupPlanOutput {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
     /// long. Version Ids cannot be edited.</p>
     pub version_id: std::option::Option<std::string::String>,
@@ -495,7 +495,7 @@ impl UpdateBackupPlanOutput {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
@@ -529,7 +529,7 @@ pub mod update_backup_plan_output {
     pub struct Builder {
         pub(crate) backup_plan_id: std::option::Option<std::string::String>,
         pub(crate) backup_plan_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) advanced_backup_settings:
             std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
@@ -567,7 +567,7 @@ pub mod update_backup_plan_output {
         /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -577,7 +577,7 @@ pub mod update_backup_plan_output {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -853,7 +853,7 @@ pub struct StartCopyJobOutput {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartCopyJobOutput {
     /// <p>Uniquely identifies a copy job.</p>
@@ -864,7 +864,7 @@ impl StartCopyJobOutput {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -883,7 +883,7 @@ pub mod start_copy_job_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) copy_job_id: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Uniquely identifies a copy job.</p>
@@ -900,7 +900,7 @@ pub mod start_copy_job_output {
         /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -910,7 +910,7 @@ pub mod start_copy_job_output {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -944,7 +944,7 @@ pub struct StartBackupJobOutput {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartBackupJobOutput {
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
@@ -960,7 +960,7 @@ impl StartBackupJobOutput {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -981,7 +981,7 @@ pub mod start_backup_job_output {
     pub struct Builder {
         pub(crate) backup_job_id: std::option::Option<std::string::String>,
         pub(crate) recovery_point_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
@@ -1016,7 +1016,7 @@ pub mod start_backup_job_output {
         /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -1026,7 +1026,7 @@ pub mod start_backup_job_output {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -3275,7 +3275,7 @@ pub struct GetBackupSelectionOutput {
     /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried
     /// without the risk of running the operation twice.</p>
     pub creator_request_id: std::option::Option<std::string::String>,
@@ -3298,7 +3298,7 @@ impl GetBackupSelectionOutput {
     /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried
@@ -3327,7 +3327,7 @@ pub mod get_backup_selection_output {
         pub(crate) backup_selection: std::option::Option<crate::model::BackupSelection>,
         pub(crate) selection_id: std::option::Option<std::string::String>,
         pub(crate) backup_plan_id: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3373,7 +3373,7 @@ pub mod get_backup_selection_output {
         /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -3383,7 +3383,7 @@ pub mod get_backup_selection_output {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -3566,17 +3566,17 @@ pub struct GetBackupPlanOutput {
     /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that a backup plan is deleted, in Unix format and Coordinated
     /// Universal Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub deletion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub deletion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time a job to back up resources was run with this backup plan. A date and time,
     /// in Unix format and Coordinated Universal Time (UTC). The value of
     /// <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value
     /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub last_execution_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_execution_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains a list of <code>BackupOptions</code> for each resource type. The list is
     /// populated only if the advanced option is set for the backup plan.</p>
     pub advanced_backup_settings:
@@ -3611,21 +3611,21 @@ impl GetBackupPlanOutput {
     /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time that a backup plan is deleted, in Unix format and Coordinated
     /// Universal Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deletion_date.as_ref()
     }
     /// <p>The last time a job to back up resources was run with this backup plan. A date and time,
     /// in Unix format and Coordinated Universal Time (UTC). The value of
     /// <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value
     /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn last_execution_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_execution_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_execution_date.as_ref()
     }
     /// <p>Contains a list of <code>BackupOptions</code> for each resource type. The list is
@@ -3662,9 +3662,9 @@ pub mod get_backup_plan_output {
         pub(crate) backup_plan_arn: std::option::Option<std::string::String>,
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) deletion_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_execution_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deletion_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_execution_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) advanced_backup_settings:
             std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
     }
@@ -3743,7 +3743,7 @@ pub mod get_backup_plan_output {
         /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -3753,7 +3753,7 @@ pub mod get_backup_plan_output {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -3762,7 +3762,7 @@ pub mod get_backup_plan_output {
         /// Universal Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn deletion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn deletion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deletion_date = Some(input);
             self
         }
@@ -3772,7 +3772,7 @@ pub mod get_backup_plan_output {
         /// AM.</p>
         pub fn set_deletion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.deletion_date = input;
             self
@@ -3781,7 +3781,7 @@ pub mod get_backup_plan_output {
         /// in Unix format and Coordinated Universal Time (UTC). The value of
         /// <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value
         /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn last_execution_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_execution_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_execution_date = Some(input);
             self
         }
@@ -3791,7 +3791,7 @@ pub mod get_backup_plan_output {
         /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_last_execution_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_execution_date = input;
             self
@@ -3965,12 +3965,12 @@ pub struct DescribeRestoreJobOutput {
     /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that a job to restore a recovery point is completed, in Unix format
     /// and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate
     /// to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub completion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Status code specifying the state of the job that is initiated by Backup to
     /// restore a recovery point.</p>
     pub status: std::option::Option<crate::model::RestoreJobStatus>,
@@ -4012,14 +4012,14 @@ impl DescribeRestoreJobOutput {
     /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time that a job to restore a recovery point is completed, in Unix format
     /// and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate
     /// to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_date.as_ref()
     }
     /// <p>Status code specifying the state of the job that is initiated by Backup to
@@ -4092,8 +4092,8 @@ pub mod describe_restore_job_output {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) restore_job_id: std::option::Option<std::string::String>,
         pub(crate) recovery_point_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completion_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::RestoreJobStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) percent_done: std::option::Option<std::string::String>,
@@ -4146,7 +4146,7 @@ pub mod describe_restore_job_output {
         /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -4156,7 +4156,7 @@ pub mod describe_restore_job_output {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -4165,7 +4165,7 @@ pub mod describe_restore_job_output {
         /// and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate
         /// to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
         /// 12:11:30.087 AM.</p>
-        pub fn completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_date = Some(input);
             self
         }
@@ -4175,7 +4175,7 @@ pub mod describe_restore_job_output {
         /// 12:11:30.087 AM.</p>
         pub fn set_completion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completion_date = input;
             self
@@ -4574,12 +4574,12 @@ pub struct DescribeRecoveryPointOutput {
     /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that a job to create a recovery point is completed, in Unix format and
     /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub completion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size, in bytes, of a backup.</p>
     pub backup_size_in_bytes: std::option::Option<i64>,
     /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and
@@ -4607,7 +4607,7 @@ pub struct DescribeRecoveryPointOutput {
     /// Coordinated Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub last_restore_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_restore_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeRecoveryPointOutput {
     /// <p>An ARN that uniquely identifies a recovery point; for example,
@@ -4678,14 +4678,14 @@ impl DescribeRecoveryPointOutput {
     /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time that a job to create a recovery point is completed, in Unix format and
     /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_date.as_ref()
     }
     /// <p>The size, in bytes, of a backup.</p>
@@ -4727,7 +4727,7 @@ impl DescribeRecoveryPointOutput {
     /// Coordinated Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub fn last_restore_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_restore_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_restore_time.as_ref()
     }
 }
@@ -4772,15 +4772,15 @@ pub mod describe_recovery_point_output {
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RecoveryPointStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completion_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) backup_size_in_bytes: std::option::Option<i64>,
         pub(crate) calculated_lifecycle: std::option::Option<crate::model::CalculatedLifecycle>,
         pub(crate) lifecycle: std::option::Option<crate::model::Lifecycle>,
         pub(crate) encryption_key_arn: std::option::Option<std::string::String>,
         pub(crate) is_encrypted: std::option::Option<bool>,
         pub(crate) storage_class: std::option::Option<crate::model::StorageClass>,
-        pub(crate) last_restore_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_restore_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>An ARN that uniquely identifies a recovery point; for example,
@@ -4959,7 +4959,7 @@ pub mod describe_recovery_point_output {
         /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -4969,7 +4969,7 @@ pub mod describe_recovery_point_output {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -4978,7 +4978,7 @@ pub mod describe_recovery_point_output {
         /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
         /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
         /// 12:11:30.087 AM.</p>
-        pub fn completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_date = Some(input);
             self
         }
@@ -4988,7 +4988,7 @@ pub mod describe_recovery_point_output {
         /// 12:11:30.087 AM.</p>
         pub fn set_completion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completion_date = input;
             self
@@ -5091,7 +5091,7 @@ pub mod describe_recovery_point_output {
         /// Coordinated Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to
         /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
         /// 12:11:30.087 AM.</p>
-        pub fn last_restore_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_restore_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_restore_time = Some(input);
             self
         }
@@ -5101,7 +5101,7 @@ pub mod describe_recovery_point_output {
         /// 12:11:30.087 AM.</p>
         pub fn set_last_restore_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_restore_time = input;
             self
@@ -5153,7 +5153,7 @@ pub struct DescribeProtectedResourceOutput {
     /// Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub last_backup_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_backup_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeProtectedResourceOutput {
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the
@@ -5170,7 +5170,7 @@ impl DescribeProtectedResourceOutput {
     /// Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn last_backup_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_backup_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_backup_time.as_ref()
     }
 }
@@ -5191,7 +5191,7 @@ pub mod describe_protected_resource_output {
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
-        pub(crate) last_backup_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_backup_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the
@@ -5225,7 +5225,7 @@ pub mod describe_protected_resource_output {
         /// Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn last_backup_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_backup_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_backup_time = Some(input);
             self
         }
@@ -5235,7 +5235,7 @@ pub mod describe_protected_resource_output {
         /// AM.</p>
         pub fn set_last_backup_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_backup_time = input;
             self
@@ -5268,7 +5268,7 @@ pub struct DescribeGlobalSettingsOutput {
     /// updated. This update is in Unix format and Coordinated Universal Time (UTC). The value of
     /// <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value
     /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeGlobalSettingsOutput {
     /// <p>The status of the flag <code>isCrossAccountBackupEnabled</code>.</p>
@@ -5282,7 +5282,7 @@ impl DescribeGlobalSettingsOutput {
     /// updated. This update is in Unix format and Coordinated Universal Time (UTC). The value of
     /// <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value
     /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -5303,7 +5303,7 @@ pub mod describe_global_settings_output {
         pub(crate) global_settings: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// Adds a key-value pair to `global_settings`.
@@ -5335,7 +5335,7 @@ pub mod describe_global_settings_output {
         /// updated. This update is in Unix format and Coordinated Universal Time (UTC). The value of
         /// <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value
         /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
@@ -5345,7 +5345,7 @@ pub mod describe_global_settings_output {
         /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -5384,7 +5384,7 @@ pub struct DescribeFrameworkOutput {
     /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The deployment status of a framework. The statuses are:</p>
     /// <p>
     /// <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED |
@@ -5445,7 +5445,7 @@ impl DescribeFrameworkOutput {
     /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The deployment status of a framework. The statuses are:</p>
@@ -5516,7 +5516,7 @@ pub mod describe_framework_output {
         pub(crate) framework_description: std::option::Option<std::string::String>,
         pub(crate) framework_controls:
             std::option::Option<std::vec::Vec<crate::model::FrameworkControl>>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deployment_status: std::option::Option<std::string::String>,
         pub(crate) framework_status: std::option::Option<std::string::String>,
         pub(crate) idempotency_token: std::option::Option<std::string::String>,
@@ -5591,7 +5591,7 @@ pub mod describe_framework_output {
         /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -5601,7 +5601,7 @@ pub mod describe_framework_output {
         /// AM.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -5799,7 +5799,7 @@ pub struct DescribeBackupVaultOutput {
     /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried
     /// without the risk of running the operation twice.</p>
     pub creator_request_id: std::option::Option<std::string::String>,
@@ -5838,7 +5838,7 @@ pub struct DescribeBackupVaultOutput {
     /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub lock_date: std::option::Option<aws_smithy_types::Instant>,
+    pub lock_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeBackupVaultOutput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -5861,7 +5861,7 @@ impl DescribeBackupVaultOutput {
     /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried
@@ -5912,7 +5912,7 @@ impl DescribeBackupVaultOutput {
     /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub fn lock_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn lock_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.lock_date.as_ref()
     }
 }
@@ -5941,13 +5941,13 @@ pub mod describe_backup_vault_output {
         pub(crate) backup_vault_name: std::option::Option<std::string::String>,
         pub(crate) backup_vault_arn: std::option::Option<std::string::String>,
         pub(crate) encryption_key_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
         pub(crate) number_of_recovery_points: std::option::Option<i64>,
         pub(crate) locked: std::option::Option<bool>,
         pub(crate) min_retention_days: std::option::Option<i64>,
         pub(crate) max_retention_days: std::option::Option<i64>,
-        pub(crate) lock_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) lock_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -6001,7 +6001,7 @@ pub mod describe_backup_vault_output {
         /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -6011,7 +6011,7 @@ pub mod describe_backup_vault_output {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -6117,7 +6117,7 @@ pub mod describe_backup_vault_output {
         /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to
         /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
         /// 12:11:30.087 AM.</p>
-        pub fn lock_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn lock_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.lock_date = Some(input);
             self
         }
@@ -6131,7 +6131,7 @@ pub mod describe_backup_vault_output {
         /// 12:11:30.087 AM.</p>
         pub fn set_lock_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.lock_date = input;
             self
@@ -6186,12 +6186,12 @@ pub struct DescribeBackupJobOutput {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that a job to create a backup job is completed, in Unix format and
     /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub completion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of a resource recovery point.</p>
     pub state: std::option::Option<crate::model::BackupJobState>,
     /// <p>A detailed message explaining the status of the job to back up a resource.</p>
@@ -6217,14 +6217,14 @@ pub struct DescribeBackupJobOutput {
     /// format and Coordinated Universal Time (UTC). The value of
     /// <code>ExpectedCompletionDate</code> is accurate to milliseconds. For example, the value
     /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub expected_completion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub expected_completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the time in Unix format and Coordinated Universal Time (UTC) when a backup job
     /// must be started before it is canceled. The value is calculated by adding the start window
     /// to the scheduled time. So if the scheduled time were 6:00 PM and the start window is 2
     /// hours, the <code>StartBy</code> time would be 8:00 PM on the date specified. The value of
     /// <code>StartBy</code> is accurate to milliseconds. For example, the value 1516925490.087
     /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub start_by: std::option::Option<aws_smithy_types::Instant>,
+    pub start_by: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Represents the options specified as part of backup plan or on-demand backup job.</p>
     pub backup_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -6269,14 +6269,14 @@ impl DescribeBackupJobOutput {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time that a job to create a backup job is completed, in Unix format and
     /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_date.as_ref()
     }
     /// <p>The current state of a resource recovery point.</p>
@@ -6320,7 +6320,7 @@ impl DescribeBackupJobOutput {
     /// format and Coordinated Universal Time (UTC). The value of
     /// <code>ExpectedCompletionDate</code> is accurate to milliseconds. For example, the value
     /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn expected_completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expected_completion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expected_completion_date.as_ref()
     }
     /// <p>Specifies the time in Unix format and Coordinated Universal Time (UTC) when a backup job
@@ -6329,7 +6329,7 @@ impl DescribeBackupJobOutput {
     /// hours, the <code>StartBy</code> time would be 8:00 PM on the date specified. The value of
     /// <code>StartBy</code> is accurate to milliseconds. For example, the value 1516925490.087
     /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn start_by(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_by(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_by.as_ref()
     }
     /// <p>Represents the options specified as part of backup plan or on-demand backup job.</p>
@@ -6385,8 +6385,8 @@ pub mod describe_backup_job_output {
         pub(crate) backup_vault_arn: std::option::Option<std::string::String>,
         pub(crate) recovery_point_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completion_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state: std::option::Option<crate::model::BackupJobState>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) percent_done: std::option::Option<std::string::String>,
@@ -6395,8 +6395,8 @@ pub mod describe_backup_job_output {
         pub(crate) created_by: std::option::Option<crate::model::RecoveryPointCreator>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) bytes_transferred: std::option::Option<i64>,
-        pub(crate) expected_completion_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) start_by: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expected_completion_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) start_by: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) backup_options: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -6491,7 +6491,7 @@ pub mod describe_backup_job_output {
         /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -6501,7 +6501,7 @@ pub mod describe_backup_job_output {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -6510,7 +6510,7 @@ pub mod describe_backup_job_output {
         /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
         /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
         /// 12:11:30.087 AM.</p>
-        pub fn completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_date = Some(input);
             self
         }
@@ -6520,7 +6520,7 @@ pub mod describe_backup_job_output {
         /// 12:11:30.087 AM.</p>
         pub fn set_completion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completion_date = input;
             self
@@ -6631,7 +6631,7 @@ pub mod describe_backup_job_output {
         /// format and Coordinated Universal Time (UTC). The value of
         /// <code>ExpectedCompletionDate</code> is accurate to milliseconds. For example, the value
         /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn expected_completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expected_completion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expected_completion_date = Some(input);
             self
         }
@@ -6641,7 +6641,7 @@ pub mod describe_backup_job_output {
         /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_expected_completion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expected_completion_date = input;
             self
@@ -6652,7 +6652,7 @@ pub mod describe_backup_job_output {
         /// hours, the <code>StartBy</code> time would be 8:00 PM on the date specified. The value of
         /// <code>StartBy</code> is accurate to milliseconds. For example, the value 1516925490.087
         /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn start_by(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_by(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_by = Some(input);
             self
         }
@@ -6664,7 +6664,7 @@ pub mod describe_backup_job_output {
         /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_start_by(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_by = input;
             self
@@ -6997,7 +6997,7 @@ pub struct DeleteBackupPlanOutput {
     /// Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub deletion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub deletion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
     /// long. Version IDs cannot be edited.</p>
     pub version_id: std::option::Option<std::string::String>,
@@ -7016,7 +7016,7 @@ impl DeleteBackupPlanOutput {
     /// Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deletion_date.as_ref()
     }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
@@ -7043,7 +7043,7 @@ pub mod delete_backup_plan_output {
     pub struct Builder {
         pub(crate) backup_plan_id: std::option::Option<std::string::String>,
         pub(crate) backup_plan_arn: std::option::Option<std::string::String>,
-        pub(crate) deletion_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) deletion_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) version_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7079,7 +7079,7 @@ pub mod delete_backup_plan_output {
         /// Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn deletion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn deletion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deletion_date = Some(input);
             self
         }
@@ -7089,7 +7089,7 @@ pub mod delete_backup_plan_output {
         /// AM.</p>
         pub fn set_deletion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.deletion_date = input;
             self
@@ -7137,7 +7137,7 @@ pub struct CreateReportPlanOutput {
     /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateReportPlanOutput {
     /// <p>The unique name of the report plan.</p>
@@ -7153,7 +7153,7 @@ impl CreateReportPlanOutput {
     /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -7174,7 +7174,7 @@ pub mod create_report_plan_output {
     pub struct Builder {
         pub(crate) report_plan_name: std::option::Option<std::string::String>,
         pub(crate) report_plan_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique name of the report plan.</p>
@@ -7209,7 +7209,7 @@ pub mod create_report_plan_output {
         /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -7219,7 +7219,7 @@ pub mod create_report_plan_output {
         /// AM.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -7347,7 +7347,7 @@ pub struct CreateBackupVaultOutput {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateBackupVaultOutput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -7365,7 +7365,7 @@ impl CreateBackupVaultOutput {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -7386,7 +7386,7 @@ pub mod create_backup_vault_output {
     pub struct Builder {
         pub(crate) backup_vault_name: std::option::Option<std::string::String>,
         pub(crate) backup_vault_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -7425,7 +7425,7 @@ pub mod create_backup_vault_output {
         /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -7435,7 +7435,7 @@ pub mod create_backup_vault_output {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -7470,7 +7470,7 @@ pub struct CreateBackupSelectionOutput {
     /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateBackupSelectionOutput {
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
@@ -7486,7 +7486,7 @@ impl CreateBackupSelectionOutput {
     /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -7507,7 +7507,7 @@ pub mod create_backup_selection_output {
     pub struct Builder {
         pub(crate) selection_id: std::option::Option<std::string::String>,
         pub(crate) backup_plan_id: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
@@ -7539,7 +7539,7 @@ pub mod create_backup_selection_output {
         /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -7549,7 +7549,7 @@ pub mod create_backup_selection_output {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -7584,7 +7584,7 @@ pub struct CreateBackupPlanOutput {
     /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
     /// long. They cannot be edited.</p>
     pub version_id: std::option::Option<std::string::String>,
@@ -7607,7 +7607,7 @@ impl CreateBackupPlanOutput {
     /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
@@ -7642,7 +7642,7 @@ pub mod create_backup_plan_output {
     pub struct Builder {
         pub(crate) backup_plan_id: std::option::Option<std::string::String>,
         pub(crate) backup_plan_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) advanced_backup_settings:
             std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
@@ -7680,7 +7680,7 @@ pub mod create_backup_plan_output {
         /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -7690,7 +7690,7 @@ pub mod create_backup_plan_output {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self

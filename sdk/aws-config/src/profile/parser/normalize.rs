@@ -112,7 +112,7 @@ pub fn merge_in(base: &mut ProfileSet, raw_profile_set: RawProfileSet, kind: Fil
 
 fn merge_into_base<'a>(target: &mut Profile, profile: HashMap<&str, Cow<'a, str>>) {
     for (k, v) in profile {
-        match validate_identifier(&k) {
+        match validate_identifier(k) {
             Ok(k) => {
                 target
                     .properties
@@ -127,11 +127,16 @@ fn merge_into_base<'a>(target: &mut Profile, profile: HashMap<&str, Cow<'a, str>
 
 /// Validate that a string is a valid identifier
 ///
-/// Identifiers must match `[A-Za-z0-9\-_]+`
+/// Identifiers must match `[A-Za-z0-9_\-/.%@:\+]+`
 fn validate_identifier(input: &str) -> Result<&str, ()> {
     input
         .chars()
-        .all(|ch| ch.is_ascii_alphanumeric() || ch == '-' || ch == '_' || ch == '\\')
+        .all(|ch| {
+            ch.is_ascii_alphanumeric()
+                || ['_', '-', '/', '.', '%', '@', ':', '+']
+                    .iter()
+                    .any(|c| *c == ch)
+        })
         .then(|| input)
         .ok_or(())
 }
@@ -147,6 +152,7 @@ mod tests {
     use crate::profile::ProfileSet;
 
     use super::{merge_in, ProfileName};
+    use crate::profile::parser::normalize::validate_identifier;
 
     #[test]
     fn profile_name_parsing() {
@@ -192,6 +198,15 @@ mod tests {
                 has_profile_prefix: false
             }
         );
+    }
+
+    #[test]
+    fn test_validate_identifier() {
+        assert_eq!(
+            Ok("some-thing:long/the_one%only.foo@bar+"),
+            validate_identifier("some-thing:long/the_one%only.foo@bar+")
+        );
+        assert_eq!(Err(()), validate_identifier("foo!bar"));
     }
 
     #[test]

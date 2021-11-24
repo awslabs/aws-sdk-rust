@@ -938,7 +938,7 @@ pub struct GetDatasetContentOutput {
     /// <p>A list of <code>DatasetEntry</code> objects.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::DatasetEntry>>,
     /// <p>The time when the request was made.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the dataset content.</p>
     pub status: std::option::Option<crate::model::DatasetContentStatus>,
 }
@@ -948,7 +948,7 @@ impl GetDatasetContentOutput {
         self.entries.as_deref()
     }
     /// <p>The time when the request was made.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The status of the dataset content.</p>
@@ -972,7 +972,7 @@ pub mod get_dataset_content_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entries: std::option::Option<std::vec::Vec<crate::model::DatasetEntry>>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::DatasetContentStatus>,
     }
     impl Builder {
@@ -996,14 +996,14 @@ pub mod get_dataset_content_output {
             self
         }
         /// <p>The time when the request was made.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The time when the request was made.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self

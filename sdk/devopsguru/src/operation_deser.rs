@@ -793,6 +793,349 @@ pub fn parse_describe_insight_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_organization_health_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeOrganizationHealthOutput,
+    crate::error::DescribeOrganizationHealthError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeOrganizationHealthError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeOrganizationHealthError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DescribeOrganizationHealthError {
+            meta: generic,
+            kind: crate::error::DescribeOrganizationHealthErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationHealthError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::DescribeOrganizationHealthError {
+            meta: generic,
+            kind: crate::error::DescribeOrganizationHealthErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationHealthError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_describe_organization_health_internal_server_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::DescribeOrganizationHealthError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::DescribeOrganizationHealthError {
+            meta: generic,
+            kind: crate::error::DescribeOrganizationHealthErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationHealthError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_describe_organization_health_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::DescribeOrganizationHealthError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::DescribeOrganizationHealthError {
+            meta: generic,
+            kind: crate::error::DescribeOrganizationHealthErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationHealthError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeOrganizationHealthError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_organization_health_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeOrganizationHealthOutput,
+    crate::error::DescribeOrganizationHealthError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_organization_health_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_organization_health(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeOrganizationHealthError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_organization_overview_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeOrganizationOverviewOutput,
+    crate::error::DescribeOrganizationOverviewError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeOrganizationOverviewError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeOrganizationOverviewError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DescribeOrganizationOverviewError {
+            meta: generic,
+            kind: crate::error::DescribeOrganizationOverviewErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationOverviewError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::DescribeOrganizationOverviewError {
+            meta: generic,
+            kind: crate::error::DescribeOrganizationOverviewErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationOverviewError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_describe_organization_overview_internal_server_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::DescribeOrganizationOverviewError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::DescribeOrganizationOverviewError {
+            meta: generic,
+            kind: crate::error::DescribeOrganizationOverviewErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationOverviewError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_describe_organization_overview_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::DescribeOrganizationOverviewError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::DescribeOrganizationOverviewError {
+            meta: generic,
+            kind: crate::error::DescribeOrganizationOverviewErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationOverviewError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeOrganizationOverviewError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_organization_overview_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeOrganizationOverviewOutput,
+    crate::error::DescribeOrganizationOverviewError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_organization_overview_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_organization_overview(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeOrganizationOverviewError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_organization_resource_collection_health_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeOrganizationResourceCollectionHealthOutput,
+    crate::error::DescribeOrganizationResourceCollectionHealthError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeOrganizationResourceCollectionHealthError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::DescribeOrganizationResourceCollectionHealthError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DescribeOrganizationResourceCollectionHealthError { meta: generic, kind: crate::error::DescribeOrganizationResourceCollectionHealthErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationResourceCollectionHealthError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalServerException" => crate::error::DescribeOrganizationResourceCollectionHealthError { meta: generic, kind: crate::error::DescribeOrganizationResourceCollectionHealthErrorKind::InternalServerException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationResourceCollectionHealthError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_describe_organization_resource_collection_health_internal_server_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::DescribeOrganizationResourceCollectionHealthError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ThrottlingException" => crate::error::DescribeOrganizationResourceCollectionHealthError { meta: generic, kind: crate::error::DescribeOrganizationResourceCollectionHealthErrorKind::ThrottlingException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationResourceCollectionHealthError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_describe_organization_resource_collection_health_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::DescribeOrganizationResourceCollectionHealthError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ValidationException" => crate::error::DescribeOrganizationResourceCollectionHealthError { meta: generic, kind: crate::error::DescribeOrganizationResourceCollectionHealthErrorKind::ValidationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationResourceCollectionHealthError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DescribeOrganizationResourceCollectionHealthError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_organization_resource_collection_health_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeOrganizationResourceCollectionHealthOutput,
+    crate::error::DescribeOrganizationResourceCollectionHealthError,
+> {
+    Ok({
+        #[allow(unused_mut)]let mut output = crate::output::describe_organization_resource_collection_health_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_organization_resource_collection_health(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationResourceCollectionHealthError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_resource_collection_health_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -1792,6 +2135,126 @@ pub fn parse_list_notification_channels_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_organization_insights_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListOrganizationInsightsOutput,
+    crate::error::ListOrganizationInsightsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListOrganizationInsightsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListOrganizationInsightsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::ListOrganizationInsightsError {
+            meta: generic,
+            kind: crate::error::ListOrganizationInsightsErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOrganizationInsightsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::ListOrganizationInsightsError {
+            meta: generic,
+            kind: crate::error::ListOrganizationInsightsErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOrganizationInsightsError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_organization_insights_internal_server_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::ListOrganizationInsightsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::ListOrganizationInsightsError {
+            meta: generic,
+            kind: crate::error::ListOrganizationInsightsErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOrganizationInsightsError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_organization_insights_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::ListOrganizationInsightsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::ListOrganizationInsightsError {
+            meta: generic,
+            kind: crate::error::ListOrganizationInsightsErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOrganizationInsightsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListOrganizationInsightsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_organization_insights_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListOrganizationInsightsOutput,
+    crate::error::ListOrganizationInsightsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_organization_insights_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_organization_insights(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListOrganizationInsightsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_recommendations_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2322,6 +2785,126 @@ pub fn parse_search_insights_response(
             output,
         )
         .map_err(crate::error::SearchInsightsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_search_organization_insights_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::SearchOrganizationInsightsOutput,
+    crate::error::SearchOrganizationInsightsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::SearchOrganizationInsightsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::SearchOrganizationInsightsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::SearchOrganizationInsightsError {
+            meta: generic,
+            kind: crate::error::SearchOrganizationInsightsErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchOrganizationInsightsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::SearchOrganizationInsightsError {
+            meta: generic,
+            kind: crate::error::SearchOrganizationInsightsErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchOrganizationInsightsError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_search_organization_insights_internal_server_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::SearchOrganizationInsightsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::SearchOrganizationInsightsError {
+            meta: generic,
+            kind: crate::error::SearchOrganizationInsightsErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchOrganizationInsightsError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_search_organization_insights_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::SearchOrganizationInsightsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::SearchOrganizationInsightsError {
+            meta: generic,
+            kind: crate::error::SearchOrganizationInsightsErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchOrganizationInsightsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::SearchOrganizationInsightsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_search_organization_insights_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::SearchOrganizationInsightsOutput,
+    crate::error::SearchOrganizationInsightsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::search_organization_insights_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_search_organization_insights(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::SearchOrganizationInsightsError::unhandled)?;
         output.build()
     })
 }

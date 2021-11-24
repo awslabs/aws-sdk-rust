@@ -11,13 +11,13 @@ pub struct Record {
     pub sync_count: std::option::Option<i64>,
     /// The date on which the record was last
     /// modified.
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// The user/device that made the last change to this
     /// record.
     pub last_modified_by: std::option::Option<std::string::String>,
     /// The last modified date of the client
     /// device.
-    pub device_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub device_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Record {
     /// The key for the record.
@@ -34,7 +34,7 @@ impl Record {
     }
     /// The date on which the record was last
     /// modified.
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// The user/device that made the last change to this
@@ -44,7 +44,7 @@ impl Record {
     }
     /// The last modified date of the client
     /// device.
-    pub fn device_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn device_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.device_last_modified_date.as_ref()
     }
 }
@@ -69,9 +69,9 @@ pub mod record {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
         pub(crate) sync_count: std::option::Option<i64>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_by: std::option::Option<std::string::String>,
-        pub(crate) device_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) device_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// The key for the record.
@@ -106,7 +106,7 @@ pub mod record {
         }
         /// The date on which the record was last
         /// modified.
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
@@ -114,7 +114,7 @@ pub mod record {
         /// modified.
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -136,7 +136,7 @@ pub mod record {
         }
         /// The last modified date of the client
         /// device.
-        pub fn device_last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn device_last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.device_last_modified_date = Some(input);
             self
         }
@@ -144,7 +144,7 @@ pub mod record {
         /// device.
         pub fn set_device_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.device_last_modified_date = input;
             self
@@ -185,7 +185,7 @@ pub struct RecordPatch {
     pub sync_count: std::option::Option<i64>,
     /// The last modified date of the client
     /// device.
-    pub device_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub device_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RecordPatch {
     /// An operation, either replace or remove.
@@ -208,7 +208,7 @@ impl RecordPatch {
     }
     /// The last modified date of the client
     /// device.
-    pub fn device_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn device_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.device_last_modified_date.as_ref()
     }
 }
@@ -233,7 +233,7 @@ pub mod record_patch {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
         pub(crate) sync_count: std::option::Option<i64>,
-        pub(crate) device_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) device_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// An operation, either replace or remove.
@@ -282,7 +282,7 @@ pub mod record_patch {
         }
         /// The last modified date of the client
         /// device.
-        pub fn device_last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn device_last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.device_last_modified_date = Some(input);
             self
         }
@@ -290,7 +290,7 @@ pub mod record_patch {
         /// device.
         pub fn set_device_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.device_last_modified_date = input;
             self
@@ -689,7 +689,7 @@ pub struct IdentityPoolUsage {
     pub data_storage: std::option::Option<i64>,
     /// Date on which the identity pool was
     /// last modified.
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl IdentityPoolUsage {
     /// A name-spaced GUID (for example,
@@ -710,7 +710,7 @@ impl IdentityPoolUsage {
     }
     /// Date on which the identity pool was
     /// last modified.
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
@@ -733,7 +733,7 @@ pub mod identity_pool_usage {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) sync_sessions_count: std::option::Option<i64>,
         pub(crate) data_storage: std::option::Option<i64>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// A name-spaced GUID (for example,
@@ -779,7 +779,7 @@ pub mod identity_pool_usage {
         }
         /// Date on which the identity pool was
         /// last modified.
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
@@ -787,7 +787,7 @@ pub mod identity_pool_usage {
         /// last modified.
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -827,10 +827,10 @@ pub struct Dataset {
     pub dataset_name: std::option::Option<std::string::String>,
     /// Date on which the dataset was
     /// created.
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// Date when the dataset was last
     /// modified.
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// The device that made the last change to this
     /// dataset.
     pub last_modified_by: std::option::Option<std::string::String>,
@@ -854,12 +854,12 @@ impl Dataset {
     }
     /// Date on which the dataset was
     /// created.
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// Date when the dataset was last
     /// modified.
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// The device that made the last change to this
@@ -898,8 +898,8 @@ pub mod dataset {
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) dataset_name: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_by: std::option::Option<std::string::String>,
         pub(crate) data_storage: std::option::Option<i64>,
         pub(crate) num_records: std::option::Option<i64>,
@@ -933,7 +933,7 @@ pub mod dataset {
         }
         /// Date on which the dataset was
         /// created.
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -941,14 +941,14 @@ pub mod dataset {
         /// created.
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// Date when the dataset was last
         /// modified.
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
@@ -956,7 +956,7 @@ pub mod dataset {
         /// modified.
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -1096,7 +1096,7 @@ pub struct IdentityUsage {
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// Date on which the identity was last
     /// modified.
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// Number of datasets for the
     /// identity.
     pub dataset_count: i32,
@@ -1119,7 +1119,7 @@ impl IdentityUsage {
     }
     /// Date on which the identity was last
     /// modified.
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// Number of datasets for the
@@ -1152,7 +1152,7 @@ pub mod identity_usage {
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) dataset_count: std::option::Option<i32>,
         pub(crate) data_storage: std::option::Option<i64>,
     }
@@ -1190,7 +1190,7 @@ pub mod identity_usage {
         }
         /// Date on which the identity was last
         /// modified.
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
@@ -1198,7 +1198,7 @@ pub mod identity_usage {
         /// modified.
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self

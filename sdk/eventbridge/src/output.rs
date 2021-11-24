@@ -8,11 +8,11 @@ pub struct UpdateConnectionOutput {
     /// <p>The state of the connection that was updated.</p>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last authorized.</p>
-    pub last_authorized_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_authorized_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateConnectionOutput {
     /// <p>The ARN of the connection that was updated.</p>
@@ -24,15 +24,15 @@ impl UpdateConnectionOutput {
         self.connection_state.as_ref()
     }
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last authorized.</p>
-    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_authorized_time.as_ref()
     }
 }
@@ -55,9 +55,9 @@ pub mod update_connection_output {
     pub struct Builder {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
         pub(crate) connection_state: std::option::Option<crate::model::ConnectionState>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_authorized_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_authorized_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the connection that was updated.</p>
@@ -87,40 +87,40 @@ pub mod update_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A time stamp for the time that the connection was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the connection was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
         }
         /// <p>A time stamp for the time that the connection was last authorized.</p>
-        pub fn last_authorized_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_authorized_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_authorized_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the connection was last authorized.</p>
         pub fn set_last_authorized_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_authorized_time = input;
             self
@@ -155,7 +155,7 @@ pub struct UpdateArchiveOutput {
     /// <p>The reason that the archive is in the current state.</p>
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The time at which the archive was updated.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateArchiveOutput {
     /// <p>The ARN of the archive.</p>
@@ -171,7 +171,7 @@ impl UpdateArchiveOutput {
         self.state_reason.as_deref()
     }
     /// <p>The time at which the archive was updated.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -194,7 +194,7 @@ pub mod update_archive_output {
         pub(crate) archive_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ArchiveState>,
         pub(crate) state_reason: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the archive.</p>
@@ -228,14 +228,14 @@ pub mod update_archive_output {
             self
         }
         /// <p>The time at which the archive was updated.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time at which the archive was updated.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -267,9 +267,9 @@ pub struct UpdateApiDestinationOutput {
     /// <p>The state of the API destination that was updated.</p>
     pub api_destination_state: std::option::Option<crate::model::ApiDestinationState>,
     /// <p>A time stamp for the time that the API destination was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the API destination was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateApiDestinationOutput {
     /// <p>The ARN of the API destination that was updated.</p>
@@ -281,11 +281,11 @@ impl UpdateApiDestinationOutput {
         self.api_destination_state.as_ref()
     }
     /// <p>A time stamp for the time that the API destination was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the API destination was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -307,8 +307,8 @@ pub mod update_api_destination_output {
     pub struct Builder {
         pub(crate) api_destination_arn: std::option::Option<std::string::String>,
         pub(crate) api_destination_state: std::option::Option<crate::model::ApiDestinationState>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the API destination that was updated.</p>
@@ -338,27 +338,27 @@ pub mod update_api_destination_output {
             self
         }
         /// <p>A time stamp for the time that the API destination was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the API destination was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A time stamp for the time that the API destination was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the API destination was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -506,7 +506,7 @@ pub struct StartReplayOutput {
     /// <p>The reason that the replay is in the state.</p>
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The time at which the replay started.</p>
-    pub replay_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub replay_start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartReplayOutput {
     /// <p>The ARN of the replay.</p>
@@ -522,7 +522,7 @@ impl StartReplayOutput {
         self.state_reason.as_deref()
     }
     /// <p>The time at which the replay started.</p>
-    pub fn replay_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn replay_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.replay_start_time.as_ref()
     }
 }
@@ -545,7 +545,7 @@ pub mod start_replay_output {
         pub(crate) replay_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ReplayState>,
         pub(crate) state_reason: std::option::Option<std::string::String>,
-        pub(crate) replay_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) replay_start_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the replay.</p>
@@ -579,14 +579,14 @@ pub mod start_replay_output {
             self
         }
         /// <p>The time at which the replay started.</p>
-        pub fn replay_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn replay_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.replay_start_time = Some(input);
             self
         }
         /// <p>The time at which the replay started.</p>
         pub fn set_replay_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.replay_start_time = input;
             self
@@ -2412,15 +2412,15 @@ pub struct DescribeReplayOutput {
     /// <p>A <code>ReplayDestination</code> object that contains details about the replay.</p>
     pub destination: std::option::Option<crate::model::ReplayDestination>,
     /// <p>The time stamp of the first event that was last replayed from the archive.</p>
-    pub event_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub event_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time stamp for the last event that was replayed from the archive.</p>
-    pub event_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub event_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the event was last replayed.</p>
-    pub event_last_replayed_time: std::option::Option<aws_smithy_types::Instant>,
+    pub event_last_replayed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the replay started.</p>
-    pub replay_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub replay_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the replay stopped.</p>
-    pub replay_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub replay_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeReplayOutput {
     /// <p>The name of the replay.</p>
@@ -2452,23 +2452,23 @@ impl DescribeReplayOutput {
         self.destination.as_ref()
     }
     /// <p>The time stamp of the first event that was last replayed from the archive.</p>
-    pub fn event_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn event_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_start_time.as_ref()
     }
     /// <p>The time stamp for the last event that was replayed from the archive.</p>
-    pub fn event_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn event_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_end_time.as_ref()
     }
     /// <p>The time that the event was last replayed.</p>
-    pub fn event_last_replayed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn event_last_replayed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_last_replayed_time.as_ref()
     }
     /// <p>A time stamp for the time that the replay started.</p>
-    pub fn replay_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn replay_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.replay_start_time.as_ref()
     }
     /// <p>A time stamp for the time that the replay stopped.</p>
-    pub fn replay_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn replay_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.replay_end_time.as_ref()
     }
 }
@@ -2503,11 +2503,11 @@ pub mod describe_replay_output {
         pub(crate) state_reason: std::option::Option<std::string::String>,
         pub(crate) event_source_arn: std::option::Option<std::string::String>,
         pub(crate) destination: std::option::Option<crate::model::ReplayDestination>,
-        pub(crate) event_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) event_end_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) event_last_replayed_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) replay_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) replay_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) event_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) event_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) event_last_replayed_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) replay_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) replay_end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the replay.</p>
@@ -2587,66 +2587,66 @@ pub mod describe_replay_output {
             self
         }
         /// <p>The time stamp of the first event that was last replayed from the archive.</p>
-        pub fn event_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn event_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_start_time = Some(input);
             self
         }
         /// <p>The time stamp of the first event that was last replayed from the archive.</p>
         pub fn set_event_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.event_start_time = input;
             self
         }
         /// <p>The time stamp for the last event that was replayed from the archive.</p>
-        pub fn event_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn event_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_end_time = Some(input);
             self
         }
         /// <p>The time stamp for the last event that was replayed from the archive.</p>
         pub fn set_event_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.event_end_time = input;
             self
         }
         /// <p>The time that the event was last replayed.</p>
-        pub fn event_last_replayed_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn event_last_replayed_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_last_replayed_time = Some(input);
             self
         }
         /// <p>The time that the event was last replayed.</p>
         pub fn set_event_last_replayed_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.event_last_replayed_time = input;
             self
         }
         /// <p>A time stamp for the time that the replay started.</p>
-        pub fn replay_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn replay_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.replay_start_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the replay started.</p>
         pub fn set_replay_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.replay_start_time = input;
             self
         }
         /// <p>A time stamp for the time that the replay stopped.</p>
-        pub fn replay_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn replay_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.replay_end_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the replay stopped.</p>
         pub fn set_replay_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.replay_end_time = input;
             self
@@ -2759,10 +2759,10 @@ pub struct DescribeEventSourceOutput {
     /// <p>The name of the SaaS partner that created the event source.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The date and time that the event source was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the event source will expire if you do not create a matching event
     /// bus.</p>
-    pub expiration_time: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the partner event source.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event
@@ -2781,12 +2781,12 @@ impl DescribeEventSourceOutput {
         self.created_by.as_deref()
     }
     /// <p>The date and time that the event source was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that the event source will expire if you do not create a matching event
     /// bus.</p>
-    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
     /// <p>The name of the partner event source.</p>
@@ -2821,8 +2821,8 @@ pub mod describe_event_source_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) created_by: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) expiration_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) expiration_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::EventSourceState>,
     }
@@ -2848,21 +2848,21 @@ pub mod describe_event_source_output {
             self
         }
         /// <p>The date and time that the event source was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The date and time that the event source was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The date and time that the event source will expire if you do not create a matching event
         /// bus.</p>
-        pub fn expiration_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_time = Some(input);
             self
         }
@@ -2870,7 +2870,7 @@ pub mod describe_event_source_output {
         /// bus.</p>
         pub fn set_expiration_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration_time = input;
             self
@@ -3042,11 +3042,11 @@ pub struct DescribeConnectionOutput {
     /// <p>The parameters to use for authorization for the connection.</p>
     pub auth_parameters: std::option::Option<crate::model::ConnectionAuthResponseParameters>,
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last authorized.</p>
-    pub last_authorized_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_authorized_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeConnectionOutput {
     /// <p>The ARN of the connection retrieved.</p>
@@ -3087,15 +3087,15 @@ impl DescribeConnectionOutput {
         self.auth_parameters.as_ref()
     }
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last authorized.</p>
-    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_authorized_time.as_ref()
     }
 }
@@ -3132,9 +3132,9 @@ pub mod describe_connection_output {
         pub(crate) secret_arn: std::option::Option<std::string::String>,
         pub(crate) auth_parameters:
             std::option::Option<crate::model::ConnectionAuthResponseParameters>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_authorized_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_authorized_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the connection retrieved.</p>
@@ -3238,40 +3238,40 @@ pub mod describe_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A time stamp for the time that the connection was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the connection was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
         }
         /// <p>A time stamp for the time that the connection was last authorized.</p>
-        pub fn last_authorized_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_authorized_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_authorized_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the connection was last authorized.</p>
         pub fn set_last_authorized_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_authorized_time = input;
             self
@@ -3326,7 +3326,7 @@ pub struct DescribeArchiveOutput {
     /// <p>The number of events in the archive.</p>
     pub event_count: i64,
     /// <p>The time at which the archive was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeArchiveOutput {
     /// <p>The ARN of the archive.</p>
@@ -3370,7 +3370,7 @@ impl DescribeArchiveOutput {
         self.event_count
     }
     /// <p>The time at which the archive was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -3407,7 +3407,7 @@ pub mod describe_archive_output {
         pub(crate) retention_days: std::option::Option<i32>,
         pub(crate) size_bytes: std::option::Option<i64>,
         pub(crate) event_count: std::option::Option<i64>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the archive.</p>
@@ -3517,14 +3517,14 @@ pub mod describe_archive_output {
             self
         }
         /// <p>The time at which the archive was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time at which the archive was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -3580,9 +3580,9 @@ pub struct DescribeApiDestinationOutput {
     /// 24 hours.</p>
     pub invocation_rate_limit_per_second: std::option::Option<i32>,
     /// <p>A time stamp for the time that the API destination was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the API destination was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeApiDestinationOutput {
     /// <p>The ARN of the API destination retrieved.</p>
@@ -3623,11 +3623,11 @@ impl DescribeApiDestinationOutput {
         self.invocation_rate_limit_per_second
     }
     /// <p>A time stamp for the time that the API destination was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the API destination was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -3664,8 +3664,8 @@ pub mod describe_api_destination_output {
         pub(crate) invocation_endpoint: std::option::Option<std::string::String>,
         pub(crate) http_method: std::option::Option<crate::model::ApiDestinationHttpMethod>,
         pub(crate) invocation_rate_limit_per_second: std::option::Option<i32>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the API destination retrieved.</p>
@@ -3777,27 +3777,27 @@ pub mod describe_api_destination_output {
             self
         }
         /// <p>A time stamp for the time that the API destination was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the API destination was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A time stamp for the time that the API destination was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the API destination was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -3925,13 +3925,13 @@ pub struct DeleteConnectionOutput {
     /// <p>The state of the connection before it was deleted.</p>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last modified before it was
     /// deleted.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last authorized before it wa
     /// deleted.</p>
-    pub last_authorized_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_authorized_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteConnectionOutput {
     /// <p>The ARN of the connection that was deleted.</p>
@@ -3943,17 +3943,17 @@ impl DeleteConnectionOutput {
         self.connection_state.as_ref()
     }
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last modified before it was
     /// deleted.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last authorized before it wa
     /// deleted.</p>
-    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_authorized_time.as_ref()
     }
 }
@@ -3976,9 +3976,9 @@ pub mod delete_connection_output {
     pub struct Builder {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
         pub(crate) connection_state: std::option::Option<crate::model::ConnectionState>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_authorized_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_authorized_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the connection that was deleted.</p>
@@ -4008,21 +4008,21 @@ pub mod delete_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A time stamp for the time that the connection was last modified before it was
         /// deleted.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
@@ -4030,14 +4030,14 @@ pub mod delete_connection_output {
         /// deleted.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
         }
         /// <p>A time stamp for the time that the connection was last authorized before it wa
         /// deleted.</p>
-        pub fn last_authorized_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_authorized_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_authorized_time = Some(input);
             self
         }
@@ -4045,7 +4045,7 @@ pub mod delete_connection_output {
         /// deleted.</p>
         pub fn set_last_authorized_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_authorized_time = input;
             self
@@ -4138,11 +4138,11 @@ pub struct DeauthorizeConnectionOutput {
     /// <p>The state of the connection.</p>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last updated.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last authorized.</p>
-    pub last_authorized_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_authorized_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeauthorizeConnectionOutput {
     /// <p>The ARN of the connection that authorization was removed from.</p>
@@ -4154,15 +4154,15 @@ impl DeauthorizeConnectionOutput {
         self.connection_state.as_ref()
     }
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last authorized.</p>
-    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_authorized_time.as_ref()
     }
 }
@@ -4185,9 +4185,9 @@ pub mod deauthorize_connection_output {
     pub struct Builder {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
         pub(crate) connection_state: std::option::Option<crate::model::ConnectionState>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_authorized_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_authorized_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the connection that authorization was removed from.</p>
@@ -4217,40 +4217,40 @@ pub mod deauthorize_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A time stamp for the time that the connection was last updated.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the connection was last updated.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
         }
         /// <p>A time stamp for the time that the connection was last authorized.</p>
-        pub fn last_authorized_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_authorized_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_authorized_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the connection was last authorized.</p>
         pub fn set_last_authorized_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_authorized_time = input;
             self
@@ -4427,9 +4427,9 @@ pub struct CreateConnectionOutput {
     /// <p>The state of the connection that was created by the request.</p>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last updated.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateConnectionOutput {
     /// <p>The ARN of the connection that was created by the request.</p>
@@ -4441,11 +4441,11 @@ impl CreateConnectionOutput {
         self.connection_state.as_ref()
     }
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -4467,8 +4467,8 @@ pub mod create_connection_output {
     pub struct Builder {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
         pub(crate) connection_state: std::option::Option<crate::model::ConnectionState>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the connection that was created by the request.</p>
@@ -4498,27 +4498,27 @@ pub mod create_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A time stamp for the time that the connection was last updated.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>A time stamp for the time that the connection was last updated.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -4552,7 +4552,7 @@ pub struct CreateArchiveOutput {
     /// <p>The reason that the archive is in the state.</p>
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The time at which the archive was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateArchiveOutput {
     /// <p>The ARN of the archive that was created.</p>
@@ -4568,7 +4568,7 @@ impl CreateArchiveOutput {
         self.state_reason.as_deref()
     }
     /// <p>The time at which the archive was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -4591,7 +4591,7 @@ pub mod create_archive_output {
         pub(crate) archive_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ArchiveState>,
         pub(crate) state_reason: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the archive that was created.</p>
@@ -4625,14 +4625,14 @@ pub mod create_archive_output {
             self
         }
         /// <p>The time at which the archive was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time at which the archive was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -4664,9 +4664,9 @@ pub struct CreateApiDestinationOutput {
     /// <p>The state of the API destination that was created by the request.</p>
     pub api_destination_state: std::option::Option<crate::model::ApiDestinationState>,
     /// <p>A time stamp indicating the time that the API destination was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp indicating the time that the API destination was last modified.</p>
-    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateApiDestinationOutput {
     /// <p>The ARN of the API destination that was created by the request.</p>
@@ -4678,11 +4678,11 @@ impl CreateApiDestinationOutput {
         self.api_destination_state.as_ref()
     }
     /// <p>A time stamp indicating the time that the API destination was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp indicating the time that the API destination was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -4704,8 +4704,8 @@ pub mod create_api_destination_output {
     pub struct Builder {
         pub(crate) api_destination_arn: std::option::Option<std::string::String>,
         pub(crate) api_destination_state: std::option::Option<crate::model::ApiDestinationState>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the API destination that was created by the request.</p>
@@ -4735,27 +4735,27 @@ pub mod create_api_destination_output {
             self
         }
         /// <p>A time stamp indicating the time that the API destination was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp indicating the time that the API destination was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>A time stamp indicating the time that the API destination was last modified.</p>
-        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
         /// <p>A time stamp indicating the time that the API destination was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_time = input;
             self

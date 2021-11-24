@@ -568,7 +568,7 @@ pub struct LambdaFunctionRecommendation {
     /// function.</p>
     pub lookback_period_in_days: f64,
     /// <p>The timestamp of when the function recommendation was last refreshed.</p>
-    pub last_refresh_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The finding classification of the function.</p>
     ///
     /// <p>Findings for functions include:</p>
@@ -704,7 +704,7 @@ impl LambdaFunctionRecommendation {
         self.lookback_period_in_days
     }
     /// <p>The timestamp of when the function recommendation was last refreshed.</p>
-    pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_refresh_timestamp.as_ref()
     }
     /// <p>The finding classification of the function.</p>
@@ -852,7 +852,7 @@ pub mod lambda_function_recommendation {
         pub(crate) utilization_metrics:
             std::option::Option<std::vec::Vec<crate::model::LambdaFunctionUtilizationMetric>>,
         pub(crate) lookback_period_in_days: std::option::Option<f64>,
-        pub(crate) last_refresh_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) finding: std::option::Option<crate::model::LambdaFunctionRecommendationFinding>,
         pub(crate) finding_reason_codes: std::option::Option<
             std::vec::Vec<crate::model::LambdaFunctionRecommendationFindingReasonCode>,
@@ -952,14 +952,14 @@ pub mod lambda_function_recommendation {
             self
         }
         /// <p>The timestamp of when the function recommendation was last refreshed.</p>
-        pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_refresh_timestamp = Some(input);
             self
         }
         /// <p>The timestamp of when the function recommendation was last refreshed.</p>
         pub fn set_last_refresh_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_refresh_timestamp = input;
             self
@@ -2275,7 +2275,7 @@ pub struct AccountEnrollmentStatus {
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last
     /// updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AccountEnrollmentStatus {
     /// <p>The Amazon Web Services account ID.</p>
@@ -2295,7 +2295,7 @@ impl AccountEnrollmentStatus {
     }
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last
     /// updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
@@ -2318,7 +2318,7 @@ pub mod account_enrollment_status {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Web Services account ID.</p>
@@ -2362,7 +2362,7 @@ pub mod account_enrollment_status {
         }
         /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last
         /// updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
@@ -2370,7 +2370,7 @@ pub mod account_enrollment_status {
         /// updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
@@ -2743,7 +2743,7 @@ pub struct ProjectedMetric {
     /// </ul>
     pub name: std::option::Option<crate::model::MetricName>,
     /// <p>The timestamps of the projected utilization metric.</p>
-    pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+    pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The values of the projected utilization metrics.</p>
     pub values: std::option::Option<std::vec::Vec<f64>>,
 }
@@ -2782,7 +2782,7 @@ impl ProjectedMetric {
         self.name.as_ref()
     }
     /// <p>The timestamps of the projected utilization metric.</p>
-    pub fn timestamps(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+    pub fn timestamps(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
         self.timestamps.as_deref()
     }
     /// <p>The values of the projected utilization metrics.</p>
@@ -2806,7 +2806,7 @@ pub mod projected_metric {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::MetricName>,
-        pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+        pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         pub(crate) values: std::option::Option<std::vec::Vec<f64>>,
     }
     impl Builder {
@@ -2883,7 +2883,7 @@ pub mod projected_metric {
         /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
         ///
         /// <p>The timestamps of the projected utilization metric.</p>
-        pub fn timestamps(mut self, input: impl Into<aws_smithy_types::Instant>) -> Self {
+        pub fn timestamps(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
             let mut v = self.timestamps.unwrap_or_default();
             v.push(input.into());
             self.timestamps = Some(v);
@@ -2892,7 +2892,7 @@ pub mod projected_metric {
         /// <p>The timestamps of the projected utilization metric.</p>
         pub fn set_timestamps(
             mut self,
-            input: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
+            input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         ) -> Self {
             self.timestamps = input;
             self
@@ -3655,7 +3655,7 @@ pub struct InstanceRecommendation {
     pub recommendation_sources:
         std::option::Option<std::vec::Vec<crate::model::RecommendationSource>>,
     /// <p>The timestamp of when the instance recommendation was last refreshed.</p>
-    pub last_refresh_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl InstanceRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
@@ -3940,7 +3940,7 @@ impl InstanceRecommendation {
         self.recommendation_sources.as_deref()
     }
     /// <p>The timestamp of when the instance recommendation was last refreshed.</p>
-    pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_refresh_timestamp.as_ref()
     }
 }
@@ -3982,7 +3982,7 @@ pub mod instance_recommendation {
             std::option::Option<std::vec::Vec<crate::model::InstanceRecommendationOption>>,
         pub(crate) recommendation_sources:
             std::option::Option<std::vec::Vec<crate::model::RecommendationSource>>,
-        pub(crate) last_refresh_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
@@ -4612,14 +4612,14 @@ pub mod instance_recommendation {
             self
         }
         /// <p>The timestamp of when the instance recommendation was last refreshed.</p>
-        pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_refresh_timestamp = Some(input);
             self
         }
         /// <p>The timestamp of when the instance recommendation was last refreshed.</p>
         pub fn set_last_refresh_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_refresh_timestamp = input;
             self
@@ -7147,7 +7147,7 @@ pub struct VolumeRecommendation {
     pub volume_recommendation_options:
         std::option::Option<std::vec::Vec<crate::model::VolumeRecommendationOption>>,
     /// <p>The timestamp of when the volume recommendation was last refreshed.</p>
-    pub last_refresh_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl VolumeRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current volume.</p>
@@ -7207,7 +7207,7 @@ impl VolumeRecommendation {
         self.volume_recommendation_options.as_deref()
     }
     /// <p>The timestamp of when the volume recommendation was last refreshed.</p>
-    pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_refresh_timestamp.as_ref()
     }
 }
@@ -7243,7 +7243,7 @@ pub mod volume_recommendation {
         pub(crate) look_back_period_in_days: std::option::Option<f64>,
         pub(crate) volume_recommendation_options:
             std::option::Option<std::vec::Vec<crate::model::VolumeRecommendationOption>>,
-        pub(crate) last_refresh_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the current volume.</p>
@@ -7392,14 +7392,14 @@ pub mod volume_recommendation {
             self
         }
         /// <p>The timestamp of when the volume recommendation was last refreshed.</p>
-        pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_refresh_timestamp = Some(input);
             self
         }
         /// <p>The timestamp of when the volume recommendation was last refreshed.</p>
         pub fn set_last_refresh_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_refresh_timestamp = input;
             self
@@ -8332,7 +8332,7 @@ pub struct AutoScalingGroupRecommendation {
         std::option::Option<std::vec::Vec<crate::model::AutoScalingGroupRecommendationOption>>,
     /// <p>The timestamp  of when the Auto Scaling group recommendation was last
     /// refreshed.</p>
-    pub last_refresh_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AutoScalingGroupRecommendation {
     /// <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
@@ -8398,7 +8398,7 @@ impl AutoScalingGroupRecommendation {
     }
     /// <p>The timestamp  of when the Auto Scaling group recommendation was last
     /// refreshed.</p>
-    pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_refresh_timestamp.as_ref()
     }
 }
@@ -8434,7 +8434,7 @@ pub mod auto_scaling_group_recommendation {
             std::option::Option<crate::model::AutoScalingGroupConfiguration>,
         pub(crate) recommendation_options:
             std::option::Option<std::vec::Vec<crate::model::AutoScalingGroupRecommendationOption>>,
-        pub(crate) last_refresh_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
@@ -8607,7 +8607,7 @@ pub mod auto_scaling_group_recommendation {
         }
         /// <p>The timestamp  of when the Auto Scaling group recommendation was last
         /// refreshed.</p>
-        pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_refresh_timestamp = Some(input);
             self
         }
@@ -8615,7 +8615,7 @@ pub mod auto_scaling_group_recommendation {
         /// refreshed.</p>
         pub fn set_last_refresh_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_refresh_timestamp = input;
             self
@@ -10209,9 +10209,9 @@ pub struct RecommendationExportJob {
     /// <p>The status of the export job.</p>
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p>The timestamp of when the export job was created.</p>
-    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the export job was last updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason for an export job failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
@@ -10233,11 +10233,11 @@ impl RecommendationExportJob {
         self.status.as_ref()
     }
     /// <p>The timestamp of when the export job was created.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The timestamp of when the export job was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The reason for an export job failure.</p>
@@ -10268,8 +10268,8 @@ pub mod recommendation_export_job {
         pub(crate) destination: std::option::Option<crate::model::ExportDestination>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -10320,27 +10320,27 @@ pub mod recommendation_export_job {
             self
         }
         /// <p>The timestamp of when the export job was created.</p>
-        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
         /// <p>The timestamp of when the export job was created.</p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_timestamp = input;
             self
         }
         /// <p>The timestamp of when the export job was last updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>The timestamp of when the export job was last updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self

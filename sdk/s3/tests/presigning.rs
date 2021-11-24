@@ -10,10 +10,12 @@ use std::time::{Duration, SystemTime};
 
 #[tokio::test]
 async fn test_presigning() -> Result<(), Box<dyn Error>> {
-    let creds = s3::Credentials::from_keys(
+    let creds = s3::Credentials::new(
         "ANOTREAL",
         "notrealrnrELgWzOk3IfjzDKtFBhDby",
         Some("notarealsessiontoken".to_string()),
+        None,
+        "test",
     );
     let config = s3::Config::builder()
         .credentials_provider(creds)

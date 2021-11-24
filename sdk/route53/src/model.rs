@@ -9382,7 +9382,7 @@ pub struct StatusReport {
     /// <p>The date and time that the health checker performed the health check in
     /// <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
     /// For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-    pub checked_time: std::option::Option<aws_smithy_types::Instant>,
+    pub checked_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StatusReport {
     /// <p>A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health checkers.</p>
@@ -9392,7 +9392,7 @@ impl StatusReport {
     /// <p>The date and time that the health checker performed the health check in
     /// <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
     /// For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-    pub fn checked_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn checked_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.checked_time.as_ref()
     }
 }
@@ -9411,7 +9411,7 @@ pub mod status_report {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) checked_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) checked_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health checkers.</p>
@@ -9427,7 +9427,7 @@ pub mod status_report {
         /// <p>The date and time that the health checker performed the health check in
         /// <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
         /// For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-        pub fn checked_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn checked_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.checked_time = Some(input);
             self
         }
@@ -9436,7 +9436,7 @@ pub mod status_report {
         /// For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
         pub fn set_checked_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.checked_time = input;
             self
@@ -9574,9 +9574,9 @@ pub struct KeySigningKey {
     /// that you can take to correct the issue.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The date when the key-signing key (KSK) was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that the key-signing key (KSK) was changed.</p>
-    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl KeySigningKey {
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters,  and underscores (_). <code>Name</code> must be unique for each key-signing key in the same
@@ -9718,11 +9718,11 @@ impl KeySigningKey {
         self.status_message.as_deref()
     }
     /// <p>The date when the key-signing key (KSK) was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The last time that the key-signing key (KSK) was changed.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
@@ -9771,8 +9771,8 @@ pub mod key_signing_key {
         pub(crate) dnskey_record: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters,  and underscores (_). <code>Name</code> must be unique for each key-signing key in the same
@@ -10092,27 +10092,27 @@ pub mod key_signing_key {
             self
         }
         /// <p>The date when the key-signing key (KSK) was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date when the key-signing key (KSK) was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The last time that the key-signing key (KSK) was changed.</p>
-        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
         /// <p>The last time that the key-signing key (KSK) was changed.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -10353,7 +10353,7 @@ pub struct ChangeInfo {
     /// <p>The date and time that the change request was submitted in
     /// <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
     /// For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-    pub submitted_at: std::option::Option<aws_smithy_types::Instant>,
+    pub submitted_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A comment you can provide.</p>
     pub comment: std::option::Option<std::string::String>,
 }
@@ -10372,7 +10372,7 @@ impl ChangeInfo {
     /// <p>The date and time that the change request was submitted in
     /// <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
     /// For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-    pub fn submitted_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submitted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_at.as_ref()
     }
     /// <p>A comment you can provide.</p>
@@ -10398,7 +10398,7 @@ pub mod change_info {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ChangeStatus>,
-        pub(crate) submitted_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submitted_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) comment: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -10434,7 +10434,7 @@ pub mod change_info {
         /// <p>The date and time that the change request was submitted in
         /// <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
         /// For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-        pub fn submitted_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submitted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submitted_at = Some(input);
             self
         }
@@ -10443,7 +10443,7 @@ pub mod change_info {
         /// For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
         pub fn set_submitted_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submitted_at = input;
             self

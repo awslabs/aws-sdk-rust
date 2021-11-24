@@ -2153,7 +2153,7 @@ pub struct CreateStreamingUrlOutput {
     /// <p>The URL to start the AppStream 2.0 streaming session.</p>
     pub streaming_url: std::option::Option<std::string::String>,
     /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
-    pub expires: std::option::Option<aws_smithy_types::Instant>,
+    pub expires: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateStreamingUrlOutput {
     /// <p>The URL to start the AppStream 2.0 streaming session.</p>
@@ -2161,7 +2161,7 @@ impl CreateStreamingUrlOutput {
         self.streaming_url.as_deref()
     }
     /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
-    pub fn expires(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expires(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires.as_ref()
     }
 }
@@ -2180,7 +2180,7 @@ pub mod create_streaming_url_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streaming_url: std::option::Option<std::string::String>,
-        pub(crate) expires: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expires: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The URL to start the AppStream 2.0 streaming session.</p>
@@ -2197,14 +2197,14 @@ pub mod create_streaming_url_output {
             self
         }
         /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
-        pub fn expires(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expires(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expires = Some(input);
             self
         }
         /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
         pub fn set_expires(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expires = input;
             self
@@ -2284,7 +2284,7 @@ pub struct CreateImageBuilderStreamingUrlOutput {
     /// <p>The URL to start the AppStream 2.0 streaming session.</p>
     pub streaming_url: std::option::Option<std::string::String>,
     /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
-    pub expires: std::option::Option<aws_smithy_types::Instant>,
+    pub expires: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateImageBuilderStreamingUrlOutput {
     /// <p>The URL to start the AppStream 2.0 streaming session.</p>
@@ -2292,7 +2292,7 @@ impl CreateImageBuilderStreamingUrlOutput {
         self.streaming_url.as_deref()
     }
     /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
-    pub fn expires(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expires(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires.as_ref()
     }
 }
@@ -2311,7 +2311,7 @@ pub mod create_image_builder_streaming_url_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streaming_url: std::option::Option<std::string::String>,
-        pub(crate) expires: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expires: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The URL to start the AppStream 2.0 streaming session.</p>
@@ -2328,14 +2328,14 @@ pub mod create_image_builder_streaming_url_output {
             self
         }
         /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
-        pub fn expires(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expires(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expires = Some(input);
             self
         }
         /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
         pub fn set_expires(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expires = input;
             self

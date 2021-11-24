@@ -9,7 +9,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_cache_policy_i
         let mut root = writer
             .start_el("CachePolicyConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_cache_policy_config(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_cache_policy_config(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -25,7 +25,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_cloud_front_or
             .start_el("CloudFrontOriginAccessIdentityConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_cloud_front_origin_access_identity_config(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(out.into_bytes())
@@ -41,7 +41,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_distribution_i
         let mut root = writer
             .start_el("DistributionConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_distribution_config(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_distribution_config(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -56,9 +56,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_distribution_w
         let mut root = writer
             .start_el("DistributionConfigWithTags")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_distribution_config_with_tags(
-            &&input, root,
-        )?
+        crate::xml_ser::serialize_structure_crate_model_distribution_config_with_tags(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -73,9 +71,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_field_level_en
         let mut root = writer
             .start_el("FieldLevelEncryptionConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_field_level_encryption_config(
-            &&input, root,
-        )?
+        crate::xml_ser::serialize_structure_crate_model_field_level_encryption_config(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -91,7 +87,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_field_level_en
             .start_el("FieldLevelEncryptionProfileConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_field_level_encryption_profile_config(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(out.into_bytes())
@@ -114,7 +110,7 @@ pub fn serialize_structure_crate_input_create_function_input(
         let inner_writer = scope
             .start_el("FunctionConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_function_config(&var_2, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_function_config(var_2, inner_writer)?
     }
     if let Some(var_3) = &input.name {
         let mut inner_writer = scope
@@ -137,7 +133,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_invalidation_i
         let mut root = writer
             .start_el("InvalidationBatch")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_invalidation_batch(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_invalidation_batch(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -152,7 +148,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_key_group_inpu
         let mut root = writer
             .start_el("KeyGroupConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_key_group_config(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_key_group_config(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -167,7 +163,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_monitoring_sub
         let mut root = writer
             .start_el("MonitoringSubscription")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_monitoring_subscription(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_monitoring_subscription(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -182,7 +178,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_origin_request
         let mut root = writer
             .start_el("OriginRequestPolicyConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_origin_request_policy_config(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_origin_request_policy_config(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -197,7 +193,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_public_key_inp
         let mut root = writer
             .start_el("PublicKeyConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_public_key_config(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_public_key_config(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -219,7 +215,7 @@ pub fn serialize_structure_crate_input_create_realtime_log_config_input(
                     .start_el("member")
                     .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
                 crate::xml_ser::serialize_structure_crate_model_end_point(
-                    &list_item_5,
+                    list_item_5,
                     inner_writer,
                 )?
             }
@@ -268,9 +264,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_response_heade
         let mut root = writer
             .start_el("ResponseHeadersPolicyConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_config(
-            &&input, root,
-        )?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_config(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -285,9 +279,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_streaming_dist
         let mut root = writer
             .start_el("StreamingDistributionConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_streaming_distribution_config(
-            &&input, root,
-        )?
+        crate::xml_ser::serialize_structure_crate_model_streaming_distribution_config(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -303,7 +295,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_streaming_dist
             .start_el("StreamingDistributionConfigWithTags")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_streaming_distribution_config_with_tags(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(out.into_bytes())
@@ -405,7 +397,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_tag_resource_input_ta
         let mut root = writer
             .start_el("Tags")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_tags(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_tags(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -444,7 +436,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_untag_resource_input_
         let mut root = writer
             .start_el("TagKeys")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_tag_keys(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_tag_keys(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -459,7 +451,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_cache_policy_i
         let mut root = writer
             .start_el("CachePolicyConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_cache_policy_config(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_cache_policy_config(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -475,7 +467,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_cloud_front_or
             .start_el("CloudFrontOriginAccessIdentityConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_cloud_front_origin_access_identity_config(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(out.into_bytes())
@@ -491,7 +483,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_distribution_i
         let mut root = writer
             .start_el("DistributionConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_distribution_config(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_distribution_config(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -506,9 +498,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_field_level_en
         let mut root = writer
             .start_el("FieldLevelEncryptionConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_field_level_encryption_config(
-            &&input, root,
-        )?
+        crate::xml_ser::serialize_structure_crate_model_field_level_encryption_config(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -524,7 +514,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_field_level_en
             .start_el("FieldLevelEncryptionProfileConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_field_level_encryption_profile_config(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(out.into_bytes())
@@ -547,7 +537,7 @@ pub fn serialize_structure_crate_input_update_function_input(
         let inner_writer = scope
             .start_el("FunctionConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_function_config(&var_21, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_function_config(var_21, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -563,7 +553,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_key_group_inpu
         let mut root = writer
             .start_el("KeyGroupConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_key_group_config(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_key_group_config(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -578,7 +568,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_origin_request
         let mut root = writer
             .start_el("OriginRequestPolicyConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_origin_request_policy_config(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_origin_request_policy_config(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -593,7 +583,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_public_key_inp
         let mut root = writer
             .start_el("PublicKeyConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_public_key_config(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_model_public_key_config(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -622,7 +612,7 @@ pub fn serialize_structure_crate_input_update_realtime_log_config_input(
                     .start_el("member")
                     .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
                 crate::xml_ser::serialize_structure_crate_model_end_point(
-                    &list_item_24,
+                    list_item_24,
                     inner_writer,
                 )?
             }
@@ -671,9 +661,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_response_heade
         let mut root = writer
             .start_el("ResponseHeadersPolicyConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_config(
-            &&input, root,
-        )?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_config(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -688,9 +676,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_streaming_dist
         let mut root = writer
             .start_el("StreamingDistributionConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_streaming_distribution_config(
-            &&input, root,
-        )?
+        crate::xml_ser::serialize_structure_crate_model_streaming_distribution_config(input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -740,7 +726,7 @@ pub fn serialize_structure_crate_model_cache_policy_config(
         let inner_writer = scope
             .start_el("ParametersInCacheKeyAndForwardedToOrigin")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_parameters_in_cache_key_and_forwarded_to_origin(&var_34, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_parameters_in_cache_key_and_forwarded_to_origin(var_34, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -787,7 +773,7 @@ pub fn serialize_structure_crate_model_distribution_config(
         let inner_writer = scope
             .start_el("Aliases")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_aliases(&var_38, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_aliases(var_38, inner_writer)?
     }
     if let Some(var_39) = &input.default_root_object {
         let mut inner_writer = scope
@@ -800,20 +786,20 @@ pub fn serialize_structure_crate_model_distribution_config(
         let inner_writer = scope
             .start_el("Origins")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_origins(&var_40, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_origins(var_40, inner_writer)?
     }
     if let Some(var_41) = &input.origin_groups {
         let inner_writer = scope
             .start_el("OriginGroups")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_origin_groups(&var_41, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_origin_groups(var_41, inner_writer)?
     }
     if let Some(var_42) = &input.default_cache_behavior {
         let inner_writer = scope
             .start_el("DefaultCacheBehavior")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_default_cache_behavior(
-            &var_42,
+            var_42,
             inner_writer,
         )?
     }
@@ -821,14 +807,14 @@ pub fn serialize_structure_crate_model_distribution_config(
         let inner_writer = scope
             .start_el("CacheBehaviors")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_cache_behaviors(&var_43, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_cache_behaviors(var_43, inner_writer)?
     }
     if let Some(var_44) = &input.custom_error_responses {
         let inner_writer = scope
             .start_el("CustomErrorResponses")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_custom_error_responses(
-            &var_44,
+            var_44,
             inner_writer,
         )?
     }
@@ -843,7 +829,7 @@ pub fn serialize_structure_crate_model_distribution_config(
         let inner_writer = scope
             .start_el("Logging")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_logging_config(&var_46, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_logging_config(var_46, inner_writer)?
     }
     if let Some(var_47) = &input.price_class {
         let mut inner_writer = scope
@@ -863,13 +849,13 @@ pub fn serialize_structure_crate_model_distribution_config(
         let inner_writer = scope
             .start_el("ViewerCertificate")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_viewer_certificate(&var_49, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_viewer_certificate(var_49, inner_writer)?
     }
     if let Some(var_50) = &input.restrictions {
         let inner_writer = scope
             .start_el("Restrictions")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_restrictions(&var_50, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_restrictions(var_50, inner_writer)?
     }
     if let Some(var_51) = &input.web_acl_id {
         let mut inner_writer = scope
@@ -906,13 +892,13 @@ pub fn serialize_structure_crate_model_distribution_config_with_tags(
         let inner_writer = scope
             .start_el("DistributionConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_distribution_config(&var_54, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_distribution_config(var_54, inner_writer)?
     }
     if let Some(var_55) = &input.tags {
         let inner_writer = scope
             .start_el("Tags")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_tags(&var_55, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_tags(var_55, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -943,7 +929,7 @@ pub fn serialize_structure_crate_model_field_level_encryption_config(
             .start_el("QueryArgProfileConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_query_arg_profile_config(
-            &var_58,
+            var_58,
             inner_writer,
         )?
     }
@@ -952,7 +938,7 @@ pub fn serialize_structure_crate_model_field_level_encryption_config(
             .start_el("ContentTypeProfileConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_content_type_profile_config(
-            &var_59,
+            var_59,
             inner_writer,
         )?
     }
@@ -991,7 +977,7 @@ pub fn serialize_structure_crate_model_field_level_encryption_profile_config(
         let inner_writer = scope
             .start_el("EncryptionEntities")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_encryption_entities(&var_63, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_encryption_entities(var_63, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1031,7 +1017,7 @@ pub fn serialize_structure_crate_model_invalidation_batch(
         let inner_writer = scope
             .start_el("Paths")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_paths(&var_66, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_paths(var_66, inner_writer)?
     }
     if let Some(var_67) = &input.caller_reference {
         let mut inner_writer = scope
@@ -1094,7 +1080,7 @@ pub fn serialize_structure_crate_model_monitoring_subscription(
             .start_el("RealtimeMetricsSubscriptionConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_realtime_metrics_subscription_config(
-            &var_72,
+            var_72,
             inner_writer,
         )?
     }
@@ -1127,7 +1113,7 @@ pub fn serialize_structure_crate_model_origin_request_policy_config(
             .start_el("HeadersConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_origin_request_policy_headers_config(
-            &var_75,
+            var_75,
             inner_writer,
         )?
     }
@@ -1136,7 +1122,7 @@ pub fn serialize_structure_crate_model_origin_request_policy_config(
             .start_el("CookiesConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_origin_request_policy_cookies_config(
-            &var_76,
+            var_76,
             inner_writer,
         )?
     }
@@ -1145,7 +1131,7 @@ pub fn serialize_structure_crate_model_origin_request_policy_config(
             .start_el("QueryStringsConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_origin_request_policy_query_strings_config(
-            &var_77,
+            var_77,
             inner_writer,
         )?
     }
@@ -1208,10 +1194,7 @@ pub fn serialize_structure_crate_model_end_point(
         let inner_writer = scope
             .start_el("KinesisStreamConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_kinesis_stream_config(
-            &var_83,
-            inner_writer,
-        )?
+        crate::xml_ser::serialize_structure_crate_model_kinesis_stream_config(var_83, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1242,7 +1225,7 @@ pub fn serialize_structure_crate_model_response_headers_policy_config(
             .start_el("CorsConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_cors_config(
-            &var_86,
+            var_86,
             inner_writer,
         )?
     }
@@ -1250,13 +1233,13 @@ pub fn serialize_structure_crate_model_response_headers_policy_config(
         let inner_writer = scope
             .start_el("SecurityHeadersConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_security_headers_config(&var_87, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_security_headers_config(var_87, inner_writer)?
     }
     if let Some(var_88) = &input.custom_headers_config {
         let inner_writer = scope
             .start_el("CustomHeadersConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_custom_headers_config(&var_88, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_custom_headers_config(var_88, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1279,13 +1262,13 @@ pub fn serialize_structure_crate_model_streaming_distribution_config(
         let inner_writer = scope
             .start_el("S3Origin")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_s3_origin(&var_90, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_s3_origin(var_90, inner_writer)?
     }
     if let Some(var_91) = &input.aliases {
         let inner_writer = scope
             .start_el("Aliases")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_aliases(&var_91, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_aliases(var_91, inner_writer)?
     }
     if let Some(var_92) = &input.comment {
         let mut inner_writer = scope
@@ -1299,7 +1282,7 @@ pub fn serialize_structure_crate_model_streaming_distribution_config(
             .start_el("Logging")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_streaming_logging_config(
-            &var_93,
+            var_93,
             inner_writer,
         )?
     }
@@ -1307,7 +1290,7 @@ pub fn serialize_structure_crate_model_streaming_distribution_config(
         let inner_writer = scope
             .start_el("TrustedSigners")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_trusted_signers(&var_94, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_trusted_signers(var_94, inner_writer)?
     }
     if let Some(var_95) = &input.price_class {
         let mut inner_writer = scope
@@ -1338,7 +1321,7 @@ pub fn serialize_structure_crate_model_streaming_distribution_config_with_tags(
             .start_el("StreamingDistributionConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_streaming_distribution_config(
-            &var_97,
+            var_97,
             inner_writer,
         )?
     }
@@ -1346,7 +1329,7 @@ pub fn serialize_structure_crate_model_streaming_distribution_config_with_tags(
         let inner_writer = scope
             .start_el("Tags")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_tags(&var_98, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_tags(var_98, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1368,7 +1351,7 @@ pub fn serialize_structure_crate_model_tags(
                 let inner_writer = inner_writer
                     .start_el("Tag")
                     .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-                crate::xml_ser::serialize_structure_crate_model_tag(&list_item_100, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_tag(list_item_100, inner_writer)?
             }
         }
     }
@@ -1426,7 +1409,7 @@ pub fn serialize_structure_crate_model_parameters_in_cache_key_and_forwarded_to_
             .start_el("HeadersConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_cache_policy_headers_config(
-            &var_105,
+            var_105,
             inner_writer,
         )?
     }
@@ -1435,7 +1418,7 @@ pub fn serialize_structure_crate_model_parameters_in_cache_key_and_forwarded_to_
             .start_el("CookiesConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_cache_policy_cookies_config(
-            &var_106,
+            var_106,
             inner_writer,
         )?
     }
@@ -1444,7 +1427,7 @@ pub fn serialize_structure_crate_model_parameters_in_cache_key_and_forwarded_to_
             .start_el("QueryStringsConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_cache_policy_query_strings_config(
-            &var_107,
+            var_107,
             inner_writer,
         )?
     }
@@ -1507,10 +1490,7 @@ pub fn serialize_structure_crate_model_origins(
                 let inner_writer = inner_writer
                     .start_el("Origin")
                     .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-                crate::xml_ser::serialize_structure_crate_model_origin(
-                    &list_item_113,
-                    inner_writer,
-                )?
+                crate::xml_ser::serialize_structure_crate_model_origin(list_item_113, inner_writer)?
             }
         }
     }
@@ -1542,7 +1522,7 @@ pub fn serialize_structure_crate_model_origin_groups(
                     .start_el("OriginGroup")
                     .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
                 crate::xml_ser::serialize_structure_crate_model_origin_group(
-                    &list_item_116,
+                    list_item_116,
                     inner_writer,
                 )?
             }
@@ -1569,13 +1549,13 @@ pub fn serialize_structure_crate_model_default_cache_behavior(
         let inner_writer = scope
             .start_el("TrustedSigners")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_trusted_signers(&var_118, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_trusted_signers(var_118, inner_writer)?
     }
     if let Some(var_119) = &input.trusted_key_groups {
         let inner_writer = scope
             .start_el("TrustedKeyGroups")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_trusted_key_groups(&var_119, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_trusted_key_groups(var_119, inner_writer)?
     }
     if let Some(var_120) = &input.viewer_protocol_policy {
         let mut inner_writer = scope
@@ -1588,7 +1568,7 @@ pub fn serialize_structure_crate_model_default_cache_behavior(
         let inner_writer = scope
             .start_el("AllowedMethods")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_allowed_methods(&var_121, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_allowed_methods(var_121, inner_writer)?
     }
     if let Some(var_122) = &input.smooth_streaming {
         let mut inner_writer = scope
@@ -1609,7 +1589,7 @@ pub fn serialize_structure_crate_model_default_cache_behavior(
             .start_el("LambdaFunctionAssociations")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_lambda_function_associations(
-            &var_124,
+            var_124,
             inner_writer,
         )?
     }
@@ -1618,7 +1598,7 @@ pub fn serialize_structure_crate_model_default_cache_behavior(
             .start_el("FunctionAssociations")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_function_associations(
-            &var_125,
+            var_125,
             inner_writer,
         )?
     }
@@ -1661,7 +1641,7 @@ pub fn serialize_structure_crate_model_default_cache_behavior(
         let inner_writer = scope
             .start_el("ForwardedValues")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_forwarded_values(&var_131, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_forwarded_values(var_131, inner_writer)?
     }
     if let Some(var_132) = &input.min_ttl {
         let mut inner_writer = scope
@@ -1712,7 +1692,7 @@ pub fn serialize_structure_crate_model_cache_behaviors(
                     .start_el("CacheBehavior")
                     .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
                 crate::xml_ser::serialize_structure_crate_model_cache_behavior(
-                    &list_item_137,
+                    list_item_137,
                     inner_writer,
                 )?
             }
@@ -1746,7 +1726,7 @@ pub fn serialize_structure_crate_model_custom_error_responses(
                     .start_el("CustomErrorResponse")
                     .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
                 crate::xml_ser::serialize_structure_crate_model_custom_error_response(
-                    &list_item_140,
+                    list_item_140,
                     inner_writer,
                 )?
             }
@@ -1863,7 +1843,7 @@ pub fn serialize_structure_crate_model_restrictions(
         let inner_writer = scope
             .start_el("GeoRestriction")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_geo_restriction(&var_152, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_geo_restriction(var_152, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1886,7 +1866,7 @@ pub fn serialize_structure_crate_model_query_arg_profile_config(
         let inner_writer = scope
             .start_el("QueryArgProfiles")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_query_arg_profiles(&var_154, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_query_arg_profiles(var_154, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1910,7 +1890,7 @@ pub fn serialize_structure_crate_model_content_type_profile_config(
             .start_el("ContentTypeProfiles")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_content_type_profiles(
-            &var_156,
+            var_156,
             inner_writer,
         )?
     }
@@ -1942,7 +1922,7 @@ pub fn serialize_structure_crate_model_encryption_entities(
                     .start_el("EncryptionEntity")
                     .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
                 crate::xml_ser::serialize_structure_crate_model_encryption_entity(
-                    &list_item_159,
+                    list_item_159,
                     inner_writer,
                 )?
             }
@@ -2018,7 +1998,7 @@ pub fn serialize_structure_crate_model_origin_request_policy_headers_config(
         let inner_writer = scope
             .start_el("Headers")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_headers(&var_165, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_headers(var_165, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2041,7 +2021,7 @@ pub fn serialize_structure_crate_model_origin_request_policy_cookies_config(
         let inner_writer = scope
             .start_el("Cookies")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_cookie_names(&var_167, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_cookie_names(var_167, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2064,7 +2044,7 @@ pub fn serialize_structure_crate_model_origin_request_policy_query_strings_confi
         let inner_writer = scope
             .start_el("QueryStrings")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_query_string_names(&var_169, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_query_string_names(var_169, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2104,19 +2084,19 @@ pub fn serialize_structure_crate_model_response_headers_policy_cors_config(
         let inner_writer = scope
             .start_el("AccessControlAllowOrigins")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_allow_origins(&var_172, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_allow_origins(var_172, inner_writer)?
     }
     if let Some(var_173) = &input.access_control_allow_headers {
         let inner_writer = scope
             .start_el("AccessControlAllowHeaders")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_allow_headers(&var_173, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_allow_headers(var_173, inner_writer)?
     }
     if let Some(var_174) = &input.access_control_allow_methods {
         let inner_writer = scope
             .start_el("AccessControlAllowMethods")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_allow_methods(&var_174, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_allow_methods(var_174, inner_writer)?
     }
     if let Some(var_175) = &input.access_control_allow_credentials {
         let mut inner_writer = scope
@@ -2129,7 +2109,7 @@ pub fn serialize_structure_crate_model_response_headers_policy_cors_config(
         let inner_writer = scope
             .start_el("AccessControlExposeHeaders")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_expose_headers(&var_176, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_expose_headers(var_176, inner_writer)?
     }
     if let Some(var_177) = &input.access_control_max_age_sec {
         let mut inner_writer = scope
@@ -2160,7 +2140,7 @@ pub fn serialize_structure_crate_model_response_headers_policy_security_headers_
             .start_el("XSSProtection")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_xss_protection(
-            &var_179,
+            var_179,
             inner_writer,
         )?
     }
@@ -2169,7 +2149,7 @@ pub fn serialize_structure_crate_model_response_headers_policy_security_headers_
             .start_el("FrameOptions")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_frame_options(
-            &var_180,
+            var_180,
             inner_writer,
         )?
     }
@@ -2178,7 +2158,7 @@ pub fn serialize_structure_crate_model_response_headers_policy_security_headers_
             .start_el("ReferrerPolicy")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_referrer_policy(
-            &var_181,
+            var_181,
             inner_writer,
         )?
     }
@@ -2186,19 +2166,19 @@ pub fn serialize_structure_crate_model_response_headers_policy_security_headers_
         let inner_writer = scope
             .start_el("ContentSecurityPolicy")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_content_security_policy(&var_182, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_content_security_policy(var_182, inner_writer)?
     }
     if let Some(var_183) = &input.content_type_options {
         let inner_writer = scope
             .start_el("ContentTypeOptions")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_content_type_options(&var_183, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_content_type_options(var_183, inner_writer)?
     }
     if let Some(var_184) = &input.strict_transport_security {
         let inner_writer = scope
             .start_el("StrictTransportSecurity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_strict_transport_security(&var_184, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_response_headers_policy_strict_transport_security(var_184, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2227,7 +2207,7 @@ pub fn serialize_structure_crate_model_response_headers_policy_custom_headers_co
                 let inner_writer = inner_writer
                     .start_el("ResponseHeadersPolicyCustomHeader")
                     .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-                crate::xml_ser::serialize_structure_crate_model_response_headers_policy_custom_header(&list_item_187, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_response_headers_policy_custom_header(list_item_187, inner_writer)?
             }
         }
     }
@@ -2370,7 +2350,7 @@ pub fn serialize_structure_crate_model_cache_policy_headers_config(
         let inner_writer = scope
             .start_el("Headers")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_headers(&var_200, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_headers(var_200, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2393,7 +2373,7 @@ pub fn serialize_structure_crate_model_cache_policy_cookies_config(
         let inner_writer = scope
             .start_el("Cookies")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_cookie_names(&var_202, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_cookie_names(var_202, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2416,7 +2396,7 @@ pub fn serialize_structure_crate_model_cache_policy_query_strings_config(
         let inner_writer = scope
             .start_el("QueryStrings")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_query_string_names(&var_204, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_query_string_names(var_204, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2453,22 +2433,19 @@ pub fn serialize_structure_crate_model_origin(
         let inner_writer = scope
             .start_el("CustomHeaders")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_custom_headers(&var_208, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_custom_headers(var_208, inner_writer)?
     }
     if let Some(var_209) = &input.s3_origin_config {
         let inner_writer = scope
             .start_el("S3OriginConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_s3_origin_config(&var_209, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_s3_origin_config(var_209, inner_writer)?
     }
     if let Some(var_210) = &input.custom_origin_config {
         let inner_writer = scope
             .start_el("CustomOriginConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_custom_origin_config(
-            &var_210,
-            inner_writer,
-        )?
+        crate::xml_ser::serialize_structure_crate_model_custom_origin_config(var_210, inner_writer)?
     }
     if let Some(var_211) = &input.connection_attempts {
         let mut inner_writer = scope
@@ -2488,7 +2465,7 @@ pub fn serialize_structure_crate_model_origin(
         let inner_writer = scope
             .start_el("OriginShield")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_origin_shield(&var_213, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_origin_shield(var_213, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2512,7 +2489,7 @@ pub fn serialize_structure_crate_model_origin_group(
             .start_el("FailoverCriteria")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_origin_group_failover_criteria(
-            &var_215,
+            var_215,
             inner_writer,
         )?
     }
@@ -2520,10 +2497,7 @@ pub fn serialize_structure_crate_model_origin_group(
         let inner_writer = scope
             .start_el("Members")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_origin_group_members(
-            &var_216,
-            inner_writer,
-        )?
+        crate::xml_ser::serialize_structure_crate_model_origin_group_members(var_216, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2600,7 +2574,7 @@ pub fn serialize_structure_crate_model_allowed_methods(
         let inner_writer = scope
             .start_el("CachedMethods")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_cached_methods(&var_224, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_cached_methods(var_224, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2630,7 +2604,7 @@ pub fn serialize_structure_crate_model_lambda_function_associations(
                     .start_el("LambdaFunctionAssociation")
                     .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
                 crate::xml_ser::serialize_structure_crate_model_lambda_function_association(
-                    &list_item_227,
+                    list_item_227,
                     inner_writer,
                 )?
             }
@@ -2664,7 +2638,7 @@ pub fn serialize_structure_crate_model_function_associations(
                     .start_el("FunctionAssociation")
                     .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
                 crate::xml_ser::serialize_structure_crate_model_function_association(
-                    &list_item_230,
+                    list_item_230,
                     inner_writer,
                 )?
             }
@@ -2691,20 +2665,20 @@ pub fn serialize_structure_crate_model_forwarded_values(
         let inner_writer = scope
             .start_el("Cookies")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_cookie_preference(&var_232, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_cookie_preference(var_232, inner_writer)?
     }
     if let Some(var_233) = &input.headers {
         let inner_writer = scope
             .start_el("Headers")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_headers(&var_233, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_headers(var_233, inner_writer)?
     }
     if let Some(var_234) = &input.query_string_cache_keys {
         let inner_writer = scope
             .start_el("QueryStringCacheKeys")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_query_string_cache_keys(
-            &var_234,
+            var_234,
             inner_writer,
         )?
     }
@@ -2736,13 +2710,13 @@ pub fn serialize_structure_crate_model_cache_behavior(
         let inner_writer = scope
             .start_el("TrustedSigners")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_trusted_signers(&var_237, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_trusted_signers(var_237, inner_writer)?
     }
     if let Some(var_238) = &input.trusted_key_groups {
         let inner_writer = scope
             .start_el("TrustedKeyGroups")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_trusted_key_groups(&var_238, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_trusted_key_groups(var_238, inner_writer)?
     }
     if let Some(var_239) = &input.viewer_protocol_policy {
         let mut inner_writer = scope
@@ -2755,7 +2729,7 @@ pub fn serialize_structure_crate_model_cache_behavior(
         let inner_writer = scope
             .start_el("AllowedMethods")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_allowed_methods(&var_240, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_allowed_methods(var_240, inner_writer)?
     }
     if let Some(var_241) = &input.smooth_streaming {
         let mut inner_writer = scope
@@ -2776,7 +2750,7 @@ pub fn serialize_structure_crate_model_cache_behavior(
             .start_el("LambdaFunctionAssociations")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_lambda_function_associations(
-            &var_243,
+            var_243,
             inner_writer,
         )?
     }
@@ -2785,7 +2759,7 @@ pub fn serialize_structure_crate_model_cache_behavior(
             .start_el("FunctionAssociations")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_model_function_associations(
-            &var_244,
+            var_244,
             inner_writer,
         )?
     }
@@ -2828,7 +2802,7 @@ pub fn serialize_structure_crate_model_cache_behavior(
         let inner_writer = scope
             .start_el("ForwardedValues")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_forwarded_values(&var_250, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_forwarded_values(var_250, inner_writer)?
     }
     if let Some(var_251) = &input.min_ttl {
         let mut inner_writer = scope
@@ -2956,7 +2930,7 @@ pub fn serialize_structure_crate_model_query_arg_profiles(
                     .start_el("QueryArgProfile")
                     .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
                 crate::xml_ser::serialize_structure_crate_model_query_arg_profile(
-                    &list_item_264,
+                    list_item_264,
                     inner_writer,
                 )?
             }
@@ -2990,7 +2964,7 @@ pub fn serialize_structure_crate_model_content_type_profiles(
                     .start_el("ContentTypeProfile")
                     .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
                 crate::xml_ser::serialize_structure_crate_model_content_type_profile(
-                    &list_item_267,
+                    list_item_267,
                     inner_writer,
                 )?
             }
@@ -3024,7 +2998,7 @@ pub fn serialize_structure_crate_model_encryption_entity(
         let inner_writer = scope
             .start_el("FieldPatterns")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_field_patterns(&var_270, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_field_patterns(var_270, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -3474,7 +3448,7 @@ pub fn serialize_structure_crate_model_custom_headers(
                     .start_el("OriginCustomHeader")
                     .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
                 crate::xml_ser::serialize_structure_crate_model_origin_custom_header(
-                    &list_item_312,
+                    list_item_312,
                     inner_writer,
                 )?
             }
@@ -3532,10 +3506,7 @@ pub fn serialize_structure_crate_model_custom_origin_config(
         let inner_writer = scope
             .start_el("OriginSslProtocols")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_origin_ssl_protocols(
-            &var_317,
-            inner_writer,
-        )?
+        crate::xml_ser::serialize_structure_crate_model_origin_ssl_protocols(var_317, inner_writer)?
     }
     if let Some(var_318) = &input.origin_read_timeout {
         let mut inner_writer = scope
@@ -3589,7 +3560,7 @@ pub fn serialize_structure_crate_model_origin_group_failover_criteria(
         let inner_writer = scope
             .start_el("StatusCodes")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_status_codes(&var_322, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_status_codes(var_322, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -3619,7 +3590,7 @@ pub fn serialize_structure_crate_model_origin_group_members(
                     .start_el("OriginGroupMember")
                     .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
                 crate::xml_ser::serialize_structure_crate_model_origin_group_member(
-                    &list_item_325,
+                    list_item_325,
                     inner_writer,
                 )?
             }
@@ -3733,7 +3704,7 @@ pub fn serialize_structure_crate_model_cookie_preference(
         let inner_writer = scope
             .start_el("WhitelistedNames")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_model_cookie_names(&var_335, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_cookie_names(var_335, inner_writer)?
     }
     scope.finish();
     Ok(())

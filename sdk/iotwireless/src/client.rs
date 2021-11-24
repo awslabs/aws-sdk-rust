@@ -80,6 +80,33 @@ where
     ) -> fluent_builders::AssociateAwsAccountWithPartnerAccount<C, M, R> {
         fluent_builders::AssociateAwsAccountWithPartnerAccount::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `AssociateMulticastGroupWithFuotaTask` operation.
+    ///
+    /// See [`AssociateMulticastGroupWithFuotaTask`](crate::client::fluent_builders::AssociateMulticastGroupWithFuotaTask) for more information about the
+    /// operation and its arguments.
+    pub fn associate_multicast_group_with_fuota_task(
+        &self,
+    ) -> fluent_builders::AssociateMulticastGroupWithFuotaTask<C, M, R> {
+        fluent_builders::AssociateMulticastGroupWithFuotaTask::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `AssociateWirelessDeviceWithFuotaTask` operation.
+    ///
+    /// See [`AssociateWirelessDeviceWithFuotaTask`](crate::client::fluent_builders::AssociateWirelessDeviceWithFuotaTask) for more information about the
+    /// operation and its arguments.
+    pub fn associate_wireless_device_with_fuota_task(
+        &self,
+    ) -> fluent_builders::AssociateWirelessDeviceWithFuotaTask<C, M, R> {
+        fluent_builders::AssociateWirelessDeviceWithFuotaTask::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `AssociateWirelessDeviceWithMulticastGroup` operation.
+    ///
+    /// See [`AssociateWirelessDeviceWithMulticastGroup`](crate::client::fluent_builders::AssociateWirelessDeviceWithMulticastGroup) for more information about the
+    /// operation and its arguments.
+    pub fn associate_wireless_device_with_multicast_group(
+        &self,
+    ) -> fluent_builders::AssociateWirelessDeviceWithMulticastGroup<C, M, R> {
+        fluent_builders::AssociateWirelessDeviceWithMulticastGroup::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `AssociateWirelessDeviceWithThing` operation.
     ///
     /// See [`AssociateWirelessDeviceWithThing`](crate::client::fluent_builders::AssociateWirelessDeviceWithThing) for more information about the
@@ -107,6 +134,15 @@ where
     ) -> fluent_builders::AssociateWirelessGatewayWithThing<C, M, R> {
         fluent_builders::AssociateWirelessGatewayWithThing::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CancelMulticastGroupSession` operation.
+    ///
+    /// See [`CancelMulticastGroupSession`](crate::client::fluent_builders::CancelMulticastGroupSession) for more information about the
+    /// operation and its arguments.
+    pub fn cancel_multicast_group_session(
+        &self,
+    ) -> fluent_builders::CancelMulticastGroupSession<C, M, R> {
+        fluent_builders::CancelMulticastGroupSession::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CreateDestination` operation.
     ///
     /// See [`CreateDestination`](crate::client::fluent_builders::CreateDestination) for more information about the
@@ -120,6 +156,20 @@ where
     /// operation and its arguments.
     pub fn create_device_profile(&self) -> fluent_builders::CreateDeviceProfile<C, M, R> {
         fluent_builders::CreateDeviceProfile::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateFuotaTask` operation.
+    ///
+    /// See [`CreateFuotaTask`](crate::client::fluent_builders::CreateFuotaTask) for more information about the
+    /// operation and its arguments.
+    pub fn create_fuota_task(&self) -> fluent_builders::CreateFuotaTask<C, M, R> {
+        fluent_builders::CreateFuotaTask::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateMulticastGroup` operation.
+    ///
+    /// See [`CreateMulticastGroup`](crate::client::fluent_builders::CreateMulticastGroup) for more information about the
+    /// operation and its arguments.
+    pub fn create_multicast_group(&self) -> fluent_builders::CreateMulticastGroup<C, M, R> {
+        fluent_builders::CreateMulticastGroup::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `CreateServiceProfile` operation.
     ///
@@ -174,6 +224,20 @@ where
     pub fn delete_device_profile(&self) -> fluent_builders::DeleteDeviceProfile<C, M, R> {
         fluent_builders::DeleteDeviceProfile::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DeleteFuotaTask` operation.
+    ///
+    /// See [`DeleteFuotaTask`](crate::client::fluent_builders::DeleteFuotaTask) for more information about the
+    /// operation and its arguments.
+    pub fn delete_fuota_task(&self) -> fluent_builders::DeleteFuotaTask<C, M, R> {
+        fluent_builders::DeleteFuotaTask::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteMulticastGroup` operation.
+    ///
+    /// See [`DeleteMulticastGroup`](crate::client::fluent_builders::DeleteMulticastGroup) for more information about the
+    /// operation and its arguments.
+    pub fn delete_multicast_group(&self) -> fluent_builders::DeleteMulticastGroup<C, M, R> {
+        fluent_builders::DeleteMulticastGroup::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DeleteServiceProfile` operation.
     ///
     /// See [`DeleteServiceProfile`](crate::client::fluent_builders::DeleteServiceProfile) for more information about the
@@ -222,6 +286,33 @@ where
     ) -> fluent_builders::DisassociateAwsAccountFromPartnerAccount<C, M, R> {
         fluent_builders::DisassociateAwsAccountFromPartnerAccount::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DisassociateMulticastGroupFromFuotaTask` operation.
+    ///
+    /// See [`DisassociateMulticastGroupFromFuotaTask`](crate::client::fluent_builders::DisassociateMulticastGroupFromFuotaTask) for more information about the
+    /// operation and its arguments.
+    pub fn disassociate_multicast_group_from_fuota_task(
+        &self,
+    ) -> fluent_builders::DisassociateMulticastGroupFromFuotaTask<C, M, R> {
+        fluent_builders::DisassociateMulticastGroupFromFuotaTask::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DisassociateWirelessDeviceFromFuotaTask` operation.
+    ///
+    /// See [`DisassociateWirelessDeviceFromFuotaTask`](crate::client::fluent_builders::DisassociateWirelessDeviceFromFuotaTask) for more information about the
+    /// operation and its arguments.
+    pub fn disassociate_wireless_device_from_fuota_task(
+        &self,
+    ) -> fluent_builders::DisassociateWirelessDeviceFromFuotaTask<C, M, R> {
+        fluent_builders::DisassociateWirelessDeviceFromFuotaTask::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DisassociateWirelessDeviceFromMulticastGroup` operation.
+    ///
+    /// See [`DisassociateWirelessDeviceFromMulticastGroup`](crate::client::fluent_builders::DisassociateWirelessDeviceFromMulticastGroup) for more information about the
+    /// operation and its arguments.
+    pub fn disassociate_wireless_device_from_multicast_group(
+        &self,
+    ) -> fluent_builders::DisassociateWirelessDeviceFromMulticastGroup<C, M, R> {
+        fluent_builders::DisassociateWirelessDeviceFromMulticastGroup::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DisassociateWirelessDeviceFromThing` operation.
     ///
     /// See [`DisassociateWirelessDeviceFromThing`](crate::client::fluent_builders::DisassociateWirelessDeviceFromThing) for more information about the
@@ -263,6 +354,13 @@ where
     pub fn get_device_profile(&self) -> fluent_builders::GetDeviceProfile<C, M, R> {
         fluent_builders::GetDeviceProfile::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `GetFuotaTask` operation.
+    ///
+    /// See [`GetFuotaTask`](crate::client::fluent_builders::GetFuotaTask) for more information about the
+    /// operation and its arguments.
+    pub fn get_fuota_task(&self) -> fluent_builders::GetFuotaTask<C, M, R> {
+        fluent_builders::GetFuotaTask::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetLogLevelsByResourceTypes` operation.
     ///
     /// See [`GetLogLevelsByResourceTypes`](crate::client::fluent_builders::GetLogLevelsByResourceTypes) for more information about the
@@ -272,12 +370,37 @@ where
     ) -> fluent_builders::GetLogLevelsByResourceTypes<C, M, R> {
         fluent_builders::GetLogLevelsByResourceTypes::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `GetMulticastGroup` operation.
+    ///
+    /// See [`GetMulticastGroup`](crate::client::fluent_builders::GetMulticastGroup) for more information about the
+    /// operation and its arguments.
+    pub fn get_multicast_group(&self) -> fluent_builders::GetMulticastGroup<C, M, R> {
+        fluent_builders::GetMulticastGroup::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetMulticastGroupSession` operation.
+    ///
+    /// See [`GetMulticastGroupSession`](crate::client::fluent_builders::GetMulticastGroupSession) for more information about the
+    /// operation and its arguments.
+    pub fn get_multicast_group_session(
+        &self,
+    ) -> fluent_builders::GetMulticastGroupSession<C, M, R> {
+        fluent_builders::GetMulticastGroupSession::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetPartnerAccount` operation.
     ///
     /// See [`GetPartnerAccount`](crate::client::fluent_builders::GetPartnerAccount) for more information about the
     /// operation and its arguments.
     pub fn get_partner_account(&self) -> fluent_builders::GetPartnerAccount<C, M, R> {
         fluent_builders::GetPartnerAccount::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetResourceEventConfiguration` operation.
+    ///
+    /// See [`GetResourceEventConfiguration`](crate::client::fluent_builders::GetResourceEventConfiguration) for more information about the
+    /// operation and its arguments.
+    pub fn get_resource_event_configuration(
+        &self,
+    ) -> fluent_builders::GetResourceEventConfiguration<C, M, R> {
+        fluent_builders::GetResourceEventConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `GetResourceLogLevel` operation.
     ///
@@ -380,6 +503,29 @@ where
     pub fn list_device_profiles(&self) -> fluent_builders::ListDeviceProfiles<C, M, R> {
         fluent_builders::ListDeviceProfiles::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ListFuotaTasks` operation.
+    ///
+    /// See [`ListFuotaTasks`](crate::client::fluent_builders::ListFuotaTasks) for more information about the
+    /// operation and its arguments.
+    pub fn list_fuota_tasks(&self) -> fluent_builders::ListFuotaTasks<C, M, R> {
+        fluent_builders::ListFuotaTasks::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListMulticastGroups` operation.
+    ///
+    /// See [`ListMulticastGroups`](crate::client::fluent_builders::ListMulticastGroups) for more information about the
+    /// operation and its arguments.
+    pub fn list_multicast_groups(&self) -> fluent_builders::ListMulticastGroups<C, M, R> {
+        fluent_builders::ListMulticastGroups::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListMulticastGroupsByFuotaTask` operation.
+    ///
+    /// See [`ListMulticastGroupsByFuotaTask`](crate::client::fluent_builders::ListMulticastGroupsByFuotaTask) for more information about the
+    /// operation and its arguments.
+    pub fn list_multicast_groups_by_fuota_task(
+        &self,
+    ) -> fluent_builders::ListMulticastGroupsByFuotaTask<C, M, R> {
+        fluent_builders::ListMulticastGroupsByFuotaTask::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ListPartnerAccounts` operation.
     ///
     /// See [`ListPartnerAccounts`](crate::client::fluent_builders::ListPartnerAccounts) for more information about the
@@ -447,6 +593,15 @@ where
     pub fn reset_resource_log_level(&self) -> fluent_builders::ResetResourceLogLevel<C, M, R> {
         fluent_builders::ResetResourceLogLevel::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `SendDataToMulticastGroup` operation.
+    ///
+    /// See [`SendDataToMulticastGroup`](crate::client::fluent_builders::SendDataToMulticastGroup) for more information about the
+    /// operation and its arguments.
+    pub fn send_data_to_multicast_group(
+        &self,
+    ) -> fluent_builders::SendDataToMulticastGroup<C, M, R> {
+        fluent_builders::SendDataToMulticastGroup::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `SendDataToWirelessDevice` operation.
     ///
     /// See [`SendDataToWirelessDevice`](crate::client::fluent_builders::SendDataToWirelessDevice) for more information about the
@@ -455,6 +610,44 @@ where
         &self,
     ) -> fluent_builders::SendDataToWirelessDevice<C, M, R> {
         fluent_builders::SendDataToWirelessDevice::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `StartBulkAssociateWirelessDeviceWithMulticastGroup` operation.
+    ///
+    /// See [`StartBulkAssociateWirelessDeviceWithMulticastGroup`](crate::client::fluent_builders::StartBulkAssociateWirelessDeviceWithMulticastGroup) for more information about the
+    /// operation and its arguments.
+    pub fn start_bulk_associate_wireless_device_with_multicast_group(
+        &self,
+    ) -> fluent_builders::StartBulkAssociateWirelessDeviceWithMulticastGroup<C, M, R> {
+        fluent_builders::StartBulkAssociateWirelessDeviceWithMulticastGroup::new(
+            self.handle.clone(),
+        )
+    }
+    /// Constructs a fluent builder for the `StartBulkDisassociateWirelessDeviceFromMulticastGroup` operation.
+    ///
+    /// See [`StartBulkDisassociateWirelessDeviceFromMulticastGroup`](crate::client::fluent_builders::StartBulkDisassociateWirelessDeviceFromMulticastGroup) for more information about the
+    /// operation and its arguments.
+    pub fn start_bulk_disassociate_wireless_device_from_multicast_group(
+        &self,
+    ) -> fluent_builders::StartBulkDisassociateWirelessDeviceFromMulticastGroup<C, M, R> {
+        fluent_builders::StartBulkDisassociateWirelessDeviceFromMulticastGroup::new(
+            self.handle.clone(),
+        )
+    }
+    /// Constructs a fluent builder for the `StartFuotaTask` operation.
+    ///
+    /// See [`StartFuotaTask`](crate::client::fluent_builders::StartFuotaTask) for more information about the
+    /// operation and its arguments.
+    pub fn start_fuota_task(&self) -> fluent_builders::StartFuotaTask<C, M, R> {
+        fluent_builders::StartFuotaTask::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `StartMulticastGroupSession` operation.
+    ///
+    /// See [`StartMulticastGroupSession`](crate::client::fluent_builders::StartMulticastGroupSession) for more information about the
+    /// operation and its arguments.
+    pub fn start_multicast_group_session(
+        &self,
+    ) -> fluent_builders::StartMulticastGroupSession<C, M, R> {
+        fluent_builders::StartMulticastGroupSession::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `TagResource` operation.
     ///
@@ -484,6 +677,13 @@ where
     pub fn update_destination(&self) -> fluent_builders::UpdateDestination<C, M, R> {
         fluent_builders::UpdateDestination::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateFuotaTask` operation.
+    ///
+    /// See [`UpdateFuotaTask`](crate::client::fluent_builders::UpdateFuotaTask) for more information about the
+    /// operation and its arguments.
+    pub fn update_fuota_task(&self) -> fluent_builders::UpdateFuotaTask<C, M, R> {
+        fluent_builders::UpdateFuotaTask::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `UpdateLogLevelsByResourceTypes` operation.
     ///
     /// See [`UpdateLogLevelsByResourceTypes`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes) for more information about the
@@ -493,12 +693,28 @@ where
     ) -> fluent_builders::UpdateLogLevelsByResourceTypes<C, M, R> {
         fluent_builders::UpdateLogLevelsByResourceTypes::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateMulticastGroup` operation.
+    ///
+    /// See [`UpdateMulticastGroup`](crate::client::fluent_builders::UpdateMulticastGroup) for more information about the
+    /// operation and its arguments.
+    pub fn update_multicast_group(&self) -> fluent_builders::UpdateMulticastGroup<C, M, R> {
+        fluent_builders::UpdateMulticastGroup::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `UpdatePartnerAccount` operation.
     ///
     /// See [`UpdatePartnerAccount`](crate::client::fluent_builders::UpdatePartnerAccount) for more information about the
     /// operation and its arguments.
     pub fn update_partner_account(&self) -> fluent_builders::UpdatePartnerAccount<C, M, R> {
         fluent_builders::UpdatePartnerAccount::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateResourceEventConfiguration` operation.
+    ///
+    /// See [`UpdateResourceEventConfiguration`](crate::client::fluent_builders::UpdateResourceEventConfiguration) for more information about the
+    /// operation and its arguments.
+    pub fn update_resource_event_configuration(
+        &self,
+    ) -> fluent_builders::UpdateResourceEventConfiguration<C, M, R> {
+        fluent_builders::UpdateResourceEventConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `UpdateWirelessDevice` operation.
     ///
@@ -625,6 +841,261 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `AssociateMulticastGroupWithFuotaTask`.
+    ///
+    /// <p>Associate a multicast group with a FUOTA task.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct AssociateMulticastGroupWithFuotaTask<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::associate_multicast_group_with_fuota_task_input::Builder,
+    }
+    impl<C, M, R> AssociateMulticastGroupWithFuotaTask<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `AssociateMulticastGroupWithFuotaTask`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateMulticastGroupWithFuotaTaskOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::AssociateMulticastGroupWithFuotaTaskError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::AssociateMulticastGroupWithFuotaTaskInputOperationOutputAlias,
+                crate::output::AssociateMulticastGroupWithFuotaTaskOutput,
+                crate::error::AssociateMulticastGroupWithFuotaTaskError,
+                crate::input::AssociateMulticastGroupWithFuotaTaskInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn multicast_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multicast_group_id(inp);
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_multicast_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_multicast_group_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `AssociateWirelessDeviceWithFuotaTask`.
+    ///
+    /// <p>Associate a wireless device with a FUOTA task.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct AssociateWirelessDeviceWithFuotaTask<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::associate_wireless_device_with_fuota_task_input::Builder,
+    }
+    impl<C, M, R> AssociateWirelessDeviceWithFuotaTask<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `AssociateWirelessDeviceWithFuotaTask`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateWirelessDeviceWithFuotaTaskOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::AssociateWirelessDeviceWithFuotaTaskError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::AssociateWirelessDeviceWithFuotaTaskInputOperationOutputAlias,
+                crate::output::AssociateWirelessDeviceWithFuotaTaskOutput,
+                crate::error::AssociateWirelessDeviceWithFuotaTaskError,
+                crate::input::AssociateWirelessDeviceWithFuotaTaskInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The ID of the wireless device.</p>
+        pub fn wireless_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_device_id(inp);
+            self
+        }
+        /// <p>The ID of the wireless device.</p>
+        pub fn set_wireless_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_wireless_device_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `AssociateWirelessDeviceWithMulticastGroup`.
+    ///
+    /// <p>Associates a wireless device with a multicast group.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct AssociateWirelessDeviceWithMulticastGroup<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::associate_wireless_device_with_multicast_group_input::Builder,
+    }
+    impl<C, M, R> AssociateWirelessDeviceWithMulticastGroup<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `AssociateWirelessDeviceWithMulticastGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateWirelessDeviceWithMulticastGroupOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::AssociateWirelessDeviceWithMulticastGroupError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::AssociateWirelessDeviceWithMulticastGroupInputOperationOutputAlias,
+                crate::output::AssociateWirelessDeviceWithMulticastGroupOutput,
+                crate::error::AssociateWirelessDeviceWithMulticastGroupError,
+                crate::input::AssociateWirelessDeviceWithMulticastGroupInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The ID of the wireless device.</p>
+        pub fn wireless_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_device_id(inp);
+            self
+        }
+        /// <p>The ID of the wireless device.</p>
+        pub fn set_wireless_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_wireless_device_id(input);
             self
         }
     }
@@ -870,6 +1341,76 @@ pub mod fluent_builders {
         /// <p>The ARN of the thing to associate with the wireless gateway.</p>
         pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_thing_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CancelMulticastGroupSession`.
+    ///
+    /// <p>Cancels an existing multicast group session.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CancelMulticastGroupSession<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::cancel_multicast_group_session_input::Builder,
+    }
+    impl<C, M, R> CancelMulticastGroupSession<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CancelMulticastGroupSession`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CancelMulticastGroupSessionOutput,
+            aws_smithy_http::result::SdkError<crate::error::CancelMulticastGroupSessionError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CancelMulticastGroupSessionInputOperationOutputAlias,
+                crate::output::CancelMulticastGroupSessionOutput,
+                crate::error::CancelMulticastGroupSessionError,
+                crate::input::CancelMulticastGroupSessionInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -1126,6 +1667,282 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateFuotaTask`.
+    ///
+    /// <p>Creates a FUOTA task.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateFuotaTask<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_fuota_task_input::Builder,
+    }
+    impl<C, M, R> CreateFuotaTask<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateFuotaTask`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateFuotaTaskOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateFuotaTaskError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateFuotaTaskInputOperationOutputAlias,
+                crate::output::CreateFuotaTaskOutput,
+                crate::error::CreateFuotaTaskError,
+                crate::input::CreateFuotaTaskInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of a FUOTA task.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of a FUOTA task.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>The LoRaWAN information used with a FUOTA task.</p>
+        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanFuotaTask) -> Self {
+            self.inner = self.inner.lo_ra_wan(inp);
+            self
+        }
+        /// <p>The LoRaWAN information used with a FUOTA task.</p>
+        pub fn set_lo_ra_wan(
+            mut self,
+            input: std::option::Option<crate::model::LoRaWanFuotaTask>,
+        ) -> Self {
+            self.inner = self.inner.set_lo_ra_wan(input);
+            self
+        }
+        /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+        pub fn firmware_update_image(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firmware_update_image(inp);
+            self
+        }
+        /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+        pub fn set_firmware_update_image(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_firmware_update_image(input);
+            self
+        }
+        /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+        pub fn firmware_update_role(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firmware_update_role(inp);
+            self
+        }
+        /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+        pub fn set_firmware_update_role(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_firmware_update_role(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateMulticastGroup`.
+    ///
+    /// <p>Creates a multicast group.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateMulticastGroup<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_multicast_group_input::Builder,
+    }
+    impl<C, M, R> CreateMulticastGroup<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateMulticastGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateMulticastGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateMulticastGroupError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateMulticastGroupInputOperationOutputAlias,
+                crate::output::CreateMulticastGroupOutput,
+                crate::error::CreateMulticastGroupError,
+                crate::input::CreateMulticastGroupInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the multicast group.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the multicast group.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the multicast group.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the multicast group.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
+        /// same token as a resource that already exists, an exception occurs. If you omit this value,
+        /// AWS SDKs will automatically generate a unique client request. </p>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
+        /// same token as a resource that already exists, an exception occurs. If you omit this value,
+        /// AWS SDKs will automatically generate a unique client request. </p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanMulticast) -> Self {
+            self.inner = self.inner.lo_ra_wan(inp);
+            self
+        }
+        /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+        pub fn set_lo_ra_wan(
+            mut self,
+            input: std::option::Option<crate::model::LoRaWanMulticast>,
+        ) -> Self {
+            self.inner = self.inner.set_lo_ra_wan(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1865,6 +2682,146 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteFuotaTask`.
+    ///
+    /// <p>Deletes a FUOTA task.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteFuotaTask<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_fuota_task_input::Builder,
+    }
+    impl<C, M, R> DeleteFuotaTask<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteFuotaTask`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteFuotaTaskOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteFuotaTaskError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteFuotaTaskInputOperationOutputAlias,
+                crate::output::DeleteFuotaTaskOutput,
+                crate::error::DeleteFuotaTaskError,
+                crate::input::DeleteFuotaTaskInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteMulticastGroup`.
+    ///
+    /// <p>Deletes a multicast group if it is not in use by a fuota task.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteMulticastGroup<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_multicast_group_input::Builder,
+    }
+    impl<C, M, R> DeleteMulticastGroup<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteMulticastGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteMulticastGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteMulticastGroupError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteMulticastGroupInputOperationOutputAlias,
+                crate::output::DeleteMulticastGroupOutput,
+                crate::error::DeleteMulticastGroupError,
+                crate::input::DeleteMulticastGroupInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteServiceProfile`.
     ///
     /// <p>Deletes a service profile.</p>
@@ -2305,6 +3262,261 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DisassociateMulticastGroupFromFuotaTask`.
+    ///
+    /// <p>Disassociates a multicast group from a fuota task.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DisassociateMulticastGroupFromFuotaTask<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::disassociate_multicast_group_from_fuota_task_input::Builder,
+    }
+    impl<C, M, R> DisassociateMulticastGroupFromFuotaTask<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DisassociateMulticastGroupFromFuotaTask`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateMulticastGroupFromFuotaTaskOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DisassociateMulticastGroupFromFuotaTaskError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DisassociateMulticastGroupFromFuotaTaskInputOperationOutputAlias,
+                crate::output::DisassociateMulticastGroupFromFuotaTaskOutput,
+                crate::error::DisassociateMulticastGroupFromFuotaTaskError,
+                crate::input::DisassociateMulticastGroupFromFuotaTaskInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn multicast_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multicast_group_id(inp);
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_multicast_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_multicast_group_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DisassociateWirelessDeviceFromFuotaTask`.
+    ///
+    /// <p>Disassociates a wireless device from a FUOTA task.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DisassociateWirelessDeviceFromFuotaTask<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::disassociate_wireless_device_from_fuota_task_input::Builder,
+    }
+    impl<C, M, R> DisassociateWirelessDeviceFromFuotaTask<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DisassociateWirelessDeviceFromFuotaTask`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DisassociateWirelessDeviceFromFuotaTaskError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DisassociateWirelessDeviceFromFuotaTaskInputOperationOutputAlias,
+                crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput,
+                crate::error::DisassociateWirelessDeviceFromFuotaTaskError,
+                crate::input::DisassociateWirelessDeviceFromFuotaTaskInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The ID of the wireless device.</p>
+        pub fn wireless_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_device_id(inp);
+            self
+        }
+        /// <p>The ID of the wireless device.</p>
+        pub fn set_wireless_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_wireless_device_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DisassociateWirelessDeviceFromMulticastGroup`.
+    ///
+    /// <p>Disassociates a wireless device from a multicast group.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DisassociateWirelessDeviceFromMulticastGroup<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::disassociate_wireless_device_from_multicast_group_input::Builder,
+    }
+    impl<C, M, R> DisassociateWirelessDeviceFromMulticastGroup<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DisassociateWirelessDeviceFromMulticastGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DisassociateWirelessDeviceFromMulticastGroupError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DisassociateWirelessDeviceFromMulticastGroupInputOperationOutputAlias,
+                crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput,
+                crate::error::DisassociateWirelessDeviceFromMulticastGroupError,
+                crate::input::DisassociateWirelessDeviceFromMulticastGroupInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The ID of the wireless device.</p>
+        pub fn wireless_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_device_id(inp);
+            self
+        }
+        /// <p>The ID of the wireless device.</p>
+        pub fn set_wireless_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_wireless_device_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DisassociateWirelessDeviceFromThing`.
     ///
     /// <p>Disassociates a wireless device from its currently associated thing.</p>
@@ -2661,6 +3873,76 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetFuotaTask`.
+    ///
+    /// <p>Gets information about a FUOTA task.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetFuotaTask<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_fuota_task_input::Builder,
+    }
+    impl<C, M, R> GetFuotaTask<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetFuotaTask`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetFuotaTaskOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetFuotaTaskError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetFuotaTaskInputOperationOutputAlias,
+                crate::output::GetFuotaTaskOutput,
+                crate::error::GetFuotaTaskError,
+                crate::input::GetFuotaTaskInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetLogLevelsByResourceTypes`.
     ///
     /// <p>Returns current default log levels or log levels by resource types. Based on resource types, log levels can be
@@ -2720,6 +4002,146 @@ pub mod fluent_builders {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+    }
+    /// Fluent builder constructing a request to `GetMulticastGroup`.
+    ///
+    /// <p>Gets information about a multicast group.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetMulticastGroup<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_multicast_group_input::Builder,
+    }
+    impl<C, M, R> GetMulticastGroup<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetMulticastGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetMulticastGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetMulticastGroupError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetMulticastGroupInputOperationOutputAlias,
+                crate::output::GetMulticastGroupOutput,
+                crate::error::GetMulticastGroupError,
+                crate::input::GetMulticastGroupInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetMulticastGroupSession`.
+    ///
+    /// <p>Gets information about a multicast group session.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetMulticastGroupSession<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_multicast_group_session_input::Builder,
+    }
+    impl<C, M, R> GetMulticastGroupSession<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetMulticastGroupSession`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetMulticastGroupSessionOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetMulticastGroupSessionError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetMulticastGroupSessionInputOperationOutputAlias,
+                crate::output::GetMulticastGroupSessionOutput,
+                crate::error::GetMulticastGroupSessionError,
+                crate::input::GetMulticastGroupSessionInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
         }
     }
     /// Fluent builder constructing a request to `GetPartnerAccount`.
@@ -2803,6 +4225,102 @@ pub mod fluent_builders {
         pub fn set_partner_type(
             mut self,
             input: std::option::Option<crate::model::PartnerType>,
+        ) -> Self {
+            self.inner = self.inner.set_partner_type(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetResourceEventConfiguration`.
+    ///
+    /// <p>Get the event configuration for a particular resource identifier.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetResourceEventConfiguration<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_resource_event_configuration_input::Builder,
+    }
+    impl<C, M, R> GetResourceEventConfiguration<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetResourceEventConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetResourceEventConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetResourceEventConfigurationError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetResourceEventConfigurationInputOperationOutputAlias,
+                crate::output::GetResourceEventConfigurationOutput,
+                crate::error::GetResourceEventConfigurationError,
+                crate::input::GetResourceEventConfigurationInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Resource identifier to opt in for event messaging.</p>
+        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(inp);
+            self
+        }
+        /// <p>Resource identifier to opt in for event messaging.</p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_identifier(input);
+            self
+        }
+        /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+        pub fn identifier_type(mut self, inp: crate::model::IdentifierType) -> Self {
+            self.inner = self.inner.identifier_type(inp);
+            self
+        }
+        /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+        pub fn set_identifier_type(
+            mut self,
+            input: std::option::Option<crate::model::IdentifierType>,
+        ) -> Self {
+            self.inner = self.inner.set_identifier_type(input);
+            self
+        }
+        /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+        pub fn partner_type(mut self, inp: crate::model::EventNotificationPartnerType) -> Self {
+            self.inner = self.inner.partner_type(inp);
+            self
+        }
+        /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+        pub fn set_partner_type(
+            mut self,
+            input: std::option::Option<crate::model::EventNotificationPartnerType>,
         ) -> Self {
             self.inner = self.inner.set_partner_type(input);
             self
@@ -3794,6 +5312,256 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListFuotaTasks`.
+    ///
+    /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListFuotaTasks<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_fuota_tasks_input::Builder,
+    }
+    impl<C, M, R> ListFuotaTasks<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListFuotaTasks`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListFuotaTasksOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListFuotaTasksError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListFuotaTasksInputOperationOutputAlias,
+                crate::output::ListFuotaTasksOutput,
+                crate::error::ListFuotaTasksError,
+                crate::input::ListFuotaTasksInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListMulticastGroups`.
+    ///
+    /// <p>Lists the multicast groups registered to your AWS account.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListMulticastGroups<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_multicast_groups_input::Builder,
+    }
+    impl<C, M, R> ListMulticastGroups<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListMulticastGroups`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListMulticastGroupsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListMulticastGroupsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListMulticastGroupsInputOperationOutputAlias,
+                crate::output::ListMulticastGroupsOutput,
+                crate::error::ListMulticastGroupsError,
+                crate::input::ListMulticastGroupsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListMulticastGroupsByFuotaTask`.
+    ///
+    /// <p>List all multicast groups associated with a fuota task.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListMulticastGroupsByFuotaTask<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_multicast_groups_by_fuota_task_input::Builder,
+    }
+    impl<C, M, R> ListMulticastGroupsByFuotaTask<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListMulticastGroupsByFuotaTask`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListMulticastGroupsByFuotaTaskOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListMulticastGroupsByFuotaTaskError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListMulticastGroupsByFuotaTaskInputOperationOutputAlias,
+                crate::output::ListMulticastGroupsByFuotaTaskOutput,
+                crate::error::ListMulticastGroupsByFuotaTaskError,
+                crate::input::ListMulticastGroupsByFuotaTaskInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListPartnerAccounts`.
     ///
     /// <p>Lists the partner accounts associated with your AWS account.</p>
@@ -4153,6 +5921,32 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::WirelessDeviceType>,
         ) -> Self {
             self.inner = self.inner.set_wireless_device_type(input);
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn fuota_task_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fuota_task_id(inp);
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_fuota_task_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_fuota_task_id(input);
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn multicast_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multicast_group_id(inp);
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_multicast_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_multicast_group_id(input);
             self
         }
     }
@@ -4582,6 +6376,99 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `SendDataToMulticastGroup`.
+    ///
+    /// <p>Sends the specified data to a multicast group.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct SendDataToMulticastGroup<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::send_data_to_multicast_group_input::Builder,
+    }
+    impl<C, M, R> SendDataToMulticastGroup<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `SendDataToMulticastGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SendDataToMulticastGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::SendDataToMulticastGroupError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::SendDataToMulticastGroupInputOperationOutputAlias,
+                crate::output::SendDataToMulticastGroupOutput,
+                crate::error::SendDataToMulticastGroupError,
+                crate::input::SendDataToMulticastGroupInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The binary to be sent to the end device, encoded in base64.</p>
+        pub fn payload_data(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.payload_data(inp);
+            self
+        }
+        /// <p>The binary to be sent to the end device, encoded in base64.</p>
+        pub fn set_payload_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_payload_data(input);
+            self
+        }
+        /// <p>Wireless metadata that is to be sent to multicast group.</p>
+        pub fn wireless_metadata(mut self, inp: crate::model::MulticastWirelessMetadata) -> Self {
+            self.inner = self.inner.wireless_metadata(inp);
+            self
+        }
+        /// <p>Wireless metadata that is to be sent to multicast group.</p>
+        pub fn set_wireless_metadata(
+            mut self,
+            input: std::option::Option<crate::model::MulticastWirelessMetadata>,
+        ) -> Self {
+            self.inner = self.inner.set_wireless_metadata(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `SendDataToWirelessDevice`.
     ///
     /// <p>Sends a decrypted application data frame to a device.</p>
@@ -4682,6 +6569,349 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::WirelessMetadata>,
         ) -> Self {
             self.inner = self.inner.set_wireless_metadata(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartBulkAssociateWirelessDeviceWithMulticastGroup`.
+    ///
+    /// <p>Starts a bulk association of all qualifying wireless devices with a multicast group.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct StartBulkAssociateWirelessDeviceWithMulticastGroup<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner:
+            crate::input::start_bulk_associate_wireless_device_with_multicast_group_input::Builder,
+    }
+    impl<C, M, R> StartBulkAssociateWirelessDeviceWithMulticastGroup<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `StartBulkAssociateWirelessDeviceWithMulticastGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+                                pub async fn send(self) -> std::result::Result<crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput, aws_smithy_http::result::SdkError<crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupError>>
+                                where
+                                    R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInputOperationOutputAlias,
+                                    crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput,
+                                    crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupError,
+                                    crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInputOperationRetryAlias>,
+                                {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+        pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(inp);
+            self
+        }
+        /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+        pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_query_string(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartBulkDisassociateWirelessDeviceFromMulticastGroup`.
+    ///
+    /// <p>Starts a bulk disassociatin of all qualifying wireless devices from a multicast group.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct StartBulkDisassociateWirelessDeviceFromMulticastGroup<C= aws_smithy_client::erase::DynConnector, M= aws_hyper::AwsMiddleware, R= aws_smithy_client::retry::Standard> {
+                            handle: std::sync::Arc<super::Handle<C, M, R>>,
+                            inner: crate::input::start_bulk_disassociate_wireless_device_from_multicast_group_input::Builder
+                        }
+    impl<C, M, R> StartBulkDisassociateWirelessDeviceFromMulticastGroup<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `StartBulkDisassociateWirelessDeviceFromMulticastGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+                                pub async fn send(self) -> std::result::Result<crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput, aws_smithy_http::result::SdkError<crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupError>>
+                                where
+                                    R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInputOperationOutputAlias,
+                                    crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput,
+                                    crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupError,
+                                    crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInputOperationRetryAlias>,
+                                {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+        pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(inp);
+            self
+        }
+        /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+        pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_query_string(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartFuotaTask`.
+    ///
+    /// <p>Starts a FUOTA task.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct StartFuotaTask<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::start_fuota_task_input::Builder,
+    }
+    impl<C, M, R> StartFuotaTask<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `StartFuotaTask`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartFuotaTaskOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartFuotaTaskError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::StartFuotaTaskInputOperationOutputAlias,
+                crate::output::StartFuotaTaskOutput,
+                crate::error::StartFuotaTaskError,
+                crate::input::StartFuotaTaskInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The LoRaWAN information used to start a FUOTA task.</p>
+        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanStartFuotaTask) -> Self {
+            self.inner = self.inner.lo_ra_wan(inp);
+            self
+        }
+        /// <p>The LoRaWAN information used to start a FUOTA task.</p>
+        pub fn set_lo_ra_wan(
+            mut self,
+            input: std::option::Option<crate::model::LoRaWanStartFuotaTask>,
+        ) -> Self {
+            self.inner = self.inner.set_lo_ra_wan(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartMulticastGroupSession`.
+    ///
+    /// <p>Starts a multicast group session.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct StartMulticastGroupSession<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::start_multicast_group_session_input::Builder,
+    }
+    impl<C, M, R> StartMulticastGroupSession<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `StartMulticastGroupSession`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartMulticastGroupSessionOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartMulticastGroupSessionError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::StartMulticastGroupSessionInputOperationOutputAlias,
+                crate::output::StartMulticastGroupSessionOutput,
+                crate::error::StartMulticastGroupSessionError,
+                crate::input::StartMulticastGroupSessionInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The LoRaWAN information used with the multicast session.</p>
+        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanMulticastSession) -> Self {
+            self.inner = self.inner.lo_ra_wan(inp);
+            self
+        }
+        /// <p>The LoRaWAN information used with the multicast session.</p>
+        pub fn set_lo_ra_wan(
+            mut self,
+            input: std::option::Option<crate::model::LoRaWanMulticastSession>,
+        ) -> Self {
+            self.inner = self.inner.set_lo_ra_wan(input);
             self
         }
     }
@@ -5042,6 +7272,135 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateFuotaTask`.
+    ///
+    /// <p>Updates properties of a FUOTA task.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateFuotaTask<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_fuota_task_input::Builder,
+    }
+    impl<C, M, R> UpdateFuotaTask<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateFuotaTask`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateFuotaTaskOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateFuotaTaskError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateFuotaTaskInputOperationOutputAlias,
+                crate::output::UpdateFuotaTaskOutput,
+                crate::error::UpdateFuotaTaskError,
+                crate::input::UpdateFuotaTaskInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The name of a FUOTA task.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of a FUOTA task.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The LoRaWAN information used with a FUOTA task.</p>
+        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanFuotaTask) -> Self {
+            self.inner = self.inner.lo_ra_wan(inp);
+            self
+        }
+        /// <p>The LoRaWAN information used with a FUOTA task.</p>
+        pub fn set_lo_ra_wan(
+            mut self,
+            input: std::option::Option<crate::model::LoRaWanFuotaTask>,
+        ) -> Self {
+            self.inner = self.inner.set_lo_ra_wan(input);
+            self
+        }
+        /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+        pub fn firmware_update_image(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firmware_update_image(inp);
+            self
+        }
+        /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+        pub fn set_firmware_update_image(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_firmware_update_image(input);
+            self
+        }
+        /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+        pub fn firmware_update_role(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firmware_update_role(inp);
+            self
+        }
+        /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+        pub fn set_firmware_update_role(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_firmware_update_role(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateLogLevelsByResourceTypes`.
     ///
     /// <p>Set default log level, or log levels by resource types. This can be for wireless device log options or
@@ -5156,6 +7515,109 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateMulticastGroup`.
+    ///
+    /// <p>Updates properties of a multicast group session.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateMulticastGroup<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_multicast_group_input::Builder,
+    }
+    impl<C, M, R> UpdateMulticastGroup<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateMulticastGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateMulticastGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateMulticastGroupError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateMulticastGroupInputOperationOutputAlias,
+                crate::output::UpdateMulticastGroupOutput,
+                crate::error::UpdateMulticastGroupError,
+                crate::input::UpdateMulticastGroupInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The name of the multicast group.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the multicast group.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanMulticast) -> Self {
+            self.inner = self.inner.lo_ra_wan(inp);
+            self
+        }
+        /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+        pub fn set_lo_ra_wan(
+            mut self,
+            input: std::option::Option<crate::model::LoRaWanMulticast>,
+        ) -> Self {
+            self.inner = self.inner.set_lo_ra_wan(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdatePartnerAccount`.
     ///
     /// <p>Updates properties of a partner account.</p>
@@ -5252,6 +7714,131 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::PartnerType>,
         ) -> Self {
             self.inner = self.inner.set_partner_type(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateResourceEventConfiguration`.
+    ///
+    /// <p>Update the event configuration for a particular resource identifier.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateResourceEventConfiguration<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_resource_event_configuration_input::Builder,
+    }
+    impl<C, M, R> UpdateResourceEventConfiguration<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateResourceEventConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateResourceEventConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateResourceEventConfigurationError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateResourceEventConfigurationInputOperationOutputAlias,
+                crate::output::UpdateResourceEventConfigurationOutput,
+                crate::error::UpdateResourceEventConfigurationError,
+                crate::input::UpdateResourceEventConfigurationInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Resource identifier to opt in for event messaging.</p>
+        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(inp);
+            self
+        }
+        /// <p>Resource identifier to opt in for event messaging.</p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_identifier(input);
+            self
+        }
+        /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+        pub fn identifier_type(mut self, inp: crate::model::IdentifierType) -> Self {
+            self.inner = self.inner.identifier_type(inp);
+            self
+        }
+        /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+        pub fn set_identifier_type(
+            mut self,
+            input: std::option::Option<crate::model::IdentifierType>,
+        ) -> Self {
+            self.inner = self.inner.set_identifier_type(input);
+            self
+        }
+        /// <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+        pub fn partner_type(mut self, inp: crate::model::EventNotificationPartnerType) -> Self {
+            self.inner = self.inner.partner_type(inp);
+            self
+        }
+        /// <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+        pub fn set_partner_type(
+            mut self,
+            input: std::option::Option<crate::model::EventNotificationPartnerType>,
+        ) -> Self {
+            self.inner = self.inner.set_partner_type(input);
+            self
+        }
+        /// <p>Event configuration for the device registration state event</p>
+        pub fn device_registration_state(
+            mut self,
+            inp: crate::model::DeviceRegistrationStateEventConfiguration,
+        ) -> Self {
+            self.inner = self.inner.device_registration_state(inp);
+            self
+        }
+        /// <p>Event configuration for the device registration state event</p>
+        pub fn set_device_registration_state(
+            mut self,
+            input: std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_device_registration_state(input);
+            self
+        }
+        /// <p>Event configuration for the Proximity event</p>
+        pub fn proximity(mut self, inp: crate::model::ProximityEventConfiguration) -> Self {
+            self.inner = self.inner.proximity(inp);
+            self
+        }
+        /// <p>Event configuration for the Proximity event</p>
+        pub fn set_proximity(
+            mut self,
+            input: std::option::Option<crate::model::ProximityEventConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_proximity(input);
             self
         }
     }
@@ -5503,7 +8090,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -5526,7 +8119,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

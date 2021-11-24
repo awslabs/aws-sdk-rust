@@ -6845,7 +6845,7 @@ pub struct S3BucketDetail {
     /// <p>Describes whether the bucket is a source or destination bucket.</p>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The date and time the bucket was created at.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The owner of the S3 bucket.</p>
     pub owner: std::option::Option<crate::model::Owner>,
     /// <p>All tags attached to the S3 bucket</p>
@@ -6870,7 +6870,7 @@ impl S3BucketDetail {
         self.r#type.as_deref()
     }
     /// <p>The date and time the bucket was created at.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The owner of the S3 bucket.</p>
@@ -6918,7 +6918,7 @@ pub mod s3_bucket_detail {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) owner: std::option::Option<crate::model::Owner>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) default_server_side_encryption:
@@ -6957,14 +6957,14 @@ pub mod s3_bucket_detail {
             self
         }
         /// <p>The date and time the bucket was created at.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time the bucket was created at.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self

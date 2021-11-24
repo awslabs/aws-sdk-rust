@@ -531,7 +531,7 @@ pub struct GetPredictiveScalingForecastOutput {
     /// <p>The capacity forecast.</p>
     pub capacity_forecast: std::option::Option<crate::model::CapacityForecast>,
     /// <p>The time the forecast was made.</p>
-    pub update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetPredictiveScalingForecastOutput {
     /// <p>The load forecast.</p>
@@ -543,7 +543,7 @@ impl GetPredictiveScalingForecastOutput {
         self.capacity_forecast.as_ref()
     }
     /// <p>The time the forecast was made.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -564,7 +564,7 @@ pub mod get_predictive_scaling_forecast_output {
     pub struct Builder {
         pub(crate) load_forecast: std::option::Option<std::vec::Vec<crate::model::LoadForecast>>,
         pub(crate) capacity_forecast: std::option::Option<crate::model::CapacityForecast>,
-        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// Appends an item to `load_forecast`.
@@ -600,14 +600,14 @@ pub mod get_predictive_scaling_forecast_output {
             self
         }
         /// <p>The time the forecast was made.</p>
-        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
         /// <p>The time the forecast was made.</p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.update_time = input;
             self

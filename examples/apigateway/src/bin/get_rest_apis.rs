@@ -5,6 +5,7 @@
 
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_apigateway::{Client, Error, Region, PKG_VERSION};
+use aws_smithy_types_convert::date_time::DateTimeExt;
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -27,7 +28,10 @@ async fn show_apis(client: &Client) -> Result<(), Error> {
         println!("Name:        {}", api.name().unwrap_or_default());
         println!("Description: {}", api.description().unwrap_or_default());
         println!("Version:     {}", api.version().unwrap_or_default());
-        println!("Created:     {}", api.created_date().unwrap().to_chrono());
+        println!(
+            "Created:     {}",
+            api.created_date().unwrap().to_chrono_utc()
+        );
         println!();
     }
 

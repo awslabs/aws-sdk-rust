@@ -263,7 +263,7 @@ a crate implementing configuration loading such as credential providers.
 | Amazon WorkMail | [aws-sdk-workmail](https://crates.io/crates/aws-sdk-workmail) ([docs](https://docs.rs/aws-sdk-workmail)) |
 | Amazon WorkMail Message Flow | [aws-sdk-workmailmessageflow](https://crates.io/crates/aws-sdk-workmailmessageflow) ([docs](https://docs.rs/aws-sdk-workmailmessageflow)) |
 | Amazon WorkSpaces | [aws-sdk-workspaces](https://crates.io/crates/aws-sdk-workspaces) ([docs](https://docs.rs/aws-sdk-workspaces)) |
-| AmazonApiGatewayManagementApi | [aws-sdk-apigatewaymanagement](https://crates.io/crates/aws-sdk-apigatewaymanagement) ([docs](https://docs.rs/aws-sdk-apigatewaymanagement)) |
+| AmazonApiGatewayManagementApi | [aws-sdk-apigatewaymanagement](https://crates.io/crates/aws-sdk-apigatewaymanagement) ([docs](https://docs.rs/aws-sdk-apigatewaymanagement)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/apigatewaymanagement)) |
 | AmazonApiGatewayV2 | [aws-sdk-apigatewayv2](https://crates.io/crates/aws-sdk-apigatewayv2) ([docs](https://docs.rs/aws-sdk-apigatewayv2)) |
 | AmazonMQ | [aws-sdk-mq](https://crates.io/crates/aws-sdk-mq) ([docs](https://docs.rs/aws-sdk-mq)) |
 | AmazonMWAA | [aws-sdk-mwaa](https://crates.io/crates/aws-sdk-mwaa) ([docs](https://docs.rs/aws-sdk-mwaa)) |

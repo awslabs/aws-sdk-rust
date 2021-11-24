@@ -324,11 +324,11 @@ pub struct SuiteRunInformation {
     /// <p>Suite run Id of the suite run.</p>
     pub suite_run_id: std::option::Option<std::string::String>,
     /// <p>Date (in Unix epoch time) when the suite run was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date (in Unix epoch time) when the suite run was started.</p>
-    pub started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date (in Unix epoch time) when the suite run ended.</p>
-    pub end_at: std::option::Option<aws_smithy_types::Instant>,
+    pub end_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Status of the suite run.</p>
     pub status: std::option::Option<crate::model::SuiteRunStatus>,
     /// <p>Number of test cases that passed in the suite run.</p>
@@ -354,15 +354,15 @@ impl SuiteRunInformation {
         self.suite_run_id.as_deref()
     }
     /// <p>Date (in Unix epoch time) when the suite run was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Date (in Unix epoch time) when the suite run was started.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>Date (in Unix epoch time) when the suite run ended.</p>
-    pub fn end_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_at.as_ref()
     }
     /// <p>Status of the suite run.</p>
@@ -404,9 +404,9 @@ pub mod suite_run_information {
         pub(crate) suite_definition_version: std::option::Option<std::string::String>,
         pub(crate) suite_definition_name: std::option::Option<std::string::String>,
         pub(crate) suite_run_id: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::SuiteRunStatus>,
         pub(crate) passed: std::option::Option<i32>,
         pub(crate) failed: std::option::Option<i32>,
@@ -462,38 +462,41 @@ pub mod suite_run_information {
             self
         }
         /// <p>Date (in Unix epoch time) when the suite run was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>Date (in Unix epoch time) when the suite run was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>Date (in Unix epoch time) when the suite run was started.</p>
-        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_at = Some(input);
             self
         }
         /// <p>Date (in Unix epoch time) when the suite run was started.</p>
         pub fn set_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_at = input;
             self
         }
         /// <p>Date (in Unix epoch time) when the suite run ended.</p>
-        pub fn end_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_at = Some(input);
             self
         }
         /// <p>Date (in Unix epoch time) when the suite run ended.</p>
-        pub fn set_end_at(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
+        pub fn set_end_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
             self.end_at = input;
             self
         }
@@ -660,7 +663,7 @@ pub struct SuiteDefinitionInformation {
     /// <p>Specifies if the test suite is intended for qualification.</p>
     pub intended_for_qualification: bool,
     /// <p>Date (in Unix epoch time) when the test suite was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SuiteDefinitionInformation {
     /// <p>Suite definition Id of the test suite.</p>
@@ -680,7 +683,7 @@ impl SuiteDefinitionInformation {
         self.intended_for_qualification
     }
     /// <p>Date (in Unix epoch time) when the test suite was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -709,7 +712,7 @@ pub mod suite_definition_information {
         pub(crate) default_devices:
             std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>,
         pub(crate) intended_for_qualification: std::option::Option<bool>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Suite definition Id of the test suite.</p>
@@ -768,14 +771,14 @@ pub mod suite_definition_information {
             self
         }
         /// <p>Date (in Unix epoch time) when the test suite was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>Date (in Unix epoch time) when the test suite was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -976,9 +979,9 @@ pub struct TestCaseRun {
     /// <p>Provides test case run status.</p>
     pub status: std::option::Option<crate::model::Status>,
     /// <p>Provides test case run start time.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides test case run end time.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides test case run log Url.</p>
     pub log_url: std::option::Option<std::string::String>,
     /// <p>Provides test case run warnings.</p>
@@ -1004,11 +1007,11 @@ impl TestCaseRun {
         self.status.as_ref()
     }
     /// <p>Provides test case run start time.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Provides test case run end time.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Provides test case run log Url.</p>
@@ -1049,8 +1052,8 @@ pub mod test_case_run {
         pub(crate) test_case_definition_id: std::option::Option<std::string::String>,
         pub(crate) test_case_definition_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) log_url: std::option::Option<std::string::String>,
         pub(crate) warnings: std::option::Option<std::string::String>,
         pub(crate) failure: std::option::Option<std::string::String>,
@@ -1106,27 +1109,27 @@ pub mod test_case_run {
             self
         }
         /// <p>Provides test case run start time.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>Provides test case run start time.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>Provides test case run end time.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>Provides test case run end time.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self

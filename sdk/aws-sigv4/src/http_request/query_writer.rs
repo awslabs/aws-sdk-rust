@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use crate::http_request::url_escape::percent_encode;
+use crate::http_request::url_escape::percent_encode_query;
 use http::Uri;
 
 /// Utility for updating the query string in a [`Uri`].
@@ -49,10 +49,10 @@ impl QueryWriter {
             self.new_path_and_query.push(prefix);
         }
         self.prefix = Some('&');
-        self.new_path_and_query.push_str(&percent_encode(k));
+        self.new_path_and_query.push_str(&percent_encode_query(k));
         self.new_path_and_query.push('=');
 
-        self.new_path_and_query.push_str(&percent_encode(v));
+        self.new_path_and_query.push_str(&percent_encode_query(v));
     }
 
     /// Returns just the built query string.

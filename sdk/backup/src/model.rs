@@ -258,17 +258,17 @@ impl ReportDeliveryChannel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CalculatedLifecycle {
     /// <p>A timestamp that specifies when to transition a recovery point to cold storage.</p>
-    pub move_to_cold_storage_at: std::option::Option<aws_smithy_types::Instant>,
+    pub move_to_cold_storage_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that specifies when to delete a recovery point.</p>
-    pub delete_at: std::option::Option<aws_smithy_types::Instant>,
+    pub delete_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CalculatedLifecycle {
     /// <p>A timestamp that specifies when to transition a recovery point to cold storage.</p>
-    pub fn move_to_cold_storage_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn move_to_cold_storage_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.move_to_cold_storage_at.as_ref()
     }
     /// <p>A timestamp that specifies when to delete a recovery point.</p>
-    pub fn delete_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn delete_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.delete_at.as_ref()
     }
 }
@@ -286,32 +286,32 @@ pub mod calculated_lifecycle {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) move_to_cold_storage_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) delete_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) move_to_cold_storage_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) delete_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A timestamp that specifies when to transition a recovery point to cold storage.</p>
-        pub fn move_to_cold_storage_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn move_to_cold_storage_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.move_to_cold_storage_at = Some(input);
             self
         }
         /// <p>A timestamp that specifies when to transition a recovery point to cold storage.</p>
         pub fn set_move_to_cold_storage_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.move_to_cold_storage_at = input;
             self
         }
         /// <p>A timestamp that specifies when to delete a recovery point.</p>
-        pub fn delete_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn delete_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.delete_at = Some(input);
             self
         }
         /// <p>A timestamp that specifies when to delete a recovery point.</p>
         pub fn set_delete_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.delete_at = input;
             self
@@ -1626,12 +1626,12 @@ pub struct RestoreJobsListMember {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time a job to restore a recovery point is completed, in Unix format and
     /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub completion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A status code specifying the state of the job initiated by Backup to restore
     /// a recovery point.</p>
     pub status: std::option::Option<crate::model::RestoreJobStatus>,
@@ -1675,14 +1675,14 @@ impl RestoreJobsListMember {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time a job to restore a recovery point is completed, in Unix format and
     /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_date.as_ref()
     }
     /// <p>A status code specifying the state of the job initiated by Backup to restore
@@ -1757,8 +1757,8 @@ pub mod restore_jobs_list_member {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) restore_job_id: std::option::Option<std::string::String>,
         pub(crate) recovery_point_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completion_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::RestoreJobStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) percent_done: std::option::Option<std::string::String>,
@@ -1811,7 +1811,7 @@ pub mod restore_jobs_list_member {
         /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -1821,7 +1821,7 @@ pub mod restore_jobs_list_member {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -1830,7 +1830,7 @@ pub mod restore_jobs_list_member {
         /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
         /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
         /// 12:11:30.087 AM.</p>
-        pub fn completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_date = Some(input);
             self
         }
@@ -1840,7 +1840,7 @@ pub mod restore_jobs_list_member {
         /// 12:11:30.087 AM.</p>
         pub fn set_completion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completion_date = input;
             self
@@ -2086,17 +2086,17 @@ pub struct ReportPlan {
     /// Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that a report job associated with this report plan last attempted to
     /// run, in Unix format and Coordinated Universal Time (UTC). The value of
     /// <code>LastAttemptedExecutionTime</code> is accurate to milliseconds. For example, the
     /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub last_attempted_execution_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_attempted_execution_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that a report job associated with this report plan last successfully
     /// ran, in Unix format and Coordinated Universal Time (UTC). The value of
     /// <code>LastSuccessfulExecutionTime</code> is accurate to milliseconds. For example, the
     /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub last_successful_execution_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_successful_execution_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReportPlan {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
@@ -2145,14 +2145,16 @@ impl ReportPlan {
     /// Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that a report job associated with this report plan last attempted to
     /// run, in Unix format and Coordinated Universal Time (UTC). The value of
     /// <code>LastAttemptedExecutionTime</code> is accurate to milliseconds. For example, the
     /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn last_attempted_execution_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_attempted_execution_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_attempted_execution_time.as_ref()
     }
     /// <p>The date and time that a report job associated with this report plan last successfully
@@ -2161,7 +2163,7 @@ impl ReportPlan {
     /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn last_successful_execution_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_successful_execution_time.as_ref()
     }
 }
@@ -2199,9 +2201,9 @@ pub mod report_plan {
         pub(crate) report_delivery_channel:
             std::option::Option<crate::model::ReportDeliveryChannel>,
         pub(crate) deployment_status: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_attempted_execution_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_successful_execution_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_attempted_execution_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_successful_execution_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
@@ -2321,7 +2323,7 @@ pub mod report_plan {
         /// Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -2331,7 +2333,7 @@ pub mod report_plan {
         /// AM.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2340,7 +2342,7 @@ pub mod report_plan {
         /// run, in Unix format and Coordinated Universal Time (UTC). The value of
         /// <code>LastAttemptedExecutionTime</code> is accurate to milliseconds. For example, the
         /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn last_attempted_execution_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_attempted_execution_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_attempted_execution_time = Some(input);
             self
         }
@@ -2350,7 +2352,7 @@ pub mod report_plan {
         /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_last_attempted_execution_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_attempted_execution_time = input;
             self
@@ -2359,7 +2361,7 @@ pub mod report_plan {
         /// ran, in Unix format and Coordinated Universal Time (UTC). The value of
         /// <code>LastSuccessfulExecutionTime</code> is accurate to milliseconds. For example, the
         /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn last_successful_execution_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_successful_execution_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_successful_execution_time = Some(input);
             self
         }
@@ -2369,7 +2371,7 @@ pub mod report_plan {
         /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_last_successful_execution_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_successful_execution_time = input;
             self
@@ -2419,12 +2421,12 @@ pub struct ReportJob {
     /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that a report job is completed, in Unix format and Coordinated
     /// Universal Time (UTC). The value of <code>CompletionTime</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub completion_time: std::option::Option<aws_smithy_types::Instant>,
+    pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of a report job. The statuses are:</p>
     /// <p>
     /// <code>CREATED | RUNNING | COMPLETED | FAILED</code>
@@ -2464,14 +2466,14 @@ impl ReportJob {
     /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that a report job is completed, in Unix format and Coordinated
     /// Universal Time (UTC). The value of <code>CompletionTime</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The status of a report job. The statuses are:</p>
@@ -2518,8 +2520,8 @@ pub mod report_job {
         pub(crate) report_job_id: std::option::Option<std::string::String>,
         pub(crate) report_plan_arn: std::option::Option<std::string::String>,
         pub(crate) report_template: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completion_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) report_destination: std::option::Option<crate::model::ReportDestination>,
@@ -2582,7 +2584,7 @@ pub mod report_job {
         /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -2592,7 +2594,7 @@ pub mod report_job {
         /// AM.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2601,7 +2603,7 @@ pub mod report_job {
         /// Universal Time (UTC). The value of <code>CompletionTime</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn completion_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_time = Some(input);
             self
         }
@@ -2611,7 +2613,7 @@ pub mod report_job {
         /// AM.</p>
         pub fn set_completion_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completion_time = input;
             self
@@ -2786,7 +2788,7 @@ pub struct RecoveryPointByResource {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A status code specifying the state of the recovery point.</p>
     pub status: std::option::Option<crate::model::RecoveryPointStatus>,
     /// <p>A message explaining the reason of the recovery point deletion failure.</p>
@@ -2812,7 +2814,7 @@ impl RecoveryPointByResource {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>A status code specifying the state of the recovery point.</p>
@@ -2860,7 +2862,7 @@ pub mod recovery_point_by_resource {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_point_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::RecoveryPointStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) encryption_key_arn: std::option::Option<std::string::String>,
@@ -2887,7 +2889,7 @@ pub mod recovery_point_by_resource {
         /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -2897,7 +2899,7 @@ pub mod recovery_point_by_resource {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -3096,12 +3098,12 @@ pub struct RecoveryPointByBackupVault {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time a job to restore a recovery point is completed, in Unix format and
     /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub completion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size, in bytes, of a backup.</p>
     pub backup_size_in_bytes: std::option::Option<i64>,
     /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and
@@ -3126,7 +3128,7 @@ pub struct RecoveryPointByBackupVault {
     /// Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub last_restore_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_restore_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RecoveryPointByBackupVault {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
@@ -3185,14 +3187,14 @@ impl RecoveryPointByBackupVault {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time a job to restore a recovery point is completed, in Unix format and
     /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_date.as_ref()
     }
     /// <p>The size, in bytes, of a backup.</p>
@@ -3229,7 +3231,7 @@ impl RecoveryPointByBackupVault {
     /// Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub fn last_restore_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_restore_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_restore_time.as_ref()
     }
 }
@@ -3273,14 +3275,14 @@ pub mod recovery_point_by_backup_vault {
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RecoveryPointStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completion_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) backup_size_in_bytes: std::option::Option<i64>,
         pub(crate) calculated_lifecycle: std::option::Option<crate::model::CalculatedLifecycle>,
         pub(crate) lifecycle: std::option::Option<crate::model::Lifecycle>,
         pub(crate) encryption_key_arn: std::option::Option<std::string::String>,
         pub(crate) is_encrypted: std::option::Option<bool>,
-        pub(crate) last_restore_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_restore_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
@@ -3435,7 +3437,7 @@ pub mod recovery_point_by_backup_vault {
         /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -3445,7 +3447,7 @@ pub mod recovery_point_by_backup_vault {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -3454,7 +3456,7 @@ pub mod recovery_point_by_backup_vault {
         /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
         /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
         /// 12:11:30.087 AM.</p>
-        pub fn completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_date = Some(input);
             self
         }
@@ -3464,7 +3466,7 @@ pub mod recovery_point_by_backup_vault {
         /// 12:11:30.087 AM.</p>
         pub fn set_completion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completion_date = input;
             self
@@ -3552,7 +3554,7 @@ pub mod recovery_point_by_backup_vault {
         /// Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to
         /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
         /// 12:11:30.087 AM.</p>
-        pub fn last_restore_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_restore_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_restore_time = Some(input);
             self
         }
@@ -3562,7 +3564,7 @@ pub mod recovery_point_by_backup_vault {
         /// 12:11:30.087 AM.</p>
         pub fn set_last_restore_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_restore_time = input;
             self
@@ -3750,7 +3752,7 @@ pub struct ProtectedResource {
     /// Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub last_backup_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_backup_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ProtectedResource {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
@@ -3768,7 +3770,7 @@ impl ProtectedResource {
     /// Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn last_backup_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_backup_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_backup_time.as_ref()
     }
 }
@@ -3789,7 +3791,7 @@ pub mod protected_resource {
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
-        pub(crate) last_backup_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_backup_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
@@ -3825,7 +3827,7 @@ pub mod protected_resource {
         /// Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn last_backup_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_backup_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_backup_time = Some(input);
             self
         }
@@ -3835,7 +3837,7 @@ pub mod protected_resource {
         /// AM.</p>
         pub fn set_last_backup_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_backup_time = input;
             self
@@ -3877,7 +3879,7 @@ pub struct Framework {
     /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The deployment status of a framework. The statuses are:</p>
     /// <p>
     /// <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED |
@@ -3908,7 +3910,7 @@ impl Framework {
     /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The deployment status of a framework. The statuses are:</p>
@@ -3942,7 +3944,7 @@ pub mod framework {
         pub(crate) framework_arn: std::option::Option<std::string::String>,
         pub(crate) framework_description: std::option::Option<std::string::String>,
         pub(crate) number_of_controls: std::option::Option<i32>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deployment_status: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4003,7 +4005,7 @@ pub mod framework {
         /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -4013,7 +4015,7 @@ pub mod framework {
         /// AM.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -4086,11 +4088,11 @@ pub struct CopyJob {
     /// <p>The date and time a copy job is created, in Unix format and Coordinated Universal Time
     /// (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the
     /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time a copy job is completed, in Unix format and Coordinated Universal Time
     /// (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example,
     /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub completion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of a copy job.</p>
     pub state: std::option::Option<crate::model::CopyJobState>,
     /// <p>A detailed message explaining the status of the job to copy a resource.</p>
@@ -4144,13 +4146,13 @@ impl CopyJob {
     /// <p>The date and time a copy job is created, in Unix format and Coordinated Universal Time
     /// (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the
     /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time a copy job is completed, in Unix format and Coordinated Universal Time
     /// (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example,
     /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_date.as_ref()
     }
     /// <p>The current state of a copy job.</p>
@@ -4220,8 +4222,8 @@ pub mod copy_job {
         pub(crate) destination_backup_vault_arn: std::option::Option<std::string::String>,
         pub(crate) destination_recovery_point_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completion_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state: std::option::Option<crate::model::CopyJobState>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) backup_size_in_bytes: std::option::Option<i64>,
@@ -4333,7 +4335,7 @@ pub mod copy_job {
         /// <p>The date and time a copy job is created, in Unix format and Coordinated Universal Time
         /// (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the
         /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -4342,7 +4344,7 @@ pub mod copy_job {
         /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -4350,7 +4352,7 @@ pub mod copy_job {
         /// <p>The date and time a copy job is completed, in Unix format and Coordinated Universal Time
         /// (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example,
         /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_date = Some(input);
             self
         }
@@ -4359,7 +4361,7 @@ pub mod copy_job {
         /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_completion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completion_date = input;
             self
@@ -4545,7 +4547,7 @@ pub struct BackupVaultListMember {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The server-side encryption key that is used to protect your backups; for example,
     /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub encryption_key_arn: std::option::Option<std::string::String>,
@@ -4586,7 +4588,7 @@ pub struct BackupVaultListMember {
     /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub lock_date: std::option::Option<aws_smithy_types::Instant>,
+    pub lock_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BackupVaultListMember {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -4605,7 +4607,7 @@ impl BackupVaultListMember {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The server-side encryption key that is used to protect your backups; for example,
@@ -4660,7 +4662,7 @@ impl BackupVaultListMember {
     /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub fn lock_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn lock_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.lock_date.as_ref()
     }
 }
@@ -4688,14 +4690,14 @@ pub mod backup_vault_list_member {
     pub struct Builder {
         pub(crate) backup_vault_name: std::option::Option<std::string::String>,
         pub(crate) backup_vault_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) encryption_key_arn: std::option::Option<std::string::String>,
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
         pub(crate) number_of_recovery_points: std::option::Option<i64>,
         pub(crate) locked: std::option::Option<bool>,
         pub(crate) min_retention_days: std::option::Option<i64>,
         pub(crate) max_retention_days: std::option::Option<i64>,
-        pub(crate) lock_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) lock_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -4736,7 +4738,7 @@ pub mod backup_vault_list_member {
         /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -4746,7 +4748,7 @@ pub mod backup_vault_list_member {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -4866,7 +4868,7 @@ pub mod backup_vault_list_member {
         /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to
         /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
         /// 12:11:30.087 AM.</p>
-        pub fn lock_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn lock_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.lock_date = Some(input);
             self
         }
@@ -4879,7 +4881,7 @@ pub mod backup_vault_list_member {
         /// 12:11:30.087 AM.</p>
         pub fn set_lock_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.lock_date = input;
             self
@@ -4922,7 +4924,7 @@ pub struct BackupSelectionsListMember {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried
     /// without the risk of running the operation twice.</p>
     pub creator_request_id: std::option::Option<std::string::String>,
@@ -4947,7 +4949,7 @@ impl BackupSelectionsListMember {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried
@@ -4982,7 +4984,7 @@ pub mod backup_selections_list_member {
         pub(crate) selection_id: std::option::Option<std::string::String>,
         pub(crate) selection_name: std::option::Option<std::string::String>,
         pub(crate) backup_plan_id: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
     }
@@ -5027,7 +5029,7 @@ pub mod backup_selections_list_member {
         /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -5037,7 +5039,7 @@ pub mod backup_selections_list_member {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -5102,12 +5104,12 @@ pub struct BackupPlansListMember {
     /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time a backup plan is deleted, in Unix format and Coordinated Universal
     /// Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub deletion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub deletion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
     /// long. Version IDs cannot be edited.</p>
     pub version_id: std::option::Option<std::string::String>,
@@ -5120,7 +5122,7 @@ pub struct BackupPlansListMember {
     /// Unix format and Coordinated Universal Time (UTC). The value of
     /// <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value
     /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub last_execution_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_execution_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains a list of <code>BackupOptions</code> for a resource type.</p>
     pub advanced_backup_settings:
         std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
@@ -5139,14 +5141,14 @@ impl BackupPlansListMember {
     /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time a backup plan is deleted, in Unix format and Coordinated Universal
     /// Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deletion_date.as_ref()
     }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
@@ -5167,7 +5169,7 @@ impl BackupPlansListMember {
     /// Unix format and Coordinated Universal Time (UTC). The value of
     /// <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value
     /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn last_execution_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_execution_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_execution_date.as_ref()
     }
     /// <p>Contains a list of <code>BackupOptions</code> for a resource type.</p>
@@ -5200,12 +5202,12 @@ pub mod backup_plans_list_member {
     pub struct Builder {
         pub(crate) backup_plan_arn: std::option::Option<std::string::String>,
         pub(crate) backup_plan_id: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) deletion_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deletion_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) backup_plan_name: std::option::Option<std::string::String>,
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
-        pub(crate) last_execution_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_execution_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) advanced_backup_settings:
             std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
     }
@@ -5242,7 +5244,7 @@ pub mod backup_plans_list_member {
         /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -5252,7 +5254,7 @@ pub mod backup_plans_list_member {
         /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -5261,7 +5263,7 @@ pub mod backup_plans_list_member {
         /// Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn deletion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn deletion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deletion_date = Some(input);
             self
         }
@@ -5271,7 +5273,7 @@ pub mod backup_plans_list_member {
         /// AM.</p>
         pub fn set_deletion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.deletion_date = input;
             self
@@ -5320,7 +5322,7 @@ pub mod backup_plans_list_member {
         /// Unix format and Coordinated Universal Time (UTC). The value of
         /// <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value
         /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn last_execution_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_execution_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_execution_date = Some(input);
             self
         }
@@ -5330,7 +5332,7 @@ pub mod backup_plans_list_member {
         /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_last_execution_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_execution_date = input;
             self
@@ -5484,12 +5486,12 @@ pub struct BackupJob {
     /// <p>The date and time a backup job is created, in Unix format and Coordinated Universal Time
     /// (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the
     /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time a job to create a backup job is completed, in Unix format and
     /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub completion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of a resource recovery point.</p>
     pub state: std::option::Option<crate::model::BackupJobState>,
     /// <p>A detailed message explaining the status of the job to back up a resource.</p>
@@ -5513,14 +5515,14 @@ pub struct BackupJob {
     /// and Coordinated Universal Time (UTC). The value of <code>ExpectedCompletionDate</code> is
     /// accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January
     /// 26, 2018 12:11:30.087 AM.</p>
-    pub expected_completion_date: std::option::Option<aws_smithy_types::Instant>,
+    pub expected_completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the time in Unix format and Coordinated Universal Time (UTC) when a backup job
     /// must be started before it is canceled. The value is calculated by adding the start window
     /// to the scheduled time. So if the scheduled time were 6:00 PM and the start window is 2
     /// hours, the <code>StartBy</code> time would be 8:00 PM on the date specified. The value of
     /// <code>StartBy</code> is accurate to milliseconds. For example, the value 1516925490.087
     /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub start_by: std::option::Option<aws_smithy_types::Instant>,
+    pub start_by: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only
     /// supported resource type is Amazon EC2.</p>
     pub resource_type: std::option::Option<std::string::String>,
@@ -5572,14 +5574,14 @@ impl BackupJob {
     /// <p>The date and time a backup job is created, in Unix format and Coordinated Universal Time
     /// (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the
     /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time a job to create a backup job is completed, in Unix format and
     /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_date.as_ref()
     }
     /// <p>The current state of a resource recovery point.</p>
@@ -5617,7 +5619,7 @@ impl BackupJob {
     /// and Coordinated Universal Time (UTC). The value of <code>ExpectedCompletionDate</code> is
     /// accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January
     /// 26, 2018 12:11:30.087 AM.</p>
-    pub fn expected_completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expected_completion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expected_completion_date.as_ref()
     }
     /// <p>Specifies the time in Unix format and Coordinated Universal Time (UTC) when a backup job
@@ -5626,7 +5628,7 @@ impl BackupJob {
     /// hours, the <code>StartBy</code> time would be 8:00 PM on the date specified. The value of
     /// <code>StartBy</code> is accurate to milliseconds. For example, the value 1516925490.087
     /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn start_by(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_by(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_by.as_ref()
     }
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only
@@ -5694,16 +5696,16 @@ pub mod backup_job {
         pub(crate) backup_vault_arn: std::option::Option<std::string::String>,
         pub(crate) recovery_point_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completion_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state: std::option::Option<crate::model::BackupJobState>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) percent_done: std::option::Option<std::string::String>,
         pub(crate) backup_size_in_bytes: std::option::Option<i64>,
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
         pub(crate) created_by: std::option::Option<crate::model::RecoveryPointCreator>,
-        pub(crate) expected_completion_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) start_by: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expected_completion_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) start_by: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) bytes_transferred: std::option::Option<i64>,
         pub(crate) backup_options: std::option::Option<
@@ -5799,7 +5801,7 @@ pub mod backup_job {
         /// <p>The date and time a backup job is created, in Unix format and Coordinated Universal Time
         /// (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the
         /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
@@ -5808,7 +5810,7 @@ pub mod backup_job {
         /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -5817,7 +5819,7 @@ pub mod backup_job {
         /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
         /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
         /// 12:11:30.087 AM.</p>
-        pub fn completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_date = Some(input);
             self
         }
@@ -5827,7 +5829,7 @@ pub mod backup_job {
         /// 12:11:30.087 AM.</p>
         pub fn set_completion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completion_date = input;
             self
@@ -5919,7 +5921,7 @@ pub mod backup_job {
         /// and Coordinated Universal Time (UTC). The value of <code>ExpectedCompletionDate</code> is
         /// accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January
         /// 26, 2018 12:11:30.087 AM.</p>
-        pub fn expected_completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expected_completion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expected_completion_date = Some(input);
             self
         }
@@ -5929,7 +5931,7 @@ pub mod backup_job {
         /// 26, 2018 12:11:30.087 AM.</p>
         pub fn set_expected_completion_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expected_completion_date = input;
             self
@@ -5940,7 +5942,7 @@ pub mod backup_job {
         /// hours, the <code>StartBy</code> time would be 8:00 PM on the date specified. The value of
         /// <code>StartBy</code> is accurate to milliseconds. For example, the value 1516925490.087
         /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn start_by(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_by(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_by = Some(input);
             self
         }
@@ -5952,7 +5954,7 @@ pub mod backup_job {
         /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_start_by(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_by = input;
             self
@@ -6168,6 +6170,10 @@ pub struct BackupSelection {
     /// for example, <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
     /// Assigns the backup plan to every resource with at least one matching tag.</p>
     pub list_of_tags: std::option::Option<std::vec::Vec<crate::model::Condition>>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub not_resources: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub conditions: std::option::Option<crate::model::Conditions>,
 }
 impl BackupSelection {
     /// <p>The display name of a resource selection document.</p>
@@ -6191,6 +6197,14 @@ impl BackupSelection {
     pub fn list_of_tags(&self) -> std::option::Option<&[crate::model::Condition]> {
         self.list_of_tags.as_deref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn not_resources(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_resources.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn conditions(&self) -> std::option::Option<&crate::model::Conditions> {
+        self.conditions.as_ref()
+    }
 }
 impl std::fmt::Debug for BackupSelection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6199,6 +6213,8 @@ impl std::fmt::Debug for BackupSelection {
         formatter.field("iam_role_arn", &self.iam_role_arn);
         formatter.field("resources", &self.resources);
         formatter.field("list_of_tags", &self.list_of_tags);
+        formatter.field("not_resources", &self.not_resources);
+        formatter.field("conditions", &self.conditions);
         formatter.finish()
     }
 }
@@ -6212,6 +6228,8 @@ pub mod backup_selection {
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
         pub(crate) resources: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) list_of_tags: std::option::Option<std::vec::Vec<crate::model::Condition>>,
+        pub(crate) not_resources: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) conditions: std::option::Option<crate::model::Conditions>,
     }
     impl Builder {
         /// <p>The display name of a resource selection document.</p>
@@ -6285,6 +6303,37 @@ pub mod backup_selection {
             self.list_of_tags = input;
             self
         }
+        /// Appends an item to `not_resources`.
+        ///
+        /// To override the contents of this collection use [`set_not_resources`](Self::set_not_resources).
+        ///
+        pub fn not_resources(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.not_resources.unwrap_or_default();
+            v.push(input.into());
+            self.not_resources = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_not_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.not_resources = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn conditions(mut self, input: crate::model::Conditions) -> Self {
+            self.conditions = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_conditions(
+            mut self,
+            input: std::option::Option<crate::model::Conditions>,
+        ) -> Self {
+            self.conditions = input;
+            self
+        }
         /// Consumes the builder and constructs a [`BackupSelection`](crate::model::BackupSelection)
         pub fn build(self) -> crate::model::BackupSelection {
             crate::model::BackupSelection {
@@ -6292,6 +6341,8 @@ pub mod backup_selection {
                 iam_role_arn: self.iam_role_arn,
                 resources: self.resources,
                 list_of_tags: self.list_of_tags,
+                not_resources: self.not_resources,
+                conditions: self.conditions,
             }
         }
     }
@@ -6300,6 +6351,238 @@ impl BackupSelection {
     /// Creates a new builder-style object to manufacture [`BackupSelection`](crate::model::BackupSelection)
     pub fn builder() -> crate::model::backup_selection::Builder {
         crate::model::backup_selection::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Conditions {
+    #[allow(missing_docs)] // documentation missing in model
+    pub string_equals: std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub string_not_equals: std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub string_like: std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub string_not_like: std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
+}
+impl Conditions {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn string_equals(&self) -> std::option::Option<&[crate::model::ConditionParameter]> {
+        self.string_equals.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn string_not_equals(&self) -> std::option::Option<&[crate::model::ConditionParameter]> {
+        self.string_not_equals.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn string_like(&self) -> std::option::Option<&[crate::model::ConditionParameter]> {
+        self.string_like.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn string_not_like(&self) -> std::option::Option<&[crate::model::ConditionParameter]> {
+        self.string_not_like.as_deref()
+    }
+}
+impl std::fmt::Debug for Conditions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Conditions");
+        formatter.field("string_equals", &self.string_equals);
+        formatter.field("string_not_equals", &self.string_not_equals);
+        formatter.field("string_like", &self.string_like);
+        formatter.field("string_not_like", &self.string_not_like);
+        formatter.finish()
+    }
+}
+/// See [`Conditions`](crate::model::Conditions)
+pub mod conditions {
+    /// A builder for [`Conditions`](crate::model::Conditions)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) string_equals:
+            std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
+        pub(crate) string_not_equals:
+            std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
+        pub(crate) string_like:
+            std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
+        pub(crate) string_not_like:
+            std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
+    }
+    impl Builder {
+        /// Appends an item to `string_equals`.
+        ///
+        /// To override the contents of this collection use [`set_string_equals`](Self::set_string_equals).
+        ///
+        pub fn string_equals(mut self, input: impl Into<crate::model::ConditionParameter>) -> Self {
+            let mut v = self.string_equals.unwrap_or_default();
+            v.push(input.into());
+            self.string_equals = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_string_equals(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
+        ) -> Self {
+            self.string_equals = input;
+            self
+        }
+        /// Appends an item to `string_not_equals`.
+        ///
+        /// To override the contents of this collection use [`set_string_not_equals`](Self::set_string_not_equals).
+        ///
+        pub fn string_not_equals(
+            mut self,
+            input: impl Into<crate::model::ConditionParameter>,
+        ) -> Self {
+            let mut v = self.string_not_equals.unwrap_or_default();
+            v.push(input.into());
+            self.string_not_equals = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_string_not_equals(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
+        ) -> Self {
+            self.string_not_equals = input;
+            self
+        }
+        /// Appends an item to `string_like`.
+        ///
+        /// To override the contents of this collection use [`set_string_like`](Self::set_string_like).
+        ///
+        pub fn string_like(mut self, input: impl Into<crate::model::ConditionParameter>) -> Self {
+            let mut v = self.string_like.unwrap_or_default();
+            v.push(input.into());
+            self.string_like = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_string_like(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
+        ) -> Self {
+            self.string_like = input;
+            self
+        }
+        /// Appends an item to `string_not_like`.
+        ///
+        /// To override the contents of this collection use [`set_string_not_like`](Self::set_string_not_like).
+        ///
+        pub fn string_not_like(
+            mut self,
+            input: impl Into<crate::model::ConditionParameter>,
+        ) -> Self {
+            let mut v = self.string_not_like.unwrap_or_default();
+            v.push(input.into());
+            self.string_not_like = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_string_not_like(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
+        ) -> Self {
+            self.string_not_like = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Conditions`](crate::model::Conditions)
+        pub fn build(self) -> crate::model::Conditions {
+            crate::model::Conditions {
+                string_equals: self.string_equals,
+                string_not_equals: self.string_not_equals,
+                string_like: self.string_like,
+                string_not_like: self.string_not_like,
+            }
+        }
+    }
+}
+impl Conditions {
+    /// Creates a new builder-style object to manufacture [`Conditions`](crate::model::Conditions)
+    pub fn builder() -> crate::model::conditions::Builder {
+        crate::model::conditions::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConditionParameter {
+    #[allow(missing_docs)] // documentation missing in model
+    pub condition_key: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub condition_value: std::option::Option<std::string::String>,
+}
+impl ConditionParameter {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn condition_key(&self) -> std::option::Option<&str> {
+        self.condition_key.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn condition_value(&self) -> std::option::Option<&str> {
+        self.condition_value.as_deref()
+    }
+}
+impl std::fmt::Debug for ConditionParameter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConditionParameter");
+        formatter.field("condition_key", &self.condition_key);
+        formatter.field("condition_value", &self.condition_value);
+        formatter.finish()
+    }
+}
+/// See [`ConditionParameter`](crate::model::ConditionParameter)
+pub mod condition_parameter {
+    /// A builder for [`ConditionParameter`](crate::model::ConditionParameter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) condition_key: std::option::Option<std::string::String>,
+        pub(crate) condition_value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn condition_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.condition_key = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_condition_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.condition_key = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn condition_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.condition_value = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_condition_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.condition_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConditionParameter`](crate::model::ConditionParameter)
+        pub fn build(self) -> crate::model::ConditionParameter {
+            crate::model::ConditionParameter {
+                condition_key: self.condition_key,
+                condition_value: self.condition_value,
+            }
+        }
+    }
+}
+impl ConditionParameter {
+    /// Creates a new builder-style object to manufacture [`ConditionParameter`](crate::model::ConditionParameter)
+    pub fn builder() -> crate::model::condition_parameter::Builder {
+        crate::model::condition_parameter::Builder::default()
     }
 }
 

@@ -1715,9 +1715,9 @@ impl DatastoreStorage {
         &self,
     ) -> std::result::Result<&crate::model::CustomerManagedDatastoreS3Storage, &Self> {
         if let DatastoreStorage::CustomerManagedS3(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`CustomerManagedS3`](crate::model::DatastoreStorage::CustomerManagedS3).
@@ -1730,9 +1730,9 @@ impl DatastoreStorage {
         &self,
     ) -> std::result::Result<&crate::model::DatastoreIotSiteWiseMultiLayerStorage, &Self> {
         if let DatastoreStorage::IotSiteWiseMultiLayerStorage(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`IotSiteWiseMultiLayerStorage`](crate::model::DatastoreStorage::IotSiteWiseMultiLayerStorage).
@@ -1745,9 +1745,9 @@ impl DatastoreStorage {
         &self,
     ) -> std::result::Result<&crate::model::ServiceManagedDatastoreS3Storage, &Self> {
         if let DatastoreStorage::ServiceManagedS3(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`ServiceManagedS3`](crate::model::DatastoreStorage::ServiceManagedS3).
@@ -4652,9 +4652,9 @@ pub struct PipelineSummary {
     pub reprocessing_summaries:
         std::option::Option<std::vec::Vec<crate::model::ReprocessingSummary>>,
     /// <p>When the pipeline was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the pipeline was last updated.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PipelineSummary {
     /// <p>The name of the pipeline.</p>
@@ -4668,11 +4668,11 @@ impl PipelineSummary {
         self.reprocessing_summaries.as_deref()
     }
     /// <p>When the pipeline was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the pipeline was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -4695,8 +4695,8 @@ pub mod pipeline_summary {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
         pub(crate) reprocessing_summaries:
             std::option::Option<std::vec::Vec<crate::model::ReprocessingSummary>>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the pipeline.</p>
@@ -4735,27 +4735,27 @@ pub mod pipeline_summary {
             self
         }
         /// <p>When the pipeline was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>When the pipeline was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>When the pipeline was last updated.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>When the pipeline was last updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -4787,7 +4787,7 @@ pub struct ReprocessingSummary {
     /// <p>The status of the pipeline reprocessing.</p>
     pub status: std::option::Option<crate::model::ReprocessingStatus>,
     /// <p>The time the pipeline reprocessing was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReprocessingSummary {
     /// <p>The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.</p>
@@ -4799,7 +4799,7 @@ impl ReprocessingSummary {
         self.status.as_ref()
     }
     /// <p>The time the pipeline reprocessing was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -4820,7 +4820,7 @@ pub mod reprocessing_summary {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ReprocessingStatus>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.</p>
@@ -4847,14 +4847,14 @@ pub mod reprocessing_summary {
             self
         }
         /// <p>The time the pipeline reprocessing was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time the pipeline reprocessing was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -4950,13 +4950,13 @@ pub struct DatastoreSummary {
     /// <p>The status of the data store.</p>
     pub status: std::option::Option<crate::model::DatastoreStatus>,
     /// <p>When the data store was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the data store was updated.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    pub last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_message_arrival_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The file format of the data in the data store.</p>
     pub file_format_type: std::option::Option<crate::model::FileFormatType>,
     /// <p> Contains information about the partition dimensions in a data store. </p>
@@ -4976,17 +4976,17 @@ impl DatastoreSummary {
         self.status.as_ref()
     }
     /// <p>When the data store was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the data store was updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    pub fn last_message_arrival_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_message_arrival_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_message_arrival_time.as_ref()
     }
     /// <p>The file format of the data in the data store.</p>
@@ -5021,9 +5021,9 @@ pub mod datastore_summary {
         pub(crate) datastore_name: std::option::Option<std::string::String>,
         pub(crate) datastore_storage: std::option::Option<crate::model::DatastoreStorageSummary>,
         pub(crate) status: std::option::Option<crate::model::DatastoreStatus>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_message_arrival_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) file_format_type: std::option::Option<crate::model::FileFormatType>,
         pub(crate) datastore_partitions: std::option::Option<crate::model::DatastorePartitions>,
     }
@@ -5068,27 +5068,27 @@ pub mod datastore_summary {
             self
         }
         /// <p>When the data store was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>When the data store was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last time the data store was updated.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The last time the data store was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -5096,7 +5096,7 @@ pub mod datastore_summary {
         /// <p>The last time when a new message arrived in the data store.</p>
         /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
         /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-        pub fn last_message_arrival_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_message_arrival_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_message_arrival_time = Some(input);
             self
         }
@@ -5105,7 +5105,7 @@ pub mod datastore_summary {
         /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
         pub fn set_last_message_arrival_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_message_arrival_time = input;
             self
@@ -5956,9 +5956,9 @@ pub struct DatasetSummary {
     /// <p>The status of the dataset.</p>
     pub status: std::option::Option<crate::model::DatasetStatus>,
     /// <p>The time the dataset was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the dataset was updated.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time
     /// interval or when another dataset is populated. The list of triggers can be empty or contain up
     /// to five <code>DataSetTrigger</code> objects</p>
@@ -5976,11 +5976,11 @@ impl DatasetSummary {
         self.status.as_ref()
     }
     /// <p>The time the dataset was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the dataset was updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time
@@ -6014,8 +6014,8 @@ pub mod dataset_summary {
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DatasetStatus>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) triggers: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::DatasetActionSummary>>,
     }
@@ -6044,27 +6044,27 @@ pub mod dataset_summary {
             self
         }
         /// <p>The time the dataset was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time the dataset was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last time the dataset was updated.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The last time the dataset was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -6330,11 +6330,11 @@ pub struct DatasetContentSummary {
     /// <p>The status of the dataset contents.</p>
     pub status: std::option::Option<crate::model::DatasetContentStatus>,
     /// <p>The actual time the creation of the dataset contents was started.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the creation of the dataset contents was scheduled to start.</p>
-    pub schedule_time: std::option::Option<aws_smithy_types::Instant>,
+    pub schedule_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
-    pub completion_time: std::option::Option<aws_smithy_types::Instant>,
+    pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasetContentSummary {
     /// <p>The version of the dataset contents.</p>
@@ -6346,15 +6346,15 @@ impl DatasetContentSummary {
         self.status.as_ref()
     }
     /// <p>The actual time the creation of the dataset contents was started.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the creation of the dataset contents was scheduled to start.</p>
-    pub fn schedule_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn schedule_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.schedule_time.as_ref()
     }
     /// <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
 }
@@ -6377,9 +6377,9 @@ pub mod dataset_content_summary {
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DatasetContentStatus>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) schedule_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completion_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) schedule_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The version of the dataset contents.</p>
@@ -6406,40 +6406,40 @@ pub mod dataset_content_summary {
             self
         }
         /// <p>The actual time the creation of the dataset contents was started.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The actual time the creation of the dataset contents was started.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time the creation of the dataset contents was scheduled to start.</p>
-        pub fn schedule_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn schedule_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.schedule_time = Some(input);
             self
         }
         /// <p>The time the creation of the dataset contents was scheduled to start.</p>
         pub fn set_schedule_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.schedule_time = input;
             self
         }
         /// <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
-        pub fn completion_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_time = Some(input);
             self
         }
         /// <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
         pub fn set_completion_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completion_time = input;
             self
@@ -6613,13 +6613,13 @@ pub struct ChannelSummary {
     /// <p>The status of the channel.</p>
     pub status: std::option::Option<crate::model::ChannelStatus>,
     /// <p>When the channel was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the channel was updated.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    pub last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_message_arrival_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ChannelSummary {
     /// <p>The name of the channel.</p>
@@ -6635,17 +6635,17 @@ impl ChannelSummary {
         self.status.as_ref()
     }
     /// <p>When the channel was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the channel was updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    pub fn last_message_arrival_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_message_arrival_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_message_arrival_time.as_ref()
     }
 }
@@ -6670,9 +6670,9 @@ pub mod channel_summary {
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) channel_storage: std::option::Option<crate::model::ChannelStorageSummary>,
         pub(crate) status: std::option::Option<crate::model::ChannelStatus>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_message_arrival_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the channel.</p>
@@ -6712,27 +6712,27 @@ pub mod channel_summary {
             self
         }
         /// <p>When the channel was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>When the channel was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last time the channel was updated.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The last time the channel was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -6740,7 +6740,7 @@ pub mod channel_summary {
         /// <p>The last time when a new message arrived in the channel.</p>
         /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
         /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-        pub fn last_message_arrival_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_message_arrival_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_message_arrival_time = Some(input);
             self
         }
@@ -6749,7 +6749,7 @@ pub mod channel_summary {
         /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
         pub fn set_last_message_arrival_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_message_arrival_time = input;
             self
@@ -7147,9 +7147,9 @@ pub struct Pipeline {
     pub reprocessing_summaries:
         std::option::Option<std::vec::Vec<crate::model::ReprocessingSummary>>,
     /// <p>When the pipeline was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the pipeline was updated.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Pipeline {
     /// <p>The name of the pipeline.</p>
@@ -7171,11 +7171,11 @@ impl Pipeline {
         self.reprocessing_summaries.as_deref()
     }
     /// <p>When the pipeline was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the pipeline was updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -7202,8 +7202,8 @@ pub mod pipeline {
         pub(crate) activities: std::option::Option<std::vec::Vec<crate::model::PipelineActivity>>,
         pub(crate) reprocessing_summaries:
             std::option::Option<std::vec::Vec<crate::model::ReprocessingSummary>>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the pipeline.</p>
@@ -7268,27 +7268,27 @@ pub mod pipeline {
             self
         }
         /// <p>When the pipeline was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>When the pipeline was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last time the pipeline was updated.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The last time the pipeline was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -7375,7 +7375,7 @@ pub struct EstimatedResourceSize {
     /// <p>The estimated size of the resource, in bytes.</p>
     pub estimated_size_in_bytes: std::option::Option<f64>,
     /// <p>The time when the estimate of the size of the resource was made.</p>
-    pub estimated_on: std::option::Option<aws_smithy_types::Instant>,
+    pub estimated_on: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EstimatedResourceSize {
     /// <p>The estimated size of the resource, in bytes.</p>
@@ -7383,7 +7383,7 @@ impl EstimatedResourceSize {
         self.estimated_size_in_bytes
     }
     /// <p>The time when the estimate of the size of the resource was made.</p>
-    pub fn estimated_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn estimated_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.estimated_on.as_ref()
     }
 }
@@ -7402,7 +7402,7 @@ pub mod estimated_resource_size {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) estimated_size_in_bytes: std::option::Option<f64>,
-        pub(crate) estimated_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) estimated_on: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The estimated size of the resource, in bytes.</p>
@@ -7416,14 +7416,14 @@ pub mod estimated_resource_size {
             self
         }
         /// <p>The time when the estimate of the size of the resource was made.</p>
-        pub fn estimated_on(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn estimated_on(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.estimated_on = Some(input);
             self
         }
         /// <p>The time when the estimate of the size of the resource was made.</p>
         pub fn set_estimated_on(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.estimated_on = input;
             self
@@ -7474,13 +7474,13 @@ pub struct Datastore {
     /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>When the data store was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the data store was updated.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    pub last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_message_arrival_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
@@ -7525,17 +7525,17 @@ impl Datastore {
         self.retention_period.as_ref()
     }
     /// <p>When the data store was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the data store was updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    pub fn last_message_arrival_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_message_arrival_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_message_arrival_time.as_ref()
     }
     /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
@@ -7578,9 +7578,9 @@ pub mod datastore {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DatastoreStatus>,
         pub(crate) retention_period: std::option::Option<crate::model::RetentionPeriod>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_message_arrival_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) file_format_configuration:
             std::option::Option<crate::model::FileFormatConfiguration>,
         pub(crate) datastore_partitions: std::option::Option<crate::model::DatastorePartitions>,
@@ -7676,27 +7676,27 @@ pub mod datastore {
             self
         }
         /// <p>When the data store was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>When the data store was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last time the data store was updated.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The last time the data store was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -7704,7 +7704,7 @@ pub mod datastore {
         /// <p>The last time when a new message arrived in the data store.</p>
         /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
         /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-        pub fn last_message_arrival_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_message_arrival_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_message_arrival_time = Some(input);
             self
         }
@@ -7713,7 +7713,7 @@ pub mod datastore {
         /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
         pub fn set_last_message_arrival_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_message_arrival_time = input;
             self
@@ -7796,9 +7796,9 @@ pub struct Dataset {
     /// <p>The status of the dataset.</p>
     pub status: std::option::Option<crate::model::DatasetStatus>,
     /// <p>When the dataset was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the dataset was updated.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Optional. How long, in days, message data is kept for the dataset.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
@@ -7842,11 +7842,11 @@ impl Dataset {
         self.status.as_ref()
     }
     /// <p>When the dataset was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the dataset was updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>Optional. How long, in days, message data is kept for the dataset.</p>
@@ -7899,8 +7899,8 @@ pub mod dataset {
         pub(crate) content_delivery_rules:
             std::option::Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
         pub(crate) status: std::option::Option<crate::model::DatasetStatus>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) retention_period: std::option::Option<crate::model::RetentionPeriod>,
         pub(crate) versioning_configuration:
             std::option::Option<crate::model::VersioningConfiguration>,
@@ -8007,27 +8007,27 @@ pub mod dataset {
             self
         }
         /// <p>When the dataset was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>When the dataset was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last time the dataset was updated.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The last time the dataset was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -8189,13 +8189,13 @@ pub struct Channel {
     /// <p>How long, in days, message data is kept for the channel.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>When the channel was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the channel was last updated.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    pub last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_message_arrival_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Channel {
     /// <p>The name of the channel.</p>
@@ -8222,17 +8222,17 @@ impl Channel {
         self.retention_period.as_ref()
     }
     /// <p>When the channel was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the channel was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    pub fn last_message_arrival_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_message_arrival_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_message_arrival_time.as_ref()
     }
 }
@@ -8261,9 +8261,9 @@ pub mod channel {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ChannelStatus>,
         pub(crate) retention_period: std::option::Option<crate::model::RetentionPeriod>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_message_arrival_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the channel.</p>
@@ -8332,27 +8332,27 @@ pub mod channel {
             self
         }
         /// <p>When the channel was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>When the channel was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>When the channel was last updated.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>When the channel was last updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -8360,7 +8360,7 @@ pub mod channel {
         /// <p>The last time when a new message arrived in the channel.</p>
         /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
         /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-        pub fn last_message_arrival_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_message_arrival_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_message_arrival_time = Some(input);
             self
         }
@@ -8369,7 +8369,7 @@ pub mod channel {
         /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
         pub fn set_last_message_arrival_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_message_arrival_time = input;
             self

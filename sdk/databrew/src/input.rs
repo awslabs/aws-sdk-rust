@@ -65,6 +65,7 @@ pub type BatchDeleteRecipeVersionInputOperationRetryAlias = aws_http::AwsErrorRe
 impl BatchDeleteRecipeVersionInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteRecipeVersion`](crate::operation::BatchDeleteRecipeVersion)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -138,11 +139,14 @@ impl BatchDeleteRecipeVersionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -321,6 +325,7 @@ pub type CreateDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataset`](crate::operation::CreateDataset)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -371,11 +376,14 @@ impl CreateDatasetInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -441,6 +449,8 @@ pub mod create_profile_job_input {
         pub(crate) max_retries: std::option::Option<i32>,
         pub(crate) output_location: std::option::Option<crate::model::S3Location>,
         pub(crate) configuration: std::option::Option<crate::model::ProfileConfiguration>,
+        pub(crate) validation_configurations:
+            std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -588,6 +598,28 @@ pub mod create_profile_job_input {
             self.configuration = input;
             self
         }
+        /// Appends an item to `validation_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_validation_configurations`](Self::set_validation_configurations).
+        ///
+        /// <p>List of validation configurations that are applied to the profile job.</p>
+        pub fn validation_configurations(
+            mut self,
+            input: impl Into<crate::model::ValidationConfiguration>,
+        ) -> Self {
+            let mut v = self.validation_configurations.unwrap_or_default();
+            v.push(input.into());
+            self.validation_configurations = Some(v);
+            self
+        }
+        /// <p>List of validation configurations that are applied to the profile job.</p>
+        pub fn set_validation_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
+        ) -> Self {
+            self.validation_configurations = input;
+            self
+        }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
         /// be assumed when DataBrew runs the job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -673,6 +705,7 @@ pub mod create_profile_job_input {
                 max_retries: self.max_retries.unwrap_or_default(),
                 output_location: self.output_location,
                 configuration: self.configuration,
+                validation_configurations: self.validation_configurations,
                 role_arn: self.role_arn,
                 tags: self.tags,
                 timeout: self.timeout.unwrap_or_default(),
@@ -688,6 +721,7 @@ pub type CreateProfileJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl CreateProfileJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateProfileJob`](crate::operation::CreateProfileJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -739,11 +773,14 @@ impl CreateProfileJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -916,6 +953,7 @@ pub type CreateProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateProjectInput {
     /// Consumes the builder and constructs an Operation<[`CreateProject`](crate::operation::CreateProject)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -966,11 +1004,14 @@ impl CreateProjectInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1126,6 +1167,7 @@ pub type CreateRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateRecipeInput {
     /// Consumes the builder and constructs an Operation<[`CreateRecipe`](crate::operation::CreateRecipe)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1176,11 +1218,14 @@ impl CreateRecipeInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1535,6 +1580,7 @@ pub type CreateRecipeJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl CreateRecipeJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateRecipeJob`](crate::operation::CreateRecipeJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1586,11 +1632,14 @@ impl CreateRecipeJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1638,6 +1687,234 @@ impl CreateRecipeJobInput {
     /// Creates a new builder-style object to manufacture [`CreateRecipeJobInput`](crate::input::CreateRecipeJobInput)
     pub fn builder() -> crate::input::create_recipe_job_input::Builder {
         crate::input::create_recipe_job_input::Builder::default()
+    }
+}
+
+/// See [`CreateRulesetInput`](crate::input::CreateRulesetInput)
+pub mod create_ruleset_input {
+    /// A builder for [`CreateRulesetInput`](crate::input::CreateRulesetInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) target_arn: std::option::Option<std::string::String>,
+        pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The name of the ruleset to be created. Valid characters are alphanumeric
+        /// (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the ruleset to be created. Valid characters are alphanumeric
+        /// (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the ruleset.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the ruleset.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the
+        /// ruleset is associated with.</p>
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the
+        /// ruleset is associated with.</p>
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_arn = input;
+            self
+        }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>A list of rules that are defined with the ruleset. A rule includes
+        /// one or more checks to be validated on a DataBrew dataset.</p>
+        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+            let mut v = self.rules.unwrap_or_default();
+            v.push(input.into());
+            self.rules = Some(v);
+            self
+        }
+        /// <p>A list of rules that are defined with the ruleset. A rule includes
+        /// one or more checks to be validated on a DataBrew dataset.</p>
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
+        ) -> Self {
+            self.rules = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Metadata tags to apply to the ruleset.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>Metadata tags to apply to the ruleset.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateRulesetInput`](crate::input::CreateRulesetInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateRulesetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateRulesetInput {
+                name: self.name,
+                description: self.description,
+                target_arn: self.target_arn,
+                rules: self.rules,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateRulesetInputOperationOutputAlias = crate::operation::CreateRuleset;
+#[doc(hidden)]
+pub type CreateRulesetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateRulesetInput {
+    /// Consumes the builder and constructs an Operation<[`CreateRuleset`](crate::operation::CreateRuleset)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateRuleset,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreateRulesetInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/rulesets").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateRulesetInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateRulesetInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_ruleset(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateRuleset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateRuleset",
+            "databrew",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateRulesetInput`](crate::input::CreateRulesetInput)
+    pub fn builder() -> crate::input::create_ruleset_input::Builder {
+        crate::input::create_ruleset_input::Builder::default()
     }
 }
 
@@ -1753,6 +2030,7 @@ pub type CreateScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateScheduleInput {
     /// Consumes the builder and constructs an Operation<[`CreateSchedule`](crate::operation::CreateSchedule)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1804,11 +2082,14 @@ impl CreateScheduleInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1896,6 +2177,7 @@ pub type DeleteDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1956,11 +2238,14 @@ impl DeleteDatasetInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2038,6 +2323,7 @@ pub type DeleteJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJob`](crate::operation::DeleteJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2098,11 +2384,14 @@ impl DeleteJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2180,6 +2469,7 @@ pub type DeleteProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteProjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProject`](crate::operation::DeleteProject)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2240,11 +2530,14 @@ impl DeleteProjectInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2345,6 +2638,7 @@ pub type DeleteRecipeVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DeleteRecipeVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRecipeVersion`](crate::operation::DeleteRecipeVersion)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2426,11 +2720,14 @@ impl DeleteRecipeVersionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2473,6 +2770,154 @@ impl DeleteRecipeVersionInput {
     }
 }
 
+/// See [`DeleteRulesetInput`](crate::input::DeleteRulesetInput)
+pub mod delete_ruleset_input {
+    /// A builder for [`DeleteRulesetInput`](crate::input::DeleteRulesetInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the ruleset to be deleted.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the ruleset to be deleted.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteRulesetInput`](crate::input::DeleteRulesetInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteRulesetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteRulesetInput { name: self.name })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteRulesetInputOperationOutputAlias = crate::operation::DeleteRuleset;
+#[doc(hidden)]
+pub type DeleteRulesetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteRulesetInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteRuleset`](crate::operation::DeleteRuleset)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteRuleset,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteRulesetInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_7 = &_input.name;
+            let input_7 =
+                input_7
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let name = aws_smithy_http::label::fmt_string(input_7, false);
+            if name.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/rulesets/{Name}", Name = name).expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteRulesetInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteRulesetInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteRuleset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteRuleset",
+            "databrew",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteRulesetInput`](crate::input::DeleteRulesetInput)
+    pub fn builder() -> crate::input::delete_ruleset_input::Builder {
+        crate::input::delete_ruleset_input::Builder::default()
+    }
+}
+
 /// See [`DeleteScheduleInput`](crate::input::DeleteScheduleInput)
 pub mod delete_schedule_input {
     /// A builder for [`DeleteScheduleInput`](crate::input::DeleteScheduleInput)
@@ -2510,6 +2955,7 @@ pub type DeleteScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteScheduleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSchedule`](crate::operation::DeleteSchedule)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2524,15 +2970,15 @@ impl DeleteScheduleInput {
             _input: &crate::input::DeleteScheduleInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_7 = &_input.name;
-            let input_7 =
-                input_7
+            let input_8 = &_input.name;
+            let input_8 =
+                input_8
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_7, false);
+            let name = aws_smithy_http::label::fmt_string(input_8, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -2570,11 +3016,14 @@ impl DeleteScheduleInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2654,6 +3103,7 @@ pub type DescribeDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl DescribeDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2668,15 +3118,15 @@ impl DescribeDatasetInput {
             _input: &crate::input::DescribeDatasetInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_8 = &_input.name;
-            let input_8 =
-                input_8
+            let input_9 = &_input.name;
+            let input_9 =
+                input_9
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_8, false);
+            let name = aws_smithy_http::label::fmt_string(input_9, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -2714,11 +3164,14 @@ impl DescribeDatasetInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2798,6 +3251,7 @@ pub type DescribeJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJob`](crate::operation::DescribeJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2812,15 +3266,15 @@ impl DescribeJobInput {
             _input: &crate::input::DescribeJobInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_9 = &_input.name;
-            let input_9 =
-                input_9
+            let input_10 = &_input.name;
+            let input_10 =
+                input_10
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_9, false);
+            let name = aws_smithy_http::label::fmt_string(input_10, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -2858,11 +3312,14 @@ impl DescribeJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2956,6 +3413,7 @@ pub type DescribeJobRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeJobRunInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobRun`](crate::operation::DescribeJobRun)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2970,30 +3428,30 @@ impl DescribeJobRunInput {
             _input: &crate::input::DescribeJobRunInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_10 = &_input.name;
-            let input_10 =
-                input_10
+            let input_11 = &_input.name;
+            let input_11 =
+                input_11
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_10, false);
+            let name = aws_smithy_http::label::fmt_string(input_11, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_11 = &_input.run_id;
-            let input_11 =
-                input_11
+            let input_12 = &_input.run_id;
+            let input_12 =
+                input_12
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "run_id",
                         details: "cannot be empty or unset",
                     })?;
-            let run_id = aws_smithy_http::label::fmt_string(input_11, false);
+            let run_id = aws_smithy_http::label::fmt_string(input_12, false);
             if run_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "run_id",
@@ -3037,11 +3495,14 @@ impl DescribeJobRunInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3121,6 +3582,7 @@ pub type DescribeProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl DescribeProjectInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProject`](crate::operation::DescribeProject)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3135,15 +3597,15 @@ impl DescribeProjectInput {
             _input: &crate::input::DescribeProjectInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_12 = &_input.name;
-            let input_12 =
-                input_12
+            let input_13 = &_input.name;
+            let input_13 =
+                input_13
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_12, false);
+            let name = aws_smithy_http::label::fmt_string(input_13, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -3181,11 +3643,14 @@ impl DescribeProjectInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3284,6 +3749,7 @@ pub type DescribeRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeRecipeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRecipe`](crate::operation::DescribeRecipe)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3298,15 +3764,15 @@ impl DescribeRecipeInput {
             _input: &crate::input::DescribeRecipeInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_13 = &_input.name;
-            let input_13 =
-                input_13
+            let input_14 = &_input.name;
+            let input_14 =
+                input_14
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_13, false);
+            let name = aws_smithy_http::label::fmt_string(input_14, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -3316,14 +3782,18 @@ impl DescribeRecipeInput {
             write!(output, "/recipes/{Name}", Name = name).expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::DescribeRecipeInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::DescribeRecipeInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_14) = &_input.recipe_version {
+            if let Some(inner_15) = &_input.recipe_version {
                 query.push_kv(
                     "recipeVersion",
-                    &aws_smithy_http::query::fmt_string(&inner_14),
+                    &aws_smithy_http::query::fmt_string(&inner_15),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -3333,7 +3803,7 @@ impl DescribeRecipeInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3354,11 +3824,14 @@ impl DescribeRecipeInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3401,6 +3874,154 @@ impl DescribeRecipeInput {
     }
 }
 
+/// See [`DescribeRulesetInput`](crate::input::DescribeRulesetInput)
+pub mod describe_ruleset_input {
+    /// A builder for [`DescribeRulesetInput`](crate::input::DescribeRulesetInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the ruleset to be described.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the ruleset to be described.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeRulesetInput`](crate::input::DescribeRulesetInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeRulesetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeRulesetInput { name: self.name })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeRulesetInputOperationOutputAlias = crate::operation::DescribeRuleset;
+#[doc(hidden)]
+pub type DescribeRulesetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeRulesetInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeRuleset`](crate::operation::DescribeRuleset)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeRuleset,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeRulesetInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_16 = &_input.name;
+            let input_16 =
+                input_16
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let name = aws_smithy_http::label::fmt_string(input_16, false);
+            if name.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/rulesets/{Name}", Name = name).expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeRulesetInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeRulesetInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeRuleset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeRuleset",
+            "databrew",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeRulesetInput`](crate::input::DescribeRulesetInput)
+    pub fn builder() -> crate::input::describe_ruleset_input::Builder {
+        crate::input::describe_ruleset_input::Builder::default()
+    }
+}
+
 /// See [`DescribeScheduleInput`](crate::input::DescribeScheduleInput)
 pub mod describe_schedule_input {
     /// A builder for [`DescribeScheduleInput`](crate::input::DescribeScheduleInput)
@@ -3438,6 +4059,7 @@ pub type DescribeScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DescribeScheduleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSchedule`](crate::operation::DescribeSchedule)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3452,15 +4074,15 @@ impl DescribeScheduleInput {
             _input: &crate::input::DescribeScheduleInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_15 = &_input.name;
-            let input_15 =
-                input_15
+            let input_17 = &_input.name;
+            let input_17 =
+                input_17
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_15, false);
+            let name = aws_smithy_http::label::fmt_string(input_17, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -3498,11 +4120,14 @@ impl DescribeScheduleInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3596,6 +4221,7 @@ pub type ListDatasetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3613,17 +4239,21 @@ impl ListDatasetsInput {
             write!(output, "/datasets").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListDatasetsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListDatasetsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_16) = &_input.max_results {
+            if let Some(inner_18) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_16).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_18).encode(),
                 );
             }
-            if let Some(inner_17) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_17));
+            if let Some(inner_19) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -3633,7 +4263,7 @@ impl ListDatasetsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3654,11 +4284,14 @@ impl ListDatasetsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3764,6 +4397,7 @@ pub type ListJobRunsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListJobRunsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobRuns`](crate::operation::ListJobRuns)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3778,15 +4412,15 @@ impl ListJobRunsInput {
             _input: &crate::input::ListJobRunsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_18 = &_input.name;
-            let input_18 =
-                input_18
+            let input_20 = &_input.name;
+            let input_20 =
+                input_20
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_18, false);
+            let name = aws_smithy_http::label::fmt_string(input_20, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -3796,17 +4430,21 @@ impl ListJobRunsInput {
             write!(output, "/jobs/{Name}/jobRuns", Name = name).expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListJobRunsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListJobRunsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_19) = &_input.max_results {
+            if let Some(inner_21) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_19).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_21).encode(),
                 );
             }
-            if let Some(inner_20) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_20));
+            if let Some(inner_22) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_22));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -3816,7 +4454,7 @@ impl ListJobRunsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3837,11 +4475,14 @@ impl ListJobRunsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3965,6 +4606,7 @@ pub type ListJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3982,29 +4624,33 @@ impl ListJobsInput {
             write!(output, "/jobs").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListJobsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListJobsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_21) = &_input.dataset_name {
+            if let Some(inner_23) = &_input.dataset_name {
                 query.push_kv(
                     "datasetName",
-                    &aws_smithy_http::query::fmt_string(&inner_21),
+                    &aws_smithy_http::query::fmt_string(&inner_23),
                 );
             }
-            if let Some(inner_22) = &_input.max_results {
+            if let Some(inner_24) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_24).encode(),
                 );
             }
-            if let Some(inner_23) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_23));
+            if let Some(inner_25) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_25));
             }
-            if let Some(inner_24) = &_input.project_name {
+            if let Some(inner_26) = &_input.project_name {
                 query.push_kv(
                     "projectName",
-                    &aws_smithy_http::query::fmt_string(&inner_24),
+                    &aws_smithy_http::query::fmt_string(&inner_26),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -4014,7 +4660,7 @@ impl ListJobsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4035,11 +4681,14 @@ impl ListJobsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4130,6 +4779,7 @@ pub type ListProjectsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListProjectsInput {
     /// Consumes the builder and constructs an Operation<[`ListProjects`](crate::operation::ListProjects)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4147,17 +4797,21 @@ impl ListProjectsInput {
             write!(output, "/projects").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListProjectsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListProjectsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_25) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_25));
+            if let Some(inner_27) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_27));
             }
-            if let Some(inner_26) = &_input.max_results {
+            if let Some(inner_28) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_26).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_28).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -4167,7 +4821,7 @@ impl ListProjectsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4188,11 +4842,14 @@ impl ListProjectsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4311,6 +4968,7 @@ pub type ListRecipesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListRecipesInput {
     /// Consumes the builder and constructs an Operation<[`ListRecipes`](crate::operation::ListRecipes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4328,23 +4986,27 @@ impl ListRecipesInput {
             write!(output, "/recipes").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListRecipesInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListRecipesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_27) = &_input.max_results {
+            if let Some(inner_29) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_27).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_29).encode(),
                 );
             }
-            if let Some(inner_28) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_28));
+            if let Some(inner_30) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_30));
             }
-            if let Some(inner_29) = &_input.recipe_version {
+            if let Some(inner_31) = &_input.recipe_version {
                 query.push_kv(
                     "recipeVersion",
-                    &aws_smithy_http::query::fmt_string(&inner_29),
+                    &aws_smithy_http::query::fmt_string(&inner_31),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -4354,7 +5016,7 @@ impl ListRecipesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4375,11 +5037,14 @@ impl ListRecipesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4485,6 +5150,7 @@ pub type ListRecipeVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl ListRecipeVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListRecipeVersions`](crate::operation::ListRecipeVersions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4502,20 +5168,24 @@ impl ListRecipeVersionsInput {
             write!(output, "/recipeVersions").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListRecipeVersionsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListRecipeVersionsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_30) = &_input.max_results {
+            if let Some(inner_32) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_30).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_32).encode(),
                 );
             }
-            if let Some(inner_31) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
+            if let Some(inner_33) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
             }
-            if let Some(inner_32) = &_input.name {
-                query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_32));
+            if let Some(inner_34) = &_input.name {
+                query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_34));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -4525,7 +5195,7 @@ impl ListRecipeVersionsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4546,11 +5216,14 @@ impl ListRecipeVersionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4590,6 +5263,191 @@ impl ListRecipeVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListRecipeVersionsInput`](crate::input::ListRecipeVersionsInput)
     pub fn builder() -> crate::input::list_recipe_versions_input::Builder {
         crate::input::list_recipe_versions_input::Builder::default()
+    }
+}
+
+/// See [`ListRulesetsInput`](crate::input::ListRulesetsInput)
+pub mod list_rulesets_input {
+    /// A builder for [`ListRulesetsInput`](crate::input::ListRulesetsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) target_arn: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter
+        /// indicates to return only those rulesets that are associated with the specified resource.</p>
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter
+        /// indicates to return only those rulesets that are associated with the specified resource.</p>
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_arn = input;
+            self
+        }
+        /// <p>The maximum number of results to return in this request.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return in this request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>A token generated by DataBrew that specifies where to continue pagination
+        /// if a previous request was truncated. To get the next set of pages, pass in
+        /// the NextToken value from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token generated by DataBrew that specifies where to continue pagination
+        /// if a previous request was truncated. To get the next set of pages, pass in
+        /// the NextToken value from the response object of the previous page call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListRulesetsInput`](crate::input::ListRulesetsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListRulesetsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListRulesetsInput {
+                target_arn: self.target_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListRulesetsInputOperationOutputAlias = crate::operation::ListRulesets;
+#[doc(hidden)]
+pub type ListRulesetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListRulesetsInput {
+    /// Consumes the builder and constructs an Operation<[`ListRulesets`](crate::operation::ListRulesets)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListRulesets,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListRulesetsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/rulesets").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::ListRulesetsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_35) = &_input.target_arn {
+                query.push_kv("targetArn", &aws_smithy_http::query::fmt_string(&inner_35));
+            }
+            if let Some(inner_36) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    aws_smithy_types::primitive::Encoder::from(*inner_36).encode(),
+                );
+            }
+            if let Some(inner_37) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListRulesetsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListRulesetsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListRulesets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListRulesets",
+            "databrew",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListRulesetsInput`](crate::input::ListRulesetsInput)
+    pub fn builder() -> crate::input::list_rulesets_input::Builder {
+        crate::input::list_rulesets_input::Builder::default()
     }
 }
 
@@ -4656,6 +5514,7 @@ pub type ListSchedulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListSchedulesInput {
     /// Consumes the builder and constructs an Operation<[`ListSchedules`](crate::operation::ListSchedules)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4673,20 +5532,24 @@ impl ListSchedulesInput {
             write!(output, "/schedules").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListSchedulesInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListSchedulesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_33) = &_input.job_name {
-                query.push_kv("jobName", &aws_smithy_http::query::fmt_string(&inner_33));
+            if let Some(inner_38) = &_input.job_name {
+                query.push_kv("jobName", &aws_smithy_http::query::fmt_string(&inner_38));
             }
-            if let Some(inner_34) = &_input.max_results {
+            if let Some(inner_39) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_34).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_39).encode(),
                 );
             }
-            if let Some(inner_35) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
+            if let Some(inner_40) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -4696,7 +5559,7 @@ impl ListSchedulesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4717,11 +5580,14 @@ impl ListSchedulesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4805,6 +5671,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4819,15 +5686,15 @@ impl ListTagsForResourceInput {
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_36 = &_input.resource_arn;
-            let input_36 =
-                input_36
+            let input_41 = &_input.resource_arn;
+            let input_41 =
+                input_41
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_36, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_41, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -4866,11 +5733,14 @@ impl ListTagsForResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4964,6 +5834,7 @@ pub type PublishRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl PublishRecipeInput {
     /// Consumes the builder and constructs an Operation<[`PublishRecipe`](crate::operation::PublishRecipe)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4978,15 +5849,15 @@ impl PublishRecipeInput {
             _input: &crate::input::PublishRecipeInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_37 = &_input.name;
-            let input_37 =
-                input_37
+            let input_42 = &_input.name;
+            let input_42 =
+                input_42
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_37, false);
+            let name = aws_smithy_http::label::fmt_string(input_42, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -5030,11 +5901,14 @@ impl PublishRecipeInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5200,6 +6074,7 @@ pub type SendProjectSessionActionInputOperationRetryAlias = aws_http::AwsErrorRe
 impl SendProjectSessionActionInput {
     /// Consumes the builder and constructs an Operation<[`SendProjectSessionAction`](crate::operation::SendProjectSessionAction)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5214,15 +6089,15 @@ impl SendProjectSessionActionInput {
             _input: &crate::input::SendProjectSessionActionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_38 = &_input.name;
-            let input_38 =
-                input_38
+            let input_43 = &_input.name;
+            let input_43 =
+                input_43
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_38, false);
+            let name = aws_smithy_http::label::fmt_string(input_43, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -5273,11 +6148,14 @@ impl SendProjectSessionActionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5365,6 +6243,7 @@ pub type StartJobRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StartJobRunInput {
     /// Consumes the builder and constructs an Operation<[`StartJobRun`](crate::operation::StartJobRun)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5379,15 +6258,15 @@ impl StartJobRunInput {
             _input: &crate::input::StartJobRunInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_39 = &_input.name;
-            let input_39 =
-                input_39
+            let input_44 = &_input.name;
+            let input_44 =
+                input_44
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_39, false);
+            let name = aws_smithy_http::label::fmt_string(input_44, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -5426,11 +6305,14 @@ impl StartJobRunInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5526,6 +6408,7 @@ pub type StartProjectSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl StartProjectSessionInput {
     /// Consumes the builder and constructs an Operation<[`StartProjectSession`](crate::operation::StartProjectSession)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5540,15 +6423,15 @@ impl StartProjectSessionInput {
             _input: &crate::input::StartProjectSessionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_40 = &_input.name;
-            let input_40 =
-                input_40
+            let input_45 = &_input.name;
+            let input_45 =
+                input_45
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_40, false);
+            let name = aws_smithy_http::label::fmt_string(input_45, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -5593,11 +6476,14 @@ impl StartProjectSessionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5699,6 +6585,7 @@ pub type StopJobRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StopJobRunInput {
     /// Consumes the builder and constructs an Operation<[`StopJobRun`](crate::operation::StopJobRun)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5713,30 +6600,30 @@ impl StopJobRunInput {
             _input: &crate::input::StopJobRunInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_41 = &_input.name;
-            let input_41 =
-                input_41
+            let input_46 = &_input.name;
+            let input_46 =
+                input_46
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_41, false);
+            let name = aws_smithy_http::label::fmt_string(input_46, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_42 = &_input.run_id;
-            let input_42 =
-                input_42
+            let input_47 = &_input.run_id;
+            let input_47 =
+                input_47
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "run_id",
                         details: "cannot be empty or unset",
                     })?;
-            let run_id = aws_smithy_http::label::fmt_string(input_42, false);
+            let run_id = aws_smithy_http::label::fmt_string(input_47, false);
             if run_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "run_id",
@@ -5780,11 +6667,14 @@ impl StopJobRunInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5899,6 +6789,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5913,15 +6804,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_43 = &_input.resource_arn;
-            let input_43 =
-                input_43
+            let input_48 = &_input.resource_arn;
+            let input_48 =
+                input_48
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_43, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_48, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -5965,11 +6856,14 @@ impl TagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6082,6 +6976,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6096,15 +6991,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_44 = &_input.resource_arn;
-            let input_44 =
-                input_44
+            let input_49 = &_input.resource_arn;
+            let input_49 =
+                input_49
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_44, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_49, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -6115,13 +7010,17 @@ impl UntagResourceInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::UntagResourceInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_45) = &_input.tag_keys {
-                for inner_46 in inner_45 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_46));
+            if let Some(inner_50) = &_input.tag_keys {
+                for inner_51 in inner_50 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_51));
                 }
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -6131,7 +7030,7 @@ impl UntagResourceInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6152,11 +7051,14 @@ impl UntagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6296,6 +7198,7 @@ pub type UpdateDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDataset`](crate::operation::UpdateDataset)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6310,15 +7213,15 @@ impl UpdateDatasetInput {
             _input: &crate::input::UpdateDatasetInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_47 = &_input.name;
-            let input_47 =
-                input_47
+            let input_52 = &_input.name;
+            let input_52 =
+                input_52
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_47, false);
+            let name = aws_smithy_http::label::fmt_string(input_52, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -6361,11 +7264,14 @@ impl UpdateDatasetInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6430,6 +7336,8 @@ pub mod update_profile_job_input {
         pub(crate) max_capacity: std::option::Option<i32>,
         pub(crate) max_retries: std::option::Option<i32>,
         pub(crate) output_location: std::option::Option<crate::model::S3Location>,
+        pub(crate) validation_configurations:
+            std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) timeout: std::option::Option<i32>,
         pub(crate) job_sample: std::option::Option<crate::model::JobSample>,
@@ -6564,6 +7472,28 @@ pub mod update_profile_job_input {
             self.output_location = input;
             self
         }
+        /// Appends an item to `validation_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_validation_configurations`](Self::set_validation_configurations).
+        ///
+        /// <p>List of validation configurations that are applied to the profile job.</p>
+        pub fn validation_configurations(
+            mut self,
+            input: impl Into<crate::model::ValidationConfiguration>,
+        ) -> Self {
+            let mut v = self.validation_configurations.unwrap_or_default();
+            v.push(input.into());
+            self.validation_configurations = Some(v);
+            self
+        }
+        /// <p>List of validation configurations that are applied to the profile job.</p>
+        pub fn set_validation_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
+        ) -> Self {
+            self.validation_configurations = input;
+            self
+        }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
         /// be assumed when DataBrew runs the job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6623,6 +7553,7 @@ pub mod update_profile_job_input {
                 max_capacity: self.max_capacity.unwrap_or_default(),
                 max_retries: self.max_retries.unwrap_or_default(),
                 output_location: self.output_location,
+                validation_configurations: self.validation_configurations,
                 role_arn: self.role_arn,
                 timeout: self.timeout.unwrap_or_default(),
                 job_sample: self.job_sample,
@@ -6637,6 +7568,7 @@ pub type UpdateProfileJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl UpdateProfileJobInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProfileJob`](crate::operation::UpdateProfileJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6651,15 +7583,15 @@ impl UpdateProfileJobInput {
             _input: &crate::input::UpdateProfileJobInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_48 = &_input.name;
-            let input_48 =
-                input_48
+            let input_53 = &_input.name;
+            let input_53 =
+                input_53
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_48, false);
+            let name = aws_smithy_http::label::fmt_string(input_53, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -6703,11 +7635,14 @@ impl UpdateProfileJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6823,6 +7758,7 @@ pub type UpdateProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateProjectInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProject`](crate::operation::UpdateProject)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6837,15 +7773,15 @@ impl UpdateProjectInput {
             _input: &crate::input::UpdateProjectInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_49 = &_input.name;
-            let input_49 =
-                input_49
+            let input_54 = &_input.name;
+            let input_54 =
+                input_54
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_49, false);
+            let name = aws_smithy_http::label::fmt_string(input_54, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -6888,11 +7824,14 @@ impl UpdateProjectInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7017,6 +7956,7 @@ pub type UpdateRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateRecipeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRecipe`](crate::operation::UpdateRecipe)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7031,15 +7971,15 @@ impl UpdateRecipeInput {
             _input: &crate::input::UpdateRecipeInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_50 = &_input.name;
-            let input_50 =
-                input_50
+            let input_55 = &_input.name;
+            let input_55 =
+                input_55
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_50, false);
+            let name = aws_smithy_http::label::fmt_string(input_55, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -7082,11 +8022,14 @@ impl UpdateRecipeInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7369,6 +8312,7 @@ pub type UpdateRecipeJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl UpdateRecipeJobInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRecipeJob`](crate::operation::UpdateRecipeJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7383,15 +8327,15 @@ impl UpdateRecipeJobInput {
             _input: &crate::input::UpdateRecipeJobInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_51 = &_input.name;
-            let input_51 =
-                input_51
+            let input_56 = &_input.name;
+            let input_56 =
+                input_56
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_51, false);
+            let name = aws_smithy_http::label::fmt_string(input_56, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -7435,11 +8379,14 @@ impl UpdateRecipeJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7487,6 +8434,204 @@ impl UpdateRecipeJobInput {
     /// Creates a new builder-style object to manufacture [`UpdateRecipeJobInput`](crate::input::UpdateRecipeJobInput)
     pub fn builder() -> crate::input::update_recipe_job_input::Builder {
         crate::input::update_recipe_job_input::Builder::default()
+    }
+}
+
+/// See [`UpdateRulesetInput`](crate::input::UpdateRulesetInput)
+pub mod update_ruleset_input {
+    /// A builder for [`UpdateRulesetInput`](crate::input::UpdateRulesetInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
+    }
+    impl Builder {
+        /// <p>The name of the ruleset to be updated.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the ruleset to be updated.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the ruleset.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the ruleset.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more
+        /// checks to be validated on a DataBrew dataset.</p>
+        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+            let mut v = self.rules.unwrap_or_default();
+            v.push(input.into());
+            self.rules = Some(v);
+            self
+        }
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more
+        /// checks to be validated on a DataBrew dataset.</p>
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
+        ) -> Self {
+            self.rules = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateRulesetInput`](crate::input::UpdateRulesetInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateRulesetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateRulesetInput {
+                name: self.name,
+                description: self.description,
+                rules: self.rules,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateRulesetInputOperationOutputAlias = crate::operation::UpdateRuleset;
+#[doc(hidden)]
+pub type UpdateRulesetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateRulesetInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateRuleset`](crate::operation::UpdateRuleset)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateRuleset,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateRulesetInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_57 = &_input.name;
+            let input_57 =
+                input_57
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let name = aws_smithy_http::label::fmt_string(input_57, false);
+            if name.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/rulesets/{Name}", Name = name).expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateRulesetInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateRulesetInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_ruleset(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateRuleset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateRuleset",
+            "databrew",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateRulesetInput`](crate::input::UpdateRulesetInput)
+    pub fn builder() -> crate::input::update_ruleset_input::Builder {
+        crate::input::update_ruleset_input::Builder::default()
     }
 }
 
@@ -7571,6 +8716,7 @@ pub type UpdateScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateScheduleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSchedule`](crate::operation::UpdateSchedule)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7585,15 +8731,15 @@ impl UpdateScheduleInput {
             _input: &crate::input::UpdateScheduleInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_52 = &_input.name;
-            let input_52 =
-                input_52
+            let input_58 = &_input.name;
+            let input_58 =
+                input_58
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_52, false);
+            let name = aws_smithy_http::label::fmt_string(input_58, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -7637,11 +8783,14 @@ impl UpdateScheduleInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7729,6 +8878,43 @@ impl std::fmt::Debug for UpdateScheduleInput {
         formatter.field("job_names", &self.job_names);
         formatter.field("cron_expression", &self.cron_expression);
         formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateRulesetInput {
+    /// <p>The name of the ruleset to be updated.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the ruleset.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>A list of rules that are defined with the ruleset. A rule includes one or more
+    /// checks to be validated on a DataBrew dataset.</p>
+    pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
+}
+impl UpdateRulesetInput {
+    /// <p>The name of the ruleset to be updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the ruleset.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of rules that are defined with the ruleset. A rule includes one or more
+    /// checks to be validated on a DataBrew dataset.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
+        self.rules.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateRulesetInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateRulesetInput");
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("rules", &self.rules);
         formatter.finish()
     }
 }
@@ -7967,6 +9153,9 @@ pub struct UpdateProfileJobInput {
     /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
     /// input data, or write output from a job.</p>
     pub output_location: std::option::Option<crate::model::S3Location>,
+    /// <p>List of validation configurations that are applied to the profile job.</p>
+    pub validation_configurations:
+        std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
     /// be assumed when DataBrew runs the job.</p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -8029,6 +9218,12 @@ impl UpdateProfileJobInput {
     pub fn output_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.output_location.as_ref()
     }
+    /// <p>List of validation configurations that are applied to the profile job.</p>
+    pub fn validation_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ValidationConfiguration]> {
+        self.validation_configurations.as_deref()
+    }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
     /// be assumed when DataBrew runs the job.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
@@ -8058,6 +9253,7 @@ impl std::fmt::Debug for UpdateProfileJobInput {
         formatter.field("max_capacity", &self.max_capacity);
         formatter.field("max_retries", &self.max_retries);
         formatter.field("output_location", &self.output_location);
+        formatter.field("validation_configurations", &self.validation_configurations);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("timeout", &self.timeout);
         formatter.field("job_sample", &self.job_sample);
@@ -8319,7 +9515,7 @@ impl std::fmt::Debug for SendProjectSessionActionInput {
         formatter.field("name", &self.name);
         formatter.field("recipe_step", &self.recipe_step);
         formatter.field("step_index", &self.step_index);
-        formatter.field("client_session_id", &self.client_session_id);
+        formatter.field("client_session_id", &"*** Sensitive Data Redacted ***");
         formatter.field("view_frame", &self.view_frame);
         formatter.finish()
     }
@@ -8405,6 +9601,47 @@ impl std::fmt::Debug for ListSchedulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSchedulesInput");
         formatter.field("job_name", &self.job_name);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListRulesetsInput {
+    /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter
+    /// indicates to return only those rulesets that are associated with the specified resource.</p>
+    pub target_arn: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return in this request.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>A token generated by DataBrew that specifies where to continue pagination
+    /// if a previous request was truncated. To get the next set of pages, pass in
+    /// the NextToken value from the response object of the previous page call.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRulesetsInput {
+    /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter
+    /// indicates to return only those rulesets that are associated with the specified resource.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The maximum number of results to return in this request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token generated by DataBrew that specifies where to continue pagination
+    /// if a previous request was truncated. To get the next set of pages, pass in
+    /// the NextToken value from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListRulesetsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListRulesetsInput");
+        formatter.field("target_arn", &self.target_arn);
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
         formatter.finish()
@@ -8656,6 +9893,27 @@ impl std::fmt::Debug for DescribeScheduleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeRulesetInput {
+    /// <p>The name of the ruleset to be described.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl DescribeRulesetInput {
+    /// <p>The name of the ruleset to be described.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeRulesetInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeRulesetInput");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecipeInput {
     /// <p>The name of the recipe to be described.</p>
     pub name: std::option::Option<std::string::String>,
@@ -8790,6 +10048,27 @@ impl DeleteScheduleInput {
 impl std::fmt::Debug for DeleteScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteScheduleInput");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteRulesetInput {
+    /// <p>The name of the ruleset to be deleted.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl DeleteRulesetInput {
+    /// <p>The name of the ruleset to be deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteRulesetInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteRulesetInput");
         formatter.field("name", &self.name);
         formatter.finish()
     }
@@ -8940,6 +10219,65 @@ impl std::fmt::Debug for CreateScheduleInput {
         formatter.field("cron_expression", &self.cron_expression);
         formatter.field("tags", &self.tags);
         formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateRulesetInput {
+    /// <p>The name of the ruleset to be created. Valid characters are alphanumeric
+    /// (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the ruleset.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the
+    /// ruleset is associated with.</p>
+    pub target_arn: std::option::Option<std::string::String>,
+    /// <p>A list of rules that are defined with the ruleset. A rule includes
+    /// one or more checks to be validated on a DataBrew dataset.</p>
+    pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
+    /// <p>Metadata tags to apply to the ruleset.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateRulesetInput {
+    /// <p>The name of the ruleset to be created. Valid characters are alphanumeric
+    /// (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the ruleset.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the
+    /// ruleset is associated with.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>A list of rules that are defined with the ruleset. A rule includes
+    /// one or more checks to be validated on a DataBrew dataset.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
+        self.rules.as_deref()
+    }
+    /// <p>Metadata tags to apply to the ruleset.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateRulesetInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateRulesetInput");
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("target_arn", &self.target_arn);
+        formatter.field("rules", &self.rules);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -9258,6 +10596,9 @@ pub struct CreateProfileJobInput {
     /// and override default parameters of evaluations. When configuration is null, the
     /// profile job will run with default settings.</p>
     pub configuration: std::option::Option<crate::model::ProfileConfiguration>,
+    /// <p>List of validation configurations that are applied to the profile job.</p>
+    pub validation_configurations:
+        std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
     /// be assumed when DataBrew runs the job.</p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -9327,6 +10668,12 @@ impl CreateProfileJobInput {
     pub fn configuration(&self) -> std::option::Option<&crate::model::ProfileConfiguration> {
         self.configuration.as_ref()
     }
+    /// <p>List of validation configurations that are applied to the profile job.</p>
+    pub fn validation_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ValidationConfiguration]> {
+        self.validation_configurations.as_deref()
+    }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
     /// be assumed when DataBrew runs the job.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
@@ -9364,6 +10711,7 @@ impl std::fmt::Debug for CreateProfileJobInput {
         formatter.field("max_retries", &self.max_retries);
         formatter.field("output_location", &self.output_location);
         formatter.field("configuration", &self.configuration);
+        formatter.field("validation_configurations", &self.validation_configurations);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("tags", &self.tags);
         formatter.field("timeout", &self.timeout);

@@ -28,7 +28,7 @@ pub struct EnvironmentMember {
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The time, expressed in epoch time format, when the environment member last opened the
     /// environment.</p>
-    pub last_access: std::option::Option<aws_smithy_types::Instant>,
+    pub last_access: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EnvironmentMember {
     /// <p>The type of environment member permissions associated with this environment member.
@@ -64,7 +64,7 @@ impl EnvironmentMember {
     }
     /// <p>The time, expressed in epoch time format, when the environment member last opened the
     /// environment.</p>
-    pub fn last_access(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_access(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_access.as_ref()
     }
 }
@@ -89,7 +89,7 @@ pub mod environment_member {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) environment_id: std::option::Option<std::string::String>,
-        pub(crate) last_access: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_access: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The type of environment member permissions associated with this environment member.
@@ -170,7 +170,7 @@ pub mod environment_member {
         }
         /// <p>The time, expressed in epoch time format, when the environment member last opened the
         /// environment.</p>
-        pub fn last_access(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_access(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_access = Some(input);
             self
         }
@@ -178,7 +178,7 @@ pub mod environment_member {
         /// environment.</p>
         pub fn set_last_access(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_access = input;
             self

@@ -3080,6 +3080,186 @@ pub fn parse_get_evidence_folders_by_assessment_control_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_insights_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetInsightsOutput, crate::error::GetInsightsError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetInsightsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetInsightsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GetInsightsError {
+            meta: generic,
+            kind: crate::error::GetInsightsErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInsightsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::GetInsightsError {
+            meta: generic,
+            kind: crate::error::GetInsightsErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInsightsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetInsightsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_insights_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetInsightsOutput, crate::error::GetInsightsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_insights_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_insights(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetInsightsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_insights_by_assessment_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetInsightsByAssessmentOutput,
+    crate::error::GetInsightsByAssessmentError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetInsightsByAssessmentError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetInsightsByAssessmentError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GetInsightsByAssessmentError {
+            meta: generic,
+            kind: crate::error::GetInsightsByAssessmentErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInsightsByAssessmentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::GetInsightsByAssessmentError {
+            meta: generic,
+            kind: crate::error::GetInsightsByAssessmentErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInsightsByAssessmentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::GetInsightsByAssessmentError {
+            meta: generic,
+            kind: crate::error::GetInsightsByAssessmentErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInsightsByAssessmentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::GetInsightsByAssessmentError {
+            meta: generic,
+            kind: crate::error::GetInsightsByAssessmentErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInsightsByAssessmentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetInsightsByAssessmentError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_insights_by_assessment_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetInsightsByAssessmentOutput,
+    crate::error::GetInsightsByAssessmentError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_insights_by_assessment_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_insights_by_assessment(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetInsightsByAssessmentError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_organization_admin_account_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -3346,6 +3526,101 @@ pub fn parse_get_settings_response(
             output,
         )
         .map_err(crate::error::GetSettingsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_assessment_control_insights_by_control_domain_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListAssessmentControlInsightsByControlDomainOutput,
+    crate::error::ListAssessmentControlInsightsByControlDomainError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListAssessmentControlInsightsByControlDomainError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::ListAssessmentControlInsightsByControlDomainError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::ListAssessmentControlInsightsByControlDomainError { meta: generic, kind: crate::error::ListAssessmentControlInsightsByControlDomainErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssessmentControlInsightsByControlDomainError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalServerException" => crate::error::ListAssessmentControlInsightsByControlDomainError { meta: generic, kind: crate::error::ListAssessmentControlInsightsByControlDomainErrorKind::InternalServerException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssessmentControlInsightsByControlDomainError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::ListAssessmentControlInsightsByControlDomainError { meta: generic, kind: crate::error::ListAssessmentControlInsightsByControlDomainErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssessmentControlInsightsByControlDomainError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ValidationException" => crate::error::ListAssessmentControlInsightsByControlDomainError { meta: generic, kind: crate::error::ListAssessmentControlInsightsByControlDomainErrorKind::ValidationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssessmentControlInsightsByControlDomainError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::ListAssessmentControlInsightsByControlDomainError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_assessment_control_insights_by_control_domain_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListAssessmentControlInsightsByControlDomainOutput,
+    crate::error::ListAssessmentControlInsightsByControlDomainError,
+> {
+    Ok({
+        #[allow(unused_mut)]let mut output = crate::output::list_assessment_control_insights_by_control_domain_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_assessment_control_insights_by_control_domain(response.body().as_ref(), output).map_err(crate::error::ListAssessmentControlInsightsByControlDomainError::unhandled)?;
         output.build()
     })
 }
@@ -3717,6 +3992,332 @@ pub fn parse_list_assessments_response(
             output,
         )
         .map_err(crate::error::ListAssessmentsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_control_domain_insights_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListControlDomainInsightsOutput,
+    crate::error::ListControlDomainInsightsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListControlDomainInsightsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListControlDomainInsightsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::ListControlDomainInsightsError {
+            meta: generic,
+            kind: crate::error::ListControlDomainInsightsErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListControlDomainInsightsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::ListControlDomainInsightsError {
+            meta: generic,
+            kind: crate::error::ListControlDomainInsightsErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListControlDomainInsightsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::ListControlDomainInsightsError {
+            meta: generic,
+            kind: crate::error::ListControlDomainInsightsErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListControlDomainInsightsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::ListControlDomainInsightsError {
+            meta: generic,
+            kind: crate::error::ListControlDomainInsightsErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListControlDomainInsightsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListControlDomainInsightsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_control_domain_insights_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListControlDomainInsightsOutput,
+    crate::error::ListControlDomainInsightsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_control_domain_insights_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_control_domain_insights(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListControlDomainInsightsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_control_domain_insights_by_assessment_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListControlDomainInsightsByAssessmentOutput,
+    crate::error::ListControlDomainInsightsByAssessmentError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListControlDomainInsightsByAssessmentError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::ListControlDomainInsightsByAssessmentError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::ListControlDomainInsightsByAssessmentError { meta: generic, kind: crate::error::ListControlDomainInsightsByAssessmentErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListControlDomainInsightsByAssessmentError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalServerException" => crate::error::ListControlDomainInsightsByAssessmentError { meta: generic, kind: crate::error::ListControlDomainInsightsByAssessmentErrorKind::InternalServerException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListControlDomainInsightsByAssessmentError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::ListControlDomainInsightsByAssessmentError { meta: generic, kind: crate::error::ListControlDomainInsightsByAssessmentErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListControlDomainInsightsByAssessmentError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ValidationException" => crate::error::ListControlDomainInsightsByAssessmentError { meta: generic, kind: crate::error::ListControlDomainInsightsByAssessmentErrorKind::ValidationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListControlDomainInsightsByAssessmentError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::ListControlDomainInsightsByAssessmentError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_control_domain_insights_by_assessment_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListControlDomainInsightsByAssessmentOutput,
+    crate::error::ListControlDomainInsightsByAssessmentError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::list_control_domain_insights_by_assessment_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_control_domain_insights_by_assessment(response.body().as_ref(), output).map_err(crate::error::ListControlDomainInsightsByAssessmentError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_control_insights_by_control_domain_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListControlInsightsByControlDomainOutput,
+    crate::error::ListControlInsightsByControlDomainError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListControlInsightsByControlDomainError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListControlInsightsByControlDomainError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::ListControlInsightsByControlDomainError {
+            meta: generic,
+            kind: crate::error::ListControlInsightsByControlDomainErrorKind::AccessDeniedException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::access_denied_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListControlInsightsByControlDomainError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "InternalServerException" => crate::error::ListControlInsightsByControlDomainError {
+            meta: generic,
+            kind:
+                crate::error::ListControlInsightsByControlDomainErrorKind::InternalServerException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::internal_server_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListControlInsightsByControlDomainError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "ResourceNotFoundException" => crate::error::ListControlInsightsByControlDomainError {
+            meta: generic,
+            kind:
+                crate::error::ListControlInsightsByControlDomainErrorKind::ResourceNotFoundException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::resource_not_found_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListControlInsightsByControlDomainError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "ValidationException" => crate::error::ListControlInsightsByControlDomainError {
+            meta: generic,
+            kind: crate::error::ListControlInsightsByControlDomainErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListControlInsightsByControlDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListControlInsightsByControlDomainError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_control_insights_by_control_domain_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListControlInsightsByControlDomainOutput,
+    crate::error::ListControlInsightsByControlDomainError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::list_control_insights_by_control_domain_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_control_insights_by_control_domain(response.body().as_ref(), output).map_err(crate::error::ListControlInsightsByControlDomainError::unhandled)?;
         output.build()
     })
 }

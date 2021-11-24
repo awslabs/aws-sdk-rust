@@ -740,7 +740,7 @@ pub fn deser_operation_crate_operation_describe_classification_job(
                         builder = builder.set_created_at(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::instant::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTime,
                             )?,
                         );
                     }
@@ -820,7 +820,7 @@ pub fn deser_operation_crate_operation_describe_classification_job(
                         builder = builder.set_last_run_time(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::instant::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTime,
                             )?,
                         );
                     }
@@ -1065,7 +1065,7 @@ pub fn deser_operation_crate_operation_get_bucket_statistics(
                         builder = builder.set_last_updated(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::instant::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTime,
                             )?,
                         );
                     }
@@ -1197,7 +1197,7 @@ pub fn deser_operation_crate_operation_get_custom_data_identifier(
                         builder = builder.set_created_at(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::instant::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTime,
                             )?,
                         );
                     }
@@ -1264,6 +1264,13 @@ pub fn deser_operation_crate_operation_get_custom_data_identifier(
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
+                        );
+                    }
+                    "severityLevels" => {
+                        builder = builder.set_severity_levels(
+                            crate::json_deser::deser_list_com_amazonaws_macie2_severity_level_list(
+                                tokens,
+                            )?,
                         );
                     }
                     "tags" => {
@@ -1574,7 +1581,7 @@ pub fn deser_operation_crate_operation_get_macie_session(
                         builder = builder.set_created_at(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::instant::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTime,
                             )?,
                         );
                     }
@@ -1616,7 +1623,7 @@ pub fn deser_operation_crate_operation_get_macie_session(
                         builder = builder.set_updated_at(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::instant::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTime,
                             )?,
                         );
                     }
@@ -1732,7 +1739,7 @@ pub fn deser_operation_crate_operation_get_member(
                         builder = builder.set_invited_at(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::instant::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTime,
                             )?,
                         );
                     }
@@ -1766,7 +1773,7 @@ pub fn deser_operation_crate_operation_get_member(
                         builder = builder.set_updated_at(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::instant::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTime,
                             )?,
                         );
                     }
@@ -2962,7 +2969,7 @@ where
                                 builder = builder.set_job_expires_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -2979,7 +2986,7 @@ where
                                 builder = builder.set_job_paused_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -3042,7 +3049,7 @@ where
                                 builder = builder.set_invited_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -3457,6 +3464,42 @@ where
         }
         _ => Err(aws_smithy_json::deserialize::Error::custom(
             "expected start object or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_macie2_severity_level_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<std::vec::Vec<crate::model::SeverityLevel>>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_severity_level(tokens)?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
         )),
     }
 }
@@ -4037,7 +4080,7 @@ where
                                 builder = builder.set_created_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -4216,7 +4259,7 @@ where
                                 builder = builder.set_bucket_created_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -4278,7 +4321,7 @@ where
                                 builder = builder.set_last_updated(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -4702,6 +4745,64 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_severity_level<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::SeverityLevel>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::SeverityLevel::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "occurrencesThreshold" => {
+                                builder = builder.set_occurrences_threshold(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
+                                );
+                            }
+                            "severity" => {
+                                builder = builder.set_severity(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::DataIdentifierSeverity::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_finding<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Finding>, aws_smithy_json::deserialize::Error>
@@ -4766,7 +4867,7 @@ where
                                 builder = builder.set_created_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -4866,7 +4967,7 @@ where
                                 builder = builder.set_updated_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -5020,7 +5121,7 @@ where
                                 builder = builder.set_free_trial_start_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -5145,7 +5246,7 @@ where
                                 builder = builder.set_created_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -5256,7 +5357,7 @@ where
                                 builder = builder.set_created_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -5509,7 +5610,7 @@ where
                                 builder = builder.set_invited_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -5546,7 +5647,7 @@ where
                                 builder = builder.set_updated_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -5727,7 +5828,7 @@ where
                                 builder = builder.set_last_job_run_time(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -7066,7 +7167,7 @@ where
                                 builder = builder.set_created_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -7178,7 +7279,7 @@ where
                                 builder = builder.set_last_modified(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -7711,7 +7812,7 @@ where
                                 builder = builder.set_first_seen(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -7719,7 +7820,7 @@ where
                                 builder = builder.set_last_seen(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -9821,7 +9922,7 @@ where
                                 builder = builder.set_creation_date(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }

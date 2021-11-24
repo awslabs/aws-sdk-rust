@@ -196,7 +196,7 @@ pub fn serialize_structure_crate_input_create_event_source_mapping_input(
     if let Some(var_46) = &input.starting_position_timestamp {
         object
             .key("StartingPositionTimestamp")
-            .instant(var_46, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_46, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_47) = &input.topics {
         let mut array_48 = object.key("Topics").start_array();

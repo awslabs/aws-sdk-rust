@@ -4577,7 +4577,7 @@ pub mod fluent_builders {
         /// <p>The start time in UTC of the scheduled action.
         /// Before this time, the scheduled action does not trigger.
         /// For more information about this parameter, see <a>ScheduledAction</a>.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -4586,14 +4586,14 @@ pub mod fluent_builders {
         /// For more information about this parameter, see <a>ScheduledAction</a>.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
         }
         /// <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger.
         /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
@@ -4601,7 +4601,7 @@ pub mod fluent_builders {
         /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -7805,7 +7805,7 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>2012-07-16T18:00:00Z</code>
         /// </p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -7817,7 +7817,7 @@ pub mod fluent_builders {
         /// </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
@@ -7829,7 +7829,7 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>2012-07-16T18:00:00Z</code>
         /// </p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
@@ -7842,7 +7842,7 @@ pub mod fluent_builders {
         /// </p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -9480,7 +9480,7 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>2009-07-08T18:00Z</code>
         /// </p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -9491,7 +9491,7 @@ pub mod fluent_builders {
         /// </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
@@ -9501,7 +9501,7 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>2009-07-08T18:00Z</code>
         /// </p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
@@ -9512,7 +9512,7 @@ pub mod fluent_builders {
         /// </p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -11050,7 +11050,7 @@ pub mod fluent_builders {
         }
         /// <p>The start time in UTC of the scheduled actions to retrieve.
         /// Only active scheduled actions that have invocations after this time are retrieved.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -11058,14 +11058,14 @@ pub mod fluent_builders {
         /// Only active scheduled actions that have invocations after this time are retrieved.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
         }
         /// <p>The end time in UTC of the scheduled action to retrieve.
         /// Only active scheduled actions that have invocations before this time are retrieved.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
@@ -11073,7 +11073,7 @@ pub mod fluent_builders {
         /// Only active scheduled actions that have invocations before this time are retrieved.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -14323,21 +14323,21 @@ pub mod fluent_builders {
             self
         }
         /// <p>A timestamp indicating the start time for the deferred maintenance window.</p>
-        pub fn defer_maintenance_start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn defer_maintenance_start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.defer_maintenance_start_time(inp);
             self
         }
         /// <p>A timestamp indicating the start time for the deferred maintenance window.</p>
         pub fn set_defer_maintenance_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_defer_maintenance_start_time(input);
             self
         }
         /// <p>A timestamp indicating end time for the deferred maintenance window. If you specify an
         /// end time, you can't specify a duration.</p>
-        pub fn defer_maintenance_end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn defer_maintenance_end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.defer_maintenance_end_time(inp);
             self
         }
@@ -14345,7 +14345,7 @@ pub mod fluent_builders {
         /// end time, you can't specify a duration.</p>
         pub fn set_defer_maintenance_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_defer_maintenance_end_time(input);
             self
@@ -15178,7 +15178,7 @@ pub mod fluent_builders {
         }
         /// <p>A modified start time of the scheduled action.
         /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -15186,14 +15186,14 @@ pub mod fluent_builders {
         /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
         }
         /// <p>A modified end time of the scheduled action.
         /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
@@ -15201,7 +15201,7 @@ pub mod fluent_builders {
         /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -17635,7 +17635,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -17658,7 +17664,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

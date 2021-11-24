@@ -47,12 +47,14 @@ pub fn deser_header_describe_object_describe_object_output_e_tag(
 pub fn deser_header_describe_object_describe_object_output_last_modified(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<aws_smithy_types::Instant>,
+    std::option::Option<aws_smithy_types::DateTime>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("Last-Modified").iter();
-    let var_2: Vec<aws_smithy_types::Instant> =
-        aws_smithy_http::header::many_dates(headers, aws_smithy_types::instant::Format::HttpDate)?;
+    let var_2: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(
+        headers,
+        aws_smithy_types::date_time::Format::HttpDate,
+    )?;
     if var_2.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
             format!("expected one item but found {}", var_2.len()),
@@ -129,12 +131,14 @@ pub fn deser_header_get_object_get_object_output_e_tag(
 pub fn deser_header_get_object_get_object_output_last_modified(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<aws_smithy_types::Instant>,
+    std::option::Option<aws_smithy_types::DateTime>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("Last-Modified").iter();
-    let var_4: Vec<aws_smithy_types::Instant> =
-        aws_smithy_http::header::many_dates(headers, aws_smithy_types::instant::Format::HttpDate)?;
+    let var_4: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(
+        headers,
+        aws_smithy_types::date_time::Format::HttpDate,
+    )?;
     if var_4.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
             format!("expected one item but found {}", var_4.len()),

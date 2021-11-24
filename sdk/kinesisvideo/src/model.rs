@@ -206,7 +206,7 @@ pub struct StreamInfo {
     /// <p>The status of the stream.</p>
     pub status: std::option::Option<crate::model::Status>,
     /// <p>A time stamp that indicates when the stream was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>How long the stream retains data, in hours.</p>
     pub data_retention_in_hours: std::option::Option<i32>,
 }
@@ -241,7 +241,7 @@ impl StreamInfo {
         self.status.as_ref()
     }
     /// <p>A time stamp that indicates when the stream was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>How long the stream retains data, in hours.</p>
@@ -277,7 +277,7 @@ pub mod stream_info {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_retention_in_hours: std::option::Option<i32>,
     }
     impl Builder {
@@ -354,14 +354,14 @@ pub mod stream_info {
             self
         }
         /// <p>A time stamp that indicates when the stream was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>A time stamp that indicates when the stream was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -612,7 +612,7 @@ pub struct ChannelInfo {
     /// <p>Current status of the signaling channel.</p>
     pub channel_status: std::option::Option<crate::model::Status>,
     /// <p>The time at which the signaling channel was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel
     /// type.</p>
     pub single_master_configuration: std::option::Option<crate::model::SingleMasterConfiguration>,
@@ -637,7 +637,7 @@ impl ChannelInfo {
         self.channel_status.as_ref()
     }
     /// <p>The time at which the signaling channel was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel
@@ -678,7 +678,7 @@ pub mod channel_info {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) channel_type: std::option::Option<crate::model::ChannelType>,
         pub(crate) channel_status: std::option::Option<crate::model::Status>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) single_master_configuration:
             std::option::Option<crate::model::SingleMasterConfiguration>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -731,14 +731,14 @@ pub mod channel_info {
             self
         }
         /// <p>The time at which the signaling channel was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time at which the signaling channel was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self

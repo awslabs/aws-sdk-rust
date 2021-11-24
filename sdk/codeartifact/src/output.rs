@@ -2654,7 +2654,7 @@ pub struct GetAuthorizationTokenOutput {
     /// <p>
     /// A timestamp that specifies the date and time the authorization token expires.
     /// </p>
-    pub expiration: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetAuthorizationTokenOutput {
     /// <p>
@@ -2666,7 +2666,7 @@ impl GetAuthorizationTokenOutput {
     /// <p>
     /// A timestamp that specifies the date and time the authorization token expires.
     /// </p>
-    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
 }
@@ -2685,7 +2685,7 @@ pub mod get_authorization_token_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_token: std::option::Option<std::string::String>,
-        pub(crate) expiration: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiration: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>
@@ -2708,7 +2708,7 @@ pub mod get_authorization_token_output {
         /// <p>
         /// A timestamp that specifies the date and time the authorization token expires.
         /// </p>
-        pub fn expiration(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration = Some(input);
             self
         }
@@ -2717,7 +2717,7 @@ pub mod get_authorization_token_output {
         /// </p>
         pub fn set_expiration(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration = input;
             self

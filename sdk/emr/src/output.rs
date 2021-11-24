@@ -2168,7 +2168,7 @@ pub struct DescribeSecurityConfigurationOutput {
     /// <p>The security configuration details in JSON format.</p>
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>The date and time the security configuration was created</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeSecurityConfigurationOutput {
     /// <p>The name of the security configuration.</p>
@@ -2180,7 +2180,7 @@ impl DescribeSecurityConfigurationOutput {
         self.security_configuration.as_deref()
     }
     /// <p>The date and time the security configuration was created</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
@@ -2201,7 +2201,7 @@ pub mod describe_security_configuration_output {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) security_configuration: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the security configuration.</p>
@@ -2228,14 +2228,14 @@ pub mod describe_security_configuration_output {
             self
         }
         /// <p>The date and time the security configuration was created</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time the security configuration was created</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
@@ -2739,7 +2739,7 @@ pub struct CreateSecurityConfigurationOutput {
     /// <p>The name of the security configuration.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time the security configuration was created.</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateSecurityConfigurationOutput {
     /// <p>The name of the security configuration.</p>
@@ -2747,7 +2747,7 @@ impl CreateSecurityConfigurationOutput {
         self.name.as_deref()
     }
     /// <p>The date and time the security configuration was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
@@ -2766,7 +2766,7 @@ pub mod create_security_configuration_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the security configuration.</p>
@@ -2780,14 +2780,14 @@ pub mod create_security_configuration_output {
             self
         }
         /// <p>The date and time the security configuration was created.</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
         /// <p>The date and time the security configuration was created.</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self

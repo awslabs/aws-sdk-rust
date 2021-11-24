@@ -591,7 +591,7 @@ pub fn deser_operation_crate_operation_get_architecture_recommendations(
                         builder = builder.set_last_audit_timestamp(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::instant::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTime,
                             )?,
                         );
                     }
@@ -2484,7 +2484,7 @@ where
                                 builder = builder.set_last_checked_timestamp(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }
@@ -2610,7 +2610,7 @@ where
                                 builder = builder.set_last_checked_timestamp(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::instant::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTime,
                                     )?,
                                 );
                             }

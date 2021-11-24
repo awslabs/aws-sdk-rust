@@ -1164,7 +1164,7 @@ pub struct DescribePackageVersionOutput {
     /// <p>The version's status description.</p>
     pub status_description: std::option::Option<std::string::String>,
     /// <p>The version's registered time.</p>
-    pub registered_time: std::option::Option<aws_smithy_types::Instant>,
+    pub registered_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribePackageVersionOutput {
     /// <p>The account ID of the version's owner.</p>
@@ -1204,7 +1204,7 @@ impl DescribePackageVersionOutput {
         self.status_description.as_deref()
     }
     /// <p>The version's registered time.</p>
-    pub fn registered_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn registered_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.registered_time.as_ref()
     }
 }
@@ -1239,7 +1239,7 @@ pub mod describe_package_version_output {
         pub(crate) is_latest_patch: std::option::Option<bool>,
         pub(crate) status: std::option::Option<crate::model::PackageVersionStatus>,
         pub(crate) status_description: std::option::Option<std::string::String>,
-        pub(crate) registered_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) registered_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The account ID of the version's owner.</p>
@@ -1348,14 +1348,14 @@ pub mod describe_package_version_output {
             self
         }
         /// <p>The version's registered time.</p>
-        pub fn registered_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn registered_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.registered_time = Some(input);
             self
         }
         /// <p>The version's registered time.</p>
         pub fn set_registered_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.registered_time = input;
             self
@@ -1401,9 +1401,9 @@ pub struct DescribePackageImportJobOutput {
     /// <p>The job's output.</p>
     pub output: std::option::Option<crate::model::PackageImportJobOutput>,
     /// <p>When the job was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the job was updated.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The job's status.</p>
     pub status: std::option::Option<crate::model::PackageImportJobStatus>,
     /// <p>The job's status message.</p>
@@ -1439,11 +1439,11 @@ impl DescribePackageImportJobOutput {
         self.output.as_ref()
     }
     /// <p>When the job was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>When the job was updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The job's status.</p>
@@ -1488,8 +1488,8 @@ pub mod describe_package_import_job_output {
         pub(crate) input_config: std::option::Option<crate::model::PackageImportJobInputConfig>,
         pub(crate) output_config: std::option::Option<crate::model::PackageImportJobOutputConfig>,
         pub(crate) output: std::option::Option<crate::model::PackageImportJobOutput>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::PackageImportJobStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) job_tags: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>,
@@ -1568,27 +1568,27 @@ pub mod describe_package_import_job_output {
             self
         }
         /// <p>When the job was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>When the job was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
         }
         /// <p>When the job was updated.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>When the job was updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -1680,7 +1680,7 @@ pub struct DescribePackageOutput {
     /// <p>ARNs of accounts that have write access to the package.</p>
     pub write_access_principal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>When the package was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The package's tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1711,7 +1711,7 @@ impl DescribePackageOutput {
         self.write_access_principal_arns.as_deref()
     }
     /// <p>When the package was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The package's tags.</p>
@@ -1756,7 +1756,7 @@ pub mod describe_package_output {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) write_access_principal_arns:
             std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -1847,14 +1847,14 @@ pub mod describe_package_output {
             self
         }
         /// <p>When the package was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>When the package was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -1917,9 +1917,9 @@ pub struct DescribeNodeFromTemplateJobOutput {
     /// <p>The job's status message.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>When the job was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the job was updated.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The job's output package name.</p>
     pub output_package_name: std::option::Option<std::string::String>,
     /// <p>The job's output package version.</p>
@@ -1950,11 +1950,11 @@ impl DescribeNodeFromTemplateJobOutput {
         self.status_message.as_deref()
     }
     /// <p>When the job was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>When the job was updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The job's output package name.</p>
@@ -2016,8 +2016,8 @@ pub mod describe_node_from_template_job_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::NodeFromTemplateJobStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) output_package_name: std::option::Option<std::string::String>,
         pub(crate) output_package_version: std::option::Option<std::string::String>,
         pub(crate) node_name: std::option::Option<std::string::String>,
@@ -2066,27 +2066,27 @@ pub mod describe_node_from_template_job_output {
             self
         }
         /// <p>When the job was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>When the job was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
         }
         /// <p>When the job was updated.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>When the job was updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -2252,9 +2252,9 @@ pub struct DescribeNodeOutput {
     /// <p>The node's description.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>When the node was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the node was updated.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeNodeOutput {
     /// <p>The node's ID.</p>
@@ -2306,11 +2306,11 @@ impl DescribeNodeOutput {
         self.description.as_deref()
     }
     /// <p>When the node was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>When the node was updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -2352,8 +2352,8 @@ pub mod describe_node_output {
         pub(crate) node_interface: std::option::Option<crate::model::NodeInterface>,
         pub(crate) asset_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The node's ID.</p>
@@ -2492,27 +2492,27 @@ pub mod describe_node_output {
             self
         }
         /// <p>When the node was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>When the node was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
         }
         /// <p>When the node was updated.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>When the node was updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -2564,7 +2564,7 @@ pub struct DescribeDeviceJobOutput {
     /// <p>The job's status.</p>
     pub status: std::option::Option<crate::model::UpdateProgress>,
     /// <p>When the job was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeDeviceJobOutput {
     /// <p>The job's ID.</p>
@@ -2596,7 +2596,7 @@ impl DescribeDeviceJobOutput {
         self.status.as_ref()
     }
     /// <p>When the job was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
@@ -2627,7 +2627,7 @@ pub mod describe_device_job_output {
         pub(crate) device_type: std::option::Option<crate::model::DeviceType>,
         pub(crate) image_version: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::UpdateProgress>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The job's ID.</p>
@@ -2710,14 +2710,14 @@ pub mod describe_device_job_output {
             self
         }
         /// <p>When the job was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>When the job was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -2761,7 +2761,7 @@ pub struct DescribeDeviceOutput {
     /// <p>The device's connection status.</p>
     pub device_connection_status: std::option::Option<crate::model::DeviceConnectionStatus>,
     /// <p>When the device was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The device's provisioning status.</p>
     pub provisioning_status: std::option::Option<crate::model::DeviceStatus>,
     /// <p>The latest software version available for the device.</p>
@@ -2778,7 +2778,7 @@ pub struct DescribeDeviceOutput {
     /// <p>The device's networking status.</p>
     pub current_networking_status: std::option::Option<crate::model::NetworkStatus>,
     /// <p>The device's lease expiration time.</p>
-    pub lease_expiration_time: std::option::Option<aws_smithy_types::Instant>,
+    pub lease_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeDeviceOutput {
     /// <p>The device's ID.</p>
@@ -2808,7 +2808,7 @@ impl DescribeDeviceOutput {
         self.device_connection_status.as_ref()
     }
     /// <p>When the device was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The device's provisioning status.</p>
@@ -2843,7 +2843,7 @@ impl DescribeDeviceOutput {
         self.current_networking_status.as_ref()
     }
     /// <p>The device's lease expiration time.</p>
-    pub fn lease_expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn lease_expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.lease_expiration_time.as_ref()
     }
 }
@@ -2881,7 +2881,7 @@ pub mod describe_device_output {
         pub(crate) r#type: std::option::Option<crate::model::DeviceType>,
         pub(crate) device_connection_status:
             std::option::Option<crate::model::DeviceConnectionStatus>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) provisioning_status: std::option::Option<crate::model::DeviceStatus>,
         pub(crate) latest_software: std::option::Option<std::string::String>,
         pub(crate) current_software: std::option::Option<std::string::String>,
@@ -2891,7 +2891,7 @@ pub mod describe_device_output {
         >,
         pub(crate) networking_configuration: std::option::Option<crate::model::NetworkPayload>,
         pub(crate) current_networking_status: std::option::Option<crate::model::NetworkStatus>,
-        pub(crate) lease_expiration_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) lease_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The device's ID.</p>
@@ -2961,14 +2961,14 @@ pub mod describe_device_output {
             self
         }
         /// <p>When the device was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>When the device was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -3077,14 +3077,14 @@ pub mod describe_device_output {
             self
         }
         /// <p>The device's lease expiration time.</p>
-        pub fn lease_expiration_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn lease_expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.lease_expiration_time = Some(input);
             self
         }
         /// <p>The device's lease expiration time.</p>
         pub fn set_lease_expiration_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.lease_expiration_time = input;
             self
@@ -3135,7 +3135,7 @@ pub struct DescribeApplicationInstanceDetailsOutput {
     /// <p>The ID of the application instance that this instance replaced.</p>
     pub application_instance_id_to_replace: std::option::Option<std::string::String>,
     /// <p>When the application instance was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The application instance's ID.</p>
     pub application_instance_id: std::option::Option<std::string::String>,
 }
@@ -3167,7 +3167,7 @@ impl DescribeApplicationInstanceDetailsOutput {
         self.application_instance_id_to_replace.as_deref()
     }
     /// <p>When the application instance was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The application instance's ID.</p>
@@ -3211,7 +3211,7 @@ pub mod describe_application_instance_details_output {
         pub(crate) manifest_overrides_payload:
             std::option::Option<crate::model::ManifestOverridesPayload>,
         pub(crate) application_instance_id_to_replace: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) application_instance_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3297,14 +3297,14 @@ pub mod describe_application_instance_details_output {
             self
         }
         /// <p>When the application instance was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>When the application instance was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
@@ -3367,9 +3367,9 @@ pub struct DescribeApplicationInstanceOutput {
     /// <p>The application instance's status description.</p>
     pub status_description: std::option::Option<std::string::String>,
     /// <p>When the application instance was created.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The application instance was updated.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The application instance's ID.</p>
     pub application_instance_id: std::option::Option<std::string::String>,
     /// <p>The application instance's ARN.</p>
@@ -3418,11 +3418,11 @@ impl DescribeApplicationInstanceOutput {
         self.status_description.as_deref()
     }
     /// <p>When the application instance was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The application instance was updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The application instance's ID.</p>
@@ -3486,8 +3486,8 @@ pub mod describe_application_instance_output {
         pub(crate) health_status:
             std::option::Option<crate::model::ApplicationInstanceHealthStatus>,
         pub(crate) status_description: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) application_instance_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -3619,27 +3619,27 @@ pub mod describe_application_instance_output {
             self
         }
         /// <p>When the application instance was created.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
         /// <p>When the application instance was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self
         }
         /// <p>The application instance was updated.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>The application instance was updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self

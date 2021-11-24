@@ -12,7 +12,7 @@ pub fn serialize_structure_crate_input_create_savings_plan_input(
     if let Some(var_3) = &input.purchase_time {
         object
             .key("purchaseTime")
-            .instant(var_3, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_3, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_4) = &input.savings_plan_offering_id {
         object.key("savingsPlanOfferingId").string(var_4);

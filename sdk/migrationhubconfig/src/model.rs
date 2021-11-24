@@ -17,7 +17,7 @@ pub struct HomeRegionControl {
     pub target: std::option::Option<crate::model::Target>,
     /// <p>A timestamp representing the time when the customer called
     /// <code>CreateHomeregionControl</code> and set the home region for the account.</p>
-    pub requested_time: std::option::Option<aws_smithy_types::Instant>,
+    pub requested_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl HomeRegionControl {
     /// <p>A unique identifier that's generated for each home region control. It's always a string
@@ -38,7 +38,7 @@ impl HomeRegionControl {
     }
     /// <p>A timestamp representing the time when the customer called
     /// <code>CreateHomeregionControl</code> and set the home region for the account.</p>
-    pub fn requested_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn requested_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.requested_time.as_ref()
     }
 }
@@ -61,7 +61,7 @@ pub mod home_region_control {
         pub(crate) control_id: std::option::Option<std::string::String>,
         pub(crate) home_region: std::option::Option<std::string::String>,
         pub(crate) target: std::option::Option<crate::model::Target>,
-        pub(crate) requested_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) requested_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A unique identifier that's generated for each home region control. It's always a string
@@ -104,7 +104,7 @@ pub mod home_region_control {
         }
         /// <p>A timestamp representing the time when the customer called
         /// <code>CreateHomeregionControl</code> and set the home region for the account.</p>
-        pub fn requested_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn requested_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.requested_time = Some(input);
             self
         }
@@ -112,7 +112,7 @@ pub mod home_region_control {
         /// <code>CreateHomeregionControl</code> and set the home region for the account.</p>
         pub fn set_requested_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.requested_time = input;
             self

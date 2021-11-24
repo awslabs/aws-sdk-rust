@@ -10,6 +10,7 @@ use aws_types::credentials::{CredentialsError, ProvideCredentials, SharedCredent
 use std::future::Future;
 use std::pin::Pin;
 
+/// Sets the credentials provider in the given property bag.
 pub fn set_provider(bag: &mut PropertyBag, provider: SharedCredentialsProvider) {
     bag.insert(provider);
 }
@@ -21,11 +22,12 @@ pub fn set_provider(bag: &mut PropertyBag, provider: SharedCredentialsProvider) 
 /// 1. Retrieves a `CredentialsProvider` from the property bag.
 /// 2. Calls the credential provider's `provide_credentials` and awaits its result.
 /// 3. Places returned `Credentials` into the property bad to drive downstream signing middleware.
-#[derive(Clone, Default)]
+#[derive(Clone, Debug, Default)]
 #[non_exhaustive]
 pub struct CredentialsStage;
 
 impl CredentialsStage {
+    /// Creates a new credentials stage.
     pub fn new() -> Self {
         CredentialsStage
     }
@@ -63,9 +65,12 @@ mod error {
     use std::error::Error as StdError;
     use std::fmt;
 
+    /// Failures that can occur in the credentials middleware.
     #[derive(Debug)]
     pub enum CredentialsStageError {
+        /// No credentials provider was found in the property bag for the operation.
         MissingCredentialsProvider,
+        /// Failed to load credentials with the credential provider in the property bag.
         CredentialsLoadingError(CredentialsError),
     }
 
@@ -181,7 +186,7 @@ mod tests {
         let mut req = operation::Request::new(http::Request::new(SdkBody::from("some body")));
         set_provider(
             &mut req.properties_mut(),
-            SharedCredentialsProvider::new(Credentials::from_keys("test", "test", None)),
+            SharedCredentialsProvider::new(Credentials::new("test", "test", None, None, "test")),
         );
         let req = CredentialsStage::new()
             .apply(req)

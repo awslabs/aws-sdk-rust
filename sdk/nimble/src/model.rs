@@ -21,7 +21,7 @@ pub struct Studio {
     /// identifies it. ARNs are unique across all Regions.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A friendly name for the studio.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region where the studio resource is located.</p>
@@ -50,7 +50,7 @@ pub struct Studio {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The IAM role that studio users assume when logging in to the Nimble Studio
     /// portal.</p>
     pub user_role_arn: std::option::Option<std::string::String>,
@@ -67,7 +67,7 @@ impl Studio {
         self.arn.as_deref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A friendly name for the studio.</p>
@@ -123,7 +123,7 @@ impl Studio {
         self.tags.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The IAM role that studio users assume when logging in to the Nimble Studio
@@ -165,7 +165,7 @@ pub mod studio {
     pub struct Builder {
         pub(crate) admin_role_arn: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) home_region: std::option::Option<std::string::String>,
         pub(crate) sso_client_id: std::option::Option<std::string::String>,
@@ -180,7 +180,7 @@ pub mod studio {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) user_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -212,14 +212,14 @@ pub mod studio {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -371,14 +371,14 @@ pub mod studio {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -1077,7 +1077,7 @@ pub struct StudioComponent {
     /// <p>The configuration of the studio component, based on component type.</p>
     pub configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that created the studio component.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>A human-readable description for the studio component resource.</p>
@@ -1109,7 +1109,7 @@ pub struct StudioComponent {
     /// <p>The type of the studio component.</p>
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub updated_by: std::option::Option<std::string::String>,
 }
@@ -1125,7 +1125,7 @@ impl StudioComponent {
         self.configuration.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The user ID of the user that created the studio component.</p>
@@ -1189,7 +1189,7 @@ impl StudioComponent {
         self.r#type.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The user ID of the user that most recently updated the resource.</p>
@@ -1229,7 +1229,7 @@ pub mod studio_component {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) ec2_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1247,7 +1247,7 @@ pub mod studio_component {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) r#type: std::option::Option<crate::model::StudioComponentType>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_by: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1275,14 +1275,14 @@ pub mod studio_component {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1488,14 +1488,14 @@ pub mod studio_component {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -2268,9 +2268,9 @@ impl StudioComponentConfiguration {
         &self,
     ) -> std::result::Result<&crate::model::ActiveDirectoryConfiguration, &Self> {
         if let StudioComponentConfiguration::ActiveDirectoryConfiguration(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`ActiveDirectoryConfiguration`](crate::model::StudioComponentConfiguration::ActiveDirectoryConfiguration).
@@ -2283,9 +2283,9 @@ impl StudioComponentConfiguration {
         &self,
     ) -> std::result::Result<&crate::model::ComputeFarmConfiguration, &Self> {
         if let StudioComponentConfiguration::ComputeFarmConfiguration(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`ComputeFarmConfiguration`](crate::model::StudioComponentConfiguration::ComputeFarmConfiguration).
@@ -2298,9 +2298,9 @@ impl StudioComponentConfiguration {
         &self,
     ) -> std::result::Result<&crate::model::LicenseServiceConfiguration, &Self> {
         if let StudioComponentConfiguration::LicenseServiceConfiguration(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`LicenseServiceConfiguration`](crate::model::StudioComponentConfiguration::LicenseServiceConfiguration).
@@ -2313,9 +2313,9 @@ impl StudioComponentConfiguration {
         &self,
     ) -> std::result::Result<&crate::model::SharedFileSystemConfiguration, &Self> {
         if let StudioComponentConfiguration::SharedFileSystemConfiguration(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`SharedFileSystemConfiguration`](crate::model::StudioComponentConfiguration::SharedFileSystemConfiguration).
@@ -2825,7 +2825,7 @@ pub struct StreamingSession {
     /// <p>The ARN of the resource.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that created the streaming session.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The EC2 Instance type used for the streaming session.</p>
@@ -2850,22 +2850,22 @@ pub struct StreamingSession {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time the streaming session will automatically terminate if not terminated by the
     /// user.</p>
-    pub terminate_at: std::option::Option<aws_smithy_types::Instant>,
+    pub terminate_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub updated_by: std::option::Option<std::string::String>,
     /// <p>The time the session entered STOP_IN_PROGRESS state.</p>
-    pub stopped_at: std::option::Option<aws_smithy_types::Instant>,
+    pub stopped_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that stopped the streaming session.</p>
     pub stopped_by: std::option::Option<std::string::String>,
     /// <p>The time the session entered START_IN_PROGRESS state.</p>
-    pub started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that started the streaming session.</p>
     pub started_by: std::option::Option<std::string::String>,
     /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop
     /// the session themselves. </p>
-    pub stop_at: std::option::Option<aws_smithy_types::Instant>,
+    pub stop_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StreamingSession {
     /// <p>The ARN of the resource.</p>
@@ -2873,7 +2873,7 @@ impl StreamingSession {
         self.arn.as_deref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The user ID of the user that created the streaming session.</p>
@@ -2922,11 +2922,11 @@ impl StreamingSession {
     }
     /// <p>The time the streaming session will automatically terminate if not terminated by the
     /// user.</p>
-    pub fn terminate_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn terminate_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.terminate_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The user ID of the user that most recently updated the resource.</p>
@@ -2934,7 +2934,7 @@ impl StreamingSession {
         self.updated_by.as_deref()
     }
     /// <p>The time the session entered STOP_IN_PROGRESS state.</p>
-    pub fn stopped_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stopped_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stopped_at.as_ref()
     }
     /// <p>The user ID of the user that stopped the streaming session.</p>
@@ -2942,7 +2942,7 @@ impl StreamingSession {
         self.stopped_by.as_deref()
     }
     /// <p>The time the session entered START_IN_PROGRESS state.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The user ID of the user that started the streaming session.</p>
@@ -2951,7 +2951,7 @@ impl StreamingSession {
     }
     /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop
     /// the session themselves. </p>
-    pub fn stop_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stop_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_at.as_ref()
     }
 }
@@ -2988,7 +2988,7 @@ pub mod streaming_session {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) ec2_instance_type: std::option::Option<std::string::String>,
         pub(crate) launch_profile_id: std::option::Option<std::string::String>,
@@ -3001,14 +3001,14 @@ pub mod streaming_session {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) terminate_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) terminate_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_by: std::option::Option<std::string::String>,
-        pub(crate) stopped_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) stopped_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) stopped_by: std::option::Option<std::string::String>,
-        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) started_by: std::option::Option<std::string::String>,
-        pub(crate) stop_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) stop_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the resource.</p>
@@ -3022,14 +3022,14 @@ pub mod streaming_session {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -3171,7 +3171,7 @@ pub mod streaming_session {
         }
         /// <p>The time the streaming session will automatically terminate if not terminated by the
         /// user.</p>
-        pub fn terminate_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn terminate_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.terminate_at = Some(input);
             self
         }
@@ -3179,20 +3179,20 @@ pub mod streaming_session {
         /// user.</p>
         pub fn set_terminate_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.terminate_at = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -3208,14 +3208,14 @@ pub mod streaming_session {
             self
         }
         /// <p>The time the session entered STOP_IN_PROGRESS state.</p>
-        pub fn stopped_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stopped_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stopped_at = Some(input);
             self
         }
         /// <p>The time the session entered STOP_IN_PROGRESS state.</p>
         pub fn set_stopped_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stopped_at = input;
             self
@@ -3231,14 +3231,14 @@ pub mod streaming_session {
             self
         }
         /// <p>The time the session entered START_IN_PROGRESS state.</p>
-        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_at = Some(input);
             self
         }
         /// <p>The time the session entered START_IN_PROGRESS state.</p>
         pub fn set_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_at = input;
             self
@@ -3255,7 +3255,7 @@ pub mod streaming_session {
         }
         /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop
         /// the session themselves. </p>
-        pub fn stop_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stop_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stop_at = Some(input);
             self
         }
@@ -3263,7 +3263,7 @@ pub mod streaming_session {
         /// the session themselves. </p>
         pub fn set_stop_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stop_at = input;
             self
@@ -3560,11 +3560,11 @@ impl AsRef<str> for StreamingSessionState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingSessionStream {
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that created the streaming session stream.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
-    pub expires_at: std::option::Option<aws_smithy_types::Instant>,
+    pub expires_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that owns the streaming session.</p>
     pub owned_by: std::option::Option<std::string::String>,
     /// <p>The current state.</p>
@@ -3578,7 +3578,7 @@ pub struct StreamingSessionStream {
 }
 impl StreamingSessionStream {
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The user ID of the user that created the streaming session stream.</p>
@@ -3586,7 +3586,7 @@ impl StreamingSessionStream {
         self.created_by.as_deref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
-    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires_at.as_ref()
     }
     /// <p>The user ID of the user that owns the streaming session.</p>
@@ -3632,9 +3632,9 @@ pub mod streaming_session_stream {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
-        pub(crate) expires_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expires_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) owned_by: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::StreamingSessionStreamState>,
         pub(crate) status_code: std::option::Option<crate::model::StreamingSessionStreamStatusCode>,
@@ -3643,14 +3643,14 @@ pub mod streaming_session_stream {
     }
     impl Builder {
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -3666,14 +3666,14 @@ pub mod streaming_session_stream {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
-        pub fn expires_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expires_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expires_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
         pub fn set_expires_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expires_at = input;
             self
@@ -5517,7 +5517,7 @@ impl LaunchProfileInitializationActiveDirectory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StudioComponentSummary {
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that created the studio component.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The description.</p>
@@ -5531,13 +5531,13 @@ pub struct StudioComponentSummary {
     /// <p>The type of the studio component.</p>
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub updated_by: std::option::Option<std::string::String>,
 }
 impl StudioComponentSummary {
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The user ID of the user that created the studio component.</p>
@@ -5565,7 +5565,7 @@ impl StudioComponentSummary {
         self.r#type.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The user ID of the user that most recently updated the resource.</p>
@@ -5594,26 +5594,26 @@ pub mod studio_component_summary {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) studio_component_id: std::option::Option<std::string::String>,
         pub(crate) subtype: std::option::Option<crate::model::StudioComponentSubtype>,
         pub(crate) r#type: std::option::Option<crate::model::StudioComponentType>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_by: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -5688,14 +5688,14 @@ pub mod studio_component_summary {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -5747,7 +5747,7 @@ pub struct LaunchProfile {
     /// <p>The ARN of the resource.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that created the launch profile.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>A human-readable description of the launch profile.</p>
@@ -5777,7 +5777,7 @@ pub struct LaunchProfile {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub updated_by: std::option::Option<std::string::String>,
 }
@@ -5787,7 +5787,7 @@ impl LaunchProfile {
         self.arn.as_deref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The user ID of the user that created the launch profile.</p>
@@ -5845,7 +5845,7 @@ impl LaunchProfile {
         self.tags.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The user ID of the user that most recently updated the resource.</p>
@@ -5885,7 +5885,7 @@ pub mod launch_profile {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) ec2_subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5901,7 +5901,7 @@ pub mod launch_profile {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_by: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5916,14 +5916,14 @@ pub mod launch_profile {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -6115,14 +6115,14 @@ pub mod launch_profile {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -6888,13 +6888,13 @@ pub struct Eula {
     /// <p>The EULA content.</p>
     pub content: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The EULA ID.</p>
     pub eula_id: std::option::Option<std::string::String>,
     /// <p>The name for the EULA.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Eula {
     /// <p>The EULA content.</p>
@@ -6902,7 +6902,7 @@ impl Eula {
         self.content.as_deref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The EULA ID.</p>
@@ -6914,7 +6914,7 @@ impl Eula {
         self.name.as_deref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -6936,10 +6936,10 @@ pub mod eula {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) eula_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The EULA content.</p>
@@ -6953,14 +6953,14 @@ pub mod eula {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -6986,14 +6986,14 @@ pub mod eula {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -7022,7 +7022,7 @@ impl Eula {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EulaAcceptance {
     /// <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
-    pub accepted_at: std::option::Option<aws_smithy_types::Instant>,
+    pub accepted_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the person who accepted the EULA.</p>
     pub accepted_by: std::option::Option<std::string::String>,
     /// <p>The ID of the acceptee.</p>
@@ -7034,7 +7034,7 @@ pub struct EulaAcceptance {
 }
 impl EulaAcceptance {
     /// <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
-    pub fn accepted_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn accepted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.accepted_at.as_ref()
     }
     /// <p>The ID of the person who accepted the EULA.</p>
@@ -7071,7 +7071,7 @@ pub mod eula_acceptance {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) accepted_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) accepted_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) accepted_by: std::option::Option<std::string::String>,
         pub(crate) acceptee_id: std::option::Option<std::string::String>,
         pub(crate) eula_acceptance_id: std::option::Option<std::string::String>,
@@ -7079,14 +7079,14 @@ pub mod eula_acceptance {
     }
     impl Builder {
         /// <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
-        pub fn accepted_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn accepted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.accepted_at = Some(input);
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
         pub fn set_accepted_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.accepted_at = input;
             self

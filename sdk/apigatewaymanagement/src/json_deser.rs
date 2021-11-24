@@ -149,7 +149,7 @@ pub fn deser_operation_crate_operation_get_connection(
                         builder = builder.set_connected_at(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::instant::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTime,
                             )?,
                         );
                     }
@@ -162,7 +162,7 @@ pub fn deser_operation_crate_operation_get_connection(
                         builder = builder.set_last_active_at(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::instant::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTime,
                             )?,
                         );
                     }

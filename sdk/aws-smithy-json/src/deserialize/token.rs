@@ -5,8 +5,8 @@
 
 use crate::deserialize::error::{Error, ErrorReason};
 use crate::escape::unescape_string;
-use aws_smithy_types::instant::Format;
-use aws_smithy_types::{base64, Blob, Document, Instant, Number};
+use aws_smithy_types::date_time::Format;
+use aws_smithy_types::{base64, Blob, DateTime, Document, Number};
 use std::borrow::Cow;
 
 use crate::deserialize::must_not_be_finite;
@@ -209,17 +209,17 @@ pub fn expect_blob_or_null(token: Option<Result<Token<'_>, Error>>) -> Result<Op
 
 /// Expects a [Token::ValueNull], [Token::ValueString], or [Token::ValueNumber] depending
 /// on the passed in `timestamp_format`. If there is a non-null value, it interprets it as an
-/// [Instant] in the requested format.
+/// [`DateTime` ] in the requested format.
 pub fn expect_timestamp_or_null(
     token: Option<Result<Token<'_>, Error>>,
     timestamp_format: Format,
-) -> Result<Option<Instant>, Error> {
+) -> Result<Option<DateTime>, Error> {
     Ok(match timestamp_format {
         Format::EpochSeconds => {
-            expect_number_or_null(token)?.map(|v| Instant::from_f64(v.to_f64()))
+            expect_number_or_null(token)?.map(|v| DateTime::from_secs_f64(v.to_f64()))
         }
         Format::DateTime | Format::HttpDate => expect_string_or_null(token)?
-            .map(|v| Instant::from_str(v.as_escaped_str(), timestamp_format))
+            .map(|v| DateTime::from_str(v.as_escaped_str(), timestamp_format))
             .transpose()
             .map_err(|err| {
                 Error::new(
@@ -578,18 +578,18 @@ pub mod test {
             expect_timestamp_or_null(value_null(0), Format::HttpDate)
         );
         assert_eq!(
-            Ok(Some(Instant::from_f64(2048.0))),
+            Ok(Some(DateTime::from_secs_f64(2048.0))),
             expect_timestamp_or_null(value_number(0, Number::Float(2048.0)), Format::EpochSeconds)
         );
         assert_eq!(
-            Ok(Some(Instant::from_f64(1445412480.0))),
+            Ok(Some(DateTime::from_secs_f64(1445412480.0))),
             expect_timestamp_or_null(
                 value_string(0, "Wed, 21 Oct 2015 07:28:00 GMT"),
                 Format::HttpDate
             )
         );
         assert_eq!(
-            Ok(Some(Instant::from_f64(1445412480.0))),
+            Ok(Some(DateTime::from_secs_f64(1445412480.0))),
             expect_timestamp_or_null(value_string(0, "2015-10-21T07:28:00Z"), Format::DateTime)
         );
         let err = Error::new(

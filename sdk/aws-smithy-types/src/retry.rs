@@ -173,13 +173,13 @@ impl RetryConfigBuilder {
     /// # use aws_smithy_types::retry::{RetryMode, RetryConfigBuilder};
     /// let a = RetryConfigBuilder::new().max_attempts(1);
     /// let b = RetryConfigBuilder::new().max_attempts(5).mode(RetryMode::Adaptive);
-    /// let retry_config = a.merge_with(b).build();
+    /// let retry_config = a.take_unset_from(b).build();
     /// // A's value take precedence over B's value
     /// assert_eq!(retry_config.max_attempts(), 1);
     /// // A never set a retry mode so B's value was used
     /// assert_eq!(retry_config.mode(), RetryMode::Adaptive);
     /// ```
-    pub fn merge_with(self, other: Self) -> Self {
+    pub fn take_unset_from(self, other: Self) -> Self {
         Self {
             mode: self.mode.or(other.mode),
             max_attempts: self.max_attempts.or(other.max_attempts),
@@ -324,7 +324,7 @@ mod tests {
         let other_builder = RetryConfigBuilder::new()
             .max_attempts(5)
             .mode(RetryMode::Standard);
-        let retry_config = self_builder.merge_with(other_builder).build();
+        let retry_config = self_builder.take_unset_from(other_builder).build();
 
         assert_eq!(retry_config.max_attempts, 1);
         assert_eq!(retry_config.mode, RetryMode::Adaptive);

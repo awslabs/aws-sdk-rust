@@ -217,9 +217,9 @@ impl Command {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_reboot(&self) -> std::result::Result<&crate::model::Reboot, &Self> {
         if let Command::Reboot(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Reboot`](crate::model::Command::Reboot).
@@ -230,9 +230,9 @@ impl Command {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_unlock(&self) -> std::result::Result<&crate::model::Unlock, &Self> {
         if let Command::Unlock(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`Unlock`](crate::model::Command::Unlock).
@@ -607,7 +607,7 @@ pub struct InstanceSummary {
     /// <p>A structure containing details about the instance.</p>
     pub instance: std::option::Option<crate::model::Instance>,
     /// <p>When the instance summary was last updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl InstanceSummary {
     /// <p>A structure containing details about the instance.</p>
@@ -615,7 +615,7 @@ impl InstanceSummary {
         self.instance.as_ref()
     }
     /// <p>When the instance summary was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -634,7 +634,7 @@ pub mod instance_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance: std::option::Option<crate::model::Instance>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A structure containing details about the instance.</p>
@@ -648,14 +648,14 @@ pub mod instance_summary {
             self
         }
         /// <p>When the instance summary was last updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>When the instance summary was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -698,9 +698,9 @@ pub struct Instance {
     /// <p>The public IPv4 address assigned to the instance.</p>
     pub public_ip_address: std::option::Option<std::string::String>,
     /// <p>When the instance was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the instance was last updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Any block device mapping entries for the instance.</p>
     pub block_device_mappings:
         std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
@@ -742,11 +742,11 @@ impl Instance {
         self.public_ip_address.as_deref()
     }
     /// <p>When the instance was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>When the instance was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>Any block device mapping entries for the instance.</p>
@@ -800,8 +800,8 @@ pub mod instance {
         pub(crate) instance_type: std::option::Option<std::string::String>,
         pub(crate) private_ip_address: std::option::Option<std::string::String>,
         pub(crate) public_ip_address: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) block_device_mappings:
             std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
         pub(crate) security_groups:
@@ -895,27 +895,27 @@ pub mod instance {
             self
         }
         /// <p>When the instance was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>When the instance was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>When the instance was last updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>When the instance was last updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -1249,7 +1249,7 @@ impl InstanceBlockDeviceMapping {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsInstanceBlockDevice {
     /// <p>When the attachment was initiated.</p>
-    pub attach_time: std::option::Option<aws_smithy_types::Instant>,
+    pub attach_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A value that indicates whether the volume is deleted on instance termination.</p>
     pub delete_on_termination: std::option::Option<bool>,
     /// <p>The attachment state.</p>
@@ -1259,7 +1259,7 @@ pub struct EbsInstanceBlockDevice {
 }
 impl EbsInstanceBlockDevice {
     /// <p>When the attachment was initiated.</p>
-    pub fn attach_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn attach_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.attach_time.as_ref()
     }
     /// <p>A value that indicates whether the volume is deleted on instance termination.</p>
@@ -1291,21 +1291,21 @@ pub mod ebs_instance_block_device {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attach_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) attach_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) delete_on_termination: std::option::Option<bool>,
         pub(crate) status: std::option::Option<crate::model::AttachmentStatus>,
         pub(crate) volume_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>When the attachment was initiated.</p>
-        pub fn attach_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn attach_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.attach_time = Some(input);
             self
         }
         /// <p>When the attachment was initiated.</p>
         pub fn set_attach_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.attach_time = input;
             self

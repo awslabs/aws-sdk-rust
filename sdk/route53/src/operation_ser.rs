@@ -10,7 +10,7 @@ pub fn serialize_operation_crate_operation_associate_vpc_with_hosted_zone(
             .start_el("AssociateVPCWithHostedZoneRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
         crate::xml_ser::serialize_structure_crate_input_associate_vpc_with_hosted_zone_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -27,7 +27,7 @@ pub fn serialize_operation_crate_operation_change_resource_record_sets(
             .start_el("ChangeResourceRecordSetsRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
         crate::xml_ser::serialize_structure_crate_input_change_resource_record_sets_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -43,9 +43,7 @@ pub fn serialize_operation_crate_operation_change_tags_for_resource(
         let mut root = writer
             .start_el("ChangeTagsForResourceRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_input_change_tags_for_resource_input(
-            &&input, root,
-        )?
+        crate::xml_ser::serialize_structure_crate_input_change_tags_for_resource_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -60,7 +58,7 @@ pub fn serialize_operation_crate_operation_create_health_check(
         let mut root = writer
             .start_el("CreateHealthCheckRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_input_create_health_check_input(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_input_create_health_check_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -75,7 +73,7 @@ pub fn serialize_operation_crate_operation_create_hosted_zone(
         let mut root = writer
             .start_el("CreateHostedZoneRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_input_create_hosted_zone_input(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_input_create_hosted_zone_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -90,7 +88,7 @@ pub fn serialize_operation_crate_operation_create_key_signing_key(
         let mut root = writer
             .start_el("CreateKeySigningKeyRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_input_create_key_signing_key_input(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_input_create_key_signing_key_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -106,7 +104,7 @@ pub fn serialize_operation_crate_operation_create_query_logging_config(
             .start_el("CreateQueryLoggingConfigRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
         crate::xml_ser::serialize_structure_crate_input_create_query_logging_config_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -123,7 +121,7 @@ pub fn serialize_operation_crate_operation_create_reusable_delegation_set(
             .start_el("CreateReusableDelegationSetRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
         crate::xml_ser::serialize_structure_crate_input_create_reusable_delegation_set_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -139,7 +137,7 @@ pub fn serialize_operation_crate_operation_create_traffic_policy(
         let mut root = writer
             .start_el("CreateTrafficPolicyRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_input_create_traffic_policy_input(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_input_create_traffic_policy_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -155,7 +153,7 @@ pub fn serialize_operation_crate_operation_create_traffic_policy_instance(
             .start_el("CreateTrafficPolicyInstanceRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
         crate::xml_ser::serialize_structure_crate_input_create_traffic_policy_instance_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -172,7 +170,7 @@ pub fn serialize_operation_crate_operation_create_traffic_policy_version(
             .start_el("CreateTrafficPolicyVersionRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
         crate::xml_ser::serialize_structure_crate_input_create_traffic_policy_version_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -189,7 +187,7 @@ pub fn serialize_operation_crate_operation_create_vpc_association_authorization(
             .start_el("CreateVPCAssociationAuthorizationRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
         crate::xml_ser::serialize_structure_crate_input_create_vpc_association_authorization_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -206,7 +204,7 @@ pub fn serialize_operation_crate_operation_delete_vpc_association_authorization(
             .start_el("DeleteVPCAssociationAuthorizationRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
         crate::xml_ser::serialize_structure_crate_input_delete_vpc_association_authorization_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -223,7 +221,7 @@ pub fn serialize_operation_crate_operation_disassociate_vpc_from_hosted_zone(
             .start_el("DisassociateVPCFromHostedZoneRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
         crate::xml_ser::serialize_structure_crate_input_disassociate_vpc_from_hosted_zone_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -239,9 +237,7 @@ pub fn serialize_operation_crate_operation_list_tags_for_resources(
         let mut root = writer
             .start_el("ListTagsForResourcesRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_input_list_tags_for_resources_input(
-            &&input, root,
-        )?
+        crate::xml_ser::serialize_structure_crate_input_list_tags_for_resources_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -256,7 +252,7 @@ pub fn serialize_operation_crate_operation_update_health_check(
         let mut root = writer
             .start_el("UpdateHealthCheckRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_input_update_health_check_input(&&input, root)?
+        crate::xml_ser::serialize_structure_crate_input_update_health_check_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -272,7 +268,7 @@ pub fn serialize_operation_crate_operation_update_hosted_zone_comment(
             .start_el("UpdateHostedZoneCommentRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
         crate::xml_ser::serialize_structure_crate_input_update_hosted_zone_comment_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -289,7 +285,7 @@ pub fn serialize_operation_crate_operation_update_traffic_policy_comment(
             .start_el("UpdateTrafficPolicyCommentRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
         crate::xml_ser::serialize_structure_crate_input_update_traffic_policy_comment_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -306,7 +302,7 @@ pub fn serialize_operation_crate_operation_update_traffic_policy_instance(
             .start_el("UpdateTrafficPolicyInstanceRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
         crate::xml_ser::serialize_structure_crate_input_update_traffic_policy_instance_input(
-            &&input, root,
+            input, root,
         )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))

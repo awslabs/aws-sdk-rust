@@ -1687,6 +1687,123 @@ impl std::error::Error for GetStreamKeyError {
     }
 }
 
+/// Error type for the `GetStreamSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetStreamSessionError {
+    /// Kind of error that occurred.
+    pub kind: GetStreamSessionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetStreamSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetStreamSessionErrorKind {
+    /// <p/>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p/>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p/>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetStreamSessionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetStreamSessionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetStreamSessionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetStreamSessionErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetStreamSessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetStreamSessionError {
+    fn code(&self) -> Option<&str> {
+        GetStreamSessionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetStreamSessionError {
+    /// Creates a new `GetStreamSessionError`.
+    pub fn new(kind: GetStreamSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetStreamSessionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetStreamSessionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetStreamSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetStreamSessionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetStreamSessionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetStreamSessionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetStreamSessionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetStreamSessionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetStreamSessionErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetStreamSessionErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetStreamSessionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetStreamSessionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetStreamSessionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetStreamSessionErrorKind::ValidationException(_inner) => Some(_inner),
+            GetStreamSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ImportPlaybackKeyPair` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2359,6 +2476,123 @@ impl std::error::Error for ListStreamsError {
         match &self.kind {
             ListStreamsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListStreamsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListStreamSessions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListStreamSessionsError {
+    /// Kind of error that occurred.
+    pub kind: ListStreamSessionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListStreamSessions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListStreamSessionsErrorKind {
+    /// <p/>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p/>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p/>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListStreamSessionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListStreamSessionsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListStreamSessionsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListStreamSessionsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListStreamSessionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListStreamSessionsError {
+    fn code(&self) -> Option<&str> {
+        ListStreamSessionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListStreamSessionsError {
+    /// Creates a new `ListStreamSessionsError`.
+    pub fn new(kind: ListStreamSessionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListStreamSessionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListStreamSessionsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListStreamSessionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListStreamSessionsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListStreamSessionsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStreamSessionsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListStreamSessionsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStreamSessionsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListStreamSessionsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStreamSessionsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListStreamSessionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListStreamSessionsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListStreamSessionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListStreamSessionsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListStreamSessionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

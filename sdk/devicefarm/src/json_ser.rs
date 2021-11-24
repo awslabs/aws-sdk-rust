@@ -856,22 +856,22 @@ pub fn serialize_structure_crate_input_list_test_grid_sessions_input(
     if let Some(var_137) = &input.creation_time_after {
         object
             .key("creationTimeAfter")
-            .instant(var_137, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_137, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_138) = &input.creation_time_before {
         object
             .key("creationTimeBefore")
-            .instant(var_138, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_138, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_139) = &input.end_time_after {
         object
             .key("endTimeAfter")
-            .instant(var_139, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_139, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_140) = &input.end_time_before {
         object
             .key("endTimeBefore")
-            .instant(var_140, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_140, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_141) = &input.max_result {
         object.key("maxResult").number(

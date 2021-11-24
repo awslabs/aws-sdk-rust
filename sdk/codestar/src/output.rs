@@ -15,9 +15,9 @@ pub struct UpdateUserProfileOutput {
     /// the user remote access to those resources.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
     /// <p>The date the user profile was created, in timestamp format.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the user profile was last modified, in timestamp format.</p>
-    pub last_modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
@@ -40,11 +40,11 @@ impl UpdateUserProfileOutput {
         self.ssh_public_key.as_deref()
     }
     /// <p>The date the user profile was created, in timestamp format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The date the user profile was last modified, in timestamp format.</p>
-    pub fn last_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
 }
@@ -70,8 +70,8 @@ pub mod update_user_profile_output {
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) email_address: std::option::Option<std::string::String>,
         pub(crate) ssh_public_key: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
@@ -127,27 +127,27 @@ pub mod update_user_profile_output {
             self
         }
         /// <p>The date the user profile was created, in timestamp format.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The date the user profile was created, in timestamp format.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The date the user profile was last modified, in timestamp format.</p>
-        pub fn last_modified_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_timestamp = Some(input);
             self
         }
         /// <p>The date the user profile was last modified, in timestamp format.</p>
         pub fn set_last_modified_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_timestamp = input;
             self
@@ -898,10 +898,10 @@ pub struct DescribeUserProfileOutput {
     pub ssh_public_key: std::option::Option<std::string::String>,
     /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp
     /// format.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the user profile was last modified, in timestamp
     /// format.</p>
-    pub last_modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
@@ -932,12 +932,12 @@ impl DescribeUserProfileOutput {
     }
     /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp
     /// format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The date and time when the user profile was last modified, in timestamp
     /// format.</p>
-    pub fn last_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
 }
@@ -963,8 +963,8 @@ pub mod describe_user_profile_output {
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) email_address: std::option::Option<std::string::String>,
         pub(crate) ssh_public_key: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the user.</p>
@@ -1035,7 +1035,7 @@ pub mod describe_user_profile_output {
         }
         /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp
         /// format.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
@@ -1043,14 +1043,14 @@ pub mod describe_user_profile_output {
         /// format.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The date and time when the user profile was last modified, in timestamp
         /// format.</p>
-        pub fn last_modified_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_timestamp = Some(input);
             self
         }
@@ -1058,7 +1058,7 @@ pub mod describe_user_profile_output {
         /// format.</p>
         pub fn set_last_modified_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_timestamp = input;
             self
@@ -1099,7 +1099,7 @@ pub struct DescribeProjectOutput {
     /// creation. </p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The date and time the project was created, in timestamp format.</p>
-    pub created_time_stamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the
     /// project.</p>
     pub stack_id: std::option::Option<std::string::String>,
@@ -1131,7 +1131,7 @@ impl DescribeProjectOutput {
         self.client_request_token.as_deref()
     }
     /// <p>The date and time the project was created, in timestamp format.</p>
-    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
     /// <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the
@@ -1174,7 +1174,7 @@ pub mod describe_project_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
-        pub(crate) created_time_stamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) stack_id: std::option::Option<std::string::String>,
         pub(crate) project_template_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ProjectStatus>,
@@ -1236,14 +1236,14 @@ pub mod describe_project_output {
             self
         }
         /// <p>The date and time the project was created, in timestamp format.</p>
-        pub fn created_time_stamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time_stamp = Some(input);
             self
         }
         /// <p>The date and time the project was created, in timestamp format.</p>
         pub fn set_created_time_stamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time_stamp = input;
             self
@@ -1455,9 +1455,9 @@ pub struct CreateUserProfileOutput {
     /// the user remote access to those resources.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
     /// <p>The date the user profile was created, in timestamp format.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the user profile was last modified, in timestamp format.</p>
-    pub last_modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
@@ -1479,11 +1479,11 @@ impl CreateUserProfileOutput {
         self.ssh_public_key.as_deref()
     }
     /// <p>The date the user profile was created, in timestamp format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The date the user profile was last modified, in timestamp format.</p>
-    pub fn last_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
 }
@@ -1509,8 +1509,8 @@ pub mod create_user_profile_output {
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) email_address: std::option::Option<std::string::String>,
         pub(crate) ssh_public_key: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
@@ -1564,27 +1564,27 @@ pub mod create_user_profile_output {
             self
         }
         /// <p>The date the user profile was created, in timestamp format.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The date the user profile was created, in timestamp format.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The date the user profile was last modified, in timestamp format.</p>
-        pub fn last_modified_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_timestamp = Some(input);
             self
         }
         /// <p>The date the user profile was last modified, in timestamp format.</p>
         pub fn set_last_modified_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified_timestamp = input;
             self

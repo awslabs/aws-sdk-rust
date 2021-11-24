@@ -52,6 +52,7 @@ pub type AssociateApprovedOriginInputOperationRetryAlias = aws_http::AwsErrorRet
 impl AssociateApprovedOriginInput {
     /// Consumes the builder and constructs an Operation<[`AssociateApprovedOrigin`](crate::operation::AssociateApprovedOrigin)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -125,11 +126,14 @@ impl AssociateApprovedOriginInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -246,6 +250,7 @@ pub type AssociateBotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl AssociateBotInput {
     /// Consumes the builder and constructs an Operation<[`AssociateBot`](crate::operation::AssociateBot)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -316,11 +321,14 @@ impl AssociateBotInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -441,6 +449,7 @@ pub type AssociateInstanceStorageConfigInputOperationRetryAlias = aws_http::AwsE
 impl AssociateInstanceStorageConfigInput {
     /// Consumes the builder and constructs an Operation<[`AssociateInstanceStorageConfig`](crate::operation::AssociateInstanceStorageConfig)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -513,11 +522,14 @@ impl AssociateInstanceStorageConfigInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -622,6 +634,7 @@ pub type AssociateLambdaFunctionInputOperationRetryAlias = aws_http::AwsErrorRet
 impl AssociateLambdaFunctionInput {
     /// Consumes the builder and constructs an Operation<[`AssociateLambdaFunction`](crate::operation::AssociateLambdaFunction)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -695,11 +708,14 @@ impl AssociateLambdaFunctionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -801,6 +817,7 @@ pub type AssociateLexBotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl AssociateLexBotInput {
     /// Consumes the builder and constructs an Operation<[`AssociateLexBot`](crate::operation::AssociateLexBot)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -872,11 +889,14 @@ impl AssociateLexBotInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1000,6 +1020,7 @@ pub type AssociateQueueQuickConnectsInputOperationRetryAlias = aws_http::AwsErro
 impl AssociateQueueQuickConnectsInput {
     /// Consumes the builder and constructs an Operation<[`AssociateQueueQuickConnects`](crate::operation::AssociateQueueQuickConnects)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1088,11 +1109,14 @@ impl AssociateQueueQuickConnectsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1223,6 +1247,7 @@ pub type AssociateRoutingProfileQueuesInputOperationRetryAlias = aws_http::AwsEr
 impl AssociateRoutingProfileQueuesInput {
     /// Consumes the builder and constructs an Operation<[`AssociateRoutingProfileQueues`](crate::operation::AssociateRoutingProfileQueues)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1311,11 +1336,14 @@ impl AssociateRoutingProfileQueuesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1417,6 +1445,7 @@ pub type AssociateSecurityKeyInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl AssociateSecurityKeyInput {
     /// Consumes the builder and constructs an Operation<[`AssociateSecurityKey`](crate::operation::AssociateSecurityKey)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1490,11 +1519,14 @@ impl AssociateSecurityKeyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1664,6 +1696,7 @@ pub type CreateAgentStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl CreateAgentStatusInput {
     /// Consumes the builder and constructs an Operation<[`CreateAgentStatus`](crate::operation::CreateAgentStatus)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1735,11 +1768,14 @@ impl CreateAgentStatusInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1911,6 +1947,7 @@ pub type CreateContactFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl CreateContactFlowInput {
     /// Consumes the builder and constructs an Operation<[`CreateContactFlow`](crate::operation::CreateContactFlow)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1982,11 +2019,14 @@ impl CreateContactFlowInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2162,6 +2202,7 @@ pub type CreateHoursOfOperationInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl CreateHoursOfOperationInput {
     /// Consumes the builder and constructs an Operation<[`CreateHoursOfOperation`](crate::operation::CreateHoursOfOperation)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2235,11 +2276,14 @@ impl CreateHoursOfOperationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2395,6 +2439,7 @@ pub type CreateInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateInstanceInput {
     /// Consumes the builder and constructs an Operation<[`CreateInstance`](crate::operation::CreateInstance)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2446,11 +2491,14 @@ impl CreateInstanceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2645,6 +2693,7 @@ pub type CreateIntegrationAssociationInputOperationRetryAlias = aws_http::AwsErr
 impl CreateIntegrationAssociationInput {
     /// Consumes the builder and constructs an Operation<[`CreateIntegrationAssociation`](crate::operation::CreateIntegrationAssociation)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2717,11 +2766,14 @@ impl CreateIntegrationAssociationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2927,6 +2979,7 @@ pub type CreateQueueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateQueueInput {
     /// Consumes the builder and constructs an Operation<[`CreateQueue`](crate::operation::CreateQueue)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2993,11 +3046,14 @@ impl CreateQueueInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3155,6 +3211,7 @@ pub type CreateQuickConnectInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl CreateQuickConnectInput {
     /// Consumes the builder and constructs an Operation<[`CreateQuickConnect`](crate::operation::CreateQuickConnect)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3226,11 +3283,14 @@ impl CreateQuickConnectInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3442,6 +3502,7 @@ pub type CreateRoutingProfileInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl CreateRoutingProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateRoutingProfile`](crate::operation::CreateRoutingProfile)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3515,11 +3576,14 @@ impl CreateRoutingProfileInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3567,6 +3631,254 @@ impl CreateRoutingProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateRoutingProfileInput`](crate::input::CreateRoutingProfileInput)
     pub fn builder() -> crate::input::create_routing_profile_input::Builder {
         crate::input::create_routing_profile_input::Builder::default()
+    }
+}
+
+/// See [`CreateSecurityProfileInput`](crate::input::CreateSecurityProfileInput)
+pub mod create_security_profile_input {
+    /// A builder for [`CreateSecurityProfileInput`](crate::input::CreateSecurityProfileInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) security_profile_name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) permissions: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The name of the security profile.</p>
+        pub fn security_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.security_profile_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the security profile.</p>
+        pub fn set_security_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.security_profile_name = input;
+            self
+        }
+        /// <p>The description of the security profile.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the security profile.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `permissions`.
+        ///
+        /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+        ///
+        /// <p>Permissions assigned to the security profile.</p>
+        pub fn permissions(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.permissions.unwrap_or_default();
+            v.push(input.into());
+            self.permissions = Some(v);
+            self
+        }
+        /// <p>Permissions assigned to the security profile.</p>
+        pub fn set_permissions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.permissions = input;
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>One or more tags.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateSecurityProfileInput`](crate::input::CreateSecurityProfileInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateSecurityProfileInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateSecurityProfileInput {
+                security_profile_name: self.security_profile_name,
+                description: self.description,
+                permissions: self.permissions,
+                instance_id: self.instance_id,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateSecurityProfileInputOperationOutputAlias = crate::operation::CreateSecurityProfile;
+#[doc(hidden)]
+pub type CreateSecurityProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateSecurityProfileInput {
+    /// Consumes the builder and constructs an Operation<[`CreateSecurityProfile`](crate::operation::CreateSecurityProfile)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateSecurityProfile,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreateSecurityProfileInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_18 = &_input.instance_id;
+            let input_18 =
+                input_18
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "instance_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let instance_id = aws_smithy_http::label::fmt_string(input_18, false);
+            if instance_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "instance_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/security-profiles/{InstanceId}",
+                InstanceId = instance_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateSecurityProfileInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateSecurityProfileInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_security_profile(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateSecurityProfile::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateSecurityProfile",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateSecurityProfileInput`](crate::input::CreateSecurityProfileInput)
+    pub fn builder() -> crate::input::create_security_profile_input::Builder {
+        crate::input::create_security_profile_input::Builder::default()
     }
 }
 
@@ -3670,6 +3982,7 @@ pub type CreateUseCaseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateUseCaseInput {
     /// Consumes the builder and constructs an Operation<[`CreateUseCase`](crate::operation::CreateUseCase)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3684,30 +3997,30 @@ impl CreateUseCaseInput {
             _input: &crate::input::CreateUseCaseInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_18 = &_input.instance_id;
-            let input_18 =
-                input_18
+            let input_19 = &_input.instance_id;
+            let input_19 =
+                input_19
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_18, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_19, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_19 = &_input.integration_association_id;
-            let input_19 =
-                input_19
+            let input_20 = &_input.integration_association_id;
+            let input_20 =
+                input_20
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_association_id",
                         details: "cannot be empty or unset",
                     })?;
-            let integration_association_id = aws_smithy_http::label::fmt_string(input_19, false);
+            let integration_association_id = aws_smithy_http::label::fmt_string(input_20, false);
             if integration_association_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "integration_association_id",
@@ -3751,11 +4064,14 @@ impl CreateUseCaseInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4012,6 +4328,7 @@ pub type CreateUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateUserInput {
     /// Consumes the builder and constructs an Operation<[`CreateUser`](crate::operation::CreateUser)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4026,15 +4343,15 @@ impl CreateUserInput {
             _input: &crate::input::CreateUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_20 = &_input.instance_id;
-            let input_20 =
-                input_20
+            let input_21 = &_input.instance_id;
+            let input_21 =
+                input_21
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_20, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_21, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -4078,11 +4395,14 @@ impl CreateUserInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4202,6 +4522,7 @@ pub type CreateUserHierarchyGroupInputOperationRetryAlias = aws_http::AwsErrorRe
 impl CreateUserHierarchyGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateUserHierarchyGroup`](crate::operation::CreateUserHierarchyGroup)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4216,15 +4537,15 @@ impl CreateUserHierarchyGroupInput {
             _input: &crate::input::CreateUserHierarchyGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_21 = &_input.instance_id;
-            let input_21 =
-                input_21
+            let input_22 = &_input.instance_id;
+            let input_22 =
+                input_22
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_21, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_22, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -4275,11 +4596,14 @@ impl CreateUserHierarchyGroupInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4384,6 +4708,7 @@ pub type DeleteHoursOfOperationInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl DeleteHoursOfOperationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHoursOfOperation`](crate::operation::DeleteHoursOfOperation)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4398,30 +4723,30 @@ impl DeleteHoursOfOperationInput {
             _input: &crate::input::DeleteHoursOfOperationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_22 = &_input.instance_id;
-            let input_22 =
-                input_22
+            let input_23 = &_input.instance_id;
+            let input_23 =
+                input_23
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_22, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_23, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_23 = &_input.hours_of_operation_id;
-            let input_23 =
-                input_23
+            let input_24 = &_input.hours_of_operation_id;
+            let input_24 =
+                input_24
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hours_of_operation_id",
                         details: "cannot be empty or unset",
                     })?;
-            let hours_of_operation_id = aws_smithy_http::label::fmt_string(input_23, false);
+            let hours_of_operation_id = aws_smithy_http::label::fmt_string(input_24, false);
             if hours_of_operation_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "hours_of_operation_id",
@@ -4465,11 +4790,14 @@ impl DeleteHoursOfOperationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4551,6 +4879,7 @@ pub type DeleteInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInstance`](crate::operation::DeleteInstance)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4565,15 +4894,15 @@ impl DeleteInstanceInput {
             _input: &crate::input::DeleteInstanceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_24 = &_input.instance_id;
-            let input_24 =
-                input_24
+            let input_25 = &_input.instance_id;
+            let input_25 =
+                input_25
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_24, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_25, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -4612,11 +4941,14 @@ impl DeleteInstanceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4714,6 +5046,7 @@ pub type DeleteIntegrationAssociationInputOperationRetryAlias = aws_http::AwsErr
 impl DeleteIntegrationAssociationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIntegrationAssociation`](crate::operation::DeleteIntegrationAssociation)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4728,30 +5061,30 @@ impl DeleteIntegrationAssociationInput {
             _input: &crate::input::DeleteIntegrationAssociationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_25 = &_input.instance_id;
-            let input_25 =
-                input_25
+            let input_26 = &_input.instance_id;
+            let input_26 =
+                input_26
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_25, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_26, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_26 = &_input.integration_association_id;
-            let input_26 =
-                input_26
+            let input_27 = &_input.integration_association_id;
+            let input_27 =
+                input_27
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_association_id",
                         details: "cannot be empty or unset",
                     })?;
-            let integration_association_id = aws_smithy_http::label::fmt_string(input_26, false);
+            let integration_association_id = aws_smithy_http::label::fmt_string(input_27, false);
             if integration_association_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "integration_association_id",
@@ -4795,11 +5128,14 @@ impl DeleteIntegrationAssociationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4896,6 +5232,7 @@ pub type DeleteQuickConnectInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl DeleteQuickConnectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteQuickConnect`](crate::operation::DeleteQuickConnect)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4910,30 +5247,30 @@ impl DeleteQuickConnectInput {
             _input: &crate::input::DeleteQuickConnectInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_27 = &_input.instance_id;
-            let input_27 =
-                input_27
+            let input_28 = &_input.instance_id;
+            let input_28 =
+                input_28
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_27, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_28, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_28 = &_input.quick_connect_id;
-            let input_28 =
-                input_28
+            let input_29 = &_input.quick_connect_id;
+            let input_29 =
+                input_29
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "quick_connect_id",
                         details: "cannot be empty or unset",
                     })?;
-            let quick_connect_id = aws_smithy_http::label::fmt_string(input_28, false);
+            let quick_connect_id = aws_smithy_http::label::fmt_string(input_29, false);
             if quick_connect_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "quick_connect_id",
@@ -4977,11 +5314,14 @@ impl DeleteQuickConnectInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5021,6 +5361,192 @@ impl DeleteQuickConnectInput {
     /// Creates a new builder-style object to manufacture [`DeleteQuickConnectInput`](crate::input::DeleteQuickConnectInput)
     pub fn builder() -> crate::input::delete_quick_connect_input::Builder {
         crate::input::delete_quick_connect_input::Builder::default()
+    }
+}
+
+/// See [`DeleteSecurityProfileInput`](crate::input::DeleteSecurityProfileInput)
+pub mod delete_security_profile_input {
+    /// A builder for [`DeleteSecurityProfileInput`](crate::input::DeleteSecurityProfileInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) security_profile_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>The identifier for the security profle.</p>
+        pub fn security_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.security_profile_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the security profle.</p>
+        pub fn set_security_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.security_profile_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteSecurityProfileInput`](crate::input::DeleteSecurityProfileInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteSecurityProfileInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteSecurityProfileInput {
+                instance_id: self.instance_id,
+                security_profile_id: self.security_profile_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteSecurityProfileInputOperationOutputAlias = crate::operation::DeleteSecurityProfile;
+#[doc(hidden)]
+pub type DeleteSecurityProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteSecurityProfileInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteSecurityProfile`](crate::operation::DeleteSecurityProfile)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteSecurityProfile,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteSecurityProfileInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_30 = &_input.instance_id;
+            let input_30 =
+                input_30
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "instance_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let instance_id = aws_smithy_http::label::fmt_string(input_30, false);
+            if instance_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "instance_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_31 = &_input.security_profile_id;
+            let input_31 =
+                input_31
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "security_profile_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let security_profile_id = aws_smithy_http::label::fmt_string(input_31, false);
+            if security_profile_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "security_profile_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/security-profiles/{InstanceId}/{SecurityProfileId}",
+                InstanceId = instance_id,
+                SecurityProfileId = security_profile_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteSecurityProfileInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteSecurityProfileInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteSecurityProfile::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteSecurityProfile",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteSecurityProfileInput`](crate::input::DeleteSecurityProfileInput)
+    pub fn builder() -> crate::input::delete_security_profile_input::Builder {
+        crate::input::delete_security_profile_input::Builder::default()
     }
 }
 
@@ -5090,6 +5616,7 @@ pub type DeleteUseCaseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteUseCaseInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUseCase`](crate::operation::DeleteUseCase)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5104,45 +5631,45 @@ impl DeleteUseCaseInput {
             _input: &crate::input::DeleteUseCaseInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_29 = &_input.instance_id;
-            let input_29 =
-                input_29
+            let input_32 = &_input.instance_id;
+            let input_32 =
+                input_32
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_29, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_32, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_30 = &_input.integration_association_id;
-            let input_30 =
-                input_30
+            let input_33 = &_input.integration_association_id;
+            let input_33 =
+                input_33
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_association_id",
                         details: "cannot be empty or unset",
                     })?;
-            let integration_association_id = aws_smithy_http::label::fmt_string(input_30, false);
+            let integration_association_id = aws_smithy_http::label::fmt_string(input_33, false);
             if integration_association_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "integration_association_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_31 = &_input.use_case_id;
-            let input_31 =
-                input_31
+            let input_34 = &_input.use_case_id;
+            let input_34 =
+                input_34
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "use_case_id",
                         details: "cannot be empty or unset",
                     })?;
-            let use_case_id = aws_smithy_http::label::fmt_string(input_31, false);
+            let use_case_id = aws_smithy_http::label::fmt_string(input_34, false);
             if use_case_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "use_case_id",
@@ -5180,11 +5707,14 @@ impl DeleteUseCaseInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5278,6 +5808,7 @@ pub type DeleteUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteUserInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUser`](crate::operation::DeleteUser)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5292,30 +5823,30 @@ impl DeleteUserInput {
             _input: &crate::input::DeleteUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_32 = &_input.instance_id;
-            let input_32 =
-                input_32
+            let input_35 = &_input.instance_id;
+            let input_35 =
+                input_35
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_32, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_35, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_33 = &_input.user_id;
-            let input_33 =
-                input_33
+            let input_36 = &_input.user_id;
+            let input_36 =
+                input_36
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_33, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_36, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -5359,11 +5890,14 @@ impl DeleteUserInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5461,6 +5995,7 @@ pub type DeleteUserHierarchyGroupInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DeleteUserHierarchyGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUserHierarchyGroup`](crate::operation::DeleteUserHierarchyGroup)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5475,30 +6010,30 @@ impl DeleteUserHierarchyGroupInput {
             _input: &crate::input::DeleteUserHierarchyGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_34 = &_input.instance_id;
-            let input_34 =
-                input_34
+            let input_37 = &_input.instance_id;
+            let input_37 =
+                input_37
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_34, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_37, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_35 = &_input.hierarchy_group_id;
-            let input_35 =
-                input_35
+            let input_38 = &_input.hierarchy_group_id;
+            let input_38 =
+                input_38
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hierarchy_group_id",
                         details: "cannot be empty or unset",
                     })?;
-            let hierarchy_group_id = aws_smithy_http::label::fmt_string(input_35, false);
+            let hierarchy_group_id = aws_smithy_http::label::fmt_string(input_38, false);
             if hierarchy_group_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "hierarchy_group_id",
@@ -5542,11 +6077,14 @@ impl DeleteUserHierarchyGroupInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5643,6 +6181,7 @@ pub type DescribeAgentStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DescribeAgentStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAgentStatus`](crate::operation::DescribeAgentStatus)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5657,30 +6196,30 @@ impl DescribeAgentStatusInput {
             _input: &crate::input::DescribeAgentStatusInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_36 = &_input.instance_id;
-            let input_36 =
-                input_36
+            let input_39 = &_input.instance_id;
+            let input_39 =
+                input_39
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_36, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_39, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_37 = &_input.agent_status_id;
-            let input_37 =
-                input_37
+            let input_40 = &_input.agent_status_id;
+            let input_40 =
+                input_40
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "agent_status_id",
                         details: "cannot be empty or unset",
                     })?;
-            let agent_status_id = aws_smithy_http::label::fmt_string(input_37, false);
+            let agent_status_id = aws_smithy_http::label::fmt_string(input_40, false);
             if agent_status_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "agent_status_id",
@@ -5724,11 +6263,14 @@ impl DescribeAgentStatusInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5768,6 +6310,189 @@ impl DescribeAgentStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeAgentStatusInput`](crate::input::DescribeAgentStatusInput)
     pub fn builder() -> crate::input::describe_agent_status_input::Builder {
         crate::input::describe_agent_status_input::Builder::default()
+    }
+}
+
+/// See [`DescribeContactInput`](crate::input::DescribeContactInput)
+pub mod describe_contact_input {
+    /// A builder for [`DescribeContactInput`](crate::input::DescribeContactInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) contact_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>The identifier of the initial contact.</p>
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the initial contact.</p>
+        pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeContactInput`](crate::input::DescribeContactInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeContactInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeContactInput {
+                instance_id: self.instance_id,
+                contact_id: self.contact_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeContactInputOperationOutputAlias = crate::operation::DescribeContact;
+#[doc(hidden)]
+pub type DescribeContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeContactInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeContact`](crate::operation::DescribeContact)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeContact,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeContactInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_41 = &_input.instance_id;
+            let input_41 =
+                input_41
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "instance_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let instance_id = aws_smithy_http::label::fmt_string(input_41, false);
+            if instance_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "instance_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_42 = &_input.contact_id;
+            let input_42 =
+                input_42
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "contact_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let contact_id = aws_smithy_http::label::fmt_string(input_42, false);
+            if contact_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "contact_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/contacts/{InstanceId}/{ContactId}",
+                InstanceId = instance_id,
+                ContactId = contact_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeContactInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeContactInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeContact::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeContact",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeContactInput`](crate::input::DescribeContactInput)
+    pub fn builder() -> crate::input::describe_contact_input::Builder {
+        crate::input::describe_contact_input::Builder::default()
     }
 }
 
@@ -5825,6 +6550,7 @@ pub type DescribeContactFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DescribeContactFlowInput {
     /// Consumes the builder and constructs an Operation<[`DescribeContactFlow`](crate::operation::DescribeContactFlow)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5839,30 +6565,30 @@ impl DescribeContactFlowInput {
             _input: &crate::input::DescribeContactFlowInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_38 = &_input.instance_id;
-            let input_38 =
-                input_38
+            let input_43 = &_input.instance_id;
+            let input_43 =
+                input_43
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_38, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_43, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_39 = &_input.contact_flow_id;
-            let input_39 =
-                input_39
+            let input_44 = &_input.contact_flow_id;
+            let input_44 =
+                input_44
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_id",
                         details: "cannot be empty or unset",
                     })?;
-            let contact_flow_id = aws_smithy_http::label::fmt_string(input_39, false);
+            let contact_flow_id = aws_smithy_http::label::fmt_string(input_44, false);
             if contact_flow_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "contact_flow_id",
@@ -5906,11 +6632,14 @@ impl DescribeContactFlowInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6008,6 +6737,7 @@ pub type DescribeHoursOfOperationInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DescribeHoursOfOperationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHoursOfOperation`](crate::operation::DescribeHoursOfOperation)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6022,30 +6752,30 @@ impl DescribeHoursOfOperationInput {
             _input: &crate::input::DescribeHoursOfOperationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_40 = &_input.instance_id;
-            let input_40 =
-                input_40
+            let input_45 = &_input.instance_id;
+            let input_45 =
+                input_45
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_40, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_45, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_41 = &_input.hours_of_operation_id;
-            let input_41 =
-                input_41
+            let input_46 = &_input.hours_of_operation_id;
+            let input_46 =
+                input_46
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hours_of_operation_id",
                         details: "cannot be empty or unset",
                     })?;
-            let hours_of_operation_id = aws_smithy_http::label::fmt_string(input_41, false);
+            let hours_of_operation_id = aws_smithy_http::label::fmt_string(input_46, false);
             if hours_of_operation_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "hours_of_operation_id",
@@ -6089,11 +6819,14 @@ impl DescribeHoursOfOperationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6175,6 +6908,7 @@ pub type DescribeInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DescribeInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInstance`](crate::operation::DescribeInstance)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6189,15 +6923,15 @@ impl DescribeInstanceInput {
             _input: &crate::input::DescribeInstanceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_42 = &_input.instance_id;
-            let input_42 =
-                input_42
+            let input_47 = &_input.instance_id;
+            let input_47 =
+                input_47
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_42, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_47, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -6236,11 +6970,14 @@ impl DescribeInstanceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6338,6 +7075,7 @@ pub type DescribeInstanceAttributeInputOperationRetryAlias = aws_http::AwsErrorR
 impl DescribeInstanceAttributeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInstanceAttribute`](crate::operation::DescribeInstanceAttribute)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6352,30 +7090,30 @@ impl DescribeInstanceAttributeInput {
             _input: &crate::input::DescribeInstanceAttributeInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_43 = &_input.instance_id;
-            let input_43 =
-                input_43
+            let input_48 = &_input.instance_id;
+            let input_48 =
+                input_48
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_43, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_48, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_44 = &_input.attribute_type;
-            let input_44 =
-                input_44
+            let input_49 = &_input.attribute_type;
+            let input_49 =
+                input_49
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "attribute_type",
                         details: "cannot be empty or unset",
                     })?;
-            let attribute_type = aws_smithy_http::label::fmt_string(input_44, false);
+            let attribute_type = aws_smithy_http::label::fmt_string(input_49, false);
             if attribute_type.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "attribute_type",
@@ -6419,11 +7157,14 @@ impl DescribeInstanceAttributeInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6536,6 +7277,7 @@ pub type DescribeInstanceStorageConfigInputOperationRetryAlias = aws_http::AwsEr
 impl DescribeInstanceStorageConfigInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInstanceStorageConfig`](crate::operation::DescribeInstanceStorageConfig)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6550,30 +7292,30 @@ impl DescribeInstanceStorageConfigInput {
             _input: &crate::input::DescribeInstanceStorageConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_45 = &_input.instance_id;
-            let input_45 =
-                input_45
+            let input_50 = &_input.instance_id;
+            let input_50 =
+                input_50
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_45, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_50, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_46 = &_input.association_id;
-            let input_46 =
-                input_46
+            let input_51 = &_input.association_id;
+            let input_51 =
+                input_51
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "association_id",
                         details: "cannot be empty or unset",
                     })?;
-            let association_id = aws_smithy_http::label::fmt_string(input_46, false);
+            let association_id = aws_smithy_http::label::fmt_string(input_51, false);
             if association_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "association_id",
@@ -6592,14 +7334,15 @@ impl DescribeInstanceStorageConfigInput {
         fn uri_query(
             _input: &crate::input::DescribeInstanceStorageConfigInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_47) = &_input.resource_type {
+            if let Some(inner_52) = &_input.resource_type {
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_47),
+                    &aws_smithy_http::query::fmt_string(&inner_52),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -6609,7 +7352,7 @@ impl DescribeInstanceStorageConfigInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6630,11 +7373,14 @@ impl DescribeInstanceStorageConfigInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6728,6 +7474,7 @@ pub type DescribeQueueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeQueueInput {
     /// Consumes the builder and constructs an Operation<[`DescribeQueue`](crate::operation::DescribeQueue)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6742,30 +7489,30 @@ impl DescribeQueueInput {
             _input: &crate::input::DescribeQueueInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_48 = &_input.instance_id;
-            let input_48 =
-                input_48
+            let input_53 = &_input.instance_id;
+            let input_53 =
+                input_53
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_48, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_53, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_49 = &_input.queue_id;
-            let input_49 =
-                input_49
+            let input_54 = &_input.queue_id;
+            let input_54 =
+                input_54
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
                         details: "cannot be empty or unset",
                     })?;
-            let queue_id = aws_smithy_http::label::fmt_string(input_49, false);
+            let queue_id = aws_smithy_http::label::fmt_string(input_54, false);
             if queue_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "queue_id",
@@ -6809,11 +7556,14 @@ impl DescribeQueueInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6910,6 +7660,7 @@ pub type DescribeQuickConnectInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DescribeQuickConnectInput {
     /// Consumes the builder and constructs an Operation<[`DescribeQuickConnect`](crate::operation::DescribeQuickConnect)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6924,30 +7675,30 @@ impl DescribeQuickConnectInput {
             _input: &crate::input::DescribeQuickConnectInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_50 = &_input.instance_id;
-            let input_50 =
-                input_50
+            let input_55 = &_input.instance_id;
+            let input_55 =
+                input_55
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_50, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_55, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_51 = &_input.quick_connect_id;
-            let input_51 =
-                input_51
+            let input_56 = &_input.quick_connect_id;
+            let input_56 =
+                input_56
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "quick_connect_id",
                         details: "cannot be empty or unset",
                     })?;
-            let quick_connect_id = aws_smithy_http::label::fmt_string(input_51, false);
+            let quick_connect_id = aws_smithy_http::label::fmt_string(input_56, false);
             if quick_connect_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "quick_connect_id",
@@ -6991,11 +7742,14 @@ impl DescribeQuickConnectInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7092,6 +7846,7 @@ pub type DescribeRoutingProfileInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl DescribeRoutingProfileInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRoutingProfile`](crate::operation::DescribeRoutingProfile)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7106,30 +7861,30 @@ impl DescribeRoutingProfileInput {
             _input: &crate::input::DescribeRoutingProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_52 = &_input.instance_id;
-            let input_52 =
-                input_52
+            let input_57 = &_input.instance_id;
+            let input_57 =
+                input_57
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_52, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_57, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_53 = &_input.routing_profile_id;
-            let input_53 =
-                input_53
+            let input_58 = &_input.routing_profile_id;
+            let input_58 =
+                input_58
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let routing_profile_id = aws_smithy_http::label::fmt_string(input_53, false);
+            let routing_profile_id = aws_smithy_http::label::fmt_string(input_58, false);
             if routing_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "routing_profile_id",
@@ -7173,11 +7928,14 @@ impl DescribeRoutingProfileInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7217,6 +7975,193 @@ impl DescribeRoutingProfileInput {
     /// Creates a new builder-style object to manufacture [`DescribeRoutingProfileInput`](crate::input::DescribeRoutingProfileInput)
     pub fn builder() -> crate::input::describe_routing_profile_input::Builder {
         crate::input::describe_routing_profile_input::Builder::default()
+    }
+}
+
+/// See [`DescribeSecurityProfileInput`](crate::input::DescribeSecurityProfileInput)
+pub mod describe_security_profile_input {
+    /// A builder for [`DescribeSecurityProfileInput`](crate::input::DescribeSecurityProfileInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) security_profile_id: std::option::Option<std::string::String>,
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier for the security profle.</p>
+        pub fn security_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.security_profile_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the security profle.</p>
+        pub fn set_security_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.security_profile_id = input;
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeSecurityProfileInput`](crate::input::DescribeSecurityProfileInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeSecurityProfileInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeSecurityProfileInput {
+                security_profile_id: self.security_profile_id,
+                instance_id: self.instance_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeSecurityProfileInputOperationOutputAlias =
+    crate::operation::DescribeSecurityProfile;
+#[doc(hidden)]
+pub type DescribeSecurityProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeSecurityProfileInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeSecurityProfile`](crate::operation::DescribeSecurityProfile)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeSecurityProfile,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeSecurityProfileInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_59 = &_input.instance_id;
+            let input_59 =
+                input_59
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "instance_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let instance_id = aws_smithy_http::label::fmt_string(input_59, false);
+            if instance_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "instance_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_60 = &_input.security_profile_id;
+            let input_60 =
+                input_60
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "security_profile_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let security_profile_id = aws_smithy_http::label::fmt_string(input_60, false);
+            if security_profile_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "security_profile_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/security-profiles/{InstanceId}/{SecurityProfileId}",
+                InstanceId = instance_id,
+                SecurityProfileId = security_profile_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeSecurityProfileInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeSecurityProfileInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeSecurityProfile::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeSecurityProfile",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeSecurityProfileInput`](crate::input::DescribeSecurityProfileInput)
+    pub fn builder() -> crate::input::describe_security_profile_input::Builder {
+        crate::input::describe_security_profile_input::Builder::default()
     }
 }
 
@@ -7271,6 +8216,7 @@ pub type DescribeUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeUserInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUser`](crate::operation::DescribeUser)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7285,30 +8231,30 @@ impl DescribeUserInput {
             _input: &crate::input::DescribeUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_54 = &_input.instance_id;
-            let input_54 =
-                input_54
+            let input_61 = &_input.instance_id;
+            let input_61 =
+                input_61
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_54, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_61, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_55 = &_input.user_id;
-            let input_55 =
-                input_55
+            let input_62 = &_input.user_id;
+            let input_62 =
+                input_62
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_55, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_62, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -7352,11 +8298,14 @@ impl DescribeUserInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7454,6 +8403,7 @@ pub type DescribeUserHierarchyGroupInputOperationRetryAlias = aws_http::AwsError
 impl DescribeUserHierarchyGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUserHierarchyGroup`](crate::operation::DescribeUserHierarchyGroup)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7468,30 +8418,30 @@ impl DescribeUserHierarchyGroupInput {
             _input: &crate::input::DescribeUserHierarchyGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_56 = &_input.instance_id;
-            let input_56 =
-                input_56
+            let input_63 = &_input.instance_id;
+            let input_63 =
+                input_63
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_56, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_63, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_57 = &_input.hierarchy_group_id;
-            let input_57 =
-                input_57
+            let input_64 = &_input.hierarchy_group_id;
+            let input_64 =
+                input_64
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hierarchy_group_id",
                         details: "cannot be empty or unset",
                     })?;
-            let hierarchy_group_id = aws_smithy_http::label::fmt_string(input_57, false);
+            let hierarchy_group_id = aws_smithy_http::label::fmt_string(input_64, false);
             if hierarchy_group_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "hierarchy_group_id",
@@ -7535,11 +8485,14 @@ impl DescribeUserHierarchyGroupInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7622,6 +8575,7 @@ pub type DescribeUserHierarchyStructureInputOperationRetryAlias = aws_http::AwsE
 impl DescribeUserHierarchyStructureInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUserHierarchyStructure`](crate::operation::DescribeUserHierarchyStructure)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7636,15 +8590,15 @@ impl DescribeUserHierarchyStructureInput {
             _input: &crate::input::DescribeUserHierarchyStructureInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_58 = &_input.instance_id;
-            let input_58 =
-                input_58
+            let input_65 = &_input.instance_id;
+            let input_65 =
+                input_65
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_58, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_65, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -7687,11 +8641,14 @@ impl DescribeUserHierarchyStructureInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7786,6 +8743,7 @@ pub type DisassociateApprovedOriginInputOperationRetryAlias = aws_http::AwsError
 impl DisassociateApprovedOriginInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateApprovedOrigin`](crate::operation::DisassociateApprovedOrigin)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7800,15 +8758,15 @@ impl DisassociateApprovedOriginInput {
             _input: &crate::input::DisassociateApprovedOriginInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_59 = &_input.instance_id;
-            let input_59 =
-                input_59
+            let input_66 = &_input.instance_id;
+            let input_66 =
+                input_66
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_59, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_66, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -7826,11 +8784,12 @@ impl DisassociateApprovedOriginInput {
         fn uri_query(
             _input: &crate::input::DisassociateApprovedOriginInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_60) = &_input.origin {
-                query.push_kv("origin", &aws_smithy_http::query::fmt_string(&inner_60));
+            if let Some(inner_67) = &_input.origin {
+                query.push_kv("origin", &aws_smithy_http::query::fmt_string(&inner_67));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -7840,7 +8799,7 @@ impl DisassociateApprovedOriginInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -7861,11 +8820,14 @@ impl DisassociateApprovedOriginInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7974,6 +8936,7 @@ pub type DisassociateBotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl DisassociateBotInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateBot`](crate::operation::DisassociateBot)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -7988,15 +8951,15 @@ impl DisassociateBotInput {
             _input: &crate::input::DisassociateBotInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_61 = &_input.instance_id;
-            let input_61 =
-                input_61
+            let input_68 = &_input.instance_id;
+            let input_68 =
+                input_68
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_61, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_68, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -8045,11 +9008,14 @@ impl DisassociateBotInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8170,6 +9136,7 @@ pub type DisassociateInstanceStorageConfigInputOperationRetryAlias = aws_http::A
 impl DisassociateInstanceStorageConfigInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateInstanceStorageConfig`](crate::operation::DisassociateInstanceStorageConfig)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8184,30 +9151,30 @@ impl DisassociateInstanceStorageConfigInput {
             _input: &crate::input::DisassociateInstanceStorageConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_62 = &_input.instance_id;
-            let input_62 =
-                input_62
+            let input_69 = &_input.instance_id;
+            let input_69 =
+                input_69
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_62, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_69, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_63 = &_input.association_id;
-            let input_63 =
-                input_63
+            let input_70 = &_input.association_id;
+            let input_70 =
+                input_70
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "association_id",
                         details: "cannot be empty or unset",
                     })?;
-            let association_id = aws_smithy_http::label::fmt_string(input_63, false);
+            let association_id = aws_smithy_http::label::fmt_string(input_70, false);
             if association_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "association_id",
@@ -8226,14 +9193,15 @@ impl DisassociateInstanceStorageConfigInput {
         fn uri_query(
             _input: &crate::input::DisassociateInstanceStorageConfigInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_64) = &_input.resource_type {
+            if let Some(inner_71) = &_input.resource_type {
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_64),
+                    &aws_smithy_http::query::fmt_string(&inner_71),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -8243,7 +9211,7 @@ impl DisassociateInstanceStorageConfigInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -8264,11 +9232,14 @@ impl DisassociateInstanceStorageConfigInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8363,6 +9334,7 @@ pub type DisassociateLambdaFunctionInputOperationRetryAlias = aws_http::AwsError
 impl DisassociateLambdaFunctionInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateLambdaFunction`](crate::operation::DisassociateLambdaFunction)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8377,15 +9349,15 @@ impl DisassociateLambdaFunctionInput {
             _input: &crate::input::DisassociateLambdaFunctionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_65 = &_input.instance_id;
-            let input_65 =
-                input_65
+            let input_72 = &_input.instance_id;
+            let input_72 =
+                input_72
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_65, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_72, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -8403,14 +9375,15 @@ impl DisassociateLambdaFunctionInput {
         fn uri_query(
             _input: &crate::input::DisassociateLambdaFunctionInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_66) = &_input.function_arn {
+            if let Some(inner_73) = &_input.function_arn {
                 query.push_kv(
                     "functionArn",
-                    &aws_smithy_http::query::fmt_string(&inner_66),
+                    &aws_smithy_http::query::fmt_string(&inner_73),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -8420,7 +9393,7 @@ impl DisassociateLambdaFunctionInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -8441,11 +9414,14 @@ impl DisassociateLambdaFunctionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8551,6 +9527,7 @@ pub type DisassociateLexBotInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl DisassociateLexBotInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateLexBot`](crate::operation::DisassociateLexBot)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8565,15 +9542,15 @@ impl DisassociateLexBotInput {
             _input: &crate::input::DisassociateLexBotInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_67 = &_input.instance_id;
-            let input_67 =
-                input_67
+            let input_74 = &_input.instance_id;
+            let input_74 =
+                input_74
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_67, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_74, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -8588,14 +9565,18 @@ impl DisassociateLexBotInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::DisassociateLexBotInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::DisassociateLexBotInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_68) = &_input.bot_name {
-                query.push_kv("botName", &aws_smithy_http::query::fmt_string(&inner_68));
+            if let Some(inner_75) = &_input.bot_name {
+                query.push_kv("botName", &aws_smithy_http::query::fmt_string(&inner_75));
             }
-            if let Some(inner_69) = &_input.lex_region {
-                query.push_kv("lexRegion", &aws_smithy_http::query::fmt_string(&inner_69));
+            if let Some(inner_76) = &_input.lex_region {
+                query.push_kv("lexRegion", &aws_smithy_http::query::fmt_string(&inner_76));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -8605,7 +9586,7 @@ impl DisassociateLexBotInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -8626,11 +9607,14 @@ impl DisassociateLexBotInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8746,6 +9730,7 @@ pub type DisassociateQueueQuickConnectsInputOperationRetryAlias = aws_http::AwsE
 impl DisassociateQueueQuickConnectsInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateQueueQuickConnects`](crate::operation::DisassociateQueueQuickConnects)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8760,30 +9745,30 @@ impl DisassociateQueueQuickConnectsInput {
             _input: &crate::input::DisassociateQueueQuickConnectsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_70 = &_input.instance_id;
-            let input_70 =
-                input_70
+            let input_77 = &_input.instance_id;
+            let input_77 =
+                input_77
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_70, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_77, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_71 = &_input.queue_id;
-            let input_71 =
-                input_71
+            let input_78 = &_input.queue_id;
+            let input_78 =
+                input_78
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
                         details: "cannot be empty or unset",
                     })?;
-            let queue_id = aws_smithy_http::label::fmt_string(input_71, false);
+            let queue_id = aws_smithy_http::label::fmt_string(input_78, false);
             if queue_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "queue_id",
@@ -8834,11 +9819,14 @@ impl DisassociateQueueQuickConnectsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -8969,6 +9957,7 @@ pub type DisassociateRoutingProfileQueuesInputOperationRetryAlias = aws_http::Aw
 impl DisassociateRoutingProfileQueuesInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateRoutingProfileQueues`](crate::operation::DisassociateRoutingProfileQueues)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -8983,30 +9972,30 @@ impl DisassociateRoutingProfileQueuesInput {
             _input: &crate::input::DisassociateRoutingProfileQueuesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_72 = &_input.instance_id;
-            let input_72 =
-                input_72
+            let input_79 = &_input.instance_id;
+            let input_79 =
+                input_79
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_72, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_79, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_73 = &_input.routing_profile_id;
-            let input_73 =
-                input_73
+            let input_80 = &_input.routing_profile_id;
+            let input_80 =
+                input_80
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let routing_profile_id = aws_smithy_http::label::fmt_string(input_73, false);
+            let routing_profile_id = aws_smithy_http::label::fmt_string(input_80, false);
             if routing_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "routing_profile_id",
@@ -9057,11 +10046,14 @@ impl DisassociateRoutingProfileQueuesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -9167,6 +10159,7 @@ pub type DisassociateSecurityKeyInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DisassociateSecurityKeyInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateSecurityKey`](crate::operation::DisassociateSecurityKey)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9181,30 +10174,30 @@ impl DisassociateSecurityKeyInput {
             _input: &crate::input::DisassociateSecurityKeyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_74 = &_input.instance_id;
-            let input_74 =
-                input_74
+            let input_81 = &_input.instance_id;
+            let input_81 =
+                input_81
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_74, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_81, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_75 = &_input.association_id;
-            let input_75 =
-                input_75
+            let input_82 = &_input.association_id;
+            let input_82 =
+                input_82
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "association_id",
                         details: "cannot be empty or unset",
                     })?;
-            let association_id = aws_smithy_http::label::fmt_string(input_75, false);
+            let association_id = aws_smithy_http::label::fmt_string(input_82, false);
             if association_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "association_id",
@@ -9248,11 +10241,14 @@ impl DisassociateSecurityKeyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -9349,6 +10345,7 @@ pub type GetContactAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl GetContactAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetContactAttributes`](crate::operation::GetContactAttributes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9363,30 +10360,30 @@ impl GetContactAttributesInput {
             _input: &crate::input::GetContactAttributesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_76 = &_input.instance_id;
-            let input_76 =
-                input_76
+            let input_83 = &_input.instance_id;
+            let input_83 =
+                input_83
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_76, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_83, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_77 = &_input.initial_contact_id;
-            let input_77 =
-                input_77
+            let input_84 = &_input.initial_contact_id;
+            let input_84 =
+                input_84
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "initial_contact_id",
                         details: "cannot be empty or unset",
                     })?;
-            let initial_contact_id = aws_smithy_http::label::fmt_string(input_77, false);
+            let initial_contact_id = aws_smithy_http::label::fmt_string(input_84, false);
             if initial_contact_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "initial_contact_id",
@@ -9430,11 +10427,14 @@ impl GetContactAttributesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -9802,6 +10802,7 @@ pub type GetCurrentMetricDataInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl GetCurrentMetricDataInput {
     /// Consumes the builder and constructs an Operation<[`GetCurrentMetricData`](crate::operation::GetCurrentMetricData)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9816,15 +10817,15 @@ impl GetCurrentMetricDataInput {
             _input: &crate::input::GetCurrentMetricDataInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_78 = &_input.instance_id;
-            let input_78 =
-                input_78
+            let input_85 = &_input.instance_id;
+            let input_85 =
+                input_85
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_78, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_85, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -9875,11 +10876,14 @@ impl GetCurrentMetricDataInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -9969,6 +10973,7 @@ pub type GetFederationTokenInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl GetFederationTokenInput {
     /// Consumes the builder and constructs an Operation<[`GetFederationToken`](crate::operation::GetFederationToken)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -9983,15 +10988,15 @@ impl GetFederationTokenInput {
             _input: &crate::input::GetFederationTokenInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_79 = &_input.instance_id;
-            let input_79 =
-                input_79
+            let input_86 = &_input.instance_id;
+            let input_86 =
+                input_86
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_79, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_86, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -10034,11 +11039,14 @@ impl GetFederationTokenInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -10088,8 +11096,8 @@ pub mod get_metric_data_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) filters: std::option::Option<crate::model::Filters>,
         pub(crate) groupings: std::option::Option<std::vec::Vec<crate::model::Grouping>>,
         pub(crate) historical_metrics:
@@ -10113,7 +11121,7 @@ pub mod get_metric_data_input {
         /// such as 10:05, 10:10, 10:15.</p>
         /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical
         /// metrics are available only for 24 hours.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -10124,7 +11132,7 @@ pub mod get_metric_data_input {
         /// metrics are available only for 24 hours.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -10133,7 +11141,7 @@ pub mod get_metric_data_input {
         /// retrieval of historical metrics data. The time must be specified using an interval of 5 minutes,
         /// such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
         /// <p>The time range between the start and end time must be less than 24 hours.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
@@ -10143,7 +11151,7 @@ pub mod get_metric_data_input {
         /// <p>The time range between the start and end time must be less than 24 hours.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -10544,6 +11552,7 @@ pub type GetMetricDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetMetricDataInput {
     /// Consumes the builder and constructs an Operation<[`GetMetricData`](crate::operation::GetMetricData)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -10558,15 +11567,15 @@ impl GetMetricDataInput {
             _input: &crate::input::GetMetricDataInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_80 = &_input.instance_id;
-            let input_80 =
-                input_80
+            let input_87 = &_input.instance_id;
+            let input_87 =
+                input_87
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_80, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_87, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -10615,11 +11624,14 @@ impl GetMetricDataInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -10760,6 +11772,7 @@ pub type ListAgentStatusesInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ListAgentStatusesInput {
     /// Consumes the builder and constructs an Operation<[`ListAgentStatuses`](crate::operation::ListAgentStatuses)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -10774,15 +11787,15 @@ impl ListAgentStatusesInput {
             _input: &crate::input::ListAgentStatusesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_81 = &_input.instance_id;
-            let input_81 =
-                input_81
+            let input_88 = &_input.instance_id;
+            let input_88 =
+                input_88
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_81, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_88, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -10797,25 +11810,29 @@ impl ListAgentStatusesInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListAgentStatusesInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListAgentStatusesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_82) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_82));
+            if let Some(inner_89) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_89));
             }
-            if let Some(inner_83) = &_input.max_results {
+            if let Some(inner_90) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_83).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_90).encode(),
                 );
             }
-            if let Some(inner_84) = &_input.agent_status_types {
-                for inner_85 in inner_84 {
+            if let Some(inner_91) = &_input.agent_status_types {
+                for inner_92 in inner_91 {
                     query.push_kv(
                         "AgentStatusTypes",
-                        &aws_smithy_http::query::fmt_string(&inner_85),
+                        &aws_smithy_http::query::fmt_string(&inner_92),
                     );
                 }
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -10825,7 +11842,7 @@ impl ListAgentStatusesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -10846,11 +11863,14 @@ impl ListAgentStatusesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -10958,6 +11978,7 @@ pub type ListApprovedOriginsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListApprovedOriginsInput {
     /// Consumes the builder and constructs an Operation<[`ListApprovedOrigins`](crate::operation::ListApprovedOrigins)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -10972,15 +11993,15 @@ impl ListApprovedOriginsInput {
             _input: &crate::input::ListApprovedOriginsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_86 = &_input.instance_id;
-            let input_86 =
-                input_86
+            let input_93 = &_input.instance_id;
+            let input_93 =
+                input_93
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_86, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_93, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -10995,17 +12016,21 @@ impl ListApprovedOriginsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListApprovedOriginsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListApprovedOriginsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_87) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_87));
+            if let Some(inner_94) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_94));
             }
-            if let Some(inner_88) = &_input.max_results {
+            if let Some(inner_95) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_88).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_95).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -11015,7 +12040,7 @@ impl ListApprovedOriginsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -11036,11 +12061,14 @@ impl ListApprovedOriginsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -11161,6 +12189,7 @@ pub type ListBotsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListBotsInput {
     /// Consumes the builder and constructs an Operation<[`ListBots`](crate::operation::ListBots)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -11175,15 +12204,15 @@ impl ListBotsInput {
             _input: &crate::input::ListBotsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_89 = &_input.instance_id;
-            let input_89 =
-                input_89
+            let input_96 = &_input.instance_id;
+            let input_96 =
+                input_96
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_89, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_96, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -11198,20 +12227,24 @@ impl ListBotsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListBotsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListBotsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_90) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_90));
+            if let Some(inner_97) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_97));
             }
-            if let Some(inner_91) = &_input.max_results {
+            if let Some(inner_98) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_91).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_98).encode(),
                 );
             }
-            if let Some(inner_92) = &_input.lex_version {
-                query.push_kv("lexVersion", &aws_smithy_http::query::fmt_string(&inner_92));
+            if let Some(inner_99) = &_input.lex_version {
+                query.push_kv("lexVersion", &aws_smithy_http::query::fmt_string(&inner_99));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -11221,7 +12254,7 @@ impl ListBotsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -11242,11 +12275,14 @@ impl ListBotsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -11376,6 +12412,7 @@ pub type ListContactFlowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ListContactFlowsInput {
     /// Consumes the builder and constructs an Operation<[`ListContactFlows`](crate::operation::ListContactFlows)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -11390,15 +12427,15 @@ impl ListContactFlowsInput {
             _input: &crate::input::ListContactFlowsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_93 = &_input.instance_id;
-            let input_93 =
-                input_93
+            let input_100 = &_input.instance_id;
+            let input_100 =
+                input_100
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_93, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_100, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -11413,25 +12450,29 @@ impl ListContactFlowsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListContactFlowsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListContactFlowsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_94) = &_input.contact_flow_types {
-                for inner_95 in inner_94 {
+            if let Some(inner_101) = &_input.contact_flow_types {
+                for inner_102 in inner_101 {
                     query.push_kv(
                         "contactFlowTypes",
-                        &aws_smithy_http::query::fmt_string(&inner_95),
+                        &aws_smithy_http::query::fmt_string(&inner_102),
                     );
                 }
             }
-            if let Some(inner_96) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_96));
+            if let Some(inner_103) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_103));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -11441,7 +12482,7 @@ impl ListContactFlowsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -11462,11 +12503,14 @@ impl ListContactFlowsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -11506,6 +12550,251 @@ impl ListContactFlowsInput {
     /// Creates a new builder-style object to manufacture [`ListContactFlowsInput`](crate::input::ListContactFlowsInput)
     pub fn builder() -> crate::input::list_contact_flows_input::Builder {
         crate::input::list_contact_flows_input::Builder::default()
+    }
+}
+
+/// See [`ListContactReferencesInput`](crate::input::ListContactReferencesInput)
+pub mod list_contact_references_input {
+    /// A builder for [`ListContactReferencesInput`](crate::input::ListContactReferencesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) contact_id: std::option::Option<std::string::String>,
+        pub(crate) reference_types: std::option::Option<std::vec::Vec<crate::model::ReferenceType>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>The identifier of the initial contact.</p>
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the initial contact.</p>
+        pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_id = input;
+            self
+        }
+        /// Appends an item to `reference_types`.
+        ///
+        /// To override the contents of this collection use [`set_reference_types`](Self::set_reference_types).
+        ///
+        /// <p>The type of reference.</p>
+        pub fn reference_types(mut self, input: impl Into<crate::model::ReferenceType>) -> Self {
+            let mut v = self.reference_types.unwrap_or_default();
+            v.push(input.into());
+            self.reference_types = Some(v);
+            self
+        }
+        /// <p>The type of reference.</p>
+        pub fn set_reference_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ReferenceType>>,
+        ) -> Self {
+            self.reference_types = input;
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous
+        /// response in the next request to retrieve the next set of results.</p>
+        /// <important>
+        /// <p>This is not expected to be set since the value returned in the previous response is always
+        /// null.</p>
+        /// </important>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous
+        /// response in the next request to retrieve the next set of results.</p>
+        /// <important>
+        /// <p>This is not expected to be set since the value returned in the previous response is always
+        /// null.</p>
+        /// </important>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListContactReferencesInput`](crate::input::ListContactReferencesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListContactReferencesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListContactReferencesInput {
+                instance_id: self.instance_id,
+                contact_id: self.contact_id,
+                reference_types: self.reference_types,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListContactReferencesInputOperationOutputAlias = crate::operation::ListContactReferences;
+#[doc(hidden)]
+pub type ListContactReferencesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListContactReferencesInput {
+    /// Consumes the builder and constructs an Operation<[`ListContactReferences`](crate::operation::ListContactReferences)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListContactReferences,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListContactReferencesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_104 = &_input.instance_id;
+            let input_104 =
+                input_104
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "instance_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let instance_id = aws_smithy_http::label::fmt_string(input_104, false);
+            if instance_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "instance_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_105 = &_input.contact_id;
+            let input_105 =
+                input_105
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "contact_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let contact_id = aws_smithy_http::label::fmt_string(input_105, false);
+            if contact_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "contact_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/contact/references/{InstanceId}/{ContactId}",
+                InstanceId = instance_id,
+                ContactId = contact_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::ListContactReferencesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_106) = &_input.reference_types {
+                for inner_107 in inner_106 {
+                    query.push_kv(
+                        "referenceTypes",
+                        &aws_smithy_http::query::fmt_string(&inner_107),
+                    );
+                }
+            }
+            if let Some(inner_108) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_108));
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListContactReferencesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListContactReferencesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListContactReferences::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListContactReferences",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListContactReferencesInput`](crate::input::ListContactReferencesInput)
+    pub fn builder() -> crate::input::list_contact_references_input::Builder {
+        crate::input::list_contact_references_input::Builder::default()
     }
 }
 
@@ -11574,6 +12863,7 @@ pub type ListHoursOfOperationsInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl ListHoursOfOperationsInput {
     /// Consumes the builder and constructs an Operation<[`ListHoursOfOperations`](crate::operation::ListHoursOfOperations)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -11588,15 +12878,15 @@ impl ListHoursOfOperationsInput {
             _input: &crate::input::ListHoursOfOperationsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_97 = &_input.instance_id;
-            let input_97 =
-                input_97
+            let input_109 = &_input.instance_id;
+            let input_109 =
+                input_109
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_97, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_109, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -11611,17 +12901,21 @@ impl ListHoursOfOperationsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListHoursOfOperationsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListHoursOfOperationsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_98) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_98));
+            if let Some(inner_110) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_110));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -11631,7 +12925,7 @@ impl ListHoursOfOperationsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -11652,11 +12946,14 @@ impl ListHoursOfOperationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -11764,6 +13061,7 @@ pub type ListInstanceAttributesInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl ListInstanceAttributesInput {
     /// Consumes the builder and constructs an Operation<[`ListInstanceAttributes`](crate::operation::ListInstanceAttributes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -11778,15 +13076,15 @@ impl ListInstanceAttributesInput {
             _input: &crate::input::ListInstanceAttributesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_99 = &_input.instance_id;
-            let input_99 =
-                input_99
+            let input_111 = &_input.instance_id;
+            let input_111 =
+                input_111
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_99, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_111, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -11801,17 +13099,21 @@ impl ListInstanceAttributesInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListInstanceAttributesInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListInstanceAttributesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_100) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_100));
+            if let Some(inner_112) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_112));
             }
-            if let Some(inner_101) = &_input.max_results {
+            if let Some(inner_113) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_101).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_113).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -11821,7 +13123,7 @@ impl ListInstanceAttributesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -11842,11 +13144,14 @@ impl ListInstanceAttributesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -11942,6 +13247,7 @@ pub type ListInstancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListInstancesInput {
     /// Consumes the builder and constructs an Operation<[`ListInstances`](crate::operation::ListInstances)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -11959,17 +13265,21 @@ impl ListInstancesInput {
             write!(output, "/instance").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListInstancesInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListInstancesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_102) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_102));
+            if let Some(inner_114) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_114));
             }
-            if let Some(inner_103) = &_input.max_results {
+            if let Some(inner_115) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_103).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_115).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -11979,7 +13289,7 @@ impl ListInstancesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -12000,11 +13310,14 @@ impl ListInstancesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -12128,6 +13441,7 @@ pub type ListInstanceStorageConfigsInputOperationRetryAlias = aws_http::AwsError
 impl ListInstanceStorageConfigsInput {
     /// Consumes the builder and constructs an Operation<[`ListInstanceStorageConfigs`](crate::operation::ListInstanceStorageConfigs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -12142,15 +13456,15 @@ impl ListInstanceStorageConfigsInput {
             _input: &crate::input::ListInstanceStorageConfigsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_104 = &_input.instance_id;
-            let input_104 =
-                input_104
+            let input_116 = &_input.instance_id;
+            let input_116 =
+                input_116
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_104, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_116, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -12168,23 +13482,24 @@ impl ListInstanceStorageConfigsInput {
         fn uri_query(
             _input: &crate::input::ListInstanceStorageConfigsInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_105) = &_input.resource_type {
+            if let Some(inner_117) = &_input.resource_type {
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_105),
+                    &aws_smithy_http::query::fmt_string(&inner_117),
                 );
             }
-            if let Some(inner_106) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_106));
+            if let Some(inner_118) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_118));
             }
-            if let Some(inner_107) = &_input.max_results {
+            if let Some(inner_119) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_107).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_119).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -12194,7 +13509,7 @@ impl ListInstanceStorageConfigsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -12215,11 +13530,14 @@ impl ListInstanceStorageConfigsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -12343,6 +13661,7 @@ pub type ListIntegrationAssociationsInputOperationRetryAlias = aws_http::AwsErro
 impl ListIntegrationAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`ListIntegrationAssociations`](crate::operation::ListIntegrationAssociations)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -12357,15 +13676,15 @@ impl ListIntegrationAssociationsInput {
             _input: &crate::input::ListIntegrationAssociationsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_108 = &_input.instance_id;
-            let input_108 =
-                input_108
+            let input_120 = &_input.instance_id;
+            let input_120 =
+                input_120
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_108, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_120, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -12383,23 +13702,24 @@ impl ListIntegrationAssociationsInput {
         fn uri_query(
             _input: &crate::input::ListIntegrationAssociationsInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_109) = &_input.integration_type {
+            if let Some(inner_121) = &_input.integration_type {
                 query.push_kv(
                     "integrationType",
-                    &aws_smithy_http::query::fmt_string(&inner_109),
+                    &aws_smithy_http::query::fmt_string(&inner_121),
                 );
             }
-            if let Some(inner_110) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_110));
+            if let Some(inner_122) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_122));
             }
-            if let Some(inner_111) = &_input.max_results {
+            if let Some(inner_123) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_111).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_123).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -12409,7 +13729,7 @@ impl ListIntegrationAssociationsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -12430,11 +13750,14 @@ impl ListIntegrationAssociationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -12542,6 +13865,7 @@ pub type ListLambdaFunctionsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListLambdaFunctionsInput {
     /// Consumes the builder and constructs an Operation<[`ListLambdaFunctions`](crate::operation::ListLambdaFunctions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -12556,15 +13880,15 @@ impl ListLambdaFunctionsInput {
             _input: &crate::input::ListLambdaFunctionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_112 = &_input.instance_id;
-            let input_112 =
-                input_112
+            let input_124 = &_input.instance_id;
+            let input_124 =
+                input_124
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_112, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_124, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -12579,17 +13903,21 @@ impl ListLambdaFunctionsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListLambdaFunctionsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListLambdaFunctionsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_113) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_113));
+            if let Some(inner_125) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_125));
             }
-            if let Some(inner_114) = &_input.max_results {
+            if let Some(inner_126) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_114).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_126).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -12599,7 +13927,7 @@ impl ListLambdaFunctionsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -12620,11 +13948,14 @@ impl ListLambdaFunctionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -12734,6 +14065,7 @@ pub type ListLexBotsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListLexBotsInput {
     /// Consumes the builder and constructs an Operation<[`ListLexBots`](crate::operation::ListLexBots)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -12748,15 +14080,15 @@ impl ListLexBotsInput {
             _input: &crate::input::ListLexBotsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_115 = &_input.instance_id;
-            let input_115 =
-                input_115
+            let input_127 = &_input.instance_id;
+            let input_127 =
+                input_127
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_115, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_127, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -12771,17 +14103,21 @@ impl ListLexBotsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListLexBotsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListLexBotsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_116) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_116));
+            if let Some(inner_128) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_128));
             }
-            if let Some(inner_117) = &_input.max_results {
+            if let Some(inner_129) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_117).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_129).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -12791,7 +14127,7 @@ impl ListLexBotsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -12812,11 +14148,14 @@ impl ListLexBotsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -12974,6 +14313,7 @@ pub type ListPhoneNumbersInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ListPhoneNumbersInput {
     /// Consumes the builder and constructs an Operation<[`ListPhoneNumbers`](crate::operation::ListPhoneNumbers)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -12988,15 +14328,15 @@ impl ListPhoneNumbersInput {
             _input: &crate::input::ListPhoneNumbersInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_118 = &_input.instance_id;
-            let input_118 =
-                input_118
+            let input_130 = &_input.instance_id;
+            let input_130 =
+                input_130
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_118, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_130, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -13011,33 +14351,37 @@ impl ListPhoneNumbersInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListPhoneNumbersInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListPhoneNumbersInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_119) = &_input.phone_number_types {
-                for inner_120 in inner_119 {
+            if let Some(inner_131) = &_input.phone_number_types {
+                for inner_132 in inner_131 {
                     query.push_kv(
                         "phoneNumberTypes",
-                        &aws_smithy_http::query::fmt_string(&inner_120),
+                        &aws_smithy_http::query::fmt_string(&inner_132),
                     );
                 }
             }
-            if let Some(inner_121) = &_input.phone_number_country_codes {
-                for inner_122 in inner_121 {
+            if let Some(inner_133) = &_input.phone_number_country_codes {
+                for inner_134 in inner_133 {
                     query.push_kv(
                         "phoneNumberCountryCodes",
-                        &aws_smithy_http::query::fmt_string(&inner_122),
+                        &aws_smithy_http::query::fmt_string(&inner_134),
                     );
                 }
             }
-            if let Some(inner_123) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_123));
+            if let Some(inner_135) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_135));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -13047,7 +14391,7 @@ impl ListPhoneNumbersInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -13068,11 +14412,14 @@ impl ListPhoneNumbersInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -13180,6 +14527,7 @@ pub type ListPromptsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListPromptsInput {
     /// Consumes the builder and constructs an Operation<[`ListPrompts`](crate::operation::ListPrompts)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -13194,15 +14542,15 @@ impl ListPromptsInput {
             _input: &crate::input::ListPromptsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_124 = &_input.instance_id;
-            let input_124 =
-                input_124
+            let input_136 = &_input.instance_id;
+            let input_136 =
+                input_136
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_124, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_136, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -13217,17 +14565,21 @@ impl ListPromptsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListPromptsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListPromptsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_125) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_125));
+            if let Some(inner_137) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_137));
             }
-            if let Some(inner_126) = &_input.max_results {
+            if let Some(inner_138) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_126).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_138).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -13237,7 +14589,7 @@ impl ListPromptsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -13258,11 +14610,14 @@ impl ListPromptsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -13382,6 +14737,7 @@ pub type ListQueueQuickConnectsInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl ListQueueQuickConnectsInput {
     /// Consumes the builder and constructs an Operation<[`ListQueueQuickConnects`](crate::operation::ListQueueQuickConnects)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -13396,30 +14752,30 @@ impl ListQueueQuickConnectsInput {
             _input: &crate::input::ListQueueQuickConnectsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_127 = &_input.instance_id;
-            let input_127 =
-                input_127
+            let input_139 = &_input.instance_id;
+            let input_139 =
+                input_139
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_127, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_139, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_128 = &_input.queue_id;
-            let input_128 =
-                input_128
+            let input_140 = &_input.queue_id;
+            let input_140 =
+                input_140
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
                         details: "cannot be empty or unset",
                     })?;
-            let queue_id = aws_smithy_http::label::fmt_string(input_128, false);
+            let queue_id = aws_smithy_http::label::fmt_string(input_140, false);
             if queue_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "queue_id",
@@ -13435,17 +14791,21 @@ impl ListQueueQuickConnectsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListQueueQuickConnectsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListQueueQuickConnectsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_129) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_129));
+            if let Some(inner_141) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_141));
             }
-            if let Some(inner_130) = &_input.max_results {
+            if let Some(inner_142) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_130).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_142).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -13455,7 +14815,7 @@ impl ListQueueQuickConnectsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -13476,11 +14836,14 @@ impl ListQueueQuickConnectsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -13609,6 +14972,7 @@ pub type ListQueuesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListQueuesInput {
     /// Consumes the builder and constructs an Operation<[`ListQueues`](crate::operation::ListQueues)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -13623,15 +14987,15 @@ impl ListQueuesInput {
             _input: &crate::input::ListQueuesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_131 = &_input.instance_id;
-            let input_131 =
-                input_131
+            let input_143 = &_input.instance_id;
+            let input_143 =
+                input_143
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_131, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_143, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -13646,25 +15010,29 @@ impl ListQueuesInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListQueuesInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListQueuesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_132) = &_input.queue_types {
-                for inner_133 in inner_132 {
+            if let Some(inner_144) = &_input.queue_types {
+                for inner_145 in inner_144 {
                     query.push_kv(
                         "queueTypes",
-                        &aws_smithy_http::query::fmt_string(&inner_133),
+                        &aws_smithy_http::query::fmt_string(&inner_145),
                     );
                 }
             }
-            if let Some(inner_134) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_134));
+            if let Some(inner_146) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_146));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -13674,7 +15042,7 @@ impl ListQueuesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -13695,11 +15063,14 @@ impl ListQueuesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -13834,6 +15205,7 @@ pub type ListQuickConnectsInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ListQuickConnectsInput {
     /// Consumes the builder and constructs an Operation<[`ListQuickConnects`](crate::operation::ListQuickConnects)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -13848,15 +15220,15 @@ impl ListQuickConnectsInput {
             _input: &crate::input::ListQuickConnectsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_135 = &_input.instance_id;
-            let input_135 =
-                input_135
+            let input_147 = &_input.instance_id;
+            let input_147 =
+                input_147
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_135, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_147, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -13871,25 +15243,29 @@ impl ListQuickConnectsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListQuickConnectsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListQuickConnectsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_136) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_136));
+            if let Some(inner_148) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_148));
             }
-            if let Some(inner_137) = &_input.max_results {
+            if let Some(inner_149) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_137).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_149).encode(),
                 );
             }
-            if let Some(inner_138) = &_input.quick_connect_types {
-                for inner_139 in inner_138 {
+            if let Some(inner_150) = &_input.quick_connect_types {
+                for inner_151 in inner_150 {
                     query.push_kv(
                         "QuickConnectTypes",
-                        &aws_smithy_http::query::fmt_string(&inner_139),
+                        &aws_smithy_http::query::fmt_string(&inner_151),
                     );
                 }
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -13899,7 +15275,7 @@ impl ListQuickConnectsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -13920,11 +15296,14 @@ impl ListQuickConnectsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -14048,6 +15427,7 @@ pub type ListRoutingProfileQueuesInputOperationRetryAlias = aws_http::AwsErrorRe
 impl ListRoutingProfileQueuesInput {
     /// Consumes the builder and constructs an Operation<[`ListRoutingProfileQueues`](crate::operation::ListRoutingProfileQueues)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -14062,30 +15442,30 @@ impl ListRoutingProfileQueuesInput {
             _input: &crate::input::ListRoutingProfileQueuesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_140 = &_input.instance_id;
-            let input_140 =
-                input_140
+            let input_152 = &_input.instance_id;
+            let input_152 =
+                input_152
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_140, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_152, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_141 = &_input.routing_profile_id;
-            let input_141 =
-                input_141
+            let input_153 = &_input.routing_profile_id;
+            let input_153 =
+                input_153
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let routing_profile_id = aws_smithy_http::label::fmt_string(input_141, false);
+            let routing_profile_id = aws_smithy_http::label::fmt_string(input_153, false);
             if routing_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "routing_profile_id",
@@ -14104,17 +15484,18 @@ impl ListRoutingProfileQueuesInput {
         fn uri_query(
             _input: &crate::input::ListRoutingProfileQueuesInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_142) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_142));
+            if let Some(inner_154) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_154));
             }
-            if let Some(inner_143) = &_input.max_results {
+            if let Some(inner_155) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_143).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_155).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -14124,7 +15505,7 @@ impl ListRoutingProfileQueuesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -14145,11 +15526,14 @@ impl ListRoutingProfileQueuesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -14257,6 +15641,7 @@ pub type ListRoutingProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListRoutingProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListRoutingProfiles`](crate::operation::ListRoutingProfiles)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -14271,15 +15656,15 @@ impl ListRoutingProfilesInput {
             _input: &crate::input::ListRoutingProfilesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_144 = &_input.instance_id;
-            let input_144 =
-                input_144
+            let input_156 = &_input.instance_id;
+            let input_156 =
+                input_156
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_144, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_156, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -14294,17 +15679,21 @@ impl ListRoutingProfilesInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListRoutingProfilesInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListRoutingProfilesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_145) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_145));
+            if let Some(inner_157) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_157));
             }
-            if let Some(inner_146) = &_input.max_results {
+            if let Some(inner_158) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_146).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_158).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -14314,7 +15703,7 @@ impl ListRoutingProfilesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -14335,11 +15724,14 @@ impl ListRoutingProfilesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -14447,6 +15839,7 @@ pub type ListSecurityKeysInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ListSecurityKeysInput {
     /// Consumes the builder and constructs an Operation<[`ListSecurityKeys`](crate::operation::ListSecurityKeys)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -14461,15 +15854,15 @@ impl ListSecurityKeysInput {
             _input: &crate::input::ListSecurityKeysInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_147 = &_input.instance_id;
-            let input_147 =
-                input_147
+            let input_159 = &_input.instance_id;
+            let input_159 =
+                input_159
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_147, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_159, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -14484,17 +15877,21 @@ impl ListSecurityKeysInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListSecurityKeysInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListSecurityKeysInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_148) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_148));
+            if let Some(inner_160) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_160));
             }
-            if let Some(inner_149) = &_input.max_results {
+            if let Some(inner_161) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_149).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_161).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -14504,7 +15901,7 @@ impl ListSecurityKeysInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -14525,11 +15922,14 @@ impl ListSecurityKeysInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -14569,6 +15969,236 @@ impl ListSecurityKeysInput {
     /// Creates a new builder-style object to manufacture [`ListSecurityKeysInput`](crate::input::ListSecurityKeysInput)
     pub fn builder() -> crate::input::list_security_keys_input::Builder {
         crate::input::list_security_keys_input::Builder::default()
+    }
+}
+
+/// See [`ListSecurityProfilePermissionsInput`](crate::input::ListSecurityProfilePermissionsInput)
+pub mod list_security_profile_permissions_input {
+    /// A builder for [`ListSecurityProfilePermissionsInput`](crate::input::ListSecurityProfilePermissionsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) security_profile_id: std::option::Option<std::string::String>,
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The identifier for the security profle.</p>
+        pub fn security_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.security_profile_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the security profle.</p>
+        pub fn set_security_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.security_profile_id = input;
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous
+        /// response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous
+        /// response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSecurityProfilePermissionsInput`](crate::input::ListSecurityProfilePermissionsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListSecurityProfilePermissionsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListSecurityProfilePermissionsInput {
+                security_profile_id: self.security_profile_id,
+                instance_id: self.instance_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListSecurityProfilePermissionsInputOperationOutputAlias =
+    crate::operation::ListSecurityProfilePermissions;
+#[doc(hidden)]
+pub type ListSecurityProfilePermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListSecurityProfilePermissionsInput {
+    /// Consumes the builder and constructs an Operation<[`ListSecurityProfilePermissions`](crate::operation::ListSecurityProfilePermissions)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListSecurityProfilePermissions,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListSecurityProfilePermissionsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_162 = &_input.instance_id;
+            let input_162 =
+                input_162
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "instance_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let instance_id = aws_smithy_http::label::fmt_string(input_162, false);
+            if instance_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "instance_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_163 = &_input.security_profile_id;
+            let input_163 =
+                input_163
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "security_profile_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let security_profile_id = aws_smithy_http::label::fmt_string(input_163, false);
+            if security_profile_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "security_profile_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/security-profiles-permissions/{InstanceId}/{SecurityProfileId}",
+                InstanceId = instance_id,
+                SecurityProfileId = security_profile_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::ListSecurityProfilePermissionsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_164) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_164));
+            }
+            if let Some(inner_165) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    aws_smithy_types::primitive::Encoder::from(*inner_165).encode(),
+                );
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListSecurityProfilePermissionsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListSecurityProfilePermissionsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSecurityProfilePermissions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSecurityProfilePermissions",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListSecurityProfilePermissionsInput`](crate::input::ListSecurityProfilePermissionsInput)
+    pub fn builder() -> crate::input::list_security_profile_permissions_input::Builder {
+        crate::input::list_security_profile_permissions_input::Builder::default()
     }
 }
 
@@ -14637,6 +16267,7 @@ pub type ListSecurityProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl ListSecurityProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListSecurityProfiles`](crate::operation::ListSecurityProfiles)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -14651,15 +16282,15 @@ impl ListSecurityProfilesInput {
             _input: &crate::input::ListSecurityProfilesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_150 = &_input.instance_id;
-            let input_150 =
-                input_150
+            let input_166 = &_input.instance_id;
+            let input_166 =
+                input_166
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_150, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_166, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -14674,17 +16305,21 @@ impl ListSecurityProfilesInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListSecurityProfilesInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListSecurityProfilesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_151) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_151));
+            if let Some(inner_167) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_167));
             }
-            if let Some(inner_152) = &_input.max_results {
+            if let Some(inner_168) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_152).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_168).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -14694,7 +16329,7 @@ impl ListSecurityProfilesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -14715,11 +16350,14 @@ impl ListSecurityProfilesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -14801,6 +16439,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -14815,15 +16454,15 @@ impl ListTagsForResourceInput {
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_153 = &_input.resource_arn;
-            let input_153 =
-                input_153
+            let input_169 = &_input.resource_arn;
+            let input_169 =
+                input_169
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_153, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_169, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -14862,11 +16501,14 @@ impl ListTagsForResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -14989,6 +16631,7 @@ pub type ListUseCasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListUseCasesInput {
     /// Consumes the builder and constructs an Operation<[`ListUseCases`](crate::operation::ListUseCases)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -15003,30 +16646,30 @@ impl ListUseCasesInput {
             _input: &crate::input::ListUseCasesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_154 = &_input.instance_id;
-            let input_154 =
-                input_154
+            let input_170 = &_input.instance_id;
+            let input_170 =
+                input_170
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_154, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_170, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_155 = &_input.integration_association_id;
-            let input_155 =
-                input_155
+            let input_171 = &_input.integration_association_id;
+            let input_171 =
+                input_171
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_association_id",
                         details: "cannot be empty or unset",
                     })?;
-            let integration_association_id = aws_smithy_http::label::fmt_string(input_155, false);
+            let integration_association_id = aws_smithy_http::label::fmt_string(input_171, false);
             if integration_association_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "integration_association_id",
@@ -15036,17 +16679,21 @@ impl ListUseCasesInput {
             write!(output, "/instance/{InstanceId}/integration-associations/{IntegrationAssociationId}/use-cases", InstanceId = instance_id, IntegrationAssociationId = integration_association_id).expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListUseCasesInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListUseCasesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_156) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_156));
+            if let Some(inner_172) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_172));
             }
-            if let Some(inner_157) = &_input.max_results {
+            if let Some(inner_173) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_157).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_173).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -15056,7 +16703,7 @@ impl ListUseCasesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -15077,11 +16724,14 @@ impl ListUseCasesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -15190,6 +16840,7 @@ pub type ListUserHierarchyGroupsInputOperationRetryAlias = aws_http::AwsErrorRet
 impl ListUserHierarchyGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListUserHierarchyGroups`](crate::operation::ListUserHierarchyGroups)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -15204,15 +16855,15 @@ impl ListUserHierarchyGroupsInput {
             _input: &crate::input::ListUserHierarchyGroupsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_158 = &_input.instance_id;
-            let input_158 =
-                input_158
+            let input_174 = &_input.instance_id;
+            let input_174 =
+                input_174
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_158, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_174, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -15227,17 +16878,21 @@ impl ListUserHierarchyGroupsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListUserHierarchyGroupsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListUserHierarchyGroupsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_159) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_159));
+            if let Some(inner_175) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_175));
             }
-            if let Some(inner_160) = &_input.max_results {
+            if let Some(inner_176) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_160).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_176).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -15247,7 +16902,7 @@ impl ListUserHierarchyGroupsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -15268,11 +16923,14 @@ impl ListUserHierarchyGroupsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -15378,6 +17036,7 @@ pub type ListUsersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListUsersInput {
     /// Consumes the builder and constructs an Operation<[`ListUsers`](crate::operation::ListUsers)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -15392,15 +17051,15 @@ impl ListUsersInput {
             _input: &crate::input::ListUsersInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_161 = &_input.instance_id;
-            let input_161 =
-                input_161
+            let input_177 = &_input.instance_id;
+            let input_177 =
+                input_177
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_161, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_177, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -15415,17 +17074,21 @@ impl ListUsersInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListUsersInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListUsersInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_162) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_162));
+            if let Some(inner_178) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_178));
             }
-            if let Some(inner_163) = &_input.max_results {
+            if let Some(inner_179) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_163).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_179).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -15435,7 +17098,7 @@ impl ListUsersInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -15456,11 +17119,14 @@ impl ListUsersInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -15569,6 +17235,7 @@ pub type ResumeContactRecordingInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl ResumeContactRecordingInput {
     /// Consumes the builder and constructs an Operation<[`ResumeContactRecording`](crate::operation::ResumeContactRecording)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -15622,11 +17289,14 @@ impl ResumeContactRecordingInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -15822,6 +17492,7 @@ pub type StartChatContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl StartChatContactInput {
     /// Consumes the builder and constructs an Operation<[`StartChatContact`](crate::operation::StartChatContact)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -15876,11 +17547,14 @@ impl StartChatContactInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -16018,6 +17692,7 @@ pub type StartContactRecordingInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl StartContactRecordingInput {
     /// Consumes the builder and constructs an Operation<[`StartContactRecording`](crate::operation::StartContactRecording)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -16071,11 +17746,14 @@ impl StartContactRecordingInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -16212,6 +17890,7 @@ pub type StartContactStreamingInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl StartContactStreamingInput {
     /// Consumes the builder and constructs an Operation<[`StartContactStreaming`](crate::operation::StartContactStreaming)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -16268,11 +17947,14 @@ impl StartContactStreamingInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -16547,6 +18229,7 @@ pub type StartOutboundVoiceContactInputOperationRetryAlias = aws_http::AwsErrorR
 impl StartOutboundVoiceContactInput {
     /// Consumes the builder and constructs an Operation<[`StartOutboundVoiceContact`](crate::operation::StartOutboundVoiceContact)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -16603,11 +18286,14 @@ impl StartOutboundVoiceContactInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -16676,6 +18362,7 @@ pub mod start_task_contact_input {
         >,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) scheduled_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -16816,6 +18503,19 @@ pub mod start_task_contact_input {
             self.client_token = input;
             self
         }
+        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+        pub fn scheduled_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.scheduled_time = Some(input);
+            self
+        }
+        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+        pub fn set_scheduled_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.scheduled_time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartTaskContactInput`](crate::input::StartTaskContactInput)
         pub fn build(
             self,
@@ -16832,6 +18532,7 @@ pub mod start_task_contact_input {
                 references: self.references,
                 description: self.description,
                 client_token: self.client_token,
+                scheduled_time: self.scheduled_time,
             })
         }
     }
@@ -16843,6 +18544,7 @@ pub type StartTaskContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl StartTaskContactInput {
     /// Consumes the builder and constructs an Operation<[`StartTaskContact`](crate::operation::StartTaskContact)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -16897,11 +18599,14 @@ impl StartTaskContactInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -17003,6 +18708,7 @@ pub type StopContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StopContactInput {
     /// Consumes the builder and constructs an Operation<[`StopContact`](crate::operation::StopContact)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -17053,11 +18759,14 @@ impl StopContactInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -17176,6 +18885,7 @@ pub type StopContactRecordingInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl StopContactRecordingInput {
     /// Consumes the builder and constructs an Operation<[`StopContactRecording`](crate::operation::StopContactRecording)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -17229,11 +18939,14 @@ impl StopContactRecordingInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -17349,6 +19062,7 @@ pub type StopContactStreamingInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl StopContactStreamingInput {
     /// Consumes the builder and constructs an Operation<[`StopContactStreaming`](crate::operation::StopContactStreaming)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -17402,11 +19116,14 @@ impl StopContactStreamingInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -17526,6 +19243,7 @@ pub type SuspendContactRecordingInputOperationRetryAlias = aws_http::AwsErrorRet
 impl SuspendContactRecordingInput {
     /// Consumes the builder and constructs an Operation<[`SuspendContactRecording`](crate::operation::SuspendContactRecording)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -17579,11 +19297,14 @@ impl SuspendContactRecordingInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -17702,6 +19423,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -17716,15 +19438,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_164 = &_input.resource_arn;
-            let input_164 =
-                input_164
+            let input_180 = &_input.resource_arn;
+            let input_180 =
+                input_180
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_164, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_180, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -17768,11 +19490,14 @@ impl TagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -17883,6 +19608,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -17897,15 +19623,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_165 = &_input.resource_arn;
-            let input_165 =
-                input_165
+            let input_181 = &_input.resource_arn;
+            let input_181 =
+                input_181
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_165, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_181, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -17916,13 +19642,17 @@ impl UntagResourceInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::UntagResourceInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_166) = &_input.tag_keys {
-                for inner_167 in inner_166 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_167));
+            if let Some(inner_182) = &_input.tag_keys {
+                for inner_183 in inner_182 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_183));
                 }
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -17932,7 +19662,7 @@ impl UntagResourceInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -17953,11 +19683,14 @@ impl UntagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -18117,6 +19850,7 @@ pub type UpdateAgentStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl UpdateAgentStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAgentStatus`](crate::operation::UpdateAgentStatus)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -18131,30 +19865,30 @@ impl UpdateAgentStatusInput {
             _input: &crate::input::UpdateAgentStatusInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_168 = &_input.instance_id;
-            let input_168 =
-                input_168
+            let input_184 = &_input.instance_id;
+            let input_184 =
+                input_184
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_168, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_184, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_169 = &_input.agent_status_id;
-            let input_169 =
-                input_169
+            let input_185 = &_input.agent_status_id;
+            let input_185 =
+                input_185
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "agent_status_id",
                         details: "cannot be empty or unset",
                     })?;
-            let agent_status_id = aws_smithy_http::label::fmt_string(input_169, false);
+            let agent_status_id = aws_smithy_http::label::fmt_string(input_185, false);
             if agent_status_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "agent_status_id",
@@ -18204,11 +19938,14 @@ impl UpdateAgentStatusInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -18256,6 +19993,257 @@ impl UpdateAgentStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateAgentStatusInput`](crate::input::UpdateAgentStatusInput)
     pub fn builder() -> crate::input::update_agent_status_input::Builder {
         crate::input::update_agent_status_input::Builder::default()
+    }
+}
+
+/// See [`UpdateContactInput`](crate::input::UpdateContactInput)
+pub mod update_contact_input {
+    /// A builder for [`UpdateContactInput`](crate::input::UpdateContactInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) contact_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) references: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::Reference>,
+        >,
+    }
+    impl Builder {
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
+        /// first interaction with your contact center.</p>
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
+        /// first interaction with your contact center.</p>
+        pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_id = input;
+            self
+        }
+        /// <p>The name of the contact.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the contact.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the contact.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the contact.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Adds a key-value pair to `references`.
+        ///
+        /// To override the contents of this collection use [`set_references`](Self::set_references).
+        ///
+        /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
+        pub fn references(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<crate::model::Reference>,
+        ) -> Self {
+            let mut hash_map = self.references.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.references = Some(hash_map);
+            self
+        }
+        /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
+        pub fn set_references(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::Reference>,
+            >,
+        ) -> Self {
+            self.references = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateContactInput`](crate::input::UpdateContactInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateContactInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateContactInput {
+                instance_id: self.instance_id,
+                contact_id: self.contact_id,
+                name: self.name,
+                description: self.description,
+                references: self.references,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateContactInputOperationOutputAlias = crate::operation::UpdateContact;
+#[doc(hidden)]
+pub type UpdateContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateContactInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateContact`](crate::operation::UpdateContact)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateContact,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateContactInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_186 = &_input.instance_id;
+            let input_186 =
+                input_186
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "instance_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let instance_id = aws_smithy_http::label::fmt_string(input_186, false);
+            if instance_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "instance_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_187 = &_input.contact_id;
+            let input_187 =
+                input_187
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "contact_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let contact_id = aws_smithy_http::label::fmt_string(input_187, false);
+            if contact_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "contact_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/contacts/{InstanceId}/{ContactId}",
+                InstanceId = instance_id,
+                ContactId = contact_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateContactInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateContactInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_contact(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateContact::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateContact",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateContactInput`](crate::input::UpdateContactInput)
+    pub fn builder() -> crate::input::update_contact_input::Builder {
+        crate::input::update_contact_input::Builder::default()
     }
 }
 
@@ -18351,6 +20339,7 @@ pub type UpdateContactAttributesInputOperationRetryAlias = aws_http::AwsErrorRet
 impl UpdateContactAttributesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContactAttributes`](crate::operation::UpdateContactAttributes)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -18404,11 +20393,14 @@ impl UpdateContactAttributesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -18530,6 +20522,7 @@ pub type UpdateContactFlowContentInputOperationRetryAlias = aws_http::AwsErrorRe
 impl UpdateContactFlowContentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContactFlowContent`](crate::operation::UpdateContactFlowContent)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -18544,30 +20537,30 @@ impl UpdateContactFlowContentInput {
             _input: &crate::input::UpdateContactFlowContentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_170 = &_input.instance_id;
-            let input_170 =
-                input_170
+            let input_188 = &_input.instance_id;
+            let input_188 =
+                input_188
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_170, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_188, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_171 = &_input.contact_flow_id;
-            let input_171 =
-                input_171
+            let input_189 = &_input.contact_flow_id;
+            let input_189 =
+                input_189
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_id",
                         details: "cannot be empty or unset",
                     })?;
-            let contact_flow_id = aws_smithy_http::label::fmt_string(input_171, false);
+            let contact_flow_id = aws_smithy_http::label::fmt_string(input_189, false);
             if contact_flow_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "contact_flow_id",
@@ -18619,11 +20612,14 @@ impl UpdateContactFlowContentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -18752,6 +20748,7 @@ pub type UpdateContactFlowNameInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl UpdateContactFlowNameInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContactFlowName`](crate::operation::UpdateContactFlowName)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -18766,30 +20763,30 @@ impl UpdateContactFlowNameInput {
             _input: &crate::input::UpdateContactFlowNameInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_172 = &_input.instance_id;
-            let input_172 =
-                input_172
+            let input_190 = &_input.instance_id;
+            let input_190 =
+                input_190
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_172, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_190, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_173 = &_input.contact_flow_id;
-            let input_173 =
-                input_173
+            let input_191 = &_input.contact_flow_id;
+            let input_191 =
+                input_191
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "contact_flow_id",
                         details: "cannot be empty or unset",
                     })?;
-            let contact_flow_id = aws_smithy_http::label::fmt_string(input_173, false);
+            let contact_flow_id = aws_smithy_http::label::fmt_string(input_191, false);
             if contact_flow_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "contact_flow_id",
@@ -18841,11 +20838,14 @@ impl UpdateContactFlowNameInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -18893,6 +20893,184 @@ impl UpdateContactFlowNameInput {
     /// Creates a new builder-style object to manufacture [`UpdateContactFlowNameInput`](crate::input::UpdateContactFlowNameInput)
     pub fn builder() -> crate::input::update_contact_flow_name_input::Builder {
         crate::input::update_contact_flow_name_input::Builder::default()
+    }
+}
+
+/// See [`UpdateContactScheduleInput`](crate::input::UpdateContactScheduleInput)
+pub mod update_contact_schedule_input {
+    /// A builder for [`UpdateContactScheduleInput`](crate::input::UpdateContactScheduleInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) contact_id: std::option::Option<std::string::String>,
+        pub(crate) scheduled_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>The identifier of the contact.</p>
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the contact.</p>
+        pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_id = input;
+            self
+        }
+        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+        pub fn scheduled_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.scheduled_time = Some(input);
+            self
+        }
+        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+        pub fn set_scheduled_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.scheduled_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateContactScheduleInput`](crate::input::UpdateContactScheduleInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateContactScheduleInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateContactScheduleInput {
+                instance_id: self.instance_id,
+                contact_id: self.contact_id,
+                scheduled_time: self.scheduled_time,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateContactScheduleInputOperationOutputAlias = crate::operation::UpdateContactSchedule;
+#[doc(hidden)]
+pub type UpdateContactScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateContactScheduleInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateContactSchedule`](crate::operation::UpdateContactSchedule)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateContactSchedule,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateContactScheduleInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/contact/schedule").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateContactScheduleInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateContactScheduleInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_contact_schedule(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateContactSchedule::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateContactSchedule",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateContactScheduleInput`](crate::input::UpdateContactScheduleInput)
+    pub fn builder() -> crate::input::update_contact_schedule_input::Builder {
+        crate::input::update_contact_schedule_input::Builder::default()
     }
 }
 
@@ -19007,6 +21185,7 @@ pub type UpdateHoursOfOperationInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl UpdateHoursOfOperationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateHoursOfOperation`](crate::operation::UpdateHoursOfOperation)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -19021,30 +21200,30 @@ impl UpdateHoursOfOperationInput {
             _input: &crate::input::UpdateHoursOfOperationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_174 = &_input.instance_id;
-            let input_174 =
-                input_174
+            let input_192 = &_input.instance_id;
+            let input_192 =
+                input_192
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_174, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_192, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_175 = &_input.hours_of_operation_id;
-            let input_175 =
-                input_175
+            let input_193 = &_input.hours_of_operation_id;
+            let input_193 =
+                input_193
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hours_of_operation_id",
                         details: "cannot be empty or unset",
                     })?;
-            let hours_of_operation_id = aws_smithy_http::label::fmt_string(input_175, false);
+            let hours_of_operation_id = aws_smithy_http::label::fmt_string(input_193, false);
             if hours_of_operation_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "hours_of_operation_id",
@@ -19096,11 +21275,14 @@ impl UpdateHoursOfOperationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -19226,6 +21408,7 @@ pub type UpdateInstanceAttributeInputOperationRetryAlias = aws_http::AwsErrorRet
 impl UpdateInstanceAttributeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInstanceAttribute`](crate::operation::UpdateInstanceAttribute)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -19240,30 +21423,30 @@ impl UpdateInstanceAttributeInput {
             _input: &crate::input::UpdateInstanceAttributeInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_176 = &_input.instance_id;
-            let input_176 =
-                input_176
+            let input_194 = &_input.instance_id;
+            let input_194 =
+                input_194
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_176, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_194, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_177 = &_input.attribute_type;
-            let input_177 =
-                input_177
+            let input_195 = &_input.attribute_type;
+            let input_195 =
+                input_195
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "attribute_type",
                         details: "cannot be empty or unset",
                     })?;
-            let attribute_type = aws_smithy_http::label::fmt_string(input_177, false);
+            let attribute_type = aws_smithy_http::label::fmt_string(input_195, false);
             if attribute_type.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "attribute_type",
@@ -19315,11 +21498,14 @@ impl UpdateInstanceAttributeInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -19455,6 +21641,7 @@ pub type UpdateInstanceStorageConfigInputOperationRetryAlias = aws_http::AwsErro
 impl UpdateInstanceStorageConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInstanceStorageConfig`](crate::operation::UpdateInstanceStorageConfig)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -19469,30 +21656,30 @@ impl UpdateInstanceStorageConfigInput {
             _input: &crate::input::UpdateInstanceStorageConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_178 = &_input.instance_id;
-            let input_178 =
-                input_178
+            let input_196 = &_input.instance_id;
+            let input_196 =
+                input_196
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_178, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_196, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_179 = &_input.association_id;
-            let input_179 =
-                input_179
+            let input_197 = &_input.association_id;
+            let input_197 =
+                input_197
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "association_id",
                         details: "cannot be empty or unset",
                     })?;
-            let association_id = aws_smithy_http::label::fmt_string(input_179, false);
+            let association_id = aws_smithy_http::label::fmt_string(input_197, false);
             if association_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "association_id",
@@ -19511,14 +21698,15 @@ impl UpdateInstanceStorageConfigInput {
         fn uri_query(
             _input: &crate::input::UpdateInstanceStorageConfigInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_180) = &_input.resource_type {
+            if let Some(inner_198) = &_input.resource_type {
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_180),
+                    &aws_smithy_http::query::fmt_string(&inner_198),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -19528,7 +21716,7 @@ impl UpdateInstanceStorageConfigInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -19556,11 +21744,14 @@ impl UpdateInstanceStorageConfigInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -19678,6 +21869,7 @@ pub type UpdateQueueHoursOfOperationInputOperationRetryAlias = aws_http::AwsErro
 impl UpdateQueueHoursOfOperationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateQueueHoursOfOperation`](crate::operation::UpdateQueueHoursOfOperation)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -19692,30 +21884,30 @@ impl UpdateQueueHoursOfOperationInput {
             _input: &crate::input::UpdateQueueHoursOfOperationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_181 = &_input.instance_id;
-            let input_181 =
-                input_181
+            let input_199 = &_input.instance_id;
+            let input_199 =
+                input_199
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_181, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_199, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_182 = &_input.queue_id;
-            let input_182 =
-                input_182
+            let input_200 = &_input.queue_id;
+            let input_200 =
+                input_200
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
                         details: "cannot be empty or unset",
                     })?;
-            let queue_id = aws_smithy_http::label::fmt_string(input_182, false);
+            let queue_id = aws_smithy_http::label::fmt_string(input_200, false);
             if queue_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "queue_id",
@@ -19766,11 +21958,14 @@ impl UpdateQueueHoursOfOperationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -19884,6 +22079,7 @@ pub type UpdateQueueMaxContactsInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl UpdateQueueMaxContactsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateQueueMaxContacts`](crate::operation::UpdateQueueMaxContacts)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -19898,30 +22094,30 @@ impl UpdateQueueMaxContactsInput {
             _input: &crate::input::UpdateQueueMaxContactsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_183 = &_input.instance_id;
-            let input_183 =
-                input_183
+            let input_201 = &_input.instance_id;
+            let input_201 =
+                input_201
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_183, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_201, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_184 = &_input.queue_id;
-            let input_184 =
-                input_184
+            let input_202 = &_input.queue_id;
+            let input_202 =
+                input_202
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
                         details: "cannot be empty or unset",
                     })?;
-            let queue_id = aws_smithy_http::label::fmt_string(input_184, false);
+            let queue_id = aws_smithy_http::label::fmt_string(input_202, false);
             if queue_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "queue_id",
@@ -19973,11 +22169,14 @@ impl UpdateQueueMaxContactsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -20103,6 +22302,7 @@ pub type UpdateQueueNameInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl UpdateQueueNameInput {
     /// Consumes the builder and constructs an Operation<[`UpdateQueueName`](crate::operation::UpdateQueueName)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -20117,30 +22317,30 @@ impl UpdateQueueNameInput {
             _input: &crate::input::UpdateQueueNameInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_185 = &_input.instance_id;
-            let input_185 =
-                input_185
+            let input_203 = &_input.instance_id;
+            let input_203 =
+                input_203
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_185, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_203, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_186 = &_input.queue_id;
-            let input_186 =
-                input_186
+            let input_204 = &_input.queue_id;
+            let input_204 =
+                input_204
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
                         details: "cannot be empty or unset",
                     })?;
-            let queue_id = aws_smithy_http::label::fmt_string(input_186, false);
+            let queue_id = aws_smithy_http::label::fmt_string(input_204, false);
             if queue_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "queue_id",
@@ -20190,11 +22390,14 @@ impl UpdateQueueNameInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -20312,6 +22515,7 @@ pub type UpdateQueueOutboundCallerConfigInputOperationRetryAlias = aws_http::Aws
 impl UpdateQueueOutboundCallerConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateQueueOutboundCallerConfig`](crate::operation::UpdateQueueOutboundCallerConfig)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -20326,30 +22530,30 @@ impl UpdateQueueOutboundCallerConfigInput {
             _input: &crate::input::UpdateQueueOutboundCallerConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_187 = &_input.instance_id;
-            let input_187 =
-                input_187
+            let input_205 = &_input.instance_id;
+            let input_205 =
+                input_205
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_187, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_205, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_188 = &_input.queue_id;
-            let input_188 =
-                input_188
+            let input_206 = &_input.queue_id;
+            let input_206 =
+                input_206
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
                         details: "cannot be empty or unset",
                     })?;
-            let queue_id = aws_smithy_http::label::fmt_string(input_188, false);
+            let queue_id = aws_smithy_http::label::fmt_string(input_206, false);
             if queue_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "queue_id",
@@ -20400,11 +22604,14 @@ impl UpdateQueueOutboundCallerConfigInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -20518,6 +22725,7 @@ pub type UpdateQueueStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl UpdateQueueStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdateQueueStatus`](crate::operation::UpdateQueueStatus)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -20532,30 +22740,30 @@ impl UpdateQueueStatusInput {
             _input: &crate::input::UpdateQueueStatusInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_189 = &_input.instance_id;
-            let input_189 =
-                input_189
+            let input_207 = &_input.instance_id;
+            let input_207 =
+                input_207
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_189, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_207, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_190 = &_input.queue_id;
-            let input_190 =
-                input_190
+            let input_208 = &_input.queue_id;
+            let input_208 =
+                input_208
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "queue_id",
                         details: "cannot be empty or unset",
                     })?;
-            let queue_id = aws_smithy_http::label::fmt_string(input_190, false);
+            let queue_id = aws_smithy_http::label::fmt_string(input_208, false);
             if queue_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "queue_id",
@@ -20605,11 +22813,14 @@ impl UpdateQueueStatusInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -20730,6 +22941,7 @@ pub type UpdateQuickConnectConfigInputOperationRetryAlias = aws_http::AwsErrorRe
 impl UpdateQuickConnectConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateQuickConnectConfig`](crate::operation::UpdateQuickConnectConfig)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -20744,30 +22956,30 @@ impl UpdateQuickConnectConfigInput {
             _input: &crate::input::UpdateQuickConnectConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_191 = &_input.instance_id;
-            let input_191 =
-                input_191
+            let input_209 = &_input.instance_id;
+            let input_209 =
+                input_209
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_191, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_209, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_192 = &_input.quick_connect_id;
-            let input_192 =
-                input_192
+            let input_210 = &_input.quick_connect_id;
+            let input_210 =
+                input_210
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "quick_connect_id",
                         details: "cannot be empty or unset",
                     })?;
-            let quick_connect_id = aws_smithy_http::label::fmt_string(input_192, false);
+            let quick_connect_id = aws_smithy_http::label::fmt_string(input_210, false);
             if quick_connect_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "quick_connect_id",
@@ -20819,11 +23031,14 @@ impl UpdateQuickConnectConfigInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -20952,6 +23167,7 @@ pub type UpdateQuickConnectNameInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl UpdateQuickConnectNameInput {
     /// Consumes the builder and constructs an Operation<[`UpdateQuickConnectName`](crate::operation::UpdateQuickConnectName)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -20966,30 +23182,30 @@ impl UpdateQuickConnectNameInput {
             _input: &crate::input::UpdateQuickConnectNameInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_193 = &_input.instance_id;
-            let input_193 =
-                input_193
+            let input_211 = &_input.instance_id;
+            let input_211 =
+                input_211
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_193, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_211, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_194 = &_input.quick_connect_id;
-            let input_194 =
-                input_194
+            let input_212 = &_input.quick_connect_id;
+            let input_212 =
+                input_212
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "quick_connect_id",
                         details: "cannot be empty or unset",
                     })?;
-            let quick_connect_id = aws_smithy_http::label::fmt_string(input_194, false);
+            let quick_connect_id = aws_smithy_http::label::fmt_string(input_212, false);
             if quick_connect_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "quick_connect_id",
@@ -21041,11 +23257,14 @@ impl UpdateQuickConnectNameInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -21176,6 +23395,7 @@ pub type UpdateRoutingProfileConcurrencyInputOperationRetryAlias = aws_http::Aws
 impl UpdateRoutingProfileConcurrencyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoutingProfileConcurrency`](crate::operation::UpdateRoutingProfileConcurrency)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -21190,30 +23410,30 @@ impl UpdateRoutingProfileConcurrencyInput {
             _input: &crate::input::UpdateRoutingProfileConcurrencyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_195 = &_input.instance_id;
-            let input_195 =
-                input_195
+            let input_213 = &_input.instance_id;
+            let input_213 =
+                input_213
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_195, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_213, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_196 = &_input.routing_profile_id;
-            let input_196 =
-                input_196
+            let input_214 = &_input.routing_profile_id;
+            let input_214 =
+                input_214
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let routing_profile_id = aws_smithy_http::label::fmt_string(input_196, false);
+            let routing_profile_id = aws_smithy_http::label::fmt_string(input_214, false);
             if routing_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "routing_profile_id",
@@ -21264,11 +23484,14 @@ impl UpdateRoutingProfileConcurrencyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -21392,6 +23615,7 @@ pub type UpdateRoutingProfileDefaultOutboundQueueInputOperationRetryAlias =
 impl UpdateRoutingProfileDefaultOutboundQueueInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoutingProfileDefaultOutboundQueue`](crate::operation::UpdateRoutingProfileDefaultOutboundQueue)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -21406,30 +23630,30 @@ impl UpdateRoutingProfileDefaultOutboundQueueInput {
             _input: &crate::input::UpdateRoutingProfileDefaultOutboundQueueInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_197 = &_input.instance_id;
-            let input_197 =
-                input_197
+            let input_215 = &_input.instance_id;
+            let input_215 =
+                input_215
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_197, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_215, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_198 = &_input.routing_profile_id;
-            let input_198 =
-                input_198
+            let input_216 = &_input.routing_profile_id;
+            let input_216 =
+                input_216
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let routing_profile_id = aws_smithy_http::label::fmt_string(input_198, false);
+            let routing_profile_id = aws_smithy_http::label::fmt_string(input_216, false);
             if routing_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "routing_profile_id",
@@ -21480,11 +23704,14 @@ impl UpdateRoutingProfileDefaultOutboundQueueInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -21614,6 +23841,7 @@ pub type UpdateRoutingProfileNameInputOperationRetryAlias = aws_http::AwsErrorRe
 impl UpdateRoutingProfileNameInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoutingProfileName`](crate::operation::UpdateRoutingProfileName)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -21628,30 +23856,30 @@ impl UpdateRoutingProfileNameInput {
             _input: &crate::input::UpdateRoutingProfileNameInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_199 = &_input.instance_id;
-            let input_199 =
-                input_199
+            let input_217 = &_input.instance_id;
+            let input_217 =
+                input_217
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_199, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_217, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_200 = &_input.routing_profile_id;
-            let input_200 =
-                input_200
+            let input_218 = &_input.routing_profile_id;
+            let input_218 =
+                input_218
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let routing_profile_id = aws_smithy_http::label::fmt_string(input_200, false);
+            let routing_profile_id = aws_smithy_http::label::fmt_string(input_218, false);
             if routing_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "routing_profile_id",
@@ -21703,11 +23931,14 @@ impl UpdateRoutingProfileNameInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -21842,6 +24073,7 @@ pub type UpdateRoutingProfileQueuesInputOperationRetryAlias = aws_http::AwsError
 impl UpdateRoutingProfileQueuesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoutingProfileQueues`](crate::operation::UpdateRoutingProfileQueues)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -21856,30 +24088,30 @@ impl UpdateRoutingProfileQueuesInput {
             _input: &crate::input::UpdateRoutingProfileQueuesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_201 = &_input.instance_id;
-            let input_201 =
-                input_201
+            let input_219 = &_input.instance_id;
+            let input_219 =
+                input_219
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_201, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_219, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_202 = &_input.routing_profile_id;
-            let input_202 =
-                input_202
+            let input_220 = &_input.routing_profile_id;
+            let input_220 =
+                input_220
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "routing_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let routing_profile_id = aws_smithy_http::label::fmt_string(input_202, false);
+            let routing_profile_id = aws_smithy_http::label::fmt_string(input_220, false);
             if routing_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "routing_profile_id",
@@ -21930,11 +24162,14 @@ impl UpdateRoutingProfileQueuesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -21982,6 +24217,241 @@ impl UpdateRoutingProfileQueuesInput {
     /// Creates a new builder-style object to manufacture [`UpdateRoutingProfileQueuesInput`](crate::input::UpdateRoutingProfileQueuesInput)
     pub fn builder() -> crate::input::update_routing_profile_queues_input::Builder {
         crate::input::update_routing_profile_queues_input::Builder::default()
+    }
+}
+
+/// See [`UpdateSecurityProfileInput`](crate::input::UpdateSecurityProfileInput)
+pub mod update_security_profile_input {
+    /// A builder for [`UpdateSecurityProfileInput`](crate::input::UpdateSecurityProfileInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) permissions: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) security_profile_id: std::option::Option<std::string::String>,
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The description of the security profile.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the security profile.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `permissions`.
+        ///
+        /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+        ///
+        /// <p>The permissions granted to a security profile.</p>
+        pub fn permissions(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.permissions.unwrap_or_default();
+            v.push(input.into());
+            self.permissions = Some(v);
+            self
+        }
+        /// <p>The permissions granted to a security profile.</p>
+        pub fn set_permissions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.permissions = input;
+            self
+        }
+        /// <p>The identifier for the security profle.</p>
+        pub fn security_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.security_profile_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the security profle.</p>
+        pub fn set_security_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.security_profile_id = input;
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateSecurityProfileInput`](crate::input::UpdateSecurityProfileInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateSecurityProfileInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateSecurityProfileInput {
+                description: self.description,
+                permissions: self.permissions,
+                security_profile_id: self.security_profile_id,
+                instance_id: self.instance_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateSecurityProfileInputOperationOutputAlias = crate::operation::UpdateSecurityProfile;
+#[doc(hidden)]
+pub type UpdateSecurityProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateSecurityProfileInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateSecurityProfile`](crate::operation::UpdateSecurityProfile)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateSecurityProfile,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateSecurityProfileInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_221 = &_input.instance_id;
+            let input_221 =
+                input_221
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "instance_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let instance_id = aws_smithy_http::label::fmt_string(input_221, false);
+            if instance_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "instance_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_222 = &_input.security_profile_id;
+            let input_222 =
+                input_222
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "security_profile_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let security_profile_id = aws_smithy_http::label::fmt_string(input_222, false);
+            if security_profile_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "security_profile_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/security-profiles/{InstanceId}/{SecurityProfileId}",
+                InstanceId = instance_id,
+                SecurityProfileId = security_profile_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateSecurityProfileInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateSecurityProfileInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_security_profile(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateSecurityProfile::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateSecurityProfile",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateSecurityProfileInput`](crate::input::UpdateSecurityProfileInput)
+    pub fn builder() -> crate::input::update_security_profile_input::Builder {
+        crate::input::update_security_profile_input::Builder::default()
     }
 }
 
@@ -22051,6 +24521,7 @@ pub type UpdateUserHierarchyInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl UpdateUserHierarchyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserHierarchy`](crate::operation::UpdateUserHierarchy)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -22065,30 +24536,30 @@ impl UpdateUserHierarchyInput {
             _input: &crate::input::UpdateUserHierarchyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_203 = &_input.instance_id;
-            let input_203 =
-                input_203
+            let input_223 = &_input.instance_id;
+            let input_223 =
+                input_223
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_203, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_223, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_204 = &_input.user_id;
-            let input_204 =
-                input_204
+            let input_224 = &_input.user_id;
+            let input_224 =
+                input_224
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_204, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_224, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -22138,11 +24609,14 @@ impl UpdateUserHierarchyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -22260,6 +24734,7 @@ pub type UpdateUserHierarchyGroupNameInputOperationRetryAlias = aws_http::AwsErr
 impl UpdateUserHierarchyGroupNameInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserHierarchyGroupName`](crate::operation::UpdateUserHierarchyGroupName)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -22274,30 +24749,30 @@ impl UpdateUserHierarchyGroupNameInput {
             _input: &crate::input::UpdateUserHierarchyGroupNameInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_205 = &_input.instance_id;
-            let input_205 =
-                input_205
+            let input_225 = &_input.instance_id;
+            let input_225 =
+                input_225
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_205, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_225, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_206 = &_input.hierarchy_group_id;
-            let input_206 =
-                input_206
+            let input_226 = &_input.hierarchy_group_id;
+            let input_226 =
+                input_226
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hierarchy_group_id",
                         details: "cannot be empty or unset",
                     })?;
-            let hierarchy_group_id = aws_smithy_http::label::fmt_string(input_206, false);
+            let hierarchy_group_id = aws_smithy_http::label::fmt_string(input_226, false);
             if hierarchy_group_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "hierarchy_group_id",
@@ -22348,11 +24823,14 @@ impl UpdateUserHierarchyGroupNameInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -22461,6 +24939,7 @@ pub type UpdateUserHierarchyStructureInputOperationRetryAlias = aws_http::AwsErr
 impl UpdateUserHierarchyStructureInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserHierarchyStructure`](crate::operation::UpdateUserHierarchyStructure)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -22475,15 +24954,15 @@ impl UpdateUserHierarchyStructureInput {
             _input: &crate::input::UpdateUserHierarchyStructureInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_207 = &_input.instance_id;
-            let input_207 =
-                input_207
+            let input_227 = &_input.instance_id;
+            let input_227 =
+                input_227
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_207, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_227, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
@@ -22533,11 +25012,14 @@ impl UpdateUserHierarchyStructureInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -22654,6 +25136,7 @@ pub type UpdateUserIdentityInfoInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl UpdateUserIdentityInfoInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserIdentityInfo`](crate::operation::UpdateUserIdentityInfo)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -22668,30 +25151,30 @@ impl UpdateUserIdentityInfoInput {
             _input: &crate::input::UpdateUserIdentityInfoInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_208 = &_input.instance_id;
-            let input_208 =
-                input_208
+            let input_228 = &_input.instance_id;
+            let input_228 =
+                input_228
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_208, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_228, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_209 = &_input.user_id;
-            let input_209 =
-                input_209
+            let input_229 = &_input.user_id;
+            let input_229 =
+                input_229
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_209, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_229, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -22743,11 +25226,14 @@ impl UpdateUserIdentityInfoInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -22864,6 +25350,7 @@ pub type UpdateUserPhoneConfigInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl UpdateUserPhoneConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserPhoneConfig`](crate::operation::UpdateUserPhoneConfig)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -22878,30 +25365,30 @@ impl UpdateUserPhoneConfigInput {
             _input: &crate::input::UpdateUserPhoneConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_210 = &_input.instance_id;
-            let input_210 =
-                input_210
+            let input_230 = &_input.instance_id;
+            let input_230 =
+                input_230
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_210, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_230, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_211 = &_input.user_id;
-            let input_211 =
-                input_211
+            let input_231 = &_input.user_id;
+            let input_231 =
+                input_231
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_211, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_231, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -22953,11 +25440,14 @@ impl UpdateUserPhoneConfigInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -23075,6 +25565,7 @@ pub type UpdateUserRoutingProfileInputOperationRetryAlias = aws_http::AwsErrorRe
 impl UpdateUserRoutingProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserRoutingProfile`](crate::operation::UpdateUserRoutingProfile)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -23089,30 +25580,30 @@ impl UpdateUserRoutingProfileInput {
             _input: &crate::input::UpdateUserRoutingProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_212 = &_input.instance_id;
-            let input_212 =
-                input_212
+            let input_232 = &_input.instance_id;
+            let input_232 =
+                input_232
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_212, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_232, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_213 = &_input.user_id;
-            let input_213 =
-                input_213
+            let input_233 = &_input.user_id;
+            let input_233 =
+                input_233
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_213, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_233, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -23164,11 +25655,14 @@ impl UpdateUserRoutingProfileInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -23292,6 +25786,7 @@ pub type UpdateUserSecurityProfilesInputOperationRetryAlias = aws_http::AwsError
 impl UpdateUserSecurityProfilesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserSecurityProfiles`](crate::operation::UpdateUserSecurityProfiles)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -23306,30 +25801,30 @@ impl UpdateUserSecurityProfilesInput {
             _input: &crate::input::UpdateUserSecurityProfilesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_214 = &_input.instance_id;
-            let input_214 =
-                input_214
+            let input_234 = &_input.instance_id;
+            let input_234 =
+                input_234
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_id = aws_smithy_http::label::fmt_string(input_214, false);
+            let instance_id = aws_smithy_http::label::fmt_string(input_234, false);
             if instance_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_215 = &_input.user_id;
-            let input_215 =
-                input_215
+            let input_235 = &_input.user_id;
+            let input_235 =
+                input_235
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_215, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_235, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -23380,11 +25875,14 @@ impl UpdateUserSecurityProfilesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -23670,6 +26168,48 @@ impl std::fmt::Debug for UpdateUserHierarchyInput {
         let mut formatter = f.debug_struct("UpdateUserHierarchyInput");
         formatter.field("hierarchy_group_id", &self.hierarchy_group_id);
         formatter.field("user_id", &self.user_id);
+        formatter.field("instance_id", &self.instance_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateSecurityProfileInput {
+    /// <p>The description of the security profile.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The permissions granted to a security profile.</p>
+    pub permissions: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The identifier for the security profle.</p>
+    pub security_profile_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+}
+impl UpdateSecurityProfileInput {
+    /// <p>The description of the security profile.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The permissions granted to a security profile.</p>
+    pub fn permissions(&self) -> std::option::Option<&[std::string::String]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The identifier for the security profle.</p>
+    pub fn security_profile_id(&self) -> std::option::Option<&str> {
+        self.security_profile_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateSecurityProfileInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateSecurityProfileInput");
+        formatter.field("description", &self.description);
+        formatter.field("permissions", &self.permissions);
+        formatter.field("security_profile_id", &self.security_profile_id);
         formatter.field("instance_id", &self.instance_id);
         formatter.finish()
     }
@@ -24231,6 +26771,41 @@ impl std::fmt::Debug for UpdateHoursOfOperationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateContactScheduleInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the contact.</p>
+    pub contact_id: std::option::Option<std::string::String>,
+    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+    pub scheduled_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl UpdateContactScheduleInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the contact.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+    pub fn scheduled_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.scheduled_time.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateContactScheduleInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateContactScheduleInput");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("contact_id", &self.contact_id);
+        formatter.field("scheduled_time", &self.scheduled_time);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactFlowNameInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
@@ -24352,6 +26927,62 @@ impl std::fmt::Debug for UpdateContactAttributesInput {
         formatter.field("initial_contact_id", &self.initial_contact_id);
         formatter.field("instance_id", &self.instance_id);
         formatter.field("attributes", &self.attributes);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateContactInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
+    /// first interaction with your contact center.</p>
+    pub contact_id: std::option::Option<std::string::String>,
+    /// <p>The name of the contact.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the contact.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
+    pub references: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::Reference>,
+    >,
+}
+impl UpdateContactInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
+    /// first interaction with your contact center.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The name of the contact.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the contact.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
+    pub fn references(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Reference>>
+    {
+        self.references.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateContactInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateContactInput");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("contact_id", &self.contact_id);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("references", &self.references);
         formatter.finish()
     }
 }
@@ -24652,6 +27283,8 @@ pub struct StartTaskContactInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
     /// request.</p>
     pub client_token: std::option::Option<std::string::String>,
+    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+    pub scheduled_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartTaskContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -24703,6 +27336,10 @@ impl StartTaskContactInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+    pub fn scheduled_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.scheduled_time.as_ref()
+    }
 }
 impl std::fmt::Debug for StartTaskContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24715,6 +27352,7 @@ impl std::fmt::Debug for StartTaskContactInput {
         formatter.field("references", &self.references);
         formatter.field("description", &self.description);
         formatter.field("client_token", &self.client_token);
+        formatter.field("scheduled_time", &self.scheduled_time);
         formatter.finish()
     }
 }
@@ -25244,6 +27882,50 @@ impl ListSecurityProfilesInput {
 impl std::fmt::Debug for ListSecurityProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSecurityProfilesInput");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSecurityProfilePermissionsInput {
+    /// <p>The identifier for the security profle.</p>
+    pub security_profile_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return per page.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListSecurityProfilePermissionsInput {
+    /// <p>The identifier for the security profle.</p>
+    pub fn security_profile_id(&self) -> std::option::Option<&str> {
+        self.security_profile_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListSecurityProfilePermissionsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListSecurityProfilePermissionsInput");
+        formatter.field("security_profile_id", &self.security_profile_id);
         formatter.field("instance_id", &self.instance_id);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
@@ -25868,6 +28550,58 @@ impl std::fmt::Debug for ListHoursOfOperationsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListContactReferencesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the initial contact.</p>
+    pub contact_id: std::option::Option<std::string::String>,
+    /// <p>The type of reference.</p>
+    pub reference_types: std::option::Option<std::vec::Vec<crate::model::ReferenceType>>,
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    /// <important>
+    /// <p>This is not expected to be set since the value returned in the previous response is always
+    /// null.</p>
+    /// </important>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListContactReferencesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the initial contact.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The type of reference.</p>
+    pub fn reference_types(&self) -> std::option::Option<&[crate::model::ReferenceType]> {
+        self.reference_types.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    /// <important>
+    /// <p>This is not expected to be set since the value returned in the previous response is always
+    /// null.</p>
+    /// </important>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListContactReferencesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListContactReferencesInput");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("contact_id", &self.contact_id);
+        formatter.field("reference_types", &self.reference_types);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactFlowsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
@@ -26045,12 +28779,12 @@ pub struct GetMetricDataInput {
     /// such as 10:05, 10:10, 10:15.</p>
     /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical
     /// metrics are available only for 24 hours.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the
     /// retrieval of historical metrics data. The time must be specified using an interval of 5 minutes,
     /// such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
     /// retrieved only for the resources associated with the queues or channels included in the filter.
     /// You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
@@ -26221,14 +28955,14 @@ impl GetMetricDataInput {
     /// such as 10:05, 10:10, 10:15.</p>
     /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical
     /// metrics are available only for 24 hours.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the
     /// retrieval of historical metrics data. The time must be specified using an interval of 5 minutes,
     /// such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
@@ -27071,6 +29805,34 @@ impl std::fmt::Debug for DescribeUserInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeSecurityProfileInput {
+    /// <p>The identifier for the security profle.</p>
+    pub security_profile_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+}
+impl DescribeSecurityProfileInput {
+    /// <p>The identifier for the security profle.</p>
+    pub fn security_profile_id(&self) -> std::option::Option<&str> {
+        self.security_profile_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeSecurityProfileInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeSecurityProfileInput");
+        formatter.field("security_profile_id", &self.security_profile_id);
+        formatter.field("instance_id", &self.instance_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRoutingProfileInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
@@ -27295,6 +30057,34 @@ impl std::fmt::Debug for DescribeContactFlowInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeContactInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the initial contact.</p>
+    pub contact_id: std::option::Option<std::string::String>,
+}
+impl DescribeContactInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the initial contact.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeContactInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeContactInput");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("contact_id", &self.contact_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAgentStatusInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
@@ -27410,6 +30200,34 @@ impl std::fmt::Debug for DeleteUseCaseInput {
             &self.integration_association_id,
         );
         formatter.field("use_case_id", &self.use_case_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteSecurityProfileInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>The identifier for the security profle.</p>
+    pub security_profile_id: std::option::Option<std::string::String>,
+}
+impl DeleteSecurityProfileInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the security profle.</p>
+    pub fn security_profile_id(&self) -> std::option::Option<&str> {
+        self.security_profile_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteSecurityProfileInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteSecurityProfileInput");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("security_profile_id", &self.security_profile_id);
         formatter.finish()
     }
 }
@@ -27711,6 +30529,59 @@ impl std::fmt::Debug for CreateUseCaseInput {
             &self.integration_association_id,
         );
         formatter.field("use_case_type", &self.use_case_type);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateSecurityProfileInput {
+    /// <p>The name of the security profile.</p>
+    pub security_profile_name: std::option::Option<std::string::String>,
+    /// <p>The description of the security profile.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Permissions assigned to the security profile.</p>
+    pub permissions: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>One or more tags.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateSecurityProfileInput {
+    /// <p>The name of the security profile.</p>
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+        self.security_profile_name.as_deref()
+    }
+    /// <p>The description of the security profile.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Permissions assigned to the security profile.</p>
+    pub fn permissions(&self) -> std::option::Option<&[std::string::String]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateSecurityProfileInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateSecurityProfileInput");
+        formatter.field("security_profile_name", &self.security_profile_name);
+        formatter.field("description", &self.description);
+        formatter.field("permissions", &self.permissions);
+        formatter.field("instance_id", &self.instance_id);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

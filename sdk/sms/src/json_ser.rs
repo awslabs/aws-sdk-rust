@@ -53,7 +53,7 @@ pub fn serialize_structure_crate_input_create_replication_job_input(
     if let Some(var_14) = &input.seed_replication_time {
         object
             .key("seedReplicationTime")
-            .instant(var_14, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_14, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_15) = &input.frequency {
         object.key("frequency").number(
@@ -583,7 +583,7 @@ pub fn serialize_structure_crate_input_update_replication_job_input(
     if let Some(var_106) = &input.next_replication_run_start_time {
         object
             .key("nextReplicationRunStartTime")
-            .instant(var_106, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_106, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_107) = &input.license_type {
         object.key("licenseType").string(var_107.as_str());
@@ -990,7 +990,7 @@ pub fn serialize_structure_crate_model_server_replication_parameters(
     if let Some(var_195) = &input.seed_time {
         object
             .key("seedTime")
-            .instant(var_195, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_195, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_196) = &input.frequency {
         object.key("frequency").number(

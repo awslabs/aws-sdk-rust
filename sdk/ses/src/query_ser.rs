@@ -195,7 +195,7 @@ pub fn serialize_structure_crate_model_message_dsn(
     #[allow(unused_mut)]
     let mut scope_51 = writer.prefix("ArrivalDate");
     if let Some(var_52) = &input.arrival_date {
-        scope_51.instant(var_52, aws_smithy_types::instant::Format::DateTime);
+        scope_51.date_time(var_52, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_53 = writer.prefix("ExtensionFields");
@@ -522,7 +522,7 @@ pub fn serialize_structure_crate_model_recipient_dsn_fields(
     #[allow(unused_mut)]
     let mut scope_143 = writer.prefix("LastAttemptDate");
     if let Some(var_144) = &input.last_attempt_date {
-        scope_143.instant(var_144, aws_smithy_types::instant::Format::DateTime);
+        scope_143.date_time(var_144, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_145 = writer.prefix("ExtensionFields");

@@ -886,7 +886,7 @@ pub fn serialize_structure_crate_input_create_relational_database_from_snapshot_
     if let Some(var_226) = &input.restore_time {
         object
             .key("restoreTime")
-            .instant(var_226, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_226, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_227) = &input.use_latest_restorable_time {
         object.key("useLatestRestorableTime").boolean(*var_227);
@@ -1345,12 +1345,12 @@ pub fn serialize_structure_crate_input_get_bucket_metric_data_input(
     if let Some(var_295) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_295, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_295, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_296) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_296, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_296, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     {
         object.key("period").number(
@@ -1475,12 +1475,12 @@ pub fn serialize_structure_crate_input_get_container_log_input(
     if let Some(var_317) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_317, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_317, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_318) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_318, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_318, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_319) = &input.filter_pattern {
         object.key("filterPattern").string(var_319);
@@ -1514,12 +1514,12 @@ pub fn serialize_structure_crate_input_get_container_service_metric_data_input(
     if let Some(var_324) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_324, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_324, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_325) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_325, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_325, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     {
         object.key("period").number(
@@ -1612,12 +1612,12 @@ pub fn serialize_structure_crate_input_get_distribution_metric_data_input(
     if let Some(var_337) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_337, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_337, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_338) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_338, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_338, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     {
         object.key("period").number(
@@ -1725,12 +1725,12 @@ pub fn serialize_structure_crate_input_get_instance_metric_data_input(
     if let Some(var_353) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_353, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_353, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_354) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_354, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_354, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_355) = &input.unit {
         object.key("unit").string(var_355.as_str());
@@ -1846,12 +1846,12 @@ pub fn serialize_structure_crate_input_get_load_balancer_metric_data_input(
     if let Some(var_369) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_369, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_369, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_370) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_370, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_370, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_371) = &input.unit {
         object.key("unit").string(var_371.as_str());
@@ -1998,12 +1998,12 @@ pub fn serialize_structure_crate_input_get_relational_database_log_events_input(
     if let Some(var_391) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_391, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_391, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_392) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_392, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_392, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_393) = &input.start_from_head {
         object.key("startFromHead").boolean(*var_393);
@@ -2056,12 +2056,12 @@ pub fn serialize_structure_crate_input_get_relational_database_metric_data_input
     if let Some(var_400) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_400, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_400, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_401) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_401, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_401, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_402) = &input.unit {
         object.key("unit").string(var_402.as_str());

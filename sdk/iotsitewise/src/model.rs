@@ -4432,9 +4432,9 @@ pub struct ProjectSummary {
     /// <p>The project's description.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date the project was created, in Unix epoch time.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the project was last updated, in Unix epoch time.</p>
-    pub last_update_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ProjectSummary {
     /// <p>The ID of the project.</p>
@@ -4450,11 +4450,11 @@ impl ProjectSummary {
         self.description.as_deref()
     }
     /// <p>The date the project was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the project was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
 }
@@ -4478,8 +4478,8 @@ pub mod project_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the project.</p>
@@ -4513,27 +4513,27 @@ pub mod project_summary {
             self
         }
         /// <p>The date the project was created, in Unix epoch time.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the project was created, in Unix epoch time.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date the project was last updated, in Unix epoch time.</p>
-        pub fn last_update_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_date = Some(input);
             self
         }
         /// <p>The date the project was last updated, in Unix epoch time.</p>
         pub fn set_last_update_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_date = input;
             self
@@ -4572,9 +4572,9 @@ pub struct PortalSummary {
     /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub start_url: std::option::Option<std::string::String>,
     /// <p>The date the portal was created, in Unix epoch time.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
-    pub last_update_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise
     /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
     /// <i>IoT SiteWise User Guide</i>.</p>
@@ -4602,11 +4602,11 @@ impl PortalSummary {
         self.start_url.as_deref()
     }
     /// <p>The date the portal was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise
@@ -4644,8 +4644,8 @@ pub mod portal_summary {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) start_url: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::PortalStatus>,
     }
@@ -4695,27 +4695,27 @@ pub mod portal_summary {
             self
         }
         /// <p>The date the portal was created, in Unix epoch time.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the portal was created, in Unix epoch time.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date the portal was last updated, in Unix epoch time.</p>
-        pub fn last_update_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_date = Some(input);
             self
         }
         /// <p>The date the portal was last updated, in Unix epoch time.</p>
         pub fn set_last_update_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_date = input;
             self
@@ -4785,9 +4785,9 @@ pub struct GatewaySummary {
     pub gateway_capability_summaries:
         std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
     /// <p>The date the gateway was created, in Unix epoch time.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the gateway was last updated, in Unix epoch time.</p>
-    pub last_update_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GatewaySummary {
     /// <p>The ID of the gateway device.</p>
@@ -4811,11 +4811,11 @@ impl GatewaySummary {
         self.gateway_capability_summaries.as_deref()
     }
     /// <p>The date the gateway was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the gateway was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
 }
@@ -4845,8 +4845,8 @@ pub mod gateway_summary {
         pub(crate) gateway_platform: std::option::Option<crate::model::GatewayPlatform>,
         pub(crate) gateway_capability_summaries:
             std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the gateway device.</p>
@@ -4909,27 +4909,27 @@ pub mod gateway_summary {
             self
         }
         /// <p>The date the gateway was created, in Unix epoch time.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the gateway was created, in Unix epoch time.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date the gateway was last updated, in Unix epoch time.</p>
-        pub fn last_update_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_date = Some(input);
             self
         }
         /// <p>The date the gateway was last updated, in Unix epoch time.</p>
         pub fn set_last_update_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_date = input;
             self
@@ -5324,9 +5324,9 @@ pub struct DashboardSummary {
     /// <p>The dashboard's description.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date the dashboard was created, in Unix epoch time.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
-    pub last_update_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DashboardSummary {
     /// <p>The ID of the dashboard.</p>
@@ -5342,11 +5342,11 @@ impl DashboardSummary {
         self.description.as_deref()
     }
     /// <p>The date the dashboard was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
 }
@@ -5370,8 +5370,8 @@ pub mod dashboard_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the dashboard.</p>
@@ -5405,27 +5405,27 @@ pub mod dashboard_summary {
             self
         }
         /// <p>The date the dashboard was created, in Unix epoch time.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the dashboard was created, in Unix epoch time.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
-        pub fn last_update_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_date = Some(input);
             self
         }
         /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
         pub fn set_last_update_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_date = input;
             self
@@ -5465,9 +5465,9 @@ pub struct AssociatedAssetsSummary {
     /// <p>The ID of the asset model used to create the asset.</p>
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p>The date the asset was created, in Unix epoch time.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
-    pub last_update_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the asset.</p>
     pub status: std::option::Option<crate::model::AssetStatus>,
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
@@ -5494,11 +5494,11 @@ impl AssociatedAssetsSummary {
         self.asset_model_id.as_deref()
     }
     /// <p>The date the asset was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
     /// <p>The current status of the asset.</p>
@@ -5534,8 +5534,8 @@ pub mod associated_assets_summary {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) asset_model_id: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::AssetStatus>,
         pub(crate) hierarchies: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
     }
@@ -5590,27 +5590,27 @@ pub mod associated_assets_summary {
             self
         }
         /// <p>The date the asset was created, in Unix epoch time.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the asset was created, in Unix epoch time.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date the asset was last updated, in Unix epoch time.</p>
-        pub fn last_update_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_date = Some(input);
             self
         }
         /// <p>The date the asset was last updated, in Unix epoch time.</p>
         pub fn set_last_update_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_date = input;
             self
@@ -5814,9 +5814,9 @@ pub struct AssetSummary {
     /// <p>The ID of the asset model used to create this asset.</p>
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p>The date the asset was created, in Unix epoch time.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
-    pub last_update_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the asset.</p>
     pub status: std::option::Option<crate::model::AssetStatus>,
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
@@ -5843,11 +5843,11 @@ impl AssetSummary {
         self.asset_model_id.as_deref()
     }
     /// <p>The date the asset was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
     /// <p>The current status of the asset.</p>
@@ -5883,8 +5883,8 @@ pub mod asset_summary {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) asset_model_id: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::AssetStatus>,
         pub(crate) hierarchies: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
     }
@@ -5939,27 +5939,27 @@ pub mod asset_summary {
             self
         }
         /// <p>The date the asset was created, in Unix epoch time.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the asset was created, in Unix epoch time.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date the asset was last updated, in Unix epoch time.</p>
-        pub fn last_update_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_date = Some(input);
             self
         }
         /// <p>The date the asset was last updated, in Unix epoch time.</p>
         pub fn set_last_update_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_date = input;
             self
@@ -6391,9 +6391,9 @@ pub struct AssetModelSummary {
     /// <p>The asset model description.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date the asset model was created, in Unix epoch time.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the asset model was last updated, in Unix epoch time.</p>
-    pub last_update_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the asset model.</p>
     pub status: std::option::Option<crate::model::AssetModelStatus>,
 }
@@ -6418,11 +6418,11 @@ impl AssetModelSummary {
         self.description.as_deref()
     }
     /// <p>The date the asset model was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the asset model was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
     /// <p>The current status of the asset model.</p>
@@ -6453,8 +6453,8 @@ pub mod asset_model_summary {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::AssetModelStatus>,
     }
     impl Builder {
@@ -6505,27 +6505,27 @@ pub mod asset_model_summary {
             self
         }
         /// <p>The date the asset model was created, in Unix epoch time.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the asset model was created, in Unix epoch time.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date the asset model was last updated, in Unix epoch time.</p>
-        pub fn last_update_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_date = Some(input);
             self
         }
         /// <p>The date the asset model was last updated, in Unix epoch time.</p>
         pub fn set_last_update_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_date = input;
             self
@@ -6579,9 +6579,9 @@ pub struct AccessPolicySummary {
     /// also known as a project owner.</p>
     pub permission: std::option::Option<crate::model::Permission>,
     /// <p>The date the access policy was created, in Unix epoch time.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
-    pub last_update_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AccessPolicySummary {
     /// <p>The ID of the access policy.</p>
@@ -6602,11 +6602,11 @@ impl AccessPolicySummary {
         self.permission.as_ref()
     }
     /// <p>The date the access policy was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
 }
@@ -6632,8 +6632,8 @@ pub mod access_policy_summary {
         pub(crate) identity: std::option::Option<crate::model::Identity>,
         pub(crate) resource: std::option::Option<crate::model::Resource>,
         pub(crate) permission: std::option::Option<crate::model::Permission>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the access policy.</p>
@@ -6682,27 +6682,27 @@ pub mod access_policy_summary {
             self
         }
         /// <p>The date the access policy was created, in Unix epoch time.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The date the access policy was created, in Unix epoch time.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date the access policy was last updated, in Unix epoch time.</p>
-        pub fn last_update_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_date = Some(input);
             self
         }
         /// <p>The date the access policy was last updated, in Unix epoch time.</p>
         pub fn set_last_update_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_date = input;
             self
@@ -7320,7 +7320,7 @@ impl AsRef<str> for TimeOrdering {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AggregatedValue {
     /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The quality of the aggregated data.</p>
     pub quality: std::option::Option<crate::model::Quality>,
     /// <p>The value of the aggregates.</p>
@@ -7328,7 +7328,7 @@ pub struct AggregatedValue {
 }
 impl AggregatedValue {
     /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The quality of the aggregated data.</p>
@@ -7355,20 +7355,20 @@ pub mod aggregated_value {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) quality: std::option::Option<crate::model::Quality>,
         pub(crate) value: std::option::Option<crate::model::Aggregates>,
     }
     impl Builder {
         /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self

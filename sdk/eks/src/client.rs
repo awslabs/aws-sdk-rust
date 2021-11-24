@@ -568,11 +568,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAddon`.
     ///
     /// <p>Creates an Amazon EKS add-on.</p>
-    /// <p>Amazon EKS add-ons help to automate the provisioning and lifecycle management of common
-    /// operational software for Amazon EKS clusters. Amazon EKS add-ons can only be used with Amazon EKS
-    /// clusters running version 1.18 with platform version <code>eks.3</code> or later because
+    /// <p>Amazon EKS add-ons help to automate the provisioning and lifecycle management
+    /// of common operational software for Amazon EKS clusters. Amazon EKS
+    /// add-ons require clusters running version 1.18 or later because Amazon EKS
     /// add-ons rely on the Server-side Apply Kubernetes feature, which is only available in
-    /// Kubernetes 1.18 and later.</p>
+    /// Kubernetes 1.18 and later. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
+    /// the <i>Amazon EKS User Guide</i>.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateAddon<
         C = aws_smithy_client::erase::DynConnector,
@@ -3599,7 +3600,7 @@ pub mod fluent_builders {
     /// </code> to add it to the Amazon EKS control plane.</p>
     /// <p>Second, a <a href="https://amazon-eks.s3.us-west-2.amazonaws.com/eks-connector/manifests/eks-connector/latest/eks-connector.yaml">Manifest</a> containing the <code>activationID</code> and <code>activationCode</code> must be applied to the Kubernetes cluster through it's native provider to provide visibility.</p>
     ///
-    /// <p>After the Manifest is updated and applied, then the connected cluster is visible to the Amazon EKS control plane. If the Manifest is not applied within a set amount of time,
+    /// <p>After the Manifest is updated and applied, then the connected cluster is visible to the Amazon EKS control plane. If the Manifest is not applied within three days,
     /// then the connected cluster will no longer be visible and must be deregistered. See <a>DeregisterCluster</a>.</p>
     #[derive(std::fmt::Debug)]
     pub struct RegisterCluster<
@@ -3657,12 +3658,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Define a unique name for this cluster within your AWS account.</p>
+        /// <p>Define a unique name for this cluster for your Region.</p>
         pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(inp);
             self
         }
-        /// <p>Define a unique name for this cluster within your AWS account.</p>
+        /// <p>Define a unique name for this cluster for your Region.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -3691,6 +3692,35 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to the cluster to assist with categorization and
+        /// organization. Each tag consists of a key and an optional value, both of which you
+        /// define. Cluster tags do not propagate to any other resources associated with the
+        /// cluster.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k, v);
+            self
+        }
+        /// <p>The metadata that you apply to the cluster to assist with categorization and
+        /// organization. Each tag consists of a key and an optional value, both of which you
+        /// define. Cluster tags do not propagate to any other resources associated with the
+        /// cluster.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -4655,7 +4685,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -4678,7 +4714,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

@@ -1163,42 +1163,42 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a mapping between an event source and an Lambda function. Lambda reads items from the
     /// event source and triggers the function.</p>
-    /// <p>For details about each event source type, see the following topics. </p>
+    /// <p>For details about how to configure different event sources, see the following topics. </p>
     /// <ul>
     /// <li>
     /// <p>
     /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-dynamodb-eventsourcemapping">
-    /// Configuring a Dynamo DB stream as an event source</a>
+    /// Amazon DynamoDB Streams</a>
     /// </p>
     /// </li>
     /// <li>
     /// <p>
     /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-eventsourcemapping">
-    /// Configuring a Kinesis stream as an event source</a>
+    /// Amazon Kinesis</a>
     /// </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource"> Configuring an
-    /// Amazon SQS queue as an event source</a>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource">
+    /// Amazon SQS</a>
     /// </p>
     /// </li>
     /// <li>
     /// <p>
     /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-eventsourcemapping">
-    /// Configuring an MQ broker as an event source</a>
+    /// Amazon MQ and RabbitMQ</a>
     /// </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html"> Configuring MSK as an event
-    /// source</a>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">
+    /// Amazon MSK</a>
     /// </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Configuring Self-Managed Apache Kafka
-    /// as an event source</a>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">
+    /// Apache Kafka</a>
     /// </p>
     /// </li>
     /// </ul>
@@ -1224,6 +1224,45 @@ pub mod fluent_builders {
     /// <li>
     /// <p>
     /// <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For information about which configuration parameters apply to each event source, see the following topics.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-params">
+    /// Amazon DynamoDB Streams</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-params">
+    /// Amazon Kinesis</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#services-sqs-params">
+    /// Amazon SQS</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-params">
+    /// Amazon MQ and RabbitMQ</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-parms">
+    /// Amazon MSK</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms">
+    /// Apache Kafka</a>
+    /// </p>
     /// </li>
     /// </ul>
     #[derive(std::fmt::Debug)]
@@ -1425,6 +1464,10 @@ pub mod fluent_builders {
         /// <p>
         /// <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p>
         /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p>
+        /// </li>
         /// </ul>
         pub fn batch_size(mut self, inp: i32) -> Self {
             self.inner = self.inner.batch_size(inp);
@@ -1452,6 +1495,10 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p>
         /// </li>
         /// </ul>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
@@ -1502,7 +1549,7 @@ pub mod fluent_builders {
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
         /// reading.</p>
-        pub fn starting_position_timestamp(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn starting_position_timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.starting_position_timestamp(inp);
             self
         }
@@ -1510,7 +1557,7 @@ pub mod fluent_builders {
         /// reading.</p>
         pub fn set_starting_position_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_starting_position_timestamp(input);
             self
@@ -1875,13 +1922,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The
+        /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The
         /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
         pub fn timeout(mut self, inp: i32) -> Self {
             self.inner = self.inner.timeout(inp);
             self
         }
-        /// <p>The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The
+        /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The
         /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout(input);
@@ -2092,13 +2139,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
         ///
-        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
         /// The default value is <code>x86_64</code>.</p>
         pub fn architectures(mut self, inp: impl Into<crate::model::Architecture>) -> Self {
             self.inner = self.inner.architectures(inp);
             self
         }
-        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
         /// The default value is <code>x86_64</code>.</p>
         pub fn set_architectures(
             mut self,
@@ -4655,11 +4702,17 @@ pub mod fluent_builders {
             self
         }
         /// <p>The JSON that you want to provide to your Lambda function as input.</p>
+        /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>.
+        /// You can also specify a file path. For example, <code>--payload file://payload.json</code>.
+        /// </p>
         pub fn payload(mut self, inp: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.payload(inp);
             self
         }
         /// <p>The JSON that you want to provide to your Lambda function as input.</p>
+        /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>.
+        /// You can also specify a file path. For example, <code>--payload file://payload.json</code>.
+        /// </p>
         pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.inner = self.inner.set_payload(input);
             self
@@ -7776,6 +7829,45 @@ pub mod fluent_builders {
     ///
     /// <p>Updates an event source mapping. You can change the function that Lambda invokes, or pause
     /// invocation and resume later from the same location.</p>
+    /// <p>For details about how to configure different event sources, see the following topics. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-dynamodb-eventsourcemapping">
+    /// Amazon DynamoDB Streams</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-eventsourcemapping">
+    /// Amazon Kinesis</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource">
+    /// Amazon SQS</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-eventsourcemapping">
+    /// Amazon MQ and RabbitMQ</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">
+    /// Amazon MSK</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">
+    /// Apache Kafka</a>
+    /// </p>
+    /// </li>
+    /// </ul>
     ///
     /// <p>The following error handling options are only available for stream sources (DynamoDB and Kinesis):</p>
     /// <ul>
@@ -7798,6 +7890,45 @@ pub mod fluent_builders {
     /// <li>
     /// <p>
     /// <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For information about which configuration parameters apply to each event source, see the following topics.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-params">
+    /// Amazon DynamoDB Streams</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-params">
+    /// Amazon Kinesis</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#services-sqs-params">
+    /// Amazon SQS</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-params">
+    /// Amazon MQ and RabbitMQ</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-parms">
+    /// Amazon MSK</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms">
+    /// Apache Kafka</a>
+    /// </p>
     /// </li>
     /// </ul>
     #[derive(std::fmt::Debug)]
@@ -7960,6 +8091,10 @@ pub mod fluent_builders {
         /// <p>
         /// <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p>
         /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p>
+        /// </li>
         /// </ul>
         pub fn batch_size(mut self, inp: i32) -> Self {
             self.inner = self.inner.batch_size(inp);
@@ -7987,6 +8122,10 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p>
         /// </li>
         /// </ul>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
@@ -8333,13 +8472,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
         ///
-        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
         /// The default value is <code>x86_64</code>.</p>
         pub fn architectures(mut self, inp: impl Into<crate::model::Architecture>) -> Self {
             self.inner = self.inner.architectures(inp);
             self
         }
-        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
         /// The default value is <code>x86_64</code>.</p>
         pub fn set_architectures(
             mut self,
@@ -8507,13 +8646,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The
+        /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The
         /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
         pub fn timeout(mut self, inp: i32) -> Self {
             self.inner = self.inner.timeout(inp);
             self
         }
-        /// <p>The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The
+        /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The
         /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout(input);
@@ -8884,7 +9023,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -8907,7 +9052,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

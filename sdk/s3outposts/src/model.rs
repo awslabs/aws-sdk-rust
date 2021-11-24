@@ -15,7 +15,7 @@ pub struct Endpoint {
     /// <p>The status of the endpoint.</p>
     pub status: std::option::Option<crate::model::EndpointStatus>,
     /// <p>The time the endpoint was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The network interface of the endpoint.</p>
     pub network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
     /// <p>The ID of the VPC used for the endpoint.</p>
@@ -47,7 +47,7 @@ impl Endpoint {
         self.status.as_ref()
     }
     /// <p>The time the endpoint was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The network interface of the endpoint.</p>
@@ -102,7 +102,7 @@ pub mod endpoint {
         pub(crate) outposts_id: std::option::Option<std::string::String>,
         pub(crate) cidr_block: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EndpointStatus>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) network_interfaces:
             std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
@@ -156,14 +156,14 @@ pub mod endpoint {
             self
         }
         /// <p>The time the endpoint was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time the endpoint was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self

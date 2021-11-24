@@ -191,6 +191,13 @@ where
     pub fn create_routing_profile(&self) -> fluent_builders::CreateRoutingProfile<C, M, R> {
         fluent_builders::CreateRoutingProfile::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CreateSecurityProfile` operation.
+    ///
+    /// See [`CreateSecurityProfile`](crate::client::fluent_builders::CreateSecurityProfile) for more information about the
+    /// operation and its arguments.
+    pub fn create_security_profile(&self) -> fluent_builders::CreateSecurityProfile<C, M, R> {
+        fluent_builders::CreateSecurityProfile::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CreateUseCase` operation.
     ///
     /// See [`CreateUseCase`](crate::client::fluent_builders::CreateUseCase) for more information about the
@@ -244,6 +251,13 @@ where
     pub fn delete_quick_connect(&self) -> fluent_builders::DeleteQuickConnect<C, M, R> {
         fluent_builders::DeleteQuickConnect::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DeleteSecurityProfile` operation.
+    ///
+    /// See [`DeleteSecurityProfile`](crate::client::fluent_builders::DeleteSecurityProfile) for more information about the
+    /// operation and its arguments.
+    pub fn delete_security_profile(&self) -> fluent_builders::DeleteSecurityProfile<C, M, R> {
+        fluent_builders::DeleteSecurityProfile::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DeleteUseCase` operation.
     ///
     /// See [`DeleteUseCase`](crate::client::fluent_builders::DeleteUseCase) for more information about the
@@ -273,6 +287,13 @@ where
     /// operation and its arguments.
     pub fn describe_agent_status(&self) -> fluent_builders::DescribeAgentStatus<C, M, R> {
         fluent_builders::DescribeAgentStatus::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeContact` operation.
+    ///
+    /// See [`DescribeContact`](crate::client::fluent_builders::DescribeContact) for more information about the
+    /// operation and its arguments.
+    pub fn describe_contact(&self) -> fluent_builders::DescribeContact<C, M, R> {
+        fluent_builders::DescribeContact::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DescribeContactFlow` operation.
     ///
@@ -335,6 +356,13 @@ where
     /// operation and its arguments.
     pub fn describe_routing_profile(&self) -> fluent_builders::DescribeRoutingProfile<C, M, R> {
         fluent_builders::DescribeRoutingProfile::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeSecurityProfile` operation.
+    ///
+    /// See [`DescribeSecurityProfile`](crate::client::fluent_builders::DescribeSecurityProfile) for more information about the
+    /// operation and its arguments.
+    pub fn describe_security_profile(&self) -> fluent_builders::DescribeSecurityProfile<C, M, R> {
+        fluent_builders::DescribeSecurityProfile::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DescribeUser` operation.
     ///
@@ -483,6 +511,13 @@ where
     pub fn list_contact_flows(&self) -> fluent_builders::ListContactFlows<C, M, R> {
         fluent_builders::ListContactFlows::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ListContactReferences` operation.
+    ///
+    /// See [`ListContactReferences`](crate::client::fluent_builders::ListContactReferences) for more information about the
+    /// operation and its arguments.
+    pub fn list_contact_references(&self) -> fluent_builders::ListContactReferences<C, M, R> {
+        fluent_builders::ListContactReferences::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ListHoursOfOperations` operation.
     ///
     /// See [`ListHoursOfOperations`](crate::client::fluent_builders::ListHoursOfOperations) for more information about the
@@ -593,6 +628,15 @@ where
     /// operation and its arguments.
     pub fn list_security_keys(&self) -> fluent_builders::ListSecurityKeys<C, M, R> {
         fluent_builders::ListSecurityKeys::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListSecurityProfilePermissions` operation.
+    ///
+    /// See [`ListSecurityProfilePermissions`](crate::client::fluent_builders::ListSecurityProfilePermissions) for more information about the
+    /// operation and its arguments.
+    pub fn list_security_profile_permissions(
+        &self,
+    ) -> fluent_builders::ListSecurityProfilePermissions<C, M, R> {
+        fluent_builders::ListSecurityProfilePermissions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListSecurityProfiles` operation.
     ///
@@ -722,6 +766,13 @@ where
     pub fn update_agent_status(&self) -> fluent_builders::UpdateAgentStatus<C, M, R> {
         fluent_builders::UpdateAgentStatus::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateContact` operation.
+    ///
+    /// See [`UpdateContact`](crate::client::fluent_builders::UpdateContact) for more information about the
+    /// operation and its arguments.
+    pub fn update_contact(&self) -> fluent_builders::UpdateContact<C, M, R> {
+        fluent_builders::UpdateContact::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `UpdateContactAttributes` operation.
     ///
     /// See [`UpdateContactAttributes`](crate::client::fluent_builders::UpdateContactAttributes) for more information about the
@@ -744,6 +795,13 @@ where
     /// operation and its arguments.
     pub fn update_contact_flow_name(&self) -> fluent_builders::UpdateContactFlowName<C, M, R> {
         fluent_builders::UpdateContactFlowName::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateContactSchedule` operation.
+    ///
+    /// See [`UpdateContactSchedule`](crate::client::fluent_builders::UpdateContactSchedule) for more information about the
+    /// operation and its arguments.
+    pub fn update_contact_schedule(&self) -> fluent_builders::UpdateContactSchedule<C, M, R> {
+        fluent_builders::UpdateContactSchedule::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `UpdateHoursOfOperation` operation.
     ///
@@ -858,6 +916,13 @@ where
         &self,
     ) -> fluent_builders::UpdateRoutingProfileQueues<C, M, R> {
         fluent_builders::UpdateRoutingProfileQueues::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateSecurityProfile` operation.
+    ///
+    /// See [`UpdateSecurityProfile`](crate::client::fluent_builders::UpdateSecurityProfile) for more information about the
+    /// operation and its arguments.
+    pub fn update_security_profile(&self) -> fluent_builders::UpdateSecurityProfile<C, M, R> {
+        fluent_builders::UpdateSecurityProfile::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `UpdateUserHierarchy` operation.
     ///
@@ -2818,6 +2883,140 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateSecurityProfile`.
+    ///
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>Creates a security profile.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateSecurityProfile<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_security_profile_input::Builder,
+    }
+    impl<C, M, R> CreateSecurityProfile<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateSecurityProfile`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateSecurityProfileOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateSecurityProfileError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateSecurityProfileInputOperationOutputAlias,
+                crate::output::CreateSecurityProfileOutput,
+                crate::error::CreateSecurityProfileError,
+                crate::input::CreateSecurityProfileInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the security profile.</p>
+        pub fn security_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_profile_name(inp);
+            self
+        }
+        /// <p>The name of the security profile.</p>
+        pub fn set_security_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_security_profile_name(input);
+            self
+        }
+        /// <p>The description of the security profile.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the security profile.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Appends an item to `Permissions`.
+        ///
+        /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+        ///
+        /// <p>Permissions assigned to the security profile.</p>
+        pub fn permissions(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permissions(inp);
+            self
+        }
+        /// <p>Permissions assigned to the security profile.</p>
+        pub fn set_permissions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_permissions(input);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k, v);
+            self
+        }
+        /// <p>One or more tags.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateUseCase`.
     ///
     /// <p>Creates a use case for an integration association.</p>
@@ -3573,6 +3772,90 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteSecurityProfile`.
+    ///
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>Deletes a security profile.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteSecurityProfile<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_security_profile_input::Builder,
+    }
+    impl<C, M, R> DeleteSecurityProfile<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteSecurityProfile`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteSecurityProfileOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteSecurityProfileError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteSecurityProfileInputOperationOutputAlias,
+                crate::output::DeleteSecurityProfileOutput,
+                crate::error::DeleteSecurityProfileError,
+                crate::input::DeleteSecurityProfileInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier for the security profle.</p>
+        pub fn security_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_profile_id(inp);
+            self
+        }
+        /// <p>The identifier for the security profle.</p>
+        pub fn set_security_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_security_profile_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteUseCase`.
     ///
     /// <p>Deletes a use case from an integration association.</p>
@@ -3914,6 +4197,90 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_agent_status_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeContact`.
+    ///
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>Describes the specified contact. </p>
+    /// <important>
+    /// <p>Contact information is available in Amazon Connect for 24 months, and then it is deleted.</p>
+    /// </important>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeContact<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_contact_input::Builder,
+    }
+    impl<C, M, R> DescribeContact<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeContact`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeContactOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeContactError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeContactInputOperationOutputAlias,
+                crate::output::DescribeContactOutput,
+                crate::error::DescribeContactError,
+                crate::input::DescribeContactInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the initial contact.</p>
+        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(inp);
+            self
+        }
+        /// <p>The identifier of the initial contact.</p>
+        pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_contact_id(input);
             self
         }
     }
@@ -4586,6 +4953,90 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_routing_profile_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeSecurityProfile`.
+    ///
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>Gets basic information about the security profle.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeSecurityProfile<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_security_profile_input::Builder,
+    }
+    impl<C, M, R> DescribeSecurityProfile<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeSecurityProfile`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeSecurityProfileOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeSecurityProfileError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeSecurityProfileInputOperationOutputAlias,
+                crate::output::DescribeSecurityProfileOutput,
+                crate::error::DescribeSecurityProfileError,
+                crate::input::DescribeSecurityProfileInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier for the security profle.</p>
+        pub fn security_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_profile_id(inp);
+            self
+        }
+        /// <p>The identifier for the security profle.</p>
+        pub fn set_security_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_security_profile_id(input);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
             self
         }
     }
@@ -6138,7 +6589,7 @@ pub mod fluent_builders {
         /// such as 10:05, 10:10, 10:15.</p>
         /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical
         /// metrics are available only for 24 hours.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(inp);
             self
         }
@@ -6149,7 +6600,7 @@ pub mod fluent_builders {
         /// metrics are available only for 24 hours.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
@@ -6158,7 +6609,7 @@ pub mod fluent_builders {
         /// retrieval of historical metrics data. The time must be specified using an interval of 5 minutes,
         /// such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
         /// <p>The time range between the start and end time must be less than 24 hours.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(inp);
             self
         }
@@ -6168,7 +6619,7 @@ pub mod fluent_builders {
         /// <p>The time range between the start and end time must be less than 24 hours.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -6959,6 +7410,125 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListContactReferences`.
+    ///
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>For the specified <code>referenceTypes</code>, returns a list of references associated with
+    /// the contact. </p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListContactReferences<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_contact_references_input::Builder,
+    }
+    impl<C, M, R> ListContactReferences<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListContactReferences`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListContactReferencesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListContactReferencesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListContactReferencesInputOperationOutputAlias,
+                crate::output::ListContactReferencesOutput,
+                crate::error::ListContactReferencesError,
+                crate::input::ListContactReferencesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the initial contact.</p>
+        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(inp);
+            self
+        }
+        /// <p>The identifier of the initial contact.</p>
+        pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_contact_id(input);
+            self
+        }
+        /// Appends an item to `ReferenceTypes`.
+        ///
+        /// To override the contents of this collection use [`set_reference_types`](Self::set_reference_types).
+        ///
+        /// <p>The type of reference.</p>
+        pub fn reference_types(mut self, inp: impl Into<crate::model::ReferenceType>) -> Self {
+            self.inner = self.inner.reference_types(inp);
+            self
+        }
+        /// <p>The type of reference.</p>
+        pub fn set_reference_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ReferenceType>>,
+        ) -> Self {
+            self.inner = self.inner.set_reference_types(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous
+        /// response in the next request to retrieve the next set of results.</p>
+        /// <important>
+        /// <p>This is not expected to be set since the value returned in the previous response is always
+        /// null.</p>
+        /// </important>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous
+        /// response in the next request to retrieve the next set of results.</p>
+        /// <important>
+        /// <p>This is not expected to be set since the value returned in the previous response is always
+        /// null.</p>
+        /// </important>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -8486,6 +9056,112 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListSecurityProfilePermissions`.
+    ///
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>Lists the permissions granted to a security profile.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListSecurityProfilePermissions<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_security_profile_permissions_input::Builder,
+    }
+    impl<C, M, R> ListSecurityProfilePermissions<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListSecurityProfilePermissions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListSecurityProfilePermissionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListSecurityProfilePermissionsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListSecurityProfilePermissionsInputOperationOutputAlias,
+                crate::output::ListSecurityProfilePermissionsOutput,
+                crate::error::ListSecurityProfilePermissionsError,
+                crate::input::ListSecurityProfilePermissionsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier for the security profle.</p>
+        pub fn security_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_profile_id(inp);
+            self
+        }
+        /// <p>The identifier for the security profle.</p>
+        pub fn set_security_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_security_profile_id(input);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous
+        /// response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous
+        /// response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListSecurityProfiles`.
     ///
     /// <p>Provides summary information about the security profiles for the specified Amazon Connect
@@ -9707,7 +10383,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartTaskContact`.
     ///
-    /// <p>Initiates a contact flow to start a new task.</p>
+    /// <p>Initiates a contact flow to start a new task immediately or at a future date and
+    /// time.</p>
     #[derive(std::fmt::Debug)]
     pub struct StartTaskContact<
         C = aws_smithy_client::erase::DynConnector,
@@ -9896,6 +10573,19 @@ pub mod fluent_builders {
         /// request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+        pub fn scheduled_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.scheduled_time(inp);
+            self
+        }
+        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+        pub fn set_scheduled_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_scheduled_time(input);
             self
         }
     }
@@ -10595,6 +11285,137 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateContact`.
+    ///
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>Adds or updates user defined contact information associated with the specified contact. At
+    /// least one field to be updated must be present in the request.</p>
+    /// <important>
+    /// <p>You can add or update user-defined contact information for both ongoing and completed
+    /// contacts.</p>
+    /// </important>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateContact<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_contact_input::Builder,
+    }
+    impl<C, M, R> UpdateContact<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateContact`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateContactOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateContactError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateContactInputOperationOutputAlias,
+                crate::output::UpdateContactOutput,
+                crate::error::UpdateContactError,
+                crate::input::UpdateContactInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
+        /// first interaction with your contact center.</p>
+        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(inp);
+            self
+        }
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
+        /// first interaction with your contact center.</p>
+        pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_contact_id(input);
+            self
+        }
+        /// <p>The name of the contact.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the contact.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the contact.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the contact.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Adds a key-value pair to `References`.
+        ///
+        /// To override the contents of this collection use [`set_references`](Self::set_references).
+        ///
+        /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
+        pub fn references(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<crate::model::Reference>,
+        ) -> Self {
+            self.inner = self.inner.references(k, v);
+            self
+        }
+        /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
+        pub fn set_references(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::Reference>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_references(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateContactAttributes`.
     ///
     /// <p>Creates or updates
@@ -10929,6 +11750,99 @@ pub mod fluent_builders {
         /// <p>The description of the contact flow.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateContactSchedule`.
+    ///
+    /// <p>Updates the scheduled time of a task contact that is already scheduled.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateContactSchedule<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_contact_schedule_input::Builder,
+    }
+    impl<C, M, R> UpdateContactSchedule<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateContactSchedule`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateContactScheduleOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateContactScheduleError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateContactScheduleInputOperationOutputAlias,
+                crate::output::UpdateContactScheduleOutput,
+                crate::error::UpdateContactScheduleError,
+                crate::input::UpdateContactScheduleInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the contact.</p>
+        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(inp);
+            self
+        }
+        /// <p>The identifier of the contact.</p>
+        pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_contact_id(input);
+            self
+        }
+        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+        pub fn scheduled_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.scheduled_time(inp);
+            self
+        }
+        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+        pub fn set_scheduled_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_scheduled_time(input);
             self
         }
     }
@@ -12359,6 +13273,117 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateSecurityProfile`.
+    ///
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>Updates a security profile.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateSecurityProfile<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_security_profile_input::Builder,
+    }
+    impl<C, M, R> UpdateSecurityProfile<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateSecurityProfile`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateSecurityProfileOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateSecurityProfileError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateSecurityProfileInputOperationOutputAlias,
+                crate::output::UpdateSecurityProfileOutput,
+                crate::error::UpdateSecurityProfileError,
+                crate::input::UpdateSecurityProfileInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The description of the security profile.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the security profile.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Appends an item to `Permissions`.
+        ///
+        /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+        ///
+        /// <p>The permissions granted to a security profile.</p>
+        pub fn permissions(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permissions(inp);
+            self
+        }
+        /// <p>The permissions granted to a security profile.</p>
+        pub fn set_permissions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_permissions(input);
+            self
+        }
+        /// <p>The identifier for the security profle.</p>
+        pub fn security_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_profile_id(inp);
+            self
+        }
+        /// <p>The identifier for the security profle.</p>
+        pub fn set_security_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_security_profile_id(input);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateUserHierarchy`.
     ///
     /// <p>Assigns the specified hierarchy group to the specified user.</p>
@@ -13017,7 +14042,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -13040,7 +14071,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

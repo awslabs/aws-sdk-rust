@@ -288,6 +288,13 @@ where
     pub fn update_configuration(&self) -> fluent_builders::UpdateConfiguration<C, M, R> {
         fluent_builders::UpdateConfiguration::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateConnectivity` operation.
+    ///
+    /// See [`UpdateConnectivity`](crate::client::fluent_builders::UpdateConnectivity) for more information about the
+    /// operation and its arguments.
+    pub fn update_connectivity(&self) -> fluent_builders::UpdateConnectivity<C, M, R> {
+        fluent_builders::UpdateConnectivity::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `UpdateMonitoring` operation.
     ///
     /// See [`UpdateMonitoring`](crate::client::fluent_builders::UpdateMonitoring) for more information about the
@@ -1753,7 +1760,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListKafkaVersions`.
     ///
-    /// <p>Returns a list of Kafka versions.</p>
+    /// <p>Returns a list of Apache Kafka versions.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListKafkaVersions<
         C = aws_smithy_client::erase::DynConnector,
@@ -2983,6 +2990,102 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateConnectivity`.
+    ///
+    /// <p>Updates the cluster's connectivity configuration.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateConnectivity<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_connectivity_input::Builder,
+    }
+    impl<C, M, R> UpdateConnectivity<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateConnectivity`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateConnectivityOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateConnectivityError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateConnectivityInputOperationOutputAlias,
+                crate::output::UpdateConnectivityOutput,
+                crate::error::UpdateConnectivityError,
+                crate::input::UpdateConnectivityInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+        pub fn cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+        pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_cluster_arn(input);
+            self
+        }
+        /// <p>Information about the broker access configuration.</p>
+        pub fn connectivity_info(mut self, inp: crate::model::ConnectivityInfo) -> Self {
+            self.inner = self.inner.connectivity_info(inp);
+            self
+        }
+        /// <p>Information about the broker access configuration.</p>
+        pub fn set_connectivity_info(
+            mut self,
+            input: std::option::Option<crate::model::ConnectivityInfo>,
+        ) -> Self {
+            self.inner = self.inner.set_connectivity_info(input);
+            self
+        }
+        /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+        pub fn current_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(inp);
+            self
+        }
+        /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+        pub fn set_current_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_current_version(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateMonitoring`.
     ///
     /// <p>Updates the monitoring settings for the cluster. You can use this operation to specify which Apache Kafka metrics you want Amazon MSK to send to Amazon CloudWatch. You can also specify settings for open monitoring with Prometheus.</p>
@@ -3219,7 +3322,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -3242,7 +3351,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

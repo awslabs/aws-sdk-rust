@@ -2343,7 +2343,7 @@ impl GetCellOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetArchitectureRecommendationsOutput {
     /// The time a Recovery Group was last assessed for recommendations in UTC ISO-8601 format.
-    pub last_audit_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_audit_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// A token that can be used to resume pagination from the end of the collection
     pub next_token: std::option::Option<std::string::String>,
     /// A list of recommendations for the customer's application
@@ -2351,7 +2351,7 @@ pub struct GetArchitectureRecommendationsOutput {
 }
 impl GetArchitectureRecommendationsOutput {
     /// The time a Recovery Group was last assessed for recommendations in UTC ISO-8601 format.
-    pub fn last_audit_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_audit_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_audit_timestamp.as_ref()
     }
     /// A token that can be used to resume pagination from the end of the collection
@@ -2378,21 +2378,21 @@ pub mod get_architecture_recommendations_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_audit_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_audit_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) recommendations:
             std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
     }
     impl Builder {
         /// The time a Recovery Group was last assessed for recommendations in UTC ISO-8601 format.
-        pub fn last_audit_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_audit_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_audit_timestamp = Some(input);
             self
         }
         /// The time a Recovery Group was last assessed for recommendations in UTC ISO-8601 format.
         pub fn set_last_audit_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_audit_timestamp = input;
             self

@@ -2145,6 +2145,30 @@ pub fn serialize_structure_crate_model_engine_transcribe_settings(
     if let Some(var_404) = &input.region {
         object.key("Region").string(var_404.as_str());
     }
+    if let Some(var_405) = &input.enable_partial_results_stabilization {
+        object
+            .key("EnablePartialResultsStabilization")
+            .boolean(*var_405);
+    }
+    if let Some(var_406) = &input.partial_results_stability {
+        object
+            .key("PartialResultsStability")
+            .string(var_406.as_str());
+    }
+    if let Some(var_407) = &input.content_identification_type {
+        object
+            .key("ContentIdentificationType")
+            .string(var_407.as_str());
+    }
+    if let Some(var_408) = &input.content_redaction_type {
+        object.key("ContentRedactionType").string(var_408.as_str());
+    }
+    if let Some(var_409) = &input.pii_entity_types {
+        object.key("PiiEntityTypes").string(var_409);
+    }
+    if let Some(var_410) = &input.language_model_name {
+        object.key("LanguageModelName").string(var_410);
+    }
     Ok(())
 }
 
@@ -2152,20 +2176,25 @@ pub fn serialize_structure_crate_model_engine_transcribe_medical_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EngineTranscribeMedicalSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_405) = &input.language_code {
-        object.key("LanguageCode").string(var_405.as_str());
+    if let Some(var_411) = &input.language_code {
+        object.key("LanguageCode").string(var_411.as_str());
     }
-    if let Some(var_406) = &input.specialty {
-        object.key("Specialty").string(var_406.as_str());
+    if let Some(var_412) = &input.specialty {
+        object.key("Specialty").string(var_412.as_str());
     }
-    if let Some(var_407) = &input.r#type {
-        object.key("Type").string(var_407.as_str());
+    if let Some(var_413) = &input.r#type {
+        object.key("Type").string(var_413.as_str());
     }
-    if let Some(var_408) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_408);
+    if let Some(var_414) = &input.vocabulary_name {
+        object.key("VocabularyName").string(var_414);
     }
-    if let Some(var_409) = &input.region {
-        object.key("Region").string(var_409.as_str());
+    if let Some(var_415) = &input.region {
+        object.key("Region").string(var_415.as_str());
+    }
+    if let Some(var_416) = &input.content_identification_type {
+        object
+            .key("ContentIdentificationType")
+            .string(var_416.as_str());
     }
     Ok(())
 }
@@ -2174,14 +2203,14 @@ pub fn serialize_structure_crate_model_telephony_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TelephonySettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_410) = &input.inbound_calling {
-        object.key("InboundCalling").boolean(*var_410);
+    if let Some(var_417) = &input.inbound_calling {
+        object.key("InboundCalling").boolean(*var_417);
     }
-    if let Some(var_411) = &input.outbound_calling {
-        object.key("OutboundCalling").boolean(*var_411);
+    if let Some(var_418) = &input.outbound_calling {
+        object.key("OutboundCalling").boolean(*var_418);
     }
-    if let Some(var_412) = &input.sms {
-        object.key("SMS").boolean(*var_412);
+    if let Some(var_419) = &input.sms {
+        object.key("SMS").boolean(*var_419);
     }
     Ok(())
 }
@@ -2190,23 +2219,23 @@ pub fn serialize_structure_crate_model_selected_video_streams(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SelectedVideoStreams,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_413) = &input.attendee_ids {
-        let mut array_414 = object.key("AttendeeIds").start_array();
-        for item_415 in var_413 {
+    if let Some(var_420) = &input.attendee_ids {
+        let mut array_421 = object.key("AttendeeIds").start_array();
+        for item_422 in var_420 {
             {
-                array_414.value().string(item_415);
+                array_421.value().string(item_422);
             }
         }
-        array_414.finish();
+        array_421.finish();
     }
-    if let Some(var_416) = &input.external_user_ids {
-        let mut array_417 = object.key("ExternalUserIds").start_array();
-        for item_418 in var_416 {
+    if let Some(var_423) = &input.external_user_ids {
+        let mut array_424 = object.key("ExternalUserIds").start_array();
+        for item_425 in var_423 {
             {
-                array_417.value().string(item_418);
+                array_424.value().string(item_425);
             }
         }
-        array_417.finish();
+        array_424.finish();
     }
     Ok(())
 }
@@ -2215,8 +2244,8 @@ pub fn serialize_structure_crate_model_audio_artifacts_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AudioArtifactsConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_419) = &input.mux_type {
-        object.key("MuxType").string(var_419.as_str());
+    if let Some(var_426) = &input.mux_type {
+        object.key("MuxType").string(var_426.as_str());
     }
     Ok(())
 }
@@ -2225,11 +2254,11 @@ pub fn serialize_structure_crate_model_video_artifacts_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VideoArtifactsConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_420) = &input.state {
-        object.key("State").string(var_420.as_str());
+    if let Some(var_427) = &input.state {
+        object.key("State").string(var_427.as_str());
     }
-    if let Some(var_421) = &input.mux_type {
-        object.key("MuxType").string(var_421.as_str());
+    if let Some(var_428) = &input.mux_type {
+        object.key("MuxType").string(var_428.as_str());
     }
     Ok(())
 }
@@ -2238,11 +2267,11 @@ pub fn serialize_structure_crate_model_content_artifacts_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ContentArtifactsConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_422) = &input.state {
-        object.key("State").string(var_422.as_str());
+    if let Some(var_429) = &input.state {
+        object.key("State").string(var_429.as_str());
     }
-    if let Some(var_423) = &input.mux_type {
-        object.key("MuxType").string(var_423.as_str());
+    if let Some(var_430) = &input.mux_type {
+        object.key("MuxType").string(var_430.as_str());
     }
     Ok(())
 }

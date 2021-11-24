@@ -1148,25 +1148,25 @@ pub struct CertificateDetail {
     /// <p>The name of the certificate authority that issued and signed the certificate.</p>
     pub issuer: std::option::Option<std::string::String>,
     /// <p>The time at which the certificate was requested.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the certificate was issued. This value exists only when the certificate
     /// type is <code>AMAZON_ISSUED</code>. </p>
-    pub issued_at: std::option::Option<aws_smithy_types::Instant>,
+    pub issued_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time at which the certificate was imported. This value exists only when the
     /// certificate type is <code>IMPORTED</code>. </p>
-    pub imported_at: std::option::Option<aws_smithy_types::Instant>,
+    pub imported_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the certificate.</p>
     pub status: std::option::Option<crate::model::CertificateStatus>,
     /// <p>The time at which the certificate was revoked. This value exists only when the certificate
     /// status is <code>REVOKED</code>. </p>
-    pub revoked_at: std::option::Option<aws_smithy_types::Instant>,
+    pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason the certificate was revoked. This value exists only when the certificate status
     /// is <code>REVOKED</code>. </p>
     pub revocation_reason: std::option::Option<crate::model::RevocationReason>,
     /// <p>The time before which the certificate is not valid.</p>
-    pub not_before: std::option::Option<aws_smithy_types::Instant>,
+    pub not_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time after which the certificate is not valid.</p>
-    pub not_after: std::option::Option<aws_smithy_types::Instant>,
+    pub not_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The algorithm that was used to generate the public-private key pair.</p>
     pub key_algorithm: std::option::Option<crate::model::KeyAlgorithm>,
     /// <p>The algorithm that was used to sign the certificate.</p>
@@ -1253,17 +1253,17 @@ impl CertificateDetail {
         self.issuer.as_deref()
     }
     /// <p>The time at which the certificate was requested.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which the certificate was issued. This value exists only when the certificate
     /// type is <code>AMAZON_ISSUED</code>. </p>
-    pub fn issued_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn issued_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.issued_at.as_ref()
     }
     /// <p>The date and time at which the certificate was imported. This value exists only when the
     /// certificate type is <code>IMPORTED</code>. </p>
-    pub fn imported_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn imported_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.imported_at.as_ref()
     }
     /// <p>The status of the certificate.</p>
@@ -1272,7 +1272,7 @@ impl CertificateDetail {
     }
     /// <p>The time at which the certificate was revoked. This value exists only when the certificate
     /// status is <code>REVOKED</code>. </p>
-    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
     }
     /// <p>The reason the certificate was revoked. This value exists only when the certificate status
@@ -1281,11 +1281,11 @@ impl CertificateDetail {
         self.revocation_reason.as_ref()
     }
     /// <p>The time before which the certificate is not valid.</p>
-    pub fn not_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn not_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.not_before.as_ref()
     }
     /// <p>The time after which the certificate is not valid.</p>
-    pub fn not_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn not_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.not_after.as_ref()
     }
     /// <p>The algorithm that was used to generate the public-private key pair.</p>
@@ -1402,14 +1402,14 @@ pub mod certificate_detail {
         pub(crate) serial: std::option::Option<std::string::String>,
         pub(crate) subject: std::option::Option<std::string::String>,
         pub(crate) issuer: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) issued_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) imported_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) issued_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) imported_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::CertificateStatus>,
-        pub(crate) revoked_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) revoked_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) revocation_reason: std::option::Option<crate::model::RevocationReason>,
-        pub(crate) not_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) not_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) not_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) not_after: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) key_algorithm: std::option::Option<crate::model::KeyAlgorithm>,
         pub(crate) signature_algorithm: std::option::Option<std::string::String>,
         pub(crate) in_use_by: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1537,21 +1537,21 @@ pub mod certificate_detail {
             self
         }
         /// <p>The time at which the certificate was requested.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time at which the certificate was requested.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time at which the certificate was issued. This value exists only when the certificate
         /// type is <code>AMAZON_ISSUED</code>. </p>
-        pub fn issued_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn issued_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.issued_at = Some(input);
             self
         }
@@ -1559,14 +1559,14 @@ pub mod certificate_detail {
         /// type is <code>AMAZON_ISSUED</code>. </p>
         pub fn set_issued_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.issued_at = input;
             self
         }
         /// <p>The date and time at which the certificate was imported. This value exists only when the
         /// certificate type is <code>IMPORTED</code>. </p>
-        pub fn imported_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn imported_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.imported_at = Some(input);
             self
         }
@@ -1574,7 +1574,7 @@ pub mod certificate_detail {
         /// certificate type is <code>IMPORTED</code>. </p>
         pub fn set_imported_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.imported_at = input;
             self
@@ -1594,7 +1594,7 @@ pub mod certificate_detail {
         }
         /// <p>The time at which the certificate was revoked. This value exists only when the certificate
         /// status is <code>REVOKED</code>. </p>
-        pub fn revoked_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn revoked_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.revoked_at = Some(input);
             self
         }
@@ -1602,7 +1602,7 @@ pub mod certificate_detail {
         /// status is <code>REVOKED</code>. </p>
         pub fn set_revoked_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.revoked_at = input;
             self
@@ -1623,27 +1623,27 @@ pub mod certificate_detail {
             self
         }
         /// <p>The time before which the certificate is not valid.</p>
-        pub fn not_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn not_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.not_before = Some(input);
             self
         }
         /// <p>The time before which the certificate is not valid.</p>
         pub fn set_not_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.not_before = input;
             self
         }
         /// <p>The time after which the certificate is not valid.</p>
-        pub fn not_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn not_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.not_after = Some(input);
             self
         }
         /// <p>The time after which the certificate is not valid.</p>
         pub fn set_not_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.not_after = input;
             self
@@ -2295,7 +2295,7 @@ pub struct RenewalSummary {
     /// <p>The reason that a renewal request was unsuccessful.</p>
     pub renewal_status_reason: std::option::Option<crate::model::FailureReason>,
     /// <p>The time at which the renewal summary was last updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RenewalSummary {
     /// <p>The status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> of the certificate.</p>
@@ -2317,7 +2317,7 @@ impl RenewalSummary {
         self.renewal_status_reason.as_ref()
     }
     /// <p>The time at which the renewal summary was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -2341,7 +2341,7 @@ pub mod renewal_summary {
         pub(crate) domain_validation_options:
             std::option::Option<std::vec::Vec<crate::model::DomainValidation>>,
         pub(crate) renewal_status_reason: std::option::Option<crate::model::FailureReason>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> of the certificate.</p>
@@ -2401,14 +2401,14 @@ pub mod renewal_summary {
             self
         }
         /// <p>The time at which the renewal summary was last updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The time at which the renewal summary was last updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self

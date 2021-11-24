@@ -414,6 +414,112 @@ impl std::error::Error for CreateLocationFsxWindowsError {
     }
 }
 
+/// Error type for the `CreateLocationHdfs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateLocationHdfsError {
+    /// Kind of error that occurred.
+    pub kind: CreateLocationHdfsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateLocationHdfs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateLocationHdfsErrorKind {
+    /// <p>This exception is thrown when an error occurs in the DataSync service.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateLocationHdfsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateLocationHdfsErrorKind::InternalException(_inner) => _inner.fmt(f),
+            CreateLocationHdfsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            CreateLocationHdfsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateLocationHdfsError {
+    fn code(&self) -> Option<&str> {
+        CreateLocationHdfsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateLocationHdfsError {
+    /// Creates a new `CreateLocationHdfsError`.
+    pub fn new(kind: CreateLocationHdfsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateLocationHdfsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateLocationHdfsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateLocationHdfsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateLocationHdfsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateLocationHdfsErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLocationHdfsErrorKind::InternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLocationHdfsErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLocationHdfsErrorKind::InvalidRequestException(_)
+        )
+    }
+}
+impl std::error::Error for CreateLocationHdfsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateLocationHdfsErrorKind::InternalException(_inner) => Some(_inner),
+            CreateLocationHdfsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            CreateLocationHdfsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateLocationNfs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1543,6 +1649,112 @@ impl std::error::Error for DescribeLocationFsxWindowsError {
             DescribeLocationFsxWindowsErrorKind::InternalException(_inner) => Some(_inner),
             DescribeLocationFsxWindowsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeLocationFsxWindowsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeLocationHdfs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeLocationHdfsError {
+    /// Kind of error that occurred.
+    pub kind: DescribeLocationHdfsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeLocationHdfs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeLocationHdfsErrorKind {
+    /// <p>This exception is thrown when an error occurs in the DataSync service.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeLocationHdfsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeLocationHdfsErrorKind::InternalException(_inner) => _inner.fmt(f),
+            DescribeLocationHdfsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeLocationHdfsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeLocationHdfsError {
+    fn code(&self) -> Option<&str> {
+        DescribeLocationHdfsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeLocationHdfsError {
+    /// Creates a new `DescribeLocationHdfsError`.
+    pub fn new(kind: DescribeLocationHdfsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeLocationHdfsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeLocationHdfsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeLocationHdfsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeLocationHdfsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeLocationHdfsErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLocationHdfsErrorKind::InternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeLocationHdfsErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLocationHdfsErrorKind::InvalidRequestException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeLocationHdfsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeLocationHdfsErrorKind::InternalException(_inner) => Some(_inner),
+            DescribeLocationHdfsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeLocationHdfsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3105,6 +3317,112 @@ impl std::error::Error for UpdateAgentError {
             UpdateAgentErrorKind::InternalException(_inner) => Some(_inner),
             UpdateAgentErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateAgentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateLocationHdfs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateLocationHdfsError {
+    /// Kind of error that occurred.
+    pub kind: UpdateLocationHdfsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateLocationHdfs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateLocationHdfsErrorKind {
+    /// <p>This exception is thrown when an error occurs in the DataSync service.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateLocationHdfsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateLocationHdfsErrorKind::InternalException(_inner) => _inner.fmt(f),
+            UpdateLocationHdfsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            UpdateLocationHdfsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateLocationHdfsError {
+    fn code(&self) -> Option<&str> {
+        UpdateLocationHdfsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateLocationHdfsError {
+    /// Creates a new `UpdateLocationHdfsError`.
+    pub fn new(kind: UpdateLocationHdfsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateLocationHdfsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateLocationHdfsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateLocationHdfsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateLocationHdfsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateLocationHdfsErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLocationHdfsErrorKind::InternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateLocationHdfsErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLocationHdfsErrorKind::InvalidRequestException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateLocationHdfsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateLocationHdfsErrorKind::InternalException(_inner) => Some(_inner),
+            UpdateLocationHdfsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            UpdateLocationHdfsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

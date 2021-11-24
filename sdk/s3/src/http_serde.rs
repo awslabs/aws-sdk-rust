@@ -217,12 +217,14 @@ pub fn deser_header_create_bucket_create_bucket_output_location(
 pub fn deser_header_create_multipart_upload_create_multipart_upload_output_abort_date(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<aws_smithy_types::Instant>,
+    std::option::Option<aws_smithy_types::DateTime>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amz-abort-date").iter();
-    let var_3: Vec<aws_smithy_types::Instant> =
-        aws_smithy_http::header::many_dates(headers, aws_smithy_types::instant::Format::HttpDate)?;
+    let var_3: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(
+        headers,
+        aws_smithy_types::date_time::Format::HttpDate,
+    )?;
     if var_3.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
             format!("expected one item but found {}", var_3.len()),
@@ -455,8 +457,8 @@ pub fn deser_payload_get_bucket_policy_get_bucket_policy_output_policy(
 {
     (!body.is_empty())
         .then(|| {
-            let body_str = std::str::from_utf8(&body)
-                .map_err(crate::error::GetBucketPolicyError::unhandled)?;
+            let body_str =
+                std::str::from_utf8(body).map_err(crate::error::GetBucketPolicyError::unhandled)?;
             Ok(body_str.to_string())
         })
         .transpose()
@@ -632,12 +634,14 @@ pub fn deser_header_get_object_get_object_output_expiration(
 pub fn deser_header_get_object_get_object_output_expires(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<aws_smithy_types::Instant>,
+    std::option::Option<aws_smithy_types::DateTime>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("Expires").iter();
-    let var_9: Vec<aws_smithy_types::Instant> =
-        aws_smithy_http::header::many_dates(headers, aws_smithy_types::instant::Format::HttpDate)?;
+    let var_9: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(
+        headers,
+        aws_smithy_types::date_time::Format::HttpDate,
+    )?;
     if var_9.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
             format!("expected one item but found {}", var_9.len()),
@@ -651,12 +655,14 @@ pub fn deser_header_get_object_get_object_output_expires(
 pub fn deser_header_get_object_get_object_output_last_modified(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<aws_smithy_types::Instant>,
+    std::option::Option<aws_smithy_types::DateTime>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("Last-Modified").iter();
-    let var_10: Vec<aws_smithy_types::Instant> =
-        aws_smithy_http::header::many_dates(headers, aws_smithy_types::instant::Format::HttpDate)?;
+    let var_10: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(
+        headers,
+        aws_smithy_types::date_time::Format::HttpDate,
+    )?;
     if var_10.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
             format!("expected one item but found {}", var_10.len()),
@@ -673,7 +679,7 @@ pub fn deser_prefix_header_get_object_get_object_output_metadata(
     std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     aws_smithy_http::header::ParseError,
 > {
-    let headers = aws_smithy_http::header::headers_for_prefix(&header_map, "x-amz-meta-");
+    let headers = aws_smithy_http::header::headers_for_prefix(header_map, "x-amz-meta-");
     let out: std::result::Result<_, _> = headers
         .map(|(key, header_name)| {
             let values = header_map.get_all(header_name);
@@ -724,14 +730,16 @@ pub fn deser_header_get_object_get_object_output_object_lock_mode(
 pub fn deser_header_get_object_get_object_output_object_lock_retain_until_date(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<aws_smithy_types::Instant>,
+    std::option::Option<aws_smithy_types::DateTime>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map
         .get_all("x-amz-object-lock-retain-until-date")
         .iter();
-    let var_12: Vec<aws_smithy_types::Instant> =
-        aws_smithy_http::header::many_dates(headers, aws_smithy_types::instant::Format::DateTime)?;
+    let var_12: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(
+        headers,
+        aws_smithy_types::date_time::Format::DateTime,
+    )?;
     if var_12.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
             format!("expected one item but found {}", var_12.len()),
@@ -1103,12 +1111,14 @@ pub fn deser_header_head_object_head_object_output_expiration(
 pub fn deser_header_head_object_head_object_output_expires(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<aws_smithy_types::Instant>,
+    std::option::Option<aws_smithy_types::DateTime>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("Expires").iter();
-    let var_18: Vec<aws_smithy_types::Instant> =
-        aws_smithy_http::header::many_dates(headers, aws_smithy_types::instant::Format::HttpDate)?;
+    let var_18: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(
+        headers,
+        aws_smithy_types::date_time::Format::HttpDate,
+    )?;
     if var_18.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
             format!("expected one item but found {}", var_18.len()),
@@ -1122,12 +1132,14 @@ pub fn deser_header_head_object_head_object_output_expires(
 pub fn deser_header_head_object_head_object_output_last_modified(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<aws_smithy_types::Instant>,
+    std::option::Option<aws_smithy_types::DateTime>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("Last-Modified").iter();
-    let var_19: Vec<aws_smithy_types::Instant> =
-        aws_smithy_http::header::many_dates(headers, aws_smithy_types::instant::Format::HttpDate)?;
+    let var_19: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(
+        headers,
+        aws_smithy_types::date_time::Format::HttpDate,
+    )?;
     if var_19.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
             format!("expected one item but found {}", var_19.len()),
@@ -1144,7 +1156,7 @@ pub fn deser_prefix_header_head_object_head_object_output_metadata(
     std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     aws_smithy_http::header::ParseError,
 > {
-    let headers = aws_smithy_http::header::headers_for_prefix(&header_map, "x-amz-meta-");
+    let headers = aws_smithy_http::header::headers_for_prefix(header_map, "x-amz-meta-");
     let out: std::result::Result<_, _> = headers
         .map(|(key, header_name)| {
             let values = header_map.get_all(header_name);
@@ -1195,14 +1207,16 @@ pub fn deser_header_head_object_head_object_output_object_lock_mode(
 pub fn deser_header_head_object_head_object_output_object_lock_retain_until_date(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<aws_smithy_types::Instant>,
+    std::option::Option<aws_smithy_types::DateTime>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map
         .get_all("x-amz-object-lock-retain-until-date")
         .iter();
-    let var_21: Vec<aws_smithy_types::Instant> =
-        aws_smithy_http::header::many_dates(headers, aws_smithy_types::instant::Format::DateTime)?;
+    let var_21: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(
+        headers,
+        aws_smithy_types::date_time::Format::DateTime,
+    )?;
     if var_21.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
             format!("expected one item but found {}", var_21.len()),
@@ -1337,12 +1351,14 @@ pub fn deser_header_head_object_head_object_output_website_redirect_location(
 pub fn deser_header_list_parts_list_parts_output_abort_date(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<aws_smithy_types::Instant>,
+    std::option::Option<aws_smithy_types::DateTime>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amz-abort-date").iter();
-    let var_23: Vec<aws_smithy_types::Instant> =
-        aws_smithy_http::header::many_dates(headers, aws_smithy_types::instant::Format::HttpDate)?;
+    let var_23: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(
+        headers,
+        aws_smithy_types::date_time::Format::HttpDate,
+    )?;
     if var_23.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
             format!("expected one item but found {}", var_23.len()),

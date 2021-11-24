@@ -97,6 +97,7 @@ pub type CreateParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl CreateParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`CreateParallelData`](crate::operation::CreateParallelData)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -156,11 +157,14 @@ impl CreateParallelDataInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -248,6 +252,7 @@ pub type DeleteParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl DeleteParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`DeleteParallelData`](crate::operation::DeleteParallelData)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -304,11 +309,14 @@ impl DeleteParallelDataInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -396,6 +404,7 @@ pub type DeleteTerminologyInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl DeleteTerminologyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTerminology`](crate::operation::DeleteTerminology)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -452,11 +461,14 @@ impl DeleteTerminologyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -549,6 +561,7 @@ pub type DescribeTextTranslationJobInputOperationRetryAlias = aws_http::AwsError
 impl DescribeTextTranslationJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTextTranslationJob`](crate::operation::DescribeTextTranslationJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -606,11 +619,14 @@ impl DescribeTextTranslationJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -698,6 +714,7 @@ pub type GetParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl GetParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`GetParallelData`](crate::operation::GetParallelData)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -754,11 +771,14 @@ impl GetParallelDataInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -830,7 +850,12 @@ pub mod get_terminology_input {
             self.name = input;
             self
         }
-        /// <p>The data format of the custom terminology being retrieved, either CSV or TMX.</p>
+        /// <p>The data format of the custom terminology being retrieved.</p>
+        /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same
+        /// format as the file that was imported to create the terminology. </p>
+        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource,
+        /// you must specify the same format as that of the input file that was imported to create it.
+        /// Otherwise, Amazon Translate throws an error.</p>
         pub fn terminology_data_format(
             mut self,
             input: crate::model::TerminologyDataFormat,
@@ -838,7 +863,12 @@ pub mod get_terminology_input {
             self.terminology_data_format = Some(input);
             self
         }
-        /// <p>The data format of the custom terminology being retrieved, either CSV or TMX.</p>
+        /// <p>The data format of the custom terminology being retrieved.</p>
+        /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same
+        /// format as the file that was imported to create the terminology. </p>
+        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource,
+        /// you must specify the same format as that of the input file that was imported to create it.
+        /// Otherwise, Amazon Translate throws an error.</p>
         pub fn set_terminology_data_format(
             mut self,
             input: std::option::Option<crate::model::TerminologyDataFormat>,
@@ -867,6 +897,7 @@ pub type GetTerminologyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetTerminologyInput {
     /// Consumes the builder and constructs an Operation<[`GetTerminology`](crate::operation::GetTerminology)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -923,11 +954,14 @@ impl GetTerminologyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1078,6 +1112,7 @@ pub type ImportTerminologyInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ImportTerminologyInput {
     /// Consumes the builder and constructs an Operation<[`ImportTerminology`](crate::operation::ImportTerminology)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1134,11 +1169,14 @@ impl ImportTerminologyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1240,6 +1278,7 @@ pub type ListParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ListParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`ListParallelData`](crate::operation::ListParallelData)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1296,11 +1335,14 @@ impl ListParallelDataInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1404,6 +1446,7 @@ pub type ListTerminologiesInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ListTerminologiesInput {
     /// Consumes the builder and constructs an Operation<[`ListTerminologies`](crate::operation::ListTerminologies)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1460,11 +1503,14 @@ impl ListTerminologiesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1584,6 +1630,7 @@ pub type ListTextTranslationJobsInputOperationRetryAlias = aws_http::AwsErrorRet
 impl ListTextTranslationJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListTextTranslationJobs`](crate::operation::ListTextTranslationJobs)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1642,11 +1689,14 @@ impl ListTextTranslationJobsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1755,13 +1805,13 @@ pub mod start_text_translation_job_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
-        /// that grants Amazon Translate read access to your input data. For more nformation, see <a>identity-and-access-management</a>.</p>
+        /// that grants Amazon Translate read access to your input data. For more information, see <a>identity-and-access-management</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
-        /// that grants Amazon Translate read access to your input data. For more nformation, see <a>identity-and-access-management</a>.</p>
+        /// that grants Amazon Translate read access to your input data. For more information, see <a>identity-and-access-management</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1809,16 +1859,22 @@ pub mod start_text_translation_job_input {
         ///
         /// To override the contents of this collection use [`set_terminology_names`](Self::set_terminology_names).
         ///
-        /// <p>The name of the terminology to use in the batch translation job. For a list of available
-        /// terminologies, use the <a>ListTerminologies</a> operation.</p>
+        /// <p>The name of a custom terminology resource to add to the translation job. This resource
+        /// lists examples source terms and the desired translation for each term.</p>
+        /// <p>This parameter accepts only one custom terminology resource.</p>
+        /// <p>For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.</p>
+        /// <p>For more information, see <a>how-custom-terminology</a>.</p>
         pub fn terminology_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.terminology_names.unwrap_or_default();
             v.push(input.into());
             self.terminology_names = Some(v);
             self
         }
-        /// <p>The name of the terminology to use in the batch translation job. For a list of available
-        /// terminologies, use the <a>ListTerminologies</a> operation.</p>
+        /// <p>The name of a custom terminology resource to add to the translation job. This resource
+        /// lists examples source terms and the desired translation for each term.</p>
+        /// <p>This parameter accepts only one custom terminology resource.</p>
+        /// <p>For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.</p>
+        /// <p>For more information, see <a>how-custom-terminology</a>.</p>
         pub fn set_terminology_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1830,18 +1886,32 @@ pub mod start_text_translation_job_input {
         ///
         /// To override the contents of this collection use [`set_parallel_data_names`](Self::set_parallel_data_names).
         ///
-        /// <p>The names of the parallel data resources to use in the batch translation job. For a list
-        /// of available parallel data resources, use the <a>ListParallelData</a>
-        /// operation.</p>
+        /// <p>The name of a parallel data resource to add to the translation job. This resource consists
+        /// of examples that show how you want segments of text to be translated. When you add parallel
+        /// data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+        /// <p>This parameter accepts only one parallel data resource.</p>
+        /// <note>
+        /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't
+        /// use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
+        /// </note>
+        /// <p>For a list of available parallel data resources, use the <a>ListParallelData</a> operation.</p>
+        /// <p>For more information, see <a>customizing-translations-parallel-data</a>.</p>
         pub fn parallel_data_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.parallel_data_names.unwrap_or_default();
             v.push(input.into());
             self.parallel_data_names = Some(v);
             self
         }
-        /// <p>The names of the parallel data resources to use in the batch translation job. For a list
-        /// of available parallel data resources, use the <a>ListParallelData</a>
-        /// operation.</p>
+        /// <p>The name of a parallel data resource to add to the translation job. This resource consists
+        /// of examples that show how you want segments of text to be translated. When you add parallel
+        /// data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+        /// <p>This parameter accepts only one parallel data resource.</p>
+        /// <note>
+        /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't
+        /// use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
+        /// </note>
+        /// <p>For a list of available parallel data resources, use the <a>ListParallelData</a> operation.</p>
+        /// <p>For more information, see <a>customizing-translations-parallel-data</a>.</p>
         pub fn set_parallel_data_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1890,6 +1960,7 @@ pub type StartTextTranslationJobInputOperationRetryAlias = aws_http::AwsErrorRet
 impl StartTextTranslationJobInput {
     /// Consumes the builder and constructs an Operation<[`StartTextTranslationJob`](crate::operation::StartTextTranslationJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -1951,11 +2022,14 @@ impl StartTextTranslationJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2045,6 +2119,7 @@ pub type StopTextTranslationJobInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl StopTextTranslationJobInput {
     /// Consumes the builder and constructs an Operation<[`StopTextTranslationJob`](crate::operation::StopTextTranslationJob)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2103,11 +2178,14 @@ impl StopTextTranslationJobInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2266,6 +2344,7 @@ pub type TranslateTextInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TranslateTextInput {
     /// Consumes the builder and constructs an Operation<[`TranslateText`](crate::operation::TranslateText)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2321,11 +2400,14 @@ impl TranslateTextInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2456,6 +2538,7 @@ pub type UpdateParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl UpdateParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`UpdateParallelData`](crate::operation::UpdateParallelData)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
@@ -2515,11 +2598,14 @@ impl UpdateParallelDataInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2708,7 +2794,7 @@ pub struct StartTextTranslationJobInput {
     /// </p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
-    /// that grants Amazon Translate read access to your input data. For more nformation, see <a>identity-and-access-management</a>.</p>
+    /// that grants Amazon Translate read access to your input data. For more information, see <a>identity-and-access-management</a>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.</p>
     /// <p>Amazon Translate does not automatically detect a source language during batch translation
@@ -2716,12 +2802,22 @@ pub struct StartTextTranslationJobInput {
     pub source_language_code: std::option::Option<std::string::String>,
     /// <p>The language code of the output language.</p>
     pub target_language_codes: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The name of the terminology to use in the batch translation job. For a list of available
-    /// terminologies, use the <a>ListTerminologies</a> operation.</p>
+    /// <p>The name of a custom terminology resource to add to the translation job. This resource
+    /// lists examples source terms and the desired translation for each term.</p>
+    /// <p>This parameter accepts only one custom terminology resource.</p>
+    /// <p>For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.</p>
+    /// <p>For more information, see <a>how-custom-terminology</a>.</p>
     pub terminology_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The names of the parallel data resources to use in the batch translation job. For a list
-    /// of available parallel data resources, use the <a>ListParallelData</a>
-    /// operation.</p>
+    /// <p>The name of a parallel data resource to add to the translation job. This resource consists
+    /// of examples that show how you want segments of text to be translated. When you add parallel
+    /// data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+    /// <p>This parameter accepts only one parallel data resource.</p>
+    /// <note>
+    /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't
+    /// use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
+    /// </note>
+    /// <p>For a list of available parallel data resources, use the <a>ListParallelData</a> operation.</p>
+    /// <p>For more information, see <a>customizing-translations-parallel-data</a>.</p>
     pub parallel_data_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate
     /// SDK.</p>
@@ -2743,7 +2839,7 @@ impl StartTextTranslationJobInput {
         self.output_data_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
-    /// that grants Amazon Translate read access to your input data. For more nformation, see <a>identity-and-access-management</a>.</p>
+    /// that grants Amazon Translate read access to your input data. For more information, see <a>identity-and-access-management</a>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -2757,14 +2853,24 @@ impl StartTextTranslationJobInput {
     pub fn target_language_codes(&self) -> std::option::Option<&[std::string::String]> {
         self.target_language_codes.as_deref()
     }
-    /// <p>The name of the terminology to use in the batch translation job. For a list of available
-    /// terminologies, use the <a>ListTerminologies</a> operation.</p>
+    /// <p>The name of a custom terminology resource to add to the translation job. This resource
+    /// lists examples source terms and the desired translation for each term.</p>
+    /// <p>This parameter accepts only one custom terminology resource.</p>
+    /// <p>For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.</p>
+    /// <p>For more information, see <a>how-custom-terminology</a>.</p>
     pub fn terminology_names(&self) -> std::option::Option<&[std::string::String]> {
         self.terminology_names.as_deref()
     }
-    /// <p>The names of the parallel data resources to use in the batch translation job. For a list
-    /// of available parallel data resources, use the <a>ListParallelData</a>
-    /// operation.</p>
+    /// <p>The name of a parallel data resource to add to the translation job. This resource consists
+    /// of examples that show how you want segments of text to be translated. When you add parallel
+    /// data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+    /// <p>This parameter accepts only one parallel data resource.</p>
+    /// <note>
+    /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't
+    /// use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
+    /// </note>
+    /// <p>For a list of available parallel data resources, use the <a>ListParallelData</a> operation.</p>
+    /// <p>For more information, see <a>customizing-translations-parallel-data</a>.</p>
     pub fn parallel_data_names(&self) -> std::option::Option<&[std::string::String]> {
         self.parallel_data_names.as_deref()
     }
@@ -2944,7 +3050,12 @@ impl std::fmt::Debug for ImportTerminologyInput {
 pub struct GetTerminologyInput {
     /// <p>The name of the custom terminology being retrieved.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The data format of the custom terminology being retrieved, either CSV or TMX.</p>
+    /// <p>The data format of the custom terminology being retrieved.</p>
+    /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same
+    /// format as the file that was imported to create the terminology. </p>
+    /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource,
+    /// you must specify the same format as that of the input file that was imported to create it.
+    /// Otherwise, Amazon Translate throws an error.</p>
     pub terminology_data_format: std::option::Option<crate::model::TerminologyDataFormat>,
 }
 impl GetTerminologyInput {
@@ -2952,7 +3063,12 @@ impl GetTerminologyInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The data format of the custom terminology being retrieved, either CSV or TMX.</p>
+    /// <p>The data format of the custom terminology being retrieved.</p>
+    /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same
+    /// format as the file that was imported to create the terminology. </p>
+    /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource,
+    /// you must specify the same format as that of the input file that was imported to create it.
+    /// Otherwise, Amazon Translate throws an error.</p>
     pub fn terminology_data_format(
         &self,
     ) -> std::option::Option<&crate::model::TerminologyDataFormat> {

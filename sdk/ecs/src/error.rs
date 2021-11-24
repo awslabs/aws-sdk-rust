@@ -12,19 +12,19 @@ pub struct CreateCapacityProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCapacityProviderErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The limit for the resource has been exceeded.</p>
+    /// <p>The limit for the resource was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>There is already a current Amazon ECS container agent update in progress on the specified
-    /// container instance. If the container agent becomes disconnected while it is in a
+    /// <p>There's already a current Amazon ECS container agent update in progress on the container
+    /// instance that's specified. If the container agent becomes disconnected while it's in a
     /// transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the update
     /// process can get stuck in that state. However, when the agent reconnects, it resumes
     /// where it stopped previously.</p>
@@ -158,11 +158,11 @@ pub struct CreateClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateClusterErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -272,28 +272,27 @@ pub struct CreateServiceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateServiceErrorKind {
-    /// <p>You do not have authorization to perform the requested action.</p>
+    /// <p>You don't have authorization to perform the requested action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified platform version does not satisfy the task definition's required
-    /// capabilities.</p>
+    /// <p>The specified platform version doesn't satisfy the required capabilities of the task
+    /// definition.</p>
     PlatformTaskDefinitionIncompatibilityException(
         crate::error::PlatformTaskDefinitionIncompatibilityException,
     ),
-    /// <p>The specified platform version does not exist.</p>
+    /// <p>The specified platform version doesn't exist.</p>
     PlatformUnknownException(crate::error::PlatformUnknownException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The specified task is not supported in this Region.</p>
+    /// <p>The specified task isn't supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -446,35 +445,33 @@ pub struct CreateTaskSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTaskSetErrorKind {
-    /// <p>You do not have authorization to perform the requested action.</p>
+    /// <p>You don't have authorization to perform the requested action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified platform version does not satisfy the task definition's required
-    /// capabilities.</p>
+    /// <p>The specified platform version doesn't satisfy the required capabilities of the task
+    /// definition.</p>
     PlatformTaskDefinitionIncompatibilityException(
         crate::error::PlatformTaskDefinitionIncompatibilityException,
     ),
-    /// <p>The specified platform version does not exist.</p>
+    /// <p>The specified platform version doesn't exist.</p>
     PlatformUnknownException(crate::error::PlatformUnknownException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The specified service is not active. You can't update a service that is inactive. If
-    /// you have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>
+    /// <p>The specified service isn't active. You can't update a service that's inactive. If you
+    /// have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>
     ServiceNotActiveException(crate::error::ServiceNotActiveException),
-    /// <p>The specified service could not be found. You can view your available services with
-    /// <a>ListServices</a>. Amazon ECS services are cluster-specific and
-    /// Region-specific.</p>
+    /// <p>The specified service wasn't found. You can view your available services with <a>ListServices</a>. Amazon ECS services are cluster specific and Region
+    /// specific.</p>
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
-    /// <p>The specified task is not supported in this Region.</p>
+    /// <p>The specified task isn't supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -645,11 +642,11 @@ pub struct DeleteAccountSettingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAccountSettingErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -765,14 +762,13 @@ pub struct DeleteAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAttributesErrorKind {
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified target could not be found. You can view your available container
-    /// instances with <a>ListContainerInstances</a>. Amazon ECS container instances are
+    /// <p>The specified target wasn't found. You can view your available container instances
+    /// with <a>ListContainerInstances</a>. Amazon ECS container instances are
     /// cluster-specific and Region-specific.</p>
     TargetNotFoundException(crate::error::TargetNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -886,11 +882,11 @@ pub struct DeleteCapacityProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCapacityProviderErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -1006,32 +1002,31 @@ pub struct DeleteClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteClusterErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>You cannot delete a cluster that has registered container instances. First, deregister
+    /// <p>You can't delete a cluster that has registered container instances. First, deregister
     /// the container instances before you can delete the cluster. For more information, see
     /// <a>DeregisterContainerInstance</a>.</p>
     ClusterContainsContainerInstancesException(
         crate::error::ClusterContainsContainerInstancesException,
     ),
-    /// <p>You cannot delete a cluster that contains services. First, update the service to
-    /// reduce its desired task count to 0 and then delete the service. For more information,
-    /// see <a>UpdateService</a> and <a>DeleteService</a>.</p>
+    /// <p>You can't delete a cluster that contains services. First, update the service to reduce
+    /// its desired task count to 0, and then delete the service. For more information, see
+    /// <a>UpdateService</a> and <a>DeleteService</a>.</p>
     ClusterContainsServicesException(crate::error::ClusterContainsServicesException),
-    /// <p>You cannot delete a cluster that has active tasks.</p>
+    /// <p>You can't delete a cluster that has active tasks.</p>
     ClusterContainsTasksException(crate::error::ClusterContainsTasksException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>There is already a current Amazon ECS container agent update in progress on the specified
-    /// container instance. If the container agent becomes disconnected while it is in a
+    /// <p>There's already a current Amazon ECS container agent update in progress on the container
+    /// instance that's specified. If the container agent becomes disconnected while it's in a
     /// transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the update
     /// process can get stuck in that state. However, when the agent reconnects, it resumes
     /// where it stopped previously.</p>
@@ -1190,21 +1185,19 @@ pub struct DeleteServiceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteServiceErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The specified service could not be found. You can view your available services with
-    /// <a>ListServices</a>. Amazon ECS services are cluster-specific and
-    /// Region-specific.</p>
+    /// <p>The specified service wasn't found. You can view your available services with <a>ListServices</a>. Amazon ECS services are cluster specific and Region
+    /// specific.</p>
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1329,32 +1322,29 @@ pub struct DeleteTaskSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTaskSetErrorKind {
-    /// <p>You do not have authorization to perform the requested action.</p>
+    /// <p>You don't have authorization to perform the requested action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The specified service is not active. You can't update a service that is inactive. If
-    /// you have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>
+    /// <p>The specified service isn't active. You can't update a service that's inactive. If you
+    /// have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>
     ServiceNotActiveException(crate::error::ServiceNotActiveException),
-    /// <p>The specified service could not be found. You can view your available services with
-    /// <a>ListServices</a>. Amazon ECS services are cluster-specific and
-    /// Region-specific.</p>
+    /// <p>The specified service wasn't found. You can view your available services with <a>ListServices</a>. Amazon ECS services are cluster specific and Region
+    /// specific.</p>
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
-    /// <p>The specified task set could not be found. You can view your available task sets with
-    /// <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service
-    /// and Region.</p>
+    /// <p>The specified task set wasn't found. You can view your available task sets with <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and
+    /// Region.</p>
     TaskSetNotFoundException(crate::error::TaskSetNotFoundException),
-    /// <p>The specified task is not supported in this Region.</p>
+    /// <p>The specified task isn't supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1512,14 +1502,13 @@ pub struct DeregisterContainerInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterContainerInstanceErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -1646,11 +1635,11 @@ pub struct DeregisterTaskDefinitionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterTaskDefinitionErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -1766,11 +1755,11 @@ pub struct DescribeCapacityProvidersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCapacityProvidersErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -1886,11 +1875,11 @@ pub struct DescribeClustersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClustersErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -2000,14 +1989,13 @@ pub struct DescribeContainerInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeContainerInstancesErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -2132,14 +2120,13 @@ pub struct DescribeServicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeServicesErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -2258,11 +2245,11 @@ pub struct DescribeTaskDefinitionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTaskDefinitionErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -2378,14 +2365,13 @@ pub struct DescribeTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTasksErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -2504,28 +2490,26 @@ pub struct DescribeTaskSetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTaskSetsErrorKind {
-    /// <p>You do not have authorization to perform the requested action.</p>
+    /// <p>You don't have authorization to perform the requested action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The specified service is not active. You can't update a service that is inactive. If
-    /// you have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>
+    /// <p>The specified service isn't active. You can't update a service that's inactive. If you
+    /// have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>
     ServiceNotActiveException(crate::error::ServiceNotActiveException),
-    /// <p>The specified service could not be found. You can view your available services with
-    /// <a>ListServices</a>. Amazon ECS services are cluster-specific and
-    /// Region-specific.</p>
+    /// <p>The specified service wasn't found. You can view your available services with <a>ListServices</a>. Amazon ECS services are cluster specific and Region
+    /// specific.</p>
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
-    /// <p>The specified task is not supported in this Region.</p>
+    /// <p>The specified task isn't supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2677,9 +2661,9 @@ pub struct DiscoverPollEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DiscoverPollEndpointErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -2785,21 +2769,20 @@ pub struct ExecuteCommandError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExecuteCommandErrorKind {
-    /// <p>You do not have authorization to perform the requested action.</p>
+    /// <p>You don't have authorization to perform the requested action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The target container is not properly configured with the execute command agent or the
+    /// <p>The target container isn't properly configured with the execute command agent or the
     /// container is no longer active or running.</p>
     TargetNotConnectedException(crate::error::TargetNotConnectedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -2934,11 +2917,11 @@ pub struct ListAccountSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAccountSettingsErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -3048,10 +3031,9 @@ pub struct ListAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAttributesErrorKind {
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -3156,11 +3138,11 @@ pub struct ListClustersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListClustersErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -3270,14 +3252,13 @@ pub struct ListContainerInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListContainerInstancesErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -3402,14 +3383,13 @@ pub struct ListServicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListServicesErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -3528,14 +3508,13 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -3654,11 +3633,11 @@ pub struct ListTaskDefinitionFamiliesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTaskDefinitionFamiliesErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -3774,11 +3753,11 @@ pub struct ListTaskDefinitionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTaskDefinitionsErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -3888,21 +3867,19 @@ pub struct ListTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTasksErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The specified service could not be found. You can view your available services with
-    /// <a>ListServices</a>. Amazon ECS services are cluster-specific and
-    /// Region-specific.</p>
+    /// <p>The specified service wasn't found. You can view your available services with <a>ListServices</a>. Amazon ECS services are cluster specific and Region
+    /// specific.</p>
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4018,11 +3995,11 @@ pub struct PutAccountSettingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAccountSettingErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -4132,11 +4109,11 @@ pub struct PutAccountSettingDefaultError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAccountSettingDefaultErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -4252,18 +4229,17 @@ pub struct PutAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAttributesErrorKind {
-    /// <p>You can apply up to 10 custom attributes per resource. You can view the attributes of
-    /// a resource with <a>ListAttributes</a>. You can remove existing attributes on
-    /// a resource with <a>DeleteAttributes</a>.</p>
+    /// <p>You can apply up to 10 custom attributes for each resource. You can view the
+    /// attributes of a resource with <a>ListAttributes</a>. You can remove existing
+    /// attributes on a resource with <a>DeleteAttributes</a>.</p>
     AttributeLimitExceededException(crate::error::AttributeLimitExceededException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified target could not be found. You can view your available container
-    /// instances with <a>ListContainerInstances</a>. Amazon ECS container instances are
+    /// <p>The specified target wasn't found. You can view your available container instances
+    /// with <a>ListContainerInstances</a>. Amazon ECS container instances are
     /// cluster-specific and Region-specific.</p>
     TargetNotFoundException(crate::error::TargetNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4386,22 +4362,21 @@ pub struct PutClusterCapacityProvidersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutClusterCapacityProvidersErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified resource is in-use and cannot be removed.</p>
+    /// <p>The specified resource is in-use and can't be removed.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>There is already a current Amazon ECS container agent update in progress on the specified
-    /// container instance. If the container agent becomes disconnected while it is in a
+    /// <p>There's already a current Amazon ECS container agent update in progress on the container
+    /// instance that's specified. If the container agent becomes disconnected while it's in a
     /// transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the update
     /// process can get stuck in that state. However, when the agent reconnects, it resumes
     /// where it stopped previously.</p>
@@ -4548,11 +4523,11 @@ pub struct RegisterContainerInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterContainerInstanceErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -4668,11 +4643,11 @@ pub struct RegisterTaskDefinitionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterTaskDefinitionErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -4788,31 +4763,30 @@ pub struct RunTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RunTaskErrorKind {
-    /// <p>You do not have authorization to perform the requested action.</p>
+    /// <p>You don't have authorization to perform the requested action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Your Amazon Web Services account has been blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">
+    /// <p>Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">
     /// Amazon Web Services Support</a>.</p>
     BlockedException(crate::error::BlockedException),
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified platform version does not satisfy the task definition's required
-    /// capabilities.</p>
+    /// <p>The specified platform version doesn't satisfy the required capabilities of the task
+    /// definition.</p>
     PlatformTaskDefinitionIncompatibilityException(
         crate::error::PlatformTaskDefinitionIncompatibilityException,
     ),
-    /// <p>The specified platform version does not exist.</p>
+    /// <p>The specified platform version doesn't exist.</p>
     PlatformUnknownException(crate::error::PlatformUnknownException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The specified task is not supported in this Region.</p>
+    /// <p>The specified task isn't supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4959,14 +4933,13 @@ pub struct StartTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartTaskErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -5079,14 +5052,13 @@ pub struct StopTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopTaskErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -5199,13 +5171,13 @@ pub struct SubmitAttachmentStateChangesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SubmitAttachmentStateChangesErrorKind {
-    /// <p>You do not have authorization to perform the requested action.</p>
+    /// <p>You don't have authorization to perform the requested action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -5334,11 +5306,11 @@ pub struct SubmitContainerStateChangeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SubmitContainerStateChangeErrorKind {
-    /// <p>You do not have authorization to perform the requested action.</p>
+    /// <p>You don't have authorization to perform the requested action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -5453,13 +5425,13 @@ pub struct SubmitTaskStateChangeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SubmitTaskStateChangeErrorKind {
-    /// <p>You do not have authorization to perform the requested action.</p>
+    /// <p>You don't have authorization to perform the requested action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -5584,17 +5556,16 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified resource could not be found.</p>
+    /// <p>The specified resource wasn't found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -5721,17 +5692,16 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified resource could not be found.</p>
+    /// <p>The specified resource wasn't found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -5858,11 +5828,11 @@ pub struct UpdateCapacityProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateCapacityProviderErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -5978,14 +5948,13 @@ pub struct UpdateClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateClusterErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -6104,14 +6073,13 @@ pub struct UpdateClusterSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateClusterSettingsErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -6236,29 +6204,28 @@ pub struct UpdateContainerAgentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateContainerAgentErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Amazon ECS is unable to determine the current version of the Amazon ECS container agent on the
-    /// container instance and does not have enough information to proceed with an update. This
-    /// could be because the agent running on the container instance is an older or custom
-    /// version that does not use our version information.</p>
+    /// <p>Amazon ECS can't determine the current version of the Amazon ECS container agent on the
+    /// container instance and doesn't have enough information to proceed with an update. This
+    /// could be because the agent running on the container instance is a previous or custom
+    /// version that doesn't use our version information.</p>
     MissingVersionException(crate::error::MissingVersionException),
-    /// <p>There is no update available for this Amazon ECS container agent. This could be because the
-    /// agent is already running the latest version, or it is so old that there is no update
-    /// path to the current version.</p>
+    /// <p>There's no update available for this Amazon ECS container agent. This might be because the
+    /// agent is already running the latest version or because it's so old that there's no
+    /// update path to the current version.</p>
     NoUpdateAvailableException(crate::error::NoUpdateAvailableException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>There is already a current Amazon ECS container agent update in progress on the specified
-    /// container instance. If the container agent becomes disconnected while it is in a
+    /// <p>There's already a current Amazon ECS container agent update in progress on the container
+    /// instance that's specified. If the container agent becomes disconnected while it's in a
     /// transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the update
     /// process can get stuck in that state. However, when the agent reconnects, it resumes
     /// where it stopped previously.</p>
@@ -6410,14 +6377,13 @@ pub struct UpdateContainerInstancesStateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateContainerInstancesStateErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -6553,33 +6519,31 @@ pub struct UpdateServiceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateServiceErrorKind {
-    /// <p>You do not have authorization to perform the requested action.</p>
+    /// <p>You don't have authorization to perform the requested action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified platform version does not satisfy the task definition's required
-    /// capabilities.</p>
+    /// <p>The specified platform version doesn't satisfy the required capabilities of the task
+    /// definition.</p>
     PlatformTaskDefinitionIncompatibilityException(
         crate::error::PlatformTaskDefinitionIncompatibilityException,
     ),
-    /// <p>The specified platform version does not exist.</p>
+    /// <p>The specified platform version doesn't exist.</p>
     PlatformUnknownException(crate::error::PlatformUnknownException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The specified service is not active. You can't update a service that is inactive. If
-    /// you have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>
+    /// <p>The specified service isn't active. You can't update a service that's inactive. If you
+    /// have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>
     ServiceNotActiveException(crate::error::ServiceNotActiveException),
-    /// <p>The specified service could not be found. You can view your available services with
-    /// <a>ListServices</a>. Amazon ECS services are cluster-specific and
-    /// Region-specific.</p>
+    /// <p>The specified service wasn't found. You can view your available services with <a>ListServices</a>. Amazon ECS services are cluster specific and Region
+    /// specific.</p>
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6741,32 +6705,29 @@ pub struct UpdateServicePrimaryTaskSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateServicePrimaryTaskSetErrorKind {
-    /// <p>You do not have authorization to perform the requested action.</p>
+    /// <p>You don't have authorization to perform the requested action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The specified service is not active. You can't update a service that is inactive. If
-    /// you have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>
+    /// <p>The specified service isn't active. You can't update a service that's inactive. If you
+    /// have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>
     ServiceNotActiveException(crate::error::ServiceNotActiveException),
-    /// <p>The specified service could not be found. You can view your available services with
-    /// <a>ListServices</a>. Amazon ECS services are cluster-specific and
-    /// Region-specific.</p>
+    /// <p>The specified service wasn't found. You can view your available services with <a>ListServices</a>. Amazon ECS services are cluster specific and Region
+    /// specific.</p>
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
-    /// <p>The specified task set could not be found. You can view your available task sets with
-    /// <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service
-    /// and Region.</p>
+    /// <p>The specified task set wasn't found. You can view your available task sets with <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and
+    /// Region.</p>
     TaskSetNotFoundException(crate::error::TaskSetNotFoundException),
-    /// <p>The specified task is not supported in this Region.</p>
+    /// <p>The specified task isn't supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6941,32 +6902,29 @@ pub struct UpdateTaskSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTaskSetErrorKind {
-    /// <p>You do not have authorization to perform the requested action.</p>
+    /// <p>You don't have authorization to perform the requested action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>These errors are usually caused by a client action, such as using an action or
-    /// resource on behalf of a user that doesn't have permissions to use the action or
-    /// resource, or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using
+    /// an action or resource on behalf of a user that doesn't have permissions to use the
+    /// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// <p>The specified parameter isn't valid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The specified service is not active. You can't update a service that is inactive. If
-    /// you have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>
+    /// <p>The specified service isn't active. You can't update a service that's inactive. If you
+    /// have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>
     ServiceNotActiveException(crate::error::ServiceNotActiveException),
-    /// <p>The specified service could not be found. You can view your available services with
-    /// <a>ListServices</a>. Amazon ECS services are cluster-specific and
-    /// Region-specific.</p>
+    /// <p>The specified service wasn't found. You can view your available services with <a>ListServices</a>. Amazon ECS services are cluster specific and Region
+    /// specific.</p>
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
-    /// <p>The specified task set could not be found. You can view your available task sets with
-    /// <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service
-    /// and Region.</p>
+    /// <p>The specified task set wasn't found. You can view your available task sets with <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and
+    /// Region.</p>
     TaskSetNotFoundException(crate::error::TaskSetNotFoundException),
-    /// <p>The specified task is not supported in this Region.</p>
+    /// <p>The specified task isn't supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7111,7 +7069,7 @@ impl std::error::Error for UpdateTaskSetError {
     }
 }
 
-/// <p>The specified task is not supported in this Region.</p>
+/// <p>The specified task isn't supported in this Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedFeatureException {
@@ -7175,9 +7133,8 @@ impl UnsupportedFeatureException {
     }
 }
 
-/// <p>The specified task set could not be found. You can view your available task sets with
-/// <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service
-/// and Region.</p>
+/// <p>The specified task set wasn't found. You can view your available task sets with <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and
+/// Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskSetNotFoundException {
@@ -7241,9 +7198,8 @@ impl TaskSetNotFoundException {
     }
 }
 
-/// <p>The specified service could not be found. You can view your available services with
-/// <a>ListServices</a>. Amazon ECS services are cluster-specific and
-/// Region-specific.</p>
+/// <p>The specified service wasn't found. You can view your available services with <a>ListServices</a>. Amazon ECS services are cluster specific and Region
+/// specific.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNotFoundException {
@@ -7307,8 +7263,8 @@ impl ServiceNotFoundException {
     }
 }
 
-/// <p>The specified service is not active. You can't update a service that is inactive. If
-/// you have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>
+/// <p>The specified service isn't active. You can't update a service that's inactive. If you
+/// have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNotActiveException {
@@ -7436,7 +7392,7 @@ impl ServerException {
     }
 }
 
-/// <p>The specified parameter is invalid. Review the available parameters for the API
+/// <p>The specified parameter isn't valid. Review the available parameters for the API
 /// request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7501,8 +7457,7 @@ impl InvalidParameterException {
     }
 }
 
-/// <p>The specified cluster could not be found. You can view your available clusters with
-/// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.</p>
+/// <p>The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are Region specific.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterNotFoundException {
@@ -7566,9 +7521,9 @@ impl ClusterNotFoundException {
     }
 }
 
-/// <p>These errors are usually caused by a client action, such as using an action or
-/// resource on behalf of a user that doesn't have permissions to use the action or
-/// resource, or specifying an identifier that is not valid.</p>
+/// <p>These errors are usually caused by a client action. This client action might be using
+/// an action or resource on behalf of a user that doesn't have permissions to use the
+/// action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientException {
@@ -7632,7 +7587,7 @@ impl ClientException {
     }
 }
 
-/// <p>You do not have authorization to perform the requested action.</p>
+/// <p>You don't have authorization to perform the requested action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -7696,7 +7651,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>The specified platform version does not exist.</p>
+/// <p>The specified platform version doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlatformUnknownException {
@@ -7760,8 +7715,8 @@ impl PlatformUnknownException {
     }
 }
 
-/// <p>The specified platform version does not satisfy the task definition's required
-/// capabilities.</p>
+/// <p>The specified platform version doesn't satisfy the required capabilities of the task
+/// definition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlatformTaskDefinitionIncompatibilityException {
@@ -7825,8 +7780,8 @@ impl PlatformTaskDefinitionIncompatibilityException {
     }
 }
 
-/// <p>There is already a current Amazon ECS container agent update in progress on the specified
-/// container instance. If the container agent becomes disconnected while it is in a
+/// <p>There's already a current Amazon ECS container agent update in progress on the container
+/// instance that's specified. If the container agent becomes disconnected while it's in a
 /// transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the update
 /// process can get stuck in that state. However, when the agent reconnects, it resumes
 /// where it stopped previously.</p>
@@ -7893,9 +7848,9 @@ impl UpdateInProgressException {
     }
 }
 
-/// <p>There is no update available for this Amazon ECS container agent. This could be because the
-/// agent is already running the latest version, or it is so old that there is no update
-/// path to the current version.</p>
+/// <p>There's no update available for this Amazon ECS container agent. This might be because the
+/// agent is already running the latest version or because it's so old that there's no
+/// update path to the current version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoUpdateAvailableException {
@@ -7959,10 +7914,10 @@ impl NoUpdateAvailableException {
     }
 }
 
-/// <p>Amazon ECS is unable to determine the current version of the Amazon ECS container agent on the
-/// container instance and does not have enough information to proceed with an update. This
-/// could be because the agent running on the container instance is an older or custom
-/// version that does not use our version information.</p>
+/// <p>Amazon ECS can't determine the current version of the Amazon ECS container agent on the
+/// container instance and doesn't have enough information to proceed with an update. This
+/// could be because the agent running on the container instance is a previous or custom
+/// version that doesn't use our version information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissingVersionException {
@@ -8026,7 +7981,7 @@ impl MissingVersionException {
     }
 }
 
-/// <p>The specified resource could not be found.</p>
+/// <p>The specified resource wasn't found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -8090,7 +8045,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>Your Amazon Web Services account has been blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">
+/// <p>Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">
 /// Amazon Web Services Support</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8155,7 +8110,7 @@ impl BlockedException {
     }
 }
 
-/// <p>The specified resource is in-use and cannot be removed.</p>
+/// <p>The specified resource is in-use and can't be removed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
@@ -8219,8 +8174,8 @@ impl ResourceInUseException {
     }
 }
 
-/// <p>The specified target could not be found. You can view your available container
-/// instances with <a>ListContainerInstances</a>. Amazon ECS container instances are
+/// <p>The specified target wasn't found. You can view your available container instances
+/// with <a>ListContainerInstances</a>. Amazon ECS container instances are
 /// cluster-specific and Region-specific.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8285,9 +8240,9 @@ impl TargetNotFoundException {
     }
 }
 
-/// <p>You can apply up to 10 custom attributes per resource. You can view the attributes of
-/// a resource with <a>ListAttributes</a>. You can remove existing attributes on
-/// a resource with <a>DeleteAttributes</a>.</p>
+/// <p>You can apply up to 10 custom attributes for each resource. You can view the
+/// attributes of a resource with <a>ListAttributes</a>. You can remove existing
+/// attributes on a resource with <a>DeleteAttributes</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeLimitExceededException {
@@ -8351,7 +8306,7 @@ impl AttributeLimitExceededException {
     }
 }
 
-/// <p>The target container is not properly configured with the execute command agent or the
+/// <p>The target container isn't properly configured with the execute command agent or the
 /// container is no longer active or running.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8416,7 +8371,7 @@ impl TargetNotConnectedException {
     }
 }
 
-/// <p>You cannot delete a cluster that has active tasks.</p>
+/// <p>You can't delete a cluster that has active tasks.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterContainsTasksException {
@@ -8480,9 +8435,9 @@ impl ClusterContainsTasksException {
     }
 }
 
-/// <p>You cannot delete a cluster that contains services. First, update the service to
-/// reduce its desired task count to 0 and then delete the service. For more information,
-/// see <a>UpdateService</a> and <a>DeleteService</a>.</p>
+/// <p>You can't delete a cluster that contains services. First, update the service to reduce
+/// its desired task count to 0, and then delete the service. For more information, see
+/// <a>UpdateService</a> and <a>DeleteService</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterContainsServicesException {
@@ -8546,7 +8501,7 @@ impl ClusterContainsServicesException {
     }
 }
 
-/// <p>You cannot delete a cluster that has registered container instances. First, deregister
+/// <p>You can't delete a cluster that has registered container instances. First, deregister
 /// the container instances before you can delete the cluster. For more information, see
 /// <a>DeregisterContainerInstance</a>.</p>
 #[non_exhaustive]
@@ -8612,7 +8567,7 @@ impl ClusterContainsContainerInstancesException {
     }
 }
 
-/// <p>The limit for the resource has been exceeded.</p>
+/// <p>The limit for the resource was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {

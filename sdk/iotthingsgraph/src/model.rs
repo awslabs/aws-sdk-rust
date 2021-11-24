@@ -137,7 +137,7 @@ pub struct SystemTemplateSummary {
     /// <p>The revision number of the system.</p>
     pub revision_number: std::option::Option<i64>,
     /// <p>The date when the system was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SystemTemplateSummary {
     /// <p>The ID of the system.</p>
@@ -153,7 +153,7 @@ impl SystemTemplateSummary {
         self.revision_number
     }
     /// <p>The date when the system was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -176,7 +176,7 @@ pub mod system_template_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) revision_number: std::option::Option<i64>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the system.</p>
@@ -210,14 +210,14 @@ pub mod system_template_summary {
             self
         }
         /// <p>The date when the system was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date when the system was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -251,7 +251,7 @@ pub struct FlowTemplateSummary {
     /// <p>The revision number of the workflow.</p>
     pub revision_number: std::option::Option<i64>,
     /// <p>The date when the workflow was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl FlowTemplateSummary {
     /// <p>The ID of the workflow.</p>
@@ -267,7 +267,7 @@ impl FlowTemplateSummary {
         self.revision_number
     }
     /// <p>The date when the workflow was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -290,7 +290,7 @@ pub mod flow_template_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) revision_number: std::option::Option<i64>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the workflow.</p>
@@ -324,14 +324,14 @@ pub mod flow_template_summary {
             self
         }
         /// <p>The date when the workflow was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date when the workflow was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -369,11 +369,11 @@ pub struct SystemInstanceSummary {
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
     pub greengrass_group_name: std::option::Option<std::string::String>,
     /// <p>The date when the system instance was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>
     ///
     /// The date and time when the system instance was last updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
     pub greengrass_group_id: std::option::Option<std::string::String>,
     /// <p>The version of the Greengrass group where the system instance is deployed.</p>
@@ -401,13 +401,13 @@ impl SystemInstanceSummary {
         self.greengrass_group_name.as_deref()
     }
     /// <p>The date when the system instance was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>
     ///
     /// The date and time when the system instance was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
@@ -448,8 +448,8 @@ pub mod system_instance_summary {
         pub(crate) status: std::option::Option<crate::model::SystemInstanceDeploymentStatus>,
         pub(crate) target: std::option::Option<crate::model::DeploymentTarget>,
         pub(crate) greengrass_group_name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) greengrass_group_id: std::option::Option<std::string::String>,
         pub(crate) greengrass_group_version_id: std::option::Option<std::string::String>,
     }
@@ -514,14 +514,14 @@ pub mod system_instance_summary {
             self
         }
         /// <p>The date when the system instance was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date when the system instance was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -529,7 +529,7 @@ pub mod system_instance_summary {
         /// <p>
         ///
         /// The date and time when the system instance was last updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
@@ -538,7 +538,7 @@ pub mod system_instance_summary {
         /// The date and time when the system instance was last updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -1315,9 +1315,9 @@ pub struct FlowExecutionSummary {
     /// <p>The ID of the flow.</p>
     pub flow_template_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the flow execution summary was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the flow execution summary was last updated.</p>
-    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl FlowExecutionSummary {
     /// <p>The ID of the flow execution.</p>
@@ -1337,11 +1337,11 @@ impl FlowExecutionSummary {
         self.flow_template_id.as_deref()
     }
     /// <p>The date and time when the flow execution summary was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time when the flow execution summary was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -1367,8 +1367,8 @@ pub mod flow_execution_summary {
         pub(crate) status: std::option::Option<crate::model::FlowExecutionStatus>,
         pub(crate) system_instance_id: std::option::Option<std::string::String>,
         pub(crate) flow_template_id: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the flow execution.</p>
@@ -1424,27 +1424,27 @@ pub mod flow_execution_summary {
             self
         }
         /// <p>The date and time when the flow execution summary was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time when the flow execution summary was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The date and time when the flow execution summary was last updated.</p>
-        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
         /// <p>The date and time when the flow execution summary was last updated.</p>
         pub fn set_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_at = input;
             self
@@ -1543,7 +1543,7 @@ pub struct EntityDescription {
     /// <p>The entity type.</p>
     pub r#type: std::option::Option<crate::model::EntityType>,
     /// <p>The time at which the entity was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The definition document of the entity.</p>
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
 }
@@ -1561,7 +1561,7 @@ impl EntityDescription {
         self.r#type.as_ref()
     }
     /// <p>The time at which the entity was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The definition document of the entity.</p>
@@ -1589,7 +1589,7 @@ pub mod entity_description {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::EntityType>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) definition: std::option::Option<crate::model::DefinitionDocument>,
     }
     impl Builder {
@@ -1624,14 +1624,14 @@ pub mod entity_description {
             self
         }
         /// <p>The time at which the entity was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time at which the entity was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1934,7 +1934,7 @@ pub struct FlowExecutionMessage {
     /// <p>The type of flow event .</p>
     pub event_type: std::option::Option<crate::model::FlowExecutionEventType>,
     /// <p>The date and time when the message was last updated.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A string containing information about the flow event.</p>
     pub payload: std::option::Option<std::string::String>,
 }
@@ -1948,7 +1948,7 @@ impl FlowExecutionMessage {
         self.event_type.as_ref()
     }
     /// <p>The date and time when the message was last updated.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>A string containing information about the flow event.</p>
@@ -1974,7 +1974,7 @@ pub mod flow_execution_message {
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) event_type: std::option::Option<crate::model::FlowExecutionEventType>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) payload: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2002,14 +2002,14 @@ pub mod flow_execution_message {
             self
         }
         /// <p>The date and time when the message was last updated.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The date and time when the message was last updated.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self

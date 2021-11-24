@@ -92,10 +92,12 @@ fn test_operation() -> Operation<TestOperationParser, AwsErrorRetryPolicy> {
         );
         aws_http::auth::set_provider(
             &mut conf,
-            SharedCredentialsProvider::new(Credentials::from_keys(
+            SharedCredentialsProvider::new(Credentials::new(
                 "access_key",
                 "secret_key",
                 None,
+                None,
+                "test",
             )),
         );
         conf.insert(Region::new("test-region"));

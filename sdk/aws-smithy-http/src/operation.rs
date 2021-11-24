@@ -5,6 +5,7 @@
 
 use crate::body::SdkBody;
 use crate::property_bag::{PropertyBag, SharedPropertyBag};
+use aws_smithy_types::date_time::DateTimeFormatError;
 use http::uri::InvalidUri;
 use std::borrow::Cow;
 use std::error::Error;
@@ -85,6 +86,12 @@ impl From<SerializationError> for BuildError {
     }
 }
 
+impl From<DateTimeFormatError> for BuildError {
+    fn from(err: DateTimeFormatError) -> Self {
+        BuildError::from(SerializationError::from(err))
+    }
+}
+
 impl Display for BuildError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -126,6 +133,8 @@ impl Error for BuildError {
 pub enum SerializationError {
     #[non_exhaustive]
     CannotSerializeUnknownVariant { union: &'static str },
+    #[non_exhaustive]
+    DateTimeFormatError { cause: DateTimeFormatError },
 }
 
 impl SerializationError {
@@ -137,15 +146,25 @@ impl SerializationError {
 impl Display for SerializationError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
-            SerializationError::CannotSerializeUnknownVariant { union } => write!(f, "Cannot serialize `{}::Unknown`.\
-             Unknown union variants cannot be serialized. This can occur when round-tripping a \
-             response from the server that was not recognized by the SDK. Consider upgrading to the \
-             latest version of the SDK.", union)
+            Self::CannotSerializeUnknownVariant { union } => write!(
+                f,
+                "Cannot serialize `{}::Unknown`. Unknown union variants cannot be serialized. \
+                This can occur when round-tripping a response from the server that was not \
+                recognized by the SDK. Consider upgrading to the latest version of the SDK.",
+                union
+            ),
+            Self::DateTimeFormatError { cause } => write!(f, "{}", cause),
         }
     }
 }
 
 impl Error for SerializationError {}
+
+impl From<DateTimeFormatError> for SerializationError {
+    fn from(err: DateTimeFormatError) -> SerializationError {
+        SerializationError::DateTimeFormatError { cause: err }
+    }
+}
 
 #[derive(Debug)]
 pub struct Operation<H, R> {

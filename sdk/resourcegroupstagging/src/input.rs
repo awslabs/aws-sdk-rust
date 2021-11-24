@@ -25,6 +25,7 @@ pub type DescribeReportCreationInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl DescribeReportCreationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReportCreation`](crate::operation::DescribeReportCreation)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -83,11 +84,14 @@ impl DescribeReportCreationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -172,7 +176,7 @@ pub mod get_compliance_summary_input {
         ///
         /// To override the contents of this collection use [`set_region_filters`](Self::set_region_filters).
         ///
-        /// <p>Specifies a list of AWS Regions to limit the output by. If you use this parameter,
+        /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter,
         /// the count of returned noncompliant resources includes only resources in the specified
         /// Regions.</p>
         pub fn region_filters(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,7 +185,7 @@ pub mod get_compliance_summary_input {
             self.region_filters = Some(v);
             self
         }
-        /// <p>Specifies a list of AWS Regions to limit the output by. If you use this parameter,
+        /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter,
         /// the count of returned noncompliant resources includes only resources in the specified
         /// Regions.</p>
         pub fn set_region_filters(
@@ -199,13 +203,16 @@ pub mod get_compliance_summary_input {
         /// specified types. The format of each resource type is
         /// <code>service[:resourceType]</code>. For example, specifying a resource type of
         /// <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances).
-        /// Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p>
+        /// Specifying a resource type of <code>ec2:instance</code> returns only EC2
+        /// instances.</p>
         /// <p>The string for each service name and resource type is the same as that embedded in a
-        /// resource's Amazon Resource Name (ARN). Consult the <i>AWS General
-        /// Reference</i> for the following:</p>
+        /// resource's Amazon Resource Name (ARN). Consult the <i>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a>
+        /// </i>
+        /// for the following:</p>
         /// <ul>
         /// <li>
-        /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a>.</p>
+        /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a>.</p>
         /// </li>
         /// <li>
         /// <p>For resource type strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
@@ -213,7 +220,7 @@ pub mod get_compliance_summary_input {
         /// </li>
         /// <li>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-        /// (ARNs) and AWS Service Namespaces</a>.</p>
+        /// (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
         /// </li>
         /// </ul>
         /// <p>You can specify multiple resource types by using a comma separated array. The array
@@ -229,13 +236,16 @@ pub mod get_compliance_summary_input {
         /// specified types. The format of each resource type is
         /// <code>service[:resourceType]</code>. For example, specifying a resource type of
         /// <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances).
-        /// Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p>
+        /// Specifying a resource type of <code>ec2:instance</code> returns only EC2
+        /// instances.</p>
         /// <p>The string for each service name and resource type is the same as that embedded in a
-        /// resource's Amazon Resource Name (ARN). Consult the <i>AWS General
-        /// Reference</i> for the following:</p>
+        /// resource's Amazon Resource Name (ARN). Consult the <i>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a>
+        /// </i>
+        /// for the following:</p>
         /// <ul>
         /// <li>
-        /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a>.</p>
+        /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a>.</p>
         /// </li>
         /// <li>
         /// <p>For resource type strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
@@ -243,7 +253,7 @@ pub mod get_compliance_summary_input {
         /// </li>
         /// <li>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-        /// (ARNs) and AWS Service Namespaces</a>.</p>
+        /// (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
         /// </li>
         /// </ul>
         /// <p>You can specify multiple resource types by using a comma separated array. The array
@@ -359,6 +369,7 @@ pub type GetComplianceSummaryInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl GetComplianceSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetComplianceSummary`](crate::operation::GetComplianceSummary)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -417,11 +428,14 @@ impl GetComplianceSummaryInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -510,8 +524,8 @@ pub mod get_resources_input {
         /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
         ///
         /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those
-        /// resources that have the specified tag and, if included, the specified value. Each
-        /// <code>TagFilter</code> must contain a key with values optional. A request can
+        /// resources that have tags with the specified keys and, if included, the specified values.
+        /// Each <code>TagFilter</code> must contain a key with values optional. A request can
         /// include up to 50 keys, and each key can include up to 20 values. </p>
         /// <p>Note the following when deciding how to use TagFilters:</p>
         /// <ul>
@@ -527,12 +541,12 @@ pub mod get_resources_input {
         /// </li>
         /// <li>
         /// <p>If you specify a filter that contains more than one value for a key, the
-        /// response returns resources that match any of the specified values for that
-        /// key.</p>
+        /// response returns resources that match <i>any</i> of the specified
+        /// values for that key.</p>
         /// </li>
         /// <li>
-        /// <p>If you don't specify any values for a key, the response returns resources that
-        /// are tagged with that key and any or no value.</p>
+        /// <p>If you don't specify a value for a key, the response returns all resources
+        /// that are tagged with that key, with any or no value.</p>
         /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>,
         /// <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
         /// {keyC}</code>:</p>
@@ -572,8 +586,8 @@ pub mod get_resources_input {
             self
         }
         /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those
-        /// resources that have the specified tag and, if included, the specified value. Each
-        /// <code>TagFilter</code> must contain a key with values optional. A request can
+        /// resources that have tags with the specified keys and, if included, the specified values.
+        /// Each <code>TagFilter</code> must contain a key with values optional. A request can
         /// include up to 50 keys, and each key can include up to 20 values. </p>
         /// <p>Note the following when deciding how to use TagFilters:</p>
         /// <ul>
@@ -589,12 +603,12 @@ pub mod get_resources_input {
         /// </li>
         /// <li>
         /// <p>If you specify a filter that contains more than one value for a key, the
-        /// response returns resources that match any of the specified values for that
-        /// key.</p>
+        /// response returns resources that match <i>any</i> of the specified
+        /// values for that key.</p>
         /// </li>
         /// <li>
-        /// <p>If you don't specify any values for a key, the response returns resources that
-        /// are tagged with that key and any or no value.</p>
+        /// <p>If you don't specify a value for a key, the response returns all resources
+        /// that are tagged with that key, with any or no value.</p>
         /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>,
         /// <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
         /// {keyC}</code>:</p>
@@ -650,7 +664,7 @@ pub mod get_resources_input {
             self.resources_per_page = input;
             self
         }
-        /// <p>AWS recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
+        /// <p>Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
         /// <p>A limit that restricts the number of tags (key and value pairs) returned by
         /// <code>GetResources</code> in paginated output. A resource with no tags is counted as
         /// having one tag (one key and value pair).</p>
@@ -670,7 +684,7 @@ pub mod get_resources_input {
             self.tags_per_page = Some(input);
             self
         }
-        /// <p>AWS recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
+        /// <p>Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
         /// <p>A limit that restricts the number of tags (key and value pairs) returned by
         /// <code>GetResources</code> in paginated output. A resource with no tags is counted as
         /// having one tag (one key and value pair).</p>
@@ -700,13 +714,15 @@ pub mod get_resources_input {
         /// instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2
         /// instances. </p>
         /// <p>The string for each service name and resource type is the same as that embedded in a
-        /// resource's Amazon Resource Name (ARN). Consult the <i>AWS General
-        /// Reference</i> for the following:</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-        /// AWS Service Namespaces</a>.</p>
+        /// resource's Amazon Resource Name (ARN). For the list of services whose resources you can
+        /// use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
         /// <p>You can specify multiple resource types by using an array. The array can include up to
         /// 100 items. Note that the length constraint requirement applies to each resource type
-        /// filter. </p>
+        /// filter. For example, the following string would limit the response to only Amazon EC2
+        /// instances, Amazon S3 buckets, or any Audit Manager resource:</p>
+        /// <p>
+        /// <code>ec2:instance,s3:bucket,auditmanager</code>
+        /// </p>
         pub fn resource_type_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_type_filters.unwrap_or_default();
             v.push(input.into());
@@ -719,13 +735,15 @@ pub mod get_resources_input {
         /// instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2
         /// instances. </p>
         /// <p>The string for each service name and resource type is the same as that embedded in a
-        /// resource's Amazon Resource Name (ARN). Consult the <i>AWS General
-        /// Reference</i> for the following:</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-        /// AWS Service Namespaces</a>.</p>
+        /// resource's Amazon Resource Name (ARN). For the list of services whose resources you can
+        /// use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
         /// <p>You can specify multiple resource types by using an array. The array can include up to
         /// 100 items. Note that the length constraint requirement applies to each resource type
-        /// filter. </p>
+        /// filter. For example, the following string would limit the response to only Amazon EC2
+        /// instances, Amazon S3 buckets, or any Audit Manager resource:</p>
+        /// <p>
+        /// <code>ec2:instance,s3:bucket,auditmanager</code>
+        /// </p>
         pub fn set_resource_type_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -777,9 +795,9 @@ pub mod get_resources_input {
         /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error;
         /// it simply isn't included in the response.</p>
         /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
-        /// General Reference</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+        /// <i>Amazon Web Services General Reference</i>.</p>
         pub fn resource_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arn_list.unwrap_or_default();
             v.push(input.into());
@@ -794,9 +812,9 @@ pub mod get_resources_input {
         /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error;
         /// it simply isn't included in the response.</p>
         /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
-        /// General Reference</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+        /// <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -831,6 +849,7 @@ pub type GetResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetResourcesInput {
     /// Consumes the builder and constructs an Operation<[`GetResources`](crate::operation::GetResources)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -886,11 +905,14 @@ impl GetResourcesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -987,6 +1009,7 @@ pub type GetTagKeysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetTagKeysInput {
     /// Consumes the builder and constructs an Operation<[`GetTagKeys`](crate::operation::GetTagKeys)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1042,11 +1065,14 @@ impl GetTagKeysInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1125,13 +1151,13 @@ pub mod get_tag_values_input {
             self
         }
         /// <p>Specifies the tag key for which you want to list all existing values that are
-        /// currently used in the specified AWS Region for the calling AWS account.</p>
+        /// currently used in the specified Amazon Web Services Region for the calling account.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
         /// <p>Specifies the tag key for which you want to list all existing values that are
-        /// currently used in the specified AWS Region for the calling AWS account.</p>
+        /// currently used in the specified Amazon Web Services Region for the calling account.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1157,6 +1183,7 @@ pub type GetTagValuesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetTagValuesInput {
     /// Consumes the builder and constructs an Operation<[`GetTagValues`](crate::operation::GetTagValues)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1212,11 +1239,14 @@ impl GetTagValuesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1316,6 +1346,7 @@ pub type StartReportCreationInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl StartReportCreationInput {
     /// Consumes the builder and constructs an Operation<[`StartReportCreation`](crate::operation::StartReportCreation)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1372,11 +1403,14 @@ impl StartReportCreationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1445,8 +1479,8 @@ pub mod tag_resources_input {
         ///
         /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
         /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
         /// General Reference</i>.</p>
         pub fn resource_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arn_list.unwrap_or_default();
@@ -1456,8 +1490,8 @@ pub mod tag_resources_input {
         }
         /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
         /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
         /// General Reference</i>.</p>
         pub fn set_resource_arn_list(
             mut self,
@@ -1514,6 +1548,7 @@ pub type TagResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourcesInput {
     /// Consumes the builder and constructs an Operation<[`TagResources`](crate::operation::TagResources)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1569,11 +1604,14 @@ impl TagResourcesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1640,8 +1678,8 @@ pub mod untag_resources_input {
         ///
         /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
         /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
         /// General Reference</i>.</p>
         pub fn resource_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arn_list.unwrap_or_default();
@@ -1651,8 +1689,8 @@ pub mod untag_resources_input {
         }
         /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
         /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
         /// General Reference</i>.</p>
         pub fn set_resource_arn_list(
             mut self,
@@ -1703,6 +1741,7 @@ pub type UntagResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourcesInput {
     /// Consumes the builder and constructs an Operation<[`UntagResources`](crate::operation::UntagResources)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1759,11 +1798,14 @@ impl UntagResourcesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1820,8 +1862,8 @@ impl UntagResourcesInput {
 pub struct UntagResourcesInput {
     /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-    /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
     /// General Reference</i>.</p>
     pub resource_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies a list of tag keys that you want to remove from the specified
@@ -1831,8 +1873,8 @@ pub struct UntagResourcesInput {
 impl UntagResourcesInput {
     /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-    /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
     /// General Reference</i>.</p>
     pub fn resource_arn_list(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arn_list.as_deref()
@@ -1858,8 +1900,8 @@ impl std::fmt::Debug for UntagResourcesInput {
 pub struct TagResourcesInput {
     /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-    /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
     /// General Reference</i>.</p>
     pub resource_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies a list of tags that you want to add to the specified resources. A tag
@@ -1870,8 +1912,8 @@ pub struct TagResourcesInput {
 impl TagResourcesInput {
     /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-    /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
     /// General Reference</i>.</p>
     pub fn resource_arn_list(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arn_list.as_deref()
@@ -1934,7 +1976,7 @@ pub struct GetTagValuesInput {
     /// in your initial request.</p>
     pub pagination_token: std::option::Option<std::string::String>,
     /// <p>Specifies the tag key for which you want to list all existing values that are
-    /// currently used in the specified AWS Region for the calling AWS account.</p>
+    /// currently used in the specified Amazon Web Services Region for the calling account.</p>
     pub key: std::option::Option<std::string::String>,
 }
 impl GetTagValuesInput {
@@ -1945,7 +1987,7 @@ impl GetTagValuesInput {
         self.pagination_token.as_deref()
     }
     /// <p>Specifies the tag key for which you want to list all existing values that are
-    /// currently used in the specified AWS Region for the calling AWS account.</p>
+    /// currently used in the specified Amazon Web Services Region for the calling account.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -1993,8 +2035,8 @@ pub struct GetResourcesInput {
     /// in your initial request.</p>
     pub pagination_token: std::option::Option<std::string::String>,
     /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those
-    /// resources that have the specified tag and, if included, the specified value. Each
-    /// <code>TagFilter</code> must contain a key with values optional. A request can
+    /// resources that have tags with the specified keys and, if included, the specified values.
+    /// Each <code>TagFilter</code> must contain a key with values optional. A request can
     /// include up to 50 keys, and each key can include up to 20 values. </p>
     /// <p>Note the following when deciding how to use TagFilters:</p>
     /// <ul>
@@ -2010,12 +2052,12 @@ pub struct GetResourcesInput {
     /// </li>
     /// <li>
     /// <p>If you specify a filter that contains more than one value for a key, the
-    /// response returns resources that match any of the specified values for that
-    /// key.</p>
+    /// response returns resources that match <i>any</i> of the specified
+    /// values for that key.</p>
     /// </li>
     /// <li>
-    /// <p>If you don't specify any values for a key, the response returns resources that
-    /// are tagged with that key and any or no value.</p>
+    /// <p>If you don't specify a value for a key, the response returns all resources
+    /// that are tagged with that key, with any or no value.</p>
     /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>,
     /// <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
     /// {keyC}</code>:</p>
@@ -2054,7 +2096,7 @@ pub struct GetResourcesInput {
     /// should always check the <code>PaginationToken</code> response value to see if there are more
     /// results. You can specify a minimum of 1 and a maximum value of 100.</p>
     pub resources_per_page: std::option::Option<i32>,
-    /// <p>AWS recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
+    /// <p>Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
     /// <p>A limit that restricts the number of tags (key and value pairs) returned by
     /// <code>GetResources</code> in paginated output. A resource with no tags is counted as
     /// having one tag (one key and value pair).</p>
@@ -2077,13 +2119,15 @@ pub struct GetResourcesInput {
     /// instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2
     /// instances. </p>
     /// <p>The string for each service name and resource type is the same as that embedded in a
-    /// resource's Amazon Resource Name (ARN). Consult the <i>AWS General
-    /// Reference</i> for the following:</p>
-    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-    /// AWS Service Namespaces</a>.</p>
+    /// resource's Amazon Resource Name (ARN). For the list of services whose resources you can
+    /// use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
     /// <p>You can specify multiple resource types by using an array. The array can include up to
     /// 100 items. Note that the length constraint requirement applies to each resource type
-    /// filter. </p>
+    /// filter. For example, the following string would limit the response to only Amazon EC2
+    /// instances, Amazon S3 buckets, or any Audit Manager resource:</p>
+    /// <p>
+    /// <code>ec2:instance,s3:bucket,auditmanager</code>
+    /// </p>
     pub resource_type_filters: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether to include details regarding the compliance with the effective tag
     /// policy. Set this to <code>true</code> to determine whether resources are compliant with
@@ -2103,9 +2147,9 @@ pub struct GetResourcesInput {
     /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error;
     /// it simply isn't included in the response.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-    /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
-    /// General Reference</i>.</p>
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+    /// <i>Amazon Web Services General Reference</i>.</p>
     pub resource_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetResourcesInput {
@@ -2116,8 +2160,8 @@ impl GetResourcesInput {
         self.pagination_token.as_deref()
     }
     /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those
-    /// resources that have the specified tag and, if included, the specified value. Each
-    /// <code>TagFilter</code> must contain a key with values optional. A request can
+    /// resources that have tags with the specified keys and, if included, the specified values.
+    /// Each <code>TagFilter</code> must contain a key with values optional. A request can
     /// include up to 50 keys, and each key can include up to 20 values. </p>
     /// <p>Note the following when deciding how to use TagFilters:</p>
     /// <ul>
@@ -2133,12 +2177,12 @@ impl GetResourcesInput {
     /// </li>
     /// <li>
     /// <p>If you specify a filter that contains more than one value for a key, the
-    /// response returns resources that match any of the specified values for that
-    /// key.</p>
+    /// response returns resources that match <i>any</i> of the specified
+    /// values for that key.</p>
     /// </li>
     /// <li>
-    /// <p>If you don't specify any values for a key, the response returns resources that
-    /// are tagged with that key and any or no value.</p>
+    /// <p>If you don't specify a value for a key, the response returns all resources
+    /// that are tagged with that key, with any or no value.</p>
     /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>,
     /// <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
     /// {keyC}</code>:</p>
@@ -2181,7 +2225,7 @@ impl GetResourcesInput {
     pub fn resources_per_page(&self) -> std::option::Option<i32> {
         self.resources_per_page
     }
-    /// <p>AWS recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
+    /// <p>Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
     /// <p>A limit that restricts the number of tags (key and value pairs) returned by
     /// <code>GetResources</code> in paginated output. A resource with no tags is counted as
     /// having one tag (one key and value pair).</p>
@@ -2206,13 +2250,15 @@ impl GetResourcesInput {
     /// instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2
     /// instances. </p>
     /// <p>The string for each service name and resource type is the same as that embedded in a
-    /// resource's Amazon Resource Name (ARN). Consult the <i>AWS General
-    /// Reference</i> for the following:</p>
-    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-    /// AWS Service Namespaces</a>.</p>
+    /// resource's Amazon Resource Name (ARN). For the list of services whose resources you can
+    /// use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
     /// <p>You can specify multiple resource types by using an array. The array can include up to
     /// 100 items. Note that the length constraint requirement applies to each resource type
-    /// filter. </p>
+    /// filter. For example, the following string would limit the response to only Amazon EC2
+    /// instances, Amazon S3 buckets, or any Audit Manager resource:</p>
+    /// <p>
+    /// <code>ec2:instance,s3:bucket,auditmanager</code>
+    /// </p>
     pub fn resource_type_filters(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_type_filters.as_deref()
     }
@@ -2238,9 +2284,9 @@ impl GetResourcesInput {
     /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error;
     /// it simply isn't included in the response.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-    /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
-    /// General Reference</i>.</p>
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+    /// <i>Amazon Web Services General Reference</i>.</p>
     pub fn resource_arn_list(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arn_list.as_deref()
     }
@@ -2274,7 +2320,7 @@ pub struct GetComplianceSummaryInput {
     /// If you use this parameter, the count of returned noncompliant resources includes only
     /// resources with the specified target IDs.</p>
     pub target_id_filters: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies a list of AWS Regions to limit the output by. If you use this parameter,
+    /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter,
     /// the count of returned noncompliant resources includes only resources in the specified
     /// Regions.</p>
     pub region_filters: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2282,13 +2328,16 @@ pub struct GetComplianceSummaryInput {
     /// specified types. The format of each resource type is
     /// <code>service[:resourceType]</code>. For example, specifying a resource type of
     /// <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances).
-    /// Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p>
+    /// Specifying a resource type of <code>ec2:instance</code> returns only EC2
+    /// instances.</p>
     /// <p>The string for each service name and resource type is the same as that embedded in a
-    /// resource's Amazon Resource Name (ARN). Consult the <i>AWS General
-    /// Reference</i> for the following:</p>
+    /// resource's Amazon Resource Name (ARN). Consult the <i>
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a>
+    /// </i>
+    /// for the following:</p>
     /// <ul>
     /// <li>
-    /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a>.</p>
+    /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a>.</p>
     /// </li>
     /// <li>
     /// <p>For resource type strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
@@ -2296,7 +2345,7 @@ pub struct GetComplianceSummaryInput {
     /// </li>
     /// <li>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-    /// (ARNs) and AWS Service Namespaces</a>.</p>
+    /// (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     /// </li>
     /// </ul>
     /// <p>You can specify multiple resource types by using a comma separated array. The array
@@ -2327,7 +2376,7 @@ impl GetComplianceSummaryInput {
     pub fn target_id_filters(&self) -> std::option::Option<&[std::string::String]> {
         self.target_id_filters.as_deref()
     }
-    /// <p>Specifies a list of AWS Regions to limit the output by. If you use this parameter,
+    /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter,
     /// the count of returned noncompliant resources includes only resources in the specified
     /// Regions.</p>
     pub fn region_filters(&self) -> std::option::Option<&[std::string::String]> {
@@ -2337,13 +2386,16 @@ impl GetComplianceSummaryInput {
     /// specified types. The format of each resource type is
     /// <code>service[:resourceType]</code>. For example, specifying a resource type of
     /// <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances).
-    /// Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p>
+    /// Specifying a resource type of <code>ec2:instance</code> returns only EC2
+    /// instances.</p>
     /// <p>The string for each service name and resource type is the same as that embedded in a
-    /// resource's Amazon Resource Name (ARN). Consult the <i>AWS General
-    /// Reference</i> for the following:</p>
+    /// resource's Amazon Resource Name (ARN). Consult the <i>
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a>
+    /// </i>
+    /// for the following:</p>
     /// <ul>
     /// <li>
-    /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a>.</p>
+    /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a>.</p>
     /// </li>
     /// <li>
     /// <p>For resource type strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
@@ -2351,7 +2403,7 @@ impl GetComplianceSummaryInput {
     /// </li>
     /// <li>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-    /// (ARNs) and AWS Service Namespaces</a>.</p>
+    /// (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     /// </li>
     /// </ul>
     /// <p>You can specify multiple resource types by using a comma separated array. The array

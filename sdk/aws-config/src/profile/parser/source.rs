@@ -53,11 +53,11 @@ impl FileKind {
 
 /// Load a [Source](Source) from a given environment and filesystem.
 pub async fn load(proc_env: &os_shim_internal::Env, fs: &os_shim_internal::Fs) -> Source {
-    let home = home_dir(&proc_env, Os::real());
-    let config = load_config_file(FileKind::Config, &home, &fs, &proc_env)
+    let home = home_dir(proc_env, Os::real());
+    let config = load_config_file(FileKind::Config, &home, fs, proc_env)
         .instrument(tracing::info_span!("load_config_file"))
         .await;
-    let credentials = load_config_file(FileKind::Credentials, &home, &fs, &proc_env)
+    let credentials = load_config_file(FileKind::Credentials, &home, fs, proc_env)
         .instrument(tracing::info_span!("load_credentials_file"))
         .await;
 

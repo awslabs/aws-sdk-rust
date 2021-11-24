@@ -153,12 +153,12 @@ pub fn serialize_structure_crate_input_initiate_document_version_upload_input(
     if let Some(var_32) = &input.content_created_timestamp {
         object
             .key("ContentCreatedTimestamp")
-            .instant(var_32, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_32, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_33) = &input.content_modified_timestamp {
         object
             .key("ContentModifiedTimestamp")
-            .instant(var_33, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_33, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_34) = &input.content_type {
         object.key("ContentType").string(var_34);

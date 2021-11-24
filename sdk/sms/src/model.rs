@@ -719,7 +719,7 @@ pub struct AppSummary {
     /// <p>A message related to the replication status of the application.</p>
     pub replication_status_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the application's most recent successful replication.</p>
-    pub latest_replication_time: std::option::Option<aws_smithy_types::Instant>,
+    pub latest_replication_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Status of the launch configuration.</p>
     pub launch_configuration_status:
         std::option::Option<crate::model::AppLaunchConfigurationStatus>,
@@ -730,9 +730,9 @@ pub struct AppSummary {
     /// <p>Details about the latest launch of the application.</p>
     pub launch_details: std::option::Option<crate::model::LaunchDetails>,
     /// <p>The creation time of the application.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last modified time of the application.</p>
-    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the service role in the customer's account used by AWS SMS.</p>
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The number of server groups present in the application.</p>
@@ -780,7 +780,7 @@ impl AppSummary {
         self.replication_status_message.as_deref()
     }
     /// <p>The timestamp of the application's most recent successful replication.</p>
-    pub fn latest_replication_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn latest_replication_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_replication_time.as_ref()
     }
     /// <p>Status of the launch configuration.</p>
@@ -802,11 +802,11 @@ impl AppSummary {
         self.launch_details.as_ref()
     }
     /// <p>The creation time of the application.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last modified time of the application.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The name of the service role in the customer's account used by AWS SMS.</p>
@@ -872,14 +872,14 @@ pub mod app_summary {
             std::option::Option<crate::model::AppReplicationConfigurationStatus>,
         pub(crate) replication_status: std::option::Option<crate::model::AppReplicationStatus>,
         pub(crate) replication_status_message: std::option::Option<std::string::String>,
-        pub(crate) latest_replication_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) latest_replication_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) launch_configuration_status:
             std::option::Option<crate::model::AppLaunchConfigurationStatus>,
         pub(crate) launch_status: std::option::Option<crate::model::AppLaunchStatus>,
         pub(crate) launch_status_message: std::option::Option<std::string::String>,
         pub(crate) launch_details: std::option::Option<crate::model::LaunchDetails>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) role_name: std::option::Option<std::string::String>,
         pub(crate) total_server_groups: std::option::Option<i32>,
         pub(crate) total_servers: std::option::Option<i32>,
@@ -994,14 +994,14 @@ pub mod app_summary {
             self
         }
         /// <p>The timestamp of the application's most recent successful replication.</p>
-        pub fn latest_replication_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn latest_replication_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_replication_time = Some(input);
             self
         }
         /// <p>The timestamp of the application's most recent successful replication.</p>
         pub fn set_latest_replication_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.latest_replication_time = input;
             self
@@ -1062,27 +1062,27 @@ pub mod app_summary {
             self
         }
         /// <p>The creation time of the application.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The creation time of the application.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last modified time of the application.</p>
-        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
         /// <p>The last modified time of the application.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -1155,7 +1155,7 @@ impl AppSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchDetails {
     /// <p>The latest time that this application was launched successfully.</p>
-    pub latest_launch_time: std::option::Option<aws_smithy_types::Instant>,
+    pub latest_launch_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the latest stack launched for this application.</p>
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The ID of the latest stack launched for this application.</p>
@@ -1163,7 +1163,7 @@ pub struct LaunchDetails {
 }
 impl LaunchDetails {
     /// <p>The latest time that this application was launched successfully.</p>
-    pub fn latest_launch_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn latest_launch_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_launch_time.as_ref()
     }
     /// <p>The name of the latest stack launched for this application.</p>
@@ -1190,20 +1190,20 @@ pub mod launch_details {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) latest_launch_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) latest_launch_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) stack_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The latest time that this application was launched successfully.</p>
-        pub fn latest_launch_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn latest_launch_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_launch_time = Some(input);
             self
         }
         /// <p>The latest time that this application was launched successfully.</p>
         pub fn set_latest_launch_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.latest_launch_time = input;
             self
@@ -2781,7 +2781,7 @@ impl ServerReplicationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerReplicationParameters {
     /// <p>The seed time for creating a replication job for the server.</p>
-    pub seed_time: std::option::Option<aws_smithy_types::Instant>,
+    pub seed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The frequency of creating replication jobs for the server.</p>
     pub frequency: std::option::Option<i32>,
     /// <p>Indicates whether to run the replication job one time.</p>
@@ -2814,7 +2814,7 @@ pub struct ServerReplicationParameters {
 }
 impl ServerReplicationParameters {
     /// <p>The seed time for creating a replication job for the server.</p>
-    pub fn seed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn seed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.seed_time.as_ref()
     }
     /// <p>The frequency of creating replication jobs for the server.</p>
@@ -2881,7 +2881,7 @@ pub mod server_replication_parameters {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) seed_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) seed_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) frequency: std::option::Option<i32>,
         pub(crate) run_once: std::option::Option<bool>,
         pub(crate) license_type: std::option::Option<crate::model::LicenseType>,
@@ -2891,14 +2891,14 @@ pub mod server_replication_parameters {
     }
     impl Builder {
         /// <p>The seed time for creating a replication job for the server.</p>
-        pub fn seed_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn seed_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.seed_time = Some(input);
             self
         }
         /// <p>The seed time for creating a replication job for the server.</p>
         pub fn set_seed_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.seed_time = input;
             self
@@ -3746,9 +3746,9 @@ pub struct ReplicationRun {
     /// run.</p>
     pub ami_id: std::option::Option<std::string::String>,
     /// <p>The start time of the next replication run.</p>
-    pub scheduled_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The completion time of the last replication run.</p>
-    pub completed_time: std::option::Option<aws_smithy_types::Instant>,
+    pub completed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the replication run.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether the replication run should produce an encrypted AMI.</p>
@@ -3800,11 +3800,11 @@ impl ReplicationRun {
         self.ami_id.as_deref()
     }
     /// <p>The start time of the next replication run.</p>
-    pub fn scheduled_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn scheduled_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.scheduled_start_time.as_ref()
     }
     /// <p>The completion time of the last replication run.</p>
-    pub fn completed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_time.as_ref()
     }
     /// <p>The description of the replication run.</p>
@@ -3866,8 +3866,8 @@ pub mod replication_run {
         pub(crate) stage_details: std::option::Option<crate::model::ReplicationRunStageDetails>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) ami_id: std::option::Option<std::string::String>,
-        pub(crate) scheduled_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completed_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completed_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) encrypted: std::option::Option<bool>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -3951,27 +3951,27 @@ pub mod replication_run {
             self
         }
         /// <p>The start time of the next replication run.</p>
-        pub fn scheduled_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn scheduled_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.scheduled_start_time = Some(input);
             self
         }
         /// <p>The start time of the next replication run.</p>
         pub fn set_scheduled_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.scheduled_start_time = input;
             self
         }
         /// <p>The completion time of the last replication run.</p>
-        pub fn completed_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completed_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completed_time = Some(input);
             self
         }
         /// <p>The completion time of the last replication run.</p>
         pub fn set_completed_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completed_time = input;
             self
@@ -4292,13 +4292,13 @@ pub struct ReplicationJob {
     /// <p>Information about the VM server.</p>
     pub vm_server: std::option::Option<crate::model::VmServer>,
     /// <p>The seed replication time.</p>
-    pub seed_replication_time: std::option::Option<aws_smithy_types::Instant>,
+    pub seed_replication_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time between consecutive replication runs, in hours.</p>
     pub frequency: std::option::Option<i32>,
     /// <p>Indicates whether to run the replication job one time.</p>
     pub run_once: std::option::Option<bool>,
     /// <p>The start time of the next replication run.</p>
-    pub next_replication_run_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub next_replication_run_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The license type to be used for the AMI created by a successful replication
     /// run.</p>
     pub license_type: std::option::Option<crate::model::LicenseType>,
@@ -4357,7 +4357,7 @@ impl ReplicationJob {
         self.vm_server.as_ref()
     }
     /// <p>The seed replication time.</p>
-    pub fn seed_replication_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn seed_replication_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.seed_replication_time.as_ref()
     }
     /// <p>The time between consecutive replication runs, in hours.</p>
@@ -4371,7 +4371,7 @@ impl ReplicationJob {
     /// <p>The start time of the next replication run.</p>
     pub fn next_replication_run_start_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.next_replication_run_start_time.as_ref()
     }
     /// <p>The license type to be used for the AMI created by a successful replication
@@ -4474,10 +4474,10 @@ pub mod replication_job {
         pub(crate) server_id: std::option::Option<std::string::String>,
         pub(crate) server_type: std::option::Option<crate::model::ServerType>,
         pub(crate) vm_server: std::option::Option<crate::model::VmServer>,
-        pub(crate) seed_replication_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) seed_replication_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) frequency: std::option::Option<i32>,
         pub(crate) run_once: std::option::Option<bool>,
-        pub(crate) next_replication_run_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) next_replication_run_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) license_type: std::option::Option<crate::model::LicenseType>,
         pub(crate) role_name: std::option::Option<std::string::String>,
         pub(crate) latest_ami_id: std::option::Option<std::string::String>,
@@ -4538,14 +4538,14 @@ pub mod replication_job {
             self
         }
         /// <p>The seed replication time.</p>
-        pub fn seed_replication_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn seed_replication_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.seed_replication_time = Some(input);
             self
         }
         /// <p>The seed replication time.</p>
         pub fn set_seed_replication_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.seed_replication_time = input;
             self
@@ -4571,14 +4571,17 @@ pub mod replication_job {
             self
         }
         /// <p>The start time of the next replication run.</p>
-        pub fn next_replication_run_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn next_replication_run_start_time(
+            mut self,
+            input: aws_smithy_types::DateTime,
+        ) -> Self {
             self.next_replication_run_start_time = Some(input);
             self
         }
         /// <p>The start time of the next replication run.</p>
         pub fn set_next_replication_run_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.next_replication_run_start_time = input;
             self
@@ -4891,7 +4894,7 @@ pub struct Connector {
     /// <p>The MAC address of the connector.</p>
     pub mac_address: std::option::Option<std::string::String>,
     /// <p>The time the connector was associated.</p>
-    pub associated_on: std::option::Option<aws_smithy_types::Instant>,
+    pub associated_on: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Connector {
     /// <p>The ID of the connector.</p>
@@ -4931,7 +4934,7 @@ impl Connector {
         self.mac_address.as_deref()
     }
     /// <p>The time the connector was associated.</p>
-    pub fn associated_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn associated_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.associated_on.as_ref()
     }
 }
@@ -4967,7 +4970,7 @@ pub mod connector {
         pub(crate) vm_manager_id: std::option::Option<std::string::String>,
         pub(crate) ip_address: std::option::Option<std::string::String>,
         pub(crate) mac_address: std::option::Option<std::string::String>,
-        pub(crate) associated_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) associated_on: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the connector.</p>
@@ -5085,14 +5088,14 @@ pub mod connector {
             self
         }
         /// <p>The time the connector was associated.</p>
-        pub fn associated_on(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn associated_on(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.associated_on = Some(input);
             self
         }
         /// <p>The time the connector was associated.</p>
         pub fn set_associated_on(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.associated_on = input;
             self
@@ -5262,7 +5265,7 @@ pub struct ValidationOutput {
     /// <p>The status message.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The latest time that the validation was performed.</p>
-    pub latest_validation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub latest_validation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The output from validating an application.</p>
     pub app_validation_output: std::option::Option<crate::model::AppValidationOutput>,
     /// <p>The output from validation an instance.</p>
@@ -5286,7 +5289,7 @@ impl ValidationOutput {
         self.status_message.as_deref()
     }
     /// <p>The latest time that the validation was performed.</p>
-    pub fn latest_validation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn latest_validation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_validation_time.as_ref()
     }
     /// <p>The output from validating an application.</p>
@@ -5323,7 +5326,7 @@ pub mod validation_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ValidationStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) latest_validation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) latest_validation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) app_validation_output: std::option::Option<crate::model::AppValidationOutput>,
         pub(crate) server_validation_output:
             std::option::Option<crate::model::ServerValidationOutput>,
@@ -5379,14 +5382,14 @@ pub mod validation_output {
             self
         }
         /// <p>The latest time that the validation was performed.</p>
-        pub fn latest_validation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn latest_validation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_validation_time = Some(input);
             self
         }
         /// <p>The latest time that the validation was performed.</p>
         pub fn set_latest_validation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.latest_validation_time = input;
             self

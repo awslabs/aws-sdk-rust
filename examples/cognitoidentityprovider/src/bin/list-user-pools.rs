@@ -5,6 +5,7 @@
 
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_cognitoidentityprovider::{Client, Error, Region, PKG_VERSION};
+use aws_smithy_types_convert::date_time::DateTimeExt;
 
 use structopt::StructOpt;
 
@@ -48,25 +49,25 @@ async fn main() -> Result<(), Error> {
     }
 
     let response = client.list_user_pools().max_results(10).send().await?;
-    if let Some(pools) = response.user_pools {
+    if let Some(pools) = response.user_pools() {
         println!("User pools:");
         for pool in pools {
-            println!("  ID:              {}", pool.id.unwrap_or_default());
-            println!("  Name:            {}", pool.name.unwrap_or_default());
-            println!("  Status:          {:?}", pool.status);
-            println!("  Lambda Config:   {:?}", pool.lambda_config.unwrap());
+            println!("  ID:              {}", pool.id().unwrap_or_default());
+            println!("  Name:            {}", pool.name().unwrap_or_default());
+            println!("  Status:          {:?}", pool.status());
+            println!("  Lambda Config:   {:?}", pool.lambda_config().unwrap());
             println!(
                 "  Last modified:   {}",
-                pool.last_modified_date.unwrap().to_chrono()
+                pool.last_modified_date().unwrap().to_chrono_utc()
             );
             println!(
                 "  Creation date:   {:?}",
-                pool.creation_date.unwrap().to_chrono()
+                pool.creation_date().unwrap().to_chrono_utc()
             );
             println!();
         }
     }
-    println!("Next token: {}", response.next_token.unwrap_or_default());
+    println!("Next token: {}", response.next_token().unwrap_or_default());
 
     Ok(())
 }

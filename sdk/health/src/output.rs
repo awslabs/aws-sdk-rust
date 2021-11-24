@@ -65,13 +65,15 @@ impl DisableHealthServiceAccessForOrganizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHealthServiceStatusForOrganizationOutput {
-    /// <p>Information about the status of enabling or disabling AWS Health Organizational View in
+    /// <p>Information about the status of enabling or disabling the Health organizational
+    /// view feature in
     /// your organization.</p>
     /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
     pub health_service_access_status_for_organization: std::option::Option<std::string::String>,
 }
 impl DescribeHealthServiceStatusForOrganizationOutput {
-    /// <p>Information about the status of enabling or disabling AWS Health Organizational View in
+    /// <p>Information about the status of enabling or disabling the Health organizational
+    /// view feature in
     /// your organization.</p>
     /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
     pub fn health_service_access_status_for_organization(&self) -> std::option::Option<&str> {
@@ -99,7 +101,8 @@ pub mod describe_health_service_status_for_organization_output {
             std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Information about the status of enabling or disabling AWS Health Organizational View in
+        /// <p>Information about the status of enabling or disabling the Health organizational
+        /// view feature in
         /// your organization.</p>
         /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
         pub fn health_service_access_status_for_organization(
@@ -109,7 +112,8 @@ pub mod describe_health_service_status_for_organization_output {
             self.health_service_access_status_for_organization = Some(input.into());
             self
         }
-        /// <p>Information about the status of enabling or disabling AWS Health Organizational View in
+        /// <p>Information about the status of enabling or disabling the Health organizational
+        /// view feature in
         /// your organization.</p>
         /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
         pub fn set_health_service_access_status_for_organization(
@@ -1043,7 +1047,7 @@ impl DescribeAffectedEntitiesOutput {
 pub struct DescribeAffectedAccountsForOrganizationOutput {
     /// <p>A JSON set of elements of the affected accounts.</p>
     pub affected_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
     /// <li>
     /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
@@ -1051,9 +1055,9 @@ pub struct DescribeAffectedAccountsForOrganizationOutput {
     /// </li>
     /// <li>
     /// <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then
-    /// the <code>affectedAccounts</code> value lists the affected AWS accounts in your
+    /// the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your
     /// organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you
-    /// have AWS accounts that use that service, those account IDs appear in the
+    /// have Amazon Web Services accounts that use that service, those account IDs appear in the
     /// response.</p>
     /// </li>
     /// <li>
@@ -1074,7 +1078,7 @@ impl DescribeAffectedAccountsForOrganizationOutput {
     pub fn affected_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.affected_accounts.as_deref()
     }
-    /// <p>This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
     /// <li>
     /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
@@ -1082,9 +1086,9 @@ impl DescribeAffectedAccountsForOrganizationOutput {
     /// </li>
     /// <li>
     /// <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then
-    /// the <code>affectedAccounts</code> value lists the affected AWS accounts in your
+    /// the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your
     /// organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you
-    /// have AWS accounts that use that service, those account IDs appear in the
+    /// have Amazon Web Services accounts that use that service, those account IDs appear in the
     /// response.</p>
     /// </li>
     /// <li>
@@ -1143,7 +1147,7 @@ pub mod describe_affected_accounts_for_organization_output {
             self.affected_accounts = input;
             self
         }
-        /// <p>This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.</p>
+        /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
         /// <ul>
         /// <li>
         /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
@@ -1151,9 +1155,9 @@ pub mod describe_affected_accounts_for_organization_output {
         /// </li>
         /// <li>
         /// <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then
-        /// the <code>affectedAccounts</code> value lists the affected AWS accounts in your
+        /// the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your
         /// organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you
-        /// have AWS accounts that use that service, those account IDs appear in the
+        /// have Amazon Web Services accounts that use that service, those account IDs appear in the
         /// response.</p>
         /// </li>
         /// <li>
@@ -1166,7 +1170,7 @@ pub mod describe_affected_accounts_for_organization_output {
             self.event_scope_code = Some(input);
             self
         }
-        /// <p>This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.</p>
+        /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
         /// <ul>
         /// <li>
         /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
@@ -1174,9 +1178,9 @@ pub mod describe_affected_accounts_for_organization_output {
         /// </li>
         /// <li>
         /// <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then
-        /// the <code>affectedAccounts</code> value lists the affected AWS accounts in your
+        /// the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your
         /// organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you
-        /// have AWS accounts that use that service, those account IDs appear in the
+        /// have Amazon Web Services accounts that use that service, those account IDs appear in the
         /// response.</p>
         /// </li>
         /// <li>

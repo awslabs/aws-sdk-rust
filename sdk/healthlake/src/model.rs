@@ -189,9 +189,9 @@ impl OutputDataConfig {
         &self,
     ) -> std::result::Result<&crate::model::S3Configuration, &Self> {
         if let OutputDataConfig::S3Configuration(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`S3Configuration`](crate::model::OutputDataConfig::S3Configuration).
@@ -317,9 +317,9 @@ impl InputDataConfig {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_uri(&self) -> std::result::Result<&std::string::String, &Self> {
         if let InputDataConfig::S3Uri(val) = &self {
-            Ok(&val)
+            Ok(val)
         } else {
-            Err(&self)
+            Err(self)
         }
     }
     /// Returns true if this is a [`S3Uri`](crate::model::InputDataConfig::S3Uri).
@@ -343,9 +343,9 @@ pub struct ImportJobProperties {
     /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>The time that the Import job was submitted for processing.</p>
-    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the Import job was completed.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The datastore id used when the Import job was created. </p>
     pub datastore_id: std::option::Option<std::string::String>,
     /// <p>The input data configuration that was supplied when the Import job was created.</p>
@@ -371,11 +371,11 @@ impl ImportJobProperties {
         self.job_status.as_ref()
     }
     /// <p>The time that the Import job was submitted for processing.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that the Import job was completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The datastore id used when the Import job was created. </p>
@@ -424,8 +424,8 @@ pub mod import_job_properties {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) datastore_id: std::option::Option<std::string::String>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) job_output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -467,27 +467,27 @@ pub mod import_job_properties {
             self
         }
         /// <p>The time that the Import job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time = Some(input);
             self
         }
         /// <p>The time that the Import job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the Import job was completed.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time that the Import job was completed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -586,9 +586,9 @@ pub struct ExportJobProperties {
     /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>The time an export job was initiated.</p>
-    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time an export job completed.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
     pub datastore_id: std::option::Option<std::string::String>,
     /// <p>The output data configuration that was supplied when the export job was created.</p>
@@ -612,11 +612,11 @@ impl ExportJobProperties {
         self.job_status.as_ref()
     }
     /// <p>The time an export job was initiated.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time an export job completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
@@ -660,8 +660,8 @@ pub mod export_job_properties {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) datastore_id: std::option::Option<std::string::String>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
         pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
@@ -702,27 +702,27 @@ pub mod export_job_properties {
             self
         }
         /// <p>The time an export job was initiated.</p>
-        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time = Some(input);
             self
         }
         /// <p>The time an export job was initiated.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time an export job completed.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time an export job completed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -809,7 +809,7 @@ pub struct DatastoreProperties {
     /// <p>The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.</p>
     pub datastore_status: std::option::Option<crate::model::DatastoreStatus>,
     /// <p>The time that a Data Store was created. </p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The FHIR version. Only R4 version data is supported.</p>
     pub datastore_type_version: std::option::Option<crate::model::FhirVersion>,
     /// <p>The AWS endpoint for the Data Store. Each Data Store will have it's own endpoint with Data Store ID in the endpoint URL.</p>
@@ -839,7 +839,7 @@ impl DatastoreProperties {
         self.datastore_status.as_ref()
     }
     /// <p>The time that a Data Store was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The FHIR version. Only R4 version data is supported.</p>
@@ -886,7 +886,7 @@ pub mod datastore_properties {
         pub(crate) datastore_arn: std::option::Option<std::string::String>,
         pub(crate) datastore_name: std::option::Option<std::string::String>,
         pub(crate) datastore_status: std::option::Option<crate::model::DatastoreStatus>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) datastore_type_version: std::option::Option<crate::model::FhirVersion>,
         pub(crate) datastore_endpoint: std::option::Option<std::string::String>,
         pub(crate) sse_configuration: std::option::Option<crate::model::SseConfiguration>,
@@ -943,14 +943,14 @@ pub mod datastore_properties {
             self
         }
         /// <p>The time that a Data Store was created. </p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time that a Data Store was created. </p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1479,10 +1479,10 @@ pub struct DatastoreFilter {
     pub datastore_status: std::option::Option<crate::model::DatastoreStatus>,
     /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created
     /// before the specified date will be included in the results. </p>
-    pub created_before: std::option::Option<aws_smithy_types::Instant>,
+    pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created
     /// after the specified date will be included in the results.</p>
-    pub created_after: std::option::Option<aws_smithy_types::Instant>,
+    pub created_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatastoreFilter {
     /// <p>Allows the user to filter Data Store results by name.</p>
@@ -1495,12 +1495,12 @@ impl DatastoreFilter {
     }
     /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created
     /// before the specified date will be included in the results. </p>
-    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created
     /// after the specified date will be included in the results.</p>
-    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
 }
@@ -1522,8 +1522,8 @@ pub mod datastore_filter {
     pub struct Builder {
         pub(crate) datastore_name: std::option::Option<std::string::String>,
         pub(crate) datastore_status: std::option::Option<crate::model::DatastoreStatus>,
-        pub(crate) created_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) created_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Allows the user to filter Data Store results by name.</p>
@@ -1554,7 +1554,7 @@ pub mod datastore_filter {
         }
         /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created
         /// before the specified date will be included in the results. </p>
-        pub fn created_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_before = Some(input);
             self
         }
@@ -1562,14 +1562,14 @@ pub mod datastore_filter {
         /// before the specified date will be included in the results. </p>
         pub fn set_created_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_before = input;
             self
         }
         /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created
         /// after the specified date will be included in the results.</p>
-        pub fn created_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_after = Some(input);
             self
         }
@@ -1577,7 +1577,7 @@ pub mod datastore_filter {
         /// after the specified date will be included in the results.</p>
         pub fn set_created_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_after = input;
             self

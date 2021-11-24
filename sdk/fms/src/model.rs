@@ -85,9 +85,9 @@ pub struct ProtocolsListData {
     /// You can retrieve the update token by getting the list. </p>
     pub list_update_token: std::option::Option<std::string::String>,
     /// <p>The time that the Firewall Manager protocols list was created.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the Firewall Manager protocols list was last updated.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
     pub protocols_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A map of previous version numbers to their corresponding protocol arrays.</p>
@@ -111,11 +111,11 @@ impl ProtocolsListData {
         self.list_update_token.as_deref()
     }
     /// <p>The time that the Firewall Manager protocols list was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time that the Firewall Manager protocols list was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
@@ -153,8 +153,8 @@ pub mod protocols_list_data {
         pub(crate) list_id: std::option::Option<std::string::String>,
         pub(crate) list_name: std::option::Option<std::string::String>,
         pub(crate) list_update_token: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) protocols_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) previous_protocols_list: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
@@ -199,27 +199,27 @@ pub mod protocols_list_data {
             self
         }
         /// <p>The time that the Firewall Manager protocols list was created.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
         /// <p>The time that the Firewall Manager protocols list was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The time that the Firewall Manager protocols list was last updated.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The time that the Firewall Manager protocols list was last updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -1496,9 +1496,9 @@ pub struct AppsListData {
     /// You can retrieve the update token by getting the list. </p>
     pub list_update_token: std::option::Option<std::string::String>,
     /// <p>The time that the Firewall Manager applications list was created.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the Firewall Manager applications list was last updated.</p>
-    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of applications in the Firewall Manager applications list.</p>
     pub apps_list: std::option::Option<std::vec::Vec<crate::model::App>>,
     /// <p>A map of previous version numbers to their corresponding <code>App</code> object arrays.</p>
@@ -1522,11 +1522,11 @@ impl AppsListData {
         self.list_update_token.as_deref()
     }
     /// <p>The time that the Firewall Manager applications list was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time that the Firewall Manager applications list was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>An array of applications in the Firewall Manager applications list.</p>
@@ -1564,8 +1564,8 @@ pub mod apps_list_data {
         pub(crate) list_id: std::option::Option<std::string::String>,
         pub(crate) list_name: std::option::Option<std::string::String>,
         pub(crate) list_update_token: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) apps_list: std::option::Option<std::vec::Vec<crate::model::App>>,
         pub(crate) previous_apps_list: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::App>>,
@@ -1610,27 +1610,27 @@ pub mod apps_list_data {
             self
         }
         /// <p>The time that the Firewall Manager applications list was created.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
         /// <p>The time that the Firewall Manager applications list was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The time that the Firewall Manager applications list was last updated.</p>
-        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_time = Some(input);
             self
         }
         /// <p>The time that the Firewall Manager applications list was last updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -2156,7 +2156,7 @@ pub struct PolicyComplianceStatus {
     /// <p>An array of <code>EvaluationResult</code> objects.</p>
     pub evaluation_results: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
     /// <p>Timestamp of the last update to the <code>EvaluationResult</code> objects.</p>
-    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about problems with dependent services, such as WAF or Config,
     /// and the error message received that indicates the problem with the service.</p>
     pub issue_info_map: std::option::Option<
@@ -2185,7 +2185,7 @@ impl PolicyComplianceStatus {
         self.evaluation_results.as_deref()
     }
     /// <p>Timestamp of the last update to the <code>EvaluationResult</code> objects.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>Details about problems with dependent services, such as WAF or Config,
@@ -2223,7 +2223,7 @@ pub mod policy_compliance_status {
         pub(crate) member_account: std::option::Option<std::string::String>,
         pub(crate) evaluation_results:
             std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
-        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) issue_info_map: std::option::Option<
             std::collections::HashMap<crate::model::DependentServiceName, std::string::String>,
         >,
@@ -2295,14 +2295,14 @@ pub mod policy_compliance_status {
             self
         }
         /// <p>Timestamp of the last update to the <code>EvaluationResult</code> objects.</p>
-        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated = Some(input);
             self
         }
         /// <p>Timestamp of the last update to the <code>EvaluationResult</code> objects.</p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -8952,7 +8952,7 @@ pub struct PolicyComplianceDetail {
     pub evaluation_limit_exceeded: bool,
     /// <p>A timestamp that indicates when the returned information should be considered out of
     /// date.</p>
-    pub expired_at: std::option::Option<aws_smithy_types::Instant>,
+    pub expired_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about problems with dependent services, such as WAF or Config,
     /// and the error message received that indicates the problem with the service.</p>
     pub issue_info_map: std::option::Option<
@@ -8984,7 +8984,7 @@ impl PolicyComplianceDetail {
     }
     /// <p>A timestamp that indicates when the returned information should be considered out of
     /// date.</p>
-    pub fn expired_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expired_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expired_at.as_ref()
     }
     /// <p>Details about problems with dependent services, such as WAF or Config,
@@ -9021,7 +9021,7 @@ pub mod policy_compliance_detail {
         pub(crate) member_account: std::option::Option<std::string::String>,
         pub(crate) violators: std::option::Option<std::vec::Vec<crate::model::ComplianceViolator>>,
         pub(crate) evaluation_limit_exceeded: std::option::Option<bool>,
-        pub(crate) expired_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expired_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) issue_info_map: std::option::Option<
             std::collections::HashMap<crate::model::DependentServiceName, std::string::String>,
         >,
@@ -9095,7 +9095,7 @@ pub mod policy_compliance_detail {
         }
         /// <p>A timestamp that indicates when the returned information should be considered out of
         /// date.</p>
-        pub fn expired_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expired_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expired_at = Some(input);
             self
         }
@@ -9103,7 +9103,7 @@ pub mod policy_compliance_detail {
         /// date.</p>
         pub fn set_expired_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expired_at = input;
             self

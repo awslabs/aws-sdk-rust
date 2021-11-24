@@ -19,9 +19,9 @@ pub struct ResourceShare {
     /// <p>The tags for the resource share.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The time when the resource share was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the resource share was last updated.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates how the resource share was created. Possible values include:</p>
     /// <ul>
     /// <li>
@@ -76,11 +76,11 @@ impl ResourceShare {
         self.tags.as_deref()
     }
     /// <p>The time when the resource share was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time when the resource share was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Indicates how the resource share was created. Possible values include:</p>
@@ -137,8 +137,8 @@ pub mod resource_share {
         pub(crate) status: std::option::Option<crate::model::ResourceShareStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) feature_set: std::option::Option<crate::model::ResourceShareFeatureSet>,
     }
     impl Builder {
@@ -236,27 +236,27 @@ pub mod resource_share {
             self
         }
         /// <p>The time when the resource share was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time when the resource share was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time when the resource share was last updated.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>The time when the resource share was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -552,7 +552,7 @@ pub struct ResourceShareInvitation {
     /// <p>The ID of the Amazon Web Services account that received the invitation.</p>
     pub receiver_account_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the invitation was sent.</p>
-    pub invitation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub invitation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the invitation.</p>
     pub status: std::option::Option<crate::model::ResourceShareInvitationStatus>,
     /// <p>To view the resources associated with a pending resource share invitation, use <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
@@ -585,7 +585,7 @@ impl ResourceShareInvitation {
         self.receiver_account_id.as_deref()
     }
     /// <p>The date and time when the invitation was sent.</p>
-    pub fn invitation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn invitation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.invitation_timestamp.as_ref()
     }
     /// <p>The status of the invitation.</p>
@@ -637,7 +637,7 @@ pub mod resource_share_invitation {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
         pub(crate) sender_account_id: std::option::Option<std::string::String>,
         pub(crate) receiver_account_id: std::option::Option<std::string::String>,
-        pub(crate) invitation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) invitation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ResourceShareInvitationStatus>,
         pub(crate) resource_share_associations:
             std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
@@ -713,14 +713,14 @@ pub mod resource_share_invitation {
             self
         }
         /// <p>The date and time when the invitation was sent.</p>
-        pub fn invitation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn invitation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.invitation_timestamp = Some(input);
             self
         }
         /// <p>The date and time when the invitation was sent.</p>
         pub fn set_invitation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.invitation_timestamp = input;
             self
@@ -832,9 +832,9 @@ pub struct ResourceShareAssociation {
     /// <p>A message about the status of the association.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The time when the association was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the association was last updated.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether the principal belongs to the same organization in Organizations as the
     /// Amazon Web Services account that owns the resource share.</p>
     pub external: std::option::Option<bool>,
@@ -885,11 +885,11 @@ impl ResourceShareAssociation {
         self.status_message.as_deref()
     }
     /// <p>The time when the association was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time when the association was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Indicates whether the principal belongs to the same organization in Organizations as the
@@ -926,8 +926,8 @@ pub mod resource_share_association {
             std::option::Option<crate::model::ResourceShareAssociationType>,
         pub(crate) status: std::option::Option<crate::model::ResourceShareAssociationStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) external: std::option::Option<bool>,
     }
     impl Builder {
@@ -1049,27 +1049,27 @@ pub mod resource_share_association {
             self
         }
         /// <p>The time when the association was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time when the association was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time when the association was last updated.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>The time when the association was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -1395,9 +1395,9 @@ pub struct ResourceSharePermissionSummary {
     /// <p>The current status of the permission.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time when the permission was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the permission was last updated.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the version of the permission is set to the default version for this
     /// resource type.</p>
     pub is_resource_type_default: std::option::Option<bool>,
@@ -1429,11 +1429,11 @@ impl ResourceSharePermissionSummary {
         self.status.as_deref()
     }
     /// <p>The date and time when the permission was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time when the permission was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Specifies whether the version of the permission is set to the default version for this
@@ -1469,8 +1469,8 @@ pub mod resource_share_permission_summary {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) is_resource_type_default: std::option::Option<bool>,
     }
     impl Builder {
@@ -1540,27 +1540,27 @@ pub mod resource_share_permission_summary {
             self
         }
         /// <p>The date and time when the permission was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The date and time when the permission was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The date and time when the permission was last updated.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>The date and time when the permission was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -1618,9 +1618,9 @@ pub struct Resource {
     /// <p>A message about the status of the resource.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The time when the resource was associated with the resource share.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the association was last updated.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Resource {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -1649,11 +1649,11 @@ impl Resource {
         self.status_message.as_deref()
     }
     /// <p>The time when the resource was associated with the resource share.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time when the association was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -1683,8 +1683,8 @@ pub mod resource {
         pub(crate) resource_group_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ResourceStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -1762,27 +1762,27 @@ pub mod resource {
             self
         }
         /// <p>The time when the resource was associated with the resource share.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time when the resource was associated with the resource share.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time when the association was last updated.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>The time when the association was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -1946,9 +1946,9 @@ pub struct Principal {
     /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
     /// <p>The time when the principal was associated with the resource share.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the association was last updated.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether the principal belongs to the same organization in Organizations as the
     /// Amazon Web Services account that owns the resource share.</p>
     pub external: std::option::Option<bool>,
@@ -1963,11 +1963,11 @@ impl Principal {
         self.resource_share_arn.as_deref()
     }
     /// <p>The time when the principal was associated with the resource share.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time when the association was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Indicates whether the principal belongs to the same organization in Organizations as the
@@ -1995,8 +1995,8 @@ pub mod principal {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) external: std::option::Option<bool>,
     }
     impl Builder {
@@ -2024,27 +2024,27 @@ pub mod principal {
             self
         }
         /// <p>The time when the principal was associated with the resource share.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The time when the principal was associated with the resource share.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time when the association was last updated.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>The time when the association was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -2182,9 +2182,9 @@ pub struct ResourceSharePermissionDetail {
     /// to which the principal is granted or denied access.</p>
     pub permission: std::option::Option<std::string::String>,
     /// <p>The date and time when the permission was created.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the permission was last updated.</p>
-    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the version of the permission is set to the default version for this
     /// resource type.</p>
     pub is_resource_type_default: std::option::Option<bool>,
@@ -2218,11 +2218,11 @@ impl ResourceSharePermissionDetail {
         self.permission.as_deref()
     }
     /// <p>The date and time when the permission was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time when the permission was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Specifies whether the version of the permission is set to the default version for this
@@ -2258,8 +2258,8 @@ pub mod resource_share_permission_detail {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) permission: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) is_resource_type_default: std::option::Option<bool>,
     }
     impl Builder {
@@ -2333,27 +2333,27 @@ pub mod resource_share_permission_detail {
             self
         }
         /// <p>The date and time when the permission was created.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>The date and time when the permission was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The date and time when the permission was last updated.</p>
-        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
         /// <p>The date and time when the permission was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_time = input;
             self

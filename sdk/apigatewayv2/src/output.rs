@@ -4,7 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVpcLinkOutput {
     /// <p>The timestamp when the VPC link was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the VPC link.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of security group IDs for the VPC link.</p>
@@ -25,7 +25,7 @@ pub struct UpdateVpcLinkOutput {
 }
 impl UpdateVpcLinkOutput {
     /// <p>The timestamp when the VPC link was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The name of the VPC link.</p>
@@ -85,7 +85,7 @@ pub mod update_vpc_link_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -99,14 +99,14 @@ pub mod update_vpc_link_output {
     }
     impl Builder {
         /// <p>The timestamp when the VPC link was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The timestamp when the VPC link was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -269,7 +269,7 @@ pub struct UpdateStageOutput {
     /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
     pub client_certificate_id: std::option::Option<std::string::String>,
     /// <p>The timestamp when the stage was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Default route settings for the stage.</p>
     pub default_route_settings: std::option::Option<crate::model::RouteSettings>,
     /// <p>The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is enabled.</p>
@@ -279,7 +279,7 @@ pub struct UpdateStageOutput {
     /// <p>Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.</p>
     pub last_deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The timestamp when the stage was last updated.</p>
-    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Route settings for the stage, by routeKey.</p>
     pub route_settings: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::RouteSettings>,
@@ -311,7 +311,7 @@ impl UpdateStageOutput {
         self.client_certificate_id.as_deref()
     }
     /// <p>The timestamp when the stage was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>Default route settings for the stage.</p>
@@ -331,7 +331,7 @@ impl UpdateStageOutput {
         self.last_deployment_status_message.as_deref()
     }
     /// <p>The timestamp when the stage was last updated.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>Route settings for the stage, by routeKey.</p>
@@ -394,12 +394,12 @@ pub mod update_stage_output {
         pub(crate) api_gateway_managed: std::option::Option<bool>,
         pub(crate) auto_deploy: std::option::Option<bool>,
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) default_route_settings: std::option::Option<crate::model::RouteSettings>,
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) last_deployment_status_message: std::option::Option<std::string::String>,
-        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) route_settings: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::RouteSettings>,
         >,
@@ -459,14 +459,14 @@ pub mod update_stage_output {
             self
         }
         /// <p>The timestamp when the stage was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The timestamp when the stage was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -524,14 +524,14 @@ pub mod update_stage_output {
             self
         }
         /// <p>The timestamp when the stage was last updated.</p>
-        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date = Some(input);
             self
         }
         /// <p>The timestamp when the stage was last updated.</p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date = input;
             self
@@ -2308,7 +2308,7 @@ pub struct UpdateDeploymentOutput {
     /// <p>Specifies whether a deployment was automatically released.</p>
     pub auto_deployed: bool,
     /// <p>The date and time when the Deployment resource was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier for the deployment.</p>
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
@@ -2324,7 +2324,7 @@ impl UpdateDeploymentOutput {
         self.auto_deployed
     }
     /// <p>The date and time when the Deployment resource was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The identifier for the deployment.</p>
@@ -2363,7 +2363,7 @@ pub mod update_deployment_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_deployed: std::option::Option<bool>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) deployment_status: std::option::Option<crate::model::DeploymentStatus>,
         pub(crate) deployment_status_message: std::option::Option<std::string::String>,
@@ -2381,14 +2381,14 @@ pub mod update_deployment_output {
             self
         }
         /// <p>The date and time when the Deployment resource was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date and time when the Deployment resource was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -2895,7 +2895,7 @@ pub struct UpdateApiOutput {
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
     pub cors_configuration: std::option::Option<crate::model::Cors>,
     /// <p>The timestamp when the API was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the API.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
@@ -2940,7 +2940,7 @@ impl UpdateApiOutput {
         self.cors_configuration.as_ref()
     }
     /// <p>The timestamp when the API was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The description of the API.</p>
@@ -3029,7 +3029,7 @@ pub mod update_api_output {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) api_key_selection_expression: std::option::Option<std::string::String>,
         pub(crate) cors_configuration: std::option::Option<crate::model::Cors>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) disable_schema_validation: std::option::Option<bool>,
         pub(crate) disable_execute_api_endpoint: std::option::Option<bool>,
@@ -3104,14 +3104,14 @@ pub mod update_api_output {
             self
         }
         /// <p>The timestamp when the API was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The timestamp when the API was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -3393,7 +3393,7 @@ pub struct ReimportApiOutput {
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
     pub cors_configuration: std::option::Option<crate::model::Cors>,
     /// <p>The timestamp when the API was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the API.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
@@ -3438,7 +3438,7 @@ impl ReimportApiOutput {
         self.cors_configuration.as_ref()
     }
     /// <p>The timestamp when the API was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The description of the API.</p>
@@ -3527,7 +3527,7 @@ pub mod reimport_api_output {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) api_key_selection_expression: std::option::Option<std::string::String>,
         pub(crate) cors_configuration: std::option::Option<crate::model::Cors>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) disable_schema_validation: std::option::Option<bool>,
         pub(crate) disable_execute_api_endpoint: std::option::Option<bool>,
@@ -3602,14 +3602,14 @@ pub mod reimport_api_output {
             self
         }
         /// <p>The timestamp when the API was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The timestamp when the API was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -3801,7 +3801,7 @@ pub struct ImportApiOutput {
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
     pub cors_configuration: std::option::Option<crate::model::Cors>,
     /// <p>The timestamp when the API was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the API.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
@@ -3846,7 +3846,7 @@ impl ImportApiOutput {
         self.cors_configuration.as_ref()
     }
     /// <p>The timestamp when the API was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The description of the API.</p>
@@ -3935,7 +3935,7 @@ pub mod import_api_output {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) api_key_selection_expression: std::option::Option<std::string::String>,
         pub(crate) cors_configuration: std::option::Option<crate::model::Cors>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) disable_schema_validation: std::option::Option<bool>,
         pub(crate) disable_execute_api_endpoint: std::option::Option<bool>,
@@ -4010,14 +4010,14 @@ pub mod import_api_output {
             self
         }
         /// <p>The timestamp when the API was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The timestamp when the API was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -4281,7 +4281,7 @@ impl GetVpcLinksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpcLinkOutput {
     /// <p>The timestamp when the VPC link was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the VPC link.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of security group IDs for the VPC link.</p>
@@ -4302,7 +4302,7 @@ pub struct GetVpcLinkOutput {
 }
 impl GetVpcLinkOutput {
     /// <p>The timestamp when the VPC link was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The name of the VPC link.</p>
@@ -4362,7 +4362,7 @@ pub mod get_vpc_link_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4376,14 +4376,14 @@ pub mod get_vpc_link_output {
     }
     impl Builder {
         /// <p>The timestamp when the VPC link was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The timestamp when the VPC link was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -4701,7 +4701,7 @@ pub struct GetStageOutput {
     /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
     pub client_certificate_id: std::option::Option<std::string::String>,
     /// <p>The timestamp when the stage was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Default route settings for the stage.</p>
     pub default_route_settings: std::option::Option<crate::model::RouteSettings>,
     /// <p>The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is enabled.</p>
@@ -4711,7 +4711,7 @@ pub struct GetStageOutput {
     /// <p>Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.</p>
     pub last_deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The timestamp when the stage was last updated.</p>
-    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Route settings for the stage, by routeKey.</p>
     pub route_settings: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::RouteSettings>,
@@ -4743,7 +4743,7 @@ impl GetStageOutput {
         self.client_certificate_id.as_deref()
     }
     /// <p>The timestamp when the stage was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>Default route settings for the stage.</p>
@@ -4763,7 +4763,7 @@ impl GetStageOutput {
         self.last_deployment_status_message.as_deref()
     }
     /// <p>The timestamp when the stage was last updated.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>Route settings for the stage, by routeKey.</p>
@@ -4826,12 +4826,12 @@ pub mod get_stage_output {
         pub(crate) api_gateway_managed: std::option::Option<bool>,
         pub(crate) auto_deploy: std::option::Option<bool>,
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) default_route_settings: std::option::Option<crate::model::RouteSettings>,
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) last_deployment_status_message: std::option::Option<std::string::String>,
-        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) route_settings: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::RouteSettings>,
         >,
@@ -4891,14 +4891,14 @@ pub mod get_stage_output {
             self
         }
         /// <p>The timestamp when the stage was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The timestamp when the stage was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -4956,14 +4956,14 @@ pub mod get_stage_output {
             self
         }
         /// <p>The timestamp when the stage was last updated.</p>
-        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date = Some(input);
             self
         }
         /// <p>The timestamp when the stage was last updated.</p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date = input;
             self
@@ -7366,7 +7366,7 @@ pub struct GetDeploymentOutput {
     /// <p>Specifies whether a deployment was automatically released.</p>
     pub auto_deployed: bool,
     /// <p>The date and time when the Deployment resource was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier for the deployment.</p>
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
@@ -7382,7 +7382,7 @@ impl GetDeploymentOutput {
         self.auto_deployed
     }
     /// <p>The date and time when the Deployment resource was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The identifier for the deployment.</p>
@@ -7421,7 +7421,7 @@ pub mod get_deployment_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_deployed: std::option::Option<bool>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) deployment_status: std::option::Option<crate::model::DeploymentStatus>,
         pub(crate) deployment_status_message: std::option::Option<std::string::String>,
@@ -7439,14 +7439,14 @@ pub mod get_deployment_output {
             self
         }
         /// <p>The date and time when the Deployment resource was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date and time when the Deployment resource was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -8199,7 +8199,7 @@ pub struct GetApiOutput {
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
     pub cors_configuration: std::option::Option<crate::model::Cors>,
     /// <p>The timestamp when the API was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the API.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
@@ -8244,7 +8244,7 @@ impl GetApiOutput {
         self.cors_configuration.as_ref()
     }
     /// <p>The timestamp when the API was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The description of the API.</p>
@@ -8333,7 +8333,7 @@ pub mod get_api_output {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) api_key_selection_expression: std::option::Option<std::string::String>,
         pub(crate) cors_configuration: std::option::Option<crate::model::Cors>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) disable_schema_validation: std::option::Option<bool>,
         pub(crate) disable_execute_api_endpoint: std::option::Option<bool>,
@@ -8408,14 +8408,14 @@ pub mod get_api_output {
             self
         }
         /// <p>The timestamp when the API was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The timestamp when the API was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -9129,7 +9129,7 @@ impl DeleteAccessLogSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcLinkOutput {
     /// <p>The timestamp when the VPC link was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the VPC link.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of security group IDs for the VPC link.</p>
@@ -9150,7 +9150,7 @@ pub struct CreateVpcLinkOutput {
 }
 impl CreateVpcLinkOutput {
     /// <p>The timestamp when the VPC link was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The name of the VPC link.</p>
@@ -9210,7 +9210,7 @@ pub mod create_vpc_link_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9224,14 +9224,14 @@ pub mod create_vpc_link_output {
     }
     impl Builder {
         /// <p>The timestamp when the VPC link was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The timestamp when the VPC link was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -9394,7 +9394,7 @@ pub struct CreateStageOutput {
     /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
     pub client_certificate_id: std::option::Option<std::string::String>,
     /// <p>The timestamp when the stage was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Default route settings for the stage.</p>
     pub default_route_settings: std::option::Option<crate::model::RouteSettings>,
     /// <p>The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is enabled.</p>
@@ -9404,7 +9404,7 @@ pub struct CreateStageOutput {
     /// <p>Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.</p>
     pub last_deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The timestamp when the stage was last updated.</p>
-    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Route settings for the stage, by routeKey.</p>
     pub route_settings: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::RouteSettings>,
@@ -9436,7 +9436,7 @@ impl CreateStageOutput {
         self.client_certificate_id.as_deref()
     }
     /// <p>The timestamp when the stage was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>Default route settings for the stage.</p>
@@ -9456,7 +9456,7 @@ impl CreateStageOutput {
         self.last_deployment_status_message.as_deref()
     }
     /// <p>The timestamp when the stage was last updated.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>Route settings for the stage, by routeKey.</p>
@@ -9519,12 +9519,12 @@ pub mod create_stage_output {
         pub(crate) api_gateway_managed: std::option::Option<bool>,
         pub(crate) auto_deploy: std::option::Option<bool>,
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) default_route_settings: std::option::Option<crate::model::RouteSettings>,
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) last_deployment_status_message: std::option::Option<std::string::String>,
-        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) route_settings: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::RouteSettings>,
         >,
@@ -9584,14 +9584,14 @@ pub mod create_stage_output {
             self
         }
         /// <p>The timestamp when the stage was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The timestamp when the stage was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -9649,14 +9649,14 @@ pub mod create_stage_output {
             self
         }
         /// <p>The timestamp when the stage was last updated.</p>
-        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date = Some(input);
             self
         }
         /// <p>The timestamp when the stage was last updated.</p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_date = input;
             self
@@ -11433,7 +11433,7 @@ pub struct CreateDeploymentOutput {
     /// <p>Specifies whether a deployment was automatically released.</p>
     pub auto_deployed: bool,
     /// <p>The date and time when the Deployment resource was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier for the deployment.</p>
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
@@ -11449,7 +11449,7 @@ impl CreateDeploymentOutput {
         self.auto_deployed
     }
     /// <p>The date and time when the Deployment resource was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The identifier for the deployment.</p>
@@ -11488,7 +11488,7 @@ pub mod create_deployment_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_deployed: std::option::Option<bool>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) deployment_status: std::option::Option<crate::model::DeploymentStatus>,
         pub(crate) deployment_status_message: std::option::Option<std::string::String>,
@@ -11506,14 +11506,14 @@ pub mod create_deployment_output {
             self
         }
         /// <p>The date and time when the Deployment resource was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date and time when the Deployment resource was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -12020,7 +12020,7 @@ pub struct CreateApiOutput {
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
     pub cors_configuration: std::option::Option<crate::model::Cors>,
     /// <p>The timestamp when the API was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the API.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
@@ -12065,7 +12065,7 @@ impl CreateApiOutput {
         self.cors_configuration.as_ref()
     }
     /// <p>The timestamp when the API was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The description of the API.</p>
@@ -12154,7 +12154,7 @@ pub mod create_api_output {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) api_key_selection_expression: std::option::Option<std::string::String>,
         pub(crate) cors_configuration: std::option::Option<crate::model::Cors>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) disable_schema_validation: std::option::Option<bool>,
         pub(crate) disable_execute_api_endpoint: std::option::Option<bool>,
@@ -12229,14 +12229,14 @@ pub mod create_api_output {
             self
         }
         /// <p>The timestamp when the API was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The timestamp when the API was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self

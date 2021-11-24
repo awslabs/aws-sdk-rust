@@ -1528,6 +1528,11 @@ pub struct DeregisterClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterClusterErrorKind {
+    /// <p>You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that
+    /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+    /// Management</a> in the <i>IAM User Guide</i>. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>These errors are usually caused by a client action. Actions can include using an
     /// action or resource on behalf of a user that doesn't have permissions to use the action
     /// or resource or specifying an identifier that is not valid.</p>
@@ -1549,6 +1554,7 @@ pub enum DeregisterClusterErrorKind {
 impl std::fmt::Display for DeregisterClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeregisterClusterErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             DeregisterClusterErrorKind::ClientException(_inner) => _inner.fmt(f),
             DeregisterClusterErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             DeregisterClusterErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -1610,6 +1616,13 @@ impl DeregisterClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DeregisterClusterErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterClusterErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DeregisterClusterErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeregisterClusterErrorKind::ClientException(_))
@@ -1643,6 +1656,7 @@ impl DeregisterClusterError {
 impl std::error::Error for DeregisterClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeregisterClusterErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DeregisterClusterErrorKind::ClientException(_inner) => Some(_inner),
             DeregisterClusterErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeregisterClusterErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
@@ -3709,6 +3723,11 @@ pub struct RegisterClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterClusterErrorKind {
+    /// <p>You don't have permissions to perform the requested operation. The user or role that
+    /// is making the request must have at least one IAM permissions policy attached that
+    /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+    /// Management</a> in the <i>IAM User Guide</i>. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>These errors are usually caused by a client action. Actions can include using an
     /// action or resource on behalf of a user that doesn't have permissions to use the action
     /// or resource or specifying an identifier that is not valid.</p>
@@ -3728,6 +3747,7 @@ pub enum RegisterClusterErrorKind {
 impl std::fmt::Display for RegisterClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            RegisterClusterErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             RegisterClusterErrorKind::ClientException(_inner) => _inner.fmt(f),
             RegisterClusterErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             RegisterClusterErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
@@ -3789,6 +3809,13 @@ impl RegisterClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `RegisterClusterErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterClusterErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `RegisterClusterErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, RegisterClusterErrorKind::ClientException(_))
@@ -3822,6 +3849,7 @@ impl RegisterClusterError {
 impl std::error::Error for RegisterClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            RegisterClusterErrorKind::AccessDeniedException(_inner) => Some(_inner),
             RegisterClusterErrorKind::ClientException(_inner) => Some(_inner),
             RegisterClusterErrorKind::InvalidParameterException(_inner) => Some(_inner),
             RegisterClusterErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
@@ -5911,6 +5939,73 @@ impl ResourceLimitExceededException {
     }
 }
 
+/// <p>You don't have permissions to perform the requested operation. The user or role that
+/// is making the request must have at least one IAM permissions policy attached that
+/// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+/// Management</a> in the <i>IAM User Guide</i>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccessDeniedException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccessDeniedException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl AccessDeniedException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccessDeniedException")?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccessDeniedException {}
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException)
+pub mod access_denied_exception {
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException)
+        pub fn build(self) -> crate::error::AccessDeniedException {
+            crate::error::AccessDeniedException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException)
+    pub fn builder() -> crate::error::access_denied_exception::Builder {
+        crate::error::access_denied_exception::Builder::default()
+    }
+}
+
 /// <p>At least one of your specified cluster subnets is in an Availability Zone that does
 /// not support Amazon EKS. The exception output specifies the supported Availability Zones for
 /// your account, from which you can choose subnets for your cluster.</p>
@@ -5961,8 +6056,8 @@ impl UnsupportedAvailabilityZoneException {
 impl std::fmt::Display for UnsupportedAvailabilityZoneException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedAvailabilityZoneException")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }

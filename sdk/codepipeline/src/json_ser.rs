@@ -908,7 +908,7 @@ pub fn serialize_structure_crate_model_action_revision(
     if let Some(var_176) = &input.created {
         object
             .key("created")
-            .instant(var_176, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_176, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -955,7 +955,7 @@ pub fn serialize_structure_crate_model_current_revision(
     if let Some(var_184) = &input.created {
         object
             .key("created")
-            .instant(var_184, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_184, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_185) = &input.revision_summary {
         object.key("revisionSummary").string(var_185);

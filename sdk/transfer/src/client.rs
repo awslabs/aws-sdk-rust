@@ -902,6 +902,8 @@ pub mod fluent_builders {
         /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
         /// <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call
         /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value,
+        /// you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
         pub fn identity_provider_type(mut self, inp: crate::model::IdentityProviderType) -> Self {
             self.inner = self.inner.identity_provider_type(inp);
             self
@@ -916,6 +918,8 @@ pub mod fluent_builders {
         /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
         /// <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call
         /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value,
+        /// you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
         pub fn set_identity_provider_type(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,
@@ -4967,7 +4971,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -4990,7 +5000,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

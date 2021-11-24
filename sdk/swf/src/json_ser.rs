@@ -906,12 +906,12 @@ pub fn serialize_structure_crate_model_execution_time_filter(
     if let Some(var_183) = &input.oldest_date {
         object
             .key("oldestDate")
-            .instant(var_183, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_183, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_184) = &input.latest_date {
         object
             .key("latestDate")
-            .instant(var_184, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_184, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

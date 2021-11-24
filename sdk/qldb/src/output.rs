@@ -106,7 +106,7 @@ pub struct UpdateLedgerOutput {
     pub state: std::option::Option<crate::model::LedgerState>,
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
     /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
     /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the
@@ -132,7 +132,7 @@ impl UpdateLedgerOutput {
     }
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
     /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
@@ -172,7 +172,7 @@ pub mod update_ledger_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::LedgerState>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deletion_protection: std::option::Option<bool>,
         pub(crate) encryption_description:
             std::option::Option<crate::model::LedgerEncryptionDescription>,
@@ -210,7 +210,7 @@ pub mod update_ledger_output {
         }
         /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
         /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
@@ -218,7 +218,7 @@ pub mod update_ledger_output {
         /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
@@ -1349,7 +1349,7 @@ pub struct DescribeLedgerOutput {
     pub state: std::option::Option<crate::model::LedgerState>,
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
     /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The permissions mode of the ledger.</p>
     pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
     /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
@@ -1377,7 +1377,7 @@ impl DescribeLedgerOutput {
     }
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
     /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The permissions mode of the ledger.</p>
@@ -1422,7 +1422,7 @@ pub mod describe_ledger_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::LedgerState>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) permissions_mode: std::option::Option<crate::model::PermissionsMode>,
         pub(crate) deletion_protection: std::option::Option<bool>,
         pub(crate) encryption_description:
@@ -1461,7 +1461,7 @@ pub mod describe_ledger_output {
         }
         /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
         /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
@@ -1469,7 +1469,7 @@ pub mod describe_ledger_output {
         /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self
@@ -1714,7 +1714,7 @@ pub struct CreateLedgerOutput {
     pub state: std::option::Option<crate::model::LedgerState>,
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
     /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The permissions mode of the ledger that you created.</p>
     pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
     /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
@@ -1741,7 +1741,7 @@ impl CreateLedgerOutput {
     }
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
     /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The permissions mode of the ledger that you created.</p>
@@ -1783,7 +1783,7 @@ pub mod create_ledger_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::LedgerState>,
-        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) permissions_mode: std::option::Option<crate::model::PermissionsMode>,
         pub(crate) deletion_protection: std::option::Option<bool>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
@@ -1821,7 +1821,7 @@ pub mod create_ledger_output {
         }
         /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
         /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-        pub fn creation_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
@@ -1829,7 +1829,7 @@ pub mod create_ledger_output {
         /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn set_creation_date_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date_time = input;
             self

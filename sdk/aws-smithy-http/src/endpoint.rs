@@ -92,7 +92,7 @@ impl Endpoint {
         let new_uri = Uri::builder()
             .authority(authority)
             .scheme(scheme.clone())
-            .path_and_query(Self::merge_paths(&self.uri, &uri).as_ref())
+            .path_and_query(Self::merge_paths(&self.uri, uri).as_ref())
             .build()
             .expect("valid uri");
         *uri = new_uri;
@@ -107,9 +107,9 @@ impl Endpoint {
         if endpoint_path.is_empty() {
             Cow::Borrowed(uri_path_and_query)
         } else {
-            let ep_no_slash = endpoint_path.strip_suffix("/").unwrap_or(endpoint_path);
+            let ep_no_slash = endpoint_path.strip_suffix('/').unwrap_or(endpoint_path);
             let uri_path_no_slash = uri_path_and_query
-                .strip_prefix("/")
+                .strip_prefix('/')
                 .unwrap_or(uri_path_and_query);
             Cow::Owned(format!("{}/{}", ep_no_slash, uri_path_no_slash))
         }

@@ -62,6 +62,36 @@ impl UpdateWirelessDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateResourceEventConfigurationOutput {}
+impl std::fmt::Debug for UpdateResourceEventConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateResourceEventConfigurationOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput)
+pub mod update_resource_event_configuration_output {
+    /// A builder for [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput)
+        pub fn build(self) -> crate::output::UpdateResourceEventConfigurationOutput {
+            crate::output::UpdateResourceEventConfigurationOutput {}
+        }
+    }
+}
+impl UpdateResourceEventConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput)
+    pub fn builder() -> crate::output::update_resource_event_configuration_output::Builder {
+        crate::output::update_resource_event_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePartnerAccountOutput {}
 impl std::fmt::Debug for UpdatePartnerAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -92,6 +122,36 @@ impl UpdatePartnerAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateMulticastGroupOutput {}
+impl std::fmt::Debug for UpdateMulticastGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateMulticastGroupOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput)
+pub mod update_multicast_group_output {
+    /// A builder for [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput)
+        pub fn build(self) -> crate::output::UpdateMulticastGroupOutput {
+            crate::output::UpdateMulticastGroupOutput {}
+        }
+    }
+}
+impl UpdateMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput)
+    pub fn builder() -> crate::output::update_multicast_group_output::Builder {
+        crate::output::update_multicast_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLogLevelsByResourceTypesOutput {}
 impl std::fmt::Debug for UpdateLogLevelsByResourceTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -116,6 +176,36 @@ impl UpdateLogLevelsByResourceTypesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput)
     pub fn builder() -> crate::output::update_log_levels_by_resource_types_output::Builder {
         crate::output::update_log_levels_by_resource_types_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFuotaTaskOutput {}
+impl std::fmt::Debug for UpdateFuotaTaskOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFuotaTaskOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput)
+pub mod update_fuota_task_output {
+    /// A builder for [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput)
+        pub fn build(self) -> crate::output::UpdateFuotaTaskOutput {
+            crate::output::UpdateFuotaTaskOutput {}
+        }
+    }
+}
+impl UpdateFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput)
+    pub fn builder() -> crate::output::update_fuota_task_output::Builder {
+        crate::output::update_fuota_task_output::Builder::default()
     }
 }
 
@@ -266,6 +356,136 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartMulticastGroupSessionOutput {}
+impl std::fmt::Debug for StartMulticastGroupSessionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartMulticastGroupSessionOutput");
+        formatter.finish()
+    }
+}
+/// See [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput)
+pub mod start_multicast_group_session_output {
+    /// A builder for [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput)
+        pub fn build(self) -> crate::output::StartMulticastGroupSessionOutput {
+            crate::output::StartMulticastGroupSessionOutput {}
+        }
+    }
+}
+impl StartMulticastGroupSessionOutput {
+    /// Creates a new builder-style object to manufacture [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput)
+    pub fn builder() -> crate::output::start_multicast_group_session_output::Builder {
+        crate::output::start_multicast_group_session_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartFuotaTaskOutput {}
+impl std::fmt::Debug for StartFuotaTaskOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartFuotaTaskOutput");
+        formatter.finish()
+    }
+}
+/// See [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput)
+pub mod start_fuota_task_output {
+    /// A builder for [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput)
+        pub fn build(self) -> crate::output::StartFuotaTaskOutput {
+            crate::output::StartFuotaTaskOutput {}
+        }
+    }
+}
+impl StartFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput)
+    pub fn builder() -> crate::output::start_fuota_task_output::Builder {
+        crate::output::start_fuota_task_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {}
+impl std::fmt::Debug for StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter =
+            f.debug_struct("StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput");
+        formatter.finish()
+    }
+}
+/// See [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput)
+pub mod start_bulk_disassociate_wireless_device_from_multicast_group_output {
+    /// A builder for [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput)
+        pub fn build(
+            self,
+        ) -> crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {
+            crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {}
+        }
+    }
+}
+impl StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput)
+    pub fn builder(
+    ) -> crate::output::start_bulk_disassociate_wireless_device_from_multicast_group_output::Builder
+    {
+        crate::output::start_bulk_disassociate_wireless_device_from_multicast_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {}
+impl std::fmt::Debug for StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter =
+            f.debug_struct("StartBulkAssociateWirelessDeviceWithMulticastGroupOutput");
+        formatter.finish()
+    }
+}
+/// See [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput)
+pub mod start_bulk_associate_wireless_device_with_multicast_group_output {
+    /// A builder for [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput)
+        pub fn build(
+            self,
+        ) -> crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
+            crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {}
+        }
+    }
+}
+impl StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput)
+    pub fn builder(
+    ) -> crate::output::start_bulk_associate_wireless_device_with_multicast_group_output::Builder
+    {
+        crate::output::start_bulk_associate_wireless_device_with_multicast_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendDataToWirelessDeviceOutput {
     /// <p>The ID of the message sent to the wireless device.</p>
     pub message_id: std::option::Option<std::string::String>,
@@ -314,6 +534,60 @@ impl SendDataToWirelessDeviceOutput {
     /// Creates a new builder-style object to manufacture [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput)
     pub fn builder() -> crate::output::send_data_to_wireless_device_output::Builder {
         crate::output::send_data_to_wireless_device_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SendDataToMulticastGroupOutput {
+    /// <p>ID of a multicast group message.</p>
+    pub message_id: std::option::Option<std::string::String>,
+}
+impl SendDataToMulticastGroupOutput {
+    /// <p>ID of a multicast group message.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+}
+impl std::fmt::Debug for SendDataToMulticastGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SendDataToMulticastGroupOutput");
+        formatter.field("message_id", &self.message_id);
+        formatter.finish()
+    }
+}
+/// See [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput)
+pub mod send_data_to_multicast_group_output {
+    /// A builder for [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>ID of a multicast group message.</p>
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_id = Some(input.into());
+            self
+        }
+        /// <p>ID of a multicast group message.</p>
+        pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput)
+        pub fn build(self) -> crate::output::SendDataToMulticastGroupOutput {
+            crate::output::SendDataToMulticastGroupOutput {
+                message_id: self.message_id,
+            }
+        }
+    }
+}
+impl SendDataToMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput)
+    pub fn builder() -> crate::output::send_data_to_multicast_group_output::Builder {
+        crate::output::send_data_to_multicast_group_output::Builder::default()
     }
 }
 
@@ -909,6 +1183,263 @@ impl ListPartnerAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput)
     pub fn builder() -> crate::output::list_partner_accounts_output::Builder {
         crate::output::list_partner_accounts_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMulticastGroupsByFuotaTaskOutput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>List of multicast groups associated with a FUOTA task.</p>
+    pub multicast_group_list:
+        std::option::Option<std::vec::Vec<crate::model::MulticastGroupByFuotaTask>>,
+}
+impl ListMulticastGroupsByFuotaTaskOutput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>List of multicast groups associated with a FUOTA task.</p>
+    pub fn multicast_group_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::MulticastGroupByFuotaTask]> {
+        self.multicast_group_list.as_deref()
+    }
+}
+impl std::fmt::Debug for ListMulticastGroupsByFuotaTaskOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMulticastGroupsByFuotaTaskOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("multicast_group_list", &self.multicast_group_list);
+        formatter.finish()
+    }
+}
+/// See [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput)
+pub mod list_multicast_groups_by_fuota_task_output {
+    /// A builder for [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) multicast_group_list:
+            std::option::Option<std::vec::Vec<crate::model::MulticastGroupByFuotaTask>>,
+    }
+    impl Builder {
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `multicast_group_list`.
+        ///
+        /// To override the contents of this collection use [`set_multicast_group_list`](Self::set_multicast_group_list).
+        ///
+        /// <p>List of multicast groups associated with a FUOTA task.</p>
+        pub fn multicast_group_list(
+            mut self,
+            input: impl Into<crate::model::MulticastGroupByFuotaTask>,
+        ) -> Self {
+            let mut v = self.multicast_group_list.unwrap_or_default();
+            v.push(input.into());
+            self.multicast_group_list = Some(v);
+            self
+        }
+        /// <p>List of multicast groups associated with a FUOTA task.</p>
+        pub fn set_multicast_group_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MulticastGroupByFuotaTask>>,
+        ) -> Self {
+            self.multicast_group_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput)
+        pub fn build(self) -> crate::output::ListMulticastGroupsByFuotaTaskOutput {
+            crate::output::ListMulticastGroupsByFuotaTaskOutput {
+                next_token: self.next_token,
+                multicast_group_list: self.multicast_group_list,
+            }
+        }
+    }
+}
+impl ListMulticastGroupsByFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput)
+    pub fn builder() -> crate::output::list_multicast_groups_by_fuota_task_output::Builder {
+        crate::output::list_multicast_groups_by_fuota_task_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMulticastGroupsOutput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>List of multicast groups.</p>
+    pub multicast_group_list: std::option::Option<std::vec::Vec<crate::model::MulticastGroup>>,
+}
+impl ListMulticastGroupsOutput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>List of multicast groups.</p>
+    pub fn multicast_group_list(&self) -> std::option::Option<&[crate::model::MulticastGroup]> {
+        self.multicast_group_list.as_deref()
+    }
+}
+impl std::fmt::Debug for ListMulticastGroupsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMulticastGroupsOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("multicast_group_list", &self.multicast_group_list);
+        formatter.finish()
+    }
+}
+/// See [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput)
+pub mod list_multicast_groups_output {
+    /// A builder for [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) multicast_group_list:
+            std::option::Option<std::vec::Vec<crate::model::MulticastGroup>>,
+    }
+    impl Builder {
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `multicast_group_list`.
+        ///
+        /// To override the contents of this collection use [`set_multicast_group_list`](Self::set_multicast_group_list).
+        ///
+        /// <p>List of multicast groups.</p>
+        pub fn multicast_group_list(
+            mut self,
+            input: impl Into<crate::model::MulticastGroup>,
+        ) -> Self {
+            let mut v = self.multicast_group_list.unwrap_or_default();
+            v.push(input.into());
+            self.multicast_group_list = Some(v);
+            self
+        }
+        /// <p>List of multicast groups.</p>
+        pub fn set_multicast_group_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MulticastGroup>>,
+        ) -> Self {
+            self.multicast_group_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput)
+        pub fn build(self) -> crate::output::ListMulticastGroupsOutput {
+            crate::output::ListMulticastGroupsOutput {
+                next_token: self.next_token,
+                multicast_group_list: self.multicast_group_list,
+            }
+        }
+    }
+}
+impl ListMulticastGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput)
+    pub fn builder() -> crate::output::list_multicast_groups_output::Builder {
+        crate::output::list_multicast_groups_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListFuotaTasksOutput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
+    pub fuota_task_list: std::option::Option<std::vec::Vec<crate::model::FuotaTask>>,
+}
+impl ListFuotaTasksOutput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
+    pub fn fuota_task_list(&self) -> std::option::Option<&[crate::model::FuotaTask]> {
+        self.fuota_task_list.as_deref()
+    }
+}
+impl std::fmt::Debug for ListFuotaTasksOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListFuotaTasksOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("fuota_task_list", &self.fuota_task_list);
+        formatter.finish()
+    }
+}
+/// See [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput)
+pub mod list_fuota_tasks_output {
+    /// A builder for [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) fuota_task_list: std::option::Option<std::vec::Vec<crate::model::FuotaTask>>,
+    }
+    impl Builder {
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `fuota_task_list`.
+        ///
+        /// To override the contents of this collection use [`set_fuota_task_list`](Self::set_fuota_task_list).
+        ///
+        /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
+        pub fn fuota_task_list(mut self, input: impl Into<crate::model::FuotaTask>) -> Self {
+            let mut v = self.fuota_task_list.unwrap_or_default();
+            v.push(input.into());
+            self.fuota_task_list = Some(v);
+            self
+        }
+        /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
+        pub fn set_fuota_task_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FuotaTask>>,
+        ) -> Self {
+            self.fuota_task_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput)
+        pub fn build(self) -> crate::output::ListFuotaTasksOutput {
+            crate::output::ListFuotaTasksOutput {
+                next_token: self.next_token,
+                fuota_task_list: self.fuota_task_list,
+            }
+        }
+    }
+}
+impl ListFuotaTasksOutput {
+    /// Creates a new builder-style object to manufacture [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput)
+    pub fn builder() -> crate::output::list_fuota_tasks_output::Builder {
+        crate::output::list_fuota_tasks_output::Builder::default()
     }
 }
 
@@ -2390,6 +2921,92 @@ impl GetResourceLogLevelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetResourceEventConfigurationOutput {
+    /// <p>Event configuration for the device registration state event</p>
+    pub device_registration_state:
+        std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
+    /// <p>Event configuration for the Proximity event</p>
+    pub proximity: std::option::Option<crate::model::ProximityEventConfiguration>,
+}
+impl GetResourceEventConfigurationOutput {
+    /// <p>Event configuration for the device registration state event</p>
+    pub fn device_registration_state(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceRegistrationStateEventConfiguration> {
+        self.device_registration_state.as_ref()
+    }
+    /// <p>Event configuration for the Proximity event</p>
+    pub fn proximity(&self) -> std::option::Option<&crate::model::ProximityEventConfiguration> {
+        self.proximity.as_ref()
+    }
+}
+impl std::fmt::Debug for GetResourceEventConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetResourceEventConfigurationOutput");
+        formatter.field("device_registration_state", &self.device_registration_state);
+        formatter.field("proximity", &self.proximity);
+        formatter.finish()
+    }
+}
+/// See [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput)
+pub mod get_resource_event_configuration_output {
+    /// A builder for [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) device_registration_state:
+            std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
+        pub(crate) proximity: std::option::Option<crate::model::ProximityEventConfiguration>,
+    }
+    impl Builder {
+        /// <p>Event configuration for the device registration state event</p>
+        pub fn device_registration_state(
+            mut self,
+            input: crate::model::DeviceRegistrationStateEventConfiguration,
+        ) -> Self {
+            self.device_registration_state = Some(input);
+            self
+        }
+        /// <p>Event configuration for the device registration state event</p>
+        pub fn set_device_registration_state(
+            mut self,
+            input: std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
+        ) -> Self {
+            self.device_registration_state = input;
+            self
+        }
+        /// <p>Event configuration for the Proximity event</p>
+        pub fn proximity(mut self, input: crate::model::ProximityEventConfiguration) -> Self {
+            self.proximity = Some(input);
+            self
+        }
+        /// <p>Event configuration for the Proximity event</p>
+        pub fn set_proximity(
+            mut self,
+            input: std::option::Option<crate::model::ProximityEventConfiguration>,
+        ) -> Self {
+            self.proximity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput)
+        pub fn build(self) -> crate::output::GetResourceEventConfigurationOutput {
+            crate::output::GetResourceEventConfigurationOutput {
+                device_registration_state: self.device_registration_state,
+                proximity: self.proximity,
+            }
+        }
+    }
+}
+impl GetResourceEventConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput)
+    pub fn builder() -> crate::output::get_resource_event_configuration_output::Builder {
+        crate::output::get_resource_event_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPartnerAccountOutput {
     /// <p>The Sidewalk account credentials.</p>
     pub sidewalk: std::option::Option<crate::model::SidewalkAccountInfoWithFingerprint>,
@@ -2462,6 +3079,237 @@ impl GetPartnerAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput)
     pub fn builder() -> crate::output::get_partner_account_output::Builder {
         crate::output::get_partner_account_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMulticastGroupSessionOutput {
+    /// <p>The LoRaWAN information used with the multicast session.</p>
+    pub lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastSession>,
+}
+impl GetMulticastGroupSessionOutput {
+    /// <p>The LoRaWAN information used with the multicast session.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanMulticastSession> {
+        self.lo_ra_wan.as_ref()
+    }
+}
+impl std::fmt::Debug for GetMulticastGroupSessionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMulticastGroupSessionOutput");
+        formatter.field("lo_ra_wan", &self.lo_ra_wan);
+        formatter.finish()
+    }
+}
+/// See [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput)
+pub mod get_multicast_group_session_output {
+    /// A builder for [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastSession>,
+    }
+    impl Builder {
+        /// <p>The LoRaWAN information used with the multicast session.</p>
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanMulticastSession) -> Self {
+            self.lo_ra_wan = Some(input);
+            self
+        }
+        /// <p>The LoRaWAN information used with the multicast session.</p>
+        pub fn set_lo_ra_wan(
+            mut self,
+            input: std::option::Option<crate::model::LoRaWanMulticastSession>,
+        ) -> Self {
+            self.lo_ra_wan = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput)
+        pub fn build(self) -> crate::output::GetMulticastGroupSessionOutput {
+            crate::output::GetMulticastGroupSessionOutput {
+                lo_ra_wan: self.lo_ra_wan,
+            }
+        }
+    }
+}
+impl GetMulticastGroupSessionOutput {
+    /// Creates a new builder-style object to manufacture [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput)
+    pub fn builder() -> crate::output::get_multicast_group_session_output::Builder {
+        crate::output::get_multicast_group_session_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMulticastGroupOutput {
+    /// <p>The arn of the multicast group.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The ID of the multicast group.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The name of the multicast group.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the new resource.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The status of the multicast group.</p>
+    pub status: std::option::Option<std::string::String>,
+    /// <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
+    pub lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastGet>,
+    /// <p>Created at timestamp for the resource.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl GetMulticastGroupOutput {
+    /// <p>The arn of the multicast group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the multicast group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the multicast group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the new resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The status of the multicast group.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanMulticastGet> {
+        self.lo_ra_wan.as_ref()
+    }
+    /// <p>Created at timestamp for the resource.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+}
+impl std::fmt::Debug for GetMulticastGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMulticastGroupOutput");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("status", &self.status);
+        formatter.field("lo_ra_wan", &self.lo_ra_wan);
+        formatter.field("created_at", &self.created_at);
+        formatter.finish()
+    }
+}
+/// See [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput)
+pub mod get_multicast_group_output {
+    /// A builder for [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastGet>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The arn of the multicast group.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The arn of the multicast group.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The name of the multicast group.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the multicast group.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The status of the multicast group.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The status of the multicast group.</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanMulticastGet) -> Self {
+            self.lo_ra_wan = Some(input);
+            self
+        }
+        /// <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
+        pub fn set_lo_ra_wan(
+            mut self,
+            input: std::option::Option<crate::model::LoRaWanMulticastGet>,
+        ) -> Self {
+            self.lo_ra_wan = input;
+            self
+        }
+        /// <p>Created at timestamp for the resource.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>Created at timestamp for the resource.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput)
+        pub fn build(self) -> crate::output::GetMulticastGroupOutput {
+            crate::output::GetMulticastGroupOutput {
+                arn: self.arn,
+                id: self.id,
+                name: self.name,
+                description: self.description,
+                status: self.status,
+                lo_ra_wan: self.lo_ra_wan,
+                created_at: self.created_at,
+            }
+        }
+    }
+}
+impl GetMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput)
+    pub fn builder() -> crate::output::get_multicast_group_output::Builder {
+        crate::output::get_multicast_group_output::Builder::default()
     }
 }
 
@@ -2595,6 +3443,227 @@ impl GetLogLevelsByResourceTypesOutput {
     /// Creates a new builder-style object to manufacture [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput)
     pub fn builder() -> crate::output::get_log_levels_by_resource_types_output::Builder {
         crate::output::get_log_levels_by_resource_types_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetFuotaTaskOutput {
+    /// <p>The arn of a FUOTA task.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The ID of a FUOTA task.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The status of a FUOTA task.</p>
+    pub status: std::option::Option<crate::model::FuotaTaskStatus>,
+    /// <p>The name of a FUOTA task.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the new resource.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The LoRaWAN information returned from getting a FUOTA task.</p>
+    pub lo_ra_wan: std::option::Option<crate::model::LoRaWanFuotaTaskGetInfo>,
+    /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+    pub firmware_update_image: std::option::Option<std::string::String>,
+    /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+    pub firmware_update_role: std::option::Option<std::string::String>,
+    /// <p>Created at timestamp for the resource.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl GetFuotaTaskOutput {
+    /// <p>The arn of a FUOTA task.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of a FUOTA task.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The status of a FUOTA task.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FuotaTaskStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The name of a FUOTA task.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the new resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The LoRaWAN information returned from getting a FUOTA task.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanFuotaTaskGetInfo> {
+        self.lo_ra_wan.as_ref()
+    }
+    /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+    pub fn firmware_update_image(&self) -> std::option::Option<&str> {
+        self.firmware_update_image.as_deref()
+    }
+    /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+    pub fn firmware_update_role(&self) -> std::option::Option<&str> {
+        self.firmware_update_role.as_deref()
+    }
+    /// <p>Created at timestamp for the resource.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+}
+impl std::fmt::Debug for GetFuotaTaskOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetFuotaTaskOutput");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.field("status", &self.status);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("lo_ra_wan", &self.lo_ra_wan);
+        formatter.field("firmware_update_image", &self.firmware_update_image);
+        formatter.field("firmware_update_role", &self.firmware_update_role);
+        formatter.field("created_at", &self.created_at);
+        formatter.finish()
+    }
+}
+/// See [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput)
+pub mod get_fuota_task_output {
+    /// A builder for [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::FuotaTaskStatus>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanFuotaTaskGetInfo>,
+        pub(crate) firmware_update_image: std::option::Option<std::string::String>,
+        pub(crate) firmware_update_role: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The arn of a FUOTA task.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The arn of a FUOTA task.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The status of a FUOTA task.</p>
+        pub fn status(mut self, input: crate::model::FuotaTaskStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of a FUOTA task.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::FuotaTaskStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The name of a FUOTA task.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of a FUOTA task.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the new resource.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The LoRaWAN information returned from getting a FUOTA task.</p>
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanFuotaTaskGetInfo) -> Self {
+            self.lo_ra_wan = Some(input);
+            self
+        }
+        /// <p>The LoRaWAN information returned from getting a FUOTA task.</p>
+        pub fn set_lo_ra_wan(
+            mut self,
+            input: std::option::Option<crate::model::LoRaWanFuotaTaskGetInfo>,
+        ) -> Self {
+            self.lo_ra_wan = input;
+            self
+        }
+        /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+        pub fn firmware_update_image(mut self, input: impl Into<std::string::String>) -> Self {
+            self.firmware_update_image = Some(input.into());
+            self
+        }
+        /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+        pub fn set_firmware_update_image(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firmware_update_image = input;
+            self
+        }
+        /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+        pub fn firmware_update_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.firmware_update_role = Some(input.into());
+            self
+        }
+        /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+        pub fn set_firmware_update_role(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firmware_update_role = input;
+            self
+        }
+        /// <p>Created at timestamp for the resource.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>Created at timestamp for the resource.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput)
+        pub fn build(self) -> crate::output::GetFuotaTaskOutput {
+            crate::output::GetFuotaTaskOutput {
+                arn: self.arn,
+                id: self.id,
+                status: self.status,
+                name: self.name,
+                description: self.description,
+                lo_ra_wan: self.lo_ra_wan,
+                firmware_update_image: self.firmware_update_image,
+                firmware_update_role: self.firmware_update_role,
+                created_at: self.created_at,
+            }
+        }
+    }
+}
+impl GetFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput)
+    pub fn builder() -> crate::output::get_fuota_task_output::Builder {
+        crate::output::get_fuota_task_output::Builder::default()
     }
 }
 
@@ -2958,6 +4027,99 @@ impl DisassociateWirelessDeviceFromThingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateWirelessDeviceFromMulticastGroupOutput {}
+impl std::fmt::Debug for DisassociateWirelessDeviceFromMulticastGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateWirelessDeviceFromMulticastGroupOutput");
+        formatter.finish()
+    }
+}
+/// See [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput)
+pub mod disassociate_wireless_device_from_multicast_group_output {
+    /// A builder for [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput)
+        pub fn build(self) -> crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput {
+            crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput {}
+        }
+    }
+}
+impl DisassociateWirelessDeviceFromMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput)
+    pub fn builder(
+    ) -> crate::output::disassociate_wireless_device_from_multicast_group_output::Builder {
+        crate::output::disassociate_wireless_device_from_multicast_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateWirelessDeviceFromFuotaTaskOutput {}
+impl std::fmt::Debug for DisassociateWirelessDeviceFromFuotaTaskOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateWirelessDeviceFromFuotaTaskOutput");
+        formatter.finish()
+    }
+}
+/// See [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput)
+pub mod disassociate_wireless_device_from_fuota_task_output {
+    /// A builder for [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput)
+        pub fn build(self) -> crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput {
+            crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput {}
+        }
+    }
+}
+impl DisassociateWirelessDeviceFromFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput)
+    pub fn builder() -> crate::output::disassociate_wireless_device_from_fuota_task_output::Builder
+    {
+        crate::output::disassociate_wireless_device_from_fuota_task_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateMulticastGroupFromFuotaTaskOutput {}
+impl std::fmt::Debug for DisassociateMulticastGroupFromFuotaTaskOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateMulticastGroupFromFuotaTaskOutput");
+        formatter.finish()
+    }
+}
+/// See [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput)
+pub mod disassociate_multicast_group_from_fuota_task_output {
+    /// A builder for [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput)
+        pub fn build(self) -> crate::output::DisassociateMulticastGroupFromFuotaTaskOutput {
+            crate::output::DisassociateMulticastGroupFromFuotaTaskOutput {}
+        }
+    }
+}
+impl DisassociateMulticastGroupFromFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput)
+    pub fn builder() -> crate::output::disassociate_multicast_group_from_fuota_task_output::Builder
+    {
+        crate::output::disassociate_multicast_group_from_fuota_task_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateAwsAccountFromPartnerAccountOutput {}
 impl std::fmt::Debug for DisassociateAwsAccountFromPartnerAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3133,6 +4295,66 @@ impl DeleteServiceProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput)
     pub fn builder() -> crate::output::delete_service_profile_output::Builder {
         crate::output::delete_service_profile_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteMulticastGroupOutput {}
+impl std::fmt::Debug for DeleteMulticastGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteMulticastGroupOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput)
+pub mod delete_multicast_group_output {
+    /// A builder for [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput)
+        pub fn build(self) -> crate::output::DeleteMulticastGroupOutput {
+            crate::output::DeleteMulticastGroupOutput {}
+        }
+    }
+}
+impl DeleteMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput)
+    pub fn builder() -> crate::output::delete_multicast_group_output::Builder {
+        crate::output::delete_multicast_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFuotaTaskOutput {}
+impl std::fmt::Debug for DeleteFuotaTaskOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteFuotaTaskOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput)
+pub mod delete_fuota_task_output {
+    /// A builder for [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput)
+        pub fn build(self) -> crate::output::DeleteFuotaTaskOutput {
+            crate::output::DeleteFuotaTaskOutput {}
+        }
+    }
+}
+impl DeleteFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput)
+    pub fn builder() -> crate::output::delete_fuota_task_output::Builder {
+        crate::output::delete_fuota_task_output::Builder::default()
     }
 }
 
@@ -3576,6 +4798,152 @@ impl CreateServiceProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateMulticastGroupOutput {
+    /// <p>The arn of the multicast group.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The ID of the multicast group.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl CreateMulticastGroupOutput {
+    /// <p>The arn of the multicast group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the multicast group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateMulticastGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateMulticastGroupOutput");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+/// See [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput)
+pub mod create_multicast_group_output {
+    /// A builder for [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The arn of the multicast group.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The arn of the multicast group.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the multicast group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput)
+        pub fn build(self) -> crate::output::CreateMulticastGroupOutput {
+            crate::output::CreateMulticastGroupOutput {
+                arn: self.arn,
+                id: self.id,
+            }
+        }
+    }
+}
+impl CreateMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput)
+    pub fn builder() -> crate::output::create_multicast_group_output::Builder {
+        crate::output::create_multicast_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFuotaTaskOutput {
+    /// <p>The arn of a FUOTA task.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The ID of a FUOTA task.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl CreateFuotaTaskOutput {
+    /// <p>The arn of a FUOTA task.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of a FUOTA task.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateFuotaTaskOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateFuotaTaskOutput");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+/// See [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput)
+pub mod create_fuota_task_output {
+    /// A builder for [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The arn of a FUOTA task.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The arn of a FUOTA task.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a FUOTA task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput)
+        pub fn build(self) -> crate::output::CreateFuotaTaskOutput {
+            crate::output::CreateFuotaTaskOutput {
+                arn: self.arn,
+                id: self.id,
+            }
+        }
+    }
+}
+impl CreateFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput)
+    pub fn builder() -> crate::output::create_fuota_task_output::Builder {
+        crate::output::create_fuota_task_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeviceProfileOutput {
     /// <p>The Amazon Resource Name of the new resource.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -3722,6 +5090,36 @@ impl CreateDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelMulticastGroupSessionOutput {}
+impl std::fmt::Debug for CancelMulticastGroupSessionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CancelMulticastGroupSessionOutput");
+        formatter.finish()
+    }
+}
+/// See [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput)
+pub mod cancel_multicast_group_session_output {
+    /// A builder for [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput)
+        pub fn build(self) -> crate::output::CancelMulticastGroupSessionOutput {
+            crate::output::CancelMulticastGroupSessionOutput {}
+        }
+    }
+}
+impl CancelMulticastGroupSessionOutput {
+    /// Creates a new builder-style object to manufacture [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput)
+    pub fn builder() -> crate::output::cancel_multicast_group_session_output::Builder {
+        crate::output::cancel_multicast_group_session_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateWirelessGatewayWithThingOutput {}
 impl std::fmt::Debug for AssociateWirelessGatewayWithThingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3833,6 +5231,97 @@ impl AssociateWirelessDeviceWithThingOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput)
     pub fn builder() -> crate::output::associate_wireless_device_with_thing_output::Builder {
         crate::output::associate_wireless_device_with_thing_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateWirelessDeviceWithMulticastGroupOutput {}
+impl std::fmt::Debug for AssociateWirelessDeviceWithMulticastGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateWirelessDeviceWithMulticastGroupOutput");
+        formatter.finish()
+    }
+}
+/// See [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput)
+pub mod associate_wireless_device_with_multicast_group_output {
+    /// A builder for [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput)
+        pub fn build(self) -> crate::output::AssociateWirelessDeviceWithMulticastGroupOutput {
+            crate::output::AssociateWirelessDeviceWithMulticastGroupOutput {}
+        }
+    }
+}
+impl AssociateWirelessDeviceWithMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput)
+    pub fn builder() -> crate::output::associate_wireless_device_with_multicast_group_output::Builder
+    {
+        crate::output::associate_wireless_device_with_multicast_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateWirelessDeviceWithFuotaTaskOutput {}
+impl std::fmt::Debug for AssociateWirelessDeviceWithFuotaTaskOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateWirelessDeviceWithFuotaTaskOutput");
+        formatter.finish()
+    }
+}
+/// See [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput)
+pub mod associate_wireless_device_with_fuota_task_output {
+    /// A builder for [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput)
+        pub fn build(self) -> crate::output::AssociateWirelessDeviceWithFuotaTaskOutput {
+            crate::output::AssociateWirelessDeviceWithFuotaTaskOutput {}
+        }
+    }
+}
+impl AssociateWirelessDeviceWithFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput)
+    pub fn builder() -> crate::output::associate_wireless_device_with_fuota_task_output::Builder {
+        crate::output::associate_wireless_device_with_fuota_task_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateMulticastGroupWithFuotaTaskOutput {}
+impl std::fmt::Debug for AssociateMulticastGroupWithFuotaTaskOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateMulticastGroupWithFuotaTaskOutput");
+        formatter.finish()
+    }
+}
+/// See [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput)
+pub mod associate_multicast_group_with_fuota_task_output {
+    /// A builder for [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput)
+        pub fn build(self) -> crate::output::AssociateMulticastGroupWithFuotaTaskOutput {
+            crate::output::AssociateMulticastGroupWithFuotaTaskOutput {}
+        }
+    }
+}
+impl AssociateMulticastGroupWithFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput)
+    pub fn builder() -> crate::output::associate_multicast_group_with_fuota_task_output::Builder {
+        crate::output::associate_multicast_group_with_fuota_task_output::Builder::default()
     }
 }
 

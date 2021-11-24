@@ -4327,10 +4327,10 @@ pub struct DescribeStreamProcessorOutput {
     /// <p>Detailed status message about the stream processor.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Date and time the stream processor was created</p>
-    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in Unix format, the stream processor was last updated. For example, when the stream
     /// processor moves from a running state to a failed state, or when the user starts or stops the stream processor.</p>
-    pub last_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Kinesis video stream that provides the source streaming video.</p>
     pub input: std::option::Option<crate::model::StreamProcessorInput>,
     /// <p>Kinesis data stream to which Amazon Rekognition Video puts the analysis results.</p>
@@ -4360,12 +4360,12 @@ impl DescribeStreamProcessorOutput {
         self.status_message.as_deref()
     }
     /// <p>Date and time the stream processor was created</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The time, in Unix format, the stream processor was last updated. For example, when the stream
     /// processor moves from a running state to a failed state, or when the user starts or stops the stream processor.</p>
-    pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
     }
     /// <p>Kinesis video stream that provides the source streaming video.</p>
@@ -4413,8 +4413,8 @@ pub mod describe_stream_processor_output {
         pub(crate) stream_processor_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StreamProcessorStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) input: std::option::Option<crate::model::StreamProcessorInput>,
         pub(crate) output: std::option::Option<crate::model::StreamProcessorOutput>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -4471,21 +4471,21 @@ pub mod describe_stream_processor_output {
             self
         }
         /// <p>Date and time the stream processor was created</p>
-        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
         /// <p>Date and time the stream processor was created</p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_timestamp = input;
             self
         }
         /// <p>The time, in Unix format, the stream processor was last updated. For example, when the stream
         /// processor moves from a running state to a failed state, or when the user starts or stops the stream processor.</p>
-        pub fn last_update_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_update_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_timestamp = Some(input);
             self
         }
@@ -4493,7 +4493,7 @@ pub mod describe_stream_processor_output {
         /// processor moves from a running state to a failed state, or when the user starts or stops the stream processor.</p>
         pub fn set_last_update_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_update_timestamp = input;
             self
@@ -4854,7 +4854,7 @@ pub struct DescribeCollectionOutput {
     pub collection_arn: std::option::Option<std::string::String>,
     /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection.
     /// The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
-    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeCollectionOutput {
     /// <p>The number of faces that are indexed into the collection. To index faces into a
@@ -4875,7 +4875,7 @@ impl DescribeCollectionOutput {
     }
     /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection.
     /// The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
 }
@@ -4898,7 +4898,7 @@ pub mod describe_collection_output {
         pub(crate) face_count: std::option::Option<i64>,
         pub(crate) face_model_version: std::option::Option<std::string::String>,
         pub(crate) collection_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The number of faces that are indexed into the collection. To index faces into a
@@ -4947,7 +4947,7 @@ pub mod describe_collection_output {
         }
         /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection.
         /// The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
-        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
@@ -4955,7 +4955,7 @@ pub mod describe_collection_output {
         /// The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_timestamp = input;
             self

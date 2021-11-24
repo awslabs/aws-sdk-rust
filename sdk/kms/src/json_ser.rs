@@ -563,7 +563,7 @@ pub fn serialize_structure_crate_input_import_key_material_input(
     if let Some(var_122) = &input.valid_to {
         object
             .key("ValidTo")
-            .instant(var_122, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_122, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_123) = &input.expiration_model {
         object.key("ExpirationModel").string(var_123.as_str());

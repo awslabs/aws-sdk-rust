@@ -24,9 +24,9 @@ pub struct User {
     /// <p>The type of user.</p>
     pub r#type: std::option::Option<crate::model::UserType>,
     /// <p>The time when the user was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the user was modified.</p>
-    pub modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time zone ID of the user.</p>
     pub time_zone_id: std::option::Option<std::string::String>,
     /// <p>The locale of the user.</p>
@@ -76,11 +76,11 @@ impl User {
         self.r#type.as_ref()
     }
     /// <p>The time when the user was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time when the user was modified.</p>
-    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_timestamp.as_ref()
     }
     /// <p>The time zone ID of the user.</p>
@@ -133,8 +133,8 @@ pub mod user {
         pub(crate) recycle_bin_folder_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::UserStatusType>,
         pub(crate) r#type: std::option::Option<crate::model::UserType>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) time_zone_id: std::option::Option<std::string::String>,
         pub(crate) locale: std::option::Option<crate::model::LocaleType>,
         pub(crate) storage: std::option::Option<crate::model::UserStorageMetadata>,
@@ -256,27 +256,27 @@ pub mod user {
             self
         }
         /// <p>The time when the user was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time when the user was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time when the user was modified.</p>
-        pub fn modified_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified_timestamp = Some(input);
             self
         }
         /// <p>The time when the user was modified.</p>
         pub fn set_modified_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.modified_timestamp = input;
             self
@@ -1119,9 +1119,9 @@ pub struct DocumentMetadata {
     /// <p>The ID of the parent folder.</p>
     pub parent_folder_id: std::option::Option<std::string::String>,
     /// <p>The time when the document was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the document was updated.</p>
-    pub modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The latest version of the document.</p>
     pub latest_version_metadata: std::option::Option<crate::model::DocumentVersionMetadata>,
     /// <p>The resource state.</p>
@@ -1143,11 +1143,11 @@ impl DocumentMetadata {
         self.parent_folder_id.as_deref()
     }
     /// <p>The time when the document was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time when the document was updated.</p>
-    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_timestamp.as_ref()
     }
     /// <p>The latest version of the document.</p>
@@ -1188,8 +1188,8 @@ pub mod document_metadata {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) creator_id: std::option::Option<std::string::String>,
         pub(crate) parent_folder_id: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) latest_version_metadata:
             std::option::Option<crate::model::DocumentVersionMetadata>,
         pub(crate) resource_state: std::option::Option<crate::model::ResourceStateType>,
@@ -1230,27 +1230,27 @@ pub mod document_metadata {
             self
         }
         /// <p>The time when the document was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time when the document was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time when the document was updated.</p>
-        pub fn modified_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified_timestamp = Some(input);
             self
         }
         /// <p>The time when the document was updated.</p>
         pub fn set_modified_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.modified_timestamp = input;
             self
@@ -1342,13 +1342,13 @@ pub struct DocumentVersionMetadata {
     /// <p>The status of the document.</p>
     pub status: std::option::Option<crate::model::DocumentStatusType>,
     /// <p>The timestamp when the document was first uploaded.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the document was last uploaded.</p>
-    pub modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the content of the document was originally created.</p>
-    pub content_created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub content_created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the content of the document was modified.</p>
-    pub content_modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub content_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the creator.</p>
     pub creator_id: std::option::Option<std::string::String>,
     /// <p>The thumbnail of the document.</p>
@@ -1386,19 +1386,19 @@ impl DocumentVersionMetadata {
         self.status.as_ref()
     }
     /// <p>The timestamp when the document was first uploaded.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The timestamp when the document was last uploaded.</p>
-    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_timestamp.as_ref()
     }
     /// <p>The timestamp when the content of the document was originally created.</p>
-    pub fn content_created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn content_created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.content_created_timestamp.as_ref()
     }
     /// <p>The timestamp when the content of the document was modified.</p>
-    pub fn content_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn content_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.content_modified_timestamp.as_ref()
     }
     /// <p>The ID of the creator.</p>
@@ -1456,10 +1456,10 @@ pub mod document_version_metadata {
         pub(crate) size: std::option::Option<i64>,
         pub(crate) signature: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DocumentStatusType>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) content_created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) content_modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) content_created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) content_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) creator_id: std::option::Option<std::string::String>,
         pub(crate) thumbnail: std::option::Option<
             std::collections::HashMap<crate::model::DocumentThumbnailType, std::string::String>,
@@ -1533,53 +1533,53 @@ pub mod document_version_metadata {
             self
         }
         /// <p>The timestamp when the document was first uploaded.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The timestamp when the document was first uploaded.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The timestamp when the document was last uploaded.</p>
-        pub fn modified_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified_timestamp = Some(input);
             self
         }
         /// <p>The timestamp when the document was last uploaded.</p>
         pub fn set_modified_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.modified_timestamp = input;
             self
         }
         /// <p>The timestamp when the content of the document was originally created.</p>
-        pub fn content_created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn content_created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.content_created_timestamp = Some(input);
             self
         }
         /// <p>The timestamp when the content of the document was originally created.</p>
         pub fn set_content_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.content_created_timestamp = input;
             self
         }
         /// <p>The timestamp when the content of the document was modified.</p>
-        pub fn content_modified_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn content_modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.content_modified_timestamp = Some(input);
             self
         }
         /// <p>The timestamp when the content of the document was modified.</p>
         pub fn set_content_modified_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.content_modified_timestamp = input;
             self
@@ -1853,9 +1853,9 @@ pub struct FolderMetadata {
     /// <p>The ID of the parent folder.</p>
     pub parent_folder_id: std::option::Option<std::string::String>,
     /// <p>The time when the folder was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the folder was updated.</p>
-    pub modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The resource state of the folder.</p>
     pub resource_state: std::option::Option<crate::model::ResourceStateType>,
     /// <p>The unique identifier created from the subfolders and documents of the
@@ -1886,11 +1886,11 @@ impl FolderMetadata {
         self.parent_folder_id.as_deref()
     }
     /// <p>The time when the folder was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time when the folder was updated.</p>
-    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_timestamp.as_ref()
     }
     /// <p>The resource state of the folder.</p>
@@ -1942,8 +1942,8 @@ pub mod folder_metadata {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) creator_id: std::option::Option<std::string::String>,
         pub(crate) parent_folder_id: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resource_state: std::option::Option<crate::model::ResourceStateType>,
         pub(crate) signature: std::option::Option<std::string::String>,
         pub(crate) labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1995,27 +1995,27 @@ pub mod folder_metadata {
             self
         }
         /// <p>The time when the folder was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time when the folder was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time when the folder was updated.</p>
-        pub fn modified_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified_timestamp = Some(input);
             self
         }
         /// <p>The time when the folder was updated.</p>
         pub fn set_modified_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.modified_timestamp = input;
             self
@@ -3126,7 +3126,7 @@ pub struct Comment {
     /// <p>The details of the user who made the comment.</p>
     pub contributor: std::option::Option<crate::model::User>,
     /// <p>The time that the comment was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the comment.</p>
     pub status: std::option::Option<crate::model::CommentStatusType>,
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
@@ -3159,7 +3159,7 @@ impl Comment {
         self.contributor.as_ref()
     }
     /// <p>The time that the comment was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The status of the comment.</p>
@@ -3204,7 +3204,7 @@ pub mod comment {
         pub(crate) thread_id: std::option::Option<std::string::String>,
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) contributor: std::option::Option<crate::model::User>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::CommentStatusType>,
         pub(crate) visibility: std::option::Option<crate::model::CommentVisibilityType>,
         pub(crate) recipient_id: std::option::Option<std::string::String>,
@@ -3261,14 +3261,14 @@ pub mod comment {
             self
         }
         /// <p>The time that the comment was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time that the comment was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -3459,7 +3459,7 @@ pub struct Activity {
     /// <p>The activity type.</p>
     pub r#type: std::option::Option<crate::model::ActivityType>,
     /// <p>The timestamp when the action was performed.</p>
-    pub time_stamp: std::option::Option<aws_smithy_types::Instant>,
+    pub time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether an activity is indirect or direct. An indirect activity results
     /// from a direct activity performed on a parent resource. For example, sharing a parent
     /// folder (the direct activity) shares all of the subfolders and documents within the
@@ -3488,7 +3488,7 @@ impl Activity {
         self.r#type.as_ref()
     }
     /// <p>The timestamp when the action was performed.</p>
-    pub fn time_stamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.time_stamp.as_ref()
     }
     /// <p>Indicates whether an activity is indirect or direct. An indirect activity results
@@ -3549,7 +3549,7 @@ pub mod activity {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ActivityType>,
-        pub(crate) time_stamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) time_stamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) is_indirect_activity: std::option::Option<bool>,
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) initiator: std::option::Option<crate::model::UserMetadata>,
@@ -3570,14 +3570,14 @@ pub mod activity {
             self
         }
         /// <p>The timestamp when the action was performed.</p>
-        pub fn time_stamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.time_stamp = Some(input);
             self
         }
         /// <p>The timestamp when the action was performed.</p>
         pub fn set_time_stamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.time_stamp = input;
             self
@@ -3716,7 +3716,7 @@ pub struct CommentMetadata {
     /// <p>The user who made the comment.</p>
     pub contributor: std::option::Option<crate::model::User>,
     /// <p>The timestamp that the comment was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the comment.</p>
     pub comment_status: std::option::Option<crate::model::CommentStatusType>,
     /// <p>The ID of the user being replied to.</p>
@@ -3732,7 +3732,7 @@ impl CommentMetadata {
         self.contributor.as_ref()
     }
     /// <p>The timestamp that the comment was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The status of the comment.</p>
@@ -3763,7 +3763,7 @@ pub mod comment_metadata {
     pub struct Builder {
         pub(crate) comment_id: std::option::Option<std::string::String>,
         pub(crate) contributor: std::option::Option<crate::model::User>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) comment_status: std::option::Option<crate::model::CommentStatusType>,
         pub(crate) recipient_id: std::option::Option<std::string::String>,
     }
@@ -3789,14 +3789,14 @@ pub mod comment_metadata {
             self
         }
         /// <p>The timestamp that the comment was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The timestamp that the comment was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self

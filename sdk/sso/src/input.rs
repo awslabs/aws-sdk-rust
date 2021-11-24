@@ -65,6 +65,7 @@ pub type GetRoleCredentialsInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl GetRoleCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`GetRoleCredentials`](crate::operation::GetRoleCredentials)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -105,7 +106,10 @@ impl GetRoleCredentialsInput {
             }
             Ok(builder)
         }
-        fn uri_query(_input: &crate::input::GetRoleCredentialsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::GetRoleCredentialsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_3) = &_input.role_name {
                 query.push_kv("role_name", &aws_smithy_http::query::fmt_string(&inner_3));
@@ -113,6 +117,7 @@ impl GetRoleCredentialsInput {
             if let Some(inner_4) = &_input.account_id {
                 query.push_kv("account_id", &aws_smithy_http::query::fmt_string(&inner_4));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -122,7 +127,7 @@ impl GetRoleCredentialsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             let builder = add_headers(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
@@ -144,11 +149,14 @@ impl GetRoleCredentialsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_requirements = aws_sig_auth::signer::SigningRequirements::Disabled;
@@ -269,6 +277,7 @@ pub type ListAccountRolesInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ListAccountRolesInput {
     /// Consumes the builder and constructs an Operation<[`ListAccountRoles`](crate::operation::ListAccountRoles)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -309,7 +318,10 @@ impl ListAccountRolesInput {
             }
             Ok(builder)
         }
-        fn uri_query(_input: &crate::input::ListAccountRolesInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListAccountRolesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_7) = &_input.next_token {
                 query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_7));
@@ -317,12 +329,13 @@ impl ListAccountRolesInput {
             if let Some(inner_8) = &_input.max_results {
                 query.push_kv(
                     "max_result",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
                 );
             }
             if let Some(inner_9) = &_input.account_id {
                 query.push_kv("account_id", &aws_smithy_http::query::fmt_string(&inner_9));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -332,7 +345,7 @@ impl ListAccountRolesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             let builder = add_headers(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
@@ -354,11 +367,14 @@ impl ListAccountRolesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_requirements = aws_sig_auth::signer::SigningRequirements::Disabled;
@@ -467,6 +483,7 @@ pub type ListAccountsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListAccountsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccounts`](crate::operation::ListAccounts)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -507,7 +524,10 @@ impl ListAccountsInput {
             }
             Ok(builder)
         }
-        fn uri_query(_input: &crate::input::ListAccountsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListAccountsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_12) = &_input.next_token {
                 query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_12));
@@ -515,9 +535,10 @@ impl ListAccountsInput {
             if let Some(inner_13) = &_input.max_results {
                 query.push_kv(
                     "max_result",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_13).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_13).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -527,7 +548,7 @@ impl ListAccountsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             let builder = add_headers(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
@@ -549,11 +570,14 @@ impl ListAccountsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_requirements = aws_sig_auth::signer::SigningRequirements::Disabled;
@@ -636,6 +660,7 @@ pub type LogoutInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl LogoutInput {
     /// Consumes the builder and constructs an Operation<[`Logout`](crate::operation::Logout)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -705,11 +730,14 @@ impl LogoutInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_requirements = aws_sig_auth::signer::SigningRequirements::Disabled;

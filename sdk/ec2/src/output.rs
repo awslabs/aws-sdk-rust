@@ -8114,7 +8114,7 @@ pub struct GetReservedInstancesExchangeQuoteOutput {
     /// <p>If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.</p>
     pub is_valid_exchange: std::option::Option<bool>,
     /// <p>The new end date of the reservation term.</p>
-    pub output_reserved_instances_will_expire_at: std::option::Option<aws_smithy_types::Instant>,
+    pub output_reserved_instances_will_expire_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total true upfront charge for the exchange.</p>
     pub payment_due: std::option::Option<std::string::String>,
     /// <p>The cost associated with the Reserved Instance.</p>
@@ -8142,7 +8142,7 @@ impl GetReservedInstancesExchangeQuoteOutput {
     /// <p>The new end date of the reservation term.</p>
     pub fn output_reserved_instances_will_expire_at(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.output_reserved_instances_will_expire_at.as_ref()
     }
     /// <p>The total true upfront charge for the exchange.</p>
@@ -8217,7 +8217,7 @@ pub mod get_reserved_instances_exchange_quote_output {
         pub(crate) currency_code: std::option::Option<std::string::String>,
         pub(crate) is_valid_exchange: std::option::Option<bool>,
         pub(crate) output_reserved_instances_will_expire_at:
-            std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) payment_due: std::option::Option<std::string::String>,
         pub(crate) reserved_instance_value_rollup:
             std::option::Option<crate::model::ReservationValue>,
@@ -8256,7 +8256,7 @@ pub mod get_reserved_instances_exchange_quote_output {
         /// <p>The new end date of the reservation term.</p>
         pub fn output_reserved_instances_will_expire_at(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.output_reserved_instances_will_expire_at = Some(input);
             self
@@ -8264,7 +8264,7 @@ pub mod get_reserved_instances_exchange_quote_output {
         /// <p>The new end date of the reservation term.</p>
         pub fn set_output_reserved_instances_will_expire_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.output_reserved_instances_will_expire_at = input;
             self
@@ -8404,7 +8404,7 @@ pub struct GetPasswordDataOutput {
     /// available.</p>
     pub password_data: std::option::Option<std::string::String>,
     /// <p>The time the data was last updated.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetPasswordDataOutput {
     /// <p>The ID of the Windows instance.</p>
@@ -8417,7 +8417,7 @@ impl GetPasswordDataOutput {
         self.password_data.as_deref()
     }
     /// <p>The time the data was last updated.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -8438,7 +8438,7 @@ pub mod get_password_data_output {
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) password_data: std::option::Option<std::string::String>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the Windows instance.</p>
@@ -8467,14 +8467,14 @@ pub mod get_password_data_output {
             self
         }
         /// <p>The time the data was last updated.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The time the data was last updated.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -9368,7 +9368,7 @@ pub struct GetConsoleOutputOutput {
     /// decodes the output for you.</p>
     pub output: std::option::Option<std::string::String>,
     /// <p>The time at which the output was last updated.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetConsoleOutputOutput {
     /// <p>The ID of the instance.</p>
@@ -9381,7 +9381,7 @@ impl GetConsoleOutputOutput {
         self.output.as_deref()
     }
     /// <p>The time at which the output was last updated.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -9402,7 +9402,7 @@ pub mod get_console_output_output {
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) output: std::option::Option<std::string::String>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the instance.</p>
@@ -9428,14 +9428,14 @@ pub mod get_console_output_output {
             self
         }
         /// <p>The time at which the output was last updated.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The time at which the output was last updated.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -12225,7 +12225,7 @@ impl DetachVpnGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachVolumeOutput {
     /// <p>The time stamp when the attachment initiated.</p>
-    pub attach_time: std::option::Option<aws_smithy_types::Instant>,
+    pub attach_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The device name.</p>
     pub device: std::option::Option<std::string::String>,
     /// <p>The ID of the instance.</p>
@@ -12239,7 +12239,7 @@ pub struct DetachVolumeOutput {
 }
 impl DetachVolumeOutput {
     /// <p>The time stamp when the attachment initiated.</p>
-    pub fn attach_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn attach_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.attach_time.as_ref()
     }
     /// <p>The device name.</p>
@@ -12281,7 +12281,7 @@ pub mod detach_volume_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attach_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) attach_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) device: std::option::Option<std::string::String>,
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::VolumeAttachmentState>,
@@ -12290,14 +12290,14 @@ pub mod detach_volume_output {
     }
     impl Builder {
         /// <p>The time stamp when the attachment initiated.</p>
-        pub fn attach_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn attach_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.attach_time = Some(input);
             self
         }
         /// <p>The time stamp when the attachment initiated.</p>
         pub fn set_attach_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.attach_time = input;
             self
@@ -15695,7 +15695,7 @@ pub struct DescribeSpotFleetRequestHistoryOutput {
     /// All records up to this time were retrieved.</p>
     /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
     /// present.</p>
-    pub last_evaluated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_evaluated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The token required to retrieve the next set of results. This value is
     /// <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -15703,7 +15703,7 @@ pub struct DescribeSpotFleetRequestHistoryOutput {
     pub spot_fleet_request_id: std::option::Option<std::string::String>,
     /// <p>The starting date and time for the events, in UTC format (for example,
     /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeSpotFleetRequestHistoryOutput {
     /// <p>Information about the events in the history of the Spot Fleet request.</p>
@@ -15715,7 +15715,7 @@ impl DescribeSpotFleetRequestHistoryOutput {
     /// All records up to this time were retrieved.</p>
     /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
     /// present.</p>
-    pub fn last_evaluated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_evaluated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_evaluated_time.as_ref()
     }
     /// <p>The token required to retrieve the next set of results. This value is
@@ -15729,7 +15729,7 @@ impl DescribeSpotFleetRequestHistoryOutput {
     }
     /// <p>The starting date and time for the events, in UTC format (for example,
     /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
@@ -15751,10 +15751,10 @@ pub mod describe_spot_fleet_request_history_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) history_records: std::option::Option<std::vec::Vec<crate::model::HistoryRecord>>,
-        pub(crate) last_evaluated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_evaluated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) spot_fleet_request_id: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// Appends an item to `history_records`.
@@ -15781,7 +15781,7 @@ pub mod describe_spot_fleet_request_history_output {
         /// All records up to this time were retrieved.</p>
         /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
         /// present.</p>
-        pub fn last_evaluated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_evaluated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_evaluated_time = Some(input);
             self
         }
@@ -15792,7 +15792,7 @@ pub mod describe_spot_fleet_request_history_output {
         /// present.</p>
         pub fn set_last_evaluated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_evaluated_time = input;
             self
@@ -15824,7 +15824,7 @@ pub mod describe_spot_fleet_request_history_output {
         }
         /// <p>The starting date and time for the events, in UTC format (for example,
         /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -15832,7 +15832,7 @@ pub mod describe_spot_fleet_request_history_output {
         /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -21835,14 +21835,14 @@ pub struct DescribeFleetHistoryOutput {
     /// All records up to this time were retrieved.</p>
     /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
     /// present.</p>
-    pub last_evaluated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub last_evaluated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the EC Fleet.</p>
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>The start date and time for the events, in UTC format (for example,
     /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeFleetHistoryOutput {
     /// <p>Information about the events in the history of the EC2 Fleet.</p>
@@ -21854,7 +21854,7 @@ impl DescribeFleetHistoryOutput {
     /// All records up to this time were retrieved.</p>
     /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
     /// present.</p>
-    pub fn last_evaluated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_evaluated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_evaluated_time.as_ref()
     }
     /// <p>The token for the next set of results.</p>
@@ -21867,7 +21867,7 @@ impl DescribeFleetHistoryOutput {
     }
     /// <p>The start date and time for the events, in UTC format (for example,
     /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
@@ -21890,10 +21890,10 @@ pub mod describe_fleet_history_output {
     pub struct Builder {
         pub(crate) history_records:
             std::option::Option<std::vec::Vec<crate::model::HistoryRecordEntry>>,
-        pub(crate) last_evaluated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_evaluated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) fleet_id: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// Appends an item to `history_records`.
@@ -21923,7 +21923,7 @@ pub mod describe_fleet_history_output {
         /// All records up to this time were retrieved.</p>
         /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
         /// present.</p>
-        pub fn last_evaluated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_evaluated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_evaluated_time = Some(input);
             self
         }
@@ -21934,7 +21934,7 @@ pub mod describe_fleet_history_output {
         /// present.</p>
         pub fn set_last_evaluated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_evaluated_time = input;
             self
@@ -21961,7 +21961,7 @@ pub mod describe_fleet_history_output {
         }
         /// <p>The start date and time for the events, in UTC format (for example,
         /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
@@ -21969,7 +21969,7 @@ pub mod describe_fleet_history_output {
         /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -27792,7 +27792,7 @@ pub struct CreateVolumeOutput {
     /// <p>The Availability Zone for the volume.</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The time stamp when volume creation was initiated.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether the volume is encrypted.</p>
     pub encrypted: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
@@ -27833,7 +27833,7 @@ impl CreateVolumeOutput {
         self.availability_zone.as_deref()
     }
     /// <p>The time stamp when volume creation was initiated.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>Indicates whether the volume is encrypted.</p>
@@ -27922,7 +27922,7 @@ pub mod create_volume_output {
     pub struct Builder {
         pub(crate) attachments: std::option::Option<std::vec::Vec<crate::model::VolumeAttachment>>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) encrypted: std::option::Option<bool>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) outpost_arn: std::option::Option<std::string::String>,
@@ -27971,14 +27971,14 @@ pub mod create_volume_output {
             self
         }
         /// <p>The time stamp when volume creation was initiated.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
         /// <p>The time stamp when volume creation was initiated.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
@@ -29407,7 +29407,7 @@ pub struct CreateSnapshotOutput {
     /// created.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The time stamp when the snapshot was initiated.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The snapshot state.</p>
     pub state: std::option::Option<crate::model::SnapshotState>,
     /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails
@@ -29465,7 +29465,7 @@ impl CreateSnapshotOutput {
         self.snapshot_id.as_deref()
     }
     /// <p>The time stamp when the snapshot was initiated.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The snapshot state.</p>
@@ -29537,7 +29537,7 @@ pub mod create_snapshot_output {
         pub(crate) owner_id: std::option::Option<std::string::String>,
         pub(crate) progress: std::option::Option<std::string::String>,
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state: std::option::Option<crate::model::SnapshotState>,
         pub(crate) state_message: std::option::Option<std::string::String>,
         pub(crate) volume_id: std::option::Option<std::string::String>,
@@ -29633,14 +29633,14 @@ pub mod create_snapshot_output {
             self
         }
         /// <p>The time stamp when the snapshot was initiated.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The time stamp when the snapshot was initiated.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -32131,9 +32131,9 @@ pub struct CreateCapacityReservationFleetOutput {
     /// <p>The allocation strategy used by the Capacity Reservation Fleet.</p>
     pub allocation_strategy: std::option::Option<std::string::String>,
     /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
-    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
-    pub end_date: std::option::Option<aws_smithy_types::Instant>,
+    pub end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the tenancy of Capacity Reservation Fleet.</p>
     pub tenancy: std::option::Option<crate::model::FleetCapacityReservationTenancy>,
     /// <p>Information about the individual Capacity Reservations in the Capacity Reservation Fleet.</p>
@@ -32170,11 +32170,11 @@ impl CreateCapacityReservationFleetOutput {
         self.allocation_strategy.as_deref()
     }
     /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
-    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
     /// <p>Indicates the tenancy of Capacity Reservation Fleet.</p>
@@ -32228,8 +32228,8 @@ pub mod create_capacity_reservation_fleet_output {
         pub(crate) instance_match_criteria:
             std::option::Option<crate::model::FleetInstanceMatchCriteria>,
         pub(crate) allocation_strategy: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tenancy: std::option::Option<crate::model::FleetCapacityReservationTenancy>,
         pub(crate) fleet_capacity_reservations:
             std::option::Option<std::vec::Vec<crate::model::FleetCapacityReservation>>,
@@ -32315,27 +32315,27 @@ pub mod create_capacity_reservation_fleet_output {
             self
         }
         /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
-        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
         /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
-        pub fn end_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_date = Some(input);
             self
         }
         /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
         pub fn set_end_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_date = input;
             self
@@ -33744,7 +33744,7 @@ impl AttachVpnGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachVolumeOutput {
     /// <p>The time stamp when the attachment initiated.</p>
-    pub attach_time: std::option::Option<aws_smithy_types::Instant>,
+    pub attach_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The device name.</p>
     pub device: std::option::Option<std::string::String>,
     /// <p>The ID of the instance.</p>
@@ -33758,7 +33758,7 @@ pub struct AttachVolumeOutput {
 }
 impl AttachVolumeOutput {
     /// <p>The time stamp when the attachment initiated.</p>
-    pub fn attach_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn attach_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.attach_time.as_ref()
     }
     /// <p>The device name.</p>
@@ -33800,7 +33800,7 @@ pub mod attach_volume_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attach_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) attach_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) device: std::option::Option<std::string::String>,
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::VolumeAttachmentState>,
@@ -33809,14 +33809,14 @@ pub mod attach_volume_output {
     }
     impl Builder {
         /// <p>The time stamp when the attachment initiated.</p>
-        pub fn attach_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn attach_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.attach_time = Some(input);
             self
         }
         /// <p>The time stamp when the attachment initiated.</p>
         pub fn set_attach_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.attach_time = input;
             self

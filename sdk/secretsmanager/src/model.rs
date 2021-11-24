@@ -236,7 +236,7 @@ pub struct ReplicationStatusType {
     /// region</i>".</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The date that you last accessed the secret in the Region. </p>
-    pub last_accessed_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReplicationStatusType {
     /// <p>The Region where replication occurs.</p>
@@ -257,7 +257,7 @@ impl ReplicationStatusType {
         self.status_message.as_deref()
     }
     /// <p>The date that you last accessed the secret in the Region. </p>
-    pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_accessed_date.as_ref()
     }
 }
@@ -282,7 +282,7 @@ pub mod replication_status_type {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatusType>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) last_accessed_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Region where replication occurs.</p>
@@ -331,14 +331,14 @@ pub mod replication_status_type {
             self
         }
         /// <p>The date that you last accessed the secret in the Region. </p>
-        pub fn last_accessed_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_accessed_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_accessed_date = Some(input);
             self
         }
         /// <p>The date that you last accessed the secret in the Region. </p>
         pub fn set_last_accessed_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_accessed_date = input;
             self
@@ -505,9 +505,9 @@ pub struct SecretVersionsListEntry {
     pub version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date that this version of the secret was last accessed. Note that the resolution of
     /// this field is at the date level and does not include the time.</p>
-    pub last_accessed_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time this version of the secret was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The KMS keys used to encrypt the secret version.</p>
     pub kms_key_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -523,11 +523,11 @@ impl SecretVersionsListEntry {
     }
     /// <p>The date that this version of the secret was last accessed. Note that the resolution of
     /// this field is at the date level and does not include the time.</p>
-    pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_accessed_date.as_ref()
     }
     /// <p>The date and time this version of the secret was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The KMS keys used to encrypt the secret version.</p>
@@ -554,8 +554,8 @@ pub mod secret_versions_list_entry {
     pub struct Builder {
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) last_accessed_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) kms_key_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
@@ -592,7 +592,7 @@ pub mod secret_versions_list_entry {
         }
         /// <p>The date that this version of the secret was last accessed. Note that the resolution of
         /// this field is at the date level and does not include the time.</p>
-        pub fn last_accessed_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_accessed_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_accessed_date = Some(input);
             self
         }
@@ -600,20 +600,20 @@ pub mod secret_versions_list_entry {
         /// this field is at the date level and does not include the time.</p>
         pub fn set_last_accessed_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_accessed_date = input;
             self
         }
         /// <p>The date and time this version of the secret was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date and time this version of the secret was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self
@@ -686,16 +686,16 @@ pub struct SecretListEntry {
     /// <p>A structure that defines the rotation configuration for the secret.</p>
     pub rotation_rules: std::option::Option<crate::model::RotationRulesType>,
     /// <p>The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is null if the secret hasn't ever rotated.</p>
-    pub last_rotated_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_rotated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last date and time that this secret was modified in any way.</p>
-    pub last_changed_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_changed_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
     /// date and therefore shows only the date, not the time.</p>
-    pub last_accessed_date: std::option::Option<aws_smithy_types::Instant>,
+    pub last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The
     /// secret can be recovered until the number of days in the recovery window has passed, as
     /// specified in the <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.</p>
-    pub deleted_date: std::option::Option<aws_smithy_types::Instant>,
+    pub deleted_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of user-defined tags associated with the secret. To add tags to a
     /// secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -712,7 +712,7 @@ pub struct SecretListEntry {
     /// <p>Returns the name of the service that created the secret.</p>
     pub owning_service: std::option::Option<std::string::String>,
     /// <p>The date and time when a secret was created.</p>
-    pub created_date: std::option::Option<aws_smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Region where Secrets Manager originated the secret.</p>
     pub primary_region: std::option::Option<std::string::String>,
 }
@@ -755,22 +755,22 @@ impl SecretListEntry {
         self.rotation_rules.as_ref()
     }
     /// <p>The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is null if the secret hasn't ever rotated.</p>
-    pub fn last_rotated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_rotated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_rotated_date.as_ref()
     }
     /// <p>The last date and time that this secret was modified in any way.</p>
-    pub fn last_changed_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_changed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_changed_date.as_ref()
     }
     /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
     /// date and therefore shows only the date, not the time.</p>
-    pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_accessed_date.as_ref()
     }
     /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The
     /// secret can be recovered until the number of days in the recovery window has passed, as
     /// specified in the <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.</p>
-    pub fn deleted_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn deleted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deleted_date.as_ref()
     }
     /// <p>The list of user-defined tags associated with the secret. To add tags to a
@@ -797,7 +797,7 @@ impl SecretListEntry {
         self.owning_service.as_deref()
     }
     /// <p>The date and time when a secret was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The Region where Secrets Manager originated the secret.</p>
@@ -840,16 +840,16 @@ pub mod secret_list_entry {
         pub(crate) rotation_enabled: std::option::Option<bool>,
         pub(crate) rotation_lambda_arn: std::option::Option<std::string::String>,
         pub(crate) rotation_rules: std::option::Option<crate::model::RotationRulesType>,
-        pub(crate) last_rotated_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_changed_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_accessed_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) deleted_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_rotated_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_changed_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deleted_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) secret_versions_to_stages: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
         pub(crate) owning_service: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) primary_region: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -948,34 +948,34 @@ pub mod secret_list_entry {
             self
         }
         /// <p>The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is null if the secret hasn't ever rotated.</p>
-        pub fn last_rotated_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_rotated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_rotated_date = Some(input);
             self
         }
         /// <p>The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is null if the secret hasn't ever rotated.</p>
         pub fn set_last_rotated_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_rotated_date = input;
             self
         }
         /// <p>The last date and time that this secret was modified in any way.</p>
-        pub fn last_changed_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_changed_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_changed_date = Some(input);
             self
         }
         /// <p>The last date and time that this secret was modified in any way.</p>
         pub fn set_last_changed_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_changed_date = input;
             self
         }
         /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
         /// date and therefore shows only the date, not the time.</p>
-        pub fn last_accessed_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_accessed_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_accessed_date = Some(input);
             self
         }
@@ -983,7 +983,7 @@ pub mod secret_list_entry {
         /// date and therefore shows only the date, not the time.</p>
         pub fn set_last_accessed_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_accessed_date = input;
             self
@@ -991,7 +991,7 @@ pub mod secret_list_entry {
         /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The
         /// secret can be recovered until the number of days in the recovery window has passed, as
         /// specified in the <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.</p>
-        pub fn deleted_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn deleted_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deleted_date = Some(input);
             self
         }
@@ -1000,7 +1000,7 @@ pub mod secret_list_entry {
         /// specified in the <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.</p>
         pub fn set_deleted_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.deleted_date = input;
             self
@@ -1077,14 +1077,14 @@ pub mod secret_list_entry {
             self
         }
         /// <p>The date and time when a secret was created.</p>
-        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_date = Some(input);
             self
         }
         /// <p>The date and time when a secret was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_date = input;
             self

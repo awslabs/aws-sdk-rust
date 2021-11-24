@@ -221,11 +221,11 @@ pub struct DescribeTaskOutput {
     /// <p>The current state of the task.</p>
     pub state: std::option::Option<crate::model::TaskState>,
     /// <p>When the <code>CreateTask</code> operation was called.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the state of the task was last updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the task was completed.</p>
-    pub completed_at: std::option::Option<aws_smithy_types::Instant>,
+    pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description provided of the task and managed devices.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
@@ -251,15 +251,15 @@ impl DescribeTaskOutput {
         self.state.as_ref()
     }
     /// <p>When the <code>CreateTask</code> operation was called.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>When the state of the task was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>When the task was completed.</p>
-    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
     /// <p>The description provided of the task and managed devices.</p>
@@ -300,9 +300,9 @@ pub mod describe_task_output {
         pub(crate) task_arn: std::option::Option<std::string::String>,
         pub(crate) targets: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) state: std::option::Option<crate::model::TaskState>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completed_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completed_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -359,40 +359,40 @@ pub mod describe_task_output {
             self
         }
         /// <p>When the <code>CreateTask</code> operation was called.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>When the <code>CreateTask</code> operation was called.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>When the state of the task was last updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>When the state of the task was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
         }
         /// <p>When the task was completed.</p>
-        pub fn completed_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completed_at = Some(input);
             self
         }
         /// <p>When the task was completed.</p>
         pub fn set_completed_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completed_at = input;
             self
@@ -556,9 +556,9 @@ pub struct DescribeExecutionOutput {
     /// <p>The current state of the execution.</p>
     pub state: std::option::Option<crate::model::ExecutionState>,
     /// <p>When the execution began.</p>
-    pub started_at: std::option::Option<aws_smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the status of the execution was last updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeExecutionOutput {
     /// <p>The ID of the task being executed on the device.</p>
@@ -578,11 +578,11 @@ impl DescribeExecutionOutput {
         self.state.as_ref()
     }
     /// <p>When the execution began.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>When the status of the execution was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -608,8 +608,8 @@ pub mod describe_execution_output {
         pub(crate) execution_id: std::option::Option<std::string::String>,
         pub(crate) managed_device_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ExecutionState>,
-        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the task being executed on the device.</p>
@@ -659,27 +659,27 @@ pub mod describe_execution_output {
             self
         }
         /// <p>When the execution began.</p>
-        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started_at = Some(input);
             self
         }
         /// <p>When the execution began.</p>
         pub fn set_started_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started_at = input;
             self
         }
         /// <p>When the status of the execution was last updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>When the status of the execution was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -937,10 +937,10 @@ impl ListDevicesOutput {
 pub struct DescribeDeviceOutput {
     /// <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is
     /// online.</p>
-    pub last_reached_out_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_reached_out_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache
     /// was refreshed.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
     /// in different ways, such as by purpose, owner, or environment. </p>
     pub tags:
@@ -966,12 +966,12 @@ pub struct DescribeDeviceOutput {
 impl DescribeDeviceOutput {
     /// <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is
     /// online.</p>
-    pub fn last_reached_out_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_reached_out_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_reached_out_at.as_ref()
     }
     /// <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache
     /// was refreshed.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
@@ -1043,8 +1043,8 @@ pub mod describe_device_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_reached_out_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_reached_out_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -1061,7 +1061,7 @@ pub mod describe_device_output {
     impl Builder {
         /// <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is
         /// online.</p>
-        pub fn last_reached_out_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_reached_out_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_reached_out_at = Some(input);
             self
         }
@@ -1069,14 +1069,14 @@ pub mod describe_device_output {
         /// online.</p>
         pub fn set_last_reached_out_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_reached_out_at = input;
             self
         }
         /// <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache
         /// was refreshed.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
@@ -1084,7 +1084,7 @@ pub mod describe_device_output {
         /// was refreshed.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self

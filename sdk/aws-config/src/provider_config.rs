@@ -50,7 +50,7 @@ impl Default for HttpConnector {
     fn default() -> Self {
         Self::ConnectorFn(Arc::new(
             |settings: &HttpSettings, sleep: Option<Arc<dyn AsyncSleep>>| {
-                default_connector(&settings, sleep)
+                default_connector(settings, sleep)
             },
         ))
     }
@@ -64,7 +64,7 @@ impl HttpConnector {
     ) -> Option<DynConnector> {
         match self {
             HttpConnector::Prebuilt(conn) => conn.clone(),
-            HttpConnector::ConnectorFn(func) => func(&settings, sleep),
+            HttpConnector::ConnectorFn(func) => func(settings, sleep),
             #[cfg(feature = "tcp-connector")]
             HttpConnector::TcpConnector(connection) => Some(DynConnector::new(
                 aws_smithy_client::hyper_ext::Adapter::builder()

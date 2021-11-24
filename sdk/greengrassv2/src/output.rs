@@ -850,7 +850,7 @@ pub struct GetDeploymentOutput {
     /// the rollout, timeout, and stop configurations for the deployment configuration.</p>
     pub iot_job_configuration: std::option::Option<crate::model::DeploymentIoTJobConfiguration>,
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
     pub is_latest_for_target: bool,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more
@@ -913,7 +913,7 @@ impl GetDeploymentOutput {
         self.iot_job_configuration.as_ref()
     }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
@@ -971,7 +971,7 @@ pub mod get_deployment_output {
         pub(crate) deployment_policies: std::option::Option<crate::model::DeploymentPolicies>,
         pub(crate) iot_job_configuration:
             std::option::Option<crate::model::DeploymentIoTJobConfiguration>,
-        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) is_latest_for_target: std::option::Option<bool>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1121,14 +1121,14 @@ pub mod get_deployment_output {
             self
         }
         /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
         /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_timestamp = input;
             self
@@ -1229,7 +1229,7 @@ pub struct GetCoreDeviceOutput {
     pub status: std::option::Option<crate::model::CoreDeviceStatus>,
     /// <p>The time at which the core device's status last updated, expressed in ISO 8601
     /// format.</p>
-    pub last_status_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_status_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more
     /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
     /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
@@ -1273,7 +1273,7 @@ impl GetCoreDeviceOutput {
     }
     /// <p>The time at which the core device's status last updated, expressed in ISO 8601
     /// format.</p>
-    pub fn last_status_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_status_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_status_update_timestamp.as_ref()
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more
@@ -1313,7 +1313,7 @@ pub mod get_core_device_output {
         pub(crate) platform: std::option::Option<std::string::String>,
         pub(crate) architecture: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::CoreDeviceStatus>,
-        pub(crate) last_status_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_status_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -1405,7 +1405,7 @@ pub mod get_core_device_output {
         }
         /// <p>The time at which the core device's status last updated, expressed in ISO 8601
         /// format.</p>
-        pub fn last_status_update_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_status_update_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_status_update_timestamp = Some(input);
             self
         }
@@ -1413,7 +1413,7 @@ pub mod get_core_device_output {
         /// format.</p>
         pub fn set_last_status_update_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_status_update_timestamp = input;
             self
@@ -1660,7 +1660,7 @@ pub struct DescribeComponentOutput {
     /// <p>The version of the component.</p>
     pub component_version: std::option::Option<std::string::String>,
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The publisher of the component version.</p>
     pub publisher: std::option::Option<std::string::String>,
     /// <p>The description of the component version.</p>
@@ -1690,7 +1690,7 @@ impl DescribeComponentOutput {
         self.component_version.as_deref()
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The publisher of the component version.</p>
@@ -1744,7 +1744,7 @@ pub mod describe_component_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) component_name: std::option::Option<std::string::String>,
         pub(crate) component_version: std::option::Option<std::string::String>,
-        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) publisher: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::CloudComponentStatus>,
@@ -1791,14 +1791,14 @@ pub mod describe_component_output {
             self
         }
         /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
         /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_timestamp = input;
             self
@@ -2075,7 +2075,7 @@ pub struct CreateComponentVersionOutput {
     /// <p>The version of the component.</p>
     pub component_version: std::option::Option<std::string::String>,
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the component version in IoT Greengrass V2. This status
     /// is different from the status of the component on a core device.</p>
     pub status: std::option::Option<crate::model::CloudComponentStatus>,
@@ -2094,7 +2094,7 @@ impl CreateComponentVersionOutput {
         self.component_version.as_deref()
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The status of the component version in IoT Greengrass V2. This status
@@ -2123,7 +2123,7 @@ pub mod create_component_version_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) component_name: std::option::Option<std::string::String>,
         pub(crate) component_version: std::option::Option<std::string::String>,
-        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::CloudComponentStatus>,
     }
     impl Builder {
@@ -2164,14 +2164,14 @@ pub mod create_component_version_output {
             self
         }
         /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
         /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_timestamp = input;
             self

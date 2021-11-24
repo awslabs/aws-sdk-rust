@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The contact flow has not been published.</p>
     ContactFlowNotPublishedException(crate::error::ContactFlowNotPublishedException),
     /// <p>The contact with the specified ID is not active or does not exist.</p>
@@ -41,6 +43,7 @@ pub enum Error {
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ContactFlowNotPublishedException(inner) => inner.fmt(f),
             Error::ContactNotFoundException(inner) => inner.fmt(f),
             Error::DestinationNotAllowedException(inner) => inner.fmt(f),
@@ -631,6 +634,45 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSecurityProfileError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateSecurityProfileError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateSecurityProfileErrorKind::DuplicateResourceException(inner) => {
+                    Error::DuplicateResourceException(inner)
+                }
+                crate::error::CreateSecurityProfileErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::CreateSecurityProfileErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::CreateSecurityProfileErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::CreateSecurityProfileErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::CreateSecurityProfileErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::CreateSecurityProfileErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::CreateSecurityProfileErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateUseCaseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -849,6 +891,45 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSecurityProfileError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteSecurityProfileError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteSecurityProfileErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DeleteSecurityProfileErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::DeleteSecurityProfileErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::DeleteSecurityProfileErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DeleteSecurityProfileErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
+                crate::error::DeleteSecurityProfileErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteSecurityProfileErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DeleteSecurityProfileErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteUseCaseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -965,6 +1046,34 @@ where
                 crate::error::DescribeAgentStatusErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeContactError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeContactError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeContactErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::DescribeContactErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::DescribeContactErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DescribeContactErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DescribeContactErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DescribeContactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -1217,6 +1326,39 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeRoutingProfileErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSecurityProfileError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeSecurityProfileError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeSecurityProfileErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::DescribeSecurityProfileErrorKind::InvalidParameterException(
+                    inner,
+                ) => Error::InvalidParameterException(inner),
+                crate::error::DescribeSecurityProfileErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DescribeSecurityProfileErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeSecurityProfileErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DescribeSecurityProfileErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -1785,6 +1927,39 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListContactReferencesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListContactReferencesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListContactReferencesErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::ListContactReferencesErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::ListContactReferencesErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::ListContactReferencesErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::ListContactReferencesErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListContactReferencesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListHoursOfOperationsError, R>>
     for Error
 where
@@ -2239,6 +2414,31 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::ListSecurityProfilePermissionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListSecurityProfilePermissionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListSecurityProfilePermissionsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+                crate::error::ListSecurityProfilePermissionsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::ListSecurityProfilePermissionsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::ListSecurityProfilePermissionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::ListSecurityProfilePermissionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::ListSecurityProfilePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -2780,6 +2980,34 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateContactError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateContactError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateContactErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::UpdateContactErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::UpdateContactErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::UpdateContactErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::UpdateContactErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::UpdateContactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateContactAttributesError, R>>
     for Error
 where
@@ -2875,6 +3103,42 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateContactFlowNameErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateContactScheduleError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateContactScheduleError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateContactScheduleErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::UpdateContactScheduleErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::UpdateContactScheduleErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::UpdateContactScheduleErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::UpdateContactScheduleErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::UpdateContactScheduleErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::UpdateContactScheduleErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -3320,6 +3584,39 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateRoutingProfileQueuesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSecurityProfileError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateSecurityProfileError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateSecurityProfileErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::UpdateSecurityProfileErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::UpdateSecurityProfileErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::UpdateSecurityProfileErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::UpdateSecurityProfileErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::UpdateSecurityProfileErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

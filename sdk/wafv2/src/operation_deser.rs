@@ -4494,133 +4494,119 @@ pub fn parse_put_logging_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::PutLoggingConfigurationError {
-            meta: generic,
-            kind: crate::error::PutLoggingConfigurationErrorKind::WafInternalErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
+        "WAFInternalErrorException" => crate::error::PutLoggingConfigurationError { meta: generic, kind: crate::error::PutLoggingConfigurationErrorKind::WafInternalErrorException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLoggingConfigurationError::unhandled)?;
                     output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            }),
-        },
-        "WAFInvalidOperationException" => crate::error::PutLoggingConfigurationError {
-            meta: generic,
-            kind: crate::error::PutLoggingConfigurationErrorKind::WafInvalidOperationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::waf_invalid_operation_exception::Builder::default();
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFInvalidOperationException" => crate::error::PutLoggingConfigurationError { meta: generic, kind: crate::error::PutLoggingConfigurationErrorKind::WafInvalidOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_invalid_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLoggingConfigurationError::unhandled)?;
                     output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::PutLoggingConfigurationError {
-            meta: generic,
-            kind: crate::error::PutLoggingConfigurationErrorKind::WafInvalidParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::waf_invalid_parameter_exception::Builder::default();
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFInvalidParameterException" => crate::error::PutLoggingConfigurationError { meta: generic, kind: crate::error::PutLoggingConfigurationErrorKind::WafInvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLoggingConfigurationError::unhandled)?;
                     output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::PutLoggingConfigurationError {
-            meta: generic,
-            kind: crate::error::PutLoggingConfigurationErrorKind::WafLimitsExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::waf_limits_exceeded_exception::Builder::default();
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFLimitsExceededException" => crate::error::PutLoggingConfigurationError { meta: generic, kind: crate::error::PutLoggingConfigurationErrorKind::WafLimitsExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLoggingConfigurationError::unhandled)?;
                     output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::PutLoggingConfigurationError {
-            meta: generic,
-            kind: crate::error::PutLoggingConfigurationErrorKind::WafNonexistentItemException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::waf_nonexistent_item_exception::Builder::default();
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFLogDestinationPermissionIssueException" => crate::error::PutLoggingConfigurationError { meta: generic, kind: crate::error::PutLoggingConfigurationErrorKind::WafLogDestinationPermissionIssueException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_log_destination_permission_issue_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_log_destination_permission_issue_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLoggingConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFNonexistentItemException" => crate::error::PutLoggingConfigurationError { meta: generic, kind: crate::error::PutLoggingConfigurationErrorKind::WafNonexistentItemException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLoggingConfigurationError::unhandled)?;
                     output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            }),
-        },
-        "WAFOptimisticLockException" => crate::error::PutLoggingConfigurationError {
-            meta: generic,
-            kind: crate::error::PutLoggingConfigurationErrorKind::WafOptimisticLockException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::waf_optimistic_lock_exception::Builder::default();
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFOptimisticLockException" => crate::error::PutLoggingConfigurationError { meta: generic, kind: crate::error::PutLoggingConfigurationErrorKind::WafOptimisticLockException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_optimistic_lock_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_optimistic_lock_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLoggingConfigurationError::unhandled)?;
                     output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            }),
-        },
-        "WAFServiceLinkedRoleErrorException" => crate::error::PutLoggingConfigurationError {
-            meta: generic,
-            kind:
-                crate::error::PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::waf_service_linked_role_error_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_waf_service_linked_role_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLoggingConfigurationError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        _ => crate::error::PutLoggingConfigurationError::generic(generic),
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFServiceLinkedRoleErrorException" => crate::error::PutLoggingConfigurationError { meta: generic, kind: crate::error::PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_service_linked_role_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_service_linked_role_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLoggingConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::PutLoggingConfigurationError::generic(generic)
     })
 }
 

@@ -881,7 +881,7 @@ pub fn serialize_structure_crate_model_reputation_options(
     if let Some(var_171) = &input.last_fresh_start {
         object
             .key("LastFreshStart")
-            .instant(var_171, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_171, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -1132,7 +1132,7 @@ pub fn serialize_structure_crate_model_domain_deliverability_tracking_option(
     if let Some(var_217) = &input.subscription_start_date {
         object
             .key("SubscriptionStartDate")
-            .instant(var_217, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_217, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_218) = &input.inbox_placement_tracking_option {
         let mut object_219 = object.key("InboxPlacementTrackingOption").start_object();

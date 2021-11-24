@@ -1420,6 +1420,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_custom_response_bodies(input);
             self
         }
+        /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+        pub fn captcha_config(mut self, inp: crate::model::CaptchaConfig) -> Self {
+            self.inner = self.inner.captcha_config(inp);
+            self
+        }
+        /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+        pub fn set_captcha_config(
+            mut self,
+            input: std::option::Option<crate::model::CaptchaConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_captcha_config(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DeleteFirewallManagerRuleGroups`.
     ///
@@ -4590,28 +4603,20 @@ pub mod fluent_builders {
     /// steps:</p>
     /// <ol>
     /// <li>
-    /// <p>Create an Amazon Kinesis Data Firehose. </p>
-    /// <p>Create the data firehose with a PUT source and in the Region that you are
-    /// operating. If you are capturing logs for Amazon CloudFront, always create the firehose in US
-    /// East (N. Virginia). </p>
-    /// <p>Give the data firehose a name that starts with the prefix
-    /// <code>aws-waf-logs-</code>. For example,
-    /// <code>aws-waf-logs-us-east-2-analytics</code>.</p>
-    /// <note>
-    /// <p>Do not create the data firehose using a <code>Kinesis stream</code> as your
-    /// source.</p>
-    /// </note>
+    /// <p>Create your logging destination. You can use an Amazon CloudWatch Logs log group, an Amazon Simple Storage Service (Amazon S3) bucket, or an Amazon Kinesis Data Firehose.
+    /// For information about configuring logging destinations and the permissions that are required for each, see
+    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a>
+    /// in the <i>WAF Developer Guide</i>.</p>
     /// </li>
     /// <li>
-    /// <p>Associate that firehose to your web ACL using a
+    /// <p>Associate your logging destination to your web ACL using a
     /// <code>PutLoggingConfiguration</code> request.</p>
     /// </li>
     /// </ol>
     /// <p>When you successfully enable logging using a <code>PutLoggingConfiguration</code>
-    /// request, WAF will create a service linked role with the necessary permissions to write
-    /// logs to the Amazon Kinesis Data Firehose. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL
-    /// Traffic Information</a> in the <i>WAF Developer
-    /// Guide</i>.</p>
+    /// request, WAF creates an additional role or policy that is required to write
+    /// logs to the logging destination. For an Amazon CloudWatch Logs log group, WAF creates a resource policy on the log group.
+    /// For an Amazon S3 bucket, WAF creates a bucket policy. For an Amazon Kinesis Data Firehose, WAF creates a service-linked role.</p>
     /// <note>
     /// <p>This operation completely replaces the mutable specifications that you already have for the logging configuration with the ones that you provide to this call. To modify the logging configuration, retrieve it by calling <a>GetLoggingConfiguration</a>, update the settings as needed, and then provide the complete logging configuration specification to this call.</p>
     /// </note>
@@ -5508,7 +5513,7 @@ pub mod fluent_builders {
         }
         /// <p>The time that you want the version to expire.</p>
         /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-        pub fn expiry_timestamp(mut self, inp: aws_smithy_types::Instant) -> Self {
+        pub fn expiry_timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.expiry_timestamp(inp);
             self
         }
@@ -5516,7 +5521,7 @@ pub mod fluent_builders {
         /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
         pub fn set_expiry_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_expiry_timestamp(input);
             self
@@ -6080,13 +6085,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_custom_response_bodies(input);
             self
         }
+        /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+        pub fn captcha_config(mut self, inp: crate::model::CaptchaConfig) -> Self {
+            self.inner = self.inner.captcha_config(inp);
+            self
+        }
+        /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+        pub fn set_captcha_config(
+            mut self,
+            input: std::option::Option<crate::model::CaptchaConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_captcha_config(input);
+            self
+        }
     }
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -6109,7 +6133,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

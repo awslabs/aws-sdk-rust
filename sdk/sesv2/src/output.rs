@@ -2550,9 +2550,9 @@ pub struct GetImportJobOutput {
     /// <p>The status of the import job.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>The time stamp of when the import job was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time stamp of when the import job was completed.</p>
-    pub completed_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub completed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current number of records processed.</p>
     pub processed_records_count: std::option::Option<i32>,
     /// <p>The number of records that failed processing because of invalid input or other
@@ -2581,11 +2581,11 @@ impl GetImportJobOutput {
         self.job_status.as_ref()
     }
     /// <p>The time stamp of when the import job was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time stamp of when the import job was completed.</p>
-    pub fn completed_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn completed_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_timestamp.as_ref()
     }
     /// <p>The current number of records processed.</p>
@@ -2624,8 +2624,8 @@ pub mod get_import_job_output {
         pub(crate) import_data_source: std::option::Option<crate::model::ImportDataSource>,
         pub(crate) failure_info: std::option::Option<crate::model::FailureInfo>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) completed_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) processed_records_count: std::option::Option<i32>,
         pub(crate) failed_records_count: std::option::Option<i32>,
     }
@@ -2693,27 +2693,27 @@ pub mod get_import_job_output {
             self
         }
         /// <p>The time stamp of when the import job was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>The time stamp of when the import job was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time stamp of when the import job was completed.</p>
-        pub fn completed_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn completed_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completed_timestamp = Some(input);
             self
         }
         /// <p>The time stamp of when the import job was completed.</p>
         pub fn set_completed_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.completed_timestamp = input;
             self
@@ -3569,7 +3569,7 @@ pub struct GetDeliverabilityDashboardOptionsOutput {
     /// is scheduled to expire, if your subscription is scheduled to expire at the end of the
     /// current calendar month. This value is null if you have an active subscription that isn’t
     /// due to expire at the end of the month.</p>
-    pub subscription_expiry_date: std::option::Option<aws_smithy_types::Instant>,
+    pub subscription_expiry_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of your Deliverability dashboard subscription. If this value is
     /// <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end
     /// of the current calendar month.</p>
@@ -3595,7 +3595,7 @@ impl GetDeliverabilityDashboardOptionsOutput {
     /// is scheduled to expire, if your subscription is scheduled to expire at the end of the
     /// current calendar month. This value is null if you have an active subscription that isn’t
     /// due to expire at the end of the month.</p>
-    pub fn subscription_expiry_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn subscription_expiry_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.subscription_expiry_date.as_ref()
     }
     /// <p>The current status of your Deliverability dashboard subscription. If this value is
@@ -3644,7 +3644,7 @@ pub mod get_deliverability_dashboard_options_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dashboard_enabled: std::option::Option<bool>,
-        pub(crate) subscription_expiry_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) subscription_expiry_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) account_status:
             std::option::Option<crate::model::DeliverabilityDashboardAccountStatus>,
         pub(crate) active_subscribed_domains:
@@ -3669,7 +3669,7 @@ pub mod get_deliverability_dashboard_options_output {
         /// is scheduled to expire, if your subscription is scheduled to expire at the end of the
         /// current calendar month. This value is null if you have an active subscription that isn’t
         /// due to expire at the end of the month.</p>
-        pub fn subscription_expiry_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn subscription_expiry_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.subscription_expiry_date = Some(input);
             self
         }
@@ -3679,7 +3679,7 @@ pub mod get_deliverability_dashboard_options_output {
         /// due to expire at the end of the month.</p>
         pub fn set_subscription_expiry_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.subscription_expiry_date = input;
             self
@@ -4116,9 +4116,9 @@ pub struct GetContactListOutput {
     /// <p>A description of what the contact list is about.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>A timestamp noting when the contact list was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp noting the last time the contact list was updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags associated with a contact list.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -4137,11 +4137,11 @@ impl GetContactListOutput {
         self.description.as_deref()
     }
     /// <p>A timestamp noting when the contact list was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>A timestamp noting the last time the contact list was updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The tags associated with a contact list.</p>
@@ -4170,8 +4170,8 @@ pub mod get_contact_list_output {
         pub(crate) contact_list_name: std::option::Option<std::string::String>,
         pub(crate) topics: std::option::Option<std::vec::Vec<crate::model::Topic>>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -4220,27 +4220,27 @@ pub mod get_contact_list_output {
             self
         }
         /// <p>A timestamp noting when the contact list was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>A timestamp noting when the contact list was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>A timestamp noting the last time the contact list was updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>A timestamp noting the last time the contact list was updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
@@ -4303,9 +4303,9 @@ pub struct GetContactOutput {
     /// <p>The attribute data attached to a contact.</p>
     pub attributes_data: std::option::Option<std::string::String>,
     /// <p>A timestamp noting when the contact was created.</p>
-    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp noting the last time the contact's information was updated.</p>
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetContactOutput {
     /// <p>The name of the contact list to which the contact belongs.</p>
@@ -4336,11 +4336,11 @@ impl GetContactOutput {
         self.attributes_data.as_deref()
     }
     /// <p>A timestamp noting when the contact was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>A timestamp noting the last time the contact's information was updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
@@ -4372,8 +4372,8 @@ pub mod get_contact_output {
             std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
         pub(crate) unsubscribe_all: std::option::Option<bool>,
         pub(crate) attributes_data: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the contact list to which the contact belongs.</p>
@@ -4472,27 +4472,27 @@ pub mod get_contact_output {
             self
         }
         /// <p>A timestamp noting when the contact was created.</p>
-        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
         /// <p>A timestamp noting when the contact was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>A timestamp noting the last time the contact's information was updated.</p>
-        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
         /// <p>A timestamp noting the last time the contact's information was updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self

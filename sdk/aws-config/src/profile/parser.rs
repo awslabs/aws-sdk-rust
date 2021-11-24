@@ -67,7 +67,7 @@ pub use self::parse::ProfileParseError;
 /// aws_access_key_id = 456
 /// ```
 pub async fn load(fs: &Fs, env: &Env) -> Result<ProfileSet, ProfileParseError> {
-    let source = source::load(&env, &fs).await;
+    let source = source::load(env, fs).await;
     ProfileSet::parse(source)
 }
 
@@ -247,7 +247,7 @@ mod test {
             profile: "default".into(),
         };
         let profile_set = ProfileSet::parse(source).expect("empty profiles are valid");
-        assert_eq!(profile_set.is_empty(), true);
+        assert!(profile_set.is_empty());
     }
 
     /// Run all tests from the fuzzing corpus to validate coverage

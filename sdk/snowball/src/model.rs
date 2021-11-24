@@ -1413,9 +1413,9 @@ pub struct LongTermPricingListEntry {
     /// <p>The ID of the long-term pricing type for the device.</p>
     pub long_term_pricing_id: std::option::Option<std::string::String>,
     /// <p>The end date the long-term pricing contract.</p>
-    pub long_term_pricing_end_date: std::option::Option<aws_smithy_types::Instant>,
+    pub long_term_pricing_end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The start date of the long-term pricing contract.</p>
-    pub long_term_pricing_start_date: std::option::Option<aws_smithy_types::Instant>,
+    pub long_term_pricing_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of long-term pricing that was selected for the device.</p>
     pub long_term_pricing_type: std::option::Option<crate::model::LongTermPricingType>,
     /// <p>The current active jobs on the device the long-term pricing type.</p>
@@ -1438,11 +1438,11 @@ impl LongTermPricingListEntry {
         self.long_term_pricing_id.as_deref()
     }
     /// <p>The end date the long-term pricing contract.</p>
-    pub fn long_term_pricing_end_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn long_term_pricing_end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.long_term_pricing_end_date.as_ref()
     }
     /// <p>The start date of the long-term pricing contract.</p>
-    pub fn long_term_pricing_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn long_term_pricing_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.long_term_pricing_start_date.as_ref()
     }
     /// <p>The type of long-term pricing that was selected for the device.</p>
@@ -1509,8 +1509,8 @@ pub mod long_term_pricing_list_entry {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) long_term_pricing_id: std::option::Option<std::string::String>,
-        pub(crate) long_term_pricing_end_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) long_term_pricing_start_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) long_term_pricing_end_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) long_term_pricing_start_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) long_term_pricing_type: std::option::Option<crate::model::LongTermPricingType>,
         pub(crate) current_active_job: std::option::Option<std::string::String>,
         pub(crate) replacement_job: std::option::Option<std::string::String>,
@@ -1534,27 +1534,27 @@ pub mod long_term_pricing_list_entry {
             self
         }
         /// <p>The end date the long-term pricing contract.</p>
-        pub fn long_term_pricing_end_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn long_term_pricing_end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.long_term_pricing_end_date = Some(input);
             self
         }
         /// <p>The end date the long-term pricing contract.</p>
         pub fn set_long_term_pricing_end_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.long_term_pricing_end_date = input;
             self
         }
         /// <p>The start date of the long-term pricing contract.</p>
-        pub fn long_term_pricing_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn long_term_pricing_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.long_term_pricing_start_date = Some(input);
             self
         }
         /// <p>The start date of the long-term pricing contract.</p>
         pub fn set_long_term_pricing_start_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.long_term_pricing_start_date = input;
             self
@@ -1835,7 +1835,7 @@ pub struct JobListEntry {
     /// <p>The type of device used with this job.</p>
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
     /// <p>The creation date for this job.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The optional description of this specific job, for example <code>Important Photos
     /// 2016-08-11</code>.</p>
     pub description: std::option::Option<std::string::String>,
@@ -1867,7 +1867,7 @@ impl JobListEntry {
         self.snowball_type.as_ref()
     }
     /// <p>The creation date for this job.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The optional description of this specific job, for example <code>Important Photos
@@ -1900,7 +1900,7 @@ pub mod job_list_entry {
         pub(crate) is_master: std::option::Option<bool>,
         pub(crate) job_type: std::option::Option<crate::model::JobType>,
         pub(crate) snowball_type: std::option::Option<crate::model::SnowballType>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1968,14 +1968,14 @@ pub mod job_list_entry {
             self
         }
         /// <p>The creation date for this job.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The creation date for this job.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -2159,7 +2159,7 @@ pub struct ClusterListEntry {
     /// see <a>JobListEntry$JobState</a>.</p>
     pub cluster_state: std::option::Option<crate::model::ClusterState>,
     /// <p>The creation date for this cluster.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Defines an optional description of the cluster, for example <code>Environmental Data
     /// Cluster-01</code>.</p>
     pub description: std::option::Option<std::string::String>,
@@ -2176,7 +2176,7 @@ impl ClusterListEntry {
         self.cluster_state.as_ref()
     }
     /// <p>The creation date for this cluster.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Defines an optional description of the cluster, for example <code>Environmental Data
@@ -2203,7 +2203,7 @@ pub mod cluster_list_entry {
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
         pub(crate) cluster_state: std::option::Option<crate::model::ClusterState>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2235,14 +2235,14 @@ pub mod cluster_list_entry {
             self
         }
         /// <p>The creation date for this cluster.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The creation date for this cluster.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -2429,7 +2429,7 @@ pub struct JobMetadata {
     /// <p>The type of device used with this job.</p>
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
     /// <p>The creation date for this job.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of <code>S3Resource</code> objects. Each <code>S3Resource</code> object
     /// represents an Amazon S3 bucket that your transferred data will be exported from or imported
     /// into.</p>
@@ -2512,7 +2512,7 @@ impl JobMetadata {
         self.snowball_type.as_ref()
     }
     /// <p>The creation date for this job.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>An array of <code>S3Resource</code> objects. Each <code>S3Resource</code> object
@@ -2659,7 +2659,7 @@ pub mod job_metadata {
         pub(crate) job_state: std::option::Option<crate::model::JobState>,
         pub(crate) job_type: std::option::Option<crate::model::JobType>,
         pub(crate) snowball_type: std::option::Option<crate::model::SnowballType>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resources: std::option::Option<crate::model::JobResource>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
@@ -2727,14 +2727,14 @@ pub mod job_metadata {
             self
         }
         /// <p>The creation date for this job.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The creation date for this job.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -3938,7 +3938,7 @@ pub struct ClusterMetadata {
     /// </note>
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
     /// <p>The creation date for this cluster.</p>
-    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The arrays of <a>JobResource</a> objects that can include updated <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
     pub resources: std::option::Option<crate::model::JobResource>,
     /// <p>The automatically generated ID for a specific address.</p>
@@ -4016,7 +4016,7 @@ impl ClusterMetadata {
         self.snowball_type.as_ref()
     }
     /// <p>The creation date for this cluster.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The arrays of <a>JobResource</a> objects that can include updated <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
@@ -4110,7 +4110,7 @@ pub mod cluster_metadata {
         pub(crate) cluster_state: std::option::Option<crate::model::ClusterState>,
         pub(crate) job_type: std::option::Option<crate::model::JobType>,
         pub(crate) snowball_type: std::option::Option<crate::model::SnowballType>,
-        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resources: std::option::Option<crate::model::JobResource>,
         pub(crate) address_id: std::option::Option<std::string::String>,
         pub(crate) shipping_option: std::option::Option<crate::model::ShippingOption>,
@@ -4214,14 +4214,14 @@ pub mod cluster_metadata {
             self
         }
         /// <p>The creation date for this cluster.</p>
-        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
         /// <p>The creation date for this cluster.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_date = input;
             self

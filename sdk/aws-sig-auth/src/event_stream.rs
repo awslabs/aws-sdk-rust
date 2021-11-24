@@ -43,7 +43,7 @@ impl SigV4Signer {
             .secret_key(credentials.secret_access_key())
             .region(region.as_ref())
             .service_name(signing_service.as_ref())
-            .date_time(time.into())
+            .time(time)
             .settings(());
         builder.set_security_token(credentials.session_token());
         builder.build().unwrap()
@@ -106,7 +106,7 @@ mod tests {
         properties.insert(region.clone());
         properties.insert(UNIX_EPOCH + Duration::new(1611160427, 0));
         properties.insert(SigningService::from_static("transcribe"));
-        properties.insert(Credentials::from_keys("AKIAfoo", "bar", None));
+        properties.insert(Credentials::new("AKIAfoo", "bar", None, None, "test"));
         properties.insert(SigningRegion::from(region));
         properties.insert(Signature::new("initial-signature".into()));
 

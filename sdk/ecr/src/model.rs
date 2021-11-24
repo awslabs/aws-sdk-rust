@@ -1201,7 +1201,7 @@ pub struct LifecyclePolicyPreviewResult {
     pub image_digest: std::option::Option<std::string::String>,
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current
     /// image was pushed to the repository.</p>
-    pub image_pushed_at: std::option::Option<aws_smithy_types::Instant>,
+    pub image_pushed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of action to be taken.</p>
     pub action: std::option::Option<crate::model::LifecyclePolicyRuleAction>,
     /// <p>The priority of the applied rule.</p>
@@ -1218,7 +1218,7 @@ impl LifecyclePolicyPreviewResult {
     }
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current
     /// image was pushed to the repository.</p>
-    pub fn image_pushed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn image_pushed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.image_pushed_at.as_ref()
     }
     /// <p>The type of action to be taken.</p>
@@ -1249,7 +1249,7 @@ pub mod lifecycle_policy_preview_result {
     pub struct Builder {
         pub(crate) image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) image_digest: std::option::Option<std::string::String>,
-        pub(crate) image_pushed_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) image_pushed_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) action: std::option::Option<crate::model::LifecyclePolicyRuleAction>,
         pub(crate) applied_rule_priority: std::option::Option<i32>,
     }
@@ -1285,7 +1285,7 @@ pub mod lifecycle_policy_preview_result {
         }
         /// <p>The date and time, expressed in standard JavaScript date format, at which the current
         /// image was pushed to the repository.</p>
-        pub fn image_pushed_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn image_pushed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.image_pushed_at = Some(input);
             self
         }
@@ -1293,7 +1293,7 @@ pub mod lifecycle_policy_preview_result {
         /// image was pushed to the repository.</p>
         pub fn set_image_pushed_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.image_pushed_at = input;
             self
@@ -1516,7 +1516,7 @@ pub struct AuthorizationData {
     pub authorization_token: std::option::Option<std::string::String>,
     /// <p>The Unix time in seconds and milliseconds when the authorization token expires.
     /// Authorization tokens are valid for 12 hours.</p>
-    pub expires_at: std::option::Option<aws_smithy_types::Instant>,
+    pub expires_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The registry URL to use for this authorization token in a <code>docker login</code>
     /// command. The Amazon ECR registry URL format is
     /// <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
@@ -1533,7 +1533,7 @@ impl AuthorizationData {
     }
     /// <p>The Unix time in seconds and milliseconds when the authorization token expires.
     /// Authorization tokens are valid for 12 hours.</p>
-    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires_at.as_ref()
     }
     /// <p>The registry URL to use for this authorization token in a <code>docker login</code>
@@ -1560,7 +1560,7 @@ pub mod authorization_data {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_token: std::option::Option<std::string::String>,
-        pub(crate) expires_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expires_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) proxy_endpoint: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1585,7 +1585,7 @@ pub mod authorization_data {
         }
         /// <p>The Unix time in seconds and milliseconds when the authorization token expires.
         /// Authorization tokens are valid for 12 hours.</p>
-        pub fn expires_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expires_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expires_at = Some(input);
             self
         }
@@ -1593,7 +1593,7 @@ pub mod authorization_data {
         /// Authorization tokens are valid for 12 hours.</p>
         pub fn set_expires_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expires_at = input;
             self
@@ -1650,7 +1650,7 @@ pub struct Repository {
     /// and <code>pull</code> operations.</p>
     pub repository_uri: std::option::Option<std::string::String>,
     /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tag mutability setting for the repository.</p>
     pub image_tag_mutability: std::option::Option<crate::model::ImageTagMutability>,
     /// <p>The image scanning configuration for a repository.</p>
@@ -1680,7 +1680,7 @@ impl Repository {
         self.repository_uri.as_deref()
     }
     /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The tag mutability setting for the repository.</p>
@@ -1728,7 +1728,7 @@ pub mod repository {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) repository_uri: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) image_tag_mutability: std::option::Option<crate::model::ImageTagMutability>,
         pub(crate) image_scanning_configuration:
             std::option::Option<crate::model::ImageScanningConfiguration>,
@@ -1792,14 +1792,14 @@ pub mod repository {
             self
         }
         /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -2078,9 +2078,9 @@ impl AsRef<str> for EncryptionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageScanFindings {
     /// <p>The time of the last completed image scan.</p>
-    pub image_scan_completed_at: std::option::Option<aws_smithy_types::Instant>,
+    pub image_scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the vulnerability data was last scanned.</p>
-    pub vulnerability_source_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub vulnerability_source_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The findings from the image scan.</p>
     pub findings: std::option::Option<std::vec::Vec<crate::model::ImageScanFinding>>,
     /// <p>The image vulnerability counts, sorted by severity.</p>
@@ -2089,13 +2089,13 @@ pub struct ImageScanFindings {
 }
 impl ImageScanFindings {
     /// <p>The time of the last completed image scan.</p>
-    pub fn image_scan_completed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn image_scan_completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.image_scan_completed_at.as_ref()
     }
     /// <p>The time when the vulnerability data was last scanned.</p>
     pub fn vulnerability_source_updated_at(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.vulnerability_source_updated_at.as_ref()
     }
     /// <p>The findings from the image scan.</p>
@@ -2128,35 +2128,38 @@ pub mod image_scan_findings {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) image_scan_completed_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) vulnerability_source_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) image_scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) vulnerability_source_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) findings: std::option::Option<std::vec::Vec<crate::model::ImageScanFinding>>,
         pub(crate) finding_severity_counts:
             std::option::Option<std::collections::HashMap<crate::model::FindingSeverity, i32>>,
     }
     impl Builder {
         /// <p>The time of the last completed image scan.</p>
-        pub fn image_scan_completed_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn image_scan_completed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.image_scan_completed_at = Some(input);
             self
         }
         /// <p>The time of the last completed image scan.</p>
         pub fn set_image_scan_completed_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.image_scan_completed_at = input;
             self
         }
         /// <p>The time when the vulnerability data was last scanned.</p>
-        pub fn vulnerability_source_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn vulnerability_source_updated_at(
+            mut self,
+            input: aws_smithy_types::DateTime,
+        ) -> Self {
             self.vulnerability_source_updated_at = Some(input);
             self
         }
         /// <p>The time when the vulnerability data was last scanned.</p>
         pub fn set_vulnerability_source_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.vulnerability_source_updated_at = input;
             self
@@ -2541,7 +2544,7 @@ pub struct ImageDetail {
     pub image_size_in_bytes: std::option::Option<i64>,
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current
     /// image was pushed to the repository. </p>
-    pub image_pushed_at: std::option::Option<aws_smithy_types::Instant>,
+    pub image_pushed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of the scan.</p>
     pub image_scan_status: std::option::Option<crate::model::ImageScanStatus>,
     /// <p>A summary of the last completed image scan.</p>
@@ -2582,7 +2585,7 @@ impl ImageDetail {
     }
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current
     /// image was pushed to the repository. </p>
-    pub fn image_pushed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn image_pushed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.image_pushed_at.as_ref()
     }
     /// <p>The current state of the scan.</p>
@@ -2634,7 +2637,7 @@ pub mod image_detail {
         pub(crate) image_digest: std::option::Option<std::string::String>,
         pub(crate) image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) image_size_in_bytes: std::option::Option<i64>,
-        pub(crate) image_pushed_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) image_pushed_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) image_scan_status: std::option::Option<crate::model::ImageScanStatus>,
         pub(crate) image_scan_findings_summary:
             std::option::Option<crate::model::ImageScanFindingsSummary>,
@@ -2722,7 +2725,7 @@ pub mod image_detail {
         }
         /// <p>The date and time, expressed in standard JavaScript date format, at which the current
         /// image was pushed to the repository. </p>
-        pub fn image_pushed_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn image_pushed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.image_pushed_at = Some(input);
             self
         }
@@ -2730,7 +2733,7 @@ pub mod image_detail {
         /// image was pushed to the repository. </p>
         pub fn set_image_pushed_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.image_pushed_at = input;
             self
@@ -2819,22 +2822,22 @@ impl ImageDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageScanFindingsSummary {
     /// <p>The time of the last completed image scan.</p>
-    pub image_scan_completed_at: std::option::Option<aws_smithy_types::Instant>,
+    pub image_scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the vulnerability data was last scanned.</p>
-    pub vulnerability_source_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub vulnerability_source_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The image vulnerability counts, sorted by severity.</p>
     pub finding_severity_counts:
         std::option::Option<std::collections::HashMap<crate::model::FindingSeverity, i32>>,
 }
 impl ImageScanFindingsSummary {
     /// <p>The time of the last completed image scan.</p>
-    pub fn image_scan_completed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn image_scan_completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.image_scan_completed_at.as_ref()
     }
     /// <p>The time when the vulnerability data was last scanned.</p>
     pub fn vulnerability_source_updated_at(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.vulnerability_source_updated_at.as_ref()
     }
     /// <p>The image vulnerability counts, sorted by severity.</p>
@@ -2862,34 +2865,37 @@ pub mod image_scan_findings_summary {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) image_scan_completed_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) vulnerability_source_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) image_scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) vulnerability_source_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) finding_severity_counts:
             std::option::Option<std::collections::HashMap<crate::model::FindingSeverity, i32>>,
     }
     impl Builder {
         /// <p>The time of the last completed image scan.</p>
-        pub fn image_scan_completed_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn image_scan_completed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.image_scan_completed_at = Some(input);
             self
         }
         /// <p>The time of the last completed image scan.</p>
         pub fn set_image_scan_completed_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.image_scan_completed_at = input;
             self
         }
         /// <p>The time when the vulnerability data was last scanned.</p>
-        pub fn vulnerability_source_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn vulnerability_source_updated_at(
+            mut self,
+            input: aws_smithy_types::DateTime,
+        ) -> Self {
             self.vulnerability_source_updated_at = Some(input);
             self
         }
         /// <p>The time when the vulnerability data was last scanned.</p>
         pub fn set_vulnerability_source_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.vulnerability_source_updated_at = input;
             self

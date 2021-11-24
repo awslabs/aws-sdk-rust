@@ -134,7 +134,7 @@ pub fn serialize_structure_crate_input_list_contacts_input(
     if let Some(var_32) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_32, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_32, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_33) = &input.ground_station {
         object.key("groundStation").string(var_33);
@@ -157,7 +157,7 @@ pub fn serialize_structure_crate_input_list_contacts_input(
     if let Some(var_38) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_38, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_38, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_39) = &input.status_list {
         let mut array_40 = object.key("statusList").start_array();
@@ -178,7 +178,7 @@ pub fn serialize_structure_crate_input_reserve_contact_input(
     if let Some(var_42) = &input.end_time {
         object
             .key("endTime")
-            .instant(var_42, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_42, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_43) = &input.ground_station {
         object.key("groundStation").string(var_43);
@@ -192,7 +192,7 @@ pub fn serialize_structure_crate_input_reserve_contact_input(
     if let Some(var_46) = &input.start_time {
         object
             .key("startTime")
-            .instant(var_46, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_46, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_47) = &input.tags {
         let mut object_48 = object.key("tags").start_object();

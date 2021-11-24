@@ -4,9 +4,8 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
-
+use aws_sdk_sagemaker as sagemaker;
 use sagemaker::{Client, Region};
-
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -52,10 +51,10 @@ async fn main() -> Result<(), sagemaker::Error> {
 
     let notebooks = client.list_notebook_instances().send().await?;
 
-    for n in notebooks.notebook_instances.unwrap_or_default() {
-        let n_instance_type = n.instance_type.unwrap();
-        let n_status = n.notebook_instance_status.unwrap();
-        let n_name = n.notebook_instance_name.as_deref().unwrap_or_default();
+    for n in notebooks.notebook_instances().unwrap_or_default() {
+        let n_instance_type = n.instance_type().unwrap();
+        let n_status = n.notebook_instance_status().unwrap();
+        let n_name = n.notebook_instance_name().unwrap_or_default();
 
         println!(
             "Notebook Name : {}, Notebook Status : {:#?}, Notebook Instance Type : {:#?}",

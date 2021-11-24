@@ -3608,6 +3608,8 @@ pub struct DescribeUsersError {
 pub enum DescribeUsersErrorKind {
     /// <p>Indicates an incorrect combination of parameters, or a missing parameter.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
+    /// <p>The attempted operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -3617,6 +3619,7 @@ impl std::fmt::Display for DescribeUsersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DescribeUsersErrorKind::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
+            DescribeUsersErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             DescribeUsersErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DescribeUsersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -3681,6 +3684,13 @@ impl DescribeUsersError {
             DescribeUsersErrorKind::InvalidParameterCombinationException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeUsersErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeUsersErrorKind::OperationNotPermittedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DescribeUsersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -3693,6 +3703,7 @@ impl std::error::Error for DescribeUsersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeUsersErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
+            DescribeUsersErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             DescribeUsersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeUsersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }

@@ -84,6 +84,7 @@ pub type CreateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl CreateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplication`](crate::operation::CreateApplication)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -135,11 +136,14 @@ impl CreateApplicationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -205,6 +209,7 @@ pub mod create_configuration_profile_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) r#type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The application ID.</p>
@@ -240,36 +245,54 @@ pub mod create_configuration_profile_input {
             self.description = input;
             self
         }
-        /// <p>A URI to locate the configuration. You can specify a Systems Manager (SSM) document, an SSM
-        /// Parameter Store parameter, or an Amazon S3 object. For an SSM document, specify either the
-        /// document name in the format <code>ssm-document://<Document_name></code> or the Amazon
-        /// Resource Name (ARN). For a parameter, specify either the parameter name in the format
+        /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration
+        /// store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the
+        /// hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM
+        /// document, specify either the document name in the format
+        /// <code>ssm-document://<Document_name></code> or the Amazon Resource Name (ARN). For
+        /// a parameter, specify either the parameter name in the format
         /// <code>ssm-parameter://<Parameter_name></code> or the ARN. For an Amazon S3 object,
         /// specify the URI in the following format: <code>s3://<bucket>/<objectKey>
-        /// </code>. Here is an example: s3://my-bucket/my-app/us-east-1/my-config.json</p>
+        /// </code>. Here is an example:
+        /// <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
+        /// </p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.location_uri = Some(input.into());
             self
         }
-        /// <p>A URI to locate the configuration. You can specify a Systems Manager (SSM) document, an SSM
-        /// Parameter Store parameter, or an Amazon S3 object. For an SSM document, specify either the
-        /// document name in the format <code>ssm-document://<Document_name></code> or the Amazon
-        /// Resource Name (ARN). For a parameter, specify either the parameter name in the format
+        /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration
+        /// store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the
+        /// hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM
+        /// document, specify either the document name in the format
+        /// <code>ssm-document://<Document_name></code> or the Amazon Resource Name (ARN). For
+        /// a parameter, specify either the parameter name in the format
         /// <code>ssm-parameter://<Parameter_name></code> or the ARN. For an Amazon S3 object,
         /// specify the URI in the following format: <code>s3://<bucket>/<objectKey>
-        /// </code>. Here is an example: s3://my-bucket/my-app/us-east-1/my-config.json</p>
+        /// </code>. Here is an example:
+        /// <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
+        /// </p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_uri = input;
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// LocationUri.</p>
+        /// <code>LocationUri</code>.</p>
+        /// <important>
+        /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig
+        /// hosted configuration store. It is required for all other sources that store your
+        /// configuration. </p>
+        /// </important>
         pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.retrieval_role_arn = Some(input.into());
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// LocationUri.</p>
+        /// <code>LocationUri</code>.</p>
+        /// <important>
+        /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig
+        /// hosted configuration store. It is required for all other sources that store your
+        /// configuration. </p>
+        /// </important>
         pub fn set_retrieval_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -325,6 +348,20 @@ pub mod create_configuration_profile_input {
             self.tags = input;
             self
         }
+        /// <p>The type of configurations that the configuration profile contains. A configuration can
+        /// be a feature flag used for enabling or disabling new features or a free-form configuration
+        /// used for distributing configurations to your application.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>The type of configurations that the configuration profile contains. A configuration can
+        /// be a feature flag used for enabling or disabling new features or a free-form configuration
+        /// used for distributing configurations to your application.</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateConfigurationProfileInput`](crate::input::CreateConfigurationProfileInput)
         pub fn build(
             self,
@@ -340,6 +377,7 @@ pub mod create_configuration_profile_input {
                 retrieval_role_arn: self.retrieval_role_arn,
                 validators: self.validators,
                 tags: self.tags,
+                r#type: self.r#type,
             })
         }
     }
@@ -352,6 +390,7 @@ pub type CreateConfigurationProfileInputOperationRetryAlias = aws_http::AwsError
 impl CreateConfigurationProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfigurationProfile`](crate::operation::CreateConfigurationProfile)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -425,11 +464,14 @@ impl CreateConfigurationProfileInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -555,7 +597,7 @@ pub mod create_deployment_strategy_input {
             self.growth_factor = input;
             self
         }
-        /// <p>The algorithm used to define how percentage grows over time. AWS AppConfig supports the
+        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
         /// following growth types:</p>
         /// <p>
         /// <b>Linear</b>: For this type, AppConfig processes the
@@ -589,7 +631,7 @@ pub mod create_deployment_strategy_input {
             self.growth_type = Some(input);
             self
         }
-        /// <p>The algorithm used to define how percentage grows over time. AWS AppConfig supports the
+        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
         /// following growth types:</p>
         /// <p>
         /// <b>Linear</b>: For this type, AppConfig processes the
@@ -696,6 +738,7 @@ pub type CreateDeploymentStrategyInputOperationRetryAlias = aws_http::AwsErrorRe
 impl CreateDeploymentStrategyInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeploymentStrategy`](crate::operation::CreateDeploymentStrategy)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -749,11 +792,14 @@ impl CreateDeploymentStrategyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -924,6 +970,7 @@ pub type CreateEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl CreateEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateEnvironment`](crate::operation::CreateEnvironment)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -995,11 +1042,14 @@ impl CreateEnvironmentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1111,29 +1161,29 @@ pub mod create_hosted_configuration_version_input {
             self
         }
         /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
         /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
         }
         /// <p>An optional locking token used to prevent race conditions from overwriting configuration
         /// updates when creating a new version. To ensure your data is not overwritten when creating
-        /// multiple hosted configuration versions in rapid succession, specify the version of the
-        /// latest hosted configuration version.</p>
+        /// multiple hosted configuration versions in rapid succession, specify the version number of
+        /// the latest hosted configuration version.</p>
         pub fn latest_version_number(mut self, input: i32) -> Self {
             self.latest_version_number = Some(input);
             self
         }
         /// <p>An optional locking token used to prevent race conditions from overwriting configuration
         /// updates when creating a new version. To ensure your data is not overwritten when creating
-        /// multiple hosted configuration versions in rapid succession, specify the version of the
-        /// latest hosted configuration version.</p>
+        /// multiple hosted configuration versions in rapid succession, specify the version number of
+        /// the latest hosted configuration version.</p>
         pub fn set_latest_version_number(mut self, input: std::option::Option<i32>) -> Self {
             self.latest_version_number = input;
             self
@@ -1164,6 +1214,7 @@ pub type CreateHostedConfigurationVersionInputOperationRetryAlias = aws_http::Aw
 impl CreateHostedConfigurationVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateHostedConfigurationVersion`](crate::operation::CreateHostedConfigurationVersion)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         self,
         _config: &crate::config::Config,
@@ -1303,11 +1354,14 @@ impl CreateHostedConfigurationVersionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1400,6 +1454,7 @@ pub type DeleteApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl DeleteApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplication`](crate::operation::DeleteApplication)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1465,11 +1520,14 @@ impl DeleteApplicationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1570,6 +1628,7 @@ pub type DeleteConfigurationProfileInputOperationRetryAlias = aws_http::AwsError
 impl DeleteConfigurationProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationProfile`](crate::operation::DeleteConfigurationProfile)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1651,11 +1710,14 @@ impl DeleteConfigurationProfileInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1741,6 +1803,7 @@ pub type DeleteDeploymentStrategyInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DeleteDeploymentStrategyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDeploymentStrategy`](crate::operation::DeleteDeploymentStrategy)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1806,11 +1869,14 @@ impl DeleteDeploymentStrategyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -1863,12 +1929,12 @@ pub mod delete_environment_input {
         pub(crate) environment_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The application ID that includes the environment you want to delete.</p>
+        /// <p>The application ID that includes the environment that you want to delete.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_id = Some(input.into());
             self
         }
-        /// <p>The application ID that includes the environment you want to delete.</p>
+        /// <p>The application ID that includes the environment that you want to delete.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1876,12 +1942,12 @@ pub mod delete_environment_input {
             self.application_id = input;
             self
         }
-        /// <p>The ID of the environment you want to delete.</p>
+        /// <p>The ID of the environment that you want to delete.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.environment_id = Some(input.into());
             self
         }
-        /// <p>The ID of the environment you want to delete.</p>
+        /// <p>The ID of the environment that you want to delete.</p>
         pub fn set_environment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1910,6 +1976,7 @@ pub type DeleteEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl DeleteEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEnvironment`](crate::operation::DeleteEnvironment)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -1991,11 +2058,14 @@ impl DeleteEnvironmentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2108,6 +2178,7 @@ pub type DeleteHostedConfigurationVersionInputOperationRetryAlias = aws_http::Aw
 impl DeleteHostedConfigurationVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHostedConfigurationVersion`](crate::operation::DeleteHostedConfigurationVersion)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2192,11 +2263,14 @@ impl DeleteHostedConfigurationVersionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2281,6 +2355,7 @@ pub type GetApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetApplicationInput {
     /// Consumes the builder and constructs an Operation<[`GetApplication`](crate::operation::GetApplication)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2346,11 +2421,14 @@ impl GetApplicationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2445,14 +2523,16 @@ pub mod get_configuration_input {
             self.configuration = input;
             self
         }
-        /// <p>A unique ID to identify the client for the configuration. This ID enables AppConfig to
-        /// deploy the configuration in intervals, as defined in the deployment strategy.</p>
+        /// <p>The clientId parameter in the following command is a unique, user-specified ID to
+        /// identify the client for the configuration. This ID enables AppConfig to deploy the
+        /// configuration in intervals, as defined in the deployment strategy. </p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_id = Some(input.into());
             self
         }
-        /// <p>A unique ID to identify the client for the configuration. This ID enables AppConfig to
-        /// deploy the configuration in intervals, as defined in the deployment strategy.</p>
+        /// <p>The clientId parameter in the following command is a unique, user-specified ID to
+        /// identify the client for the configuration. This ID enables AppConfig to deploy the
+        /// configuration in intervals, as defined in the deployment strategy. </p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -2460,8 +2540,8 @@ pub mod get_configuration_input {
         /// <p>The configuration version returned in the most recent <code>GetConfiguration</code>
         /// response.</p>
         /// <important>
-        /// <p>AWS AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
-        /// to identify the configuration version on your clients. If you don’t send
+        /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to
+        /// identify the configuration version on your clients. If you don’t send
         /// <code>ClientConfigurationVersion</code> with each call to
         /// <code>GetConfiguration</code>, your clients receive the current configuration. You
         /// are charged each time your clients receive a configuration.</p>
@@ -2471,8 +2551,8 @@ pub mod get_configuration_input {
         /// calls to <code>GetConfiguration</code> must pass this value by using the
         /// <code>ClientConfigurationVersion</code> parameter. </p>
         /// </important>
-        /// <p>For more information about working with configurations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the
-        /// <i>AWS AppConfig User Guide</i>.</p>
+        /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the
+        /// Configuration</a> in the <i>AppConfig User Guide</i>.</p>
         pub fn client_configuration_version(
             mut self,
             input: impl Into<std::string::String>,
@@ -2483,8 +2563,8 @@ pub mod get_configuration_input {
         /// <p>The configuration version returned in the most recent <code>GetConfiguration</code>
         /// response.</p>
         /// <important>
-        /// <p>AWS AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
-        /// to identify the configuration version on your clients. If you don’t send
+        /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to
+        /// identify the configuration version on your clients. If you don’t send
         /// <code>ClientConfigurationVersion</code> with each call to
         /// <code>GetConfiguration</code>, your clients receive the current configuration. You
         /// are charged each time your clients receive a configuration.</p>
@@ -2494,8 +2574,8 @@ pub mod get_configuration_input {
         /// calls to <code>GetConfiguration</code> must pass this value by using the
         /// <code>ClientConfigurationVersion</code> parameter. </p>
         /// </important>
-        /// <p>For more information about working with configurations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the
-        /// <i>AWS AppConfig User Guide</i>.</p>
+        /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the
+        /// Configuration</a> in the <i>AppConfig User Guide</i>.</p>
         pub fn set_client_configuration_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2527,6 +2607,7 @@ pub type GetConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl GetConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetConfiguration`](crate::operation::GetConfiguration)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2589,7 +2670,10 @@ impl GetConfigurationInput {
             write!(output, "/applications/{Application}/environments/{Environment}/configurations/{Configuration}", Application = application, Environment = environment, Configuration = configuration).expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::GetConfigurationInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::GetConfigurationInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_24) = &_input.client_id {
                 query.push_kv("client_id", &aws_smithy_http::query::fmt_string(&inner_24));
@@ -2600,6 +2684,7 @@ impl GetConfigurationInput {
                     &aws_smithy_http::query::fmt_string(&inner_25),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -2609,7 +2694,7 @@ impl GetConfigurationInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2630,11 +2715,14 @@ impl GetConfigurationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2702,12 +2790,12 @@ pub mod get_configuration_profile_input {
             self.application_id = input;
             self
         }
-        /// <p>The ID of the configuration profile you want to get.</p>
+        /// <p>The ID of the configuration profile that you want to get.</p>
         pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_profile_id = Some(input.into());
             self
         }
-        /// <p>The ID of the configuration profile you want to get.</p>
+        /// <p>The ID of the configuration profile that you want to get.</p>
         pub fn set_configuration_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2737,6 +2825,7 @@ pub type GetConfigurationProfileInputOperationRetryAlias = aws_http::AwsErrorRet
 impl GetConfigurationProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetConfigurationProfile`](crate::operation::GetConfigurationProfile)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -2818,11 +2907,14 @@ impl GetConfigurationProfileInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -2934,6 +3026,7 @@ pub type GetDeploymentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`GetDeployment`](crate::operation::GetDeployment)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3026,11 +3119,14 @@ impl GetDeploymentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3115,6 +3211,7 @@ pub type GetDeploymentStrategyInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl GetDeploymentStrategyInput {
     /// Consumes the builder and constructs an Operation<[`GetDeploymentStrategy`](crate::operation::GetDeploymentStrategy)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3180,11 +3277,14 @@ impl GetDeploymentStrategyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3250,12 +3350,12 @@ pub mod get_environment_input {
             self.application_id = input;
             self
         }
-        /// <p>The ID of the environment you wnat to get.</p>
+        /// <p>The ID of the environment that you want to get.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.environment_id = Some(input.into());
             self
         }
-        /// <p>The ID of the environment you wnat to get.</p>
+        /// <p>The ID of the environment that you want to get.</p>
         pub fn set_environment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3284,6 +3384,7 @@ pub type GetEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`GetEnvironment`](crate::operation::GetEnvironment)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3365,11 +3466,14 @@ impl GetEnvironmentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3482,6 +3586,7 @@ pub type GetHostedConfigurationVersionInputOperationRetryAlias = aws_http::AwsEr
 impl GetHostedConfigurationVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetHostedConfigurationVersion`](crate::operation::GetHostedConfigurationVersion)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3566,11 +3671,14 @@ impl GetHostedConfigurationVersionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3635,12 +3743,20 @@ pub mod list_applications_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to start the list. Use this token to get the next set of results.</p>
+        /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to
+        /// describe what page the previous List call ended on. For the first List request, the
+        /// nextToken should not be set. On subsequent calls, the nextToken parameter should be set to
+        /// the previous responses nextToken value. Use this token to get the next set of results.
+        /// </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to start the list. Use this token to get the next set of results.</p>
+        /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to
+        /// describe what page the previous List call ended on. For the first List request, the
+        /// nextToken should not be set. On subsequent calls, the nextToken parameter should be set to
+        /// the previous responses nextToken value. Use this token to get the next set of results.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3666,6 +3782,7 @@ pub type ListApplicationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ListApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListApplications`](crate::operation::ListApplications)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3683,17 +3800,21 @@ impl ListApplicationsInput {
             write!(output, "/applications").expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListApplicationsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListApplicationsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_37) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_37).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_37).encode(),
                 );
             }
             if let Some(inner_38) = &_input.next_token {
                 query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_38));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -3703,7 +3824,7 @@ impl ListApplicationsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3724,11 +3845,14 @@ impl ListApplicationsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -3780,6 +3904,7 @@ pub mod list_configuration_profiles_input {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The application ID.</p>
@@ -3817,6 +3942,18 @@ pub mod list_configuration_profiles_input {
             self.next_token = input;
             self
         }
+        /// <p>A filter based on the type of configurations that the configuration profile contains. A
+        /// configuration can be a feature flag or a free-form configuration.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>A filter based on the type of configurations that the configuration profile contains. A
+        /// configuration can be a feature flag or a free-form configuration.</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListConfigurationProfilesInput`](crate::input::ListConfigurationProfilesInput)
         pub fn build(
             self,
@@ -3828,6 +3965,7 @@ pub mod list_configuration_profiles_input {
                 application_id: self.application_id,
                 max_results: self.max_results,
                 next_token: self.next_token,
+                r#type: self.r#type,
             })
         }
     }
@@ -3840,6 +3978,7 @@ pub type ListConfigurationProfilesInputOperationRetryAlias = aws_http::AwsErrorR
 impl ListConfigurationProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListConfigurationProfiles`](crate::operation::ListConfigurationProfiles)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -3880,17 +4019,21 @@ impl ListConfigurationProfilesInput {
         fn uri_query(
             _input: &crate::input::ListConfigurationProfilesInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_40) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_40).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_40).encode(),
                 );
             }
             if let Some(inner_41) = &_input.next_token {
                 query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_41));
             }
+            if let Some(inner_42) = &_input.r#type {
+                query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_42));
+            }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -3900,7 +4043,7 @@ impl ListConfigurationProfilesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3921,11 +4064,14 @@ impl ListConfigurationProfilesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4051,6 +4197,7 @@ pub type ListDeploymentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl ListDeploymentsInput {
     /// Consumes the builder and constructs an Operation<[`ListDeployments`](crate::operation::ListDeployments)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4065,30 +4212,30 @@ impl ListDeploymentsInput {
             _input: &crate::input::ListDeploymentsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_42 = &_input.application_id;
-            let input_42 =
-                input_42
+            let input_43 = &_input.application_id;
+            let input_43 =
+                input_43
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_42, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_43, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_43 = &_input.environment_id;
-            let input_43 =
-                input_43
+            let input_44 = &_input.environment_id;
+            let input_44 =
+                input_44
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_id",
                         details: "cannot be empty or unset",
                     })?;
-            let environment_id = aws_smithy_http::label::fmt_string(input_43, false);
+            let environment_id = aws_smithy_http::label::fmt_string(input_44, false);
             if environment_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "environment_id",
@@ -4104,17 +4251,21 @@ impl ListDeploymentsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListDeploymentsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListDeploymentsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_44) = &_input.max_results {
+            if let Some(inner_45) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_44).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_45).encode(),
                 );
             }
-            if let Some(inner_45) = &_input.next_token {
-                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_45));
+            if let Some(inner_46) = &_input.next_token {
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_46));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -4124,7 +4275,7 @@ impl ListDeploymentsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4145,11 +4296,14 @@ impl ListDeploymentsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4246,6 +4400,7 @@ pub type ListDeploymentStrategiesInputOperationRetryAlias = aws_http::AwsErrorRe
 impl ListDeploymentStrategiesInput {
     /// Consumes the builder and constructs an Operation<[`ListDeploymentStrategies`](crate::operation::ListDeploymentStrategies)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4266,17 +4421,18 @@ impl ListDeploymentStrategiesInput {
         fn uri_query(
             _input: &crate::input::ListDeploymentStrategiesInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_46) = &_input.max_results {
+            if let Some(inner_47) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_46).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_47).encode(),
                 );
             }
-            if let Some(inner_47) = &_input.next_token {
-                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_47));
+            if let Some(inner_48) = &_input.next_token {
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_48));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -4286,7 +4442,7 @@ impl ListDeploymentStrategiesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4307,11 +4463,14 @@ impl ListDeploymentStrategiesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4422,6 +4581,7 @@ pub type ListEnvironmentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ListEnvironmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListEnvironments`](crate::operation::ListEnvironments)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4436,15 +4596,15 @@ impl ListEnvironmentsInput {
             _input: &crate::input::ListEnvironmentsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_48 = &_input.application_id;
-            let input_48 =
-                input_48
+            let input_49 = &_input.application_id;
+            let input_49 =
+                input_49
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_48, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_49, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -4459,17 +4619,21 @@ impl ListEnvironmentsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ListEnvironmentsInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ListEnvironmentsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_49) = &_input.max_results {
+            if let Some(inner_50) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_49).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_50).encode(),
                 );
             }
-            if let Some(inner_50) = &_input.next_token {
-                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_50));
+            if let Some(inner_51) = &_input.next_token {
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_51));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -4479,7 +4643,7 @@ impl ListEnvironmentsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4500,11 +4664,14 @@ impl ListEnvironmentsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4631,6 +4798,7 @@ pub type ListHostedConfigurationVersionsInputOperationRetryAlias = aws_http::Aws
 impl ListHostedConfigurationVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListHostedConfigurationVersions`](crate::operation::ListHostedConfigurationVersions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4645,30 +4813,30 @@ impl ListHostedConfigurationVersionsInput {
             _input: &crate::input::ListHostedConfigurationVersionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_51 = &_input.application_id;
-            let input_51 =
-                input_51
+            let input_52 = &_input.application_id;
+            let input_52 =
+                input_52
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_51, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_52, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_52 = &_input.configuration_profile_id;
-            let input_52 =
-                input_52
+            let input_53 = &_input.configuration_profile_id;
+            let input_53 =
+                input_53
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_52, false);
+            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_53, false);
             if configuration_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration_profile_id",
@@ -4681,17 +4849,18 @@ impl ListHostedConfigurationVersionsInput {
         fn uri_query(
             _input: &crate::input::ListHostedConfigurationVersionsInput,
             mut output: &mut String,
-        ) {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_53) = &_input.max_results {
+            if let Some(inner_54) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_53).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
                 );
             }
-            if let Some(inner_54) = &_input.next_token {
-                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_54));
+            if let Some(inner_55) = &_input.next_token {
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_55));
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -4701,7 +4870,7 @@ impl ListHostedConfigurationVersionsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4722,11 +4891,14 @@ impl ListHostedConfigurationVersionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -4808,6 +4980,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -4822,15 +4995,15 @@ impl ListTagsForResourceInput {
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_55 = &_input.resource_arn;
-            let input_55 =
-                input_55
+            let input_56 = &_input.resource_arn;
+            let input_56 =
+                input_56
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_55, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_56, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -4869,11 +5042,14 @@ impl ListTagsForResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5063,6 +5239,7 @@ pub type StartDeploymentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl StartDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`StartDeployment`](crate::operation::StartDeployment)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5077,30 +5254,30 @@ impl StartDeploymentInput {
             _input: &crate::input::StartDeploymentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_56 = &_input.application_id;
-            let input_56 =
-                input_56
+            let input_57 = &_input.application_id;
+            let input_57 =
+                input_57
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_56, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_57, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_57 = &_input.environment_id;
-            let input_57 =
-                input_57
+            let input_58 = &_input.environment_id;
+            let input_58 =
+                input_58
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_id",
                         details: "cannot be empty or unset",
                     })?;
-            let environment_id = aws_smithy_http::label::fmt_string(input_57, false);
+            let environment_id = aws_smithy_http::label::fmt_string(input_58, false);
             if environment_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "environment_id",
@@ -5150,11 +5327,14 @@ impl StartDeploymentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5274,6 +5454,7 @@ pub type StopDeploymentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StopDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`StopDeployment`](crate::operation::StopDeployment)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5288,46 +5469,46 @@ impl StopDeploymentInput {
             _input: &crate::input::StopDeploymentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_58 = &_input.application_id;
-            let input_58 =
-                input_58
+            let input_59 = &_input.application_id;
+            let input_59 =
+                input_59
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_58, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_59, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_59 = &_input.environment_id;
-            let input_59 =
-                input_59
+            let input_60 = &_input.environment_id;
+            let input_60 =
+                input_60
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_id",
                         details: "cannot be empty or unset",
                     })?;
-            let environment_id = aws_smithy_http::label::fmt_string(input_59, false);
+            let environment_id = aws_smithy_http::label::fmt_string(input_60, false);
             if environment_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "environment_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_60 = &_input.deployment_number;
-            let input_60 =
-                input_60
+            let input_61 = &_input.deployment_number;
+            let input_61 =
+                input_61
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "deployment_number",
                         details: "cannot be empty or unset",
                     })?;
             let mut deployment_number_encoder =
-                aws_smithy_types::primitive::Encoder::from(*input_60);
+                aws_smithy_types::primitive::Encoder::from(*input_61);
             let deployment_number = deployment_number_encoder.encode();
             if deployment_number.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
@@ -5366,11 +5547,14 @@ impl StopDeploymentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5485,6 +5669,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5499,15 +5684,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_61 = &_input.resource_arn;
-            let input_61 =
-                input_61
+            let input_62 = &_input.resource_arn;
+            let input_62 =
+                input_62
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_61, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_62, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -5551,11 +5736,14 @@ impl TagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5666,6 +5854,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5680,15 +5869,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_62 = &_input.resource_arn;
-            let input_62 =
-                input_62
+            let input_63 = &_input.resource_arn;
+            let input_63 =
+                input_63
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_62, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_63, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -5699,13 +5888,17 @@ impl UntagResourceInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::UntagResourceInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_63) = &_input.tag_keys {
-                for inner_64 in inner_63 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_64));
+            if let Some(inner_64) = &_input.tag_keys {
+                for inner_65 in inner_64 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_65));
                 }
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -5715,7 +5908,7 @@ impl UntagResourceInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5736,11 +5929,14 @@ impl UntagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -5849,6 +6045,7 @@ pub type UpdateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl UpdateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplication`](crate::operation::UpdateApplication)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -5863,15 +6060,15 @@ impl UpdateApplicationInput {
             _input: &crate::input::UpdateApplicationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_65 = &_input.application_id;
-            let input_65 =
-                input_65
+            let input_66 = &_input.application_id;
+            let input_66 =
+                input_66
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_65, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_66, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -5920,11 +6117,14 @@ impl UpdateApplicationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6036,13 +6236,13 @@ pub mod update_configuration_profile_input {
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// LocationUri.</p>
+        /// <code>LocationUri</code>.</p>
         pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.retrieval_role_arn = Some(input.into());
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// LocationUri.</p>
+        /// <code>LocationUri</code>.</p>
         pub fn set_retrieval_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6095,6 +6295,7 @@ pub type UpdateConfigurationProfileInputOperationRetryAlias = aws_http::AwsError
 impl UpdateConfigurationProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfigurationProfile`](crate::operation::UpdateConfigurationProfile)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6109,30 +6310,30 @@ impl UpdateConfigurationProfileInput {
             _input: &crate::input::UpdateConfigurationProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_66 = &_input.application_id;
-            let input_66 =
-                input_66
+            let input_67 = &_input.application_id;
+            let input_67 =
+                input_67
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_66, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_67, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_67 = &_input.configuration_profile_id;
-            let input_67 =
-                input_67
+            let input_68 = &_input.configuration_profile_id;
+            let input_68 =
+                input_68
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_67, false);
+            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_68, false);
             if configuration_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration_profile_id",
@@ -6184,11 +6385,14 @@ impl UpdateConfigurationProfileInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6289,14 +6493,14 @@ pub mod update_deployment_strategy_input {
             self.deployment_duration_in_minutes = input;
             self
         }
-        /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
+        /// to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
+        /// to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
@@ -6313,7 +6517,7 @@ pub mod update_deployment_strategy_input {
             self.growth_factor = input;
             self
         }
-        /// <p>The algorithm used to define how percentage grows over time. AWS AppConfig supports the
+        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
         /// following growth types:</p>
         /// <p>
         /// <b>Linear</b>: For this type, AppConfig processes the
@@ -6346,7 +6550,7 @@ pub mod update_deployment_strategy_input {
             self.growth_type = Some(input);
             self
         }
-        /// <p>The algorithm used to define how percentage grows over time. AWS AppConfig supports the
+        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
         /// following growth types:</p>
         /// <p>
         /// <b>Linear</b>: For this type, AppConfig processes the
@@ -6408,6 +6612,7 @@ pub type UpdateDeploymentStrategyInputOperationRetryAlias = aws_http::AwsErrorRe
 impl UpdateDeploymentStrategyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDeploymentStrategy`](crate::operation::UpdateDeploymentStrategy)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6422,15 +6627,15 @@ impl UpdateDeploymentStrategyInput {
             _input: &crate::input::UpdateDeploymentStrategyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_68 = &_input.deployment_strategy_id;
-            let input_68 =
-                input_68
+            let input_69 = &_input.deployment_strategy_id;
+            let input_69 =
+                input_69
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "deployment_strategy_id",
                         details: "cannot be empty or unset",
                     })?;
-            let deployment_strategy_id = aws_smithy_http::label::fmt_string(input_68, false);
+            let deployment_strategy_id = aws_smithy_http::label::fmt_string(input_69, false);
             if deployment_strategy_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "deployment_strategy_id",
@@ -6481,11 +6686,14 @@ impl UpdateDeploymentStrategyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6638,6 +6846,7 @@ pub type UpdateEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl UpdateEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEnvironment`](crate::operation::UpdateEnvironment)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6652,30 +6861,30 @@ impl UpdateEnvironmentInput {
             _input: &crate::input::UpdateEnvironmentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_69 = &_input.application_id;
-            let input_69 =
-                input_69
+            let input_70 = &_input.application_id;
+            let input_70 =
+                input_70
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_69, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_70, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_70 = &_input.environment_id;
-            let input_70 =
-                input_70
+            let input_71 = &_input.environment_id;
+            let input_71 =
+                input_71
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_id",
                         details: "cannot be empty or unset",
                     })?;
-            let environment_id = aws_smithy_http::label::fmt_string(input_70, false);
+            let environment_id = aws_smithy_http::label::fmt_string(input_71, false);
             if environment_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "environment_id",
@@ -6725,11 +6934,14 @@ impl UpdateEnvironmentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -6852,6 +7064,7 @@ pub type ValidateConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl ValidateConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`ValidateConfiguration`](crate::operation::ValidateConfiguration)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -6866,30 +7079,30 @@ impl ValidateConfigurationInput {
             _input: &crate::input::ValidateConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_71 = &_input.application_id;
-            let input_71 =
-                input_71
+            let input_72 = &_input.application_id;
+            let input_72 =
+                input_72
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_71, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_72, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_72 = &_input.configuration_profile_id;
-            let input_72 =
-                input_72
+            let input_73 = &_input.configuration_profile_id;
+            let input_73 =
+                input_73
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_72, false);
+            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_73, false);
             if configuration_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration_profile_id",
@@ -6899,14 +7112,18 @@ impl ValidateConfigurationInput {
             write!(output, "/applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/validators", ApplicationId = application_id, ConfigurationProfileId = configuration_profile_id).expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::ValidateConfigurationInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::ValidateConfigurationInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_73) = &_input.configuration_version {
+            if let Some(inner_74) = &_input.configuration_version {
                 query.push_kv(
                     "configuration_version",
-                    &aws_smithy_http::query::fmt_string(&inner_73),
+                    &aws_smithy_http::query::fmt_string(&inner_74),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -6916,7 +7133,7 @@ impl ValidateConfigurationInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6937,11 +7154,14 @@ impl ValidateConfigurationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -7078,13 +7298,13 @@ pub struct UpdateDeploymentStrategyInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Total amount of time for a deployment to last.</p>
     pub deployment_duration_in_minutes: std::option::Option<i32>,
-    /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be
-    /// complete and no longer eligible for automatic roll back.</p>
+    /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
+    /// to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: std::option::Option<i32>,
     /// <p>The percentage of targets to receive a deployed configuration during each
     /// interval.</p>
     pub growth_factor: std::option::Option<f32>,
-    /// <p>The algorithm used to define how percentage grows over time. AWS AppConfig supports the
+    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
     /// following growth types:</p>
     /// <p>
     /// <b>Linear</b>: For this type, AppConfig processes the
@@ -7128,8 +7348,8 @@ impl UpdateDeploymentStrategyInput {
     pub fn deployment_duration_in_minutes(&self) -> std::option::Option<i32> {
         self.deployment_duration_in_minutes
     }
-    /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be
-    /// complete and no longer eligible for automatic roll back.</p>
+    /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
+    /// to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(&self) -> std::option::Option<i32> {
         self.final_bake_time_in_minutes
     }
@@ -7138,7 +7358,7 @@ impl UpdateDeploymentStrategyInput {
     pub fn growth_factor(&self) -> std::option::Option<f32> {
         self.growth_factor
     }
-    /// <p>The algorithm used to define how percentage grows over time. AWS AppConfig supports the
+    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
     /// following growth types:</p>
     /// <p>
     /// <b>Linear</b>: For this type, AppConfig processes the
@@ -7203,7 +7423,7 @@ pub struct UpdateConfigurationProfileInput {
     /// <p>A description of the configuration profile.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// LocationUri.</p>
+    /// <code>LocationUri</code>.</p>
     pub retrieval_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
@@ -7226,7 +7446,7 @@ impl UpdateConfigurationProfileInput {
         self.description.as_deref()
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// LocationUri.</p>
+    /// <code>LocationUri</code>.</p>
     pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
         self.retrieval_role_arn.as_deref()
     }
@@ -7640,6 +7860,9 @@ pub struct ListConfigurationProfilesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>A filter based on the type of configurations that the configuration profile contains. A
+    /// configuration can be a feature flag or a free-form configuration.</p>
+    pub r#type: std::option::Option<std::string::String>,
 }
 impl ListConfigurationProfilesInput {
     /// <p>The application ID.</p>
@@ -7655,6 +7878,11 @@ impl ListConfigurationProfilesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>A filter based on the type of configurations that the configuration profile contains. A
+    /// configuration can be a feature flag or a free-form configuration.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for ListConfigurationProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7662,6 +7890,7 @@ impl std::fmt::Debug for ListConfigurationProfilesInput {
         formatter.field("application_id", &self.application_id);
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
+        formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
 }
@@ -7673,7 +7902,11 @@ pub struct ListApplicationsInput {
     /// <p>The maximum number of items to return for this call. The call also returns a token that
     /// you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to
+    /// describe what page the previous List call ended on. For the first List request, the
+    /// nextToken should not be set. On subsequent calls, the nextToken parameter should be set to
+    /// the previous responses nextToken value. Use this token to get the next set of results.
+    /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsInput {
@@ -7682,7 +7915,11 @@ impl ListApplicationsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to
+    /// describe what page the previous List call ended on. For the first List request, the
+    /// nextToken should not be set. On subsequent calls, the nextToken parameter should be set to
+    /// the previous responses nextToken value. Use this token to get the next set of results.
+    /// </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7737,7 +7974,7 @@ impl std::fmt::Debug for GetHostedConfigurationVersionInput {
 pub struct GetEnvironmentInput {
     /// <p>The ID of the application that includes the environment you want to get.</p>
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the environment you wnat to get.</p>
+    /// <p>The ID of the environment that you want to get.</p>
     pub environment_id: std::option::Option<std::string::String>,
 }
 impl GetEnvironmentInput {
@@ -7745,7 +7982,7 @@ impl GetEnvironmentInput {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The ID of the environment you wnat to get.</p>
+    /// <p>The ID of the environment that you want to get.</p>
     pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
@@ -7822,7 +8059,7 @@ pub struct GetConfigurationProfileInput {
     /// <p>The ID of the application that includes the configuration profile you want to
     /// get.</p>
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the configuration profile you want to get.</p>
+    /// <p>The ID of the configuration profile that you want to get.</p>
     pub configuration_profile_id: std::option::Option<std::string::String>,
 }
 impl GetConfigurationProfileInput {
@@ -7831,7 +8068,7 @@ impl GetConfigurationProfileInput {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The ID of the configuration profile you want to get.</p>
+    /// <p>The ID of the configuration profile that you want to get.</p>
     pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
         self.configuration_profile_id.as_deref()
     }
@@ -7858,14 +8095,15 @@ pub struct GetConfigurationInput {
     /// <p>The configuration to get. Specify either the configuration name or the configuration
     /// ID.</p>
     pub configuration: std::option::Option<std::string::String>,
-    /// <p>A unique ID to identify the client for the configuration. This ID enables AppConfig to
-    /// deploy the configuration in intervals, as defined in the deployment strategy.</p>
+    /// <p>The clientId parameter in the following command is a unique, user-specified ID to
+    /// identify the client for the configuration. This ID enables AppConfig to deploy the
+    /// configuration in intervals, as defined in the deployment strategy. </p>
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The configuration version returned in the most recent <code>GetConfiguration</code>
     /// response.</p>
     /// <important>
-    /// <p>AWS AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
-    /// to identify the configuration version on your clients. If you don’t send
+    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to
+    /// identify the configuration version on your clients. If you don’t send
     /// <code>ClientConfigurationVersion</code> with each call to
     /// <code>GetConfiguration</code>, your clients receive the current configuration. You
     /// are charged each time your clients receive a configuration.</p>
@@ -7875,8 +8113,8 @@ pub struct GetConfigurationInput {
     /// calls to <code>GetConfiguration</code> must pass this value by using the
     /// <code>ClientConfigurationVersion</code> parameter. </p>
     /// </important>
-    /// <p>For more information about working with configurations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the
-    /// <i>AWS AppConfig User Guide</i>.</p>
+    /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the
+    /// Configuration</a> in the <i>AppConfig User Guide</i>.</p>
     pub client_configuration_version: std::option::Option<std::string::String>,
 }
 impl GetConfigurationInput {
@@ -7895,16 +8133,17 @@ impl GetConfigurationInput {
     pub fn configuration(&self) -> std::option::Option<&str> {
         self.configuration.as_deref()
     }
-    /// <p>A unique ID to identify the client for the configuration. This ID enables AppConfig to
-    /// deploy the configuration in intervals, as defined in the deployment strategy.</p>
+    /// <p>The clientId parameter in the following command is a unique, user-specified ID to
+    /// identify the client for the configuration. This ID enables AppConfig to deploy the
+    /// configuration in intervals, as defined in the deployment strategy. </p>
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
     /// <p>The configuration version returned in the most recent <code>GetConfiguration</code>
     /// response.</p>
     /// <important>
-    /// <p>AWS AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
-    /// to identify the configuration version on your clients. If you don’t send
+    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to
+    /// identify the configuration version on your clients. If you don’t send
     /// <code>ClientConfigurationVersion</code> with each call to
     /// <code>GetConfiguration</code>, your clients receive the current configuration. You
     /// are charged each time your clients receive a configuration.</p>
@@ -7914,8 +8153,8 @@ impl GetConfigurationInput {
     /// calls to <code>GetConfiguration</code> must pass this value by using the
     /// <code>ClientConfigurationVersion</code> parameter. </p>
     /// </important>
-    /// <p>For more information about working with configurations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the
-    /// <i>AWS AppConfig User Guide</i>.</p>
+    /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the
+    /// Configuration</a> in the <i>AppConfig User Guide</i>.</p>
     pub fn client_configuration_version(&self) -> std::option::Option<&str> {
         self.client_configuration_version.as_deref()
     }
@@ -7995,17 +8234,17 @@ impl std::fmt::Debug for DeleteHostedConfigurationVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEnvironmentInput {
-    /// <p>The application ID that includes the environment you want to delete.</p>
+    /// <p>The application ID that includes the environment that you want to delete.</p>
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the environment you want to delete.</p>
+    /// <p>The ID of the environment that you want to delete.</p>
     pub environment_id: std::option::Option<std::string::String>,
 }
 impl DeleteEnvironmentInput {
-    /// <p>The application ID that includes the environment you want to delete.</p>
+    /// <p>The application ID that includes the environment that you want to delete.</p>
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The ID of the environment you want to delete.</p>
+    /// <p>The ID of the environment that you want to delete.</p>
     pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
@@ -8102,12 +8341,12 @@ pub struct CreateHostedConfigurationVersionInput {
     /// <p>The content of the configuration or the configuration data.</p>
     pub content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>A standard MIME type describing the format of the configuration content. For more
-    /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub content_type: std::option::Option<std::string::String>,
     /// <p>An optional locking token used to prevent race conditions from overwriting configuration
     /// updates when creating a new version. To ensure your data is not overwritten when creating
-    /// multiple hosted configuration versions in rapid succession, specify the version of the
-    /// latest hosted configuration version.</p>
+    /// multiple hosted configuration versions in rapid succession, specify the version number of
+    /// the latest hosted configuration version.</p>
     pub latest_version_number: std::option::Option<i32>,
 }
 impl CreateHostedConfigurationVersionInput {
@@ -8128,14 +8367,14 @@ impl CreateHostedConfigurationVersionInput {
         self.content.as_ref()
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more
-    /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>An optional locking token used to prevent race conditions from overwriting configuration
     /// updates when creating a new version. To ensure your data is not overwritten when creating
-    /// multiple hosted configuration versions in rapid succession, specify the version of the
-    /// latest hosted configuration version.</p>
+    /// multiple hosted configuration versions in rapid succession, specify the version number of
+    /// the latest hosted configuration version.</p>
     pub fn latest_version_number(&self) -> std::option::Option<i32> {
         self.latest_version_number
     }
@@ -8226,7 +8465,7 @@ pub struct CreateDeploymentStrategyInput {
     /// <p>The percentage of targets to receive a deployed configuration during each
     /// interval.</p>
     pub growth_factor: std::option::Option<f32>,
-    /// <p>The algorithm used to define how percentage grows over time. AWS AppConfig supports the
+    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
     /// following growth types:</p>
     /// <p>
     /// <b>Linear</b>: For this type, AppConfig processes the
@@ -8288,7 +8527,7 @@ impl CreateDeploymentStrategyInput {
     pub fn growth_factor(&self) -> std::option::Option<f32> {
         self.growth_factor
     }
-    /// <p>The algorithm used to define how percentage grows over time. AWS AppConfig supports the
+    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
     /// following growth types:</p>
     /// <p>
     /// <b>Linear</b>: For this type, AppConfig processes the
@@ -8366,16 +8605,25 @@ pub struct CreateConfigurationProfileInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the configuration profile.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A URI to locate the configuration. You can specify a Systems Manager (SSM) document, an SSM
-    /// Parameter Store parameter, or an Amazon S3 object. For an SSM document, specify either the
-    /// document name in the format <code>ssm-document://<Document_name></code> or the Amazon
-    /// Resource Name (ARN). For a parameter, specify either the parameter name in the format
+    /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration
+    /// store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the
+    /// hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM
+    /// document, specify either the document name in the format
+    /// <code>ssm-document://<Document_name></code> or the Amazon Resource Name (ARN). For
+    /// a parameter, specify either the parameter name in the format
     /// <code>ssm-parameter://<Parameter_name></code> or the ARN. For an Amazon S3 object,
     /// specify the URI in the following format: <code>s3://<bucket>/<objectKey>
-    /// </code>. Here is an example: s3://my-bucket/my-app/us-east-1/my-config.json</p>
+    /// </code>. Here is an example:
+    /// <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
+    /// </p>
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// LocationUri.</p>
+    /// <code>LocationUri</code>.</p>
+    /// <important>
+    /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig
+    /// hosted configuration store. It is required for all other sources that store your
+    /// configuration. </p>
+    /// </important>
     pub retrieval_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
@@ -8384,6 +8632,10 @@ pub struct CreateConfigurationProfileInput {
     /// define.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The type of configurations that the configuration profile contains. A configuration can
+    /// be a feature flag used for enabling or disabling new features or a free-form configuration
+    /// used for distributing configurations to your application.</p>
+    pub r#type: std::option::Option<std::string::String>,
 }
 impl CreateConfigurationProfileInput {
     /// <p>The application ID.</p>
@@ -8398,18 +8650,27 @@ impl CreateConfigurationProfileInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A URI to locate the configuration. You can specify a Systems Manager (SSM) document, an SSM
-    /// Parameter Store parameter, or an Amazon S3 object. For an SSM document, specify either the
-    /// document name in the format <code>ssm-document://<Document_name></code> or the Amazon
-    /// Resource Name (ARN). For a parameter, specify either the parameter name in the format
+    /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration
+    /// store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the
+    /// hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM
+    /// document, specify either the document name in the format
+    /// <code>ssm-document://<Document_name></code> or the Amazon Resource Name (ARN). For
+    /// a parameter, specify either the parameter name in the format
     /// <code>ssm-parameter://<Parameter_name></code> or the ARN. For an Amazon S3 object,
     /// specify the URI in the following format: <code>s3://<bucket>/<objectKey>
-    /// </code>. Here is an example: s3://my-bucket/my-app/us-east-1/my-config.json</p>
+    /// </code>. Here is an example:
+    /// <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
+    /// </p>
     pub fn location_uri(&self) -> std::option::Option<&str> {
         self.location_uri.as_deref()
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// LocationUri.</p>
+    /// <code>LocationUri</code>.</p>
+    /// <important>
+    /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig
+    /// hosted configuration store. It is required for all other sources that store your
+    /// configuration. </p>
+    /// </important>
     pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
         self.retrieval_role_arn.as_deref()
     }
@@ -8426,6 +8687,12 @@ impl CreateConfigurationProfileInput {
     {
         self.tags.as_ref()
     }
+    /// <p>The type of configurations that the configuration profile contains. A configuration can
+    /// be a feature flag used for enabling or disabling new features or a free-form configuration
+    /// used for distributing configurations to your application.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateConfigurationProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8437,6 +8704,7 @@ impl std::fmt::Debug for CreateConfigurationProfileInput {
         formatter.field("retrieval_role_arn", &self.retrieval_role_arn);
         formatter.field("validators", &self.validators);
         formatter.field("tags", &self.tags);
+        formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
 }

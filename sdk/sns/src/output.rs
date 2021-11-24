@@ -368,6 +368,101 @@ impl RemovePermissionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PublishBatchOutput {
+    /// <p>A list of successful <code>PublishBatch</code> responses.</p>
+    pub successful: std::option::Option<std::vec::Vec<crate::model::PublishBatchResultEntry>>,
+    /// <p>A list of failed <code>PublishBatch</code> responses. </p>
+    pub failed: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
+}
+impl PublishBatchOutput {
+    /// <p>A list of successful <code>PublishBatch</code> responses.</p>
+    pub fn successful(&self) -> std::option::Option<&[crate::model::PublishBatchResultEntry]> {
+        self.successful.as_deref()
+    }
+    /// <p>A list of failed <code>PublishBatch</code> responses. </p>
+    pub fn failed(&self) -> std::option::Option<&[crate::model::BatchResultErrorEntry]> {
+        self.failed.as_deref()
+    }
+}
+impl std::fmt::Debug for PublishBatchOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PublishBatchOutput");
+        formatter.field("successful", &self.successful);
+        formatter.field("failed", &self.failed);
+        formatter.finish()
+    }
+}
+/// See [`PublishBatchOutput`](crate::output::PublishBatchOutput)
+pub mod publish_batch_output {
+    /// A builder for [`PublishBatchOutput`](crate::output::PublishBatchOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) successful:
+            std::option::Option<std::vec::Vec<crate::model::PublishBatchResultEntry>>,
+        pub(crate) failed: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
+    }
+    impl Builder {
+        /// Appends an item to `successful`.
+        ///
+        /// To override the contents of this collection use [`set_successful`](Self::set_successful).
+        ///
+        /// <p>A list of successful <code>PublishBatch</code> responses.</p>
+        pub fn successful(
+            mut self,
+            input: impl Into<crate::model::PublishBatchResultEntry>,
+        ) -> Self {
+            let mut v = self.successful.unwrap_or_default();
+            v.push(input.into());
+            self.successful = Some(v);
+            self
+        }
+        /// <p>A list of successful <code>PublishBatch</code> responses.</p>
+        pub fn set_successful(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PublishBatchResultEntry>>,
+        ) -> Self {
+            self.successful = input;
+            self
+        }
+        /// Appends an item to `failed`.
+        ///
+        /// To override the contents of this collection use [`set_failed`](Self::set_failed).
+        ///
+        /// <p>A list of failed <code>PublishBatch</code> responses. </p>
+        pub fn failed(mut self, input: impl Into<crate::model::BatchResultErrorEntry>) -> Self {
+            let mut v = self.failed.unwrap_or_default();
+            v.push(input.into());
+            self.failed = Some(v);
+            self
+        }
+        /// <p>A list of failed <code>PublishBatch</code> responses. </p>
+        pub fn set_failed(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
+        ) -> Self {
+            self.failed = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PublishBatchOutput`](crate::output::PublishBatchOutput)
+        pub fn build(self) -> crate::output::PublishBatchOutput {
+            crate::output::PublishBatchOutput {
+                successful: self.successful,
+                failed: self.failed,
+            }
+        }
+    }
+}
+impl PublishBatchOutput {
+    /// Creates a new builder-style object to manufacture [`PublishBatchOutput`](crate::output::PublishBatchOutput)
+    pub fn builder() -> crate::output::publish_batch_output::Builder {
+        crate::output::publish_batch_output::Builder::default()
+    }
+}
+
 /// <p>Response for Publish action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1293,7 +1388,7 @@ pub struct GetTopicAttributesOutput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Owner</code> – The account ID of the topic's owner.</p>
+    /// <code>Owner</code> – The Amazon Web Services account ID of the topic's owner.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -1387,7 +1482,7 @@ impl GetTopicAttributesOutput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Owner</code> – The account ID of the topic's owner.</p>
+    /// <code>Owner</code> – The Amazon Web Services account ID of the topic's owner.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -1506,7 +1601,7 @@ pub mod get_topic_attributes_output {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>Owner</code> – The account ID of the topic's owner.</p>
+        /// <code>Owner</code> – The Amazon Web Services account ID of the topic's owner.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1606,7 +1701,7 @@ pub mod get_topic_attributes_output {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>Owner</code> – The account ID of the topic's owner.</p>
+        /// <code>Owner</code> – The Amazon Web Services account ID of the topic's owner.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1736,7 +1831,7 @@ pub struct GetSubscriptionAttributesOutput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Owner</code> – The account ID of the subscription's
+    /// <code>Owner</code> – The Amazon Web Services account ID of the subscription's
     /// owner.</p>
     /// </li>
     /// <li>
@@ -1818,7 +1913,7 @@ impl GetSubscriptionAttributesOutput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Owner</code> – The account ID of the subscription's
+    /// <code>Owner</code> – The Amazon Web Services account ID of the subscription's
     /// owner.</p>
     /// </li>
     /// <li>
@@ -1925,7 +2020,7 @@ pub mod get_subscription_attributes_output {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>Owner</code> – The account ID of the subscription's
+        /// <code>Owner</code> – The Amazon Web Services account ID of the subscription's
         /// owner.</p>
         /// </li>
         /// <li>
@@ -2013,7 +2108,7 @@ pub mod get_subscription_attributes_output {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>Owner</code> – The account ID of the subscription's
+        /// <code>Owner</code> – The Amazon Web Services account ID of the subscription's
         /// owner.</p>
         /// </li>
         /// <li>
@@ -2092,11 +2187,11 @@ impl GetSubscriptionAttributesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSmsSandboxAccountStatusOutput {
-    /// <p>Indicates whether the calling account is in the SMS sandbox.</p>
+    /// <p>Indicates whether the calling Amazon Web Services account is in the SMS sandbox.</p>
     pub is_in_sandbox: bool,
 }
 impl GetSmsSandboxAccountStatusOutput {
-    /// <p>Indicates whether the calling account is in the SMS sandbox.</p>
+    /// <p>Indicates whether the calling Amazon Web Services account is in the SMS sandbox.</p>
     pub fn is_in_sandbox(&self) -> bool {
         self.is_in_sandbox
     }
@@ -2117,12 +2212,12 @@ pub mod get_sms_sandbox_account_status_output {
         pub(crate) is_in_sandbox: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Indicates whether the calling account is in the SMS sandbox.</p>
+        /// <p>Indicates whether the calling Amazon Web Services account is in the SMS sandbox.</p>
         pub fn is_in_sandbox(mut self, input: bool) -> Self {
             self.is_in_sandbox = Some(input);
             self
         }
-        /// <p>Indicates whether the calling account is in the SMS sandbox.</p>
+        /// <p>Indicates whether the calling Amazon Web Services account is in the SMS sandbox.</p>
         pub fn set_is_in_sandbox(mut self, input: std::option::Option<bool>) -> Self {
             self.is_in_sandbox = input;
             self
@@ -2225,6 +2320,18 @@ pub struct GetPlatformApplicationAttributesOutput {
     /// <ul>
     /// <li>
     /// <p>
+    /// <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate used to configure certificate-based authentication.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ApplePlatformTeamID</code> – The Apple developer account ID used to configure token-based authentication.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ApplePlatformBundleID</code> – The app identifier used to configure token-based authentication.</p>
+    /// </li>
+    /// <li>
+    /// <p>
     /// <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated
     /// event notifications should be sent.</p>
     /// </li>
@@ -2251,6 +2358,18 @@ pub struct GetPlatformApplicationAttributesOutput {
 impl GetPlatformApplicationAttributesOutput {
     /// <p>Attributes include the following:</p>
     /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate used to configure certificate-based authentication.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ApplePlatformTeamID</code> – The Apple developer account ID used to configure token-based authentication.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ApplePlatformBundleID</code> – The app identifier used to configure token-based authentication.</p>
+    /// </li>
     /// <li>
     /// <p>
     /// <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated
@@ -2306,6 +2425,18 @@ pub mod get_platform_application_attributes_output {
         /// <ul>
         /// <li>
         /// <p>
+        /// <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate used to configure certificate-based authentication.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApplePlatformTeamID</code> – The Apple developer account ID used to configure token-based authentication.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApplePlatformBundleID</code> – The app identifier used to configure token-based authentication.</p>
+        /// </li>
+        /// <li>
+        /// <p>
         /// <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated
         /// event notifications should be sent.</p>
         /// </li>
@@ -2338,6 +2469,18 @@ pub mod get_platform_application_attributes_output {
         }
         /// <p>Attributes include the following:</p>
         /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate used to configure certificate-based authentication.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApplePlatformTeamID</code> – The Apple developer account ID used to configure token-based authentication.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApplePlatformBundleID</code> – The app identifier used to configure token-based authentication.</p>
+        /// </li>
         /// <li>
         /// <p>
         /// <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated

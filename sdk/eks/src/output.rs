@@ -1516,11 +1516,13 @@ impl DescribeAddonVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAddonOutput {
-    /// <p>An Amazon EKS add-on.</p>
+    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
+    /// the <i>Amazon EKS User Guide</i>.</p>
     pub addon: std::option::Option<crate::model::Addon>,
 }
 impl DescribeAddonOutput {
-    /// <p>An Amazon EKS add-on.</p>
+    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
+    /// the <i>Amazon EKS User Guide</i>.</p>
     pub fn addon(&self) -> std::option::Option<&crate::model::Addon> {
         self.addon.as_ref()
     }
@@ -1541,12 +1543,14 @@ pub mod describe_addon_output {
         pub(crate) addon: std::option::Option<crate::model::Addon>,
     }
     impl Builder {
-        /// <p>An Amazon EKS add-on.</p>
+        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
+        /// the <i>Amazon EKS User Guide</i>.</p>
         pub fn addon(mut self, input: crate::model::Addon) -> Self {
             self.addon = Some(input);
             self
         }
-        /// <p>An Amazon EKS add-on.</p>
+        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
+        /// the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_addon(mut self, input: std::option::Option<crate::model::Addon>) -> Self {
             self.addon = input;
             self
@@ -1790,11 +1794,13 @@ impl DeleteClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAddonOutput {
-    /// <p>An Amazon EKS add-on.</p>
+    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
+    /// the <i>Amazon EKS User Guide</i>.</p>
     pub addon: std::option::Option<crate::model::Addon>,
 }
 impl DeleteAddonOutput {
-    /// <p>An Amazon EKS add-on.</p>
+    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
+    /// the <i>Amazon EKS User Guide</i>.</p>
     pub fn addon(&self) -> std::option::Option<&crate::model::Addon> {
         self.addon.as_ref()
     }
@@ -1815,12 +1821,14 @@ pub mod delete_addon_output {
         pub(crate) addon: std::option::Option<crate::model::Addon>,
     }
     impl Builder {
-        /// <p>An Amazon EKS add-on.</p>
+        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
+        /// the <i>Amazon EKS User Guide</i>.</p>
         pub fn addon(mut self, input: crate::model::Addon) -> Self {
             self.addon = Some(input);
             self
         }
-        /// <p>An Amazon EKS add-on.</p>
+        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
+        /// the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_addon(mut self, input: std::option::Option<crate::model::Addon>) -> Self {
             self.addon = input;
             self
@@ -2010,11 +2018,13 @@ impl CreateClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAddonOutput {
-    /// <p>An Amazon EKS add-on.</p>
+    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
+    /// the <i>Amazon EKS User Guide</i>.</p>
     pub addon: std::option::Option<crate::model::Addon>,
 }
 impl CreateAddonOutput {
-    /// <p>An Amazon EKS add-on.</p>
+    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
+    /// the <i>Amazon EKS User Guide</i>.</p>
     pub fn addon(&self) -> std::option::Option<&crate::model::Addon> {
         self.addon.as_ref()
     }
@@ -2035,12 +2045,14 @@ pub mod create_addon_output {
         pub(crate) addon: std::option::Option<crate::model::Addon>,
     }
     impl Builder {
-        /// <p>An Amazon EKS add-on.</p>
+        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
+        /// the <i>Amazon EKS User Guide</i>.</p>
         pub fn addon(mut self, input: crate::model::Addon) -> Self {
             self.addon = Some(input);
             self
         }
-        /// <p>An Amazon EKS add-on.</p>
+        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
+        /// the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_addon(mut self, input: std::option::Option<crate::model::Addon>) -> Self {
             self.addon = input;
             self

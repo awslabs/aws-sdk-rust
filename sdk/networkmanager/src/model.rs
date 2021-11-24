@@ -155,7 +155,7 @@ pub struct Site {
     /// <p>The location of the site.</p>
     pub location: std::option::Option<crate::model::Location>,
     /// <p>The date and time that the site was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state of the site.</p>
     pub state: std::option::Option<crate::model::SiteState>,
     /// <p>The tags for the site.</p>
@@ -183,7 +183,7 @@ impl Site {
         self.location.as_ref()
     }
     /// <p>The date and time that the site was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The state of the site.</p>
@@ -220,7 +220,7 @@ pub mod site {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<crate::model::Location>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state: std::option::Option<crate::model::SiteState>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -279,14 +279,14 @@ pub mod site {
             self
         }
         /// <p>The date and time that the site was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the site was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -599,7 +599,7 @@ pub struct Link {
     /// <p>The provider of the link.</p>
     pub provider: std::option::Option<std::string::String>,
     /// <p>The date and time that the link was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state of the link.</p>
     pub state: std::option::Option<crate::model::LinkState>,
     /// <p>The tags for the link.</p>
@@ -639,7 +639,7 @@ impl Link {
         self.provider.as_deref()
     }
     /// <p>The date and time that the link was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The state of the link.</p>
@@ -682,7 +682,7 @@ pub mod link {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) bandwidth: std::option::Option<crate::model::Bandwidth>,
         pub(crate) provider: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state: std::option::Option<crate::model::LinkState>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -774,14 +774,14 @@ pub mod link {
             self
         }
         /// <p>The date and time that the link was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the link was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -987,7 +987,7 @@ pub struct GlobalNetwork {
     /// <p>The description of the global network.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the global network was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state of the global network.</p>
     pub state: std::option::Option<crate::model::GlobalNetworkState>,
     /// <p>The tags for the global network.</p>
@@ -1007,7 +1007,7 @@ impl GlobalNetwork {
         self.description.as_deref()
     }
     /// <p>The date and time that the global network was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The state of the global network.</p>
@@ -1040,7 +1040,7 @@ pub mod global_network {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
         pub(crate) global_network_arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state: std::option::Option<crate::model::GlobalNetworkState>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -1082,14 +1082,14 @@ pub mod global_network {
             self
         }
         /// <p>The date and time that the global network was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the global network was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1236,7 +1236,7 @@ pub struct Device {
     /// <p>The site ID.</p>
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the site was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The device state.</p>
     pub state: std::option::Option<crate::model::DeviceState>,
     /// <p>The tags for the device.</p>
@@ -1288,7 +1288,7 @@ impl Device {
         self.site_id.as_deref()
     }
     /// <p>The date and time that the site was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The device state.</p>
@@ -1337,7 +1337,7 @@ pub mod device {
         pub(crate) serial_number: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<crate::model::Location>,
         pub(crate) site_id: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state: std::option::Option<crate::model::DeviceState>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -1462,14 +1462,14 @@ pub mod device {
             self
         }
         /// <p>The date and time that the site was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the site was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -1692,7 +1692,7 @@ pub struct Connection {
     /// <p>The description of the connection.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the connection was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state of the connection.</p>
     pub state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The tags for the connection.</p>
@@ -1732,7 +1732,7 @@ impl Connection {
         self.description.as_deref()
     }
     /// <p>The date and time that the connection was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The state of the connection.</p>
@@ -1775,7 +1775,7 @@ pub mod connection {
         pub(crate) link_id: std::option::Option<std::string::String>,
         pub(crate) connected_link_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state: std::option::Option<crate::model::ConnectionState>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -1876,14 +1876,14 @@ pub mod connection {
             self
         }
         /// <p>The date and time that the connection was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time that the connection was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
@@ -2019,7 +2019,7 @@ pub struct RouteAnalysis {
     /// <p>The ID of the route analysis.</p>
     pub route_analysis_id: std::option::Option<std::string::String>,
     /// <p>The time that the analysis started.</p>
-    pub start_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the route analysis.</p>
     pub status: std::option::Option<crate::model::RouteAnalysisStatus>,
     /// <p>The source.</p>
@@ -2050,7 +2050,7 @@ impl RouteAnalysis {
         self.route_analysis_id.as_deref()
     }
     /// <p>The time that the analysis started.</p>
-    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
     /// <p>The status of the route analysis.</p>
@@ -2109,7 +2109,7 @@ pub mod route_analysis {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
         pub(crate) owner_account_id: std::option::Option<std::string::String>,
         pub(crate) route_analysis_id: std::option::Option<std::string::String>,
-        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::RouteAnalysisStatus>,
         pub(crate) source: std::option::Option<crate::model::RouteAnalysisEndpointOptions>,
         pub(crate) destination: std::option::Option<crate::model::RouteAnalysisEndpointOptions>,
@@ -2159,14 +2159,14 @@ pub mod route_analysis {
             self
         }
         /// <p>The time that the analysis started.</p>
-        pub fn start_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_timestamp = Some(input);
             self
         }
         /// <p>The time that the analysis started.</p>
         pub fn set_start_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_timestamp = input;
             self
@@ -4004,7 +4004,7 @@ pub struct ConnectionHealth {
     /// <p>The connection status.</p>
     pub status: std::option::Option<crate::model::ConnectionStatus>,
     /// <p>The time the status was last updated.</p>
-    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ConnectionHealth {
     /// <p>The connection type.</p>
@@ -4016,7 +4016,7 @@ impl ConnectionHealth {
         self.status.as_ref()
     }
     /// <p>The time the status was last updated.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -4037,7 +4037,7 @@ pub mod connection_health {
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ConnectionType>,
         pub(crate) status: std::option::Option<crate::model::ConnectionStatus>,
-        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The connection type.</p>
@@ -4067,14 +4067,14 @@ pub mod connection_health {
             self
         }
         /// <p>The time the status was last updated.</p>
-        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The time the status was last updated.</p>
         pub fn set_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.timestamp = input;
             self
@@ -4778,7 +4778,7 @@ pub struct NetworkResource {
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
     pub definition: std::option::Option<std::string::String>,
     /// <p>The time that the resource definition was retrieved.</p>
-    pub definition_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    pub definition_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The resource metadata.</p>
@@ -4891,7 +4891,7 @@ impl NetworkResource {
         self.definition.as_deref()
     }
     /// <p>The time that the resource definition was retrieved.</p>
-    pub fn definition_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn definition_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.definition_timestamp.as_ref()
     }
     /// <p>The tags.</p>
@@ -4935,7 +4935,7 @@ pub mod network_resource {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) definition: std::option::Option<std::string::String>,
-        pub(crate) definition_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) definition_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) metadata: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -5171,14 +5171,14 @@ pub mod network_resource {
             self
         }
         /// <p>The time that the resource definition was retrieved.</p>
-        pub fn definition_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn definition_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.definition_timestamp = Some(input);
             self
         }
         /// <p>The time that the resource definition was retrieved.</p>
         pub fn set_definition_timestamp(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.definition_timestamp = input;
             self

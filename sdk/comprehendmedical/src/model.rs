@@ -243,14 +243,14 @@ pub struct ComprehendMedicalAsyncJobProperties {
     /// <p>A description of the status of a job.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the detection job was submitted for processing.</p>
-    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the detection job completed.</p>
-    pub end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that job metadata is deleted from the server. Output files in your S3
     /// bucket will not be deleted. After the metadata is deleted, the job will no longer appear in
     /// the results of the <code>ListEntitiesDetectionV2Job</code> or the
     /// <code>ListPHIDetectionJobs</code> operation.</p>
-    pub expiration_time: std::option::Option<aws_smithy_types::Instant>,
+    pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The input data configuration that you supplied when you created the detection job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>The output data configuration that you supplied when you created the detection job.</p>
@@ -287,18 +287,18 @@ impl ComprehendMedicalAsyncJobProperties {
         self.message.as_deref()
     }
     /// <p>The time that the detection job was submitted for processing.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that the detection job completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The date and time that job metadata is deleted from the server. Output files in your S3
     /// bucket will not be deleted. After the metadata is deleted, the job will no longer appear in
     /// the results of the <code>ListEntitiesDetectionV2Job</code> or the
     /// <code>ListPHIDetectionJobs</code> operation.</p>
-    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
     /// <p>The input data configuration that you supplied when you created the detection job.</p>
@@ -362,9 +362,9 @@ pub mod comprehend_medical_async_job_properties {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) expiration_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) expiration_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -420,27 +420,27 @@ pub mod comprehend_medical_async_job_properties {
             self
         }
         /// <p>The time that the detection job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time = Some(input);
             self
         }
         /// <p>The time that the detection job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the detection job completed.</p>
-        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The time that the detection job completed.</p>
         pub fn set_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.end_time = input;
             self
@@ -449,7 +449,7 @@ pub mod comprehend_medical_async_job_properties {
         /// bucket will not be deleted. After the metadata is deleted, the job will no longer appear in
         /// the results of the <code>ListEntitiesDetectionV2Job</code> or the
         /// <code>ListPHIDetectionJobs</code> operation.</p>
-        pub fn expiration_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_time = Some(input);
             self
         }
@@ -459,7 +459,7 @@ pub mod comprehend_medical_async_job_properties {
         /// <code>ListPHIDetectionJobs</code> operation.</p>
         pub fn set_expiration_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.expiration_time = input;
             self
@@ -679,11 +679,11 @@ pub struct ComprehendMedicalAsyncJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ComprehendMedicalAsyncJobFilter {
     /// <p>Filters on the name of the job.</p>
@@ -698,13 +698,13 @@ impl ComprehendMedicalAsyncJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_before.as_ref()
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
     }
 }
@@ -726,8 +726,8 @@ pub mod comprehend_medical_async_job_filter {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Filters on the name of the job.</p>
@@ -758,7 +758,7 @@ pub mod comprehend_medical_async_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_before = Some(input);
             self
         }
@@ -767,7 +767,7 @@ pub mod comprehend_medical_async_job_filter {
         /// oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -775,7 +775,7 @@ pub mod comprehend_medical_async_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_after = Some(input);
             self
         }
@@ -784,7 +784,7 @@ pub mod comprehend_medical_async_job_filter {
         /// newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.submit_time_after = input;
             self

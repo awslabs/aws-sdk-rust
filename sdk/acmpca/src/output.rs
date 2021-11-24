@@ -849,7 +849,7 @@ pub struct DescribeCertificateAuthorityAuditReportOutput {
     /// your S3 bucket.</p>
     pub s3_key: std::option::Option<std::string::String>,
     /// <p>The date and time at which the report was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeCertificateAuthorityAuditReportOutput {
     /// <p>Specifies whether report creation is in progress, has succeeded, or has failed.</p>
@@ -866,7 +866,7 @@ impl DescribeCertificateAuthorityAuditReportOutput {
         self.s3_key.as_deref()
     }
     /// <p>The date and time at which the report was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -889,7 +889,7 @@ pub mod describe_certificate_authority_audit_report_output {
         pub(crate) audit_report_status: std::option::Option<crate::model::AuditReportStatus>,
         pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
         pub(crate) s3_key: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Specifies whether report creation is in progress, has succeeded, or has failed.</p>
@@ -931,14 +931,14 @@ pub mod describe_certificate_authority_audit_report_output {
             self
         }
         /// <p>The date and time at which the report was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The date and time at which the report was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self

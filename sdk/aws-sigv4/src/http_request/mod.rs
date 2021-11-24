@@ -10,8 +10,8 @@
 //! ```rust
 //! # fn test() -> Result<(), aws_sigv4::http_request::Error> {
 //! use aws_sigv4::http_request::{sign, SigningSettings, SigningParams, SignableRequest};
-//! use chrono::Utc;
 //! use http;
+//! use std::time::SystemTime;
 //!
 //! // Create the request to sign
 //! let mut request = http::Request::builder()
@@ -26,7 +26,7 @@
 //!     .secret_key("example secret key")
 //!     .region("us-east-1")
 //!     .service_name("exampleservice")
-//!     .date_time(Utc::now())
+//!     .time(SystemTime::now())
 //!     .settings(signing_settings)
 //!     .build()
 //!     .unwrap();

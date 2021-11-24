@@ -3,7 +3,7 @@
 **Please Note: The SDK is currently released as an alpha and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-The Amazon Chime API (application programming interface) is designed for developers to perform key tasks, such as creating and managing Amazon Chime accounts, users, and Voice Connectors. This guide provides detailed information about the Amazon Chime API, including operations, types, inputs and outputs, and error codes. It also includes some server-side API actions to use with the Amazon Chime SDK. For more information about the Amazon Chime SDK, see [Using the Amazon Chime SDK](https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html) in the _Amazon Chime Developer Guide_.
+The Amazon Chime API (application programming interface) is designed for developers to perform key tasks, such as creating and managing Amazon Chime accounts, users, and Voice Connectors. This guide provides detailed information about the Amazon Chime API, including operations, types, inputs and outputs, and error codes. It also includes API actions for use with the Amazon Chime SDK, which developers use to build their own communication applications. For more information about the Amazon Chime SDK, see [Using the Amazon Chime SDK](https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html) in the _Amazon Chime Developer Guide_.
 
 You can use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to make API calls. We recommend using an AWS SDK or the AWS CLI. Each API operation includes links to information about using it with a language-specific AWS SDK or the AWS CLI.
 
@@ -25,7 +25,7 @@ Administrative permissions are controlled using AWS Identity and Access Manageme
 ## Getting Started
 
 > Examples are available for many services and operations, check out the
-> [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/sdk/examples).
+> [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
 
 The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
 as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-chime` to
@@ -33,8 +33,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.0.25-alpha"
-aws-sdk-chime = "0.0.25-alpha"
+aws-config = "0.0.26-alpha"
+aws-sdk-chime = "0.0.26-alpha"
 tokio = { version = "1", features = ["full"] }
 ```
 
@@ -49,7 +49,7 @@ additional sections for the guide by opening an issue and describing what you ar
 * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
 * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) – For bug reports & feature requests
 * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
-* [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/sdk/examples)
+* [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
 
 ## License
 

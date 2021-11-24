@@ -3,21 +3,35 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+//! Metadata type used by all service SDKs to provide information about the environment the SDK was compiled for.
+
 include!(concat!(env!("OUT_DIR"), "/build_env.rs"));
 
+/// Metadata about the environment the SDK was compiled for.
+#[derive(Debug)]
 pub struct BuildMetadata {
+    /// Which version of Rust was used to compile the SDK.
     pub rust_version: &'static str,
+    /// The version number of the `aws-types` crate compiled with the SDK.
     pub core_pkg_version: &'static str,
+    /// The OS the SDK was compiled for.
     pub os_family: OsFamily,
 }
 
+/// Operating system family that the SDK can be compiled for
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub enum OsFamily {
+    /// Microsoft Windows
     Windows,
+    /// Linux
     Linux,
+    /// Apple MacOS
     Macos,
+    /// Google Android
     Android,
+    /// Apple iOS
     Ios,
+    /// A different family of operating system
     Other,
 }
 
@@ -37,6 +51,7 @@ macro_rules! get_os_family {
 }
 
 impl OsFamily {
+    /// Returns the OS family this crate was compiled for.
     pub const fn from_env() -> Self {
         // values from https://doc.rust-lang.org/reference/conditional-compilation.html#target_os
         get_os_family!(target_os:
@@ -62,6 +77,7 @@ impl From<&str> for OsFamily {
     }
 }
 
+/// Constant build metadata for this crate.
 pub const BUILD_METADATA: BuildMetadata = BuildMetadata {
     rust_version: RUST_VERSION,
     core_pkg_version: env!("CARGO_PKG_VERSION"),

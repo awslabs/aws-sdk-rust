@@ -228,12 +228,12 @@ pub fn serialize_structure_crate_input_describe_events_input(
     if let Some(var_48) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_48, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_48, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_49) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_49, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_49, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_50) = &input.duration {
         object.key("Duration").number(

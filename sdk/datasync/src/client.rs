@@ -101,6 +101,13 @@ where
     ) -> fluent_builders::CreateLocationFsxWindows<C, M, R> {
         fluent_builders::CreateLocationFsxWindows::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CreateLocationHdfs` operation.
+    ///
+    /// See [`CreateLocationHdfs`](crate::client::fluent_builders::CreateLocationHdfs) for more information about the
+    /// operation and its arguments.
+    pub fn create_location_hdfs(&self) -> fluent_builders::CreateLocationHdfs<C, M, R> {
+        fluent_builders::CreateLocationHdfs::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CreateLocationNfs` operation.
     ///
     /// See [`CreateLocationNfs`](crate::client::fluent_builders::CreateLocationNfs) for more information about the
@@ -181,6 +188,13 @@ where
         &self,
     ) -> fluent_builders::DescribeLocationFsxWindows<C, M, R> {
         fluent_builders::DescribeLocationFsxWindows::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeLocationHdfs` operation.
+    ///
+    /// See [`DescribeLocationHdfs`](crate::client::fluent_builders::DescribeLocationHdfs) for more information about the
+    /// operation and its arguments.
+    pub fn describe_location_hdfs(&self) -> fluent_builders::DescribeLocationHdfs<C, M, R> {
+        fluent_builders::DescribeLocationHdfs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DescribeLocationNfs` operation.
     ///
@@ -288,6 +302,13 @@ where
     /// operation and its arguments.
     pub fn update_agent(&self) -> fluent_builders::UpdateAgent<C, M, R> {
         fluent_builders::UpdateAgent::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateLocationHdfs` operation.
+    ///
+    /// See [`UpdateLocationHdfs`](crate::client::fluent_builders::UpdateLocationHdfs) for more information about the
+    /// operation and its arguments.
+    pub fn update_location_hdfs(&self) -> fluent_builders::UpdateLocationHdfs<C, M, R> {
+        fluent_builders::UpdateLocationHdfs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `UpdateLocationNfs` operation.
     ///
@@ -967,6 +988,305 @@ pub mod fluent_builders {
         /// for Windows File Server file system.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_password(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateLocationHdfs`.
+    ///
+    /// <p>Creates an endpoint for a Hadoop Distributed File System (HDFS). </p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateLocationHdfs<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_location_hdfs_input::Builder,
+    }
+    impl<C, M, R> CreateLocationHdfs<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateLocationHdfs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateLocationHdfsOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateLocationHdfsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateLocationHdfsInputOperationOutputAlias,
+                crate::output::CreateLocationHdfsOutput,
+                crate::error::CreateLocationHdfsError,
+                crate::input::CreateLocationHdfsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
+        /// data to the HDFS cluster. If the subdirectory isn't specified, it will default to
+        /// <code>/</code>.</p>
+        pub fn subdirectory(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(inp);
+            self
+        }
+        /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
+        /// data to the HDFS cluster. If the subdirectory isn't specified, it will default to
+        /// <code>/</code>.</p>
+        pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_subdirectory(input);
+            self
+        }
+        /// Appends an item to `NameNodes`.
+        ///
+        /// To override the contents of this collection use [`set_name_nodes`](Self::set_name_nodes).
+        ///
+        /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
+        /// opening, closing, and renaming files and directories. The NameNode contains the information to
+        /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
+        pub fn name_nodes(mut self, inp: impl Into<crate::model::HdfsNameNode>) -> Self {
+            self.inner = self.inner.name_nodes(inp);
+            self
+        }
+        /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
+        /// opening, closing, and renaming files and directories. The NameNode contains the information to
+        /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
+        pub fn set_name_nodes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
+        ) -> Self {
+            self.inner = self.inner.set_name_nodes(input);
+            self
+        }
+        /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple
+        /// of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
+        pub fn block_size(mut self, inp: i32) -> Self {
+            self.inner = self.inner.block_size(inp);
+            self
+        }
+        /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple
+        /// of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
+        pub fn set_block_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_block_size(input);
+            self
+        }
+        /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By
+        /// default, data is replicated to three DataNodes.</p>
+        pub fn replication_factor(mut self, inp: i32) -> Self {
+            self.inner = self.inner.replication_factor(inp);
+            self
+        }
+        /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By
+        /// default, data is replicated to three DataNodes.</p>
+        pub fn set_replication_factor(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_replication_factor(input);
+            self
+        }
+        /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
+        pub fn kms_key_provider_uri(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_provider_uri(inp);
+            self
+        }
+        /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
+        pub fn set_kms_key_provider_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_kms_key_provider_uri(input);
+            self
+        }
+        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
+        /// and data transfer protection settings configured on the Hadoop Distributed File System (HDFS)
+        /// cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and
+        /// <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set
+        /// <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter
+        /// assumes the same value. </p>
+        pub fn qop_configuration(mut self, inp: crate::model::QopConfiguration) -> Self {
+            self.inner = self.inner.qop_configuration(inp);
+            self
+        }
+        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
+        /// and data transfer protection settings configured on the Hadoop Distributed File System (HDFS)
+        /// cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and
+        /// <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set
+        /// <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter
+        /// assumes the same value. </p>
+        pub fn set_qop_configuration(
+            mut self,
+            input: std::option::Option<crate::model::QopConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_qop_configuration(input);
+            self
+        }
+        /// <p>The type of authentication used to determine the identity of the user. </p>
+        pub fn authentication_type(mut self, inp: crate::model::HdfsAuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(inp);
+            self
+        }
+        /// <p>The type of authentication used to determine the identity of the user. </p>
+        pub fn set_authentication_type(
+            mut self,
+            input: std::option::Option<crate::model::HdfsAuthenticationType>,
+        ) -> Self {
+            self.inner = self.inner.set_authentication_type(input);
+            self
+        }
+        /// <p>The user name used to identify the client on the host operating system. </p>
+        /// <note>
+        /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter
+        /// is required. </p>
+        /// </note>
+        pub fn simple_user(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.simple_user(inp);
+            self
+        }
+        /// <p>The user name used to identify the client on the host operating system. </p>
+        /// <note>
+        /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter
+        /// is required. </p>
+        /// </note>
+        pub fn set_simple_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_simple_user(input);
+            self
+        }
+        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
+        /// <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+        /// parameter is required.</p>
+        /// </note>
+        pub fn kerberos_principal(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kerberos_principal(inp);
+            self
+        }
+        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
+        /// <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+        /// parameter is required.</p>
+        /// </note>
+        pub fn set_kerberos_principal(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_kerberos_principal(input);
+            self
+        }
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
+        /// principal and the encrypted keys. You can load the keytab from a file by providing the file's
+        /// address. If you're using the CLI, it performs base64 encoding for you.
+        /// Otherwise, provide the base64-encoded text. </p>
+        /// <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+        /// parameter is required. </p>
+        /// </note>
+        pub fn kerberos_keytab(mut self, inp: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.kerberos_keytab(inp);
+            self
+        }
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
+        /// principal and the encrypted keys. You can load the keytab from a file by providing the file's
+        /// address. If you're using the CLI, it performs base64 encoding for you.
+        /// Otherwise, provide the base64-encoded text. </p>
+        /// <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+        /// parameter is required. </p>
+        /// </note>
+        pub fn set_kerberos_keytab(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.inner = self.inner.set_kerberos_keytab(input);
+            self
+        }
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
+        /// can load the <code>krb5.conf</code> file by providing the file's address. If you're using the
+        /// CLI, it performs the base64 encoding for you. Otherwise, provide the
+        /// base64-encoded text. </p>
+        /// <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+        /// parameter is required.</p>
+        /// </note>
+        pub fn kerberos_krb5_conf(mut self, inp: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.kerberos_krb5_conf(inp);
+            self
+        }
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
+        /// can load the <code>krb5.conf</code> file by providing the file's address. If you're using the
+        /// CLI, it performs the base64 encoding for you. Otherwise, provide the
+        /// base64-encoded text. </p>
+        /// <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
+        /// parameter is required.</p>
+        /// </note>
+        pub fn set_kerberos_krb5_conf(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.inner = self.inner.set_kerberos_krb5_conf(input);
+            self
+        }
+        /// Appends an item to `AgentArns`.
+        ///
+        /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS
+        /// cluster.</p>
+        pub fn agent_arns(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_arns(inp);
+            self
+        }
+        /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS
+        /// cluster.</p>
+        pub fn set_agent_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_agent_arns(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The key-value pair that represents the tag that you want to add to the location. The value
+        /// can be an empty string. We recommend using tags to name your resources. </p>
+        pub fn tags(mut self, inp: impl Into<crate::model::TagListEntry>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        /// <p>The key-value pair that represents the tag that you want to add to the location. The value
+        /// can be an empty string. We recommend using tags to name your resources. </p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1959,17 +2279,15 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
         /// <p>A list of filter rules that determines which files to include when running a task. The
-        /// pattern should contain a single filter string that consists of the patterns to include. The
-        /// patterns are delimited by "|" (that is, a pipe). For example:
-        /// <code>"/folder1|/folder2</code>"</p>
+        /// pattern contains a single filter string that consists of the patterns to include. The patterns
+        /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         pub fn includes(mut self, inp: impl Into<crate::model::FilterRule>) -> Self {
             self.inner = self.inner.includes(inp);
             self
         }
         /// <p>A list of filter rules that determines which files to include when running a task. The
-        /// pattern should contain a single filter string that consists of the patterns to include. The
-        /// patterns are delimited by "|" (that is, a pipe). For example:
-        /// <code>"/folder1|/folder2</code>"</p>
+        /// pattern contains a single filter string that consists of the patterns to include. The patterns
+        /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -2403,6 +2721,77 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to
         /// describe.</p>
+        pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_location_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeLocationHdfs`.
+    ///
+    /// <p>Returns metadata, such as the authentication information about the Hadoop Distributed File
+    /// System (HDFS) location. </p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeLocationHdfs<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_location_hdfs_input::Builder,
+    }
+    impl<C, M, R> DescribeLocationHdfs<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeLocationHdfs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeLocationHdfsOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeLocationHdfsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeLocationHdfsInputOperationOutputAlias,
+                crate::output::DescribeLocationHdfsOutput,
+                crate::error::DescribeLocationHdfsError,
+                crate::input::DescribeLocationHdfsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
+        pub fn location_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location_arn(input);
             self
@@ -3430,8 +3819,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of filter rules that determines which files to include when running a task. The
         /// pattern should contain a single filter string that consists of the patterns to include. The
-        /// patterns are delimited by "|" (that is, a pipe). For example: <code>"/folder1|/folder2"</code>
-        /// </p>
+        /// patterns are delimited by "|" (that is, a pipe), for example,
+        /// <code>"/folder1|/folder2"</code>. </p>
         ///
         /// <p>
         /// </p>
@@ -3441,8 +3830,8 @@ pub mod fluent_builders {
         }
         /// <p>A list of filter rules that determines which files to include when running a task. The
         /// pattern should contain a single filter string that consists of the patterns to include. The
-        /// patterns are delimited by "|" (that is, a pipe). For example: <code>"/folder1|/folder2"</code>
-        /// </p>
+        /// patterns are delimited by "|" (that is, a pipe), for example,
+        /// <code>"/folder1|/folder2"</code>. </p>
         ///
         /// <p>
         /// </p>
@@ -3458,17 +3847,15 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
         ///
         /// <p>A list of filter rules that determines which files to exclude from a task. The list
-        /// should contain a single filter string that consists of the patterns to exclude. The
-        /// patterns are delimited by "|" (that is, a pipe), for example,
-        /// <code>"/folder1|/folder2"</code>. </p>
+        /// contains a single filter string that consists of the patterns to exclude. The patterns are
+        /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         pub fn excludes(mut self, inp: impl Into<crate::model::FilterRule>) -> Self {
             self.inner = self.inner.excludes(inp);
             self
         }
         /// <p>A list of filter rules that determines which files to exclude from a task. The list
-        /// should contain a single filter string that consists of the patterns to exclude. The
-        /// patterns are delimited by "|" (that is, a pipe), for example,
-        /// <code>"/folder1|/folder2"</code>. </p>
+        /// contains a single filter string that consists of the patterns to exclude. The patterns are
+        /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         pub fn set_excludes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -3728,6 +4115,251 @@ pub mod fluent_builders {
         /// <p>The name that you want to use to configure the agent.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateLocationHdfs`.
+    ///
+    /// <p>Updates some parameters of a previously created location for a Hadoop Distributed File
+    /// System cluster.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateLocationHdfs<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_location_hdfs_input::Builder,
+    }
+    impl<C, M, R> UpdateLocationHdfs<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateLocationHdfs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateLocationHdfsOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateLocationHdfsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateLocationHdfsInputOperationOutputAlias,
+                crate::output::UpdateLocationHdfsOutput,
+                crate::error::UpdateLocationHdfsError,
+                crate::input::UpdateLocationHdfsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
+        pub fn location_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
+        pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_location_arn(input);
+            self
+        }
+        /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
+        /// data to the HDFS cluster.</p>
+        pub fn subdirectory(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(inp);
+            self
+        }
+        /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
+        /// data to the HDFS cluster.</p>
+        pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_subdirectory(input);
+            self
+        }
+        /// Appends an item to `NameNodes`.
+        ///
+        /// To override the contents of this collection use [`set_name_nodes`](Self::set_name_nodes).
+        ///
+        /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
+        /// opening, closing, and renaming files and directories. The NameNode contains the information to
+        /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
+        pub fn name_nodes(mut self, inp: impl Into<crate::model::HdfsNameNode>) -> Self {
+            self.inner = self.inner.name_nodes(inp);
+            self
+        }
+        /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
+        /// opening, closing, and renaming files and directories. The NameNode contains the information to
+        /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
+        pub fn set_name_nodes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
+        ) -> Self {
+            self.inner = self.inner.set_name_nodes(input);
+            self
+        }
+        /// <p>The size of the data blocks to write into the HDFS cluster. </p>
+        pub fn block_size(mut self, inp: i32) -> Self {
+            self.inner = self.inner.block_size(inp);
+            self
+        }
+        /// <p>The size of the data blocks to write into the HDFS cluster. </p>
+        pub fn set_block_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_block_size(input);
+            self
+        }
+        /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
+        pub fn replication_factor(mut self, inp: i32) -> Self {
+            self.inner = self.inner.replication_factor(inp);
+            self
+        }
+        /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
+        pub fn set_replication_factor(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_replication_factor(input);
+            self
+        }
+        /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
+        pub fn kms_key_provider_uri(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_provider_uri(inp);
+            self
+        }
+        /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
+        pub fn set_kms_key_provider_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_kms_key_provider_uri(input);
+            self
+        }
+        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
+        /// and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS)
+        /// cluster. </p>
+        pub fn qop_configuration(mut self, inp: crate::model::QopConfiguration) -> Self {
+            self.inner = self.inner.qop_configuration(inp);
+            self
+        }
+        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
+        /// and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS)
+        /// cluster. </p>
+        pub fn set_qop_configuration(
+            mut self,
+            input: std::option::Option<crate::model::QopConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_qop_configuration(input);
+            self
+        }
+        /// <p>The type of authentication used to determine the identity of the user. </p>
+        pub fn authentication_type(mut self, inp: crate::model::HdfsAuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(inp);
+            self
+        }
+        /// <p>The type of authentication used to determine the identity of the user. </p>
+        pub fn set_authentication_type(
+            mut self,
+            input: std::option::Option<crate::model::HdfsAuthenticationType>,
+        ) -> Self {
+            self.inner = self.inner.set_authentication_type(input);
+            self
+        }
+        /// <p>The user name used to identify the client on the host operating system.</p>
+        pub fn simple_user(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.simple_user(inp);
+            self
+        }
+        /// <p>The user name used to identify the client on the host operating system.</p>
+        pub fn set_simple_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_simple_user(input);
+            self
+        }
+        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
+        pub fn kerberos_principal(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kerberos_principal(inp);
+            self
+        }
+        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
+        pub fn set_kerberos_principal(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_kerberos_principal(input);
+            self
+        }
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
+        /// principal and the encrypted keys. You can load the keytab from a file by providing the file's
+        /// address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the
+        /// base64-encoded text.</p>
+        pub fn kerberos_keytab(mut self, inp: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.kerberos_keytab(inp);
+            self
+        }
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
+        /// principal and the encrypted keys. You can load the keytab from a file by providing the file's
+        /// address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the
+        /// base64-encoded text.</p>
+        pub fn set_kerberos_keytab(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.inner = self.inner.set_kerberos_keytab(input);
+            self
+        }
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
+        /// can load the <code>krb5.conf</code> file by providing the file's address. If you're using the
+        /// AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded
+        /// text.</p>
+        pub fn kerberos_krb5_conf(mut self, inp: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.kerberos_krb5_conf(inp);
+            self
+        }
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
+        /// can load the <code>krb5.conf</code> file by providing the file's address. If you're using the
+        /// AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded
+        /// text.</p>
+        pub fn set_kerberos_krb5_conf(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.inner = self.inner.set_kerberos_krb5_conf(input);
+            self
+        }
+        /// Appends an item to `AgentArns`.
+        ///
+        /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
+        ///
+        /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+        pub fn agent_arns(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_arns(inp);
+            self
+        }
+        /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+        pub fn set_agent_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_agent_arns(input);
             self
         }
     }
@@ -4343,8 +4975,7 @@ pub mod fluent_builders {
         ///
         /// <p>A list of filter rules that determines which files to exclude from a task. The list should
         /// contain a single filter string that consists of the patterns to exclude. The patterns are
-        /// delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
-        /// </p>
+        /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         /// <p>
         /// </p>
         pub fn excludes(mut self, inp: impl Into<crate::model::FilterRule>) -> Self {
@@ -4353,8 +4984,7 @@ pub mod fluent_builders {
         }
         /// <p>A list of filter rules that determines which files to exclude from a task. The list should
         /// contain a single filter string that consists of the patterns to exclude. The patterns are
-        /// delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
-        /// </p>
+        /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         /// <p>
         /// </p>
         pub fn set_excludes(
@@ -4393,14 +5023,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource name of the CloudWatch
-        /// LogGroup.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log
+        /// group.</p>
         pub fn cloud_watch_log_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cloud_watch_log_group_arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource name of the CloudWatch
-        /// LogGroup.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log
+        /// group.</p>
         pub fn set_cloud_watch_log_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4413,17 +5043,15 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
         /// <p>A list of filter rules that determines which files to include when running a task. The
-        /// pattern should contain a single filter string that consists of the patterns to include. The
-        /// patterns are delimited by "|" (that is, a pipe). For example:
-        /// <code>"/folder1|/folder2</code>"</p>
+        /// pattern contains a single filter string that consists of the patterns to include. The patterns
+        /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         pub fn includes(mut self, inp: impl Into<crate::model::FilterRule>) -> Self {
             self.inner = self.inner.includes(inp);
             self
         }
         /// <p>A list of filter rules that determines which files to include when running a task. The
-        /// pattern should contain a single filter string that consists of the patterns to include. The
-        /// patterns are delimited by "|" (that is, a pipe). For example:
-        /// <code>"/folder1|/folder2</code>"</p>
+        /// pattern contains a single filter string that consists of the patterns to include. The patterns
+        /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -4547,7 +5175,13 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::new(conn)
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -4570,7 +5204,13 @@ impl
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
-        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
+        let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl.clone();
+        let mut client = aws_hyper::Client::https()
+            .with_retry_config(retry_config.into())
+            .with_timeout_config(timeout_config);
+
+        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

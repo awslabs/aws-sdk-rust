@@ -247,9 +247,9 @@ pub struct TunnelSummary {
     /// <p>A description of the tunnel.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The time the tunnel was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the tunnel was last updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TunnelSummary {
     /// <p>The unique alpha-numeric identifier for the tunnel.</p>
@@ -271,11 +271,11 @@ impl TunnelSummary {
         self.description.as_deref()
     }
     /// <p>The time the tunnel was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time the tunnel was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -301,8 +301,8 @@ pub mod tunnel_summary {
         pub(crate) tunnel_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::TunnelStatus>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The unique alpha-numeric identifier for the tunnel.</p>
@@ -353,27 +353,27 @@ pub mod tunnel_summary {
             self
         }
         /// <p>The time the tunnel was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time the tunnel was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time the tunnel was last updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The time the tunnel was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -480,9 +480,9 @@ pub struct Tunnel {
     /// <p>A list of tag metadata associated with the secure tunnel.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The time when the tunnel was created.</p>
-    pub created_at: std::option::Option<aws_smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the tunnel was updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Tunnel {
     /// <p>A unique alpha-numeric ID that identifies a tunnel.</p>
@@ -528,11 +528,11 @@ impl Tunnel {
         self.tags.as_deref()
     }
     /// <p>The time when the tunnel was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The last time the tunnel was updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -571,8 +571,8 @@ pub mod tunnel {
         pub(crate) destination_config: std::option::Option<crate::model::DestinationConfig>,
         pub(crate) timeout_config: std::option::Option<crate::model::TimeoutConfig>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A unique alpha-numeric ID that identifies a tunnel.</p>
@@ -701,27 +701,27 @@ pub mod tunnel {
             self
         }
         /// <p>The time when the tunnel was created.</p>
-        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
         /// <p>The time when the tunnel was created.</p>
         pub fn set_created_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The last time the tunnel was updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The last time the tunnel was updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -759,7 +759,7 @@ pub struct ConnectionState {
     /// <code>DISCONNECTED</code>.</p>
     pub status: std::option::Option<crate::model::ConnectionStatus>,
     /// <p>The last time the connection status was updated.</p>
-    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ConnectionState {
     /// <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code> and
@@ -768,7 +768,7 @@ impl ConnectionState {
         self.status.as_ref()
     }
     /// <p>The last time the connection status was updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -787,7 +787,7 @@ pub mod connection_state {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ConnectionStatus>,
-        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code> and
@@ -806,14 +806,14 @@ pub mod connection_state {
             self
         }
         /// <p>The last time the connection status was updated.</p>
-        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
         /// <p>The last time the connection status was updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_updated_at = input;
             self

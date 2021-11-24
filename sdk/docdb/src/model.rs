@@ -21,7 +21,7 @@ pub struct DbCluster {
     pub percent_progress: std::option::Option<std::string::String>,
     /// <p>The earliest time to which a database can be restored with point-in-time
     /// restore.</p>
-    pub earliest_restorable_time: std::option::Option<aws_smithy_types::Instant>,
+    pub earliest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the connection endpoint for the primary instance of the cluster.</p>
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The reader endpoint for the cluster. The reader endpoint for a cluster load balances connections across the Amazon DocumentDB replicas that are available in a cluster. As clients request new connections to the reader endpoint, Amazon DocumentDB distributes the connection requests among the Amazon DocumentDB replicas in the cluster. This functionality can help balance your read workload across multiple Amazon DocumentDB replicas in your cluster. </p>
@@ -35,7 +35,7 @@ pub struct DbCluster {
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>Specifies the latest time to which a database can be restored with point-in-time
     /// restore.</p>
-    pub latest_restorable_time: std::option::Option<aws_smithy_types::Instant>,
+    pub latest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the port that the database engine is listening on.</p>
     pub port: std::option::Option<i32>,
     /// <p>Contains the master user name for the cluster.</p>
@@ -72,7 +72,7 @@ pub struct DbCluster {
     pub associated_roles: std::option::Option<std::vec::Vec<crate::model::DbClusterRole>>,
     /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time
     /// (UTC).</p>
-    pub cluster_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of log types that this cluster is configured to export to Amazon CloudWatch
     /// Logs.</p>
     pub enabled_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -115,7 +115,7 @@ impl DbCluster {
     }
     /// <p>The earliest time to which a database can be restored with point-in-time
     /// restore.</p>
-    pub fn earliest_restorable_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn earliest_restorable_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.earliest_restorable_time.as_ref()
     }
     /// <p>Specifies the connection endpoint for the primary instance of the cluster.</p>
@@ -141,7 +141,7 @@ impl DbCluster {
     }
     /// <p>Specifies the latest time to which a database can be restored with point-in-time
     /// restore.</p>
-    pub fn latest_restorable_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn latest_restorable_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_restorable_time.as_ref()
     }
     /// <p>Specifies the port that the database engine is listening on.</p>
@@ -209,7 +209,7 @@ impl DbCluster {
     }
     /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time
     /// (UTC).</p>
-    pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.cluster_create_time.as_ref()
     }
     /// <p>A list of log types that this cluster is configured to export to Amazon CloudWatch
@@ -287,13 +287,13 @@ pub mod db_cluster {
         pub(crate) db_subnet_group: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) percent_progress: std::option::Option<std::string::String>,
-        pub(crate) earliest_restorable_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) earliest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) endpoint: std::option::Option<std::string::String>,
         pub(crate) reader_endpoint: std::option::Option<std::string::String>,
         pub(crate) multi_az: std::option::Option<bool>,
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
-        pub(crate) latest_restorable_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) latest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) port: std::option::Option<i32>,
         pub(crate) master_username: std::option::Option<std::string::String>,
         pub(crate) preferred_backup_window: std::option::Option<std::string::String>,
@@ -312,7 +312,7 @@ pub mod db_cluster {
         pub(crate) db_cluster_arn: std::option::Option<std::string::String>,
         pub(crate) associated_roles:
             std::option::Option<std::vec::Vec<crate::model::DbClusterRole>>,
-        pub(crate) cluster_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) enabled_cloudwatch_logs_exports:
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) deletion_protection: std::option::Option<bool>,
@@ -415,7 +415,7 @@ pub mod db_cluster {
         }
         /// <p>The earliest time to which a database can be restored with point-in-time
         /// restore.</p>
-        pub fn earliest_restorable_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn earliest_restorable_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.earliest_restorable_time = Some(input);
             self
         }
@@ -423,7 +423,7 @@ pub mod db_cluster {
         /// restore.</p>
         pub fn set_earliest_restorable_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.earliest_restorable_time = input;
             self
@@ -488,7 +488,7 @@ pub mod db_cluster {
         }
         /// <p>Specifies the latest time to which a database can be restored with point-in-time
         /// restore.</p>
-        pub fn latest_restorable_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn latest_restorable_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_restorable_time = Some(input);
             self
         }
@@ -496,7 +496,7 @@ pub mod db_cluster {
         /// restore.</p>
         pub fn set_latest_restorable_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.latest_restorable_time = input;
             self
@@ -722,7 +722,7 @@ pub mod db_cluster {
         }
         /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time
         /// (UTC).</p>
-        pub fn cluster_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn cluster_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.cluster_create_time = Some(input);
             self
         }
@@ -730,7 +730,7 @@ pub mod db_cluster {
         /// (UTC).</p>
         pub fn set_cluster_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.cluster_create_time = input;
             self
@@ -2222,7 +2222,7 @@ pub struct DbInstance {
     /// <p>Specifies the connection endpoint.</p>
     pub endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>Provides the date and time that the instance was created.</p>
-    pub instance_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub instance_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies the daily time range during which automated backups are created if
     /// automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.
     /// </p>
@@ -2243,7 +2243,7 @@ pub struct DbInstance {
     pub pending_modified_values: std::option::Option<crate::model::PendingModifiedValues>,
     /// <p>Specifies the latest time to which a database can be restored with point-in-time
     /// restore.</p>
-    pub latest_restorable_time: std::option::Option<aws_smithy_types::Instant>,
+    pub latest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the database engine version.</p>
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
@@ -2298,7 +2298,7 @@ impl DbInstance {
         self.endpoint.as_ref()
     }
     /// <p>Provides the date and time that the instance was created.</p>
-    pub fn instance_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn instance_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.instance_create_time.as_ref()
     }
     /// <p> Specifies the daily time range during which automated backups are created if
@@ -2338,7 +2338,7 @@ impl DbInstance {
     }
     /// <p>Specifies the latest time to which a database can be restored with point-in-time
     /// restore.</p>
-    pub fn latest_restorable_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn latest_restorable_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_restorable_time.as_ref()
     }
     /// <p>Indicates the database engine version.</p>
@@ -2448,7 +2448,7 @@ pub mod db_instance {
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) db_instance_status: std::option::Option<std::string::String>,
         pub(crate) endpoint: std::option::Option<crate::model::Endpoint>,
-        pub(crate) instance_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) instance_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) preferred_backup_window: std::option::Option<std::string::String>,
         pub(crate) backup_retention_period: std::option::Option<i32>,
         pub(crate) vpc_security_groups:
@@ -2458,7 +2458,7 @@ pub mod db_instance {
         pub(crate) preferred_maintenance_window: std::option::Option<std::string::String>,
         pub(crate) pending_modified_values:
             std::option::Option<crate::model::PendingModifiedValues>,
-        pub(crate) latest_restorable_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) latest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
         pub(crate) auto_minor_version_upgrade: std::option::Option<bool>,
         pub(crate) publicly_accessible: std::option::Option<bool>,
@@ -2537,14 +2537,14 @@ pub mod db_instance {
             self
         }
         /// <p>Provides the date and time that the instance was created.</p>
-        pub fn instance_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn instance_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.instance_create_time = Some(input);
             self
         }
         /// <p>Provides the date and time that the instance was created.</p>
         pub fn set_instance_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.instance_create_time = input;
             self
@@ -2660,7 +2660,7 @@ pub mod db_instance {
         }
         /// <p>Specifies the latest time to which a database can be restored with point-in-time
         /// restore.</p>
-        pub fn latest_restorable_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn latest_restorable_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_restorable_time = Some(input);
             self
         }
@@ -2668,7 +2668,7 @@ pub mod db_instance {
         /// restore.</p>
         pub fn set_latest_restorable_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.latest_restorable_time = input;
             self
@@ -4400,17 +4400,17 @@ pub struct PendingMaintenanceAction {
     /// <p>The date of the maintenance window when the action is applied. The maintenance action
     /// is applied to the resource during its first maintenance window after this date. If this
     /// date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
-    pub auto_applied_after_date: std::option::Option<aws_smithy_types::Instant>,
+    pub auto_applied_after_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the maintenance action is automatically applied. The maintenance action
     /// is applied to the resource on this date regardless of the maintenance window for the
     /// resource. If this date is specified, any <code>immediate</code> opt-in requests are
     /// ignored.</p>
-    pub forced_apply_date: std::option::Option<aws_smithy_types::Instant>,
+    pub forced_apply_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
     pub opt_in_status: std::option::Option<std::string::String>,
     /// <p>The effective date when the pending maintenance action is applied to the
     /// resource.</p>
-    pub current_apply_date: std::option::Option<aws_smithy_types::Instant>,
+    pub current_apply_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A description providing more detail about the maintenance action.</p>
     pub description: std::option::Option<std::string::String>,
 }
@@ -4422,14 +4422,14 @@ impl PendingMaintenanceAction {
     /// <p>The date of the maintenance window when the action is applied. The maintenance action
     /// is applied to the resource during its first maintenance window after this date. If this
     /// date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
-    pub fn auto_applied_after_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn auto_applied_after_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.auto_applied_after_date.as_ref()
     }
     /// <p>The date when the maintenance action is automatically applied. The maintenance action
     /// is applied to the resource on this date regardless of the maintenance window for the
     /// resource. If this date is specified, any <code>immediate</code> opt-in requests are
     /// ignored.</p>
-    pub fn forced_apply_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn forced_apply_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.forced_apply_date.as_ref()
     }
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
@@ -4438,7 +4438,7 @@ impl PendingMaintenanceAction {
     }
     /// <p>The effective date when the pending maintenance action is applied to the
     /// resource.</p>
-    pub fn current_apply_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn current_apply_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.current_apply_date.as_ref()
     }
     /// <p>A description providing more detail about the maintenance action.</p>
@@ -4465,10 +4465,10 @@ pub mod pending_maintenance_action {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<std::string::String>,
-        pub(crate) auto_applied_after_date: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) forced_apply_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) auto_applied_after_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) forced_apply_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) opt_in_status: std::option::Option<std::string::String>,
-        pub(crate) current_apply_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) current_apply_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4485,7 +4485,7 @@ pub mod pending_maintenance_action {
         /// <p>The date of the maintenance window when the action is applied. The maintenance action
         /// is applied to the resource during its first maintenance window after this date. If this
         /// date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
-        pub fn auto_applied_after_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn auto_applied_after_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.auto_applied_after_date = Some(input);
             self
         }
@@ -4494,7 +4494,7 @@ pub mod pending_maintenance_action {
         /// date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
         pub fn set_auto_applied_after_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.auto_applied_after_date = input;
             self
@@ -4503,7 +4503,7 @@ pub mod pending_maintenance_action {
         /// is applied to the resource on this date regardless of the maintenance window for the
         /// resource. If this date is specified, any <code>immediate</code> opt-in requests are
         /// ignored.</p>
-        pub fn forced_apply_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn forced_apply_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.forced_apply_date = Some(input);
             self
         }
@@ -4513,7 +4513,7 @@ pub mod pending_maintenance_action {
         /// ignored.</p>
         pub fn set_forced_apply_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.forced_apply_date = input;
             self
@@ -4533,7 +4533,7 @@ pub mod pending_maintenance_action {
         }
         /// <p>The effective date when the pending maintenance action is applied to the
         /// resource.</p>
-        pub fn current_apply_date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn current_apply_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.current_apply_date = Some(input);
             self
         }
@@ -4541,7 +4541,7 @@ pub mod pending_maintenance_action {
         /// resource.</p>
         pub fn set_current_apply_date(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.current_apply_date = input;
             self
@@ -4760,7 +4760,7 @@ pub struct Event {
     /// <p>Specifies the category for the event.</p>
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the date and time of the event.</p>
-    pub date: std::option::Option<aws_smithy_types::Instant>,
+    pub date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for the event.</p>
     pub source_arn: std::option::Option<std::string::String>,
 }
@@ -4782,7 +4782,7 @@ impl Event {
         self.event_categories.as_deref()
     }
     /// <p>Specifies the date and time of the event.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the event.</p>
@@ -4812,7 +4812,7 @@ pub mod event {
         pub(crate) source_type: std::option::Option<crate::model::SourceType>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4872,12 +4872,12 @@ pub mod event {
             self
         }
         /// <p>Specifies the date and time of the event.</p>
-        pub fn date(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date = Some(input);
             self
         }
         /// <p>Specifies the date and time of the event.</p>
-        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
+        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.date = input;
             self
         }
@@ -5577,7 +5577,7 @@ pub struct DbClusterSnapshot {
     /// was created from.</p>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>Provides the time when the snapshot was taken, in UTC.</p>
-    pub snapshot_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub snapshot_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the name of the database engine.</p>
     pub engine: std::option::Option<std::string::String>,
     /// <p>Specifies the status of this cluster snapshot.</p>
@@ -5590,7 +5590,7 @@ pub struct DbClusterSnapshot {
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time
     /// (UTC).</p>
-    pub cluster_create_time: std::option::Option<aws_smithy_types::Instant>,
+    pub cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides the master user name for the cluster snapshot.</p>
     pub master_username: std::option::Option<std::string::String>,
     /// <p>Provides the version of the database engine for this cluster snapshot.</p>
@@ -5625,7 +5625,7 @@ impl DbClusterSnapshot {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>Provides the time when the snapshot was taken, in UTC.</p>
-    pub fn snapshot_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn snapshot_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.snapshot_create_time.as_ref()
     }
     /// <p>Specifies the name of the database engine.</p>
@@ -5648,7 +5648,7 @@ impl DbClusterSnapshot {
     }
     /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time
     /// (UTC).</p>
-    pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.cluster_create_time.as_ref()
     }
     /// <p>Provides the master user name for the cluster snapshot.</p>
@@ -5723,12 +5723,12 @@ pub mod db_cluster_snapshot {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
-        pub(crate) snapshot_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) snapshot_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) port: std::option::Option<i32>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
-        pub(crate) cluster_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) master_username: std::option::Option<std::string::String>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
         pub(crate) snapshot_type: std::option::Option<std::string::String>,
@@ -5792,14 +5792,14 @@ pub mod db_cluster_snapshot {
             self
         }
         /// <p>Provides the time when the snapshot was taken, in UTC.</p>
-        pub fn snapshot_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn snapshot_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.snapshot_create_time = Some(input);
             self
         }
         /// <p>Provides the time when the snapshot was taken, in UTC.</p>
         pub fn set_snapshot_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.snapshot_create_time = input;
             self
@@ -5850,7 +5850,7 @@ pub mod db_cluster_snapshot {
         }
         /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time
         /// (UTC).</p>
-        pub fn cluster_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn cluster_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.cluster_create_time = Some(input);
             self
         }
@@ -5858,7 +5858,7 @@ pub mod db_cluster_snapshot {
         /// (UTC).</p>
         pub fn set_cluster_create_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.cluster_create_time = input;
             self
@@ -6151,11 +6151,11 @@ pub struct Certificate {
     /// <p>The starting date-time from which the certificate is valid.</p>
     /// <p>Example: <code>2019-07-31T17:57:09Z</code>
     /// </p>
-    pub valid_from: std::option::Option<aws_smithy_types::Instant>,
+    pub valid_from: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date-time after which the certificate is no longer valid.</p>
     /// <p>Example: <code>2024-07-31T17:57:09Z</code>
     /// </p>
-    pub valid_till: std::option::Option<aws_smithy_types::Instant>,
+    pub valid_till: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
     /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code>
     /// </p>
@@ -6181,13 +6181,13 @@ impl Certificate {
     /// <p>The starting date-time from which the certificate is valid.</p>
     /// <p>Example: <code>2019-07-31T17:57:09Z</code>
     /// </p>
-    pub fn valid_from(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn valid_from(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.valid_from.as_ref()
     }
     /// <p>The date-time after which the certificate is no longer valid.</p>
     /// <p>Example: <code>2024-07-31T17:57:09Z</code>
     /// </p>
-    pub fn valid_till(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn valid_till(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.valid_till.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
@@ -6218,8 +6218,8 @@ pub mod certificate {
         pub(crate) certificate_identifier: std::option::Option<std::string::String>,
         pub(crate) certificate_type: std::option::Option<std::string::String>,
         pub(crate) thumbprint: std::option::Option<std::string::String>,
-        pub(crate) valid_from: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) valid_till: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) valid_from: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) valid_till: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6270,7 +6270,7 @@ pub mod certificate {
         /// <p>The starting date-time from which the certificate is valid.</p>
         /// <p>Example: <code>2019-07-31T17:57:09Z</code>
         /// </p>
-        pub fn valid_from(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn valid_from(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.valid_from = Some(input);
             self
         }
@@ -6279,7 +6279,7 @@ pub mod certificate {
         /// </p>
         pub fn set_valid_from(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.valid_from = input;
             self
@@ -6287,7 +6287,7 @@ pub mod certificate {
         /// <p>The date-time after which the certificate is no longer valid.</p>
         /// <p>Example: <code>2024-07-31T17:57:09Z</code>
         /// </p>
-        pub fn valid_till(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn valid_till(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.valid_till = Some(input);
             self
         }
@@ -6296,7 +6296,7 @@ pub mod certificate {
         /// </p>
         pub fn set_valid_till(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.valid_till = input;
             self

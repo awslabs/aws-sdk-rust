@@ -261,7 +261,7 @@ pub fn serialize_structure_crate_input_notify_application_state_input(
     if let Some(var_42) = &input.update_date_time {
         object
             .key("UpdateDateTime")
-            .instant(var_42, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_42, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if input.dry_run {
         object.key("DryRun").boolean(input.dry_run);
@@ -287,7 +287,7 @@ pub fn serialize_structure_crate_input_notify_migration_task_state_input(
     if let Some(var_47) = &input.update_date_time {
         object
             .key("UpdateDateTime")
-            .instant(var_47, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_47, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     {
         object.key("NextUpdateSeconds").number(

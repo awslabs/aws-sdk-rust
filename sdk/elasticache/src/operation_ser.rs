@@ -1434,12 +1434,12 @@ pub fn serialize_operation_crate_operation_describe_events(
     #[allow(unused_mut)]
     let mut scope_417 = writer.prefix("StartTime");
     if let Some(var_418) = &input.start_time {
-        scope_417.instant(var_418, aws_smithy_types::instant::Format::DateTime);
+        scope_417.date_time(var_418, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_419 = writer.prefix("EndTime");
     if let Some(var_420) = &input.end_time {
-        scope_419.instant(var_420, aws_smithy_types::instant::Format::DateTime);
+        scope_419.date_time(var_420, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
     let mut scope_421 = writer.prefix("Duration");

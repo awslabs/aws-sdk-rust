@@ -260,11 +260,11 @@ impl UpdateContainerInstancesStateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContainerAgentOutput {
-    /// <p>The container instance for which the container agent was updated.</p>
+    /// <p>The container instance that the container agent was updated for.</p>
     pub container_instance: std::option::Option<crate::model::ContainerInstance>,
 }
 impl UpdateContainerAgentOutput {
-    /// <p>The container instance for which the container agent was updated.</p>
+    /// <p>The container instance that the container agent was updated for.</p>
     pub fn container_instance(&self) -> std::option::Option<&crate::model::ContainerInstance> {
         self.container_instance.as_ref()
     }
@@ -285,12 +285,12 @@ pub mod update_container_agent_output {
         pub(crate) container_instance: std::option::Option<crate::model::ContainerInstance>,
     }
     impl Builder {
-        /// <p>The container instance for which the container agent was updated.</p>
+        /// <p>The container instance that the container agent was updated for.</p>
         pub fn container_instance(mut self, input: crate::model::ContainerInstance) -> Self {
             self.container_instance = Some(input);
             self
         }
-        /// <p>The container instance for which the container agent was updated.</p>
+        /// <p>The container instance that the container agent was updated for.</p>
         pub fn set_container_instance(
             mut self,
             input: std::option::Option<crate::model::ContainerInstance>,
@@ -1685,7 +1685,7 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicesOutput {
-    /// <p>The list of full ARN entries for each service associated with the specified
+    /// <p>The list of full ARN entries for each service that's associated with the specified
     /// cluster.</p>
     pub service_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListServices</code>
@@ -1696,7 +1696,7 @@ pub struct ListServicesOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServicesOutput {
-    /// <p>The list of full ARN entries for each service associated with the specified
+    /// <p>The list of full ARN entries for each service that's associated with the specified
     /// cluster.</p>
     pub fn service_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.service_arns.as_deref()
@@ -1732,7 +1732,7 @@ pub mod list_services_output {
         ///
         /// To override the contents of this collection use [`set_service_arns`](Self::set_service_arns).
         ///
-        /// <p>The list of full ARN entries for each service associated with the specified
+        /// <p>The list of full ARN entries for each service that's associated with the specified
         /// cluster.</p>
         pub fn service_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.service_arns.unwrap_or_default();
@@ -1740,7 +1740,7 @@ pub mod list_services_output {
             self.service_arns = Some(v);
             self
         }
-        /// <p>The list of full ARN entries for each service associated with the specified
+        /// <p>The list of full ARN entries for each service that's associated with the specified
         /// cluster.</p>
         pub fn set_service_arns(
             mut self,
@@ -1889,7 +1889,7 @@ impl ListContainerInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersOutput {
-    /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster associated with your
+    /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's associated with your
     /// account.</p>
     pub cluster_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code>
@@ -1900,7 +1900,7 @@ pub struct ListClustersOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersOutput {
-    /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster associated with your
+    /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's associated with your
     /// account.</p>
     pub fn cluster_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.cluster_arns.as_deref()
@@ -1936,7 +1936,7 @@ pub mod list_clusters_output {
         ///
         /// To override the contents of this collection use [`set_cluster_arns`](Self::set_cluster_arns).
         ///
-        /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster associated with your
+        /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's associated with your
         /// account.</p>
         pub fn cluster_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cluster_arns.unwrap_or_default();
@@ -1944,7 +1944,7 @@ pub mod list_clusters_output {
             self.cluster_arns = Some(v);
             self
         }
-        /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster associated with your
+        /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's associated with your
         /// account.</p>
         pub fn set_cluster_arns(
             mut self,
@@ -2193,9 +2193,9 @@ pub struct ExecuteCommandOutput {
     pub container_arn: std::option::Option<std::string::String>,
     /// <p>The name of the container.</p>
     pub container_name: std::option::Option<std::string::String>,
-    /// <p>Whether or not the execute command session is running in interactive mode. Amazon ECS only
-    /// supports initiating interactive sessions, so you must specify <code>true</code> for this
-    /// value.</p>
+    /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS
+    /// only supports initiating interactive sessions, so you must specify <code>true</code> for
+    /// this value.</p>
     pub interactive: bool,
     /// <p>The details of the SSM session that was created for this instance of
     /// execute-command.</p>
@@ -2216,9 +2216,9 @@ impl ExecuteCommandOutput {
     pub fn container_name(&self) -> std::option::Option<&str> {
         self.container_name.as_deref()
     }
-    /// <p>Whether or not the execute command session is running in interactive mode. Amazon ECS only
-    /// supports initiating interactive sessions, so you must specify <code>true</code> for this
-    /// value.</p>
+    /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS
+    /// only supports initiating interactive sessions, so you must specify <code>true</code> for
+    /// this value.</p>
     pub fn interactive(&self) -> bool {
         self.interactive
     }
@@ -2294,16 +2294,16 @@ pub mod execute_command_output {
             self.container_name = input;
             self
         }
-        /// <p>Whether or not the execute command session is running in interactive mode. Amazon ECS only
-        /// supports initiating interactive sessions, so you must specify <code>true</code> for this
-        /// value.</p>
+        /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS
+        /// only supports initiating interactive sessions, so you must specify <code>true</code> for
+        /// this value.</p>
         pub fn interactive(mut self, input: bool) -> Self {
             self.interactive = Some(input);
             self
         }
-        /// <p>Whether or not the execute command session is running in interactive mode. Amazon ECS only
-        /// supports initiating interactive sessions, so you must specify <code>true</code> for this
-        /// value.</p>
+        /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS
+        /// only supports initiating interactive sessions, so you must specify <code>true</code> for
+        /// this value.</p>
         pub fn set_interactive(mut self, input: std::option::Option<bool>) -> Self {
             self.interactive = input;
             self
@@ -2614,9 +2614,8 @@ impl DescribeTasksOutput {
 pub struct DescribeTaskDefinitionOutput {
     /// <p>The full task definition description.</p>
     pub task_definition: std::option::Option<crate::model::TaskDefinition>,
-    /// <p>The metadata that is applied to the task definition to help you categorize and
-    /// organize them. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// <p>The metadata that's applied to the task definition to help you categorize and organize
+    /// them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -2655,9 +2654,8 @@ impl DescribeTaskDefinitionOutput {
     pub fn task_definition(&self) -> std::option::Option<&crate::model::TaskDefinition> {
         self.task_definition.as_ref()
     }
-    /// <p>The metadata that is applied to the task definition to help you categorize and
-    /// organize them. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// <p>The metadata that's applied to the task definition to help you categorize and organize
+    /// them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -2728,9 +2726,8 @@ pub mod describe_task_definition_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata that is applied to the task definition to help you categorize and
-        /// organize them. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>The metadata that's applied to the task definition to help you categorize and organize
+        /// them. Each tag consists of a key and an optional value. You define both.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
         /// <li>
@@ -2768,9 +2765,8 @@ pub mod describe_task_definition_output {
             self.tags = Some(v);
             self
         }
-        /// <p>The metadata that is applied to the task definition to help you categorize and
-        /// organize them. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>The metadata that's applied to the task definition to help you categorize and organize
+        /// them. Each tag consists of a key and an optional value. You define both.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
         /// <li>
@@ -3754,12 +3750,12 @@ impl CreateTaskSetOutput {
 pub struct CreateServiceOutput {
     /// <p>The full description of your service following the create call.</p>
     /// <p>A service will return either a <code>capacityProviderStrategy</code> or
-    /// <code>launchType</code> parameter, but not both, depending on which one was
-    /// specified during creation.</p>
+    /// <code>launchType</code> parameter, but not both, depending where one was specified
+    /// when it was created.</p>
     /// <p>If a service is using the <code>ECS</code> deployment controller, the
     /// <code>deploymentController</code> and <code>taskSets</code> parameters will not be
     /// returned.</p>
-    /// <p>If the service is using the <code>CODE_DEPLOY</code> deployment controller, the
+    /// <p>if the service uses the <code>CODE_DEPLOY</code> deployment controller, the
     /// <code>deploymentController</code>, <code>taskSets</code> and
     /// <code>deployments</code> parameters will be returned, however the
     /// <code>deployments</code> parameter will be an empty list.</p>
@@ -3768,12 +3764,12 @@ pub struct CreateServiceOutput {
 impl CreateServiceOutput {
     /// <p>The full description of your service following the create call.</p>
     /// <p>A service will return either a <code>capacityProviderStrategy</code> or
-    /// <code>launchType</code> parameter, but not both, depending on which one was
-    /// specified during creation.</p>
+    /// <code>launchType</code> parameter, but not both, depending where one was specified
+    /// when it was created.</p>
     /// <p>If a service is using the <code>ECS</code> deployment controller, the
     /// <code>deploymentController</code> and <code>taskSets</code> parameters will not be
     /// returned.</p>
-    /// <p>If the service is using the <code>CODE_DEPLOY</code> deployment controller, the
+    /// <p>if the service uses the <code>CODE_DEPLOY</code> deployment controller, the
     /// <code>deploymentController</code>, <code>taskSets</code> and
     /// <code>deployments</code> parameters will be returned, however the
     /// <code>deployments</code> parameter will be an empty list.</p>
@@ -3799,12 +3795,12 @@ pub mod create_service_output {
     impl Builder {
         /// <p>The full description of your service following the create call.</p>
         /// <p>A service will return either a <code>capacityProviderStrategy</code> or
-        /// <code>launchType</code> parameter, but not both, depending on which one was
-        /// specified during creation.</p>
+        /// <code>launchType</code> parameter, but not both, depending where one was specified
+        /// when it was created.</p>
         /// <p>If a service is using the <code>ECS</code> deployment controller, the
         /// <code>deploymentController</code> and <code>taskSets</code> parameters will not be
         /// returned.</p>
-        /// <p>If the service is using the <code>CODE_DEPLOY</code> deployment controller, the
+        /// <p>if the service uses the <code>CODE_DEPLOY</code> deployment controller, the
         /// <code>deploymentController</code>, <code>taskSets</code> and
         /// <code>deployments</code> parameters will be returned, however the
         /// <code>deployments</code> parameter will be an empty list.</p>
@@ -3814,12 +3810,12 @@ pub mod create_service_output {
         }
         /// <p>The full description of your service following the create call.</p>
         /// <p>A service will return either a <code>capacityProviderStrategy</code> or
-        /// <code>launchType</code> parameter, but not both, depending on which one was
-        /// specified during creation.</p>
+        /// <code>launchType</code> parameter, but not both, depending where one was specified
+        /// when it was created.</p>
         /// <p>If a service is using the <code>ECS</code> deployment controller, the
         /// <code>deploymentController</code> and <code>taskSets</code> parameters will not be
         /// returned.</p>
-        /// <p>If the service is using the <code>CODE_DEPLOY</code> deployment controller, the
+        /// <p>if the service uses the <code>CODE_DEPLOY</code> deployment controller, the
         /// <code>deploymentController</code>, <code>taskSets</code> and
         /// <code>deployments</code> parameters will be returned, however the
         /// <code>deployments</code> parameter will be an empty list.</p>

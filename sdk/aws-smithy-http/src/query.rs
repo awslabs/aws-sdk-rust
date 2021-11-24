@@ -3,18 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+//! Utilities for writing Smithy values into a query string.
+//!
+//! Formatting values into the query string as specified in
+//! [httpQuery](https://awslabs.github.io/smithy/1.0/spec/core/http-traits.html#httpquery-trait)
+
 use crate::urlencode::BASE_SET;
-/// Formatting values into the query string as specified in
-/// [httpQuery](https://awslabs.github.io/smithy/1.0/spec/core/http-traits.html#httpquery-trait)
-use aws_smithy_types::Instant;
+use aws_smithy_types::date_time::{DateTimeFormatError, Format};
+use aws_smithy_types::DateTime;
 use percent_encoding::utf8_percent_encode;
 
 pub fn fmt_string<T: AsRef<str>>(t: T) -> String {
     utf8_percent_encode(t.as_ref(), BASE_SET).to_string()
 }
 
-pub fn fmt_timestamp(t: &Instant, format: aws_smithy_types::instant::Format) -> String {
-    fmt_string(t.fmt(format))
+pub fn fmt_timestamp(t: &DateTime, format: Format) -> Result<String, DateTimeFormatError> {
+    Ok(fmt_string(t.fmt(format)?))
 }
 
 /// Simple abstraction to enable appending params to a string as query params

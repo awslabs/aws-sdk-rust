@@ -77,6 +77,7 @@ pub type DescribeJobExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DescribeJobExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobExecution`](crate::operation::DescribeJobExecution)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -130,20 +131,24 @@ impl DescribeJobExecutionInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn uri_query(_input: &crate::input::DescribeJobExecutionInput, mut output: &mut String) {
+        fn uri_query(
+            _input: &crate::input::DescribeJobExecutionInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_3) = &_input.include_job_document {
                 query.push_kv(
                     "includeJobDocument",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
                 );
             }
             if let Some(inner_4) = &_input.execution_number {
                 query.push_kv(
                     "executionNumber",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
                 );
             }
+            Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
@@ -153,7 +158,7 @@ impl DescribeJobExecutionInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri);
+            uri_query(input, &mut uri)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -174,11 +179,14 @@ impl DescribeJobExecutionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -261,6 +269,7 @@ pub type GetPendingJobExecutionsInputOperationRetryAlias = aws_http::AwsErrorRet
 impl GetPendingJobExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`GetPendingJobExecutions`](crate::operation::GetPendingJobExecutions)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -322,11 +331,14 @@ impl GetPendingJobExecutionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -464,6 +476,7 @@ pub type StartNextPendingJobExecutionInputOperationRetryAlias = aws_http::AwsErr
 impl StartNextPendingJobExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartNextPendingJobExecution`](crate::operation::StartNextPendingJobExecution)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -536,11 +549,14 @@ impl StartNextPendingJobExecutionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
@@ -772,6 +788,7 @@ pub type UpdateJobExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl UpdateJobExecutionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJobExecution`](crate::operation::UpdateJobExecution)>
     #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
@@ -859,11 +876,14 @@ impl UpdateJobExecutionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        request
-            .properties_mut()
-            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
-                crate::API_METADATA.clone(),
-            ));
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);

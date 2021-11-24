@@ -70,14 +70,14 @@ pub struct MemberDetail {
     pub disabled_reason: std::option::Option<crate::model::MemberDisabledReason>,
     /// <p>The date and time that Detective sent the invitation to the member account. The value is in
     /// milliseconds since the epoch.</p>
-    pub invited_time: std::option::Option<aws_smithy_types::Instant>,
+    pub invited_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the member account was last updated. The value is in milliseconds
     /// since the epoch.</p>
-    pub updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The data volume in bytes per day for the member account.</p>
     pub volume_usage_in_bytes: std::option::Option<i64>,
     /// <p>The data and time when the member account data volume was last updated.</p>
-    pub volume_usage_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub volume_usage_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0
     /// indicates 0 percent, and 100 indicates 100 percent.</p>
     /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
@@ -87,7 +87,7 @@ pub struct MemberDetail {
     /// data volume. </p>
     pub percent_of_graph_utilization: std::option::Option<f64>,
     /// <p>The date and time when the graph utilization percentage was last updated.</p>
-    pub percent_of_graph_utilization_updated_time: std::option::Option<aws_smithy_types::Instant>,
+    pub percent_of_graph_utilization_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MemberDetail {
     /// <p>The AWS account identifier for the member account.</p>
@@ -170,12 +170,12 @@ impl MemberDetail {
     }
     /// <p>The date and time that Detective sent the invitation to the member account. The value is in
     /// milliseconds since the epoch.</p>
-    pub fn invited_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn invited_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.invited_time.as_ref()
     }
     /// <p>The date and time that the member account was last updated. The value is in milliseconds
     /// since the epoch.</p>
-    pub fn updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_time.as_ref()
     }
     /// <p>The data volume in bytes per day for the member account.</p>
@@ -183,7 +183,7 @@ impl MemberDetail {
         self.volume_usage_in_bytes
     }
     /// <p>The data and time when the member account data volume was last updated.</p>
-    pub fn volume_usage_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn volume_usage_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.volume_usage_updated_time.as_ref()
     }
     /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0
@@ -199,7 +199,7 @@ impl MemberDetail {
     /// <p>The date and time when the graph utilization percentage was last updated.</p>
     pub fn percent_of_graph_utilization_updated_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::Instant> {
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.percent_of_graph_utilization_updated_time.as_ref()
     }
 }
@@ -241,13 +241,13 @@ pub mod member_detail {
         pub(crate) administrator_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::MemberStatus>,
         pub(crate) disabled_reason: std::option::Option<crate::model::MemberDisabledReason>,
-        pub(crate) invited_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) invited_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) volume_usage_in_bytes: std::option::Option<i64>,
-        pub(crate) volume_usage_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) volume_usage_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) percent_of_graph_utilization: std::option::Option<f64>,
         pub(crate) percent_of_graph_utilization_updated_time:
-            std::option::Option<aws_smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The AWS account identifier for the member account.</p>
@@ -434,7 +434,7 @@ pub mod member_detail {
         }
         /// <p>The date and time that Detective sent the invitation to the member account. The value is in
         /// milliseconds since the epoch.</p>
-        pub fn invited_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn invited_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.invited_time = Some(input);
             self
         }
@@ -442,14 +442,14 @@ pub mod member_detail {
         /// milliseconds since the epoch.</p>
         pub fn set_invited_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.invited_time = input;
             self
         }
         /// <p>The date and time that the member account was last updated. The value is in milliseconds
         /// since the epoch.</p>
-        pub fn updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_time = Some(input);
             self
         }
@@ -457,7 +457,7 @@ pub mod member_detail {
         /// since the epoch.</p>
         pub fn set_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.updated_time = input;
             self
@@ -473,14 +473,14 @@ pub mod member_detail {
             self
         }
         /// <p>The data and time when the member account data volume was last updated.</p>
-        pub fn volume_usage_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn volume_usage_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.volume_usage_updated_time = Some(input);
             self
         }
         /// <p>The data and time when the member account data volume was last updated.</p>
         pub fn set_volume_usage_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.volume_usage_updated_time = input;
             self
@@ -510,7 +510,7 @@ pub mod member_detail {
         /// <p>The date and time when the graph utilization percentage was last updated.</p>
         pub fn percent_of_graph_utilization_updated_time(
             mut self,
-            input: aws_smithy_types::Instant,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
             self.percent_of_graph_utilization_updated_time = Some(input);
             self
@@ -518,7 +518,7 @@ pub mod member_detail {
         /// <p>The date and time when the graph utilization percentage was last updated.</p>
         pub fn set_percent_of_graph_utilization_updated_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.percent_of_graph_utilization_updated_time = input;
             self
@@ -687,7 +687,7 @@ pub struct Graph {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the behavior graph was created. The value is in milliseconds
     /// since the epoch.</p>
-    pub created_time: std::option::Option<aws_smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Graph {
     /// <p>The ARN of the behavior graph.</p>
@@ -696,7 +696,7 @@ impl Graph {
     }
     /// <p>The date and time that the behavior graph was created. The value is in milliseconds
     /// since the epoch.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
@@ -715,7 +715,7 @@ pub mod graph {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN of the behavior graph.</p>
@@ -730,7 +730,7 @@ pub mod graph {
         }
         /// <p>The date and time that the behavior graph was created. The value is in milliseconds
         /// since the epoch.</p>
-        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time = Some(input);
             self
         }
@@ -738,7 +738,7 @@ pub mod graph {
         /// since the epoch.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_time = input;
             self

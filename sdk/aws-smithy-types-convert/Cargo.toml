@@ -1,0 +1,18 @@
+[package]
+name = "aws-smithy-types-convert"
+version = "0.30.0-alpha"
+authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>"]
+description = "Conversion of types from aws-smithy-types to other libraries."
+edition = "2018"
+license = "Apache-2.0"
+repository = "https://github.com/awslabs/smithy-rs"
+
+[features]
+convert-chrono = ["chrono"]
+convert-time = ["time"]
+default = []
+
+[dependencies]
+aws-smithy-types = { path = "../aws-smithy-types" }
+chrono = { version = "0.4.19", optional = true }
+time = { version = "0.3.4", optional = true }

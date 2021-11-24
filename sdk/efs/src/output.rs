@@ -18,7 +18,7 @@ pub struct UpdateFileSystemOutput {
     pub file_system_arn: std::option::Option<std::string::String>,
     /// <p>The time that the file system was created, in seconds (since
     /// 1970-01-01T00:00:00Z).</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The lifecycle phase of the file system.</p>
     pub life_cycle_state: std::option::Option<crate::model::LifeCycleState>,
     /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more
@@ -88,7 +88,7 @@ impl UpdateFileSystemOutput {
     }
     /// <p>The time that the file system was created, in seconds (since
     /// 1970-01-01T00:00:00Z).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The lifecycle phase of the file system.</p>
@@ -196,7 +196,7 @@ pub mod update_file_system_output {
         pub(crate) creation_token: std::option::Option<std::string::String>,
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) file_system_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) life_cycle_state: std::option::Option<crate::model::LifeCycleState>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) number_of_mount_targets: std::option::Option<i32>,
@@ -272,7 +272,7 @@ pub mod update_file_system_output {
         }
         /// <p>The time that the file system was created, in seconds (since
         /// 1970-01-01T00:00:00Z).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -280,7 +280,7 @@ pub mod update_file_system_output {
         /// 1970-01-01T00:00:00Z).</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2189,7 +2189,7 @@ pub struct CreateFileSystemOutput {
     pub file_system_arn: std::option::Option<std::string::String>,
     /// <p>The time that the file system was created, in seconds (since
     /// 1970-01-01T00:00:00Z).</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The lifecycle phase of the file system.</p>
     pub life_cycle_state: std::option::Option<crate::model::LifeCycleState>,
     /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more
@@ -2259,7 +2259,7 @@ impl CreateFileSystemOutput {
     }
     /// <p>The time that the file system was created, in seconds (since
     /// 1970-01-01T00:00:00Z).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The lifecycle phase of the file system.</p>
@@ -2367,7 +2367,7 @@ pub mod create_file_system_output {
         pub(crate) creation_token: std::option::Option<std::string::String>,
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) file_system_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) life_cycle_state: std::option::Option<crate::model::LifeCycleState>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) number_of_mount_targets: std::option::Option<i32>,
@@ -2443,7 +2443,7 @@ pub mod create_file_system_output {
         }
         /// <p>The time that the file system was created, in seconds (since
         /// 1970-01-01T00:00:00Z).</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
@@ -2451,7 +2451,7 @@ pub mod create_file_system_output {
         /// 1970-01-01T00:00:00Z).</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self

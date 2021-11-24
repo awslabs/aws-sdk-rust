@@ -618,7 +618,7 @@ pub struct Container {
     /// container is created. Once the value has been assigned, it does not change.</p>
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>Unix timestamp.</p>
-    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the container. The ARN has the following
     /// format:</p>
     /// <p>arn:aws:<region>:<account that owns this container>:container/<name of
@@ -643,7 +643,7 @@ impl Container {
         self.endpoint.as_deref()
     }
     /// <p>Unix timestamp.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the container. The ARN has the following
@@ -689,7 +689,7 @@ pub mod container {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ContainerStatus>,
@@ -711,14 +711,14 @@ pub mod container {
             self
         }
         /// <p>Unix timestamp.</p>
-        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
         /// <p>Unix timestamp.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.creation_time = input;
             self

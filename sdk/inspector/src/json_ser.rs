@@ -928,12 +928,12 @@ pub fn serialize_structure_crate_model_timestamp_range(
     if let Some(var_186) = &input.begin_date {
         object
             .key("beginDate")
-            .instant(var_186, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_186, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_187) = &input.end_date {
         object
             .key("endDate")
-            .instant(var_187, aws_smithy_types::instant::Format::EpochSeconds);
+            .date_time(var_187, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

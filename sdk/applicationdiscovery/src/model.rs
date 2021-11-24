@@ -131,13 +131,13 @@ pub struct ImportTask {
     pub status: std::option::Option<crate::model::ImportStatus>,
     /// <p>The time that the import task request was made, presented in the Unix time stamp
     /// format.</p>
-    pub import_request_time: std::option::Option<aws_smithy_types::Instant>,
+    pub import_request_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the import task request finished, presented in the Unix time stamp
     /// format.</p>
-    pub import_completion_time: std::option::Option<aws_smithy_types::Instant>,
+    pub import_completion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the import task request was deleted, presented in the Unix time stamp
     /// format.</p>
-    pub import_deleted_time: std::option::Option<aws_smithy_types::Instant>,
+    pub import_deleted_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total number of server records in the import file that were successfully
     /// imported.</p>
     pub server_import_success: i32,
@@ -194,17 +194,17 @@ impl ImportTask {
     }
     /// <p>The time that the import task request was made, presented in the Unix time stamp
     /// format.</p>
-    pub fn import_request_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn import_request_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.import_request_time.as_ref()
     }
     /// <p>The time that the import task request finished, presented in the Unix time stamp
     /// format.</p>
-    pub fn import_completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn import_completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.import_completion_time.as_ref()
     }
     /// <p>The time that the import task request was deleted, presented in the Unix time stamp
     /// format.</p>
-    pub fn import_deleted_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn import_deleted_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.import_deleted_time.as_ref()
     }
     /// <p>The total number of server records in the import file that were successfully
@@ -280,9 +280,9 @@ pub mod import_task {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) import_url: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ImportStatus>,
-        pub(crate) import_request_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) import_completion_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) import_deleted_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) import_request_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) import_completion_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) import_deleted_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) server_import_success: std::option::Option<i32>,
         pub(crate) server_import_failure: std::option::Option<i32>,
         pub(crate) application_import_success: std::option::Option<i32>,
@@ -369,7 +369,7 @@ pub mod import_task {
         }
         /// <p>The time that the import task request was made, presented in the Unix time stamp
         /// format.</p>
-        pub fn import_request_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn import_request_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.import_request_time = Some(input);
             self
         }
@@ -377,14 +377,14 @@ pub mod import_task {
         /// format.</p>
         pub fn set_import_request_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.import_request_time = input;
             self
         }
         /// <p>The time that the import task request finished, presented in the Unix time stamp
         /// format.</p>
-        pub fn import_completion_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn import_completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.import_completion_time = Some(input);
             self
         }
@@ -392,14 +392,14 @@ pub mod import_task {
         /// format.</p>
         pub fn set_import_completion_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.import_completion_time = input;
             self
         }
         /// <p>The time that the import task request was deleted, presented in the Unix time stamp
         /// format.</p>
-        pub fn import_deleted_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn import_deleted_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.import_deleted_time = Some(input);
             self
         }
@@ -407,7 +407,7 @@ pub mod import_task {
         /// format.</p>
         pub fn set_import_deleted_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.import_deleted_time = input;
             self
@@ -1667,7 +1667,7 @@ pub struct ConfigurationTag {
     pub value: std::option::Option<std::string::String>,
     /// <p>The time the configuration tag was created in Coordinated Universal Time
     /// (UTC).</p>
-    pub time_of_creation: std::option::Option<aws_smithy_types::Instant>,
+    pub time_of_creation: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ConfigurationTag {
     /// <p>A type of IT asset to tag.</p>
@@ -1691,7 +1691,7 @@ impl ConfigurationTag {
     }
     /// <p>The time the configuration tag was created in Coordinated Universal Time
     /// (UTC).</p>
-    pub fn time_of_creation(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn time_of_creation(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.time_of_creation.as_ref()
     }
 }
@@ -1716,7 +1716,7 @@ pub mod configuration_tag {
         pub(crate) configuration_id: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
-        pub(crate) time_of_creation: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) time_of_creation: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A type of IT asset to tag.</p>
@@ -1773,7 +1773,7 @@ pub mod configuration_tag {
         }
         /// <p>The time the configuration tag was created in Coordinated Universal Time
         /// (UTC).</p>
-        pub fn time_of_creation(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn time_of_creation(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.time_of_creation = Some(input);
             self
         }
@@ -1781,7 +1781,7 @@ pub mod configuration_tag {
         /// (UTC).</p>
         pub fn set_time_of_creation(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.time_of_creation = input;
             self
@@ -2056,7 +2056,7 @@ pub struct ExportInfo {
     /// displayed only if the export succeeded.</p>
     pub configurations_download_url: std::option::Option<std::string::String>,
     /// <p>The time that the data export was initiated.</p>
-    pub export_request_time: std::option::Option<aws_smithy_types::Instant>,
+    pub export_request_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If true, the export of agent information exceeded the size limit for a single export
     /// and the exported data is incomplete for the requested time range. To address this, select a
     /// smaller time range for the export by using <code>startDate</code> and
@@ -2065,11 +2065,11 @@ pub struct ExportInfo {
     /// <p>The value of <code>startTime</code> parameter in the <code>StartExportTask</code>
     /// request. If no <code>startTime</code> was requested, this result does not appear in
     /// <code>ExportInfo</code>.</p>
-    pub requested_start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub requested_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>endTime</code> used in the <code>StartExportTask</code> request. If no
     /// <code>endTime</code> was requested, this result does not appear in
     /// <code>ExportInfo</code>.</p>
-    pub requested_end_time: std::option::Option<aws_smithy_types::Instant>,
+    pub requested_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExportInfo {
     /// <p>A unique identifier used to query an export.</p>
@@ -2090,7 +2090,7 @@ impl ExportInfo {
         self.configurations_download_url.as_deref()
     }
     /// <p>The time that the data export was initiated.</p>
-    pub fn export_request_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn export_request_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.export_request_time.as_ref()
     }
     /// <p>If true, the export of agent information exceeded the size limit for a single export
@@ -2103,13 +2103,13 @@ impl ExportInfo {
     /// <p>The value of <code>startTime</code> parameter in the <code>StartExportTask</code>
     /// request. If no <code>startTime</code> was requested, this result does not appear in
     /// <code>ExportInfo</code>.</p>
-    pub fn requested_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn requested_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.requested_start_time.as_ref()
     }
     /// <p>The <code>endTime</code> used in the <code>StartExportTask</code> request. If no
     /// <code>endTime</code> was requested, this result does not appear in
     /// <code>ExportInfo</code>.</p>
-    pub fn requested_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn requested_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.requested_end_time.as_ref()
     }
 }
@@ -2140,10 +2140,10 @@ pub mod export_info {
         pub(crate) export_status: std::option::Option<crate::model::ExportStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) configurations_download_url: std::option::Option<std::string::String>,
-        pub(crate) export_request_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) export_request_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) is_truncated: std::option::Option<bool>,
-        pub(crate) requested_start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) requested_end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) requested_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) requested_end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A unique identifier used to query an export.</p>
@@ -2201,14 +2201,14 @@ pub mod export_info {
             self
         }
         /// <p>The time that the data export was initiated.</p>
-        pub fn export_request_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn export_request_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.export_request_time = Some(input);
             self
         }
         /// <p>The time that the data export was initiated.</p>
         pub fn set_export_request_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.export_request_time = input;
             self
@@ -2232,7 +2232,7 @@ pub mod export_info {
         /// <p>The value of <code>startTime</code> parameter in the <code>StartExportTask</code>
         /// request. If no <code>startTime</code> was requested, this result does not appear in
         /// <code>ExportInfo</code>.</p>
-        pub fn requested_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn requested_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.requested_start_time = Some(input);
             self
         }
@@ -2241,7 +2241,7 @@ pub mod export_info {
         /// <code>ExportInfo</code>.</p>
         pub fn set_requested_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.requested_start_time = input;
             self
@@ -2249,7 +2249,7 @@ pub mod export_info {
         /// <p>The <code>endTime</code> used in the <code>StartExportTask</code> request. If no
         /// <code>endTime</code> was requested, this result does not appear in
         /// <code>ExportInfo</code>.</p>
-        pub fn requested_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn requested_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.requested_end_time = Some(input);
             self
         }
@@ -2258,7 +2258,7 @@ pub mod export_info {
         /// <code>ExportInfo</code>.</p>
         pub fn set_requested_end_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.requested_end_time = input;
             self
@@ -2426,9 +2426,9 @@ pub struct ContinuousExportDescription {
     /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The timestamp representing when the continuous export was started.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp that represents when this continuous export was stopped.</p>
-    pub stop_time: std::option::Option<aws_smithy_types::Instant>,
+    pub stop_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of data collector used to gather this data (currently only offered for
     /// AGENT).</p>
     pub data_source: std::option::Option<crate::model::DataSource>,
@@ -2530,11 +2530,11 @@ impl ContinuousExportDescription {
         self.s3_bucket.as_deref()
     }
     /// <p>The timestamp representing when the continuous export was started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp that represents when this continuous export was stopped.</p>
-    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
     /// <p>The type of data collector used to gather this data (currently only offered for
@@ -2581,8 +2581,8 @@ pub mod continuous_export_description {
         pub(crate) status: std::option::Option<crate::model::ContinuousExportStatus>,
         pub(crate) status_detail: std::option::Option<std::string::String>,
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) stop_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) stop_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_source: std::option::Option<crate::model::DataSource>,
         pub(crate) schema_storage_config: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2774,27 +2774,27 @@ pub mod continuous_export_description {
             self
         }
         /// <p>The timestamp representing when the continuous export was started.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The timestamp representing when the continuous export was started.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The timestamp that represents when this continuous export was stopped.</p>
-        pub fn stop_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stop_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stop_time = Some(input);
             self
         }
         /// <p>The timestamp that represents when this continuous export was stopped.</p>
         pub fn set_stop_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stop_time = input;
             self

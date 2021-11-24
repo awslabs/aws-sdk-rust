@@ -12,7 +12,7 @@ pub struct CreateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateApplicationErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -118,7 +118,7 @@ pub struct CreateConfigurationProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateConfigurationProfileErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -235,7 +235,7 @@ pub struct CreateDeploymentStrategyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDeploymentStrategyErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -341,7 +341,7 @@ pub struct CreateEnvironmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateEnvironmentErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -458,7 +458,7 @@ pub struct CreateHostedConfigurationVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateHostedConfigurationVersionErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>The request could not be processed because of conflict in the current state of the
     /// resource.</p>
@@ -469,7 +469,7 @@ pub enum CreateHostedConfigurationVersionErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The number of hosted configuration versions exceeds the limit for the AppConfig
+    /// <p>The number of hosted configuration versions exceeds the limit for the AppConfig hosted
     /// configuration store. Delete one or more versions and try again.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -629,7 +629,7 @@ pub struct DeleteApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteApplicationErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -746,7 +746,7 @@ pub struct DeleteConfigurationProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteConfigurationProfileErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>The request could not be processed because of conflict in the current state of the
     /// resource.</p>
@@ -875,7 +875,7 @@ pub struct DeleteDeploymentStrategyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDeploymentStrategyErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -992,7 +992,7 @@ pub struct DeleteEnvironmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteEnvironmentErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>The request could not be processed because of conflict in the current state of the
     /// resource.</p>
@@ -1118,7 +1118,7 @@ pub struct DeleteHostedConfigurationVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteHostedConfigurationVersionErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1246,7 +1246,7 @@ pub struct GetApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetApplicationErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1360,7 +1360,7 @@ pub struct GetConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetConfigurationErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1477,7 +1477,7 @@ pub struct GetConfigurationProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetConfigurationProfileErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1594,7 +1594,7 @@ pub struct GetDeploymentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDeploymentErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1708,7 +1708,7 @@ pub struct GetDeploymentStrategyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDeploymentStrategyErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1825,7 +1825,7 @@ pub struct GetEnvironmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEnvironmentErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1939,7 +1939,7 @@ pub struct GetHostedConfigurationVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetHostedConfigurationVersionErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2065,7 +2065,7 @@ pub struct ListApplicationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListApplicationsErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2171,7 +2171,7 @@ pub struct ListConfigurationProfilesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListConfigurationProfilesErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2288,7 +2288,7 @@ pub struct ListDeploymentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDeploymentsErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2402,7 +2402,7 @@ pub struct ListDeploymentStrategiesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDeploymentStrategiesErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2508,7 +2508,7 @@ pub struct ListEnvironmentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEnvironmentsErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2625,7 +2625,7 @@ pub struct ListHostedConfigurationVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListHostedConfigurationVersionsErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2753,7 +2753,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2870,7 +2870,7 @@ pub struct StartDeploymentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartDeploymentErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>The request could not be processed because of conflict in the current state of the
     /// resource.</p>
@@ -2993,7 +2993,7 @@ pub struct StopDeploymentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopDeploymentErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3107,7 +3107,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3218,7 +3218,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3332,7 +3332,7 @@ pub struct UpdateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApplicationErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3449,7 +3449,7 @@ pub struct UpdateConfigurationProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateConfigurationProfileErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3566,7 +3566,7 @@ pub struct UpdateDeploymentStrategyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDeploymentStrategyErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3683,7 +3683,7 @@ pub struct UpdateEnvironmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateEnvironmentErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3800,7 +3800,7 @@ pub struct ValidateConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ValidateConfigurationErrorKind {
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4056,17 +4056,33 @@ impl InternalServerException {
     }
 }
 
-/// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+/// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub reason: std::option::Option<crate::model::BadRequestReason>,
+    /// <p>Detailed information about the input that failed to satisfy the constraints specified by an AWS service.</p>
+    pub details: std::option::Option<crate::model::BadRequestDetails>,
+}
+impl BadRequestException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn reason(&self) -> std::option::Option<&crate::model::BadRequestReason> {
+        self.reason.as_ref()
+    }
+    /// <p>Detailed information about the input that failed to satisfy the constraints specified by an AWS service.</p>
+    pub fn details(&self) -> std::option::Option<&crate::model::BadRequestDetails> {
+        self.details.as_ref()
+    }
 }
 impl std::fmt::Debug for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BadRequestException");
         formatter.field("message", &self.message);
+        formatter.field("reason", &self.reason);
+        formatter.field("details", &self.details);
         formatter.finish()
     }
 }
@@ -4093,6 +4109,8 @@ pub mod bad_request_exception {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) reason: std::option::Option<crate::model::BadRequestReason>,
+        pub(crate) details: std::option::Option<crate::model::BadRequestDetails>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -4105,10 +4123,38 @@ pub mod bad_request_exception {
             self.message = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn reason(mut self, input: crate::model::BadRequestReason) -> Self {
+            self.reason = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_reason(
+            mut self,
+            input: std::option::Option<crate::model::BadRequestReason>,
+        ) -> Self {
+            self.reason = input;
+            self
+        }
+        /// <p>Detailed information about the input that failed to satisfy the constraints specified by an AWS service.</p>
+        pub fn details(mut self, input: crate::model::BadRequestDetails) -> Self {
+            self.details = Some(input);
+            self
+        }
+        /// <p>Detailed information about the input that failed to satisfy the constraints specified by an AWS service.</p>
+        pub fn set_details(
+            mut self,
+            input: std::option::Option<crate::model::BadRequestDetails>,
+        ) -> Self {
+            self.details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException)
         pub fn build(self) -> crate::error::BadRequestException {
             crate::error::BadRequestException {
                 message: self.message,
+                reason: self.reason,
+                details: self.details,
             }
         }
     }
@@ -4185,7 +4231,7 @@ impl ConflictException {
     }
 }
 
-/// <p>The number of hosted configuration versions exceeds the limit for the AppConfig
+/// <p>The number of hosted configuration versions exceeds the limit for the AppConfig hosted
 /// configuration store. Delete one or more versions and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

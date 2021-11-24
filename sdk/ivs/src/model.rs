@@ -443,12 +443,135 @@ impl AsRef<str> for ChannelLatencyMode {
     }
 }
 
+/// <p>Summary information about a stream session.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StreamSessionSummary {
+    /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+    pub stream_id: std::option::Option<std::string::String>,
+    /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this
+    /// is <code>NULL</code>.</p>
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
+    pub has_error_event: bool,
+}
+impl StreamSessionSummary {
+    /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
+    /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this
+    /// is <code>NULL</code>.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
+    }
+    /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
+    pub fn has_error_event(&self) -> bool {
+        self.has_error_event
+    }
+}
+impl std::fmt::Debug for StreamSessionSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StreamSessionSummary");
+        formatter.field("stream_id", &self.stream_id);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.field("has_error_event", &self.has_error_event);
+        formatter.finish()
+    }
+}
+/// See [`StreamSessionSummary`](crate::model::StreamSessionSummary)
+pub mod stream_session_summary {
+    /// A builder for [`StreamSessionSummary`](crate::model::StreamSessionSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stream_id: std::option::Option<std::string::String>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) has_error_event: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_id = Some(input.into());
+            self
+        }
+        /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_id = input;
+            self
+        }
+        /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this
+        /// is <code>NULL</code>.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this
+        /// is <code>NULL</code>.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
+        pub fn has_error_event(mut self, input: bool) -> Self {
+            self.has_error_event = Some(input);
+            self
+        }
+        /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
+        pub fn set_has_error_event(mut self, input: std::option::Option<bool>) -> Self {
+            self.has_error_event = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StreamSessionSummary`](crate::model::StreamSessionSummary)
+        pub fn build(self) -> crate::model::StreamSessionSummary {
+            crate::model::StreamSessionSummary {
+                stream_id: self.stream_id,
+                start_time: self.start_time,
+                end_time: self.end_time,
+                has_error_event: self.has_error_event.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl StreamSessionSummary {
+    /// Creates a new builder-style object to manufacture [`StreamSessionSummary`](crate::model::StreamSessionSummary)
+    pub fn builder() -> crate::model::stream_session_summary::Builder {
+        crate::model::stream_session_summary::Builder::default()
+    }
+}
+
 /// <p>Summary information about a stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamSummary {
     /// <p>Channel ARN for the stream.</p>
     pub channel_arn: std::option::Option<std::string::String>,
+    /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+    pub stream_id: std::option::Option<std::string::String>,
     /// <p>The stream’s state.</p>
     pub state: std::option::Option<crate::model::StreamState>,
     /// <p>The stream’s health.</p>
@@ -459,12 +582,16 @@ pub struct StreamSummary {
     /// -1 indicates that the request timed out; in this case, retry.</p>
     pub viewer_count: i64,
     /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StreamSummary {
     /// <p>Channel ARN for the stream.</p>
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
+    }
+    /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
     }
     /// <p>The stream’s state.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::StreamState> {
@@ -482,7 +609,7 @@ impl StreamSummary {
         self.viewer_count
     }
     /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
@@ -490,6 +617,7 @@ impl std::fmt::Debug for StreamSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamSummary");
         formatter.field("channel_arn", &self.channel_arn);
+        formatter.field("stream_id", &self.stream_id);
         formatter.field("state", &self.state);
         formatter.field("health", &self.health);
         formatter.field("viewer_count", &self.viewer_count);
@@ -504,10 +632,11 @@ pub mod stream_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
+        pub(crate) stream_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::StreamState>,
         pub(crate) health: std::option::Option<crate::model::StreamHealth>,
         pub(crate) viewer_count: std::option::Option<i64>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>Channel ARN for the stream.</p>
@@ -518,6 +647,16 @@ pub mod stream_summary {
         /// <p>Channel ARN for the stream.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
+            self
+        }
+        /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_id = Some(input.into());
+            self
+        }
+        /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_id = input;
             self
         }
         /// <p>The stream’s state.</p>
@@ -560,14 +699,14 @@ pub mod stream_summary {
             self
         }
         /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
@@ -576,6 +715,7 @@ pub mod stream_summary {
         pub fn build(self) -> crate::model::StreamSummary {
             crate::model::StreamSummary {
                 channel_arn: self.channel_arn,
+                stream_id: self.stream_id,
                 state: self.state,
                 health: self.health,
                 viewer_count: self.viewer_count.unwrap_or_default(),
@@ -702,6 +842,63 @@ impl StreamState {
 impl AsRef<str> for StreamState {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Object specifying the stream attribute on which to filter.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StreamFilters {
+    /// <p>The stream’s health.</p>
+    pub health: std::option::Option<crate::model::StreamHealth>,
+}
+impl StreamFilters {
+    /// <p>The stream’s health.</p>
+    pub fn health(&self) -> std::option::Option<&crate::model::StreamHealth> {
+        self.health.as_ref()
+    }
+}
+impl std::fmt::Debug for StreamFilters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StreamFilters");
+        formatter.field("health", &self.health);
+        formatter.finish()
+    }
+}
+/// See [`StreamFilters`](crate::model::StreamFilters)
+pub mod stream_filters {
+    /// A builder for [`StreamFilters`](crate::model::StreamFilters)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) health: std::option::Option<crate::model::StreamHealth>,
+    }
+    impl Builder {
+        /// <p>The stream’s health.</p>
+        pub fn health(mut self, input: crate::model::StreamHealth) -> Self {
+            self.health = Some(input);
+            self
+        }
+        /// <p>The stream’s health.</p>
+        pub fn set_health(
+            mut self,
+            input: std::option::Option<crate::model::StreamHealth>,
+        ) -> Self {
+            self.health = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StreamFilters`](crate::model::StreamFilters)
+        pub fn build(self) -> crate::model::StreamFilters {
+            crate::model::StreamFilters {
+                health: self.health,
+            }
+        }
+    }
+}
+impl StreamFilters {
+    /// Creates a new builder-style object to manufacture [`StreamFilters`](crate::model::StreamFilters)
+    pub fn builder() -> crate::model::stream_filters::Builder {
+        crate::model::stream_filters::Builder::default()
     }
 }
 
@@ -1602,302 +1799,308 @@ impl PlaybackKeyPair {
     }
 }
 
-/// <p>Object specifying a stream key.</p>
+/// <p>Object that captures the Amazon IVS configuration that the customer provisioned, the
+/// ingest configurations that the broadcaster used, and the most recent Amazon IVS stream events
+/// it encountered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StreamKey {
-    /// <p>Stream-key ARN.</p>
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>Stream-key value.</p>
-    pub value: std::option::Option<std::string::String>,
-    /// <p>Channel ARN for the stream.</p>
-    pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+pub struct StreamSession {
+    /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+    pub stream_id: std::option::Option<std::string::String>,
+    /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this
+    /// is <code>NULL</code>.</p>
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The properties of the channel at the time of going live.</p>
+    pub channel: std::option::Option<crate::model::Channel>,
+    /// <p>The properties of the incoming RTMP stream for the stream.</p>
+    pub ingest_configuration: std::option::Option<crate::model::IngestConfiguration>,
+    /// <p>The properties of recording the live stream.</p>
+    pub recording_configuration: std::option::Option<crate::model::RecordingConfiguration>,
+    /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent
+    /// events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon
+    /// IVS</a>.</p>
+    pub truncated_events: std::option::Option<std::vec::Vec<crate::model::StreamEvent>>,
 }
-impl StreamKey {
-    /// <p>Stream-key ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
-        self.arn.as_deref()
+impl StreamSession {
+    /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
     }
-    /// <p>Stream-key value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
-        self.value.as_deref()
-    }
-    /// <p>Channel ARN for the stream.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
-        self.channel_arn.as_deref()
-    }
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamKey");
-        formatter.field("arn", &self.arn);
-        formatter.field("value", &"*** Sensitive Data Redacted ***");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
-/// See [`StreamKey`](crate::model::StreamKey)
-pub mod stream_key {
-    /// A builder for [`StreamKey`](crate::model::StreamKey)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) value: std::option::Option<std::string::String>,
-        pub(crate) channel_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    }
-    impl Builder {
-        /// <p>Stream-key ARN.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        /// <p>Stream-key ARN.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p>Stream-key value.</p>
-        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-            self.value = Some(input.into());
-            self
-        }
-        /// <p>Stream-key value.</p>
-        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
-        }
-        /// <p>Channel ARN for the stream.</p>
-        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.channel_arn = Some(input.into());
-            self
-        }
-        /// <p>Channel ARN for the stream.</p>
-        pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_arn = input;
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
-        }
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`StreamKey`](crate::model::StreamKey)
-        pub fn build(self) -> crate::model::StreamKey {
-            crate::model::StreamKey {
-                arn: self.arn,
-                value: self.value,
-                channel_arn: self.channel_arn,
-                tags: self.tags,
-            }
-        }
-    }
-}
-impl StreamKey {
-    /// Creates a new builder-style object to manufacture [`StreamKey`](crate::model::StreamKey)
-    pub fn builder() -> crate::model::stream_key::Builder {
-        crate::model::stream_key::Builder::default()
-    }
-}
-
-/// <p>Specifies a live video stream that has been ingested and distributed.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Stream {
-    /// <p>Channel ARN for the stream.</p>
-    pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>URL of the master playlist, required by the video player to play the HLS stream.</p>
-    pub playback_url: std::option::Option<std::string::String>,
-    /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
-    pub start_time: std::option::Option<aws_smithy_types::Instant>,
-    /// <p>The stream’s state.</p>
-    pub state: std::option::Option<crate::model::StreamState>,
-    /// <p>The stream’s health.</p>
-    pub health: std::option::Option<crate::model::StreamHealth>,
-    /// <p>A count of concurrent views of the stream. Typically, a new view appears in
-    /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
-    /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
-    /// -1 indicates that the request timed out; in this case, retry.</p>
-    pub viewer_count: i64,
-}
-impl Stream {
-    /// <p>Channel ARN for the stream.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
-        self.channel_arn.as_deref()
-    }
-    /// <p>URL of the master playlist, required by the video player to play the HLS stream.</p>
-    pub fn playback_url(&self) -> std::option::Option<&str> {
-        self.playback_url.as_deref()
-    }
-    /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The stream’s state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::StreamState> {
-        self.state.as_ref()
+    /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this
+    /// is <code>NULL</code>.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
     }
-    /// <p>The stream’s health.</p>
-    pub fn health(&self) -> std::option::Option<&crate::model::StreamHealth> {
-        self.health.as_ref()
+    /// <p>The properties of the channel at the time of going live.</p>
+    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+        self.channel.as_ref()
     }
-    /// <p>A count of concurrent views of the stream. Typically, a new view appears in
-    /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
-    /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
-    /// -1 indicates that the request timed out; in this case, retry.</p>
-    pub fn viewer_count(&self) -> i64 {
-        self.viewer_count
+    /// <p>The properties of the incoming RTMP stream for the stream.</p>
+    pub fn ingest_configuration(&self) -> std::option::Option<&crate::model::IngestConfiguration> {
+        self.ingest_configuration.as_ref()
+    }
+    /// <p>The properties of recording the live stream.</p>
+    pub fn recording_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RecordingConfiguration> {
+        self.recording_configuration.as_ref()
+    }
+    /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent
+    /// events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon
+    /// IVS</a>.</p>
+    pub fn truncated_events(&self) -> std::option::Option<&[crate::model::StreamEvent]> {
+        self.truncated_events.as_deref()
     }
 }
-impl std::fmt::Debug for Stream {
+impl std::fmt::Debug for StreamSession {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Stream");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("playback_url", &self.playback_url);
+        let mut formatter = f.debug_struct("StreamSession");
+        formatter.field("stream_id", &self.stream_id);
         formatter.field("start_time", &self.start_time);
-        formatter.field("state", &self.state);
-        formatter.field("health", &self.health);
-        formatter.field("viewer_count", &self.viewer_count);
+        formatter.field("end_time", &self.end_time);
+        formatter.field("channel", &self.channel);
+        formatter.field("ingest_configuration", &self.ingest_configuration);
+        formatter.field("recording_configuration", &self.recording_configuration);
+        formatter.field("truncated_events", &self.truncated_events);
         formatter.finish()
     }
 }
-/// See [`Stream`](crate::model::Stream)
-pub mod stream {
-    /// A builder for [`Stream`](crate::model::Stream)
+/// See [`StreamSession`](crate::model::StreamSession)
+pub mod stream_session {
+    /// A builder for [`StreamSession`](crate::model::StreamSession)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) channel_arn: std::option::Option<std::string::String>,
-        pub(crate) playback_url: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) state: std::option::Option<crate::model::StreamState>,
-        pub(crate) health: std::option::Option<crate::model::StreamHealth>,
-        pub(crate) viewer_count: std::option::Option<i64>,
+        pub(crate) stream_id: std::option::Option<std::string::String>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) channel: std::option::Option<crate::model::Channel>,
+        pub(crate) ingest_configuration: std::option::Option<crate::model::IngestConfiguration>,
+        pub(crate) recording_configuration:
+            std::option::Option<crate::model::RecordingConfiguration>,
+        pub(crate) truncated_events: std::option::Option<std::vec::Vec<crate::model::StreamEvent>>,
     }
     impl Builder {
-        /// <p>Channel ARN for the stream.</p>
-        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.channel_arn = Some(input.into());
+        /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_id = Some(input.into());
             self
         }
-        /// <p>Channel ARN for the stream.</p>
-        pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_arn = input;
+        /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_id = input;
             self
         }
-        /// <p>URL of the master playlist, required by the video player to play the HLS stream.</p>
-        pub fn playback_url(mut self, input: impl Into<std::string::String>) -> Self {
-            self.playback_url = Some(input.into());
-            self
-        }
-        /// <p>URL of the master playlist, required by the video player to play the HLS stream.</p>
-        pub fn set_playback_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.playback_url = input;
-            self
-        }
-        /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
-        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
+        /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+        /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
         pub fn set_start_time(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.start_time = input;
             self
         }
-        /// <p>The stream’s state.</p>
-        pub fn state(mut self, input: crate::model::StreamState) -> Self {
-            self.state = Some(input);
+        /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this
+        /// is <code>NULL</code>.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_time = Some(input);
             self
         }
-        /// <p>The stream’s state.</p>
-        pub fn set_state(mut self, input: std::option::Option<crate::model::StreamState>) -> Self {
-            self.state = input;
-            self
-        }
-        /// <p>The stream’s health.</p>
-        pub fn health(mut self, input: crate::model::StreamHealth) -> Self {
-            self.health = Some(input);
-            self
-        }
-        /// <p>The stream’s health.</p>
-        pub fn set_health(
+        /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this
+        /// is <code>NULL</code>.</p>
+        pub fn set_end_time(
             mut self,
-            input: std::option::Option<crate::model::StreamHealth>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
-            self.health = input;
+            self.end_time = input;
             self
         }
-        /// <p>A count of concurrent views of the stream. Typically, a new view appears in
-        /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
-        /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
-        /// -1 indicates that the request timed out; in this case, retry.</p>
-        pub fn viewer_count(mut self, input: i64) -> Self {
-            self.viewer_count = Some(input);
+        /// <p>The properties of the channel at the time of going live.</p>
+        pub fn channel(mut self, input: crate::model::Channel) -> Self {
+            self.channel = Some(input);
             self
         }
-        /// <p>A count of concurrent views of the stream. Typically, a new view appears in
-        /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
-        /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
-        /// -1 indicates that the request timed out; in this case, retry.</p>
-        pub fn set_viewer_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.viewer_count = input;
+        /// <p>The properties of the channel at the time of going live.</p>
+        pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
+            self.channel = input;
             self
         }
-        /// Consumes the builder and constructs a [`Stream`](crate::model::Stream)
-        pub fn build(self) -> crate::model::Stream {
-            crate::model::Stream {
-                channel_arn: self.channel_arn,
-                playback_url: self.playback_url,
+        /// <p>The properties of the incoming RTMP stream for the stream.</p>
+        pub fn ingest_configuration(mut self, input: crate::model::IngestConfiguration) -> Self {
+            self.ingest_configuration = Some(input);
+            self
+        }
+        /// <p>The properties of the incoming RTMP stream for the stream.</p>
+        pub fn set_ingest_configuration(
+            mut self,
+            input: std::option::Option<crate::model::IngestConfiguration>,
+        ) -> Self {
+            self.ingest_configuration = input;
+            self
+        }
+        /// <p>The properties of recording the live stream.</p>
+        pub fn recording_configuration(
+            mut self,
+            input: crate::model::RecordingConfiguration,
+        ) -> Self {
+            self.recording_configuration = Some(input);
+            self
+        }
+        /// <p>The properties of recording the live stream.</p>
+        pub fn set_recording_configuration(
+            mut self,
+            input: std::option::Option<crate::model::RecordingConfiguration>,
+        ) -> Self {
+            self.recording_configuration = input;
+            self
+        }
+        /// Appends an item to `truncated_events`.
+        ///
+        /// To override the contents of this collection use [`set_truncated_events`](Self::set_truncated_events).
+        ///
+        /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent
+        /// events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon
+        /// IVS</a>.</p>
+        pub fn truncated_events(mut self, input: impl Into<crate::model::StreamEvent>) -> Self {
+            let mut v = self.truncated_events.unwrap_or_default();
+            v.push(input.into());
+            self.truncated_events = Some(v);
+            self
+        }
+        /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent
+        /// events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon
+        /// IVS</a>.</p>
+        pub fn set_truncated_events(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::StreamEvent>>,
+        ) -> Self {
+            self.truncated_events = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StreamSession`](crate::model::StreamSession)
+        pub fn build(self) -> crate::model::StreamSession {
+            crate::model::StreamSession {
+                stream_id: self.stream_id,
                 start_time: self.start_time,
-                state: self.state,
-                health: self.health,
-                viewer_count: self.viewer_count.unwrap_or_default(),
+                end_time: self.end_time,
+                channel: self.channel,
+                ingest_configuration: self.ingest_configuration,
+                recording_configuration: self.recording_configuration,
+                truncated_events: self.truncated_events,
             }
         }
     }
 }
-impl Stream {
-    /// Creates a new builder-style object to manufacture [`Stream`](crate::model::Stream)
-    pub fn builder() -> crate::model::stream::Builder {
-        crate::model::stream::Builder::default()
+impl StreamSession {
+    /// Creates a new builder-style object to manufacture [`StreamSession`](crate::model::StreamSession)
+    pub fn builder() -> crate::model::stream_session::Builder {
+        crate::model::stream_session::Builder::default()
+    }
+}
+
+/// <p>Object specifying a stream’s events. For a list of events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon
+/// IVS</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StreamEvent {
+    /// <p>Name that identifies the stream event within a <code>type</code>.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Logical group for certain events.</p>
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p>UTC ISO-8601 formatted timestamp of when the event occurred.</p>
+    pub event_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl StreamEvent {
+    /// <p>Name that identifies the stream event within a <code>type</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Logical group for certain events.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>UTC ISO-8601 formatted timestamp of when the event occurred.</p>
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.event_time.as_ref()
+    }
+}
+impl std::fmt::Debug for StreamEvent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StreamEvent");
+        formatter.field("name", &self.name);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("event_time", &self.event_time);
+        formatter.finish()
+    }
+}
+/// See [`StreamEvent`](crate::model::StreamEvent)
+pub mod stream_event {
+    /// A builder for [`StreamEvent`](crate::model::StreamEvent)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>Name that identifies the stream event within a <code>type</code>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Name that identifies the stream event within a <code>type</code>.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Logical group for certain events.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>Logical group for certain events.</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>UTC ISO-8601 formatted timestamp of when the event occurred.</p>
+        pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.event_time = Some(input);
+            self
+        }
+        /// <p>UTC ISO-8601 formatted timestamp of when the event occurred.</p>
+        pub fn set_event_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.event_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StreamEvent`](crate::model::StreamEvent)
+        pub fn build(self) -> crate::model::StreamEvent {
+            crate::model::StreamEvent {
+                name: self.name,
+                r#type: self.r#type,
+                event_time: self.event_time,
+            }
+        }
+    }
+}
+impl StreamEvent {
+    /// Creates a new builder-style object to manufacture [`StreamEvent`](crate::model::StreamEvent)
+    pub fn builder() -> crate::model::stream_event::Builder {
+        crate::model::stream_event::Builder::default()
     }
 }
 
@@ -2065,6 +2268,710 @@ impl RecordingConfiguration {
     /// Creates a new builder-style object to manufacture [`RecordingConfiguration`](crate::model::RecordingConfiguration)
     pub fn builder() -> crate::model::recording_configuration::Builder {
         crate::model::recording_configuration::Builder::default()
+    }
+}
+
+/// <p>Object specifying the ingest configuration set up by the broadcaster, usually in an
+/// encoder.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IngestConfiguration {
+    /// <p>Encoder settings for video.</p>
+    pub video: std::option::Option<crate::model::VideoConfiguration>,
+    /// <p>Encoder settings for audio.</p>
+    pub audio: std::option::Option<crate::model::AudioConfiguration>,
+}
+impl IngestConfiguration {
+    /// <p>Encoder settings for video.</p>
+    pub fn video(&self) -> std::option::Option<&crate::model::VideoConfiguration> {
+        self.video.as_ref()
+    }
+    /// <p>Encoder settings for audio.</p>
+    pub fn audio(&self) -> std::option::Option<&crate::model::AudioConfiguration> {
+        self.audio.as_ref()
+    }
+}
+impl std::fmt::Debug for IngestConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IngestConfiguration");
+        formatter.field("video", &self.video);
+        formatter.field("audio", &self.audio);
+        formatter.finish()
+    }
+}
+/// See [`IngestConfiguration`](crate::model::IngestConfiguration)
+pub mod ingest_configuration {
+    /// A builder for [`IngestConfiguration`](crate::model::IngestConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) video: std::option::Option<crate::model::VideoConfiguration>,
+        pub(crate) audio: std::option::Option<crate::model::AudioConfiguration>,
+    }
+    impl Builder {
+        /// <p>Encoder settings for video.</p>
+        pub fn video(mut self, input: crate::model::VideoConfiguration) -> Self {
+            self.video = Some(input);
+            self
+        }
+        /// <p>Encoder settings for video.</p>
+        pub fn set_video(
+            mut self,
+            input: std::option::Option<crate::model::VideoConfiguration>,
+        ) -> Self {
+            self.video = input;
+            self
+        }
+        /// <p>Encoder settings for audio.</p>
+        pub fn audio(mut self, input: crate::model::AudioConfiguration) -> Self {
+            self.audio = Some(input);
+            self
+        }
+        /// <p>Encoder settings for audio.</p>
+        pub fn set_audio(
+            mut self,
+            input: std::option::Option<crate::model::AudioConfiguration>,
+        ) -> Self {
+            self.audio = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IngestConfiguration`](crate::model::IngestConfiguration)
+        pub fn build(self) -> crate::model::IngestConfiguration {
+            crate::model::IngestConfiguration {
+                video: self.video,
+                audio: self.audio,
+            }
+        }
+    }
+}
+impl IngestConfiguration {
+    /// Creates a new builder-style object to manufacture [`IngestConfiguration`](crate::model::IngestConfiguration)
+    pub fn builder() -> crate::model::ingest_configuration::Builder {
+        crate::model::ingest_configuration::Builder::default()
+    }
+}
+
+/// <p>Object specifying a stream’s audio configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AudioConfiguration {
+    /// <p>Codec used for the audio encoding.</p>
+    pub codec: std::option::Option<std::string::String>,
+    /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
+    pub target_bitrate: i64,
+    /// <p>Number of audio samples recorded per second.</p>
+    pub sample_rate: i64,
+    /// <p>Number of audio channels.</p>
+    pub channels: i64,
+}
+impl AudioConfiguration {
+    /// <p>Codec used for the audio encoding.</p>
+    pub fn codec(&self) -> std::option::Option<&str> {
+        self.codec.as_deref()
+    }
+    /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
+    pub fn target_bitrate(&self) -> i64 {
+        self.target_bitrate
+    }
+    /// <p>Number of audio samples recorded per second.</p>
+    pub fn sample_rate(&self) -> i64 {
+        self.sample_rate
+    }
+    /// <p>Number of audio channels.</p>
+    pub fn channels(&self) -> i64 {
+        self.channels
+    }
+}
+impl std::fmt::Debug for AudioConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AudioConfiguration");
+        formatter.field("codec", &self.codec);
+        formatter.field("target_bitrate", &self.target_bitrate);
+        formatter.field("sample_rate", &self.sample_rate);
+        formatter.field("channels", &self.channels);
+        formatter.finish()
+    }
+}
+/// See [`AudioConfiguration`](crate::model::AudioConfiguration)
+pub mod audio_configuration {
+    /// A builder for [`AudioConfiguration`](crate::model::AudioConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) codec: std::option::Option<std::string::String>,
+        pub(crate) target_bitrate: std::option::Option<i64>,
+        pub(crate) sample_rate: std::option::Option<i64>,
+        pub(crate) channels: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>Codec used for the audio encoding.</p>
+        pub fn codec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.codec = Some(input.into());
+            self
+        }
+        /// <p>Codec used for the audio encoding.</p>
+        pub fn set_codec(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.codec = input;
+            self
+        }
+        /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
+        pub fn target_bitrate(mut self, input: i64) -> Self {
+            self.target_bitrate = Some(input);
+            self
+        }
+        /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
+        pub fn set_target_bitrate(mut self, input: std::option::Option<i64>) -> Self {
+            self.target_bitrate = input;
+            self
+        }
+        /// <p>Number of audio samples recorded per second.</p>
+        pub fn sample_rate(mut self, input: i64) -> Self {
+            self.sample_rate = Some(input);
+            self
+        }
+        /// <p>Number of audio samples recorded per second.</p>
+        pub fn set_sample_rate(mut self, input: std::option::Option<i64>) -> Self {
+            self.sample_rate = input;
+            self
+        }
+        /// <p>Number of audio channels.</p>
+        pub fn channels(mut self, input: i64) -> Self {
+            self.channels = Some(input);
+            self
+        }
+        /// <p>Number of audio channels.</p>
+        pub fn set_channels(mut self, input: std::option::Option<i64>) -> Self {
+            self.channels = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AudioConfiguration`](crate::model::AudioConfiguration)
+        pub fn build(self) -> crate::model::AudioConfiguration {
+            crate::model::AudioConfiguration {
+                codec: self.codec,
+                target_bitrate: self.target_bitrate.unwrap_or_default(),
+                sample_rate: self.sample_rate.unwrap_or_default(),
+                channels: self.channels.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl AudioConfiguration {
+    /// Creates a new builder-style object to manufacture [`AudioConfiguration`](crate::model::AudioConfiguration)
+    pub fn builder() -> crate::model::audio_configuration::Builder {
+        crate::model::audio_configuration::Builder::default()
+    }
+}
+
+/// <p>Object specifying a stream’s video configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VideoConfiguration {
+    /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the
+    /// valid values, see the H.264 specification.</p>
+    pub avc_profile: std::option::Option<std::string::String>,
+    /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set
+    /// automatically by the encoder. For details, see the H.264 specification.</p>
+    pub avc_level: std::option::Option<std::string::String>,
+    /// <p>Codec used for the video encoding.</p>
+    pub codec: std::option::Option<std::string::String>,
+    /// <p>Software or hardware used to encode the video.</p>
+    pub encoder: std::option::Option<std::string::String>,
+    /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
+    pub target_bitrate: i64,
+    /// <p>The expected ingest framerate. This is configured in the encoder.</p>
+    pub target_framerate: i64,
+    /// <p>Video-resolution height in pixels.</p>
+    pub video_height: i64,
+    /// <p>Video-resolution width in pixels.</p>
+    pub video_width: i64,
+}
+impl VideoConfiguration {
+    /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the
+    /// valid values, see the H.264 specification.</p>
+    pub fn avc_profile(&self) -> std::option::Option<&str> {
+        self.avc_profile.as_deref()
+    }
+    /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set
+    /// automatically by the encoder. For details, see the H.264 specification.</p>
+    pub fn avc_level(&self) -> std::option::Option<&str> {
+        self.avc_level.as_deref()
+    }
+    /// <p>Codec used for the video encoding.</p>
+    pub fn codec(&self) -> std::option::Option<&str> {
+        self.codec.as_deref()
+    }
+    /// <p>Software or hardware used to encode the video.</p>
+    pub fn encoder(&self) -> std::option::Option<&str> {
+        self.encoder.as_deref()
+    }
+    /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
+    pub fn target_bitrate(&self) -> i64 {
+        self.target_bitrate
+    }
+    /// <p>The expected ingest framerate. This is configured in the encoder.</p>
+    pub fn target_framerate(&self) -> i64 {
+        self.target_framerate
+    }
+    /// <p>Video-resolution height in pixels.</p>
+    pub fn video_height(&self) -> i64 {
+        self.video_height
+    }
+    /// <p>Video-resolution width in pixels.</p>
+    pub fn video_width(&self) -> i64 {
+        self.video_width
+    }
+}
+impl std::fmt::Debug for VideoConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VideoConfiguration");
+        formatter.field("avc_profile", &self.avc_profile);
+        formatter.field("avc_level", &self.avc_level);
+        formatter.field("codec", &self.codec);
+        formatter.field("encoder", &self.encoder);
+        formatter.field("target_bitrate", &self.target_bitrate);
+        formatter.field("target_framerate", &self.target_framerate);
+        formatter.field("video_height", &self.video_height);
+        formatter.field("video_width", &self.video_width);
+        formatter.finish()
+    }
+}
+/// See [`VideoConfiguration`](crate::model::VideoConfiguration)
+pub mod video_configuration {
+    /// A builder for [`VideoConfiguration`](crate::model::VideoConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) avc_profile: std::option::Option<std::string::String>,
+        pub(crate) avc_level: std::option::Option<std::string::String>,
+        pub(crate) codec: std::option::Option<std::string::String>,
+        pub(crate) encoder: std::option::Option<std::string::String>,
+        pub(crate) target_bitrate: std::option::Option<i64>,
+        pub(crate) target_framerate: std::option::Option<i64>,
+        pub(crate) video_height: std::option::Option<i64>,
+        pub(crate) video_width: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the
+        /// valid values, see the H.264 specification.</p>
+        pub fn avc_profile(mut self, input: impl Into<std::string::String>) -> Self {
+            self.avc_profile = Some(input.into());
+            self
+        }
+        /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the
+        /// valid values, see the H.264 specification.</p>
+        pub fn set_avc_profile(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.avc_profile = input;
+            self
+        }
+        /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set
+        /// automatically by the encoder. For details, see the H.264 specification.</p>
+        pub fn avc_level(mut self, input: impl Into<std::string::String>) -> Self {
+            self.avc_level = Some(input.into());
+            self
+        }
+        /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set
+        /// automatically by the encoder. For details, see the H.264 specification.</p>
+        pub fn set_avc_level(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.avc_level = input;
+            self
+        }
+        /// <p>Codec used for the video encoding.</p>
+        pub fn codec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.codec = Some(input.into());
+            self
+        }
+        /// <p>Codec used for the video encoding.</p>
+        pub fn set_codec(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.codec = input;
+            self
+        }
+        /// <p>Software or hardware used to encode the video.</p>
+        pub fn encoder(mut self, input: impl Into<std::string::String>) -> Self {
+            self.encoder = Some(input.into());
+            self
+        }
+        /// <p>Software or hardware used to encode the video.</p>
+        pub fn set_encoder(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encoder = input;
+            self
+        }
+        /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
+        pub fn target_bitrate(mut self, input: i64) -> Self {
+            self.target_bitrate = Some(input);
+            self
+        }
+        /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
+        pub fn set_target_bitrate(mut self, input: std::option::Option<i64>) -> Self {
+            self.target_bitrate = input;
+            self
+        }
+        /// <p>The expected ingest framerate. This is configured in the encoder.</p>
+        pub fn target_framerate(mut self, input: i64) -> Self {
+            self.target_framerate = Some(input);
+            self
+        }
+        /// <p>The expected ingest framerate. This is configured in the encoder.</p>
+        pub fn set_target_framerate(mut self, input: std::option::Option<i64>) -> Self {
+            self.target_framerate = input;
+            self
+        }
+        /// <p>Video-resolution height in pixels.</p>
+        pub fn video_height(mut self, input: i64) -> Self {
+            self.video_height = Some(input);
+            self
+        }
+        /// <p>Video-resolution height in pixels.</p>
+        pub fn set_video_height(mut self, input: std::option::Option<i64>) -> Self {
+            self.video_height = input;
+            self
+        }
+        /// <p>Video-resolution width in pixels.</p>
+        pub fn video_width(mut self, input: i64) -> Self {
+            self.video_width = Some(input);
+            self
+        }
+        /// <p>Video-resolution width in pixels.</p>
+        pub fn set_video_width(mut self, input: std::option::Option<i64>) -> Self {
+            self.video_width = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VideoConfiguration`](crate::model::VideoConfiguration)
+        pub fn build(self) -> crate::model::VideoConfiguration {
+            crate::model::VideoConfiguration {
+                avc_profile: self.avc_profile,
+                avc_level: self.avc_level,
+                codec: self.codec,
+                encoder: self.encoder,
+                target_bitrate: self.target_bitrate.unwrap_or_default(),
+                target_framerate: self.target_framerate.unwrap_or_default(),
+                video_height: self.video_height.unwrap_or_default(),
+                video_width: self.video_width.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl VideoConfiguration {
+    /// Creates a new builder-style object to manufacture [`VideoConfiguration`](crate::model::VideoConfiguration)
+    pub fn builder() -> crate::model::video_configuration::Builder {
+        crate::model::video_configuration::Builder::default()
+    }
+}
+
+/// <p>Object specifying a stream key.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StreamKey {
+    /// <p>Stream-key ARN.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Stream-key value.</p>
+    pub value: std::option::Option<std::string::String>,
+    /// <p>Channel ARN for the stream.</p>
+    pub channel_arn: std::option::Option<std::string::String>,
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl StreamKey {
+    /// <p>Stream-key ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Stream-key value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>Channel ARN for the stream.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for StreamKey {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StreamKey");
+        formatter.field("arn", &self.arn);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.field("channel_arn", &self.channel_arn);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`StreamKey`](crate::model::StreamKey)
+pub mod stream_key {
+    /// A builder for [`StreamKey`](crate::model::StreamKey)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) channel_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>Stream-key ARN.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>Stream-key ARN.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>Stream-key value.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>Stream-key value.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// <p>Channel ARN for the stream.</p>
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_arn = Some(input.into());
+            self
+        }
+        /// <p>Channel ARN for the stream.</p>
+        pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_arn = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StreamKey`](crate::model::StreamKey)
+        pub fn build(self) -> crate::model::StreamKey {
+            crate::model::StreamKey {
+                arn: self.arn,
+                value: self.value,
+                channel_arn: self.channel_arn,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl StreamKey {
+    /// Creates a new builder-style object to manufacture [`StreamKey`](crate::model::StreamKey)
+    pub fn builder() -> crate::model::stream_key::Builder {
+        crate::model::stream_key::Builder::default()
+    }
+}
+
+/// <p>Specifies a live video stream that has been ingested and distributed.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Stream {
+    /// <p>Channel ARN for the stream.</p>
+    pub channel_arn: std::option::Option<std::string::String>,
+    /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+    pub stream_id: std::option::Option<std::string::String>,
+    /// <p>URL of the master playlist, required by the video player to play the HLS stream.</p>
+    pub playback_url: std::option::Option<std::string::String>,
+    /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The stream’s state.</p>
+    pub state: std::option::Option<crate::model::StreamState>,
+    /// <p>The stream’s health.</p>
+    pub health: std::option::Option<crate::model::StreamHealth>,
+    /// <p>A count of concurrent views of the stream. Typically, a new view appears in
+    /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
+    /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
+    /// -1 indicates that the request timed out; in this case, retry.</p>
+    pub viewer_count: i64,
+}
+impl Stream {
+    /// <p>Channel ARN for the stream.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
+    /// <p>URL of the master playlist, required by the video player to play the HLS stream.</p>
+    pub fn playback_url(&self) -> std::option::Option<&str> {
+        self.playback_url.as_deref()
+    }
+    /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p>The stream’s state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::StreamState> {
+        self.state.as_ref()
+    }
+    /// <p>The stream’s health.</p>
+    pub fn health(&self) -> std::option::Option<&crate::model::StreamHealth> {
+        self.health.as_ref()
+    }
+    /// <p>A count of concurrent views of the stream. Typically, a new view appears in
+    /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
+    /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
+    /// -1 indicates that the request timed out; in this case, retry.</p>
+    pub fn viewer_count(&self) -> i64 {
+        self.viewer_count
+    }
+}
+impl std::fmt::Debug for Stream {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Stream");
+        formatter.field("channel_arn", &self.channel_arn);
+        formatter.field("stream_id", &self.stream_id);
+        formatter.field("playback_url", &self.playback_url);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("state", &self.state);
+        formatter.field("health", &self.health);
+        formatter.field("viewer_count", &self.viewer_count);
+        formatter.finish()
+    }
+}
+/// See [`Stream`](crate::model::Stream)
+pub mod stream {
+    /// A builder for [`Stream`](crate::model::Stream)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) channel_arn: std::option::Option<std::string::String>,
+        pub(crate) stream_id: std::option::Option<std::string::String>,
+        pub(crate) playback_url: std::option::Option<std::string::String>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) state: std::option::Option<crate::model::StreamState>,
+        pub(crate) health: std::option::Option<crate::model::StreamHealth>,
+        pub(crate) viewer_count: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>Channel ARN for the stream.</p>
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_arn = Some(input.into());
+            self
+        }
+        /// <p>Channel ARN for the stream.</p>
+        pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_arn = input;
+            self
+        }
+        /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_id = Some(input.into());
+            self
+        }
+        /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_id = input;
+            self
+        }
+        /// <p>URL of the master playlist, required by the video player to play the HLS stream.</p>
+        pub fn playback_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.playback_url = Some(input.into());
+            self
+        }
+        /// <p>URL of the master playlist, required by the video player to play the HLS stream.</p>
+        pub fn set_playback_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.playback_url = input;
+            self
+        }
+        /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>The stream’s state.</p>
+        pub fn state(mut self, input: crate::model::StreamState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The stream’s state.</p>
+        pub fn set_state(mut self, input: std::option::Option<crate::model::StreamState>) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The stream’s health.</p>
+        pub fn health(mut self, input: crate::model::StreamHealth) -> Self {
+            self.health = Some(input);
+            self
+        }
+        /// <p>The stream’s health.</p>
+        pub fn set_health(
+            mut self,
+            input: std::option::Option<crate::model::StreamHealth>,
+        ) -> Self {
+            self.health = input;
+            self
+        }
+        /// <p>A count of concurrent views of the stream. Typically, a new view appears in
+        /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
+        /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
+        /// -1 indicates that the request timed out; in this case, retry.</p>
+        pub fn viewer_count(mut self, input: i64) -> Self {
+            self.viewer_count = Some(input);
+            self
+        }
+        /// <p>A count of concurrent views of the stream. Typically, a new view appears in
+        /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
+        /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
+        /// -1 indicates that the request timed out; in this case, retry.</p>
+        pub fn set_viewer_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.viewer_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Stream`](crate::model::Stream)
+        pub fn build(self) -> crate::model::Stream {
+            crate::model::Stream {
+                channel_arn: self.channel_arn,
+                stream_id: self.stream_id,
+                playback_url: self.playback_url,
+                start_time: self.start_time,
+                state: self.state,
+                health: self.health,
+                viewer_count: self.viewer_count.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl Stream {
+    /// Creates a new builder-style object to manufacture [`Stream`](crate::model::Stream)
+    pub fn builder() -> crate::model::stream::Builder {
+        crate::model::stream::Builder::default()
     }
 }
 

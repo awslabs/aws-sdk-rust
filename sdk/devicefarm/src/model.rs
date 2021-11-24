@@ -165,7 +165,7 @@ pub struct Upload {
     /// <p>The upload's file name.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>When the upload was created.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The upload's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
@@ -315,7 +315,7 @@ impl Upload {
         self.name.as_deref()
     }
     /// <p>When the upload was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The upload's type.</p>
@@ -495,7 +495,7 @@ pub mod upload {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) r#type: std::option::Option<crate::model::UploadType>,
         pub(crate) status: std::option::Option<crate::model::UploadStatus>,
         pub(crate) url: std::option::Option<std::string::String>,
@@ -526,14 +526,14 @@ pub mod upload {
             self
         }
         /// <p>When the upload was created.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>When the upload was created.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
@@ -1225,7 +1225,7 @@ pub struct TestGridProject {
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub vpc_config: std::option::Option<crate::model::TestGridVpcConfig>,
     /// <p>When the project was created.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TestGridProject {
     /// <p>The ARN for the project.</p>
@@ -1245,7 +1245,7 @@ impl TestGridProject {
         self.vpc_config.as_ref()
     }
     /// <p>When the project was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
 }
@@ -1270,7 +1270,7 @@ pub mod test_grid_project {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) vpc_config: std::option::Option<crate::model::TestGridVpcConfig>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN for the project.</p>
@@ -1317,14 +1317,14 @@ pub mod test_grid_project {
             self
         }
         /// <p>When the project was created.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>When the project was created.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
@@ -1471,7 +1471,7 @@ pub struct Project {
     /// default value is 150 minutes.</p>
     pub default_job_timeout_minutes: std::option::Option<i32>,
     /// <p>When the project was created.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Project {
     /// <p>The project's ARN.</p>
@@ -1488,7 +1488,7 @@ impl Project {
         self.default_job_timeout_minutes
     }
     /// <p>When the project was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
 }
@@ -1514,7 +1514,7 @@ pub mod project {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) default_job_timeout_minutes: std::option::Option<i32>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The project's ARN.</p>
@@ -1550,14 +1550,14 @@ pub mod project {
             self
         }
         /// <p>When the project was created.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>When the project was created.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
@@ -3487,7 +3487,7 @@ pub struct Run {
     /// </ul>
     pub platform: std::option::Option<crate::model::DevicePlatform>,
     /// <p>When the run was created.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The run's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -3547,9 +3547,9 @@ pub struct Run {
     /// </ul>
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>The run's start time.</p>
-    pub started: std::option::Option<aws_smithy_types::Instant>,
+    pub started: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The run's stop time.</p>
-    pub stopped: std::option::Option<aws_smithy_types::Instant>,
+    pub stopped: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The run's result counters.</p>
     pub counters: std::option::Option<crate::model::Counters>,
     /// <p>A message about the run's result.</p>
@@ -3697,7 +3697,7 @@ impl Run {
         self.platform.as_ref()
     }
     /// <p>When the run was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The run's status.</p>
@@ -3763,11 +3763,11 @@ impl Run {
         self.result.as_ref()
     }
     /// <p>The run's start time.</p>
-    pub fn started(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The run's stop time.</p>
-    pub fn stopped(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stopped(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stopped.as_ref()
     }
     /// <p>The run's result counters.</p>
@@ -3924,11 +3924,11 @@ pub mod run {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::TestType>,
         pub(crate) platform: std::option::Option<crate::model::DevicePlatform>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ExecutionStatus>,
         pub(crate) result: std::option::Option<crate::model::ExecutionResult>,
-        pub(crate) started: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) stopped: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) stopped: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) counters: std::option::Option<crate::model::Counters>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) total_jobs: std::option::Option<i32>,
@@ -4139,14 +4139,14 @@ pub mod run {
             self
         }
         /// <p>When the run was created.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>When the run was created.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
@@ -4286,27 +4286,27 @@ pub mod run {
             self
         }
         /// <p>The run's start time.</p>
-        pub fn started(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started = Some(input);
             self
         }
         /// <p>The run's start time.</p>
         pub fn set_started(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started = input;
             self
         }
         /// <p>The run's stop time.</p>
-        pub fn stopped(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stopped(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stopped = Some(input);
             self
         }
         /// <p>The run's stop time.</p>
         pub fn set_stopped(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stopped = input;
             self
@@ -6528,7 +6528,7 @@ pub struct RemoteAccessSession {
     /// <p>The name of the remote access session.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time the remote access session was created.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the remote access session. Can be any of the following:</p>
     /// <ul>
     /// <li>
@@ -6588,9 +6588,9 @@ pub struct RemoteAccessSession {
     /// <p>A message about the remote access session.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The date and time the remote access session was started.</p>
-    pub started: std::option::Option<aws_smithy_types::Instant>,
+    pub started: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the remote access session was stopped.</p>
-    pub stopped: std::option::Option<aws_smithy_types::Instant>,
+    pub stopped: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The device (phone or tablet) used in the remote access session.</p>
     pub device: std::option::Option<crate::model::Device>,
     /// <p>The ARN of the instance.</p>
@@ -6663,7 +6663,7 @@ impl RemoteAccessSession {
         self.name.as_deref()
     }
     /// <p>The date and time the remote access session was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The status of the remote access session. Can be any of the following:</p>
@@ -6731,11 +6731,11 @@ impl RemoteAccessSession {
         self.message.as_deref()
     }
     /// <p>The date and time the remote access session was started.</p>
-    pub fn started(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The date and time the remote access session was stopped.</p>
-    pub fn stopped(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stopped(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stopped.as_ref()
     }
     /// <p>The device (phone or tablet) used in the remote access session.</p>
@@ -6861,12 +6861,12 @@ pub mod remote_access_session {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ExecutionStatus>,
         pub(crate) result: std::option::Option<crate::model::ExecutionResult>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) started: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) stopped: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) stopped: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) device: std::option::Option<crate::model::Device>,
         pub(crate) instance_arn: std::option::Option<std::string::String>,
         pub(crate) remote_debug_enabled: std::option::Option<bool>,
@@ -6903,14 +6903,14 @@ pub mod remote_access_session {
             self
         }
         /// <p>The date and time the remote access session was created.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>The date and time the remote access session was created.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
@@ -7056,27 +7056,27 @@ pub mod remote_access_session {
             self
         }
         /// <p>The date and time the remote access session was started.</p>
-        pub fn started(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started = Some(input);
             self
         }
         /// <p>The date and time the remote access session was started.</p>
         pub fn set_started(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started = input;
             self
         }
         /// <p>The date and time the remote access session was stopped.</p>
-        pub fn stopped(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stopped(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stopped = Some(input);
             self
         }
         /// <p>The date and time the remote access session was stopped.</p>
         pub fn set_stopped(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stopped = input;
             self
@@ -8293,7 +8293,7 @@ pub struct Job {
     /// </ul>
     pub r#type: std::option::Option<crate::model::TestType>,
     /// <p>When the job was created.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The job's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -8353,9 +8353,9 @@ pub struct Job {
     /// </ul>
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>The job's start time.</p>
-    pub started: std::option::Option<aws_smithy_types::Instant>,
+    pub started: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The job's stop time.</p>
-    pub stopped: std::option::Option<aws_smithy_types::Instant>,
+    pub stopped: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The job's result counters.</p>
     pub counters: std::option::Option<crate::model::Counters>,
     /// <p>A message about the job's result.</p>
@@ -8443,7 +8443,7 @@ impl Job {
         self.r#type.as_ref()
     }
     /// <p>When the job was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The job's status.</p>
@@ -8509,11 +8509,11 @@ impl Job {
         self.result.as_ref()
     }
     /// <p>The job's start time.</p>
-    pub fn started(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The job's stop time.</p>
-    pub fn stopped(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stopped(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stopped.as_ref()
     }
     /// <p>The job's result counters.</p>
@@ -8575,11 +8575,11 @@ pub mod job {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::TestType>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ExecutionStatus>,
         pub(crate) result: std::option::Option<crate::model::ExecutionResult>,
-        pub(crate) started: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) stopped: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) stopped: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) counters: std::option::Option<crate::model::Counters>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) device: std::option::Option<crate::model::Device>,
@@ -8736,14 +8736,14 @@ pub mod job {
             self
         }
         /// <p>When the job was created.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>When the job was created.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
@@ -8883,27 +8883,27 @@ pub mod job {
             self
         }
         /// <p>The job's start time.</p>
-        pub fn started(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started = Some(input);
             self
         }
         /// <p>The job's start time.</p>
         pub fn set_started(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started = input;
             self
         }
         /// <p>The job's stop time.</p>
-        pub fn stopped(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stopped(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stopped = Some(input);
             self
         }
         /// <p>The job's stop time.</p>
         pub fn set_stopped(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stopped = input;
             self
@@ -10939,7 +10939,7 @@ pub struct OfferingTransaction {
     /// <p>The ID that corresponds to a device offering promotion.</p>
     pub offering_promotion_id: std::option::Option<std::string::String>,
     /// <p>The date on which an offering transaction was created.</p>
-    pub created_on: std::option::Option<aws_smithy_types::Instant>,
+    pub created_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The cost of an offering transaction.</p>
     pub cost: std::option::Option<crate::model::MonetaryAmount>,
 }
@@ -10957,7 +10957,7 @@ impl OfferingTransaction {
         self.offering_promotion_id.as_deref()
     }
     /// <p>The date on which an offering transaction was created.</p>
-    pub fn created_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_on.as_ref()
     }
     /// <p>The cost of an offering transaction.</p>
@@ -10985,7 +10985,7 @@ pub mod offering_transaction {
         pub(crate) offering_status: std::option::Option<crate::model::OfferingStatus>,
         pub(crate) transaction_id: std::option::Option<std::string::String>,
         pub(crate) offering_promotion_id: std::option::Option<std::string::String>,
-        pub(crate) created_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_on: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) cost: std::option::Option<crate::model::MonetaryAmount>,
     }
     impl Builder {
@@ -11029,14 +11029,14 @@ pub mod offering_transaction {
             self
         }
         /// <p>The date on which an offering transaction was created.</p>
-        pub fn created_on(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created_on(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_on = Some(input);
             self
         }
         /// <p>The date on which an offering transaction was created.</p>
         pub fn set_created_on(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created_on = input;
             self
@@ -11211,7 +11211,7 @@ pub struct OfferingStatus {
     /// <p>The number of available devices in the offering.</p>
     pub quantity: std::option::Option<i32>,
     /// <p>The date on which the offering is effective.</p>
-    pub effective_on: std::option::Option<aws_smithy_types::Instant>,
+    pub effective_on: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OfferingStatus {
     /// <p>The type specified for the offering status.</p>
@@ -11227,7 +11227,7 @@ impl OfferingStatus {
         self.quantity
     }
     /// <p>The date on which the offering is effective.</p>
-    pub fn effective_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn effective_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.effective_on.as_ref()
     }
 }
@@ -11250,7 +11250,7 @@ pub mod offering_status {
         pub(crate) r#type: std::option::Option<crate::model::OfferingTransactionType>,
         pub(crate) offering: std::option::Option<crate::model::Offering>,
         pub(crate) quantity: std::option::Option<i32>,
-        pub(crate) effective_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) effective_on: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The type specified for the offering status.</p>
@@ -11287,14 +11287,14 @@ pub mod offering_status {
             self
         }
         /// <p>The date on which the offering is effective.</p>
-        pub fn effective_on(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn effective_on(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.effective_on = Some(input);
             self
         }
         /// <p>The date on which the offering is effective.</p>
         pub fn set_effective_on(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.effective_on = input;
             self
@@ -12200,7 +12200,7 @@ pub struct Test {
     /// </ul>
     pub r#type: std::option::Option<crate::model::TestType>,
     /// <p>When the test was created.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The test's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -12260,9 +12260,9 @@ pub struct Test {
     /// </ul>
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>The test's start time.</p>
-    pub started: std::option::Option<aws_smithy_types::Instant>,
+    pub started: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The test's stop time.</p>
-    pub stopped: std::option::Option<aws_smithy_types::Instant>,
+    pub stopped: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The test's result counters.</p>
     pub counters: std::option::Option<crate::model::Counters>,
     /// <p>A message about the test's result.</p>
@@ -12345,7 +12345,7 @@ impl Test {
         self.r#type.as_ref()
     }
     /// <p>When the test was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The test's status.</p>
@@ -12411,11 +12411,11 @@ impl Test {
         self.result.as_ref()
     }
     /// <p>The test's start time.</p>
-    pub fn started(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The test's stop time.</p>
-    pub fn stopped(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stopped(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stopped.as_ref()
     }
     /// <p>The test's result counters.</p>
@@ -12457,11 +12457,11 @@ pub mod test {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::TestType>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ExecutionStatus>,
         pub(crate) result: std::option::Option<crate::model::ExecutionResult>,
-        pub(crate) started: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) stopped: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) stopped: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) counters: std::option::Option<crate::model::Counters>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) device_minutes: std::option::Option<crate::model::DeviceMinutes>,
@@ -12620,14 +12620,14 @@ pub mod test {
             self
         }
         /// <p>When the test was created.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>When the test was created.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
@@ -12767,27 +12767,27 @@ pub mod test {
             self
         }
         /// <p>The test's start time.</p>
-        pub fn started(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started = Some(input);
             self
         }
         /// <p>The test's start time.</p>
         pub fn set_started(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started = input;
             self
         }
         /// <p>The test's stop time.</p>
-        pub fn stopped(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stopped(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stopped = Some(input);
             self
         }
         /// <p>The test's stop time.</p>
         pub fn set_stopped(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stopped = input;
             self
@@ -12860,9 +12860,9 @@ pub struct TestGridSession {
     /// <p>The state of the session.</p>
     pub status: std::option::Option<crate::model::TestGridSessionStatus>,
     /// <p>The time that the session was started.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the session ended.</p>
-    pub ended: std::option::Option<aws_smithy_types::Instant>,
+    pub ended: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of billed minutes that were used for this session. </p>
     pub billing_minutes: std::option::Option<f64>,
     /// <p>A JSON object of options and parameters passed to the Selenium WebDriver.</p>
@@ -12878,11 +12878,11 @@ impl TestGridSession {
         self.status.as_ref()
     }
     /// <p>The time that the session was started.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The time the session ended.</p>
-    pub fn ended(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn ended(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ended.as_ref()
     }
     /// <p>The number of billed minutes that were used for this session. </p>
@@ -12914,8 +12914,8 @@ pub mod test_grid_session {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::TestGridSessionStatus>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) ended: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) ended: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) billing_minutes: std::option::Option<f64>,
         pub(crate) selenium_properties: std::option::Option<std::string::String>,
     }
@@ -12944,25 +12944,25 @@ pub mod test_grid_session {
             self
         }
         /// <p>The time that the session was started.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>The time that the session was started.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
         }
         /// <p>The time the session ended.</p>
-        pub fn ended(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn ended(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.ended = Some(input);
             self
         }
         /// <p>The time the session ended.</p>
-        pub fn set_ended(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
+        pub fn set_ended(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.ended = input;
             self
         }
@@ -13288,7 +13288,7 @@ pub struct TestGridSessionAction {
     /// <p>The action taken by the session.</p>
     pub action: std::option::Option<std::string::String>,
     /// <p>The time that the session invoked the action.</p>
-    pub started: std::option::Option<aws_smithy_types::Instant>,
+    pub started: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
     pub duration: std::option::Option<i64>,
     /// <p>HTTP status code returned to the browser when the action was taken.</p>
@@ -13302,7 +13302,7 @@ impl TestGridSessionAction {
         self.action.as_deref()
     }
     /// <p>The time that the session invoked the action.</p>
-    pub fn started(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
@@ -13336,7 +13336,7 @@ pub mod test_grid_session_action {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<std::string::String>,
-        pub(crate) started: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) duration: std::option::Option<i64>,
         pub(crate) status_code: std::option::Option<std::string::String>,
         pub(crate) request_method: std::option::Option<std::string::String>,
@@ -13353,14 +13353,14 @@ pub mod test_grid_session_action {
             self
         }
         /// <p>The time that the session invoked the action.</p>
-        pub fn started(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started = Some(input);
             self
         }
         /// <p>The time that the session invoked the action.</p>
         pub fn set_started(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started = input;
             self
@@ -13489,7 +13489,7 @@ pub struct Suite {
     /// </ul>
     pub r#type: std::option::Option<crate::model::TestType>,
     /// <p>When the suite was created.</p>
-    pub created: std::option::Option<aws_smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The suite's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -13549,9 +13549,9 @@ pub struct Suite {
     /// </ul>
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>The suite's start time.</p>
-    pub started: std::option::Option<aws_smithy_types::Instant>,
+    pub started: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The suite's stop time.</p>
-    pub stopped: std::option::Option<aws_smithy_types::Instant>,
+    pub stopped: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The suite's result counters.</p>
     pub counters: std::option::Option<crate::model::Counters>,
     /// <p>A message about the suite's result.</p>
@@ -13635,7 +13635,7 @@ impl Suite {
         self.r#type.as_ref()
     }
     /// <p>When the suite was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The suite's status.</p>
@@ -13701,11 +13701,11 @@ impl Suite {
         self.result.as_ref()
     }
     /// <p>The suite's start time.</p>
-    pub fn started(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn started(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The suite's stop time.</p>
-    pub fn stopped(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+    pub fn stopped(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stopped.as_ref()
     }
     /// <p>The suite's result counters.</p>
@@ -13748,11 +13748,11 @@ pub mod suite {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::TestType>,
-        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ExecutionStatus>,
         pub(crate) result: std::option::Option<crate::model::ExecutionResult>,
-        pub(crate) started: std::option::Option<aws_smithy_types::Instant>,
-        pub(crate) stopped: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) stopped: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) counters: std::option::Option<crate::model::Counters>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) device_minutes: std::option::Option<crate::model::DeviceMinutes>,
@@ -13911,14 +13911,14 @@ pub mod suite {
             self
         }
         /// <p>When the suite was created.</p>
-        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
         /// <p>When the suite was created.</p>
         pub fn set_created(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.created = input;
             self
@@ -14058,27 +14058,27 @@ pub mod suite {
             self
         }
         /// <p>The suite's start time.</p>
-        pub fn started(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn started(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.started = Some(input);
             self
         }
         /// <p>The suite's start time.</p>
         pub fn set_started(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.started = input;
             self
         }
         /// <p>The suite's stop time.</p>
-        pub fn stopped(mut self, input: aws_smithy_types::Instant) -> Self {
+        pub fn stopped(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stopped = Some(input);
             self
         }
         /// <p>The suite's stop time.</p>
         pub fn set_stopped(
             mut self,
-            input: std::option::Option<aws_smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.stopped = input;
             self
