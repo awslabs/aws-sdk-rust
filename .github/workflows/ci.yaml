@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
         with:
-          toolchain: ${{ matrix.rust_version }}
+          toolchain: 1.56.1
           default: true
       # Pinned to the commit hash of v1.3.0
       - uses: Swatinem/rust-cache@842ef286fff290e445b90b4002cc9807c3669641
