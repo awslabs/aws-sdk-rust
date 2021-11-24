@@ -109,7 +109,7 @@ async fn fix_manifests(
     fs: Fs,
     versions: &BTreeMap<String, Version>,
     manifests: &mut Vec<Manifest>,
-    mode: Mode
+    mode: Mode,
 ) -> Result<()> {
     for manifest in manifests {
         let changed = fix_dep_sets(versions, &mut manifest.metadata)?;
@@ -125,7 +125,10 @@ async fn fix_manifests(
                     fs.write_file(&manifest.path, contents.as_bytes()).await?;
                     info!("Changed {} dependencies in {:?}.", changed, manifest.path);
                 }
-                Mode::Check => bail!("{manifest:?} contained invalid versions", manifest=manifest.path)
+                Mode::Check => bail!(
+                    "{manifest:?} contained invalid versions",
+                    manifest = manifest.path
+                ),
             }
         }
     }

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use crate::subcommand::fix_manifests::{Mode, subcommand_fix_manifests};
+use crate::subcommand::fix_manifests::{subcommand_fix_manifests, Mode};
 use crate::subcommand::publish::subcommand_publish;
 use crate::subcommand::yank_category::subcommand_yank_category;
 use anyhow::Result;
@@ -35,7 +35,7 @@ async fn main() -> Result<()> {
     } else if let Some(fix_manifests) = matches.subcommand_matches("fix-manifests") {
         let mode = match fix_manifests.is_present("check") {
             true => Mode::Check,
-            false => Mode::Execute
+            false => Mode::Execute,
         };
         subcommand_fix_manifests(mode).await?;
     } else if let Some(matches) = matches.subcommand_matches("yank-category") {
