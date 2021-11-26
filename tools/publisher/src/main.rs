@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use crate::subcommand::fix_manifests::subcommand_fix_manifests;
+use crate::subcommand::fix_manifests::{subcommand_fix_manifests, Mode};
 use crate::subcommand::publish::subcommand_publish;
 use crate::subcommand::yank_category::subcommand_yank_category;
 use anyhow::Result;
@@ -32,8 +32,12 @@ async fn main() -> Result<()> {
     if let Some(matches) = matches.subcommand_matches("publish") {
         let continue_from = matches.value_of("continue-from");
         subcommand_publish(continue_from).await?;
-    } else if let Some(_matches) = matches.subcommand_matches("fix-manifests") {
-        subcommand_fix_manifests().await?;
+    } else if let Some(fix_manifests) = matches.subcommand_matches("fix-manifests") {
+        let mode = match fix_manifests.is_present("check") {
+            true => Mode::Check,
+            false => Mode::Execute,
+        };
+        subcommand_fix_manifests(mode).await?;
     } else if let Some(matches) = matches.subcommand_matches("yank-category") {
         let category = matches.value_of("category").unwrap();
         let version = matches.value_of("version").unwrap();
@@ -52,7 +56,13 @@ fn clap_app() -> clap::App<'static, 'static> {
         // In the future, there may be another subcommand for yanking
         .subcommand(
             clap::SubCommand::with_name("fix-manifests")
-                .about("fixes path dependencies in manifests to also have version numbers"),
+                .about("fixes path dependencies in manifests to also have version numbers")
+                .arg(
+                    clap::Arg::with_name("check")
+                        .required(false)
+                        .takes_value(false)
+                        .long("check"),
+                ),
         )
         .subcommand(
             clap::SubCommand::with_name("publish")
