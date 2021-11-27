@@ -17,6 +17,7 @@ use anyhow::{bail, Context, Result};
 use semver::Version;
 use std::collections::BTreeMap;
 use std::path::PathBuf;
+use toml::value::Table;
 use tracing::info;
 
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
@@ -79,23 +80,45 @@ fn fix_dep_set(
     if let Some(dependencies) = metadata.as_table_mut().unwrap().get_mut(key) {
         if let Some(dependencies) = dependencies.as_table_mut() {
             for (dep_name, dep) in dependencies.iter_mut() {
-                changed += if dep.is_str() {
-                    0
-                } else if dep.is_table() && dep.as_table().unwrap().contains_key("path") {
-                    let version = versions.get(dep_name).ok_or_else(|| {
-                        anyhow::Error::msg(format!("version not found for crate {}", dep_name))
-                    })?;
-                    dep.as_table_mut()
-                        .unwrap()
-                        .insert("version".into(), toml::Value::String(version.to_string()));
-                    1
-                } else {
-                    0
+                changed += match dep.as_table_mut() {
+                    None => {
+                        if !dep.is_str() {
+                            bail!("unexpected dependency (must be table or string): {:?}", dep)
+                        }
+                        0
+                    }
+                    Some(ref mut table) => update_dep(table, dep_name, versions)?,
                 };
             }
         }
     }
     Ok(changed)
+}
+
+fn update_dep(
+    table: &mut Table,
+    dep_name: &str,
+    versions: &BTreeMap<String, Version>,
+) -> Result<usize> {
+    if !table.contains_key("path") {
+        return Ok(0);
+    }
+    let package_version = match versions.get(dep_name) {
+        Some(version) => version.to_string(),
+        None => bail!("version not found for crate {}", dep_name),
+    };
+    let previous_version = table.insert(
+        "version".into(),
+        toml::Value::String(package_version.to_string()),
+    );
+    match previous_version {
+        None => Ok(1),
+        Some(prev_version) if prev_version.as_str() == Some(&package_version) => Ok(0),
+        Some(mismatched_version) => {
+            tracing::warn!(expected = ?package_version, actual = ?mismatched_version, "version was set but it did not match");
+            Ok(1)
+        }
+    }
 }
 
 fn fix_dep_sets(versions: &BTreeMap<String, Version>, metadata: &mut toml::Value) -> Result<usize> {
@@ -125,10 +148,12 @@ async fn fix_manifests(
                     fs.write_file(&manifest.path, contents.as_bytes()).await?;
                     info!("Changed {} dependencies in {:?}.", changed, manifest.path);
                 }
-                Mode::Check => bail!(
-                    "{manifest:?} contained invalid versions",
-                    manifest = manifest.path
-                ),
+                Mode::Check => {
+                    bail!(
+                        "{manifest:?} contained invalid versions",
+                        manifest = manifest.path
+                    )
+                }
             }
         }
     }
@@ -148,7 +173,7 @@ mod tests {
 
             [build-dependencies]
             build_something = "1.3"
-            local_build_something = { path = "../local_build_something" }
+            local_build_something = { path = "../local_build_something", version = "0.4.0-different" }
 
             [dev-dependencies]
             dev_something = "1.1"

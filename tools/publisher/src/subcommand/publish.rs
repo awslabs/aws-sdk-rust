@@ -173,6 +173,7 @@ mod test {
     use super::*;
     use crate::package::PackageHandle;
 
+    #[ignore]
     #[tokio::test]
     async fn crate_published_works() {
         let handle = PackageHandle::new("aws-smithy-http", "0.27.0-alpha.1".parse().unwrap());
