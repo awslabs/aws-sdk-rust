@@ -32,7 +32,6 @@ struct Opt {
 /// # Arguments
 ///
 /// * `-n NAME` - The name of the secret.
-/// * `-s SECRET_VALUE` - The secret value.
 /// * `[-d DEFAULT-REGION]` - The region in which the client is created.
 ///    If not supplied, uses the value of the **AWS_DEFAULT_REGION** environment variable.
 ///    If the environment variable is not set, defaults to **us-west-2**.
