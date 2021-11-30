@@ -75,7 +75,7 @@ If you are interested in contributing to the SDK, please take a look at [CONTRIB
 
 ## Supported Rust Versions (MSRV)
 
-The SDK currently requires a minimum of Rust 1.53, and is not guaranteed to build on compiler versions earlier than that. While we are still in alpha, we will be keeping the minimum compiler version two releases behind the latest stable release where possible (so if the latest stable is 1.55, we will be on 1.53). However, we are not making any guarantees around this at present. Increases in minimum required Rust version will be called out in the Release Notes for new releases of the SDK.
+The SDK currently requires a minimum of Rust 1.54, and is not guaranteed to build on compiler versions earlier than that. While we are still in alpha, we will be keeping the minimum compiler version two releases behind the latest stable release where possible (so if the latest stable were 1.55, we would be on 1.53). However, we are not making any guarantees around this at present. Increases in minimum required Rust version will be called out in the Release Notes for new releases of the SDK.
 
 ## Additional Resources
 
