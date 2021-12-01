@@ -58,7 +58,7 @@ impl ProvideCredentials for ProfileFileCredentialsProvider {
 /// AWS Profile based credentials provider
 ///
 /// This credentials provider will load credentials from `~/.aws/config` and `~/.aws/credentials`.
-/// The locations of these files are configurable, see [`profile::load`](crate::profile::load).
+/// The locations of these files are configurable via environment variables, see [below](#location-of-profile-files).
 ///
 /// Generally, this will be constructed via the default provider chain, however, it can be manually
 /// constructed with the builder:
@@ -123,6 +123,24 @@ impl ProvideCredentials for ProfileFileCredentialsProvider {
 /// ```
 ///
 /// Other more complex configurations are possible, consult `test-data/assume-role-tests.json`.
+///
+/// ## Location of Profile Files
+/// * The location of the config file will be loaded from the `AWS_CONFIG_FILE` environment variable
+/// with a fallback to `~/.aws/config`
+/// * The location of the credentials file will be loaded from the `AWS_SHARED_CREDENTIALS_FILE`
+/// environment variable with a fallback to `~/.aws/credentials`
+///
+/// ## Home directory resolution
+/// Home directory resolution is implemented to match the behavior of the CLI & Python. `~` is only
+/// used for home directory resolution when it:
+/// - Starts the path
+/// - Is followed immediately by `/` or a platform specific separator. (On windows, `~/` and `~\` both
+///   resolve to the home directory.
+///
+/// When determining the home directory, the following environment variables are checked:
+/// - `HOME` on all platforms
+/// - `USERPROFILE` on Windows
+/// - The concatenation of `HOMEDRIVE` and `HOMEPATH` on Windows (`$HOMEDRIVE$HOMEPATH`)
 #[derive(Debug)]
 pub struct ProfileFileCredentialsProvider {
     factory: NamedProviderFactory,

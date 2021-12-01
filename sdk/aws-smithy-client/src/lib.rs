@@ -2,6 +2,7 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
+
 //! A Hyper-based Smithy service client.
 #![warn(
     missing_debug_implementations,

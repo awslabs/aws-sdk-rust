@@ -29,7 +29,15 @@ impl EnvironmentVariableCredentialsProvider {
             .get("AWS_SECRET_ACCESS_KEY")
             .or_else(|_| self.env.get("SECRET_ACCESS_KEY"))
             .map_err(to_cred_error)?;
-        let session_token = self.env.get("AWS_SESSION_TOKEN").ok();
+        let session_token = self
+            .env
+            .get("AWS_SESSION_TOKEN")
+            .ok()
+            .map(|token| match token.trim() {
+                s if s.is_empty() => None,
+                s => Some(s.to_string()),
+            })
+            .flatten();
         Ok(Credentials::new(
             access_key,
             secret_key,
@@ -125,6 +133,26 @@ mod test {
         assert_eq!(creds.session_token().unwrap(), "token");
         assert_eq!(creds.access_key_id(), "access");
         assert_eq!(creds.secret_access_key(), "secret");
+    }
+
+    #[test]
+    fn empty_token_env_var() {
+        for token_value in &["", " "] {
+            let provider = make_provider(&[
+                ("AWS_ACCESS_KEY_ID", "access"),
+                ("AWS_SECRET_ACCESS_KEY", "secret"),
+                ("AWS_SESSION_TOKEN", token_value),
+            ]);
+
+            let creds = provider
+                .provide_credentials()
+                .now_or_never()
+                .unwrap()
+                .expect("valid credentials");
+            assert_eq!(creds.access_key_id(), "access");
+            assert_eq!(creds.secret_access_key(), "secret");
+            assert_eq!(creds.session_token(), None);
+        }
     }
 
     #[test]

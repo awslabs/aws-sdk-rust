@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.0.26-alpha"
-aws-sdk-directory = "0.0.26-alpha"
+aws-config = "0.1.0"
+aws-sdk-directory = "0.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 
