@@ -1,3 +1,12 @@
+v0.1.0 (December 2nd, 2021)
+===========================
+
+**New this release**
+- Add docs.rs metadata section to all crates to document all features
+- [Added a new example showing how to set all currently supported timeouts](./examples/setting_timeouts/src/main.rs)
+- Add a new check so that the SDK doesn't emit an irrelevant `$HOME` dir warning when running in a Lambda (aws-sdk-rust#307)
+- :bug: Don't capture empty session tokens from the `AWS_SESSION_TOKEN` environment variable (aws-sdk-rust#316, smithy-rs#906)
+
 v0.0.26-alpha (November 23rd, 2021)
 ===================================
 
@@ -72,7 +81,6 @@ v0.0.26-alpha (November 23rd, 2021)
 Thank you for your contributions! :heart:
 
 - @floric (smithy-rs#862)
-
 
 v0.0.25-alpha (November 11th, 2021)
 ===================================
@@ -756,4 +764,3 @@ v0.0.3-alpha (May 6th, 2021)
 - Added code examples for Kinesis
 
 More details in smithy-rs: https://github.com/awslabs/smithy-rs/releases/tag/v0.8
-
