@@ -6,9 +6,11 @@
 //! Ecs Credentials Provider
 //!
 //! This credential provider is frequently used with an AWS-provided credentials service (e.g.
-//! [IAM Roles for tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html).
+//! [IAM Roles for tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html)).
 //! However, it's possible to use environment variables to configure this provider to use your own
 //! credentials sources.
+//!
+//! This provider is part of the [default credentials chain](crate::default_provider::credentials).
 //!
 //! ## Configuration
 //! **First**: It will check the value of `$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI`. It will use this

@@ -100,7 +100,8 @@ impl Builder {
     /// Set the timeout_config for the builder
     ///
     /// # Examples
-    /// ```rust
+    ///
+    /// ```no_run
     /// # use std::time::Duration;
     /// use aws_sdk_athena::config::Config;
     /// use aws_smithy_types::timeout::TimeoutConfig;
@@ -120,7 +121,8 @@ impl Builder {
     /// Set the timeout_config for the builder
     ///
     /// # Examples
-    /// ```rust
+    ///
+    /// ```no_run
     /// # use std::time::Duration;
     /// use aws_sdk_athena::config::{Builder, Config};
     /// use aws_smithy_types::timeout::TimeoutConfig;
@@ -145,7 +147,8 @@ impl Builder {
     /// Set the sleep_impl for the builder
     ///
     /// # Examples
-    /// ```rust
+    ///
+    /// ```no_run
     /// use aws_sdk_athena::config::Config;
     /// use aws_smithy_async::rt::sleep::AsyncSleep;
     /// use aws_smithy_async::rt::sleep::Sleep;
@@ -173,7 +176,8 @@ impl Builder {
     /// Set the sleep_impl for the builder
     ///
     /// # Examples
-    /// ```rust
+    ///
+    /// ```no_run
     /// use aws_sdk_athena::config::{Builder, Config};
     /// use aws_smithy_async::rt::sleep::AsyncSleep;
     /// use aws_smithy_async::rt::sleep::Sleep;
@@ -206,7 +210,7 @@ impl Builder {
     /// Set the retry_config for the builder
     ///
     /// # Examples
-    /// ```rust
+    /// ```no_run
     /// use aws_sdk_athena::config::Config;
     /// use aws_smithy_types::retry::RetryConfig;
     ///
@@ -221,7 +225,7 @@ impl Builder {
     /// Set the retry_config for the builder
     ///
     /// # Examples
-    /// ```rust
+    /// ```no_run
     /// use aws_sdk_athena::config::{Builder, Config};
     /// use aws_smithy_types::retry::RetryConfig;
     ///

@@ -3,11 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-//! Default Provider chains for [`region`](default_provider::region) and [`credentials`](default_provider::credentials).
+//! Default Provider chains for [`region`](default_provider::region), [`credentials`](default_provider::credentials),
+//! [retries](default_provider::retry_config), [timeouts](default_provider::timeout_config) and [app name](default_provider::app_name).
 //!
-//! Unless specific configuration is required, these should be constructed via [`ConfigLoader`](crate::ConfigLoader).
+//! Typically, this module is used via [`load_from_env`](crate::load_from_env) or [`from_env`](crate::from_env). It should only be used directly
+//! if you need to set custom configuration options to override the default resolution chain.
 
-/// Default region provider chain
+/// Default [region](aws_types::region::Region) provider chain
+///
+/// Typically, this module is used via [`load_from_env`](crate::load_from_env) or [`from_env`](crate::from_env). It should only be used directly
+/// if you need to set custom configuration options to override the default resolution chain.
 pub mod region {
     use aws_types::region::Region;
 
@@ -21,6 +26,7 @@ pub mod region {
     /// This provider will check the following sources in order:
     /// 1. [Environment variables](EnvironmentVariableRegionProvider)
     /// 2. [Profile file](crate::profile::region::ProfileFileRegionProvider)
+    /// 3. [EC2 IMDSv2](crate::imds::region)
     pub fn default_provider() -> impl ProvideRegion {
         Builder::default().build()
     }
@@ -86,6 +92,9 @@ pub mod region {
 }
 
 /// Default retry behavior configuration provider chain
+///
+/// Typically, this module is used via [`load_from_env`](crate::load_from_env) or [`from_env`](crate::from_env). It should only be used directly
+/// if you need to set custom configuration options to override the default resolution chain.
 pub mod retry_config {
     use aws_smithy_types::retry::RetryConfig;
 
@@ -190,6 +199,9 @@ pub mod retry_config {
 }
 
 /// Default app name provider chain
+///
+/// Typically, this module is used via [`load_from_env`](crate::load_from_env) or [`from_env`](crate::from_env). It should only be used directly
+/// if you need to set custom configuration options to override the default resolution chain.
 pub mod app_name {
     use crate::environment::app_name::EnvironmentVariableAppNameProvider;
     use crate::profile::app_name;
@@ -285,6 +297,9 @@ pub mod app_name {
 }
 
 /// Default timeout configuration provider chain
+///
+/// Typically, this module is used via [`load_from_env`](crate::load_from_env) or [`from_env`](crate::from_env). It should only be used directly
+/// if you need to set custom configuration options to override the default resolution chain.
 pub mod timeout_config {
     use aws_smithy_types::timeout::TimeoutConfig;
 
@@ -401,6 +416,9 @@ pub mod timeout_config {
 }
 
 /// Default credentials provider chain
+///
+/// Typically, this module is used via [`load_from_env`](crate::load_from_env) or [`from_env`](crate::from_env). It should only be used directly
+/// if you need to set custom configuration options like [`region`](credentials::Builder::region) or [`profile_name`](credentials::Builder::profile_name).
 pub mod credentials {
     use std::borrow::Cow;
 
@@ -424,6 +442,9 @@ pub mod credentials {
     /// Resolution order:
     /// 1. Environment variables: [`EnvironmentVariableCredentialsProvider`](crate::environment::EnvironmentVariableCredentialsProvider)
     /// 2. Shared config (`~/.aws/config`, `~/.aws/credentials`): [`SharedConfigCredentialsProvider`](crate::profile::ProfileFileCredentialsProvider)
+    /// 3. [Web Identity Tokens](crate::web_identity_token)
+    /// 4. ECS (IAM Roles for Tasks) & General HTTP credentials: [`ecs`](crate::ecs)
+    /// 5. [EC2 IMDSv2](crate::imds)
     ///
     /// The outer provider is wrapped in a refreshing cache.
     ///

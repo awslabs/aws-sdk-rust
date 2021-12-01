@@ -66,3 +66,7 @@ This project is licensed under the Apache-2.0 License.
 [GitHub issues]: https://github.com/awslabs/aws-sdk-rust/issues/new/choose
 [Generated Docs]: https://awslabs.github.io/aws-sdk-rust/
 [Usage examples]: https://github.com/awslabs/aws-sdk-rust/tree/main/examples
+
+<!-- anchor_start:footer -->
+This crate is part of the [AWS SDK for Rust](https://awslabs.github.io/aws-sdk-rust/) and the [smithy-rs](https://github.com/awslabs/smithy-rs) code generator. In most cases, it should not be used directly.
+<!-- anchor_end:footer -->

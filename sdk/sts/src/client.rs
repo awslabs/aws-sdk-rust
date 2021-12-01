@@ -9,23 +9,10 @@ pub(crate) struct Handle<
     conf: crate::Config,
 }
 
-/// An ergonomic service client for `AWSSecurityTokenServiceV20110615`.
+/// Client for AWS Security Token Service
 ///
-/// This client allows ergonomic access to a `AWSSecurityTokenServiceV20110615`-shaped service.
-/// Each method corresponds to an endpoint defined in the service's Smithy model,
-/// and the request and response shapes are auto-generated from that same model.
-///
-/// # Using a Client
-///
-/// Once you have a client set up, you can access the service's endpoints
-/// by calling the appropriate method on [`Client`]. Each such method
-/// returns a request builder for that endpoint, with methods for setting
-/// the various fields of the request. Once your request is complete, use
-/// the `send` method to send the request. `send` returns a future, which
-/// you then have to `.await` to get the service's response.
-///
-/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#c-builder
-/// [SigV4-signed requests]: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+/// Client for invoking operations on AWS Security Token Service. Each operation on AWS Security Token Service is a method on this
+/// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,

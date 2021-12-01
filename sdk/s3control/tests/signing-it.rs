@@ -4,15 +4,14 @@
  */
 
 use aws_http::user_agent::AwsUserAgent;
-use aws_sdk_s3control as s3control;
+use aws_sdk_s3control::operation::ListAccessPoints;
+use aws_sdk_s3control::{Credentials, Region};
 use aws_smithy_client::test_connection::TestConnection;
 use aws_smithy_http::body::SdkBody;
-use s3control::operation::ListAccessPoints;
-use s3control::{Credentials, Region};
 use std::time::{Duration, UNIX_EPOCH};
 
 #[tokio::test]
-async fn test_signer() -> Result<(), s3control::Error> {
+async fn test_signer() -> Result<(), aws_sdk_s3control::Error> {
     let creds = Credentials::new(
         "ANOTREAL",
         "notrealrnrELgWzOk3IfjzDKtFBhDby",
@@ -20,7 +19,7 @@ async fn test_signer() -> Result<(), s3control::Error> {
         None,
         "test",
     );
-    let conf = s3control::Config::builder()
+    let conf = aws_sdk_s3control::Config::builder()
         .credentials_provider(creds)
         .region(Region::new("us-east-1"))
         .build();
