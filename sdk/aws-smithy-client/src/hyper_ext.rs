@@ -50,7 +50,6 @@ use aws_smithy_async::future::timeout::TimedOutError;
 use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::ConnectorError;
-pub use aws_smithy_http::result::{SdkError, SdkSuccess};
 use aws_smithy_types::retry::ErrorKind;
 
 use crate::{timeout, Builder as ClientBuilder};
