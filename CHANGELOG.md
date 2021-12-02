@@ -1,3 +1,8 @@
+v0.2.0 (December 2nd, 2021)
+===========================
+
+- This release was a version bump to fix a version number conflict in crates.io
+
 v0.1.0 (December 2nd, 2021)
 ===========================
 
