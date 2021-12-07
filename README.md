@@ -1,14 +1,16 @@
-# The AWS SDK for Rust [![Docs](https://img.shields.io/badge/docs-v0.2.0-blue)](https://awslabs.github.io/aws-sdk-rust/) ![MSRV](https://img.shields.io/badge/msrv-1.54-red)
+# The AWS SDK for Rust [![Docs](https://img.shields.io/badge/docs-v0.2.0-blue)](https://awslabs.github.io/aws-sdk-rust/) ![MSRV](https://img.shields.io/badge/msrv-1.54-red) [![Usage Guide](https://img.shields.io/badge/Developer_Guide-blue)](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html)
 
-This repo contains the new AWS SDK for Rust (the SDK) and its [public roadmap](https://github.com/awslabs/aws-sdk-rust/projects/1)
+This repo contains the new AWS SDK for Rust (the SDK) and its [public roadmap](https://github.com/awslabs/aws-sdk-rust/projects/1).
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for feedback purposes only. Do not use this SDK for production workloads.**
+**Please Note: The SDK is currently released as a developer preview and is intended strictly for feedback purposes only. Do not use this SDK for production workloads.**
 
 The SDK is code generated from [Smithy models](https://awslabs.github.io/smithy/) that represent each AWS service. The code used to generate the SDK can be found in [smithy-rs](https://github.com/awslabs/smithy-rs).
 
 ## Getting Started with the SDK
 
 > Examples are availble for many services and operations, check out the [examples folder](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
+
+> For a step-by-step guide including several advanced use cases, check out the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html).
 
 The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio) as a dependency within your Rust project to execute asynchronous code.
 
@@ -52,10 +54,10 @@ In order to use the SDK, you must already have Rust and Cargo installed. If you 
 
 ## Using the SDK
 
-Until the SDK is released, we will be adding information about using the SDK to the [Guide](https://github.com/awslabs/aws-sdk-rust/blob/main/Guide.md). Feel free to suggest additional sections for the guide by opening an issue and describing what you are trying to do. 
+While we're working on the SDK, detailed usage instructions will be added to the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Please suggest additional sections for the guide by opening an issue and describing what you are trying to do.
 
 ## Getting Help
-
+* [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html)
 * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
 * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) – For bug reports & feature requests
 * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
