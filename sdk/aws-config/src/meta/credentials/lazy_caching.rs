@@ -225,8 +225,8 @@ mod builder {
                 }),
                 self.load.expect("load implementation is required"),
                 self.load_timeout.unwrap_or(DEFAULT_LOAD_TIMEOUT),
-                self.buffer_time.unwrap_or(DEFAULT_BUFFER_TIME),
                 default_credential_expiration,
+                self.buffer_time.unwrap_or(DEFAULT_BUFFER_TIME),                
             )
         }
     }
