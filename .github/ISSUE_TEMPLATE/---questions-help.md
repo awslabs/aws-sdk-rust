@@ -13,7 +13,7 @@ body:
         - label: I agree to follow this project's Code of Conduct
           required: true
           
-   - type: checkboxes
+  - type: checkboxes
     id: terms
     attributes:
       label: Code of Conduct
