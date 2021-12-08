@@ -1,17 +1,57 @@
----
-name: "\U0001F4AC Questions / Help"
-about: If you have questions, please check AWS Forums or StackOverflow
-title: ''
-labels: guidance, needs-triage
-assignees: ''
+name: General Issue
+description: Create a new issue
+title: "short issue description"
+labels: [needs-triage, guidance]
+body:
 
----
+ - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: I've searched for [previous similar issues](https://github.com/awslabs/aws-sdk-rust/issues) or [discussions](https://github.com/awslabs/aws-sdk-rust/discussions) and didn't find any solution.
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
+          
+   - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description:  I searched the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html) for an answer to my question.
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
+   
+  - type: input
+    id: issue
+    attributes:
+      label: General Issue
+      description: |
+        Describe the question
+    validations:
+      required: true
 
-Confirm by changing [ ] to [x] below:
-- [ ] I've searched for [previous similar issues](https://github.com/awslabs/aws-sdk-rust/issues) or [discussions](https://github.com/awslabs/aws-sdk-rust/discussions) and didn't find any solution.
-- [ ] I searched the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html) for an answer to my question.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question Description
+      description: |
+        Ask your question here. Include any details relevant. Make sure you are not falling prey to the [X/Y problem](http://xyproblem.info)!
+    validations:
+      required: true
 
-**Platform/OS/Device**
-What are you running the sdk on?
+  - type: input
+    id: operating-system
+    attributes:
+      label: Platform/OS/Device
+    validations:
+      required: false
 
-**Describe the question**
+  - type: input
+    id: language-version
+    attributes:
+      label: Language Version
+      description: E.g. Rust 1.57.0
+    validations:
+      required: false
+
