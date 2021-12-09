@@ -4,7 +4,7 @@ title: "short issue description"
 labels: [needs-triage, guidance]
 body:
   - type: checkboxes
-    id: due diligence
+    id: issues
     attributes:
       label:
       description:
@@ -15,7 +15,7 @@ body:
           required: true
           
   - type: checkboxes
-    id: due diligence
+    id: guide
     attributes:
       label:
       description:
