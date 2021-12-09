@@ -21,7 +21,6 @@ body:
         (see install here: https://github.com/sfackler/cargo-tree)
 
         Then:
-
         `cargo tree | grep aws-sdk-`
     validations:
       required: true
@@ -50,16 +49,14 @@ body:
       label: Description
       description: |
         One way to structure the description:
-
-        <short summary of the bug>
+        `short summary of the bug`
 
         I tried this code:
+        `code sample that causes the bug`
 
-        <code sample that causes the bug>
+        I expected to see this happen: `explanation`
 
-        I expected to see this happen: <explanation>
-
-        Instead, this happened: <explanation>
+        Instead, this happened: `explanation`
 
         It's also helpful to enable trace logging and include the
         log messages as these will show the actual HTTP requests and
@@ -67,11 +64,9 @@ body:
         if you haven't already (e.g., `tracing_subscriber::fmt::init();`),
         and then setting the environment variable `RUST_LOG` before
         running your program, as follows:
-
         `RUST_LOG='smithy_http_tower::dispatch=trace,smithy_http::middleware=trace'`
 
         For example:
-
         `RUST_LOG='smithy_http_tower::dispatch=trace,smithy_http::middleware=trace' cargo run`
 
         The SDK redacts sensitive information such as auth headers in these trace logs,
