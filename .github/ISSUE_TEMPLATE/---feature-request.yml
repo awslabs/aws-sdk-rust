@@ -12,7 +12,7 @@ body:
       	* Please do not leave "+1" or "me too" comments, they generate extra noise for issue followers and do not help prioritize the request
       	* If you are interested in working on this issue, please leave a comment
       	<!-- Thank you for keeping this note for the community -->
-	  
+
   - type: textarea
     id: description
     attributes:
