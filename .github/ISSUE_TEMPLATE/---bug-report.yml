@@ -37,7 +37,7 @@ body:
 
   - type: textarea
     id: services
-    attributes
+    attributes:
       label: AWS Services
       description: |
         If relevant, please specify the impacted services. Otherwise, delete this section.
