@@ -1,5 +1,5 @@
 name: "\U0001F4AC Questions / Help"
-description: Create a new issue
+description: General guidance question
 title: "short issue description"
 labels: [needs-triage, guidance]
 body:
