@@ -1,0 +1,53 @@
+name: "\U0001F680 Feature request"
+description: Suggest an idea for this project
+title: "[request]: Describe request here"
+labels: [feature-request, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+		<!-- Please keep this note for the community -->
+
+		### Community Note
+
+		* Please vote on this issue by adding a 👍 [reaction](https://blog.github.com/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) to the original issue to help the community and maintainers prioritize this request
+		* Please do not leave "+1" or "me too" comments, they generate extra noise for issue followers and do not help prioritize the request
+		* If you are interested in working on this issue, please leave a comment
+
+		<!-- Thank you for keeping this note for the community -->
+
+	  
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Short description of the feature you are proposing.
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: |
+        Tell us about the problem you're trying to solve. What are you trying to do, and why is it hard? What outcome are you trying to achieve, ultimately, and why is it hard/impossible to do right now? What is the impact of not having this problem solved? The more details you can provide, the better we'll be able to understand and solve the problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: |
+        Please include prototype/workaround/sketch/reference implementation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: other
+    attributes:
+      label: Other information
+      description: |
+        e.g. detailed explanation, stacktraces, related issues, suggestions how to fix, links for us to have context, eg. associated pull-request, stackoverflow, slack, etc
+    validations:
+      required: false
