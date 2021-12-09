@@ -58,7 +58,7 @@ body:
 
         Instead, this happened: `explanation`
 
-- type: textarea
+  - type: textarea
     id: logs
     attributes:
       label: Logs
