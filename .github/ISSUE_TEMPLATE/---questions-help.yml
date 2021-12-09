@@ -6,23 +6,14 @@ body:
   - type: checkboxes
     id: issues
     attributes:
-      label:
+      label: Prerequisites 
       description:
       options:
         - label: I've searched for [previous similar issues](https://github.com/awslabs/aws-sdk-rust/issues) or [discussions](https://github.com/awslabs/aws-sdk-rust/discussions) and didn't find any solution.
           required: true
         - label: I searched the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html) for an answer to my question.
           required: true
-          
-  - type: checkboxes
-    id: guide
-    attributes:
-      label:
-      description:
-      options:
-        - label: I searched the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html) for an answer to my question.
-          required: true
-          
+  
   - type: input
     id: issue
     attributes:
