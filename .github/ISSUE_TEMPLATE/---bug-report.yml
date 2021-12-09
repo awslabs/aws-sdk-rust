@@ -1,0 +1,78 @@
+name: "\U0001F41B Bug report"
+description: If something isn't working as expected 🤔
+title: 'Short description of bug'
+labels: [bug, needs-triage]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is the problem?
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: |
+        List the versions & crates of the aws-rust-sdk you are using.
+
+        `cargo install cargo-tree`
+        (see install here: https://github.com/sfackler/cargo-tree)
+
+        Then:
+        `cargo tree | grep aws-`
+    validations:
+      required: true
+
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      description: |
+        Output of `uname -a` (UNIX), or version and 32 or 64-bit (Windows)
+    validations:
+      required: true
+
+  - type: textarea
+    id: services
+    attributes:
+      label: AWS Services
+      description: |
+        If relevant, please specify the impacted services. Otherwise, delete this section.
+    validations:
+      required: false
+      
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: |
+        One way to structure the description:
+        `short summary of the bug`
+
+        I tried this code:
+        `code sample that causes the bug`
+
+        I expected to see this happen: `explanation`
+
+        Instead, this happened: `explanation`
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: |
+        It's also helpful to enable trace logging and include the
+        log messages as these will show the actual HTTP requests and
+        responses. You can enable this by initializing `tracing-subscriber`
+        if you haven't already (e.g., `tracing_subscriber::fmt::init();`),
+        and then setting the environment variable `RUST_LOG` before
+        running your program, as follows:
+        `RUST_LOG='smithy_http_tower::dispatch=trace,smithy_http::middleware=trace'`
+
+        For example:
+        `RUST_LOG='smithy_http_tower::dispatch=trace,smithy_http::middleware=trace' cargo run`
+
+        The SDK redacts sensitive information such as auth headers in these trace logs,
+        but please look through them before posting just to be sure.
