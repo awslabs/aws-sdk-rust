@@ -13,15 +13,6 @@ body:
           required: true
         - label: I searched the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html) for an answer to my question.
           required: true
-  
-  - type: input
-    id: issue
-    attributes:
-      label: General Issue
-      description: |
-        Describe the question
-    validations:
-      required: true
 
   - type: textarea
     id: question
