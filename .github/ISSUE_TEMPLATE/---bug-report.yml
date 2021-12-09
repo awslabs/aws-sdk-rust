@@ -21,7 +21,7 @@ body:
         (see install here: https://github.com/sfackler/cargo-tree)
 
         Then:
-        `cargo tree | grep aws-sdk-`
+        `cargo tree | grep aws-`
     validations:
       required: true
 
@@ -58,6 +58,11 @@ body:
 
         Instead, this happened: `explanation`
 
+- type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: |
         It's also helpful to enable trace logging and include the
         log messages as these will show the actual HTTP requests and
         responses. You can enable this by initializing `tracing-subscriber`
