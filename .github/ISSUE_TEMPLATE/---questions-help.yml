@@ -3,8 +3,7 @@ description: Create a new issue
 title: "short issue description"
 labels: [needs-triage, guidance]
 body:
-
- - type: checkboxes
+  - type: checkboxes
     id: terms
     attributes:
       label: Code of Conduct
