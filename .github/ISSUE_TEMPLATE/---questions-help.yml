@@ -6,7 +6,7 @@ body:
   - type: checkboxes
     id: due diligence
     attributes:
-      label: Code of Conduct
+      label:
       description:
       options:
         - label: I've searched for [previous similar issues](https://github.com/awslabs/aws-sdk-rust/issues) or [discussions](https://github.com/awslabs/aws-sdk-rust/discussions) and didn't find any solution.
@@ -14,15 +14,15 @@ body:
         - label: I searched the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html) for an answer to my question.
           required: true
           
-#  - type: checkboxes
-#    id: terms
-#    attributes:
-#      label: Code of Conduct
-#      description:  I searched the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html) for an answer to my question.
-#      options:
-#        - label: I agree to follow this project's Code of Conduct
-#          required: true
-   
+  - type: checkboxes
+    id: due diligence
+    attributes:
+      label:
+      description:
+      options:
+        - label: I searched the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html) for an answer to my question.
+          required: true
+          
   - type: input
     id: issue
     attributes:
