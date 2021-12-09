@@ -4,12 +4,14 @@ title: "short issue description"
 labels: [needs-triage, guidance]
 body:
   - type: checkboxes
-    id: terms
+    id: due diligence
     attributes:
       label: Code of Conduct
-      description: I've searched for [previous similar issues](https://github.com/awslabs/aws-sdk-rust/issues) or [discussions](https://github.com/awslabs/aws-sdk-rust/discussions) and didn't find any solution.
+      description:
       options:
-        - label: I agree to follow this project's Code of Conduct
+        - label: I've searched for [previous similar issues](https://github.com/awslabs/aws-sdk-rust/issues) or [discussions](https://github.com/awslabs/aws-sdk-rust/discussions) and didn't find any solution.
+          required: true
+        - label: I searched the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html) for an answer to my question.
           required: true
           
 #  - type: checkboxes
