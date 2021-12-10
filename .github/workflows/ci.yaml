@@ -37,7 +37,13 @@ jobs:
         with:
           sharedKey: test
       - name: Cargo Test
-        run: ./tools/ci/run-cmd-on-crate-range.py ${{ matrix.crate_range }} cargo test
+        run: |
+          # HACK: The workspace smithy-rs generates is invalid.
+          # This can be removed once https://github.com/awslabs/smithy-rs/pull/957
+          # is merged into aws-sdk-rust.
+          rm Cargo.toml
+
+          ./tools/ci/run-cmd-on-crate-range.py ${{ matrix.crate_range }} cargo test
 
   # Psuedo-job that depends on the test job so that we don't have to enter
   # the myriad of test range combinations into GitHub's protected branch rules
