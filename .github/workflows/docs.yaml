@@ -1,11 +1,8 @@
-on: 
+on:
   push:
     branches: [main]
-  pull_request:  
-    
-env:
-  rust_version: 1.51.0
-  
+  pull_request:
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -19,6 +16,6 @@ jobs:
           toolchain: nightly
       - name: Generate docs
         run: cargo +nightly doc --target-dir ../docs-new --no-deps
-        env: 
+        env:
           RUSTDOCFLAGS: "--enable-index-page -Zunstable-options"
         working-directory: sdk
