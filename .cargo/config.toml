@@ -1,0 +1,3 @@
+[build]
+# Share one `target` directory at the project root for all Cargo projects and workspaces in aws-sdk-rust
+target-dir = "target"
