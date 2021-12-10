@@ -13,6 +13,9 @@ import os
 import subprocess
 import shlex
 
+COLOR_YELLOW = "\033[93m"
+COLOR_RESET = "\033[0m"
+
 
 def main():
     if len(sys.argv) < 4:
@@ -38,10 +41,13 @@ def main():
         print("Range end is invalid")
         return 1
 
+    completed = 0
     crate_paths = crate_paths[range_start_inclusive:range_end_exclusive]
     for crate_path in crate_paths:
+        print(f"\n{COLOR_YELLOW}Current crate: {crate_path}, completed: {completed}, remaining: {len(crate_paths) - completed}{COLOR_RESET}\n")
         os.chdir(f"{repository_root}/{crate_path}")
         subprocess.run(cmd, check=True)
+        completed += 1
 
     return 0
 
