@@ -4,6 +4,11 @@
 # SPDX-License-Identifier: Apache-2.0.
 #
 
+# This script lists all of the crates in this repository that are
+# considered to be a part of the SDK distribution. This does not include
+# tools, such as the publisher tool, since these are not intended to be
+# used by customers of the SDK, and also have their own CI.
+
 set -e
 cd $(git rev-parse --show-toplevel)
 

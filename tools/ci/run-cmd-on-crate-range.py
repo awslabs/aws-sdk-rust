@@ -4,6 +4,10 @@
 # SPDX-License-Identifier: Apache-2.0.
 #
 
+# This script will run the given command on the given crate range.
+# So if there are crates A, B, C, D, E, and F, and the range is "1 3",
+# then it will run the given command on B and C.
+
 import sys
 import os
 import subprocess

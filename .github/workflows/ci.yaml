@@ -10,9 +10,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: Generate the matrix
         id: generate-matrix
-        run: |
-          # Rust versions to test against are arguments to this script
-          echo "::set-output name=matrix::$(./tools/ci/get-ci-matrix.py 1.54.0 1.56.1)"
+        # Run the `get-ci-matrix.py` script to calculate a test matrix for the `test` job.
+        # This script outputs JSON that GitHub Actions can consume as a matrix definition.
+        # Rust versions to test against are arguments to this script.
+        run: echo "::set-output name=matrix::$(./tools/ci/get-ci-matrix.py 1.54.0 1.56.1)"
     outputs:
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
 

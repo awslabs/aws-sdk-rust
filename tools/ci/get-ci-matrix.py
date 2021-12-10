@@ -4,6 +4,10 @@
 # SPDX-License-Identifier: Apache-2.0.
 #
 
+# This script counts the total number of crates in the SDK (including examples),
+# and creates a set of batches based on that size in a format that GitHub Actions
+# can consume as a matrix strategy.
+
 import json
 import math
 import os
