@@ -44,7 +44,7 @@ def main():
     completed = 0
     crate_paths = crate_paths[range_start_inclusive:range_end_exclusive]
     for crate_path in crate_paths:
-        print(f"\n{COLOR_YELLOW}Current crate: {crate_path}, completed: {completed}, remaining: {len(crate_paths) - completed}{COLOR_RESET}\n")
+        print(f"\n{COLOR_YELLOW}Current crate: {crate_path}, completed: {completed}, remaining: {len(crate_paths) - completed}{COLOR_RESET}\n", file=sys.stderr)
         os.chdir(f"{repository_root}/{crate_path}")
         subprocess.run(cmd, check=True)
         completed += 1

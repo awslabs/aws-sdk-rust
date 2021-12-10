@@ -36,6 +36,9 @@ jobs:
       - uses: Swatinem/rust-cache@842ef286fff290e445b90b4002cc9807c3669641
         with:
           sharedKey: test
+      # The telephone-game example depends on ALSA, so we need this library to compile it
+      - name: Install libasound2-dev
+        run: sudo apt-get install -y libasound2-dev
       - name: Cargo Test
         run: |
           # HACK: The workspace smithy-rs generates is invalid.
