@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S python3 -u
 #
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: Apache-2.0.
@@ -138,6 +138,7 @@ def subcommand_generate_matrix(repository_root, batch_count, rust_versions):
 
 # Entry point for the `run` sub-command
 def subcommand_run(repository_root, batch_count, start_inclusive, end_exclusive, command):
+    print(f"{COLOR_YELLOW}Determining crate list...{COLOR_RESET}")
     crates = list_crates(repository_root)
 
     if end_exclusive <= start_inclusive or end_exclusive < 0 or start_inclusive < 0:
@@ -155,12 +156,16 @@ def subcommand_run(repository_root, batch_count, start_inclusive, end_exclusive,
     crates = organize_crate_list(batch_count, crates)
     crates = crates[start_inclusive:end_exclusive]
 
+    print(f"{COLOR_YELLOW}Crates to run against:{COLOR_RESET}")
+    for crate in crates:
+        print(f"{COLOR_YELLOW}  {crate.loc}\t{crate.path}{COLOR_RESET}")
+
     completed = 0
     for crate in crates:
-        print(f"\n{COLOR_YELLOW}Current crate: {crate.path}, loc: {crate.loc}, completed: {completed}, "
-              f"remaining: {len(crates) - completed}{COLOR_RESET}\n", file=sys.stderr)
+        print(f"{COLOR_YELLOW}Current crate: {crate.path}, loc: {crate.loc}, completed: {completed}, "
+              f"remaining: {len(crates) - completed}{COLOR_RESET}")
         os.chdir(crate.path)
-        subprocess.run(command, check=True, stdout=sys.stderr, stderr=sys.stderr)
+        subprocess.run(command, check=True)
         completed += 1
 
     return 0
