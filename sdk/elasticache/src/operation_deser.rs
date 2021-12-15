@@ -2165,6 +2165,24 @@ pub fn parse_create_user_error(
                 tmp
             }),
         },
+        "ServiceLinkedRoleNotFoundFault" => crate::error::CreateUserError {
+            meta: generic,
+            kind: crate::error::CreateUserErrorKind::ServiceLinkedRoleNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_linked_role_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TagQuotaPerResourceExceeded" => crate::error::CreateUserError {
             meta: generic,
             kind: crate::error::CreateUserErrorKind::TagQuotaPerResourceExceeded({
@@ -2295,6 +2313,24 @@ pub fn parse_create_user_group_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceLinkedRoleNotFoundFault" => crate::error::CreateUserGroupError {
+            meta: generic,
+            kind: crate::error::CreateUserGroupErrorKind::ServiceLinkedRoleNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_linked_role_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3564,6 +3600,24 @@ pub fn parse_delete_user_error(
                 tmp
             }),
         },
+        "ServiceLinkedRoleNotFoundFault" => crate::error::DeleteUserError {
+            meta: generic,
+            kind: crate::error::DeleteUserErrorKind::ServiceLinkedRoleNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_linked_role_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UserNotFound" => {
             crate::error::DeleteUserError {
                 meta: generic,
@@ -3645,6 +3699,24 @@ pub fn parse_delete_user_group_error(
                         crate::error::invalid_user_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceLinkedRoleNotFoundFault" => crate::error::DeleteUserGroupError {
+            meta: generic,
+            kind: crate::error::DeleteUserGroupErrorKind::ServiceLinkedRoleNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_linked_role_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4954,6 +5026,24 @@ pub fn parse_describe_user_groups_error(
                     ),
             }
         }
+        "ServiceLinkedRoleNotFoundFault" => crate::error::DescribeUserGroupsError {
+            meta: generic,
+            kind: crate::error::DescribeUserGroupsErrorKind::ServiceLinkedRoleNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_linked_role_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserGroupsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UserGroupNotFound" => crate::error::DescribeUserGroupsError {
             meta: generic,
             kind: crate::error::DescribeUserGroupsErrorKind::UserGroupNotFoundFault({
@@ -5018,6 +5108,24 @@ pub fn parse_describe_users_error(
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUsersError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceLinkedRoleNotFoundFault" => crate::error::DescribeUsersError {
+            meta: generic,
+            kind: crate::error::DescribeUsersErrorKind::ServiceLinkedRoleNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_linked_role_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUsersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7055,6 +7163,24 @@ pub fn parse_modify_user_error(
                 tmp
             }),
         },
+        "ServiceLinkedRoleNotFoundFault" => crate::error::ModifyUserError {
+            meta: generic,
+            kind: crate::error::ModifyUserErrorKind::ServiceLinkedRoleNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_linked_role_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UserNotFound" => {
             crate::error::ModifyUserError {
                 meta: generic,
@@ -7188,6 +7314,24 @@ pub fn parse_modify_user_group_error(
                         crate::error::invalid_user_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceLinkedRoleNotFoundFault" => crate::error::ModifyUserGroupError {
+            meta: generic,
+            kind: crate::error::ModifyUserGroupErrorKind::ServiceLinkedRoleNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_linked_role_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

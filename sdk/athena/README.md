@@ -1,6 +1,6 @@
 # aws-sdk-athena
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 Amazon Athena is an interactive query service that lets you use standard SQL to analyze data directly in Amazon S3. You can point Athena at your data in Amazon S3 and run ad-hoc queries and get results in seconds. Athena is serverless, so there is no infrastructure to set up or manage. You pay only for the queries you run. Athena scales automatically—executing queries in parallel—so results are fast, even with large datasets and complex queries. For more information, see [What is Amazon Athena](http://docs.aws.amazon.com/athena/latest/ug/what-is.html) in the _Amazon Athena User Guide_.
@@ -20,8 +20,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-athena = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-athena = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

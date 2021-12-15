@@ -7,10 +7,10 @@ pub struct ValidateTemplateOutput {
     pub parameters: std::option::Option<std::vec::Vec<crate::model::TemplateParameter>>,
     /// <p>The description found within the template.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The capabilities found within the template. If your template contains IAM resources,
-    /// you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when
-    /// you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with
-    /// your template; otherwise, those actions return an InsufficientCapabilities error.</p>
+    /// <p>The capabilities found within the template. If your template contains IAM resources, you
+    /// must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you
+    /// use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your
+    /// template; otherwise, those actions return an InsufficientCapabilities error.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
     /// <p>The list of resources that generated the values in the <code>Capabilities</code>
@@ -28,10 +28,10 @@ impl ValidateTemplateOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The capabilities found within the template. If your template contains IAM resources,
-    /// you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when
-    /// you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with
-    /// your template; otherwise, those actions return an InsufficientCapabilities error.</p>
+    /// <p>The capabilities found within the template. If your template contains IAM resources, you
+    /// must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you
+    /// use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your
+    /// template; otherwise, those actions return an InsufficientCapabilities error.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
     pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
         self.capabilities.as_deref()
@@ -103,10 +103,10 @@ pub mod validate_template_output {
         ///
         /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
         ///
-        /// <p>The capabilities found within the template. If your template contains IAM resources,
-        /// you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when
-        /// you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with
-        /// your template; otherwise, those actions return an InsufficientCapabilities error.</p>
+        /// <p>The capabilities found within the template. If your template contains IAM resources, you
+        /// must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you
+        /// use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your
+        /// template; otherwise, those actions return an InsufficientCapabilities error.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
         pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
@@ -114,10 +114,10 @@ pub mod validate_template_output {
             self.capabilities = Some(v);
             self
         }
-        /// <p>The capabilities found within the template. If your template contains IAM resources,
-        /// you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when
-        /// you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with
-        /// your template; otherwise, those actions return an InsufficientCapabilities error.</p>
+        /// <p>The capabilities found within the template. If your template contains IAM resources, you
+        /// must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you
+        /// use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your
+        /// template; otherwise, those actions return an InsufficientCapabilities error.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
         pub fn set_capabilities(
             mut self,
@@ -1236,8 +1236,7 @@ pub struct ListStackSetsOutput {
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
     /// set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
     /// again and assign that token to the request object's <code>NextToken</code> parameter. If
-    /// the request returns all results, <code>NextToken</code> is set to
-    /// <code>null</code>.</p>
+    /// the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStackSetsOutput {
@@ -1249,8 +1248,7 @@ impl ListStackSetsOutput {
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
     /// set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
     /// again and assign that token to the request object's <code>NextToken</code> parameter. If
-    /// the request returns all results, <code>NextToken</code> is set to
-    /// <code>null</code>.</p>
+    /// the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1297,8 +1295,7 @@ pub mod list_stack_sets_output {
         /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
         /// set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
         /// again and assign that token to the request object's <code>NextToken</code> parameter. If
-        /// the request returns all results, <code>NextToken</code> is set to
-        /// <code>null</code>.</p>
+        /// the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -1306,8 +1303,7 @@ pub mod list_stack_sets_output {
         /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
         /// set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
         /// again and assign that token to the request object's <code>NextToken</code> parameter. If
-        /// the request returns all results, <code>NextToken</code> is set to
-        /// <code>null</code>.</p>
+        /// the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1335,9 +1331,9 @@ pub struct ListStackSetOperationsOutput {
     /// <p>A list of <code>StackSetOperationSummary</code> structures that contain summary
     /// information about operations for the specified stack set.</p>
     pub summaries: std::option::Option<std::vec::Vec<crate::model::StackSetOperationSummary>>,
-    /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token.
-    /// To retrieve the next set of results, call <code>ListOperationResults</code> again and
-    /// assign that token to the request object's <code>NextToken</code> parameter. If there are no
+    /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To
+    /// retrieve the next set of results, call <code>ListOperationResults</code> again and assign
+    /// that token to the request object's <code>NextToken</code> parameter. If there are no
     /// remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -1347,9 +1343,9 @@ impl ListStackSetOperationsOutput {
     pub fn summaries(&self) -> std::option::Option<&[crate::model::StackSetOperationSummary]> {
         self.summaries.as_deref()
     }
-    /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token.
-    /// To retrieve the next set of results, call <code>ListOperationResults</code> again and
-    /// assign that token to the request object's <code>NextToken</code> parameter. If there are no
+    /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To
+    /// retrieve the next set of results, call <code>ListOperationResults</code> again and assign
+    /// that token to the request object's <code>NextToken</code> parameter. If there are no
     /// remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -1398,17 +1394,17 @@ pub mod list_stack_set_operations_output {
             self.summaries = input;
             self
         }
-        /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token.
-        /// To retrieve the next set of results, call <code>ListOperationResults</code> again and
-        /// assign that token to the request object's <code>NextToken</code> parameter. If there are no
+        /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To
+        /// retrieve the next set of results, call <code>ListOperationResults</code> again and assign
+        /// that token to the request object's <code>NextToken</code> parameter. If there are no
         /// remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token.
-        /// To retrieve the next set of results, call <code>ListOperationResults</code> again and
-        /// assign that token to the request object's <code>NextToken</code> parameter. If there are no
+        /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To
+        /// retrieve the next set of results, call <code>ListOperationResults</code> again and assign
+        /// that token to the request object's <code>NextToken</code> parameter. If there are no
         /// remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -1438,9 +1434,9 @@ pub struct ListStackSetOperationResultsOutput {
     /// information about the specified operation results, for accounts and Regions that are
     /// included in the operation.</p>
     pub summaries: std::option::Option<std::vec::Vec<crate::model::StackSetOperationResultSummary>>,
-    /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token.
-    /// To retrieve the next set of results, call <code>ListOperationResults</code> again and
-    /// assign that token to the request object's <code>NextToken</code> parameter. If there are no
+    /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To
+    /// retrieve the next set of results, call <code>ListOperationResults</code> again and assign
+    /// that token to the request object's <code>NextToken</code> parameter. If there are no
     /// remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -1453,9 +1449,9 @@ impl ListStackSetOperationResultsOutput {
     ) -> std::option::Option<&[crate::model::StackSetOperationResultSummary]> {
         self.summaries.as_deref()
     }
-    /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token.
-    /// To retrieve the next set of results, call <code>ListOperationResults</code> again and
-    /// assign that token to the request object's <code>NextToken</code> parameter. If there are no
+    /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To
+    /// retrieve the next set of results, call <code>ListOperationResults</code> again and assign
+    /// that token to the request object's <code>NextToken</code> parameter. If there are no
     /// remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -1506,17 +1502,17 @@ pub mod list_stack_set_operation_results_output {
             self.summaries = input;
             self
         }
-        /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token.
-        /// To retrieve the next set of results, call <code>ListOperationResults</code> again and
-        /// assign that token to the request object's <code>NextToken</code> parameter. If there are no
+        /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To
+        /// retrieve the next set of results, call <code>ListOperationResults</code> again and assign
+        /// that token to the request object's <code>NextToken</code> parameter. If there are no
         /// remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token.
-        /// To retrieve the next set of results, call <code>ListOperationResults</code> again and
-        /// assign that token to the request object's <code>NextToken</code> parameter. If there are no
+        /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To
+        /// retrieve the next set of results, call <code>ListOperationResults</code> again and assign
+        /// that token to the request object's <code>NextToken</code> parameter. If there are no
         /// remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -1545,8 +1541,8 @@ pub struct ListStacksOutput {
     /// <p>A list of <code>StackSummary</code> structures containing information about the
     /// specified stacks.</p>
     pub stack_summaries: std::option::Option<std::vec::Vec<crate::model::StackSummary>>,
-    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks.
-    /// If no additional page exists, this value is null.</p>
+    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If
+    /// no additional page exists, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStacksOutput {
@@ -1555,8 +1551,8 @@ impl ListStacksOutput {
     pub fn stack_summaries(&self) -> std::option::Option<&[crate::model::StackSummary]> {
         self.stack_summaries.as_deref()
     }
-    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks.
-    /// If no additional page exists, this value is null.</p>
+    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If
+    /// no additional page exists, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1600,14 +1596,14 @@ pub mod list_stacks_output {
             self.stack_summaries = input;
             self
         }
-        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks.
-        /// If no additional page exists, this value is null.</p>
+        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If
+        /// no additional page exists, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks.
-        /// If no additional page exists, this value is null.</p>
+        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If
+        /// no additional page exists, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1635,8 +1631,8 @@ pub struct ListStackResourcesOutput {
     /// <p>A list of <code>StackResourceSummary</code> structures.</p>
     pub stack_resource_summaries:
         std::option::Option<std::vec::Vec<crate::model::StackResourceSummary>>,
-    /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack
-    /// resources. If no additional page exists, this value is null.</p>
+    /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources.
+    /// If no additional page exists, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStackResourcesOutput {
@@ -1646,8 +1642,8 @@ impl ListStackResourcesOutput {
     ) -> std::option::Option<&[crate::model::StackResourceSummary]> {
         self.stack_resource_summaries.as_deref()
     }
-    /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack
-    /// resources. If no additional page exists, this value is null.</p>
+    /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources.
+    /// If no additional page exists, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1693,14 +1689,14 @@ pub mod list_stack_resources_output {
             self.stack_resource_summaries = input;
             self
         }
-        /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack
-        /// resources. If no additional page exists, this value is null.</p>
+        /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources.
+        /// If no additional page exists, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack
-        /// resources. If no additional page exists, this value is null.</p>
+        /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources.
+        /// If no additional page exists, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1731,8 +1727,7 @@ pub struct ListStackInstancesOutput {
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
     /// set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
     /// again and assign that token to the request object's <code>NextToken</code> parameter. If
-    /// the request returns all results, <code>NextToken</code> is set to
-    /// <code>null</code>.</p>
+    /// the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStackInstancesOutput {
@@ -1744,8 +1739,7 @@ impl ListStackInstancesOutput {
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
     /// set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
     /// again and assign that token to the request object's <code>NextToken</code> parameter. If
-    /// the request returns all results, <code>NextToken</code> is set to
-    /// <code>null</code>.</p>
+    /// the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1793,8 +1787,7 @@ pub mod list_stack_instances_output {
         /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
         /// set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
         /// again and assign that token to the request object's <code>NextToken</code> parameter. If
-        /// the request returns all results, <code>NextToken</code> is set to
-        /// <code>null</code>.</p>
+        /// the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -1802,8 +1795,7 @@ pub mod list_stack_instances_output {
         /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
         /// set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
         /// again and assign that token to the request object's <code>NextToken</code> parameter. If
-        /// the request returns all results, <code>NextToken</code> is set to
-        /// <code>null</code>.</p>
+        /// the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1830,8 +1822,8 @@ impl ListStackInstancesOutput {
 pub struct ListImportsOutput {
     /// <p>A list of stack names that are importing the specified exported output value.</p>
     pub imports: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A string that identifies the next page of exports. If there is no additional page,
-    /// this value is null.</p>
+    /// <p>A string that identifies the next page of exports. If there is no additional page, this
+    /// value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImportsOutput {
@@ -1839,8 +1831,8 @@ impl ListImportsOutput {
     pub fn imports(&self) -> std::option::Option<&[std::string::String]> {
         self.imports.as_deref()
     }
-    /// <p>A string that identifies the next page of exports. If there is no additional page,
-    /// this value is null.</p>
+    /// <p>A string that identifies the next page of exports. If there is no additional page, this
+    /// value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1882,14 +1874,14 @@ pub mod list_imports_output {
             self.imports = input;
             self
         }
-        /// <p>A string that identifies the next page of exports. If there is no additional page,
-        /// this value is null.</p>
+        /// <p>A string that identifies the next page of exports. If there is no additional page, this
+        /// value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A string that identifies the next page of exports. If there is no additional page,
-        /// this value is null.</p>
+        /// <p>A string that identifies the next page of exports. If there is no additional page, this
+        /// value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1916,8 +1908,8 @@ impl ListImportsOutput {
 pub struct ListExportsOutput {
     /// <p>The output for the <a>ListExports</a> action.</p>
     pub exports: std::option::Option<std::vec::Vec<crate::model::Export>>,
-    /// <p>If the output exceeds 100 exported output values, a string that identifies the next
-    /// page of exports. If there is no additional page, this value is null.</p>
+    /// <p>If the output exceeds 100 exported output values, a string that identifies the next page
+    /// of exports. If there is no additional page, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExportsOutput {
@@ -1925,8 +1917,8 @@ impl ListExportsOutput {
     pub fn exports(&self) -> std::option::Option<&[crate::model::Export]> {
         self.exports.as_deref()
     }
-    /// <p>If the output exceeds 100 exported output values, a string that identifies the next
-    /// page of exports. If there is no additional page, this value is null.</p>
+    /// <p>If the output exceeds 100 exported output values, a string that identifies the next page
+    /// of exports. If there is no additional page, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1968,14 +1960,14 @@ pub mod list_exports_output {
             self.exports = input;
             self
         }
-        /// <p>If the output exceeds 100 exported output values, a string that identifies the next
-        /// page of exports. If there is no additional page, this value is null.</p>
+        /// <p>If the output exceeds 100 exported output values, a string that identifies the next page
+        /// of exports. If there is no additional page, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the output exceeds 100 exported output values, a string that identifies the next
-        /// page of exports. If there is no additional page, this value is null.</p>
+        /// <p>If the output exceeds 100 exported output values, a string that identifies the next page
+        /// of exports. If there is no additional page, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2150,11 +2142,12 @@ pub struct GetTemplateSummaryOutput {
     /// <p>The value that is defined in the <code>Description</code> property of the
     /// template.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The capabilities found within the template. If your template contains IAM resources,
-    /// you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when
-    /// you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with
-    /// your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
+    /// <p>The capabilities found within the template. If your template contains IAM
+    /// resources, you must specify the <code>CAPABILITY_IAM</code> or
+    /// <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
+    /// otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation
+    /// Templates</a>.</p>
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
     /// <p>The list of resources that generated the values in the <code>Capabilities</code>
     /// response element.</p>
@@ -2166,8 +2159,7 @@ pub struct GetTemplateSummaryOutput {
     /// <p>The Amazon Web Services template format version, which identifies the capabilities of the
     /// template.</p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>The value that is defined for the <code>Metadata</code> property of the
-    /// template.</p>
+    /// <p>The value that is defined for the <code>Metadata</code> property of the template.</p>
     pub metadata: std::option::Option<std::string::String>,
     /// <p>A list of the transforms that are declared in the template.</p>
     pub declared_transforms: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2189,11 +2181,12 @@ impl GetTemplateSummaryOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The capabilities found within the template. If your template contains IAM resources,
-    /// you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when
-    /// you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with
-    /// your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
+    /// <p>The capabilities found within the template. If your template contains IAM
+    /// resources, you must specify the <code>CAPABILITY_IAM</code> or
+    /// <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
+    /// otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation
+    /// Templates</a>.</p>
     pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
         self.capabilities.as_deref()
     }
@@ -2213,8 +2206,7 @@ impl GetTemplateSummaryOutput {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The value that is defined for the <code>Metadata</code> property of the
-    /// template.</p>
+    /// <p>The value that is defined for the <code>Metadata</code> property of the template.</p>
     pub fn metadata(&self) -> std::option::Option<&str> {
         self.metadata.as_deref()
     }
@@ -2306,22 +2298,24 @@ pub mod get_template_summary_output {
         ///
         /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
         ///
-        /// <p>The capabilities found within the template. If your template contains IAM resources,
-        /// you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when
-        /// you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with
-        /// your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
+        /// <p>The capabilities found within the template. If your template contains IAM
+        /// resources, you must specify the <code>CAPABILITY_IAM</code> or
+        /// <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
+        /// otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation
+        /// Templates</a>.</p>
         pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
             v.push(input.into());
             self.capabilities = Some(v);
             self
         }
-        /// <p>The capabilities found within the template. If your template contains IAM resources,
-        /// you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when
-        /// you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with
-        /// your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
+        /// <p>The capabilities found within the template. If your template contains IAM
+        /// resources, you must specify the <code>CAPABILITY_IAM</code> or
+        /// <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
+        /// otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation
+        /// Templates</a>.</p>
         pub fn set_capabilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
@@ -2379,14 +2373,12 @@ pub mod get_template_summary_output {
             self.version = input;
             self
         }
-        /// <p>The value that is defined for the <code>Metadata</code> property of the
-        /// template.</p>
+        /// <p>The value that is defined for the <code>Metadata</code> property of the template.</p>
         pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
             self.metadata = Some(input.into());
             self
         }
-        /// <p>The value that is defined for the <code>Metadata</code> property of the
-        /// template.</p>
+        /// <p>The value that is defined for the <code>Metadata</code> property of the template.</p>
         pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metadata = input;
             self
@@ -2469,11 +2461,11 @@ pub struct GetTemplateOutput {
     /// <p>CloudFormation returns the same template that was used when the stack was
     /// created.</p>
     pub template_body: std::option::Option<std::string::String>,
-    /// <p>The stage of the template that you can retrieve. For stacks, the
-    /// <code>Original</code> and <code>Processed</code> templates are always available. For
-    /// change sets, the <code>Original</code> template is always available. After
-    /// CloudFormation finishes creating the change set, the <code>Processed</code> template
-    /// becomes available.</p>
+    /// <p>The stage of the template that you can retrieve. For stacks, the <code>Original</code>
+    /// and <code>Processed</code> templates are always available. For change sets, the
+    /// <code>Original</code> template is always available. After CloudFormation
+    /// finishes creating the change set, the <code>Processed</code> template becomes
+    /// available.</p>
     pub stages_available: std::option::Option<std::vec::Vec<crate::model::TemplateStage>>,
 }
 impl GetTemplateOutput {
@@ -2483,11 +2475,11 @@ impl GetTemplateOutput {
     pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
-    /// <p>The stage of the template that you can retrieve. For stacks, the
-    /// <code>Original</code> and <code>Processed</code> templates are always available. For
-    /// change sets, the <code>Original</code> template is always available. After
-    /// CloudFormation finishes creating the change set, the <code>Processed</code> template
-    /// becomes available.</p>
+    /// <p>The stage of the template that you can retrieve. For stacks, the <code>Original</code>
+    /// and <code>Processed</code> templates are always available. For change sets, the
+    /// <code>Original</code> template is always available. After CloudFormation
+    /// finishes creating the change set, the <code>Processed</code> template becomes
+    /// available.</p>
     pub fn stages_available(&self) -> std::option::Option<&[crate::model::TemplateStage]> {
         self.stages_available.as_deref()
     }
@@ -2532,22 +2524,22 @@ pub mod get_template_output {
         ///
         /// To override the contents of this collection use [`set_stages_available`](Self::set_stages_available).
         ///
-        /// <p>The stage of the template that you can retrieve. For stacks, the
-        /// <code>Original</code> and <code>Processed</code> templates are always available. For
-        /// change sets, the <code>Original</code> template is always available. After
-        /// CloudFormation finishes creating the change set, the <code>Processed</code> template
-        /// becomes available.</p>
+        /// <p>The stage of the template that you can retrieve. For stacks, the <code>Original</code>
+        /// and <code>Processed</code> templates are always available. For change sets, the
+        /// <code>Original</code> template is always available. After CloudFormation
+        /// finishes creating the change set, the <code>Processed</code> template becomes
+        /// available.</p>
         pub fn stages_available(mut self, input: impl Into<crate::model::TemplateStage>) -> Self {
             let mut v = self.stages_available.unwrap_or_default();
             v.push(input.into());
             self.stages_available = Some(v);
             self
         }
-        /// <p>The stage of the template that you can retrieve. For stacks, the
-        /// <code>Original</code> and <code>Processed</code> templates are always available. For
-        /// change sets, the <code>Original</code> template is always available. After
-        /// CloudFormation finishes creating the change set, the <code>Processed</code> template
-        /// becomes available.</p>
+        /// <p>The stage of the template that you can retrieve. For stacks, the <code>Original</code>
+        /// and <code>Processed</code> templates are always available. For change sets, the
+        /// <code>Original</code> template is always available. After CloudFormation
+        /// finishes creating the change set, the <code>Processed</code> template becomes
+        /// available.</p>
         pub fn set_stages_available(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TemplateStage>>,
@@ -2666,13 +2658,13 @@ impl ExecuteChangeSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EstimateTemplateCostOutput {
-    /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources
-    /// required to run the template.</p>
+    /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes
+    /// the resources required to run the template.</p>
     pub url: std::option::Option<std::string::String>,
 }
 impl EstimateTemplateCostOutput {
-    /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources
-    /// required to run the template.</p>
+    /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes
+    /// the resources required to run the template.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -2693,14 +2685,14 @@ pub mod estimate_template_cost_output {
         pub(crate) url: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources
-        /// required to run the template.</p>
+        /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes
+        /// the resources required to run the template.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources
-        /// required to run the template.</p>
+        /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes
+        /// the resources required to run the template.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -4418,8 +4410,8 @@ impl DescribeStackSetOutput {
 pub struct DescribeStacksOutput {
     /// <p>A list of stack structures.</p>
     pub stacks: std::option::Option<std::vec::Vec<crate::model::Stack>>,
-    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks.
-    /// If no additional page exists, this value is null.</p>
+    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If
+    /// no additional page exists, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeStacksOutput {
@@ -4427,8 +4419,8 @@ impl DescribeStacksOutput {
     pub fn stacks(&self) -> std::option::Option<&[crate::model::Stack]> {
         self.stacks.as_deref()
     }
-    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks.
-    /// If no additional page exists, this value is null.</p>
+    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If
+    /// no additional page exists, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4470,14 +4462,14 @@ pub mod describe_stacks_output {
             self.stacks = input;
             self
         }
-        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks.
-        /// If no additional page exists, this value is null.</p>
+        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If
+        /// no additional page exists, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks.
-        /// If no additional page exists, this value is null.</p>
+        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If
+        /// no additional page exists, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4697,13 +4689,13 @@ impl DescribeStackResourceDriftsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackResourceOutput {
-    /// <p>A <code>StackResourceDetail</code> structure containing the description of the
-    /// specified resource in the specified stack.</p>
+    /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified
+    /// resource in the specified stack.</p>
     pub stack_resource_detail: std::option::Option<crate::model::StackResourceDetail>,
 }
 impl DescribeStackResourceOutput {
-    /// <p>A <code>StackResourceDetail</code> structure containing the description of the
-    /// specified resource in the specified stack.</p>
+    /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified
+    /// resource in the specified stack.</p>
     pub fn stack_resource_detail(&self) -> std::option::Option<&crate::model::StackResourceDetail> {
         self.stack_resource_detail.as_ref()
     }
@@ -4724,14 +4716,14 @@ pub mod describe_stack_resource_output {
         pub(crate) stack_resource_detail: std::option::Option<crate::model::StackResourceDetail>,
     }
     impl Builder {
-        /// <p>A <code>StackResourceDetail</code> structure containing the description of the
-        /// specified resource in the specified stack.</p>
+        /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified
+        /// resource in the specified stack.</p>
         pub fn stack_resource_detail(mut self, input: crate::model::StackResourceDetail) -> Self {
             self.stack_resource_detail = Some(input);
             self
         }
-        /// <p>A <code>StackResourceDetail</code> structure containing the description of the
-        /// specified resource in the specified stack.</p>
+        /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified
+        /// resource in the specified stack.</p>
         pub fn set_stack_resource_detail(
             mut self,
             input: std::option::Option<crate::model::StackResourceDetail>,
@@ -4817,8 +4809,8 @@ impl DescribeStackInstanceOutput {
 pub struct DescribeStackEventsOutput {
     /// <p>A list of <code>StackEvents</code> structures.</p>
     pub stack_events: std::option::Option<std::vec::Vec<crate::model::StackEvent>>,
-    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events.
-    /// If no additional page exists, this value is null.</p>
+    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events. If
+    /// no additional page exists, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeStackEventsOutput {
@@ -4826,8 +4818,8 @@ impl DescribeStackEventsOutput {
     pub fn stack_events(&self) -> std::option::Option<&[crate::model::StackEvent]> {
         self.stack_events.as_deref()
     }
-    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events.
-    /// If no additional page exists, this value is null.</p>
+    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events. If
+    /// no additional page exists, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4869,14 +4861,14 @@ pub mod describe_stack_events_output {
             self.stack_events = input;
             self
         }
-        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events.
-        /// If no additional page exists, this value is null.</p>
+        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events. If
+        /// no additional page exists, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events.
-        /// If no additional page exists, this value is null.</p>
+        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events. If
+        /// no additional page exists, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4904,8 +4896,8 @@ pub struct DescribeStackDriftDetectionStatusOutput {
     /// <p>The ID of the stack.</p>
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The ID of the drift detection results of this operation.</p>
-    /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation
-    /// is run. However, the number of reports CloudFormation retains for any given stack, and for how long,
+    /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is
+    /// run. However, the number of reports CloudFormation retains for any given stack, and for how long,
     /// may vary.</p>
     pub stack_drift_detection_id: std::option::Option<std::string::String>,
     /// <p>Status of the stack's actual configuration compared to its expected
@@ -4913,9 +4905,9 @@ pub struct DescribeStackDriftDetectionStatusOutput {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>DRIFTED</code>: The stack differs from its expected template
-    /// configuration. A stack is considered to have drifted if one or more of its resources
-    /// have drifted.</p>
+    /// <code>DRIFTED</code>: The stack differs from its expected template configuration.
+    /// A stack is considered to have drifted if one or more of its resources have
+    /// drifted.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -4940,15 +4932,15 @@ pub struct DescribeStackDriftDetectionStatusOutput {
     /// <code>DETECTION_COMPLETE</code>: The stack drift detection operation has
     /// successfully completed for all resources in the stack that support drift detection.
     /// (Resources that do not currently support stack detection remain unchecked.)</p>
-    /// <p>If you specified logical resource IDs for CloudFormation to use as a filter for the
-    /// stack drift detection operation, only the resources with those logical IDs are
-    /// checked for drift.</p>
+    /// <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack
+    /// drift detection operation, only the resources with those logical IDs are checked for
+    /// drift.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>DETECTION_FAILED</code>: The stack drift detection operation has failed
-    /// for at least one resource in the stack. Results will be available for resources on
-    /// which CloudFormation successfully completed drift detection.</p>
+    /// <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for
+    /// at least one resource in the stack. Results will be available for resources on which
+    /// CloudFormation successfully completed drift detection.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -4972,8 +4964,8 @@ impl DescribeStackDriftDetectionStatusOutput {
         self.stack_id.as_deref()
     }
     /// <p>The ID of the drift detection results of this operation.</p>
-    /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation
-    /// is run. However, the number of reports CloudFormation retains for any given stack, and for how long,
+    /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is
+    /// run. However, the number of reports CloudFormation retains for any given stack, and for how long,
     /// may vary.</p>
     pub fn stack_drift_detection_id(&self) -> std::option::Option<&str> {
         self.stack_drift_detection_id.as_deref()
@@ -4983,9 +4975,9 @@ impl DescribeStackDriftDetectionStatusOutput {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>DRIFTED</code>: The stack differs from its expected template
-    /// configuration. A stack is considered to have drifted if one or more of its resources
-    /// have drifted.</p>
+    /// <code>DRIFTED</code>: The stack differs from its expected template configuration.
+    /// A stack is considered to have drifted if one or more of its resources have
+    /// drifted.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -5012,15 +5004,15 @@ impl DescribeStackDriftDetectionStatusOutput {
     /// <code>DETECTION_COMPLETE</code>: The stack drift detection operation has
     /// successfully completed for all resources in the stack that support drift detection.
     /// (Resources that do not currently support stack detection remain unchecked.)</p>
-    /// <p>If you specified logical resource IDs for CloudFormation to use as a filter for the
-    /// stack drift detection operation, only the resources with those logical IDs are
-    /// checked for drift.</p>
+    /// <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack
+    /// drift detection operation, only the resources with those logical IDs are checked for
+    /// drift.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>DETECTION_FAILED</code>: The stack drift detection operation has failed
-    /// for at least one resource in the stack. Results will be available for resources on
-    /// which CloudFormation successfully completed drift detection.</p>
+    /// <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for
+    /// at least one resource in the stack. Results will be available for resources on which
+    /// CloudFormation successfully completed drift detection.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -5090,16 +5082,16 @@ pub mod describe_stack_drift_detection_status_output {
             self
         }
         /// <p>The ID of the drift detection results of this operation.</p>
-        /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation
-        /// is run. However, the number of reports CloudFormation retains for any given stack, and for how long,
+        /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is
+        /// run. However, the number of reports CloudFormation retains for any given stack, and for how long,
         /// may vary.</p>
         pub fn stack_drift_detection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_drift_detection_id = Some(input.into());
             self
         }
         /// <p>The ID of the drift detection results of this operation.</p>
-        /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation
-        /// is run. However, the number of reports CloudFormation retains for any given stack, and for how long,
+        /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is
+        /// run. However, the number of reports CloudFormation retains for any given stack, and for how long,
         /// may vary.</p>
         pub fn set_stack_drift_detection_id(
             mut self,
@@ -5113,9 +5105,9 @@ pub mod describe_stack_drift_detection_status_output {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>DRIFTED</code>: The stack differs from its expected template
-        /// configuration. A stack is considered to have drifted if one or more of its resources
-        /// have drifted.</p>
+        /// <code>DRIFTED</code>: The stack differs from its expected template configuration.
+        /// A stack is considered to have drifted if one or more of its resources have
+        /// drifted.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -5141,9 +5133,9 @@ pub mod describe_stack_drift_detection_status_output {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>DRIFTED</code>: The stack differs from its expected template
-        /// configuration. A stack is considered to have drifted if one or more of its resources
-        /// have drifted.</p>
+        /// <code>DRIFTED</code>: The stack differs from its expected template configuration.
+        /// A stack is considered to have drifted if one or more of its resources have
+        /// drifted.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -5174,15 +5166,15 @@ pub mod describe_stack_drift_detection_status_output {
         /// <code>DETECTION_COMPLETE</code>: The stack drift detection operation has
         /// successfully completed for all resources in the stack that support drift detection.
         /// (Resources that do not currently support stack detection remain unchecked.)</p>
-        /// <p>If you specified logical resource IDs for CloudFormation to use as a filter for the
-        /// stack drift detection operation, only the resources with those logical IDs are
-        /// checked for drift.</p>
+        /// <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack
+        /// drift detection operation, only the resources with those logical IDs are checked for
+        /// drift.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>DETECTION_FAILED</code>: The stack drift detection operation has failed
-        /// for at least one resource in the stack. Results will be available for resources on
-        /// which CloudFormation successfully completed drift detection.</p>
+        /// <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for
+        /// at least one resource in the stack. Results will be available for resources on which
+        /// CloudFormation successfully completed drift detection.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -5201,15 +5193,15 @@ pub mod describe_stack_drift_detection_status_output {
         /// <code>DETECTION_COMPLETE</code>: The stack drift detection operation has
         /// successfully completed for all resources in the stack that support drift detection.
         /// (Resources that do not currently support stack detection remain unchecked.)</p>
-        /// <p>If you specified logical resource IDs for CloudFormation to use as a filter for the
-        /// stack drift detection operation, only the resources with those logical IDs are
-        /// checked for drift.</p>
+        /// <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack
+        /// drift detection operation, only the resources with those logical IDs are checked for
+        /// drift.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>DETECTION_FAILED</code>: The stack drift detection operation has failed
-        /// for at least one resource in the stack. Results will be available for resources on
-        /// which CloudFormation successfully completed drift detection.</p>
+        /// <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for
+        /// at least one resource in the stack. Results will be available for resources on which
+        /// CloudFormation successfully completed drift detection.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -5432,10 +5424,10 @@ pub struct DescribeChangeSetOutput {
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>The start time when the change set was created, in UTC.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the
-    /// change set. If you can’t execute the change set, the status indicates why. For example, a
-    /// change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is
-    /// still creating it or in an <code>OBSOLETE</code> state because the stack was already
+    /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change
+    /// set. If you can’t execute the change set, the status indicates why. For example, a change
+    /// set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still
+    /// creating it or in an <code>OBSOLETE</code> state because the stack was already
     /// updated.</p>
     pub execution_status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>The current status of the change set, such as <code>CREATE_IN_PROGRESS</code>,
@@ -5453,14 +5445,12 @@ pub struct DescribeChangeSetOutput {
     /// <p>If you execute the change set, the list of capabilities that were explicitly
     /// acknowledged when the change set was created.</p>
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
-    /// <p>If you execute the change set, the tags that will be associated with the
-    /// stack.</p>
+    /// <p>If you execute the change set, the tags that will be associated with the stack.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A list of <code>Change</code> structures that describes the resources
-    /// CloudFormation changes if you execute the change set.</p>
+    /// <p>A list of <code>Change</code> structures that describes the resources CloudFormation changes if you execute the change set.</p>
     pub changes: std::option::Option<std::vec::Vec<crate::model::Change>>,
-    /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If
-    /// there is no additional page, this value is null.</p>
+    /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If there
+    /// is no additional page, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.</p>
     pub include_nested_stacks: std::option::Option<bool>,
@@ -5501,10 +5491,10 @@ impl DescribeChangeSetOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the
-    /// change set. If you can’t execute the change set, the status indicates why. For example, a
-    /// change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is
-    /// still creating it or in an <code>OBSOLETE</code> state because the stack was already
+    /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change
+    /// set. If you can’t execute the change set, the status indicates why. For example, a change
+    /// set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still
+    /// creating it or in an <code>OBSOLETE</code> state because the stack was already
     /// updated.</p>
     pub fn execution_status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
         self.execution_status.as_ref()
@@ -5536,18 +5526,16 @@ impl DescribeChangeSetOutput {
     pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
         self.capabilities.as_deref()
     }
-    /// <p>If you execute the change set, the tags that will be associated with the
-    /// stack.</p>
+    /// <p>If you execute the change set, the tags that will be associated with the stack.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A list of <code>Change</code> structures that describes the resources
-    /// CloudFormation changes if you execute the change set.</p>
+    /// <p>A list of <code>Change</code> structures that describes the resources CloudFormation changes if you execute the change set.</p>
     pub fn changes(&self) -> std::option::Option<&[crate::model::Change]> {
         self.changes.as_deref()
     }
-    /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If
-    /// there is no additional page, this value is null.</p>
+    /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If there
+    /// is no additional page, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5708,19 +5696,19 @@ pub mod describe_change_set_output {
             self.creation_time = input;
             self
         }
-        /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the
-        /// change set. If you can’t execute the change set, the status indicates why. For example, a
-        /// change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is
-        /// still creating it or in an <code>OBSOLETE</code> state because the stack was already
+        /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change
+        /// set. If you can’t execute the change set, the status indicates why. For example, a change
+        /// set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still
+        /// creating it or in an <code>OBSOLETE</code> state because the stack was already
         /// updated.</p>
         pub fn execution_status(mut self, input: crate::model::ExecutionStatus) -> Self {
             self.execution_status = Some(input);
             self
         }
-        /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the
-        /// change set. If you can’t execute the change set, the status indicates why. For example, a
-        /// change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is
-        /// still creating it or in an <code>OBSOLETE</code> state because the stack was already
+        /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change
+        /// set. If you can’t execute the change set, the status indicates why. For example, a change
+        /// set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still
+        /// creating it or in an <code>OBSOLETE</code> state because the stack was already
         /// updated.</p>
         pub fn set_execution_status(
             mut self,
@@ -5823,16 +5811,14 @@ pub mod describe_change_set_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>If you execute the change set, the tags that will be associated with the
-        /// stack.</p>
+        /// <p>If you execute the change set, the tags that will be associated with the stack.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
-        /// <p>If you execute the change set, the tags that will be associated with the
-        /// stack.</p>
+        /// <p>If you execute the change set, the tags that will be associated with the stack.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5844,16 +5830,14 @@ pub mod describe_change_set_output {
         ///
         /// To override the contents of this collection use [`set_changes`](Self::set_changes).
         ///
-        /// <p>A list of <code>Change</code> structures that describes the resources
-        /// CloudFormation changes if you execute the change set.</p>
+        /// <p>A list of <code>Change</code> structures that describes the resources CloudFormation changes if you execute the change set.</p>
         pub fn changes(mut self, input: impl Into<crate::model::Change>) -> Self {
             let mut v = self.changes.unwrap_or_default();
             v.push(input.into());
             self.changes = Some(v);
             self
         }
-        /// <p>A list of <code>Change</code> structures that describes the resources
-        /// CloudFormation changes if you execute the change set.</p>
+        /// <p>A list of <code>Change</code> structures that describes the resources CloudFormation changes if you execute the change set.</p>
         pub fn set_changes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Change>>,
@@ -5861,14 +5845,14 @@ pub mod describe_change_set_output {
             self.changes = input;
             self
         }
-        /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If
-        /// there is no additional page, this value is null.</p>
+        /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If there
+        /// is no additional page, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If
-        /// there is no additional page, this value is null.</p>
+        /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If there
+        /// is no additional page, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5953,8 +5937,8 @@ pub struct DescribeAccountLimitsOutput {
     /// <p>An account limit structure that contain a list of CloudFormation account limits
     /// and their values.</p>
     pub account_limits: std::option::Option<std::vec::Vec<crate::model::AccountLimit>>,
-    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits.
-    /// If no additional page exists, this value is null.</p>
+    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits. If
+    /// no additional page exists, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAccountLimitsOutput {
@@ -5963,8 +5947,8 @@ impl DescribeAccountLimitsOutput {
     pub fn account_limits(&self) -> std::option::Option<&[crate::model::AccountLimit]> {
         self.account_limits.as_deref()
     }
-    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits.
-    /// If no additional page exists, this value is null.</p>
+    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits. If
+    /// no additional page exists, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6008,14 +5992,14 @@ pub mod describe_account_limits_output {
             self.account_limits = input;
             self
         }
-        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits.
-        /// If no additional page exists, this value is null.</p>
+        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits. If
+        /// no additional page exists, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits.
-        /// If no additional page exists, this value is null.</p>
+        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits. If
+        /// no additional page exists, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

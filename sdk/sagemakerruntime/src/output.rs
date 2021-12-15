@@ -105,7 +105,7 @@ pub struct InvokeEndpointOutput {
     /// returned. For example, if a custom attribute represents the trace ID, your model can
     /// prepend the custom attribute with <code>Trace ID:</code> in your post-processing
     /// function.</p>
-    /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
+    /// <p>This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker Python
     /// SDK.</p>
     pub custom_attributes: std::option::Option<std::string::String>,
 }
@@ -138,7 +138,7 @@ impl InvokeEndpointOutput {
     /// returned. For example, if a custom attribute represents the trace ID, your model can
     /// prepend the custom attribute with <code>Trace ID:</code> in your post-processing
     /// function.</p>
-    /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
+    /// <p>This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker Python
     /// SDK.</p>
     pub fn custom_attributes(&self) -> std::option::Option<&str> {
         self.custom_attributes.as_deref()
@@ -220,7 +220,7 @@ pub mod invoke_endpoint_output {
         /// returned. For example, if a custom attribute represents the trace ID, your model can
         /// prepend the custom attribute with <code>Trace ID:</code> in your post-processing
         /// function.</p>
-        /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
+        /// <p>This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker Python
         /// SDK.</p>
         pub fn custom_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_attributes = Some(input.into());
@@ -240,7 +240,7 @@ pub mod invoke_endpoint_output {
         /// returned. For example, if a custom attribute represents the trace ID, your model can
         /// prepend the custom attribute with <code>Trace ID:</code> in your post-processing
         /// function.</p>
-        /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
+        /// <p>This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker Python
         /// SDK.</p>
         pub fn set_custom_attributes(
             mut self,

@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_translate::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -201,7 +201,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateParallelData<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -321,7 +321,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteParallelData<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -391,7 +391,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTerminology<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -462,7 +462,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTextTranslationJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -534,7 +534,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetParallelData<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -604,7 +604,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetTerminology<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -704,7 +704,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ImportTerminology<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -827,7 +827,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListParallelData<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -907,7 +907,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTerminologies<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -989,7 +989,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTextTranslationJobs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1091,7 +1091,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartTextTranslationJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1305,6 +1305,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
+        /// <p>Settings to configure your translation output, including the option to mask profane words
+        /// and phrases.</p>
+        pub fn settings(mut self, inp: crate::model::TranslationSettings) -> Self {
+            self.inner = self.inner.settings(inp);
+            self
+        }
+        /// <p>Settings to configure your translation output, including the option to mask profane words
+        /// and phrases.</p>
+        pub fn set_settings(
+            mut self,
+            input: std::option::Option<crate::model::TranslationSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_settings(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `StopTextTranslationJob`.
     ///
@@ -1318,7 +1333,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StopTextTranslationJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1389,7 +1404,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TranslateText<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1513,6 +1528,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_language_code(input);
             self
         }
+        /// <p>Settings to configure your translation output, including the option to mask profane words
+        /// and phrases.</p>
+        pub fn settings(mut self, inp: crate::model::TranslationSettings) -> Self {
+            self.inner = self.inner.settings(inp);
+            self
+        }
+        /// <p>Settings to configure your translation output, including the option to mask profane words
+        /// and phrases.</p>
+        pub fn set_settings(
+            mut self,
+            input: std::option::Option<crate::model::TranslationSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_settings(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateParallelData`.
     ///
@@ -1521,7 +1551,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateParallelData<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1621,17 +1651,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -1640,7 +1674,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -1656,11 +1690,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

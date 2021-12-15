@@ -7,16 +7,16 @@ pub enum Error {
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a
-    /// stack, use the <code>ListChangeSets</code> action.</p>
+    /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack,
+    /// use the <code>ListChangeSets</code> action.</p>
     ChangeSetNotFoundException(crate::error::ChangeSetNotFoundException),
     /// <p>The specified resource exists, but has been changed.</p>
     CreatedButModifiedException(crate::error::CreatedButModifiedException),
     /// <p>The template contains resources with capabilities that weren't specified in the
     /// Capabilities parameter.</p>
     InsufficientCapabilitiesException(crate::error::InsufficientCapabilitiesException),
-    /// <p>The specified change set can't be used to update the stack. For example, the change
-    /// set status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be
+    /// <p>The specified change set can't be used to update the stack. For example, the change set
+    /// status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be
     /// <code>UPDATE_IN_PROGRESS</code>.</p>
     InvalidChangeSetStatusException(crate::error::InvalidChangeSetStatusException),
     /// <p>The specified operation isn't valid.</p>
@@ -32,8 +32,8 @@ pub enum Error {
     NameAlreadyExistsException(crate::error::NameAlreadyExistsException),
     /// <p>The specified operation ID already exists.</p>
     OperationIdAlreadyExistsException(crate::error::OperationIdAlreadyExistsException),
-    /// <p>Another operation is currently in progress for this stack set. Only one operation can
-    /// be performed for a stack set at a given time.</p>
+    /// <p>Another operation is currently in progress for this stack set. Only one operation can be
+    /// performed for a stack set at a given time.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
     /// <p>The specified ID refers to an operation that doesn't exist.</p>
     OperationNotFoundException(crate::error::OperationNotFoundException),
@@ -51,8 +51,8 @@ pub enum Error {
     StackSetNotEmptyException(crate::error::StackSetNotEmptyException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// <p>Another operation has been performed on this stack set since the specified operation
-    /// was performed. </p>
+    /// <p>Another operation has been performed on this stack set since the specified operation was
+    /// performed. </p>
     StaleRequestException(crate::error::StaleRequestException),
     /// <p>A client request token already exists.</p>
     TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),

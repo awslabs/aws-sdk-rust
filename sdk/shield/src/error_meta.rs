@@ -7,12 +7,11 @@ pub enum Error {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>In order to grant the necessary access to the Shield Response Team (SRT) the user submitting the request must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User Permissions to Pass a Role to an Amazon Web Services Service</a>. </p>
     AccessDeniedForDependencyException(crate::error::AccessDeniedForDependencyException),
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>Exception that indicates that the NextToken specified in the request is invalid. Submit the request using the NextToken value that was returned in the response.</p>
+    /// <p>Exception that indicates that the <code>NextToken</code> specified in the request is invalid. Submit the request using the <code>NextToken</code> value that was returned in the prior response.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -128,6 +127,9 @@ where
                 }
                 crate::error::AssociateHealthCheckErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
+                }
+                crate::error::AssociateHealthCheckErrorKind::InvalidResourceException(inner) => {
+                    Error::InvalidResourceException(inner)
                 }
                 crate::error::AssociateHealthCheckErrorKind::LimitsExceededException(inner) => {
                     Error::LimitsExceededException(inner)
@@ -513,6 +515,35 @@ where
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DisableApplicationLayerAutomaticResponseError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DisableApplicationLayerAutomaticResponseError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DisableApplicationLayerAutomaticResponseErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
+                crate::error::DisableApplicationLayerAutomaticResponseErrorKind::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+                crate::error::DisableApplicationLayerAutomaticResponseErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::DisableApplicationLayerAutomaticResponseErrorKind::OptimisticLockException(inner) => Error::OptimisticLockException(inner),
+                crate::error::DisableApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DisableApplicationLayerAutomaticResponseErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisableProactiveEngagementError, R>>
     for Error
 where
@@ -613,6 +644,9 @@ where
                 crate::error::DisassociateHealthCheckErrorKind::InvalidParameterException(
                     inner,
                 ) => Error::InvalidParameterException(inner),
+                crate::error::DisassociateHealthCheckErrorKind::InvalidResourceException(inner) => {
+                    Error::InvalidResourceException(inner)
+                }
                 crate::error::DisassociateHealthCheckErrorKind::OptimisticLockException(inner) => {
                     Error::OptimisticLockException(inner)
                 }
@@ -623,6 +657,36 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::EnableApplicationLayerAutomaticResponseError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::EnableApplicationLayerAutomaticResponseError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::EnableApplicationLayerAutomaticResponseErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
+                crate::error::EnableApplicationLayerAutomaticResponseErrorKind::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+                crate::error::EnableApplicationLayerAutomaticResponseErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::EnableApplicationLayerAutomaticResponseErrorKind::LimitsExceededException(inner) => Error::LimitsExceededException(inner),
+                crate::error::EnableApplicationLayerAutomaticResponseErrorKind::OptimisticLockException(inner) => Error::OptimisticLockException(inner),
+                crate::error::EnableApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::EnableApplicationLayerAutomaticResponseErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -847,6 +911,35 @@ where
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::UpdateApplicationLayerAutomaticResponseError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateApplicationLayerAutomaticResponseError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateApplicationLayerAutomaticResponseErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
+                crate::error::UpdateApplicationLayerAutomaticResponseErrorKind::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+                crate::error::UpdateApplicationLayerAutomaticResponseErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::UpdateApplicationLayerAutomaticResponseErrorKind::OptimisticLockException(inner) => Error::OptimisticLockException(inner),
+                crate::error::UpdateApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateApplicationLayerAutomaticResponseErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

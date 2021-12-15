@@ -1672,6 +1672,12 @@ pub fn serialize_structure_crate_model_input_settings(
         )?;
         object_366.finish();
     }
+    if input.scte35_pid != 0 {
+        object.key("scte35Pid").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((input.scte35_pid).into()),
+        );
+    }
     if let Some(var_367) = &input.smpte2038_data_preference {
         object
             .key("smpte2038DataPreference")

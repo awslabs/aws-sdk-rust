@@ -3,14 +3,15 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+use aws_sdk_sqs::{Client, Error};
 use std::process::exit;
 
 /// Sends a message to and receives the message from a FIFO queue.
 #[tokio::main]
-async fn main() -> Result<(), sqs::Error> {
+async fn main() -> Result<(), Error> {
     tracing_subscriber::fmt::init();
     let shared_config = aws_config::load_from_env().await;
-    let client = sqs::Client::new(&shared_config);
+    let client = Client::new(&shared_config);
     let queues = client.list_queues().send().await?;
     let mut queue_urls = queues.queue_urls.unwrap_or_default();
     let queue_url = match queue_urls.pop() {

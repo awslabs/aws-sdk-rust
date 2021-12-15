@@ -3,11 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVolumeOutput {
-    /// <p>Returned after a successful <code>UpdateVolume</code> API operation, describing the volume just updated.</p>
+    /// <p>A description of the volume just updated. Returned after a successful
+    /// <code>UpdateVolume</code> API operation.</p>
     pub volume: std::option::Option<crate::model::Volume>,
 }
 impl UpdateVolumeOutput {
-    /// <p>Returned after a successful <code>UpdateVolume</code> API operation, describing the volume just updated.</p>
+    /// <p>A description of the volume just updated. Returned after a successful
+    /// <code>UpdateVolume</code> API operation.</p>
     pub fn volume(&self) -> std::option::Option<&crate::model::Volume> {
         self.volume.as_ref()
     }
@@ -28,12 +30,14 @@ pub mod update_volume_output {
         pub(crate) volume: std::option::Option<crate::model::Volume>,
     }
     impl Builder {
-        /// <p>Returned after a successful <code>UpdateVolume</code> API operation, describing the volume just updated.</p>
+        /// <p>A description of the volume just updated. Returned after a successful
+        /// <code>UpdateVolume</code> API operation.</p>
         pub fn volume(mut self, input: crate::model::Volume) -> Self {
             self.volume = Some(input);
             self
         }
-        /// <p>Returned after a successful <code>UpdateVolume</code> API operation, describing the volume just updated.</p>
+        /// <p>A description of the volume just updated. Returned after a successful
+        /// <code>UpdateVolume</code> API operation.</p>
         pub fn set_volume(mut self, input: std::option::Option<crate::model::Volume>) -> Self {
             self.volume = input;
             self
@@ -116,6 +120,64 @@ impl UpdateStorageVirtualMachineOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateSnapshotOutput {
+    /// <p>Returned after a successful <code>UpdateSnapshot</code> operation, describing the
+    /// snapshot that you updated.</p>
+    pub snapshot: std::option::Option<crate::model::Snapshot>,
+}
+impl UpdateSnapshotOutput {
+    /// <p>Returned after a successful <code>UpdateSnapshot</code> operation, describing the
+    /// snapshot that you updated.</p>
+    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+        self.snapshot.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateSnapshotOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateSnapshotOutput");
+        formatter.field("snapshot", &self.snapshot);
+        formatter.finish()
+    }
+}
+/// See [`UpdateSnapshotOutput`](crate::output::UpdateSnapshotOutput)
+pub mod update_snapshot_output {
+    /// A builder for [`UpdateSnapshotOutput`](crate::output::UpdateSnapshotOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) snapshot: std::option::Option<crate::model::Snapshot>,
+    }
+    impl Builder {
+        /// <p>Returned after a successful <code>UpdateSnapshot</code> operation, describing the
+        /// snapshot that you updated.</p>
+        pub fn snapshot(mut self, input: crate::model::Snapshot) -> Self {
+            self.snapshot = Some(input);
+            self
+        }
+        /// <p>Returned after a successful <code>UpdateSnapshot</code> operation, describing the
+        /// snapshot that you updated.</p>
+        pub fn set_snapshot(mut self, input: std::option::Option<crate::model::Snapshot>) -> Self {
+            self.snapshot = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateSnapshotOutput`](crate::output::UpdateSnapshotOutput)
+        pub fn build(self) -> crate::output::UpdateSnapshotOutput {
+            crate::output::UpdateSnapshotOutput {
+                snapshot: self.snapshot,
+            }
+        }
+    }
+}
+impl UpdateSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSnapshotOutput`](crate::output::UpdateSnapshotOutput)
+    pub fn builder() -> crate::output::update_snapshot_output::Builder {
+        crate::output::update_snapshot_output::Builder::default()
+    }
+}
+
 /// <p>The response object for the <code>UpdateFileSystem</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -170,6 +232,63 @@ impl UpdateFileSystemOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemOutput`](crate::output::UpdateFileSystemOutput)
     pub fn builder() -> crate::output::update_file_system_output::Builder {
         crate::output::update_file_system_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateDataRepositoryAssociationOutput {
+    /// <p>The response object returned after the data repository association is updated.</p>
+    pub association: std::option::Option<crate::model::DataRepositoryAssociation>,
+}
+impl UpdateDataRepositoryAssociationOutput {
+    /// <p>The response object returned after the data repository association is updated.</p>
+    pub fn association(&self) -> std::option::Option<&crate::model::DataRepositoryAssociation> {
+        self.association.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateDataRepositoryAssociationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateDataRepositoryAssociationOutput");
+        formatter.field("association", &self.association);
+        formatter.finish()
+    }
+}
+/// See [`UpdateDataRepositoryAssociationOutput`](crate::output::UpdateDataRepositoryAssociationOutput)
+pub mod update_data_repository_association_output {
+    /// A builder for [`UpdateDataRepositoryAssociationOutput`](crate::output::UpdateDataRepositoryAssociationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) association: std::option::Option<crate::model::DataRepositoryAssociation>,
+    }
+    impl Builder {
+        /// <p>The response object returned after the data repository association is updated.</p>
+        pub fn association(mut self, input: crate::model::DataRepositoryAssociation) -> Self {
+            self.association = Some(input);
+            self
+        }
+        /// <p>The response object returned after the data repository association is updated.</p>
+        pub fn set_association(
+            mut self,
+            input: std::option::Option<crate::model::DataRepositoryAssociation>,
+        ) -> Self {
+            self.association = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateDataRepositoryAssociationOutput`](crate::output::UpdateDataRepositoryAssociationOutput)
+        pub fn build(self) -> crate::output::UpdateDataRepositoryAssociationOutput {
+            crate::output::UpdateDataRepositoryAssociationOutput {
+                association: self.association,
+            }
+        }
+    }
+}
+impl UpdateDataRepositoryAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDataRepositoryAssociationOutput`](crate::output::UpdateDataRepositoryAssociationOutput)
+    pub fn builder() -> crate::output::update_data_repository_association_output::Builder {
+        crate::output::update_data_repository_association_output::Builder::default()
     }
 }
 
@@ -230,6 +349,139 @@ impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RestoreVolumeFromSnapshotOutput {
+    /// <p>The ID of the volume that you restored.</p>
+    pub volume_id: std::option::Option<std::string::String>,
+    /// <p>The lifecycle state of the volume being restored.</p>
+    pub lifecycle: std::option::Option<crate::model::VolumeLifecycle>,
+}
+impl RestoreVolumeFromSnapshotOutput {
+    /// <p>The ID of the volume that you restored.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+    /// <p>The lifecycle state of the volume being restored.</p>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::VolumeLifecycle> {
+        self.lifecycle.as_ref()
+    }
+}
+impl std::fmt::Debug for RestoreVolumeFromSnapshotOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RestoreVolumeFromSnapshotOutput");
+        formatter.field("volume_id", &self.volume_id);
+        formatter.field("lifecycle", &self.lifecycle);
+        formatter.finish()
+    }
+}
+/// See [`RestoreVolumeFromSnapshotOutput`](crate::output::RestoreVolumeFromSnapshotOutput)
+pub mod restore_volume_from_snapshot_output {
+    /// A builder for [`RestoreVolumeFromSnapshotOutput`](crate::output::RestoreVolumeFromSnapshotOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) volume_id: std::option::Option<std::string::String>,
+        pub(crate) lifecycle: std::option::Option<crate::model::VolumeLifecycle>,
+    }
+    impl Builder {
+        /// <p>The ID of the volume that you restored.</p>
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the volume that you restored.</p>
+        pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_id = input;
+            self
+        }
+        /// <p>The lifecycle state of the volume being restored.</p>
+        pub fn lifecycle(mut self, input: crate::model::VolumeLifecycle) -> Self {
+            self.lifecycle = Some(input);
+            self
+        }
+        /// <p>The lifecycle state of the volume being restored.</p>
+        pub fn set_lifecycle(
+            mut self,
+            input: std::option::Option<crate::model::VolumeLifecycle>,
+        ) -> Self {
+            self.lifecycle = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RestoreVolumeFromSnapshotOutput`](crate::output::RestoreVolumeFromSnapshotOutput)
+        pub fn build(self) -> crate::output::RestoreVolumeFromSnapshotOutput {
+            crate::output::RestoreVolumeFromSnapshotOutput {
+                volume_id: self.volume_id,
+                lifecycle: self.lifecycle,
+            }
+        }
+    }
+}
+impl RestoreVolumeFromSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`RestoreVolumeFromSnapshotOutput`](crate::output::RestoreVolumeFromSnapshotOutput)
+    pub fn builder() -> crate::output::restore_volume_from_snapshot_output::Builder {
+        crate::output::restore_volume_from_snapshot_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReleaseFileSystemNfsV3LocksOutput {
+    /// <p>A description of a specific Amazon FSx file system.</p>
+    pub file_system: std::option::Option<crate::model::FileSystem>,
+}
+impl ReleaseFileSystemNfsV3LocksOutput {
+    /// <p>A description of a specific Amazon FSx file system.</p>
+    pub fn file_system(&self) -> std::option::Option<&crate::model::FileSystem> {
+        self.file_system.as_ref()
+    }
+}
+impl std::fmt::Debug for ReleaseFileSystemNfsV3LocksOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReleaseFileSystemNfsV3LocksOutput");
+        formatter.field("file_system", &self.file_system);
+        formatter.finish()
+    }
+}
+/// See [`ReleaseFileSystemNfsV3LocksOutput`](crate::output::ReleaseFileSystemNfsV3LocksOutput)
+pub mod release_file_system_nfs_v3_locks_output {
+    /// A builder for [`ReleaseFileSystemNfsV3LocksOutput`](crate::output::ReleaseFileSystemNfsV3LocksOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_system: std::option::Option<crate::model::FileSystem>,
+    }
+    impl Builder {
+        /// <p>A description of a specific Amazon FSx file system.</p>
+        pub fn file_system(mut self, input: crate::model::FileSystem) -> Self {
+            self.file_system = Some(input);
+            self
+        }
+        /// <p>A description of a specific Amazon FSx file system.</p>
+        pub fn set_file_system(
+            mut self,
+            input: std::option::Option<crate::model::FileSystem>,
+        ) -> Self {
+            self.file_system = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReleaseFileSystemNfsV3LocksOutput`](crate::output::ReleaseFileSystemNfsV3LocksOutput)
+        pub fn build(self) -> crate::output::ReleaseFileSystemNfsV3LocksOutput {
+            crate::output::ReleaseFileSystemNfsV3LocksOutput {
+                file_system: self.file_system,
+            }
+        }
+    }
+}
+impl ReleaseFileSystemNfsV3LocksOutput {
+    /// Creates a new builder-style object to manufacture [`ReleaseFileSystemNfsV3LocksOutput`](crate::output::ReleaseFileSystemNfsV3LocksOutput)
+    pub fn builder() -> crate::output::release_file_system_nfs_v3_locks_output::Builder {
+        crate::output::release_file_system_nfs_v3_locks_output::Builder::default()
     }
 }
 
@@ -574,6 +826,96 @@ impl DescribeStorageVirtualMachinesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeSnapshotsOutput {
+    /// <p>An array of snapshots.</p>
+    pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+    /// present, this token indicates from what point you can continue processing the request, where
+    /// the previous <code>NextToken</code> value left off.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeSnapshotsOutput {
+    /// <p>An array of snapshots.</p>
+    pub fn snapshots(&self) -> std::option::Option<&[crate::model::Snapshot]> {
+        self.snapshots.as_deref()
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+    /// present, this token indicates from what point you can continue processing the request, where
+    /// the previous <code>NextToken</code> value left off.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeSnapshotsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeSnapshotsOutput");
+        formatter.field("snapshots", &self.snapshots);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput)
+pub mod describe_snapshots_output {
+    /// A builder for [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `snapshots`.
+        ///
+        /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
+        ///
+        /// <p>An array of snapshots.</p>
+        pub fn snapshots(mut self, input: impl Into<crate::model::Snapshot>) -> Self {
+            let mut v = self.snapshots.unwrap_or_default();
+            v.push(input.into());
+            self.snapshots = Some(v);
+            self
+        }
+        /// <p>An array of snapshots.</p>
+        pub fn set_snapshots(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
+        ) -> Self {
+            self.snapshots = input;
+            self
+        }
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+        /// present, this token indicates from what point you can continue processing the request, where
+        /// the previous <code>NextToken</code> value left off.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+        /// present, this token indicates from what point you can continue processing the request, where
+        /// the previous <code>NextToken</code> value left off.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput)
+        pub fn build(self) -> crate::output::DescribeSnapshotsOutput {
+            crate::output::DescribeSnapshotsOutput {
+                snapshots: self.snapshots,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeSnapshotsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput)
+    pub fn builder() -> crate::output::describe_snapshots_output::Builder {
+        crate::output::describe_snapshots_output::Builder::default()
+    }
+}
+
 /// <p>The response object for <code>DescribeFileSystems</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -850,15 +1192,109 @@ impl DescribeDataRepositoryTasksOutput {
     }
 }
 
-/// <p>Response object for <code>DescribeBackups</code> operation.</p>
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeDataRepositoryAssociationsOutput {
+    /// <p>An array of one ore more data repository association descriptions.</p>
+    pub associations: std::option::Option<std::vec::Vec<crate::model::DataRepositoryAssociation>>,
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+    /// present, this token indicates from what point you can continue processing the request, where
+    /// the previous <code>NextToken</code> value left off.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeDataRepositoryAssociationsOutput {
+    /// <p>An array of one ore more data repository association descriptions.</p>
+    pub fn associations(&self) -> std::option::Option<&[crate::model::DataRepositoryAssociation]> {
+        self.associations.as_deref()
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+    /// present, this token indicates from what point you can continue processing the request, where
+    /// the previous <code>NextToken</code> value left off.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeDataRepositoryAssociationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeDataRepositoryAssociationsOutput");
+        formatter.field("associations", &self.associations);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeDataRepositoryAssociationsOutput`](crate::output::DescribeDataRepositoryAssociationsOutput)
+pub mod describe_data_repository_associations_output {
+    /// A builder for [`DescribeDataRepositoryAssociationsOutput`](crate::output::DescribeDataRepositoryAssociationsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) associations:
+            std::option::Option<std::vec::Vec<crate::model::DataRepositoryAssociation>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `associations`.
+        ///
+        /// To override the contents of this collection use [`set_associations`](Self::set_associations).
+        ///
+        /// <p>An array of one ore more data repository association descriptions.</p>
+        pub fn associations(
+            mut self,
+            input: impl Into<crate::model::DataRepositoryAssociation>,
+        ) -> Self {
+            let mut v = self.associations.unwrap_or_default();
+            v.push(input.into());
+            self.associations = Some(v);
+            self
+        }
+        /// <p>An array of one ore more data repository association descriptions.</p>
+        pub fn set_associations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataRepositoryAssociation>>,
+        ) -> Self {
+            self.associations = input;
+            self
+        }
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+        /// present, this token indicates from what point you can continue processing the request, where
+        /// the previous <code>NextToken</code> value left off.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+        /// present, this token indicates from what point you can continue processing the request, where
+        /// the previous <code>NextToken</code> value left off.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeDataRepositoryAssociationsOutput`](crate::output::DescribeDataRepositoryAssociationsOutput)
+        pub fn build(self) -> crate::output::DescribeDataRepositoryAssociationsOutput {
+            crate::output::DescribeDataRepositoryAssociationsOutput {
+                associations: self.associations,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeDataRepositoryAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDataRepositoryAssociationsOutput`](crate::output::DescribeDataRepositoryAssociationsOutput)
+    pub fn builder() -> crate::output::describe_data_repository_associations_output::Builder {
+        crate::output::describe_data_repository_associations_output::Builder::default()
+    }
+}
+
+/// <p>Response object for the <code>DescribeBackups</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupsOutput {
     /// <p>An array of backups.</p>
     pub backups: std::option::Option<std::vec::Vec<crate::model::Backup>>,
-    /// <p>This is present if there are more backups than returned in the response (String).
-    /// You can use the <code>NextToken</code> value in the later request to fetch the backups.
-    /// </p>
+    /// <p>A <code>NextToken</code> value is present if there are more backups than returned in
+    /// the response. You can use the <code>NextToken</code> value in the subsequent request to
+    /// fetch the backups. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBackupsOutput {
@@ -866,9 +1302,9 @@ impl DescribeBackupsOutput {
     pub fn backups(&self) -> std::option::Option<&[crate::model::Backup]> {
         self.backups.as_deref()
     }
-    /// <p>This is present if there are more backups than returned in the response (String).
-    /// You can use the <code>NextToken</code> value in the later request to fetch the backups.
-    /// </p>
+    /// <p>A <code>NextToken</code> value is present if there are more backups than returned in
+    /// the response. You can use the <code>NextToken</code> value in the subsequent request to
+    /// fetch the backups. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -910,16 +1346,16 @@ pub mod describe_backups_output {
             self.backups = input;
             self
         }
-        /// <p>This is present if there are more backups than returned in the response (String).
-        /// You can use the <code>NextToken</code> value in the later request to fetch the backups.
-        /// </p>
+        /// <p>A <code>NextToken</code> value is present if there are more backups than returned in
+        /// the response. You can use the <code>NextToken</code> value in the subsequent request to
+        /// fetch the backups. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>This is present if there are more backups than returned in the response (String).
-        /// You can use the <code>NextToken</code> value in the later request to fetch the backups.
-        /// </p>
+        /// <p>A <code>NextToken</code> value is present if there are more backups than returned in
+        /// the response. You can use the <code>NextToken</code> value in the subsequent request to
+        /// fetch the backups. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -944,25 +1380,27 @@ impl DescribeBackupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVolumeOutput {
-    /// <p>The ID of the volume being deleted.</p>
+    /// <p>The ID of the volume that's being deleted.</p>
     pub volume_id: std::option::Option<std::string::String>,
-    /// <p>Describes the lifecycle state of the volume being deleted.</p>
+    /// <p>The lifecycle state of the volume being deleted. If the <code>DeleteVolume</code>
+    /// operation is successful, this value is <code>DELETING</code>.</p>
     pub lifecycle: std::option::Option<crate::model::VolumeLifecycle>,
-    /// <p>Returned after a <code>DeleteVolume request, showing the status of the delete request.</code>
-    /// </p>
+    /// <p>Returned after a <code>DeleteVolume</code> request, showing the status of the delete
+    /// request.</p>
     pub ontap_response: std::option::Option<crate::model::DeleteVolumeOntapResponse>,
 }
 impl DeleteVolumeOutput {
-    /// <p>The ID of the volume being deleted.</p>
+    /// <p>The ID of the volume that's being deleted.</p>
     pub fn volume_id(&self) -> std::option::Option<&str> {
         self.volume_id.as_deref()
     }
-    /// <p>Describes the lifecycle state of the volume being deleted.</p>
+    /// <p>The lifecycle state of the volume being deleted. If the <code>DeleteVolume</code>
+    /// operation is successful, this value is <code>DELETING</code>.</p>
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::VolumeLifecycle> {
         self.lifecycle.as_ref()
     }
-    /// <p>Returned after a <code>DeleteVolume request, showing the status of the delete request.</code>
-    /// </p>
+    /// <p>Returned after a <code>DeleteVolume</code> request, showing the status of the delete
+    /// request.</p>
     pub fn ontap_response(&self) -> std::option::Option<&crate::model::DeleteVolumeOntapResponse> {
         self.ontap_response.as_ref()
     }
@@ -987,22 +1425,24 @@ pub mod delete_volume_output {
         pub(crate) ontap_response: std::option::Option<crate::model::DeleteVolumeOntapResponse>,
     }
     impl Builder {
-        /// <p>The ID of the volume being deleted.</p>
+        /// <p>The ID of the volume that's being deleted.</p>
         pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_id = Some(input.into());
             self
         }
-        /// <p>The ID of the volume being deleted.</p>
+        /// <p>The ID of the volume that's being deleted.</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.volume_id = input;
             self
         }
-        /// <p>Describes the lifecycle state of the volume being deleted.</p>
+        /// <p>The lifecycle state of the volume being deleted. If the <code>DeleteVolume</code>
+        /// operation is successful, this value is <code>DELETING</code>.</p>
         pub fn lifecycle(mut self, input: crate::model::VolumeLifecycle) -> Self {
             self.lifecycle = Some(input);
             self
         }
-        /// <p>Describes the lifecycle state of the volume being deleted.</p>
+        /// <p>The lifecycle state of the volume being deleted. If the <code>DeleteVolume</code>
+        /// operation is successful, this value is <code>DELETING</code>.</p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::VolumeLifecycle>,
@@ -1010,14 +1450,14 @@ pub mod delete_volume_output {
             self.lifecycle = input;
             self
         }
-        /// <p>Returned after a <code>DeleteVolume request, showing the status of the delete request.</code>
-        /// </p>
+        /// <p>Returned after a <code>DeleteVolume</code> request, showing the status of the delete
+        /// request.</p>
         pub fn ontap_response(mut self, input: crate::model::DeleteVolumeOntapResponse) -> Self {
             self.ontap_response = Some(input);
             self
         }
-        /// <p>Returned after a <code>DeleteVolume request, showing the status of the delete request.</code>
-        /// </p>
+        /// <p>Returned after a <code>DeleteVolume</code> request, showing the status of the delete
+        /// request.</p>
         pub fn set_ontap_response(
             mut self,
             input: std::option::Option<crate::model::DeleteVolumeOntapResponse>,
@@ -1124,13 +1564,94 @@ impl DeleteStorageVirtualMachineOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteSnapshotOutput {
+    /// <p>The ID of the deleted snapshot.</p>
+    pub snapshot_id: std::option::Option<std::string::String>,
+    /// <p>The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation is
+    /// successful, this status is <code>DELETING</code>.</p>
+    pub lifecycle: std::option::Option<crate::model::SnapshotLifecycle>,
+}
+impl DeleteSnapshotOutput {
+    /// <p>The ID of the deleted snapshot.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
+    /// <p>The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation is
+    /// successful, this status is <code>DELETING</code>.</p>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::SnapshotLifecycle> {
+        self.lifecycle.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteSnapshotOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteSnapshotOutput");
+        formatter.field("snapshot_id", &self.snapshot_id);
+        formatter.field("lifecycle", &self.lifecycle);
+        formatter.finish()
+    }
+}
+/// See [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput)
+pub mod delete_snapshot_output {
+    /// A builder for [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) snapshot_id: std::option::Option<std::string::String>,
+        pub(crate) lifecycle: std::option::Option<crate::model::SnapshotLifecycle>,
+    }
+    impl Builder {
+        /// <p>The ID of the deleted snapshot.</p>
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the deleted snapshot.</p>
+        pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_id = input;
+            self
+        }
+        /// <p>The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation is
+        /// successful, this status is <code>DELETING</code>.</p>
+        pub fn lifecycle(mut self, input: crate::model::SnapshotLifecycle) -> Self {
+            self.lifecycle = Some(input);
+            self
+        }
+        /// <p>The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation is
+        /// successful, this status is <code>DELETING</code>.</p>
+        pub fn set_lifecycle(
+            mut self,
+            input: std::option::Option<crate::model::SnapshotLifecycle>,
+        ) -> Self {
+            self.lifecycle = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput)
+        pub fn build(self) -> crate::output::DeleteSnapshotOutput {
+            crate::output::DeleteSnapshotOutput {
+                snapshot_id: self.snapshot_id,
+                lifecycle: self.lifecycle,
+            }
+        }
+    }
+}
+impl DeleteSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput)
+    pub fn builder() -> crate::output::delete_snapshot_output::Builder {
+        crate::output::delete_snapshot_output::Builder::default()
+    }
+}
+
 /// <p>The response object for the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFileSystemOutput {
-    /// <p>The ID of the file system being deleted.</p>
+    /// <p>The ID of the file system that's being deleted.</p>
     pub file_system_id: std::option::Option<std::string::String>,
-    /// <p>The file system lifecycle for the deletion request. Should be
+    /// <p>The file system lifecycle for the deletion request. If the
+    /// <code>DeleteFileSystem</code> operation is successful, this status is
     /// <code>DELETING</code>.</p>
     pub lifecycle: std::option::Option<crate::model::FileSystemLifecycle>,
     /// <p>The response object for the Microsoft Windows file system used in the
@@ -1139,13 +1660,17 @@ pub struct DeleteFileSystemOutput {
     /// <p>The response object for the Amazon FSx for Lustre file system being deleted in the
     /// <code>DeleteFileSystem</code> operation.</p>
     pub lustre_response: std::option::Option<crate::model::DeleteFileSystemLustreResponse>,
+    /// <p>The response object for the OpenZFS file system that's being deleted in the
+    /// <code>DeleteFileSystem</code> operation.</p>
+    pub open_zfs_response: std::option::Option<crate::model::DeleteFileSystemOpenZfsResponse>,
 }
 impl DeleteFileSystemOutput {
-    /// <p>The ID of the file system being deleted.</p>
+    /// <p>The ID of the file system that's being deleted.</p>
     pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
-    /// <p>The file system lifecycle for the deletion request. Should be
+    /// <p>The file system lifecycle for the deletion request. If the
+    /// <code>DeleteFileSystem</code> operation is successful, this status is
     /// <code>DELETING</code>.</p>
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::FileSystemLifecycle> {
         self.lifecycle.as_ref()
@@ -1164,6 +1689,13 @@ impl DeleteFileSystemOutput {
     ) -> std::option::Option<&crate::model::DeleteFileSystemLustreResponse> {
         self.lustre_response.as_ref()
     }
+    /// <p>The response object for the OpenZFS file system that's being deleted in the
+    /// <code>DeleteFileSystem</code> operation.</p>
+    pub fn open_zfs_response(
+        &self,
+    ) -> std::option::Option<&crate::model::DeleteFileSystemOpenZfsResponse> {
+        self.open_zfs_response.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteFileSystemOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1172,6 +1704,7 @@ impl std::fmt::Debug for DeleteFileSystemOutput {
         formatter.field("lifecycle", &self.lifecycle);
         formatter.field("windows_response", &self.windows_response);
         formatter.field("lustre_response", &self.lustre_response);
+        formatter.field("open_zfs_response", &self.open_zfs_response);
         formatter.finish()
     }
 }
@@ -1187,14 +1720,16 @@ pub mod delete_file_system_output {
             std::option::Option<crate::model::DeleteFileSystemWindowsResponse>,
         pub(crate) lustre_response:
             std::option::Option<crate::model::DeleteFileSystemLustreResponse>,
+        pub(crate) open_zfs_response:
+            std::option::Option<crate::model::DeleteFileSystemOpenZfsResponse>,
     }
     impl Builder {
-        /// <p>The ID of the file system being deleted.</p>
+        /// <p>The ID of the file system that's being deleted.</p>
         pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_id = Some(input.into());
             self
         }
-        /// <p>The ID of the file system being deleted.</p>
+        /// <p>The ID of the file system that's being deleted.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1202,13 +1737,15 @@ pub mod delete_file_system_output {
             self.file_system_id = input;
             self
         }
-        /// <p>The file system lifecycle for the deletion request. Should be
+        /// <p>The file system lifecycle for the deletion request. If the
+        /// <code>DeleteFileSystem</code> operation is successful, this status is
         /// <code>DELETING</code>.</p>
         pub fn lifecycle(mut self, input: crate::model::FileSystemLifecycle) -> Self {
             self.lifecycle = Some(input);
             self
         }
-        /// <p>The file system lifecycle for the deletion request. Should be
+        /// <p>The file system lifecycle for the deletion request. If the
+        /// <code>DeleteFileSystem</code> operation is successful, this status is
         /// <code>DELETING</code>.</p>
         pub fn set_lifecycle(
             mut self,
@@ -1253,6 +1790,24 @@ pub mod delete_file_system_output {
             self.lustre_response = input;
             self
         }
+        /// <p>The response object for the OpenZFS file system that's being deleted in the
+        /// <code>DeleteFileSystem</code> operation.</p>
+        pub fn open_zfs_response(
+            mut self,
+            input: crate::model::DeleteFileSystemOpenZfsResponse,
+        ) -> Self {
+            self.open_zfs_response = Some(input);
+            self
+        }
+        /// <p>The response object for the OpenZFS file system that's being deleted in the
+        /// <code>DeleteFileSystem</code> operation.</p>
+        pub fn set_open_zfs_response(
+            mut self,
+            input: std::option::Option<crate::model::DeleteFileSystemOpenZfsResponse>,
+        ) -> Self {
+            self.open_zfs_response = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteFileSystemOutput`](crate::output::DeleteFileSystemOutput)
         pub fn build(self) -> crate::output::DeleteFileSystemOutput {
             crate::output::DeleteFileSystemOutput {
@@ -1260,6 +1815,7 @@ pub mod delete_file_system_output {
                 lifecycle: self.lifecycle,
                 windows_response: self.windows_response,
                 lustre_response: self.lustre_response,
+                open_zfs_response: self.open_zfs_response,
             }
         }
     }
@@ -1271,21 +1827,128 @@ impl DeleteFileSystemOutput {
     }
 }
 
-/// <p>The response object for <code>DeleteBackup</code> operation.</p>
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteDataRepositoryAssociationOutput {
+    /// <p>The ID of the data repository association being deleted.</p>
+    pub association_id: std::option::Option<std::string::String>,
+    /// <p>Describes the lifecycle state of the data repository association being deleted.</p>
+    pub lifecycle: std::option::Option<crate::model::DataRepositoryLifecycle>,
+    /// <p>Indicates whether data in the file system that corresponds to the data
+    /// repository association is being deleted. Default is <code>false</code>.</p>
+    pub delete_data_in_file_system: std::option::Option<bool>,
+}
+impl DeleteDataRepositoryAssociationOutput {
+    /// <p>The ID of the data repository association being deleted.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>Describes the lifecycle state of the data repository association being deleted.</p>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::DataRepositoryLifecycle> {
+        self.lifecycle.as_ref()
+    }
+    /// <p>Indicates whether data in the file system that corresponds to the data
+    /// repository association is being deleted. Default is <code>false</code>.</p>
+    pub fn delete_data_in_file_system(&self) -> std::option::Option<bool> {
+        self.delete_data_in_file_system
+    }
+}
+impl std::fmt::Debug for DeleteDataRepositoryAssociationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteDataRepositoryAssociationOutput");
+        formatter.field("association_id", &self.association_id);
+        formatter.field("lifecycle", &self.lifecycle);
+        formatter.field(
+            "delete_data_in_file_system",
+            &self.delete_data_in_file_system,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DeleteDataRepositoryAssociationOutput`](crate::output::DeleteDataRepositoryAssociationOutput)
+pub mod delete_data_repository_association_output {
+    /// A builder for [`DeleteDataRepositoryAssociationOutput`](crate::output::DeleteDataRepositoryAssociationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) association_id: std::option::Option<std::string::String>,
+        pub(crate) lifecycle: std::option::Option<crate::model::DataRepositoryLifecycle>,
+        pub(crate) delete_data_in_file_system: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The ID of the data repository association being deleted.</p>
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the data repository association being deleted.</p>
+        pub fn set_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.association_id = input;
+            self
+        }
+        /// <p>Describes the lifecycle state of the data repository association being deleted.</p>
+        pub fn lifecycle(mut self, input: crate::model::DataRepositoryLifecycle) -> Self {
+            self.lifecycle = Some(input);
+            self
+        }
+        /// <p>Describes the lifecycle state of the data repository association being deleted.</p>
+        pub fn set_lifecycle(
+            mut self,
+            input: std::option::Option<crate::model::DataRepositoryLifecycle>,
+        ) -> Self {
+            self.lifecycle = input;
+            self
+        }
+        /// <p>Indicates whether data in the file system that corresponds to the data
+        /// repository association is being deleted. Default is <code>false</code>.</p>
+        pub fn delete_data_in_file_system(mut self, input: bool) -> Self {
+            self.delete_data_in_file_system = Some(input);
+            self
+        }
+        /// <p>Indicates whether data in the file system that corresponds to the data
+        /// repository association is being deleted. Default is <code>false</code>.</p>
+        pub fn set_delete_data_in_file_system(mut self, input: std::option::Option<bool>) -> Self {
+            self.delete_data_in_file_system = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteDataRepositoryAssociationOutput`](crate::output::DeleteDataRepositoryAssociationOutput)
+        pub fn build(self) -> crate::output::DeleteDataRepositoryAssociationOutput {
+            crate::output::DeleteDataRepositoryAssociationOutput {
+                association_id: self.association_id,
+                lifecycle: self.lifecycle,
+                delete_data_in_file_system: self.delete_data_in_file_system,
+            }
+        }
+    }
+}
+impl DeleteDataRepositoryAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDataRepositoryAssociationOutput`](crate::output::DeleteDataRepositoryAssociationOutput)
+    pub fn builder() -> crate::output::delete_data_repository_association_output::Builder {
+        crate::output::delete_data_repository_association_output::Builder::default()
+    }
+}
+
+/// <p>The response object for the <code>DeleteBackup</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupOutput {
-    /// <p>The ID of the backup deleted.</p>
+    /// <p>The ID of the backup that was deleted.</p>
     pub backup_id: std::option::Option<std::string::String>,
-    /// <p>The lifecycle of the backup. Should be <code>DELETED</code>.</p>
+    /// <p>The lifecycle status of the backup. If the <code>DeleteBackup</code> operation is
+    /// successful, the status is <code>DELETED</code>.</p>
     pub lifecycle: std::option::Option<crate::model::BackupLifecycle>,
 }
 impl DeleteBackupOutput {
-    /// <p>The ID of the backup deleted.</p>
+    /// <p>The ID of the backup that was deleted.</p>
     pub fn backup_id(&self) -> std::option::Option<&str> {
         self.backup_id.as_deref()
     }
-    /// <p>The lifecycle of the backup. Should be <code>DELETED</code>.</p>
+    /// <p>The lifecycle status of the backup. If the <code>DeleteBackup</code> operation is
+    /// successful, the status is <code>DELETED</code>.</p>
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::BackupLifecycle> {
         self.lifecycle.as_ref()
     }
@@ -1308,22 +1971,24 @@ pub mod delete_backup_output {
         pub(crate) lifecycle: std::option::Option<crate::model::BackupLifecycle>,
     }
     impl Builder {
-        /// <p>The ID of the backup deleted.</p>
+        /// <p>The ID of the backup that was deleted.</p>
         pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_id = Some(input.into());
             self
         }
-        /// <p>The ID of the backup deleted.</p>
+        /// <p>The ID of the backup that was deleted.</p>
         pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.backup_id = input;
             self
         }
-        /// <p>The lifecycle of the backup. Should be <code>DELETED</code>.</p>
+        /// <p>The lifecycle status of the backup. If the <code>DeleteBackup</code> operation is
+        /// successful, the status is <code>DELETED</code>.</p>
         pub fn lifecycle(mut self, input: crate::model::BackupLifecycle) -> Self {
             self.lifecycle = Some(input);
             self
         }
-        /// <p>The lifecycle of the backup. Should be <code>DELETED</code>.</p>
+        /// <p>The lifecycle status of the backup. If the <code>DeleteBackup</code> operation is
+        /// successful, the status is <code>DELETED</code>.</p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::BackupLifecycle>,
@@ -1522,6 +2187,60 @@ impl CreateStorageVirtualMachineOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateSnapshotOutput {
+    /// <p>A description of the snapshot.</p>
+    pub snapshot: std::option::Option<crate::model::Snapshot>,
+}
+impl CreateSnapshotOutput {
+    /// <p>A description of the snapshot.</p>
+    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+        self.snapshot.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateSnapshotOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateSnapshotOutput");
+        formatter.field("snapshot", &self.snapshot);
+        formatter.finish()
+    }
+}
+/// See [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput)
+pub mod create_snapshot_output {
+    /// A builder for [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) snapshot: std::option::Option<crate::model::Snapshot>,
+    }
+    impl Builder {
+        /// <p>A description of the snapshot.</p>
+        pub fn snapshot(mut self, input: crate::model::Snapshot) -> Self {
+            self.snapshot = Some(input);
+            self
+        }
+        /// <p>A description of the snapshot.</p>
+        pub fn set_snapshot(mut self, input: std::option::Option<crate::model::Snapshot>) -> Self {
+            self.snapshot = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput)
+        pub fn build(self) -> crate::output::CreateSnapshotOutput {
+            crate::output::CreateSnapshotOutput {
+                snapshot: self.snapshot,
+            }
+        }
+    }
+}
+impl CreateSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput)
+    pub fn builder() -> crate::output::create_snapshot_output::Builder {
+        crate::output::create_snapshot_output::Builder::default()
+    }
+}
+
 /// <p>The response object for the <code>CreateFileSystemFromBackup</code>
 /// operation.</p>
 #[non_exhaustive]
@@ -1694,6 +2413,63 @@ impl CreateDataRepositoryTaskOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateDataRepositoryAssociationOutput {
+    /// <p>The response object returned after the data repository association is created.</p>
+    pub association: std::option::Option<crate::model::DataRepositoryAssociation>,
+}
+impl CreateDataRepositoryAssociationOutput {
+    /// <p>The response object returned after the data repository association is created.</p>
+    pub fn association(&self) -> std::option::Option<&crate::model::DataRepositoryAssociation> {
+        self.association.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateDataRepositoryAssociationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateDataRepositoryAssociationOutput");
+        formatter.field("association", &self.association);
+        formatter.finish()
+    }
+}
+/// See [`CreateDataRepositoryAssociationOutput`](crate::output::CreateDataRepositoryAssociationOutput)
+pub mod create_data_repository_association_output {
+    /// A builder for [`CreateDataRepositoryAssociationOutput`](crate::output::CreateDataRepositoryAssociationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) association: std::option::Option<crate::model::DataRepositoryAssociation>,
+    }
+    impl Builder {
+        /// <p>The response object returned after the data repository association is created.</p>
+        pub fn association(mut self, input: crate::model::DataRepositoryAssociation) -> Self {
+            self.association = Some(input);
+            self
+        }
+        /// <p>The response object returned after the data repository association is created.</p>
+        pub fn set_association(
+            mut self,
+            input: std::option::Option<crate::model::DataRepositoryAssociation>,
+        ) -> Self {
+            self.association = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateDataRepositoryAssociationOutput`](crate::output::CreateDataRepositoryAssociationOutput)
+        pub fn build(self) -> crate::output::CreateDataRepositoryAssociationOutput {
+            crate::output::CreateDataRepositoryAssociationOutput {
+                association: self.association,
+            }
+        }
+    }
+}
+impl CreateDataRepositoryAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDataRepositoryAssociationOutput`](crate::output::CreateDataRepositoryAssociationOutput)
+    pub fn builder() -> crate::output::create_data_repository_association_output::Builder {
+        crate::output::create_data_repository_association_output::Builder::default()
+    }
+}
+
 /// <p>The response object for the <code>CreateBackup</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1752,13 +2528,15 @@ impl CreateBackupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyBackupOutput {
-    /// <p>A backup of an Amazon FSx for Windows File Server or Amazon FSx for Lustre file system,
-    /// or of an Amazon FSx for NetApp ONTAP volume.</p>
+    /// <p>A backup of an Amazon FSx for Windows File Server, Amazon FSx for
+    /// Lustre file system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx
+    /// for OpenZFS file system.</p>
     pub backup: std::option::Option<crate::model::Backup>,
 }
 impl CopyBackupOutput {
-    /// <p>A backup of an Amazon FSx for Windows File Server or Amazon FSx for Lustre file system,
-    /// or of an Amazon FSx for NetApp ONTAP volume.</p>
+    /// <p>A backup of an Amazon FSx for Windows File Server, Amazon FSx for
+    /// Lustre file system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx
+    /// for OpenZFS file system.</p>
     pub fn backup(&self) -> std::option::Option<&crate::model::Backup> {
         self.backup.as_ref()
     }
@@ -1779,14 +2557,16 @@ pub mod copy_backup_output {
         pub(crate) backup: std::option::Option<crate::model::Backup>,
     }
     impl Builder {
-        /// <p>A backup of an Amazon FSx for Windows File Server or Amazon FSx for Lustre file system,
-        /// or of an Amazon FSx for NetApp ONTAP volume.</p>
+        /// <p>A backup of an Amazon FSx for Windows File Server, Amazon FSx for
+        /// Lustre file system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx
+        /// for OpenZFS file system.</p>
         pub fn backup(mut self, input: crate::model::Backup) -> Self {
             self.backup = Some(input);
             self
         }
-        /// <p>A backup of an Amazon FSx for Windows File Server or Amazon FSx for Lustre file system,
-        /// or of an Amazon FSx for NetApp ONTAP volume.</p>
+        /// <p>A backup of an Amazon FSx for Windows File Server, Amazon FSx for
+        /// Lustre file system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx
+        /// for OpenZFS file system.</p>
         pub fn set_backup(mut self, input: std::option::Option<crate::model::Backup>) -> Self {
             self.backup = input;
             self

@@ -1,6 +1,6 @@
 # aws-sdk-appstream
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 This is the _Amazon AppStream 2.0 API Reference_. This documentation provides descriptions and syntax for each of the actions and data types in AppStream 2.0. AppStream 2.0 is a fully managed, secure application streaming service that lets you stream desktop applications to users without rewriting applications. AppStream 2.0 manages the AWS resources that are required to host and run your applications, scales automatically, and provides access to your users on demand.
@@ -20,8 +20,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-appstream = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-appstream = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

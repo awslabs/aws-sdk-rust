@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_appsync::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -385,7 +385,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateApiCache<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -683,7 +683,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateApiKey<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -777,7 +777,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateDataSource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -988,7 +988,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateFunction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1153,7 +1153,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateGraphqlApi<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1354,7 +1354,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateResolver<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1572,7 +1572,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateType<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1669,7 +1669,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteApiCache<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1739,7 +1739,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteApiKey<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1819,7 +1819,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteDataSource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1899,7 +1899,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteFunction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1979,7 +1979,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteGraphqlApi<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2049,7 +2049,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteResolver<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2139,7 +2139,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteType<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2219,7 +2219,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct FlushApiCache<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2289,7 +2289,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetApiCache<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2359,7 +2359,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetDataSource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2439,7 +2439,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetFunction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2519,7 +2519,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetGraphqlApi<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2589,7 +2589,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetIntrospectionSchema<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2679,7 +2679,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetResolver<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2769,7 +2769,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetSchemaCreationStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2839,7 +2839,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetType<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2938,7 +2938,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListApiKeys<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3030,7 +3030,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListDataSources<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3122,7 +3122,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListFunctions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3214,7 +3214,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListGraphqlApis<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3296,7 +3296,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListResolvers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3398,7 +3398,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListResolversByFunction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3500,7 +3500,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3570,7 +3570,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTypes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3677,7 +3677,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartSchemaCreation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3760,7 +3760,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3853,7 +3853,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3940,7 +3940,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateApiCache<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4215,7 +4215,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateApiKey<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4317,7 +4317,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateDataSource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4524,7 +4524,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateFunction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4699,7 +4699,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateGraphqlApi<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4885,7 +4885,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateResolver<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5103,7 +5103,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateType<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5201,17 +5201,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -5220,7 +5224,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -5236,11 +5240,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

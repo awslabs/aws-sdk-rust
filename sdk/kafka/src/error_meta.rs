@@ -133,6 +133,40 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateClusterV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateClusterV2Error, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateClusterV2ErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::CreateClusterV2ErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::CreateClusterV2ErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::CreateClusterV2ErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
+                }
+                crate::error::CreateClusterV2ErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::CreateClusterV2ErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
+                }
+                crate::error::CreateClusterV2ErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
+                }
+                crate::error::CreateClusterV2ErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateConfigurationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -279,6 +313,38 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::DescribeClusterOperationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeClusterV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeClusterV2Error, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeClusterV2ErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::DescribeClusterV2ErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::DescribeClusterV2ErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
+                }
+                crate::error::DescribeClusterV2ErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::DescribeClusterV2ErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
+                }
+                crate::error::DescribeClusterV2ErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -465,6 +531,31 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::ListClustersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListClustersV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListClustersV2Error, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListClustersV2ErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::ListClustersV2ErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::ListClustersV2ErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
+                }
+                crate::error::ListClustersV2ErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
+                }
+                crate::error::ListClustersV2ErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

@@ -1,23 +1,23 @@
 # aws-sdk-proton
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-This is the AWS Proton Service API Reference. It provides descriptions, syntax and usage examples for each of the [actions](https://docs.aws.amazon.com/proton/latest/APIReference/API_Operations.html) and [data types](https://docs.aws.amazon.com/proton/latest/APIReference/API_Types.html) for the AWS Proton service.
+This is the Proton Service API Reference. It provides descriptions, syntax and usage examples for each of the [actions](https://docs.aws.amazon.com/proton/latest/APIReference/API_Operations.html) and [data types](https://docs.aws.amazon.com/proton/latest/APIReference/API_Types.html) for the Proton service.
 
 The documentation for each action shows the Query API request parameters and the XML response.
 
-Alternatively, you can use the AWS CLI to access an API. For more information, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html).
+Alternatively, you can use the Amazon Web Services CLI to access an API. For more information, see the [Amazon Web Services Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html).
 
-The AWS Proton service is a two-pronged automation framework. Administrators create service templates to provide standardized infrastructure and deployment tooling for serverless and container based applications. Developers, in turn, select from the available service templates to automate their application or service deployments.
+The Proton service is a two-pronged automation framework. Administrators create service templates to provide standardized infrastructure and deployment tooling for serverless and container based applications. Developers, in turn, select from the available service templates to automate their application or service deployments.
 
-Because administrators define the infrastructure and tooling that AWS Proton deploys and manages, they need permissions to use all of the listed API operations.
+Because administrators define the infrastructure and tooling that Proton deploys and manages, they need permissions to use all of the listed API operations.
 
-When developers select a specific infrastructure and tooling set, AWS Proton deploys their applications. To monitor their applications that are running on AWS Proton, developers need permissions to the service _create_, _list_, _update_ and _delete_ API operations and the service instance _list_ and _update_ API operations.
+When developers select a specific infrastructure and tooling set, Proton deploys their applications. To monitor their applications that are running on Proton, developers need permissions to the service _create_, _list_, _update_ and _delete_ API operations and the service instance _list_ and _update_ API operations.
 
-To learn more about AWS Proton administration, see the [AWS Proton Administrator Guide](https://docs.aws.amazon.com/proton/latest/adminguide/Welcome.html).
+To learn more about Proton administration, see the [Proton Administrator Guide](https://docs.aws.amazon.com/proton/latest/adminguide/Welcome.html).
 
-To learn more about deploying serverless and containerized applications on AWS Proton, see the [AWS Proton User Guide](https://docs.aws.amazon.com/proton/latest/userguide/Welcome.html).
+To learn more about deploying serverless and containerized applications on Proton, see the [Proton User Guide](https://docs.aws.amazon.com/proton/latest/userguide/Welcome.html).
 
 __Ensuring Idempotency__
 
@@ -29,7 +29,7 @@ The following lists of APIs are grouped according to methods that ensure idempot
 
 __Idempotent create APIs with a client token__
 
-The API actions in this list support idempotency with the use of a _client token_. The corresponding AWS CLI commands also support idempotency using a client token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request. We recommend that you _don't_ reuse the same client token for other API requests. If you don’t provide a client token for these APIs, a default client token is automatically provided by SDKs.
+The API actions in this list support idempotency with the use of a _client token_. The corresponding Amazon Web Services CLI commands also support idempotency using a client token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request. We recommend that you _don't_ reuse the same client token for other API requests. If you don’t provide a client token for these APIs, a default client token is automatically provided by SDKs.
 
 Given a request action that has succeeded:
 
@@ -102,8 +102,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-proton = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-proton = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

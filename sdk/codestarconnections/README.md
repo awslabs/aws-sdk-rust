@@ -1,6 +1,6 @@
 # aws-sdk-codestarconnections
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 This AWS CodeStar Connections API Reference provides descriptions and usage examples of the operations and data types for the AWS CodeStar Connections API. You can use the connections API to work with connections and installations.
@@ -41,8 +41,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-codestarconnections = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-codestarconnections = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

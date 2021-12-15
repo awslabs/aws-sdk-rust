@@ -18,8 +18,8 @@ pub enum CancelClusterErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided AWS Key Management Service key lacks the permissions to perform the
-    /// specified <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
+    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -138,8 +138,8 @@ pub enum CancelJobErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided AWS Key Management Service key lacks the permissions to perform the
-    /// specified <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
+    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -248,7 +248,7 @@ pub enum CreateAddressErrorKind {
     InvalidAddressException(crate::error::InvalidAddressException),
     /// <p>The address is either outside the serviceable area for your region, or an error
     /// occurred. Check the address with your region's carrier and try again. If the issue persists,
-    /// contact AWS Support.</p>
+    /// contact Amazon Web Services Support.</p>
     UnsupportedAddressException(crate::error::UnsupportedAddressException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -355,14 +355,13 @@ pub enum CreateClusterErrorKind {
     /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
     /// action.</p>
     Ec2RequestFailedException(crate::error::Ec2RequestFailedException),
-    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the
-    /// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
     InvalidInputCombinationException(crate::error::InvalidInputCombinationException),
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided AWS Key Management Service key lacks the permissions to perform the
-    /// specified <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
+    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -491,14 +490,13 @@ pub enum CreateJobErrorKind {
     /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
     /// action.</p>
     Ec2RequestFailedException(crate::error::Ec2RequestFailedException),
-    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the
-    /// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
     InvalidInputCombinationException(crate::error::InvalidInputCombinationException),
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided AWS Key Management Service key lacks the permissions to perform the
-    /// specified <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
+    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -716,10 +714,10 @@ pub struct CreateReturnShippingLabelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateReturnShippingLabelErrorKind {
-    /// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once when other requests are not completed.</p>
+    /// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once
+    /// when other requests are not completed.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the
-    /// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
     InvalidInputCombinationException(crate::error::InvalidInputCombinationException),
     /// <p>The action can't be performed because the job's current state doesn't allow that action
     /// to be performed.</p>
@@ -727,9 +725,9 @@ pub enum CreateReturnShippingLabelErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid return
-    /// shipping label already exists. In this case, use
-    /// <code>DescribeReturnShippingLabel</code> to get the url.</p>
+    /// <p>You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid
+    /// return shipping label already exists. In this case, use
+    /// <code>DescribeReturnShippingLabel</code> to get the URL.</p>
     ReturnShippingLabelAlreadyExistsException(
         crate::error::ReturnShippingLabelAlreadyExistsException,
     ),
@@ -1267,7 +1265,8 @@ pub struct DescribeReturnShippingLabelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeReturnShippingLabelErrorKind {
-    /// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once when other requests are not completed.</p>
+    /// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once
+    /// when other requests are not completed.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The action can't be performed because the job's current state doesn't allow that action
     /// to be performed.</p>
@@ -2315,8 +2314,7 @@ pub enum UpdateClusterErrorKind {
     /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
     /// action.</p>
     Ec2RequestFailedException(crate::error::Ec2RequestFailedException),
-    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the
-    /// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
     InvalidInputCombinationException(crate::error::InvalidInputCombinationException),
     /// <p>The action can't be performed because the job's current state doesn't allow that action
     /// to be performed.</p>
@@ -2324,8 +2322,8 @@ pub enum UpdateClusterErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided AWS Key Management Service key lacks the permissions to perform the
-    /// specified <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
+    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2463,8 +2461,7 @@ pub enum UpdateJobErrorKind {
     /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
     /// action.</p>
     Ec2RequestFailedException(crate::error::Ec2RequestFailedException),
-    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the
-    /// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
     InvalidInputCombinationException(crate::error::InvalidInputCombinationException),
     /// <p>The action can't be performed because the job's current state doesn't allow that action
     /// to be performed.</p>
@@ -2472,8 +2469,8 @@ pub enum UpdateJobErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided AWS Key Management Service key lacks the permissions to perform the
-    /// specified <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
+    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2946,8 +2943,8 @@ impl InvalidJobStateException {
     }
 }
 
-/// <p>The provided AWS Key Management Service key lacks the permissions to perform the
-/// specified <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+/// <p>The provided Key Management Service key lacks the permissions to perform the specified
+/// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsRequestFailedException {
@@ -3011,8 +3008,7 @@ impl KmsRequestFailedException {
     }
 }
 
-/// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the
-/// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+/// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputCombinationException {
@@ -3273,7 +3269,8 @@ impl InvalidNextTokenException {
     }
 }
 
-/// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once when other requests are not completed.</p>
+/// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once
+/// when other requests are not completed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -3361,9 +3358,9 @@ impl ConflictException {
     }
 }
 
-/// <p>You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid return
-/// shipping label already exists. In this case, use
-/// <code>DescribeReturnShippingLabel</code> to get the url.</p>
+/// <p>You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid
+/// return shipping label already exists. In this case, use
+/// <code>DescribeReturnShippingLabel</code> to get the URL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReturnShippingLabelAlreadyExistsException {
@@ -3429,7 +3426,7 @@ impl ReturnShippingLabelAlreadyExistsException {
 
 /// <p>The address is either outside the serviceable area for your region, or an error
 /// occurred. Check the address with your region's carrier and try again. If the issue persists,
-/// contact AWS Support.</p>
+/// contact Amazon Web Services Support.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedAddressException {

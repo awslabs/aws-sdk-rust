@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_codecommit::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -713,7 +713,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateApprovalRuleTemplateWithRepository<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -801,7 +801,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchAssociateApprovalRuleTemplateWithRepositories<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -891,7 +891,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchDescribeMergeConflicts<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1096,7 +1096,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes the association between an approval rule template and one or more specified repositories. </p>
     #[derive(std::fmt::Debug)]
-    pub struct BatchDisassociateApprovalRuleTemplateFromRepositories<C= aws_smithy_client::erase::DynConnector, M= aws_hyper::AwsMiddleware, R= aws_smithy_client::retry::Standard> {
+    pub struct BatchDisassociateApprovalRuleTemplateFromRepositories<C = aws_smithy_client::erase::DynConnector, M= crate::middleware::DefaultMiddleware, R= aws_smithy_client::retry::Standard> {
                             handle: std::sync::Arc<super::Handle<C, M, R>>,
                             inner: crate::input::batch_disassociate_approval_rule_template_from_repositories_input::Builder
                         }
@@ -1185,7 +1185,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchGetCommits<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1290,7 +1290,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchGetRepositories<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1377,7 +1377,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateApprovalRuleTemplate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1579,7 +1579,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateBranch<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1672,7 +1672,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateCommit<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1872,7 +1872,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreatePullRequest<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2002,7 +2002,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreatePullRequestApprovalRule<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2185,7 +2185,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateRepository<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2329,7 +2329,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateUnreferencedMergeCommit<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2551,7 +2551,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteApprovalRuleTemplate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2624,7 +2624,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBranch<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2707,7 +2707,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteCommentContent<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2781,7 +2781,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteFile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2954,7 +2954,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeletePullRequestApprovalRule<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3045,7 +3045,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteRepository<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3120,7 +3120,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeMergeConflicts<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3310,7 +3310,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribePullRequestEvents<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3437,7 +3437,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateApprovalRuleTemplateFromRepository<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3516,7 +3516,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct EvaluatePullRequestApprovalRules<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3603,7 +3603,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetApprovalRuleTemplate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3676,7 +3676,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBlob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3759,7 +3759,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBranch<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3846,7 +3846,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetComment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3918,7 +3918,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetCommentReactions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4025,7 +4025,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetCommentsForComparedCommit<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4154,7 +4154,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetCommentsForPullRequest<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4290,7 +4290,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetCommit<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4375,7 +4375,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetDifferences<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4534,7 +4534,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetFile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4638,7 +4638,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetFolder<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4744,7 +4744,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetMergeCommit<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4889,7 +4889,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetMergeConflicts<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5071,7 +5071,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetMergeOptions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5216,7 +5216,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetPullRequest<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5290,7 +5290,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetPullRequestApprovalStates<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5374,7 +5374,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetPullRequestOverrideState<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5469,7 +5469,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetRepository<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5542,7 +5542,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetRepositoryTriggers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5616,7 +5616,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListApprovalRuleTemplates<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5698,7 +5698,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListAssociatedApprovalRuleTemplatesForRepository<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5786,7 +5786,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBranches<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5870,7 +5870,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListPullRequests<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5990,7 +5990,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListRepositories<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6084,7 +6084,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListRepositoriesForApprovalRuleTemplate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6183,7 +6183,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6267,7 +6267,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct MergeBranchesByFastForward<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6383,7 +6383,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct MergeBranchesBySquash<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6607,7 +6607,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct MergeBranchesByThreeWay<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6832,7 +6832,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct MergePullRequestByFastForward<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6934,7 +6934,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct MergePullRequestBySquash<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7144,7 +7144,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct MergePullRequestByThreeWay<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7353,7 +7353,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct OverridePullRequestApprovalRules<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7457,7 +7457,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PostCommentForComparedCommit<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7601,7 +7601,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PostCommentForPullRequest<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7756,7 +7756,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PostCommentReply<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7858,7 +7858,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutCommentReaction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7943,7 +7943,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutFile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8130,7 +8130,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutRepositoryTriggers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8222,7 +8222,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8317,7 +8317,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TestRepositoryTriggers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8409,7 +8409,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8498,7 +8498,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateApprovalRuleTemplateContent<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8603,7 +8603,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateApprovalRuleTemplateDescription<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8694,7 +8694,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateApprovalRuleTemplateName<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8786,7 +8786,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateComment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8871,7 +8871,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateDefaultBranch<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8958,7 +8958,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdatePullRequestApprovalRuleContent<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9156,7 +9156,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdatePullRequestApprovalState<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9252,7 +9252,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdatePullRequestDescription<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9337,7 +9337,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdatePullRequestStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9427,7 +9427,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdatePullRequestTitle<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9517,7 +9517,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateRepositoryDescription<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9607,7 +9607,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateRepositoryName<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9682,17 +9682,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -9701,7 +9705,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -9717,11 +9721,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

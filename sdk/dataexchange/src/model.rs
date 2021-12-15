@@ -707,6 +707,8 @@ impl AsRef<str> for Origin {
 )]
 pub enum AssetType {
     #[allow(missing_docs)] // documentation missing in model
+    ApiGatewayApi,
+    #[allow(missing_docs)] // documentation missing in model
     RedshiftDataShare,
     #[allow(missing_docs)] // documentation missing in model
     S3Snapshot,
@@ -716,6 +718,7 @@ pub enum AssetType {
 impl std::convert::From<&str> for AssetType {
     fn from(s: &str) -> Self {
         match s {
+            "API_GATEWAY_API" => AssetType::ApiGatewayApi,
             "REDSHIFT_DATA_SHARE" => AssetType::RedshiftDataShare,
             "S3_SNAPSHOT" => AssetType::S3Snapshot,
             other => AssetType::Unknown(other.to_owned()),
@@ -733,6 +736,7 @@ impl AssetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AssetType::ApiGatewayApi => "API_GATEWAY_API",
             AssetType::RedshiftDataShare => "REDSHIFT_DATA_SHARE",
             AssetType::S3Snapshot => "S3_SNAPSHOT",
             AssetType::Unknown(s) => s.as_ref(),
@@ -740,7 +744,7 @@ impl AssetType {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["REDSHIFT_DATA_SHARE", "S3_SNAPSHOT"]
+        &["API_GATEWAY_API", "REDSHIFT_DATA_SHARE", "S3_SNAPSHOT"]
     }
 }
 impl AsRef<str> for AssetType {
@@ -757,6 +761,8 @@ pub struct AssetDetails {
     pub s3_snapshot_asset: std::option::Option<crate::model::S3SnapshotAsset>,
     /// <p>The Amazon Redshift datashare that is the asset.</p>
     pub redshift_data_share_asset: std::option::Option<crate::model::RedshiftDataShareAsset>,
+    /// <p>Information about the API Gateway API asset.</p>
+    pub api_gateway_api_asset: std::option::Option<crate::model::ApiGatewayApiAsset>,
 }
 impl AssetDetails {
     /// <p>The S3 object that is the asset.</p>
@@ -769,12 +775,17 @@ impl AssetDetails {
     ) -> std::option::Option<&crate::model::RedshiftDataShareAsset> {
         self.redshift_data_share_asset.as_ref()
     }
+    /// <p>Information about the API Gateway API asset.</p>
+    pub fn api_gateway_api_asset(&self) -> std::option::Option<&crate::model::ApiGatewayApiAsset> {
+        self.api_gateway_api_asset.as_ref()
+    }
 }
 impl std::fmt::Debug for AssetDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssetDetails");
         formatter.field("s3_snapshot_asset", &self.s3_snapshot_asset);
         formatter.field("redshift_data_share_asset", &self.redshift_data_share_asset);
+        formatter.field("api_gateway_api_asset", &self.api_gateway_api_asset);
         formatter.finish()
     }
 }
@@ -787,6 +798,7 @@ pub mod asset_details {
         pub(crate) s3_snapshot_asset: std::option::Option<crate::model::S3SnapshotAsset>,
         pub(crate) redshift_data_share_asset:
             std::option::Option<crate::model::RedshiftDataShareAsset>,
+        pub(crate) api_gateway_api_asset: std::option::Option<crate::model::ApiGatewayApiAsset>,
     }
     impl Builder {
         /// <p>The S3 object that is the asset.</p>
@@ -818,11 +830,25 @@ pub mod asset_details {
             self.redshift_data_share_asset = input;
             self
         }
+        /// <p>Information about the API Gateway API asset.</p>
+        pub fn api_gateway_api_asset(mut self, input: crate::model::ApiGatewayApiAsset) -> Self {
+            self.api_gateway_api_asset = Some(input);
+            self
+        }
+        /// <p>Information about the API Gateway API asset.</p>
+        pub fn set_api_gateway_api_asset(
+            mut self,
+            input: std::option::Option<crate::model::ApiGatewayApiAsset>,
+        ) -> Self {
+            self.api_gateway_api_asset = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssetDetails`](crate::model::AssetDetails)
         pub fn build(self) -> crate::model::AssetDetails {
             crate::model::AssetDetails {
                 s3_snapshot_asset: self.s3_snapshot_asset,
                 redshift_data_share_asset: self.redshift_data_share_asset,
+                api_gateway_api_asset: self.api_gateway_api_asset,
             }
         }
     }
@@ -831,6 +857,291 @@ impl AssetDetails {
     /// Creates a new builder-style object to manufacture [`AssetDetails`](crate::model::AssetDetails)
     pub fn builder() -> crate::model::asset_details::Builder {
         crate::model::asset_details::Builder::default()
+    }
+}
+
+/// <p>The API Gateway API that is the asset.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ApiGatewayApiAsset {
+    /// <p>The API description of the API asset.</p>
+    pub api_description: std::option::Option<std::string::String>,
+    /// <p>The API endpoint of the API asset.</p>
+    pub api_endpoint: std::option::Option<std::string::String>,
+    /// <p>The unique identifier of the API asset.</p>
+    pub api_id: std::option::Option<std::string::String>,
+    /// <p>The API key of the API asset.</p>
+    pub api_key: std::option::Option<std::string::String>,
+    /// <p>The API name of the API asset.</p>
+    pub api_name: std::option::Option<std::string::String>,
+    /// <p>The download URL of the API specification of the API asset.</p>
+    pub api_specification_download_url: std::option::Option<std::string::String>,
+    /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
+    pub api_specification_download_url_expires_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The protocol type of the API asset.</p>
+    pub protocol_type: std::option::Option<crate::model::ProtocolType>,
+    /// <p>The stage of the API asset.</p>
+    pub stage: std::option::Option<std::string::String>,
+}
+impl ApiGatewayApiAsset {
+    /// <p>The API description of the API asset.</p>
+    pub fn api_description(&self) -> std::option::Option<&str> {
+        self.api_description.as_deref()
+    }
+    /// <p>The API endpoint of the API asset.</p>
+    pub fn api_endpoint(&self) -> std::option::Option<&str> {
+        self.api_endpoint.as_deref()
+    }
+    /// <p>The unique identifier of the API asset.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The API key of the API asset.</p>
+    pub fn api_key(&self) -> std::option::Option<&str> {
+        self.api_key.as_deref()
+    }
+    /// <p>The API name of the API asset.</p>
+    pub fn api_name(&self) -> std::option::Option<&str> {
+        self.api_name.as_deref()
+    }
+    /// <p>The download URL of the API specification of the API asset.</p>
+    pub fn api_specification_download_url(&self) -> std::option::Option<&str> {
+        self.api_specification_download_url.as_deref()
+    }
+    /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
+    pub fn api_specification_download_url_expires_at(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.api_specification_download_url_expires_at.as_ref()
+    }
+    /// <p>The protocol type of the API asset.</p>
+    pub fn protocol_type(&self) -> std::option::Option<&crate::model::ProtocolType> {
+        self.protocol_type.as_ref()
+    }
+    /// <p>The stage of the API asset.</p>
+    pub fn stage(&self) -> std::option::Option<&str> {
+        self.stage.as_deref()
+    }
+}
+impl std::fmt::Debug for ApiGatewayApiAsset {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ApiGatewayApiAsset");
+        formatter.field("api_description", &self.api_description);
+        formatter.field("api_endpoint", &self.api_endpoint);
+        formatter.field("api_id", &self.api_id);
+        formatter.field("api_key", &self.api_key);
+        formatter.field("api_name", &self.api_name);
+        formatter.field(
+            "api_specification_download_url",
+            &self.api_specification_download_url,
+        );
+        formatter.field(
+            "api_specification_download_url_expires_at",
+            &self.api_specification_download_url_expires_at,
+        );
+        formatter.field("protocol_type", &self.protocol_type);
+        formatter.field("stage", &self.stage);
+        formatter.finish()
+    }
+}
+/// See [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset)
+pub mod api_gateway_api_asset {
+    /// A builder for [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) api_description: std::option::Option<std::string::String>,
+        pub(crate) api_endpoint: std::option::Option<std::string::String>,
+        pub(crate) api_id: std::option::Option<std::string::String>,
+        pub(crate) api_key: std::option::Option<std::string::String>,
+        pub(crate) api_name: std::option::Option<std::string::String>,
+        pub(crate) api_specification_download_url: std::option::Option<std::string::String>,
+        pub(crate) api_specification_download_url_expires_at:
+            std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) protocol_type: std::option::Option<crate::model::ProtocolType>,
+        pub(crate) stage: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The API description of the API asset.</p>
+        pub fn api_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_description = Some(input.into());
+            self
+        }
+        /// <p>The API description of the API asset.</p>
+        pub fn set_api_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.api_description = input;
+            self
+        }
+        /// <p>The API endpoint of the API asset.</p>
+        pub fn api_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_endpoint = Some(input.into());
+            self
+        }
+        /// <p>The API endpoint of the API asset.</p>
+        pub fn set_api_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_endpoint = input;
+            self
+        }
+        /// <p>The unique identifier of the API asset.</p>
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the API asset.</p>
+        pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_id = input;
+            self
+        }
+        /// <p>The API key of the API asset.</p>
+        pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_key = Some(input.into());
+            self
+        }
+        /// <p>The API key of the API asset.</p>
+        pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_key = input;
+            self
+        }
+        /// <p>The API name of the API asset.</p>
+        pub fn api_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_name = Some(input.into());
+            self
+        }
+        /// <p>The API name of the API asset.</p>
+        pub fn set_api_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_name = input;
+            self
+        }
+        /// <p>The download URL of the API specification of the API asset.</p>
+        pub fn api_specification_download_url(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.api_specification_download_url = Some(input.into());
+            self
+        }
+        /// <p>The download URL of the API specification of the API asset.</p>
+        pub fn set_api_specification_download_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.api_specification_download_url = input;
+            self
+        }
+        /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
+        pub fn api_specification_download_url_expires_at(
+            mut self,
+            input: aws_smithy_types::DateTime,
+        ) -> Self {
+            self.api_specification_download_url_expires_at = Some(input);
+            self
+        }
+        /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
+        pub fn set_api_specification_download_url_expires_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.api_specification_download_url_expires_at = input;
+            self
+        }
+        /// <p>The protocol type of the API asset.</p>
+        pub fn protocol_type(mut self, input: crate::model::ProtocolType) -> Self {
+            self.protocol_type = Some(input);
+            self
+        }
+        /// <p>The protocol type of the API asset.</p>
+        pub fn set_protocol_type(
+            mut self,
+            input: std::option::Option<crate::model::ProtocolType>,
+        ) -> Self {
+            self.protocol_type = input;
+            self
+        }
+        /// <p>The stage of the API asset.</p>
+        pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage = Some(input.into());
+            self
+        }
+        /// <p>The stage of the API asset.</p>
+        pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset)
+        pub fn build(self) -> crate::model::ApiGatewayApiAsset {
+            crate::model::ApiGatewayApiAsset {
+                api_description: self.api_description,
+                api_endpoint: self.api_endpoint,
+                api_id: self.api_id,
+                api_key: self.api_key,
+                api_name: self.api_name,
+                api_specification_download_url: self.api_specification_download_url,
+                api_specification_download_url_expires_at: self
+                    .api_specification_download_url_expires_at,
+                protocol_type: self.protocol_type,
+                stage: self.stage,
+            }
+        }
+    }
+}
+impl ApiGatewayApiAsset {
+    /// Creates a new builder-style object to manufacture [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset)
+    pub fn builder() -> crate::model::api_gateway_api_asset::Builder {
+        crate::model::api_gateway_api_asset::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ProtocolType {
+    #[allow(missing_docs)] // documentation missing in model
+    Rest,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ProtocolType {
+    fn from(s: &str) -> Self {
+        match s {
+            "REST" => ProtocolType::Rest,
+            other => ProtocolType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ProtocolType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ProtocolType::from(s))
+    }
+}
+impl ProtocolType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ProtocolType::Rest => "REST",
+            ProtocolType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["REST"]
+    }
+}
+impl AsRef<str> for ProtocolType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -940,7 +1251,7 @@ impl S3SnapshotAsset {
     }
 }
 
-/// <p>An asset in AWS Data Exchange is a piece of data. The asset can be a structured data file, an image file, or some other data file that can be stored as an S3 object, or an Amazon Redshift datashare (Preview). When you create an import job for your files, you create an asset in AWS Data Exchange for each of those files.</p>
+/// <p>An asset in AWS Data Exchange is a piece of data (S3 object) or a means of fulfilling data (Amazon Redshift datashare or Amazon API Gateway API). The asset can be a structured data file, an image file, or some other data file that can be stored as an S3 object, an Amazon API Gateway API, or an Amazon Redshift datashare (Preview). When you create an import job for your files, API Gateway APIs, or Amazon Redshift datashares, you create an asset in AWS Data Exchange.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetEntry {
@@ -956,7 +1267,7 @@ pub struct AssetEntry {
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the asset.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this asset.</p>
     pub revision_id: std::option::Option<std::string::String>,
@@ -990,7 +1301,7 @@ impl AssetEntry {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -1110,12 +1421,12 @@ pub mod asset_entry {
             self.id = input;
             self
         }
-        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1405,6 +1716,8 @@ pub enum Type {
     #[allow(missing_docs)] // documentation missing in model
     ImportAssetsFromS3,
     #[allow(missing_docs)] // documentation missing in model
+    ImportAssetFromApiGatewayApi,
+    #[allow(missing_docs)] // documentation missing in model
     ImportAssetFromSignedUrl,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1417,6 +1730,7 @@ impl std::convert::From<&str> for Type {
             "EXPORT_REVISIONS_TO_S3" => Type::ExportRevisionsToS3,
             "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES" => Type::ImportAssetsFromRedshiftDataShares,
             "IMPORT_ASSETS_FROM_S3" => Type::ImportAssetsFromS3,
+            "IMPORT_ASSET_FROM_API_GATEWAY_API" => Type::ImportAssetFromApiGatewayApi,
             "IMPORT_ASSET_FROM_SIGNED_URL" => Type::ImportAssetFromSignedUrl,
             other => Type::Unknown(other.to_owned()),
         }
@@ -1438,6 +1752,7 @@ impl Type {
             Type::ExportRevisionsToS3 => "EXPORT_REVISIONS_TO_S3",
             Type::ImportAssetsFromRedshiftDataShares => "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES",
             Type::ImportAssetsFromS3 => "IMPORT_ASSETS_FROM_S3",
+            Type::ImportAssetFromApiGatewayApi => "IMPORT_ASSET_FROM_API_GATEWAY_API",
             Type::ImportAssetFromSignedUrl => "IMPORT_ASSET_FROM_SIGNED_URL",
             Type::Unknown(s) => s.as_ref(),
         }
@@ -1450,6 +1765,7 @@ impl Type {
             "EXPORT_REVISIONS_TO_S3",
             "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES",
             "IMPORT_ASSETS_FROM_S3",
+            "IMPORT_ASSET_FROM_API_GATEWAY_API",
             "IMPORT_ASSET_FROM_SIGNED_URL",
         ]
     }
@@ -2177,6 +2493,9 @@ pub struct ResponseDetails {
     /// <p>Details from an import from Amazon Redshift datashare response.</p>
     pub import_assets_from_redshift_data_shares:
         std::option::Option<crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails>,
+    /// <p>The response details.</p>
+    pub import_asset_from_api_gateway_api:
+        std::option::Option<crate::model::ImportAssetFromApiGatewayApiResponseDetails>,
 }
 impl ResponseDetails {
     /// <p>Details for the export to signed URL response.</p>
@@ -2215,6 +2534,12 @@ impl ResponseDetails {
     ) -> std::option::Option<&crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails> {
         self.import_assets_from_redshift_data_shares.as_ref()
     }
+    /// <p>The response details.</p>
+    pub fn import_asset_from_api_gateway_api(
+        &self,
+    ) -> std::option::Option<&crate::model::ImportAssetFromApiGatewayApiResponseDetails> {
+        self.import_asset_from_api_gateway_api.as_ref()
+    }
 }
 impl std::fmt::Debug for ResponseDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2233,6 +2558,10 @@ impl std::fmt::Debug for ResponseDetails {
         formatter.field(
             "import_assets_from_redshift_data_shares",
             &self.import_assets_from_redshift_data_shares,
+        );
+        formatter.field(
+            "import_asset_from_api_gateway_api",
+            &self.import_asset_from_api_gateway_api,
         );
         formatter.finish()
     }
@@ -2255,6 +2584,8 @@ pub mod response_details {
             std::option::Option<crate::model::ImportAssetsFromS3ResponseDetails>,
         pub(crate) import_assets_from_redshift_data_shares:
             std::option::Option<crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails>,
+        pub(crate) import_asset_from_api_gateway_api:
+            std::option::Option<crate::model::ImportAssetFromApiGatewayApiResponseDetails>,
     }
     impl Builder {
         /// <p>Details for the export to signed URL response.</p>
@@ -2355,6 +2686,22 @@ pub mod response_details {
             self.import_assets_from_redshift_data_shares = input;
             self
         }
+        /// <p>The response details.</p>
+        pub fn import_asset_from_api_gateway_api(
+            mut self,
+            input: crate::model::ImportAssetFromApiGatewayApiResponseDetails,
+        ) -> Self {
+            self.import_asset_from_api_gateway_api = Some(input);
+            self
+        }
+        /// <p>The response details.</p>
+        pub fn set_import_asset_from_api_gateway_api(
+            mut self,
+            input: std::option::Option<crate::model::ImportAssetFromApiGatewayApiResponseDetails>,
+        ) -> Self {
+            self.import_asset_from_api_gateway_api = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResponseDetails`](crate::model::ResponseDetails)
         pub fn build(self) -> crate::model::ResponseDetails {
             crate::model::ResponseDetails {
@@ -2365,6 +2712,7 @@ pub mod response_details {
                 import_assets_from_s3: self.import_assets_from_s3,
                 import_assets_from_redshift_data_shares: self
                     .import_assets_from_redshift_data_shares,
+                import_asset_from_api_gateway_api: self.import_asset_from_api_gateway_api,
             }
         }
     }
@@ -2373,6 +2721,284 @@ impl ResponseDetails {
     /// Creates a new builder-style object to manufacture [`ResponseDetails`](crate::model::ResponseDetails)
     pub fn builder() -> crate::model::response_details::Builder {
         crate::model::response_details::Builder::default()
+    }
+}
+
+/// <p>The response details.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportAssetFromApiGatewayApiResponseDetails {
+    /// <p>The API description.</p>
+    pub api_description: std::option::Option<std::string::String>,
+    /// <p>The API ID.</p>
+    pub api_id: std::option::Option<std::string::String>,
+    /// <p>The API key.</p>
+    pub api_key: std::option::Option<std::string::String>,
+    /// <p>The API name.</p>
+    pub api_name: std::option::Option<std::string::String>,
+    /// <p>The Base64-encoded Md5 hash for the API asset, used to ensure the integrity of the API at that location.</p>
+    pub api_specification_md5_hash: std::option::Option<std::string::String>,
+    /// <p>The upload URL of the API specification.</p>
+    pub api_specification_upload_url: std::option::Option<std::string::String>,
+    /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
+    pub api_specification_upload_url_expires_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The data set ID.</p>
+    pub data_set_id: std::option::Option<std::string::String>,
+    /// <p>The protocol type.</p>
+    pub protocol_type: std::option::Option<crate::model::ProtocolType>,
+    /// <p>The revision ID.</p>
+    pub revision_id: std::option::Option<std::string::String>,
+    /// <p>The API stage.</p>
+    pub stage: std::option::Option<std::string::String>,
+}
+impl ImportAssetFromApiGatewayApiResponseDetails {
+    /// <p>The API description.</p>
+    pub fn api_description(&self) -> std::option::Option<&str> {
+        self.api_description.as_deref()
+    }
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The API key.</p>
+    pub fn api_key(&self) -> std::option::Option<&str> {
+        self.api_key.as_deref()
+    }
+    /// <p>The API name.</p>
+    pub fn api_name(&self) -> std::option::Option<&str> {
+        self.api_name.as_deref()
+    }
+    /// <p>The Base64-encoded Md5 hash for the API asset, used to ensure the integrity of the API at that location.</p>
+    pub fn api_specification_md5_hash(&self) -> std::option::Option<&str> {
+        self.api_specification_md5_hash.as_deref()
+    }
+    /// <p>The upload URL of the API specification.</p>
+    pub fn api_specification_upload_url(&self) -> std::option::Option<&str> {
+        self.api_specification_upload_url.as_deref()
+    }
+    /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
+    pub fn api_specification_upload_url_expires_at(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.api_specification_upload_url_expires_at.as_ref()
+    }
+    /// <p>The data set ID.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The protocol type.</p>
+    pub fn protocol_type(&self) -> std::option::Option<&crate::model::ProtocolType> {
+        self.protocol_type.as_ref()
+    }
+    /// <p>The revision ID.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The API stage.</p>
+    pub fn stage(&self) -> std::option::Option<&str> {
+        self.stage.as_deref()
+    }
+}
+impl std::fmt::Debug for ImportAssetFromApiGatewayApiResponseDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportAssetFromApiGatewayApiResponseDetails");
+        formatter.field("api_description", &self.api_description);
+        formatter.field("api_id", &self.api_id);
+        formatter.field("api_key", &self.api_key);
+        formatter.field("api_name", &self.api_name);
+        formatter.field(
+            "api_specification_md5_hash",
+            &self.api_specification_md5_hash,
+        );
+        formatter.field(
+            "api_specification_upload_url",
+            &self.api_specification_upload_url,
+        );
+        formatter.field(
+            "api_specification_upload_url_expires_at",
+            &self.api_specification_upload_url_expires_at,
+        );
+        formatter.field("data_set_id", &self.data_set_id);
+        formatter.field("protocol_type", &self.protocol_type);
+        formatter.field("revision_id", &self.revision_id);
+        formatter.field("stage", &self.stage);
+        formatter.finish()
+    }
+}
+/// See [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails)
+pub mod import_asset_from_api_gateway_api_response_details {
+    /// A builder for [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) api_description: std::option::Option<std::string::String>,
+        pub(crate) api_id: std::option::Option<std::string::String>,
+        pub(crate) api_key: std::option::Option<std::string::String>,
+        pub(crate) api_name: std::option::Option<std::string::String>,
+        pub(crate) api_specification_md5_hash: std::option::Option<std::string::String>,
+        pub(crate) api_specification_upload_url: std::option::Option<std::string::String>,
+        pub(crate) api_specification_upload_url_expires_at:
+            std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) data_set_id: std::option::Option<std::string::String>,
+        pub(crate) protocol_type: std::option::Option<crate::model::ProtocolType>,
+        pub(crate) revision_id: std::option::Option<std::string::String>,
+        pub(crate) stage: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The API description.</p>
+        pub fn api_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_description = Some(input.into());
+            self
+        }
+        /// <p>The API description.</p>
+        pub fn set_api_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.api_description = input;
+            self
+        }
+        /// <p>The API ID.</p>
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_id = Some(input.into());
+            self
+        }
+        /// <p>The API ID.</p>
+        pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_id = input;
+            self
+        }
+        /// <p>The API key.</p>
+        pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_key = Some(input.into());
+            self
+        }
+        /// <p>The API key.</p>
+        pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_key = input;
+            self
+        }
+        /// <p>The API name.</p>
+        pub fn api_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_name = Some(input.into());
+            self
+        }
+        /// <p>The API name.</p>
+        pub fn set_api_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_name = input;
+            self
+        }
+        /// <p>The Base64-encoded Md5 hash for the API asset, used to ensure the integrity of the API at that location.</p>
+        pub fn api_specification_md5_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_specification_md5_hash = Some(input.into());
+            self
+        }
+        /// <p>The Base64-encoded Md5 hash for the API asset, used to ensure the integrity of the API at that location.</p>
+        pub fn set_api_specification_md5_hash(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.api_specification_md5_hash = input;
+            self
+        }
+        /// <p>The upload URL of the API specification.</p>
+        pub fn api_specification_upload_url(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.api_specification_upload_url = Some(input.into());
+            self
+        }
+        /// <p>The upload URL of the API specification.</p>
+        pub fn set_api_specification_upload_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.api_specification_upload_url = input;
+            self
+        }
+        /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
+        pub fn api_specification_upload_url_expires_at(
+            mut self,
+            input: aws_smithy_types::DateTime,
+        ) -> Self {
+            self.api_specification_upload_url_expires_at = Some(input);
+            self
+        }
+        /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
+        pub fn set_api_specification_upload_url_expires_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.api_specification_upload_url_expires_at = input;
+            self
+        }
+        /// <p>The data set ID.</p>
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_set_id = Some(input.into());
+            self
+        }
+        /// <p>The data set ID.</p>
+        pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_set_id = input;
+            self
+        }
+        /// <p>The protocol type.</p>
+        pub fn protocol_type(mut self, input: crate::model::ProtocolType) -> Self {
+            self.protocol_type = Some(input);
+            self
+        }
+        /// <p>The protocol type.</p>
+        pub fn set_protocol_type(
+            mut self,
+            input: std::option::Option<crate::model::ProtocolType>,
+        ) -> Self {
+            self.protocol_type = input;
+            self
+        }
+        /// <p>The revision ID.</p>
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
+            self
+        }
+        /// <p>The revision ID.</p>
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
+            self
+        }
+        /// <p>The API stage.</p>
+        pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage = Some(input.into());
+            self
+        }
+        /// <p>The API stage.</p>
+        pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails)
+        pub fn build(self) -> crate::model::ImportAssetFromApiGatewayApiResponseDetails {
+            crate::model::ImportAssetFromApiGatewayApiResponseDetails {
+                api_description: self.api_description,
+                api_id: self.api_id,
+                api_key: self.api_key,
+                api_name: self.api_name,
+                api_specification_md5_hash: self.api_specification_md5_hash,
+                api_specification_upload_url: self.api_specification_upload_url,
+                api_specification_upload_url_expires_at: self
+                    .api_specification_upload_url_expires_at,
+                data_set_id: self.data_set_id,
+                protocol_type: self.protocol_type,
+                revision_id: self.revision_id,
+                stage: self.stage,
+            }
+        }
+    }
+}
+impl ImportAssetFromApiGatewayApiResponseDetails {
+    /// Creates a new builder-style object to manufacture [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails)
+    pub fn builder() -> crate::model::import_asset_from_api_gateway_api_response_details::Builder {
+        crate::model::import_asset_from_api_gateway_api_response_details::Builder::default()
     }
 }
 
@@ -3982,6 +4608,9 @@ pub struct RequestDetails {
     /// <p>Details from an import from Amazon Redshift datashare request.</p>
     pub import_assets_from_redshift_data_shares:
         std::option::Option<crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails>,
+    /// <p>Information about the import asset from API Gateway API request.</p>
+    pub import_asset_from_api_gateway_api:
+        std::option::Option<crate::model::ImportAssetFromApiGatewayApiRequestDetails>,
 }
 impl RequestDetails {
     /// <p>Details about the export to signed URL request.</p>
@@ -4020,6 +4649,12 @@ impl RequestDetails {
     ) -> std::option::Option<&crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails> {
         self.import_assets_from_redshift_data_shares.as_ref()
     }
+    /// <p>Information about the import asset from API Gateway API request.</p>
+    pub fn import_asset_from_api_gateway_api(
+        &self,
+    ) -> std::option::Option<&crate::model::ImportAssetFromApiGatewayApiRequestDetails> {
+        self.import_asset_from_api_gateway_api.as_ref()
+    }
 }
 impl std::fmt::Debug for RequestDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4038,6 +4673,10 @@ impl std::fmt::Debug for RequestDetails {
         formatter.field(
             "import_assets_from_redshift_data_shares",
             &self.import_assets_from_redshift_data_shares,
+        );
+        formatter.field(
+            "import_asset_from_api_gateway_api",
+            &self.import_asset_from_api_gateway_api,
         );
         formatter.finish()
     }
@@ -4060,6 +4699,8 @@ pub mod request_details {
             std::option::Option<crate::model::ImportAssetsFromS3RequestDetails>,
         pub(crate) import_assets_from_redshift_data_shares:
             std::option::Option<crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails>,
+        pub(crate) import_asset_from_api_gateway_api:
+            std::option::Option<crate::model::ImportAssetFromApiGatewayApiRequestDetails>,
     }
     impl Builder {
         /// <p>Details about the export to signed URL request.</p>
@@ -4160,6 +4801,22 @@ pub mod request_details {
             self.import_assets_from_redshift_data_shares = input;
             self
         }
+        /// <p>Information about the import asset from API Gateway API request.</p>
+        pub fn import_asset_from_api_gateway_api(
+            mut self,
+            input: crate::model::ImportAssetFromApiGatewayApiRequestDetails,
+        ) -> Self {
+            self.import_asset_from_api_gateway_api = Some(input);
+            self
+        }
+        /// <p>Information about the import asset from API Gateway API request.</p>
+        pub fn set_import_asset_from_api_gateway_api(
+            mut self,
+            input: std::option::Option<crate::model::ImportAssetFromApiGatewayApiRequestDetails>,
+        ) -> Self {
+            self.import_asset_from_api_gateway_api = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RequestDetails`](crate::model::RequestDetails)
         pub fn build(self) -> crate::model::RequestDetails {
             crate::model::RequestDetails {
@@ -4170,6 +4827,7 @@ pub mod request_details {
                 import_assets_from_s3: self.import_assets_from_s3,
                 import_assets_from_redshift_data_shares: self
                     .import_assets_from_redshift_data_shares,
+                import_asset_from_api_gateway_api: self.import_asset_from_api_gateway_api,
             }
         }
     }
@@ -4178,6 +4836,224 @@ impl RequestDetails {
     /// Creates a new builder-style object to manufacture [`RequestDetails`](crate::model::RequestDetails)
     pub fn builder() -> crate::model::request_details::Builder {
         crate::model::request_details::Builder::default()
+    }
+}
+
+/// <p>The request details.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportAssetFromApiGatewayApiRequestDetails {
+    /// <p>The API description. Markdown supported.</p>
+    pub api_description: std::option::Option<std::string::String>,
+    /// <p>The API Gateway API ID.</p>
+    pub api_id: std::option::Option<std::string::String>,
+    /// <p>The API Gateway API key.</p>
+    pub api_key: std::option::Option<std::string::String>,
+    /// <p>The API name.</p>
+    pub api_name: std::option::Option<std::string::String>,
+    /// <p>The Base64-encoded MD5 hash of the OpenAPI 3.0 JSON API specification file. It is used to ensure the integrity of the file.</p>
+    pub api_specification_md5_hash: std::option::Option<std::string::String>,
+    /// <p>The data set ID.</p>
+    pub data_set_id: std::option::Option<std::string::String>,
+    /// <p>The protocol type.</p>
+    pub protocol_type: std::option::Option<crate::model::ProtocolType>,
+    /// <p>The revision ID.</p>
+    pub revision_id: std::option::Option<std::string::String>,
+    /// <p>The API stage.</p>
+    pub stage: std::option::Option<std::string::String>,
+}
+impl ImportAssetFromApiGatewayApiRequestDetails {
+    /// <p>The API description. Markdown supported.</p>
+    pub fn api_description(&self) -> std::option::Option<&str> {
+        self.api_description.as_deref()
+    }
+    /// <p>The API Gateway API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The API Gateway API key.</p>
+    pub fn api_key(&self) -> std::option::Option<&str> {
+        self.api_key.as_deref()
+    }
+    /// <p>The API name.</p>
+    pub fn api_name(&self) -> std::option::Option<&str> {
+        self.api_name.as_deref()
+    }
+    /// <p>The Base64-encoded MD5 hash of the OpenAPI 3.0 JSON API specification file. It is used to ensure the integrity of the file.</p>
+    pub fn api_specification_md5_hash(&self) -> std::option::Option<&str> {
+        self.api_specification_md5_hash.as_deref()
+    }
+    /// <p>The data set ID.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The protocol type.</p>
+    pub fn protocol_type(&self) -> std::option::Option<&crate::model::ProtocolType> {
+        self.protocol_type.as_ref()
+    }
+    /// <p>The revision ID.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The API stage.</p>
+    pub fn stage(&self) -> std::option::Option<&str> {
+        self.stage.as_deref()
+    }
+}
+impl std::fmt::Debug for ImportAssetFromApiGatewayApiRequestDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportAssetFromApiGatewayApiRequestDetails");
+        formatter.field("api_description", &self.api_description);
+        formatter.field("api_id", &self.api_id);
+        formatter.field("api_key", &self.api_key);
+        formatter.field("api_name", &self.api_name);
+        formatter.field(
+            "api_specification_md5_hash",
+            &self.api_specification_md5_hash,
+        );
+        formatter.field("data_set_id", &self.data_set_id);
+        formatter.field("protocol_type", &self.protocol_type);
+        formatter.field("revision_id", &self.revision_id);
+        formatter.field("stage", &self.stage);
+        formatter.finish()
+    }
+}
+/// See [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails)
+pub mod import_asset_from_api_gateway_api_request_details {
+    /// A builder for [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) api_description: std::option::Option<std::string::String>,
+        pub(crate) api_id: std::option::Option<std::string::String>,
+        pub(crate) api_key: std::option::Option<std::string::String>,
+        pub(crate) api_name: std::option::Option<std::string::String>,
+        pub(crate) api_specification_md5_hash: std::option::Option<std::string::String>,
+        pub(crate) data_set_id: std::option::Option<std::string::String>,
+        pub(crate) protocol_type: std::option::Option<crate::model::ProtocolType>,
+        pub(crate) revision_id: std::option::Option<std::string::String>,
+        pub(crate) stage: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The API description. Markdown supported.</p>
+        pub fn api_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_description = Some(input.into());
+            self
+        }
+        /// <p>The API description. Markdown supported.</p>
+        pub fn set_api_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.api_description = input;
+            self
+        }
+        /// <p>The API Gateway API ID.</p>
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_id = Some(input.into());
+            self
+        }
+        /// <p>The API Gateway API ID.</p>
+        pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_id = input;
+            self
+        }
+        /// <p>The API Gateway API key.</p>
+        pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_key = Some(input.into());
+            self
+        }
+        /// <p>The API Gateway API key.</p>
+        pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_key = input;
+            self
+        }
+        /// <p>The API name.</p>
+        pub fn api_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_name = Some(input.into());
+            self
+        }
+        /// <p>The API name.</p>
+        pub fn set_api_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_name = input;
+            self
+        }
+        /// <p>The Base64-encoded MD5 hash of the OpenAPI 3.0 JSON API specification file. It is used to ensure the integrity of the file.</p>
+        pub fn api_specification_md5_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_specification_md5_hash = Some(input.into());
+            self
+        }
+        /// <p>The Base64-encoded MD5 hash of the OpenAPI 3.0 JSON API specification file. It is used to ensure the integrity of the file.</p>
+        pub fn set_api_specification_md5_hash(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.api_specification_md5_hash = input;
+            self
+        }
+        /// <p>The data set ID.</p>
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_set_id = Some(input.into());
+            self
+        }
+        /// <p>The data set ID.</p>
+        pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_set_id = input;
+            self
+        }
+        /// <p>The protocol type.</p>
+        pub fn protocol_type(mut self, input: crate::model::ProtocolType) -> Self {
+            self.protocol_type = Some(input);
+            self
+        }
+        /// <p>The protocol type.</p>
+        pub fn set_protocol_type(
+            mut self,
+            input: std::option::Option<crate::model::ProtocolType>,
+        ) -> Self {
+            self.protocol_type = input;
+            self
+        }
+        /// <p>The revision ID.</p>
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
+            self
+        }
+        /// <p>The revision ID.</p>
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
+            self
+        }
+        /// <p>The API stage.</p>
+        pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage = Some(input.into());
+            self
+        }
+        /// <p>The API stage.</p>
+        pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails)
+        pub fn build(self) -> crate::model::ImportAssetFromApiGatewayApiRequestDetails {
+            crate::model::ImportAssetFromApiGatewayApiRequestDetails {
+                api_description: self.api_description,
+                api_id: self.api_id,
+                api_key: self.api_key,
+                api_name: self.api_name,
+                api_specification_md5_hash: self.api_specification_md5_hash,
+                data_set_id: self.data_set_id,
+                protocol_type: self.protocol_type,
+                revision_id: self.revision_id,
+                stage: self.stage,
+            }
+        }
+    }
+}
+impl ImportAssetFromApiGatewayApiRequestDetails {
+    /// Creates a new builder-style object to manufacture [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails)
+    pub fn builder() -> crate::model::import_asset_from_api_gateway_api_request_details::Builder {
+        crate::model::import_asset_from_api_gateway_api_request_details::Builder::default()
     }
 }
 
@@ -4850,6 +5726,8 @@ impl ExportAssetToSignedUrlRequestDetails {
 )]
 pub enum LimitName {
     #[allow(missing_docs)] // documentation missing in model
+    AmazonApiGatewayApiAssetsPerRevision,
+    #[allow(missing_docs)] // documentation missing in model
     AmazonRedshiftDatashareAssetsPerImportJobFromRedshift,
     #[allow(missing_docs)] // documentation missing in model
     AmazonRedshiftDatashareAssetsPerRevision,
@@ -4876,6 +5754,8 @@ pub enum LimitName {
     #[allow(missing_docs)] // documentation missing in model
     ConcurrentInProgressJobsToImportAssetsFromASignedUrl,
     #[allow(missing_docs)] // documentation missing in model
+    ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi,
+    #[allow(missing_docs)] // documentation missing in model
     DataSetsPerAccount,
     #[allow(missing_docs)] // documentation missing in model
     DataSetsPerProduct,
@@ -4883,6 +5763,8 @@ pub enum LimitName {
     EventActionsPerAccount,
     #[allow(missing_docs)] // documentation missing in model
     ProductsPerAccount,
+    #[allow(missing_docs)] // documentation missing in model
+    RevisionsPerAmazonApiGatewayApiDataSet,
     #[allow(missing_docs)] // documentation missing in model
     RevisionsPerAmazonRedshiftDatashareDataSet,
     #[allow(missing_docs)] // documentation missing in model
@@ -4893,6 +5775,9 @@ pub enum LimitName {
 impl std::convert::From<&str> for LimitName {
     fn from(s: &str) -> Self {
         match s {
+            "Amazon API Gateway API assets per revision" => {
+                LimitName::AmazonApiGatewayApiAssetsPerRevision
+            }
             "Amazon Redshift datashare assets per import job from Redshift" => {
                 LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift
             }
@@ -4922,10 +5807,16 @@ impl std::convert::From<&str> for LimitName {
             "Concurrent in progress jobs to import assets from a signed URL" => {
                 LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl
             }
+            "Concurrent in progress jobs to import assets from an API Gateway API" => {
+                LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi
+            }
             "Data sets per account" => LimitName::DataSetsPerAccount,
             "Data sets per product" => LimitName::DataSetsPerProduct,
             "Event actions per account" => LimitName::EventActionsPerAccount,
             "Products per account" => LimitName::ProductsPerAccount,
+            "Revisions per Amazon API Gateway API data set" => {
+                LimitName::RevisionsPerAmazonApiGatewayApiDataSet
+            }
             "Revisions per Amazon Redshift datashare data set" => {
                 LimitName::RevisionsPerAmazonRedshiftDatashareDataSet
             }
@@ -4945,6 +5836,9 @@ impl LimitName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            LimitName::AmazonApiGatewayApiAssetsPerRevision => {
+                "Amazon API Gateway API assets per revision"
+            }
             LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift => {
                 "Amazon Redshift datashare assets per import job from Redshift"
             }
@@ -4974,10 +5868,16 @@ impl LimitName {
             LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl => {
                 "Concurrent in progress jobs to import assets from a signed URL"
             }
+            LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi => {
+                "Concurrent in progress jobs to import assets from an API Gateway API"
+            }
             LimitName::DataSetsPerAccount => "Data sets per account",
             LimitName::DataSetsPerProduct => "Data sets per product",
             LimitName::EventActionsPerAccount => "Event actions per account",
             LimitName::ProductsPerAccount => "Products per account",
+            LimitName::RevisionsPerAmazonApiGatewayApiDataSet => {
+                "Revisions per Amazon API Gateway API data set"
+            }
             LimitName::RevisionsPerAmazonRedshiftDatashareDataSet => {
                 "Revisions per Amazon Redshift datashare data set"
             }
@@ -4988,6 +5888,7 @@ impl LimitName {
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
+            "Amazon API Gateway API assets per revision",
             "Amazon Redshift datashare assets per import job from Redshift",
             "Amazon Redshift datashare assets per revision",
             "Asset per export job from Amazon S3",
@@ -5001,10 +5902,12 @@ impl LimitName {
             "Concurrent in progress jobs to import assets from Amazon Redshift datashares",
             "Concurrent in progress jobs to import assets from Amazon S3",
             "Concurrent in progress jobs to import assets from a signed URL",
+            "Concurrent in progress jobs to import assets from an API Gateway API",
             "Data sets per account",
             "Data sets per product",
             "Event actions per account",
             "Products per account",
+            "Revisions per Amazon API Gateway API data set",
             "Revisions per Amazon Redshift datashare data set",
             "Revisions per data set",
         ]

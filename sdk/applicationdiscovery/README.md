@@ -1,6 +1,6 @@
 # aws-sdk-applicationdiscovery
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 AWS Application Discovery Service helps you plan application migration projects. It automatically identifies servers, virtual machines (VMs), and network dependencies in your on-premises data centers. For more information, see the [AWS Application Discovery Service FAQ](http://aws.amazon.com/application-discovery/faqs/). Application Discovery Service offers three ways of performing discovery and collecting data about your on-premises servers:
@@ -39,8 +39,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-applicationdiscovery = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-applicationdiscovery = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

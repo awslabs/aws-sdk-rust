@@ -1078,8 +1078,9 @@ impl ListAnomaliesForInsightOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceCollectionOutput {
     /// <p> The requested list of Amazon Web Services resource collections.
-    /// The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
-    /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    /// The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
+    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
+    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub resource_collection: std::option::Option<crate::model::ResourceCollectionFilter>,
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -1087,8 +1088,9 @@ pub struct GetResourceCollectionOutput {
 }
 impl GetResourceCollectionOutput {
     /// <p> The requested list of Amazon Web Services resource collections.
-    /// The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
-    /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    /// The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
+    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
+    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection(
         &self,
     ) -> std::option::Option<&crate::model::ResourceCollectionFilter> {
@@ -1119,8 +1121,9 @@ pub mod get_resource_collection_output {
     }
     impl Builder {
         /// <p> The requested list of Amazon Web Services resource collections.
-        /// The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
-        /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
+        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
+        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn resource_collection(
             mut self,
             input: crate::model::ResourceCollectionFilter,
@@ -1129,8 +1132,9 @@ pub mod get_resource_collection_output {
             self
         }
         /// <p> The requested list of Amazon Web Services resource collections.
-        /// The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
-        /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
+        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
+        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::ResourceCollectionFilter>,
@@ -1448,6 +1452,41 @@ pub struct DescribeResourceCollectionHealthOutput {
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services tags that are used by resources in the resource collection.</p>
+    /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support
+    /// tagging, so you can assign the same tag to resources from different services to indicate
+    /// that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB
+    /// table resource that you assign to an Lambda function. For more information about
+    /// using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+    /// best practices</a> whitepaper. </p>
+    /// <p>Each Amazon Web Services tag has two parts. </p>
+    /// <ul>
+    /// <li>
+    /// <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
+    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+    /// <i>keys</i> are case-sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>An optional field known as a tag <i>value</i> (for example,
+    /// <code>111122223333</code>, <code>Production</code>, or a team
+    /// name). Omitting the tag <i>value</i> is the same as using an empty
+    /// string. Like tag <i>keys</i>, tag <i>values</i> are
+    /// case-sensitive.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p>
+    /// <important>
+    /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the
+    /// prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
+    /// <code>Devops-guru-deployment-application</code> or
+    /// <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the
+    /// case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a
+    /// <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
+    /// <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your
+    /// application might be <code>Devops-Guru-production-application/RDS</code> or
+    /// <code>Devops-Guru-production-application/containers</code>.</p>
+    /// </important>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::TagHealth>>,
 }
 impl DescribeResourceCollectionHealthOutput {
     /// <p> The returned <code>CloudFormationHealthOverview</code> object that contains an
@@ -1466,6 +1505,43 @@ impl DescribeResourceCollectionHealthOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The Amazon Web Services tags that are used by resources in the resource collection.</p>
+    /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support
+    /// tagging, so you can assign the same tag to resources from different services to indicate
+    /// that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB
+    /// table resource that you assign to an Lambda function. For more information about
+    /// using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+    /// best practices</a> whitepaper. </p>
+    /// <p>Each Amazon Web Services tag has two parts. </p>
+    /// <ul>
+    /// <li>
+    /// <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
+    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+    /// <i>keys</i> are case-sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>An optional field known as a tag <i>value</i> (for example,
+    /// <code>111122223333</code>, <code>Production</code>, or a team
+    /// name). Omitting the tag <i>value</i> is the same as using an empty
+    /// string. Like tag <i>keys</i>, tag <i>values</i> are
+    /// case-sensitive.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p>
+    /// <important>
+    /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the
+    /// prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
+    /// <code>Devops-guru-deployment-application</code> or
+    /// <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the
+    /// case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a
+    /// <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
+    /// <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your
+    /// application might be <code>Devops-Guru-production-application/RDS</code> or
+    /// <code>Devops-Guru-production-application/containers</code>.</p>
+    /// </important>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagHealth]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeResourceCollectionHealthOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1473,6 +1549,7 @@ impl std::fmt::Debug for DescribeResourceCollectionHealthOutput {
         formatter.field("cloud_formation", &self.cloud_formation);
         formatter.field("service", &self.service);
         formatter.field("next_token", &self.next_token);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -1486,6 +1563,7 @@ pub mod describe_resource_collection_health_output {
             std::option::Option<std::vec::Vec<crate::model::CloudFormationHealth>>,
         pub(crate) service: std::option::Option<std::vec::Vec<crate::model::ServiceHealth>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagHealth>>,
     }
     impl Builder {
         /// Appends an item to `cloud_formation`.
@@ -1547,12 +1625,98 @@ pub mod describe_resource_collection_health_output {
             self.next_token = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The Amazon Web Services tags that are used by resources in the resource collection.</p>
+        /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support
+        /// tagging, so you can assign the same tag to resources from different services to indicate
+        /// that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB
+        /// table resource that you assign to an Lambda function. For more information about
+        /// using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+        /// best practices</a> whitepaper. </p>
+        /// <p>Each Amazon Web Services tag has two parts. </p>
+        /// <ul>
+        /// <li>
+        /// <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
+        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+        /// <i>keys</i> are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>An optional field known as a tag <i>value</i> (for example,
+        /// <code>111122223333</code>, <code>Production</code>, or a team
+        /// name). Omitting the tag <i>value</i> is the same as using an empty
+        /// string. Like tag <i>keys</i>, tag <i>values</i> are
+        /// case-sensitive.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p>
+        /// <important>
+        /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the
+        /// prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
+        /// <code>Devops-guru-deployment-application</code> or
+        /// <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the
+        /// case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a
+        /// <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
+        /// <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your
+        /// application might be <code>Devops-Guru-production-application/RDS</code> or
+        /// <code>Devops-Guru-production-application/containers</code>.</p>
+        /// </important>
+        pub fn tags(mut self, input: impl Into<crate::model::TagHealth>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The Amazon Web Services tags that are used by resources in the resource collection.</p>
+        /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support
+        /// tagging, so you can assign the same tag to resources from different services to indicate
+        /// that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB
+        /// table resource that you assign to an Lambda function. For more information about
+        /// using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+        /// best practices</a> whitepaper. </p>
+        /// <p>Each Amazon Web Services tag has two parts. </p>
+        /// <ul>
+        /// <li>
+        /// <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
+        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+        /// <i>keys</i> are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>An optional field known as a tag <i>value</i> (for example,
+        /// <code>111122223333</code>, <code>Production</code>, or a team
+        /// name). Omitting the tag <i>value</i> is the same as using an empty
+        /// string. Like tag <i>keys</i>, tag <i>values</i> are
+        /// case-sensitive.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p>
+        /// <important>
+        /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the
+        /// prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
+        /// <code>Devops-guru-deployment-application</code> or
+        /// <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the
+        /// case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a
+        /// <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
+        /// <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your
+        /// application might be <code>Devops-Guru-production-application/RDS</code> or
+        /// <code>Devops-Guru-production-application/containers</code>.</p>
+        /// </important>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagHealth>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeResourceCollectionHealthOutput`](crate::output::DescribeResourceCollectionHealthOutput)
         pub fn build(self) -> crate::output::DescribeResourceCollectionHealthOutput {
             crate::output::DescribeResourceCollectionHealthOutput {
                 cloud_formation: self.cloud_formation,
                 service: self.service,
                 next_token: self.next_token,
+                tags: self.tags,
             }
         }
     }
@@ -2071,17 +2235,17 @@ impl DescribeFeedbackOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnomalyOutput {
-    /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
-    pub proactive_anomaly: std::option::Option<crate::model::ProactiveAnomaly>,
     /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
+    pub proactive_anomaly: std::option::Option<crate::model::ProactiveAnomaly>,
+    /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
     pub reactive_anomaly: std::option::Option<crate::model::ReactiveAnomaly>,
 }
 impl DescribeAnomalyOutput {
-    /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
+    /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
     pub fn proactive_anomaly(&self) -> std::option::Option<&crate::model::ProactiveAnomaly> {
         self.proactive_anomaly.as_ref()
     }
-    /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
+    /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
     pub fn reactive_anomaly(&self) -> std::option::Option<&crate::model::ReactiveAnomaly> {
         self.reactive_anomaly.as_ref()
     }
@@ -2104,12 +2268,12 @@ pub mod describe_anomaly_output {
         pub(crate) reactive_anomaly: std::option::Option<crate::model::ReactiveAnomaly>,
     }
     impl Builder {
-        /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
+        /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
         pub fn proactive_anomaly(mut self, input: crate::model::ProactiveAnomaly) -> Self {
             self.proactive_anomaly = Some(input);
             self
         }
-        /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
+        /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
         pub fn set_proactive_anomaly(
             mut self,
             input: std::option::Option<crate::model::ProactiveAnomaly>,
@@ -2117,12 +2281,12 @@ pub mod describe_anomaly_output {
             self.proactive_anomaly = input;
             self
         }
-        /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
+        /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
         pub fn reactive_anomaly(mut self, input: crate::model::ReactiveAnomaly) -> Self {
             self.reactive_anomaly = Some(input);
             self
         }
-        /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
+        /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
         pub fn set_reactive_anomaly(
             mut self,
             input: std::option::Option<crate::model::ReactiveAnomaly>,

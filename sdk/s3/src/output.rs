@@ -7443,12 +7443,12 @@ impl GetBucketPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketOwnershipControlsOutput {
-    /// <p>The <code>OwnershipControls</code> (BucketOwnerPreferred or ObjectWriter) currently in
+    /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in
     /// effect for this Amazon S3 bucket.</p>
     pub ownership_controls: std::option::Option<crate::model::OwnershipControls>,
 }
 impl GetBucketOwnershipControlsOutput {
-    /// <p>The <code>OwnershipControls</code> (BucketOwnerPreferred or ObjectWriter) currently in
+    /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in
     /// effect for this Amazon S3 bucket.</p>
     pub fn ownership_controls(&self) -> std::option::Option<&crate::model::OwnershipControls> {
         self.ownership_controls.as_ref()
@@ -7470,13 +7470,13 @@ pub mod get_bucket_ownership_controls_output {
         pub(crate) ownership_controls: std::option::Option<crate::model::OwnershipControls>,
     }
     impl Builder {
-        /// <p>The <code>OwnershipControls</code> (BucketOwnerPreferred or ObjectWriter) currently in
+        /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in
         /// effect for this Amazon S3 bucket.</p>
         pub fn ownership_controls(mut self, input: crate::model::OwnershipControls) -> Self {
             self.ownership_controls = Some(input);
             self
         }
-        /// <p>The <code>OwnershipControls</code> (BucketOwnerPreferred or ObjectWriter) currently in
+        /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in
         /// effect for this Amazon S3 bucket.</p>
         pub fn set_ownership_controls(
             mut self,
@@ -7515,6 +7515,8 @@ pub struct GetBucketNotificationConfigurationOutput {
     /// them.</p>
     pub lambda_function_configurations:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionConfiguration>>,
+    /// <p>Enables delivery of events to Amazon EventBridge.</p>
+    pub event_bridge_configuration: std::option::Option<crate::model::EventBridgeConfiguration>,
 }
 impl GetBucketNotificationConfigurationOutput {
     /// <p>The topic to which notifications are sent and the events for which notifications are
@@ -7534,6 +7536,12 @@ impl GetBucketNotificationConfigurationOutput {
     ) -> std::option::Option<&[crate::model::LambdaFunctionConfiguration]> {
         self.lambda_function_configurations.as_deref()
     }
+    /// <p>Enables delivery of events to Amazon EventBridge.</p>
+    pub fn event_bridge_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EventBridgeConfiguration> {
+        self.event_bridge_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for GetBucketNotificationConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7543,6 +7551,10 @@ impl std::fmt::Debug for GetBucketNotificationConfigurationOutput {
         formatter.field(
             "lambda_function_configurations",
             &self.lambda_function_configurations,
+        );
+        formatter.field(
+            "event_bridge_configuration",
+            &self.event_bridge_configuration,
         );
         formatter.finish()
     }
@@ -7559,6 +7571,8 @@ pub mod get_bucket_notification_configuration_output {
             std::option::Option<std::vec::Vec<crate::model::QueueConfiguration>>,
         pub(crate) lambda_function_configurations:
             std::option::Option<std::vec::Vec<crate::model::LambdaFunctionConfiguration>>,
+        pub(crate) event_bridge_configuration:
+            std::option::Option<crate::model::EventBridgeConfiguration>,
     }
     impl Builder {
         /// Appends an item to `topic_configurations`.
@@ -7633,12 +7647,29 @@ pub mod get_bucket_notification_configuration_output {
             self.lambda_function_configurations = input;
             self
         }
+        /// <p>Enables delivery of events to Amazon EventBridge.</p>
+        pub fn event_bridge_configuration(
+            mut self,
+            input: crate::model::EventBridgeConfiguration,
+        ) -> Self {
+            self.event_bridge_configuration = Some(input);
+            self
+        }
+        /// <p>Enables delivery of events to Amazon EventBridge.</p>
+        pub fn set_event_bridge_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EventBridgeConfiguration>,
+        ) -> Self {
+            self.event_bridge_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBucketNotificationConfigurationOutput`](crate::output::GetBucketNotificationConfigurationOutput)
         pub fn build(self) -> crate::output::GetBucketNotificationConfigurationOutput {
             crate::output::GetBucketNotificationConfigurationOutput {
                 topic_configurations: self.topic_configurations,
                 queue_configurations: self.queue_configurations,
                 lambda_function_configurations: self.lambda_function_configurations,
+                event_bridge_configuration: self.event_bridge_configuration,
             }
         }
     }

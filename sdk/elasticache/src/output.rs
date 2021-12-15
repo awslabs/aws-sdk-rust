@@ -599,6 +599,8 @@ pub struct ModifyUserGroupOutput {
     pub engine: std::option::Option<std::string::String>,
     /// <p>The list of user IDs that belong to the user group.</p>
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>A list of updates being applied to the user group.</p>
     pub pending_changes: std::option::Option<crate::model::UserGroupPendingChanges>,
     /// <p>A list of replication groups that the user group can access.</p>
@@ -623,6 +625,10 @@ impl ModifyUserGroupOutput {
     pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.user_ids.as_deref()
     }
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+        self.minimum_engine_version.as_deref()
+    }
     /// <p>A list of updates being applied to the user group.</p>
     pub fn pending_changes(&self) -> std::option::Option<&crate::model::UserGroupPendingChanges> {
         self.pending_changes.as_ref()
@@ -643,6 +649,7 @@ impl std::fmt::Debug for ModifyUserGroupOutput {
         formatter.field("status", &self.status);
         formatter.field("engine", &self.engine);
         formatter.field("user_ids", &self.user_ids);
+        formatter.field("minimum_engine_version", &self.minimum_engine_version);
         formatter.field("pending_changes", &self.pending_changes);
         formatter.field("replication_groups", &self.replication_groups);
         formatter.field("arn", &self.arn);
@@ -659,6 +666,7 @@ pub mod modify_user_group_output {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) minimum_engine_version: std::option::Option<std::string::String>,
         pub(crate) pending_changes: std::option::Option<crate::model::UserGroupPendingChanges>,
         pub(crate) replication_groups: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -716,6 +724,19 @@ pub mod modify_user_group_output {
             self.user_ids = input;
             self
         }
+        /// <p>The minimum engine version required, which is Redis 6.0</p>
+        pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.minimum_engine_version = Some(input.into());
+            self
+        }
+        /// <p>The minimum engine version required, which is Redis 6.0</p>
+        pub fn set_minimum_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.minimum_engine_version = input;
+            self
+        }
         /// <p>A list of updates being applied to the user group.</p>
         pub fn pending_changes(mut self, input: crate::model::UserGroupPendingChanges) -> Self {
             self.pending_changes = Some(input);
@@ -765,6 +786,7 @@ pub mod modify_user_group_output {
                 status: self.status,
                 engine: self.engine,
                 user_ids: self.user_ids,
+                minimum_engine_version: self.minimum_engine_version,
                 pending_changes: self.pending_changes,
                 replication_groups: self.replication_groups,
                 arn: self.arn,
@@ -791,6 +813,8 @@ pub struct ModifyUserOutput {
     pub status: std::option::Option<std::string::String>,
     /// <p>The current supported value is Redis.</p>
     pub engine: std::option::Option<std::string::String>,
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>Access permissions string used for this user.</p>
     pub access_string: std::option::Option<std::string::String>,
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
@@ -817,6 +841,10 @@ impl ModifyUserOutput {
     pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+        self.minimum_engine_version.as_deref()
+    }
     /// <p>Access permissions string used for this user.</p>
     pub fn access_string(&self) -> std::option::Option<&str> {
         self.access_string.as_deref()
@@ -841,6 +869,7 @@ impl std::fmt::Debug for ModifyUserOutput {
         formatter.field("user_name", &self.user_name);
         formatter.field("status", &self.status);
         formatter.field("engine", &self.engine);
+        formatter.field("minimum_engine_version", &self.minimum_engine_version);
         formatter.field("access_string", &self.access_string);
         formatter.field("user_group_ids", &self.user_group_ids);
         formatter.field("authentication", &self.authentication);
@@ -858,6 +887,7 @@ pub mod modify_user_output {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) engine: std::option::Option<std::string::String>,
+        pub(crate) minimum_engine_version: std::option::Option<std::string::String>,
         pub(crate) access_string: std::option::Option<std::string::String>,
         pub(crate) user_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) authentication: std::option::Option<crate::model::Authentication>,
@@ -902,6 +932,19 @@ pub mod modify_user_output {
         /// <p>The current supported value is Redis.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
+            self
+        }
+        /// <p>The minimum engine version required, which is Redis 6.0</p>
+        pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.minimum_engine_version = Some(input.into());
+            self
+        }
+        /// <p>The minimum engine version required, which is Redis 6.0</p>
+        pub fn set_minimum_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.minimum_engine_version = input;
             self
         }
         /// <p>Access permissions string used for this user.</p>
@@ -966,6 +1009,7 @@ pub mod modify_user_output {
                 user_name: self.user_name,
                 status: self.status,
                 engine: self.engine,
+                minimum_engine_version: self.minimum_engine_version,
                 access_string: self.access_string,
                 user_group_ids: self.user_group_ids,
                 authentication: self.authentication,
@@ -3479,6 +3523,8 @@ pub struct DeleteUserGroupOutput {
     pub engine: std::option::Option<std::string::String>,
     /// <p>The list of user IDs that belong to the user group.</p>
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>A list of updates being applied to the user group.</p>
     pub pending_changes: std::option::Option<crate::model::UserGroupPendingChanges>,
     /// <p>A list of replication groups that the user group can access.</p>
@@ -3503,6 +3549,10 @@ impl DeleteUserGroupOutput {
     pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.user_ids.as_deref()
     }
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+        self.minimum_engine_version.as_deref()
+    }
     /// <p>A list of updates being applied to the user group.</p>
     pub fn pending_changes(&self) -> std::option::Option<&crate::model::UserGroupPendingChanges> {
         self.pending_changes.as_ref()
@@ -3523,6 +3573,7 @@ impl std::fmt::Debug for DeleteUserGroupOutput {
         formatter.field("status", &self.status);
         formatter.field("engine", &self.engine);
         formatter.field("user_ids", &self.user_ids);
+        formatter.field("minimum_engine_version", &self.minimum_engine_version);
         formatter.field("pending_changes", &self.pending_changes);
         formatter.field("replication_groups", &self.replication_groups);
         formatter.field("arn", &self.arn);
@@ -3539,6 +3590,7 @@ pub mod delete_user_group_output {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) minimum_engine_version: std::option::Option<std::string::String>,
         pub(crate) pending_changes: std::option::Option<crate::model::UserGroupPendingChanges>,
         pub(crate) replication_groups: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3596,6 +3648,19 @@ pub mod delete_user_group_output {
             self.user_ids = input;
             self
         }
+        /// <p>The minimum engine version required, which is Redis 6.0</p>
+        pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.minimum_engine_version = Some(input.into());
+            self
+        }
+        /// <p>The minimum engine version required, which is Redis 6.0</p>
+        pub fn set_minimum_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.minimum_engine_version = input;
+            self
+        }
         /// <p>A list of updates being applied to the user group.</p>
         pub fn pending_changes(mut self, input: crate::model::UserGroupPendingChanges) -> Self {
             self.pending_changes = Some(input);
@@ -3645,6 +3710,7 @@ pub mod delete_user_group_output {
                 status: self.status,
                 engine: self.engine,
                 user_ids: self.user_ids,
+                minimum_engine_version: self.minimum_engine_version,
                 pending_changes: self.pending_changes,
                 replication_groups: self.replication_groups,
                 arn: self.arn,
@@ -3671,6 +3737,8 @@ pub struct DeleteUserOutput {
     pub status: std::option::Option<std::string::String>,
     /// <p>The current supported value is Redis.</p>
     pub engine: std::option::Option<std::string::String>,
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>Access permissions string used for this user.</p>
     pub access_string: std::option::Option<std::string::String>,
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
@@ -3697,6 +3765,10 @@ impl DeleteUserOutput {
     pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+        self.minimum_engine_version.as_deref()
+    }
     /// <p>Access permissions string used for this user.</p>
     pub fn access_string(&self) -> std::option::Option<&str> {
         self.access_string.as_deref()
@@ -3721,6 +3793,7 @@ impl std::fmt::Debug for DeleteUserOutput {
         formatter.field("user_name", &self.user_name);
         formatter.field("status", &self.status);
         formatter.field("engine", &self.engine);
+        formatter.field("minimum_engine_version", &self.minimum_engine_version);
         formatter.field("access_string", &self.access_string);
         formatter.field("user_group_ids", &self.user_group_ids);
         formatter.field("authentication", &self.authentication);
@@ -3738,6 +3811,7 @@ pub mod delete_user_output {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) engine: std::option::Option<std::string::String>,
+        pub(crate) minimum_engine_version: std::option::Option<std::string::String>,
         pub(crate) access_string: std::option::Option<std::string::String>,
         pub(crate) user_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) authentication: std::option::Option<crate::model::Authentication>,
@@ -3782,6 +3856,19 @@ pub mod delete_user_output {
         /// <p>The current supported value is Redis.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
+            self
+        }
+        /// <p>The minimum engine version required, which is Redis 6.0</p>
+        pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.minimum_engine_version = Some(input.into());
+            self
+        }
+        /// <p>The minimum engine version required, which is Redis 6.0</p>
+        pub fn set_minimum_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.minimum_engine_version = input;
             self
         }
         /// <p>Access permissions string used for this user.</p>
@@ -3846,6 +3933,7 @@ pub mod delete_user_output {
                 user_name: self.user_name,
                 status: self.status,
                 engine: self.engine,
+                minimum_engine_version: self.minimum_engine_version,
                 access_string: self.access_string,
                 user_group_ids: self.user_group_ids,
                 authentication: self.authentication,
@@ -4387,6 +4475,8 @@ pub struct CreateUserGroupOutput {
     pub engine: std::option::Option<std::string::String>,
     /// <p>The list of user IDs that belong to the user group.</p>
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>A list of updates being applied to the user group.</p>
     pub pending_changes: std::option::Option<crate::model::UserGroupPendingChanges>,
     /// <p>A list of replication groups that the user group can access.</p>
@@ -4411,6 +4501,10 @@ impl CreateUserGroupOutput {
     pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.user_ids.as_deref()
     }
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+        self.minimum_engine_version.as_deref()
+    }
     /// <p>A list of updates being applied to the user group.</p>
     pub fn pending_changes(&self) -> std::option::Option<&crate::model::UserGroupPendingChanges> {
         self.pending_changes.as_ref()
@@ -4431,6 +4525,7 @@ impl std::fmt::Debug for CreateUserGroupOutput {
         formatter.field("status", &self.status);
         formatter.field("engine", &self.engine);
         formatter.field("user_ids", &self.user_ids);
+        formatter.field("minimum_engine_version", &self.minimum_engine_version);
         formatter.field("pending_changes", &self.pending_changes);
         formatter.field("replication_groups", &self.replication_groups);
         formatter.field("arn", &self.arn);
@@ -4447,6 +4542,7 @@ pub mod create_user_group_output {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) minimum_engine_version: std::option::Option<std::string::String>,
         pub(crate) pending_changes: std::option::Option<crate::model::UserGroupPendingChanges>,
         pub(crate) replication_groups: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4504,6 +4600,19 @@ pub mod create_user_group_output {
             self.user_ids = input;
             self
         }
+        /// <p>The minimum engine version required, which is Redis 6.0</p>
+        pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.minimum_engine_version = Some(input.into());
+            self
+        }
+        /// <p>The minimum engine version required, which is Redis 6.0</p>
+        pub fn set_minimum_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.minimum_engine_version = input;
+            self
+        }
         /// <p>A list of updates being applied to the user group.</p>
         pub fn pending_changes(mut self, input: crate::model::UserGroupPendingChanges) -> Self {
             self.pending_changes = Some(input);
@@ -4553,6 +4662,7 @@ pub mod create_user_group_output {
                 status: self.status,
                 engine: self.engine,
                 user_ids: self.user_ids,
+                minimum_engine_version: self.minimum_engine_version,
                 pending_changes: self.pending_changes,
                 replication_groups: self.replication_groups,
                 arn: self.arn,
@@ -4579,6 +4689,8 @@ pub struct CreateUserOutput {
     pub status: std::option::Option<std::string::String>,
     /// <p>The current supported value is Redis.</p>
     pub engine: std::option::Option<std::string::String>,
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>Access permissions string used for this user.</p>
     pub access_string: std::option::Option<std::string::String>,
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
@@ -4605,6 +4717,10 @@ impl CreateUserOutput {
     pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+        self.minimum_engine_version.as_deref()
+    }
     /// <p>Access permissions string used for this user.</p>
     pub fn access_string(&self) -> std::option::Option<&str> {
         self.access_string.as_deref()
@@ -4629,6 +4745,7 @@ impl std::fmt::Debug for CreateUserOutput {
         formatter.field("user_name", &self.user_name);
         formatter.field("status", &self.status);
         formatter.field("engine", &self.engine);
+        formatter.field("minimum_engine_version", &self.minimum_engine_version);
         formatter.field("access_string", &self.access_string);
         formatter.field("user_group_ids", &self.user_group_ids);
         formatter.field("authentication", &self.authentication);
@@ -4646,6 +4763,7 @@ pub mod create_user_output {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) engine: std::option::Option<std::string::String>,
+        pub(crate) minimum_engine_version: std::option::Option<std::string::String>,
         pub(crate) access_string: std::option::Option<std::string::String>,
         pub(crate) user_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) authentication: std::option::Option<crate::model::Authentication>,
@@ -4690,6 +4808,19 @@ pub mod create_user_output {
         /// <p>The current supported value is Redis.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
+            self
+        }
+        /// <p>The minimum engine version required, which is Redis 6.0</p>
+        pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.minimum_engine_version = Some(input.into());
+            self
+        }
+        /// <p>The minimum engine version required, which is Redis 6.0</p>
+        pub fn set_minimum_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.minimum_engine_version = input;
             self
         }
         /// <p>Access permissions string used for this user.</p>
@@ -4754,6 +4885,7 @@ pub mod create_user_output {
                 user_name: self.user_name,
                 status: self.status,
                 engine: self.engine,
+                minimum_engine_version: self.minimum_engine_version,
                 access_string: self.access_string,
                 user_group_ids: self.user_group_ids,
                 authentication: self.authentication,

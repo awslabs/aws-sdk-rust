@@ -60,6 +60,7 @@ pub mod create_backup_plan_input {
         /// <p>Identifies the request and allows failed requests to be retried without the risk of
         /// running the operation twice. If the request includes a <code>CreatorRequestId</code> that
         /// matches an existing backup plan, that plan is returned. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.creator_request_id = Some(input.into());
             self
@@ -67,6 +68,7 @@ pub mod create_backup_plan_input {
         /// <p>Identifies the request and allows failed requests to be retried without the risk of
         /// running the operation twice. If the request includes a <code>CreatorRequestId</code> that
         /// matches an existing backup plan, that plan is returned. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -246,13 +248,15 @@ pub mod create_backup_selection_input {
             self
         }
         /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice.</p>
+        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.creator_request_id = Some(input.into());
             self
         }
         /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice.</p>
+        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -488,13 +492,15 @@ pub mod create_backup_vault_input {
             self
         }
         /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice.</p>
+        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.creator_request_id = Some(input.into());
             self
         }
         /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice.</p>
+        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10087,19 +10093,31 @@ pub mod put_backup_vault_notifications_input {
         ///
         /// <p>An array of events that indicate the status of jobs to back up resources to the backup
         /// vault.</p>
-        /// <note>
+        /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to
+        /// track Backup events</a>.</p>
         /// <p>The following events are supported:</p>
+        /// <ul>
+        /// <li>
         /// <p>
-        /// <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,</p>
+        /// <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code>
+        /// </p>
+        /// </li>
+        /// <li>
         /// <p>
-        /// <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>,
-        /// <code>COPY_JOB_FAILED</code>,</p>
+        /// <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+        /// <code>COPY_JOB_FAILED</code>
+        /// </p>
+        /// </li>
+        /// <li>
         /// <p>
-        /// <code>RESTORE_JOB_STARTED</code>, <code>RESTORE_JOB_COMPLETED</code>, and
-        /// <code>RECOVERY_POINT_MODIFIED</code>.</p>
-        /// <p>To find failed backup jobs, use <code>BACKUP_JOB_COMPLETED</code> and filter using
-        /// event metadata.</p>
-        /// <p>Other events in the following list are deprecated.</p>
+        /// <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+        /// <code>RECOVERY_POINT_MODIFIED</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Ignore the list below because it includes deprecated events. Refer to the list
+        /// above.</p>
         /// </note>
         pub fn backup_vault_events(
             mut self,
@@ -10112,19 +10130,31 @@ pub mod put_backup_vault_notifications_input {
         }
         /// <p>An array of events that indicate the status of jobs to back up resources to the backup
         /// vault.</p>
-        /// <note>
+        /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to
+        /// track Backup events</a>.</p>
         /// <p>The following events are supported:</p>
+        /// <ul>
+        /// <li>
         /// <p>
-        /// <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,</p>
+        /// <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code>
+        /// </p>
+        /// </li>
+        /// <li>
         /// <p>
-        /// <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>,
-        /// <code>COPY_JOB_FAILED</code>,</p>
+        /// <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+        /// <code>COPY_JOB_FAILED</code>
+        /// </p>
+        /// </li>
+        /// <li>
         /// <p>
-        /// <code>RESTORE_JOB_STARTED</code>, <code>RESTORE_JOB_COMPLETED</code>, and
-        /// <code>RECOVERY_POINT_MODIFIED</code>.</p>
-        /// <p>To find failed backup jobs, use <code>BACKUP_JOB_COMPLETED</code> and filter using
-        /// event metadata.</p>
-        /// <p>Other events in the following list are deprecated.</p>
+        /// <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+        /// <code>RECOVERY_POINT_MODIFIED</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Ignore the list below because it includes deprecated events. Refer to the list
+        /// above.</p>
         /// </note>
         pub fn set_backup_vault_events(
             mut self,
@@ -11649,7 +11679,8 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Key-value pairs that are used to help organize your resources. You can assign your own
-        /// metadata to the resources you create.</p>
+        /// metadata to the resources you create. For clarity, this is the structure to assign tags:
+        /// <code>[{"Key":"string","Value":"string"}]</code>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -11661,7 +11692,8 @@ pub mod tag_resource_input {
             self
         }
         /// <p>Key-value pairs that are used to help organize your resources. You can assign your own
-        /// metadata to the resources you create.</p>
+        /// metadata to the resources you create. For clarity, this is the structure to assign tags:
+        /// <code>[{"Key":"string","Value":"string"}]</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -12851,6 +12883,8 @@ pub mod update_region_settings_input {
     pub struct Builder {
         pub(crate) resource_type_opt_in_preference:
             std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+        pub(crate) resource_type_management_preference:
+            std::option::Option<std::collections::HashMap<std::string::String, bool>>,
     }
     impl Builder {
         /// Adds a key-value pair to `resource_type_opt_in_preference`.
@@ -12876,6 +12910,35 @@ pub mod update_region_settings_input {
             self.resource_type_opt_in_preference = input;
             self
         }
+        /// Adds a key-value pair to `resource_type_management_preference`.
+        ///
+        /// To override the contents of this collection use [`set_resource_type_management_preference`](Self::set_resource_type_management_preference).
+        ///
+        /// <p>Enables or disables
+        /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+        /// Backup's advanced DynamoDB backup features</a> for the
+        /// Region.</p>
+        pub fn resource_type_management_preference(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<bool>,
+        ) -> Self {
+            let mut hash_map = self.resource_type_management_preference.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.resource_type_management_preference = Some(hash_map);
+            self
+        }
+        /// <p>Enables or disables
+        /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+        /// Backup's advanced DynamoDB backup features</a> for the
+        /// Region.</p>
+        pub fn set_resource_type_management_preference(
+            mut self,
+            input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+        ) -> Self {
+            self.resource_type_management_preference = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateRegionSettingsInput`](crate::input::UpdateRegionSettingsInput)
         pub fn build(
             self,
@@ -12885,6 +12948,7 @@ pub mod update_region_settings_input {
         > {
             Ok(crate::input::UpdateRegionSettingsInput {
                 resource_type_opt_in_preference: self.resource_type_opt_in_preference,
+                resource_type_management_preference: self.resource_type_management_preference,
             })
         }
     }
@@ -13357,6 +13421,12 @@ pub struct UpdateRegionSettingsInput {
     /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
     pub resource_type_opt_in_preference:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+    /// <p>Enables or disables
+    /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+    /// Backup's advanced DynamoDB backup features</a> for the
+    /// Region.</p>
+    pub resource_type_management_preference:
+        std::option::Option<std::collections::HashMap<std::string::String, bool>>,
 }
 impl UpdateRegionSettingsInput {
     /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
@@ -13365,6 +13435,15 @@ impl UpdateRegionSettingsInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
         self.resource_type_opt_in_preference.as_ref()
     }
+    /// <p>Enables or disables
+    /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+    /// Backup's advanced DynamoDB backup features</a> for the
+    /// Region.</p>
+    pub fn resource_type_management_preference(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
+        self.resource_type_management_preference.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateRegionSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13372,6 +13451,10 @@ impl std::fmt::Debug for UpdateRegionSettingsInput {
         formatter.field(
             "resource_type_opt_in_preference",
             &self.resource_type_opt_in_preference,
+        );
+        formatter.field(
+            "resource_type_management_preference",
+            &self.resource_type_management_preference,
         );
         formatter.finish()
     }
@@ -13579,7 +13662,8 @@ pub struct TagResourceInput {
     /// the tagged resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that are used to help organize your resources. You can assign your own
-    /// metadata to the resources you create.</p>
+    /// metadata to the resources you create. For clarity, this is the structure to assign tags:
+    /// <code>[{"Key":"string","Value":"string"}]</code>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -13590,7 +13674,8 @@ impl TagResourceInput {
         self.resource_arn.as_deref()
     }
     /// <p>Key-value pairs that are used to help organize your resources. You can assign your own
-    /// metadata to the resources you create.</p>
+    /// metadata to the resources you create. For clarity, this is the structure to assign tags:
+    /// <code>[{"Key":"string","Value":"string"}]</code>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -14115,19 +14200,31 @@ pub struct PutBackupVaultNotificationsInput {
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>An array of events that indicate the status of jobs to back up resources to the backup
     /// vault.</p>
-    /// <note>
+    /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to
+    /// track Backup events</a>.</p>
     /// <p>The following events are supported:</p>
+    /// <ul>
+    /// <li>
     /// <p>
-    /// <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,</p>
+    /// <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code>
+    /// </p>
+    /// </li>
+    /// <li>
     /// <p>
-    /// <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>,
-    /// <code>COPY_JOB_FAILED</code>,</p>
+    /// <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+    /// <code>COPY_JOB_FAILED</code>
+    /// </p>
+    /// </li>
+    /// <li>
     /// <p>
-    /// <code>RESTORE_JOB_STARTED</code>, <code>RESTORE_JOB_COMPLETED</code>, and
-    /// <code>RECOVERY_POINT_MODIFIED</code>.</p>
-    /// <p>To find failed backup jobs, use <code>BACKUP_JOB_COMPLETED</code> and filter using
-    /// event metadata.</p>
-    /// <p>Other events in the following list are deprecated.</p>
+    /// <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+    /// <code>RECOVERY_POINT_MODIFIED</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>Ignore the list below because it includes deprecated events. Refer to the list
+    /// above.</p>
     /// </note>
     pub backup_vault_events: std::option::Option<std::vec::Vec<crate::model::BackupVaultEvent>>,
 }
@@ -14146,19 +14243,31 @@ impl PutBackupVaultNotificationsInput {
     }
     /// <p>An array of events that indicate the status of jobs to back up resources to the backup
     /// vault.</p>
-    /// <note>
+    /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to
+    /// track Backup events</a>.</p>
     /// <p>The following events are supported:</p>
+    /// <ul>
+    /// <li>
     /// <p>
-    /// <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,</p>
+    /// <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code>
+    /// </p>
+    /// </li>
+    /// <li>
     /// <p>
-    /// <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>,
-    /// <code>COPY_JOB_FAILED</code>,</p>
+    /// <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+    /// <code>COPY_JOB_FAILED</code>
+    /// </p>
+    /// </li>
+    /// <li>
     /// <p>
-    /// <code>RESTORE_JOB_STARTED</code>, <code>RESTORE_JOB_COMPLETED</code>, and
-    /// <code>RECOVERY_POINT_MODIFIED</code>.</p>
-    /// <p>To find failed backup jobs, use <code>BACKUP_JOB_COMPLETED</code> and filter using
-    /// event metadata.</p>
-    /// <p>Other events in the following list are deprecated.</p>
+    /// <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+    /// <code>RECOVERY_POINT_MODIFIED</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>Ignore the list below because it includes deprecated events. Refer to the list
+    /// above.</p>
     /// </note>
     pub fn backup_vault_events(&self) -> std::option::Option<&[crate::model::BackupVaultEvent]> {
         self.backup_vault_events.as_deref()
@@ -16135,7 +16244,8 @@ pub struct CreateBackupVaultInput {
     /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried
-    /// without the risk of running the operation twice.</p>
+    /// without the risk of running the operation twice. This parameter is optional.</p>
+    /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: std::option::Option<std::string::String>,
 }
 impl CreateBackupVaultInput {
@@ -16159,7 +16269,8 @@ impl CreateBackupVaultInput {
         self.encryption_key_arn.as_deref()
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried
-    /// without the risk of running the operation twice.</p>
+    /// without the risk of running the operation twice. This parameter is optional.</p>
+    /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(&self) -> std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
@@ -16185,7 +16296,8 @@ pub struct CreateBackupSelectionInput {
     /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
     pub backup_selection: std::option::Option<crate::model::BackupSelection>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried
-    /// without the risk of running the operation twice.</p>
+    /// without the risk of running the operation twice. This parameter is optional.</p>
+    /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: std::option::Option<std::string::String>,
 }
 impl CreateBackupSelectionInput {
@@ -16199,7 +16311,8 @@ impl CreateBackupSelectionInput {
         self.backup_selection.as_ref()
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried
-    /// without the risk of running the operation twice.</p>
+    /// without the risk of running the operation twice. This parameter is optional.</p>
+    /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(&self) -> std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
@@ -16229,6 +16342,7 @@ pub struct CreateBackupPlanInput {
     /// <p>Identifies the request and allows failed requests to be retried without the risk of
     /// running the operation twice. If the request includes a <code>CreatorRequestId</code> that
     /// matches an existing backup plan, that plan is returned. This parameter is optional.</p>
+    /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: std::option::Option<std::string::String>,
 }
 impl CreateBackupPlanInput {
@@ -16249,6 +16363,7 @@ impl CreateBackupPlanInput {
     /// <p>Identifies the request and allows failed requests to be retried without the risk of
     /// running the operation twice. If the request includes a <code>CreatorRequestId</code> that
     /// matches an existing backup plan, that plan is returned. This parameter is optional.</p>
+    /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(&self) -> std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }

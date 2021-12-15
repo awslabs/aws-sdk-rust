@@ -2,6 +2,385 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeVcenterClientsOutput {
+    /// <p>List of items returned by DescribeVcenterClients.</p>
+    pub items: std::option::Option<std::vec::Vec<crate::model::VcenterClient>>,
+    /// <p>Next pagination token returned from DescribeVcenterClients.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeVcenterClientsOutput {
+    /// <p>List of items returned by DescribeVcenterClients.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::VcenterClient]> {
+        self.items.as_deref()
+    }
+    /// <p>Next pagination token returned from DescribeVcenterClients.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeVcenterClientsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeVcenterClientsOutput");
+        formatter.field("items", &self.items);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeVcenterClientsOutput`](crate::output::DescribeVcenterClientsOutput)
+pub mod describe_vcenter_clients_output {
+    /// A builder for [`DescribeVcenterClientsOutput`](crate::output::DescribeVcenterClientsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::VcenterClient>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>List of items returned by DescribeVcenterClients.</p>
+        pub fn items(mut self, input: impl Into<crate::model::VcenterClient>) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input.into());
+            self.items = Some(v);
+            self
+        }
+        /// <p>List of items returned by DescribeVcenterClients.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VcenterClient>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// <p>Next pagination token returned from DescribeVcenterClients.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Next pagination token returned from DescribeVcenterClients.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeVcenterClientsOutput`](crate::output::DescribeVcenterClientsOutput)
+        pub fn build(self) -> crate::output::DescribeVcenterClientsOutput {
+            crate::output::DescribeVcenterClientsOutput {
+                items: self.items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeVcenterClientsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVcenterClientsOutput`](crate::output::DescribeVcenterClientsOutput)
+    pub fn builder() -> crate::output::describe_vcenter_clients_output::Builder {
+        crate::output::describe_vcenter_clients_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteVcenterClientOutput {}
+impl std::fmt::Debug for DeleteVcenterClientOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteVcenterClientOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteVcenterClientOutput`](crate::output::DeleteVcenterClientOutput)
+pub mod delete_vcenter_client_output {
+    /// A builder for [`DeleteVcenterClientOutput`](crate::output::DeleteVcenterClientOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteVcenterClientOutput`](crate::output::DeleteVcenterClientOutput)
+        pub fn build(self) -> crate::output::DeleteVcenterClientOutput {
+            crate::output::DeleteVcenterClientOutput {}
+        }
+    }
+}
+impl DeleteVcenterClientOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVcenterClientOutput`](crate::output::DeleteVcenterClientOutput)
+    pub fn builder() -> crate::output::delete_vcenter_client_output::Builder {
+        crate::output::delete_vcenter_client_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateSourceServerReplicationTypeOutput {
+    /// <p>Source server ID.</p>
+    pub source_server_id: std::option::Option<std::string::String>,
+    /// <p>Source server ARN.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Source server archived status.</p>
+    pub is_archived: std::option::Option<bool>,
+    /// <p>Source server Tags.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Source server launched instance.</p>
+    pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
+    /// <p>Source server data replication info.</p>
+    pub data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
+    /// <p>Source server lifecycle state.</p>
+    pub life_cycle: std::option::Option<crate::model::LifeCycle>,
+    /// <p>Source server properties.</p>
+    pub source_properties: std::option::Option<crate::model::SourceProperties>,
+    /// <p>Source server replication type.</p>
+    pub replication_type: std::option::Option<crate::model::ReplicationType>,
+    /// <p>Source server vCenter client id.</p>
+    pub vcenter_client_id: std::option::Option<std::string::String>,
+}
+impl UpdateSourceServerReplicationTypeOutput {
+    /// <p>Source server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>Source server ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Source server archived status.</p>
+    pub fn is_archived(&self) -> std::option::Option<bool> {
+        self.is_archived
+    }
+    /// <p>Source server Tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Source server launched instance.</p>
+    pub fn launched_instance(&self) -> std::option::Option<&crate::model::LaunchedInstance> {
+        self.launched_instance.as_ref()
+    }
+    /// <p>Source server data replication info.</p>
+    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
+        self.data_replication_info.as_ref()
+    }
+    /// <p>Source server lifecycle state.</p>
+    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
+        self.life_cycle.as_ref()
+    }
+    /// <p>Source server properties.</p>
+    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
+        self.source_properties.as_ref()
+    }
+    /// <p>Source server replication type.</p>
+    pub fn replication_type(&self) -> std::option::Option<&crate::model::ReplicationType> {
+        self.replication_type.as_ref()
+    }
+    /// <p>Source server vCenter client id.</p>
+    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+        self.vcenter_client_id.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateSourceServerReplicationTypeOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateSourceServerReplicationTypeOutput");
+        formatter.field("source_server_id", &self.source_server_id);
+        formatter.field("arn", &self.arn);
+        formatter.field("is_archived", &self.is_archived);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("launched_instance", &self.launched_instance);
+        formatter.field("data_replication_info", &self.data_replication_info);
+        formatter.field("life_cycle", &self.life_cycle);
+        formatter.field("source_properties", &self.source_properties);
+        formatter.field("replication_type", &self.replication_type);
+        formatter.field("vcenter_client_id", &self.vcenter_client_id);
+        formatter.finish()
+    }
+}
+/// See [`UpdateSourceServerReplicationTypeOutput`](crate::output::UpdateSourceServerReplicationTypeOutput)
+pub mod update_source_server_replication_type_output {
+    /// A builder for [`UpdateSourceServerReplicationTypeOutput`](crate::output::UpdateSourceServerReplicationTypeOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_server_id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) is_archived: std::option::Option<bool>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) launched_instance: std::option::Option<crate::model::LaunchedInstance>,
+        pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
+        pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
+        pub(crate) source_properties: std::option::Option<crate::model::SourceProperties>,
+        pub(crate) replication_type: std::option::Option<crate::model::ReplicationType>,
+        pub(crate) vcenter_client_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Source server ID.</p>
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_server_id = Some(input.into());
+            self
+        }
+        /// <p>Source server ID.</p>
+        pub fn set_source_server_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_server_id = input;
+            self
+        }
+        /// <p>Source server ARN.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>Source server ARN.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>Source server archived status.</p>
+        pub fn is_archived(mut self, input: bool) -> Self {
+            self.is_archived = Some(input);
+            self
+        }
+        /// <p>Source server archived status.</p>
+        pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_archived = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Source server Tags.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>Source server Tags.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>Source server launched instance.</p>
+        pub fn launched_instance(mut self, input: crate::model::LaunchedInstance) -> Self {
+            self.launched_instance = Some(input);
+            self
+        }
+        /// <p>Source server launched instance.</p>
+        pub fn set_launched_instance(
+            mut self,
+            input: std::option::Option<crate::model::LaunchedInstance>,
+        ) -> Self {
+            self.launched_instance = input;
+            self
+        }
+        /// <p>Source server data replication info.</p>
+        pub fn data_replication_info(mut self, input: crate::model::DataReplicationInfo) -> Self {
+            self.data_replication_info = Some(input);
+            self
+        }
+        /// <p>Source server data replication info.</p>
+        pub fn set_data_replication_info(
+            mut self,
+            input: std::option::Option<crate::model::DataReplicationInfo>,
+        ) -> Self {
+            self.data_replication_info = input;
+            self
+        }
+        /// <p>Source server lifecycle state.</p>
+        pub fn life_cycle(mut self, input: crate::model::LifeCycle) -> Self {
+            self.life_cycle = Some(input);
+            self
+        }
+        /// <p>Source server lifecycle state.</p>
+        pub fn set_life_cycle(
+            mut self,
+            input: std::option::Option<crate::model::LifeCycle>,
+        ) -> Self {
+            self.life_cycle = input;
+            self
+        }
+        /// <p>Source server properties.</p>
+        pub fn source_properties(mut self, input: crate::model::SourceProperties) -> Self {
+            self.source_properties = Some(input);
+            self
+        }
+        /// <p>Source server properties.</p>
+        pub fn set_source_properties(
+            mut self,
+            input: std::option::Option<crate::model::SourceProperties>,
+        ) -> Self {
+            self.source_properties = input;
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
+            self.replication_type = Some(input);
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn set_replication_type(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationType>,
+        ) -> Self {
+            self.replication_type = input;
+            self
+        }
+        /// <p>Source server vCenter client id.</p>
+        pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vcenter_client_id = Some(input.into());
+            self
+        }
+        /// <p>Source server vCenter client id.</p>
+        pub fn set_vcenter_client_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vcenter_client_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateSourceServerReplicationTypeOutput`](crate::output::UpdateSourceServerReplicationTypeOutput)
+        pub fn build(self) -> crate::output::UpdateSourceServerReplicationTypeOutput {
+            crate::output::UpdateSourceServerReplicationTypeOutput {
+                source_server_id: self.source_server_id,
+                arn: self.arn,
+                is_archived: self.is_archived,
+                tags: self.tags,
+                launched_instance: self.launched_instance,
+                data_replication_info: self.data_replication_info,
+                life_cycle: self.life_cycle,
+                source_properties: self.source_properties,
+                replication_type: self.replication_type,
+                vcenter_client_id: self.vcenter_client_id,
+            }
+        }
+    }
+}
+impl UpdateSourceServerReplicationTypeOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSourceServerReplicationTypeOutput`](crate::output::UpdateSourceServerReplicationTypeOutput)
+    pub fn builder() -> crate::output::update_source_server_replication_type_output::Builder {
+        crate::output::update_source_server_replication_type_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReplicationConfigurationOutput {
     /// <p>Replication Configuration Source Server ID.</p>
     pub source_server_id: std::option::Option<std::string::String>,
@@ -662,7 +1041,7 @@ impl UpdateLaunchConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RetryDataReplicationOutput {
+pub struct StartReplicationOutput {
     /// <p>Source server ID.</p>
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Source server ARN.</p>
@@ -680,8 +1059,12 @@ pub struct RetryDataReplicationOutput {
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>Source server properties.</p>
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
+    /// <p>Source server replication type.</p>
+    pub replication_type: std::option::Option<crate::model::ReplicationType>,
+    /// <p>Source server vCenter client id.</p>
+    pub vcenter_client_id: std::option::Option<std::string::String>,
 }
-impl RetryDataReplicationOutput {
+impl StartReplicationOutput {
     /// <p>Source server ID.</p>
     pub fn source_server_id(&self) -> std::option::Option<&str> {
         self.source_server_id.as_deref()
@@ -717,10 +1100,18 @@ impl RetryDataReplicationOutput {
     pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
         self.source_properties.as_ref()
     }
+    /// <p>Source server replication type.</p>
+    pub fn replication_type(&self) -> std::option::Option<&crate::model::ReplicationType> {
+        self.replication_type.as_ref()
+    }
+    /// <p>Source server vCenter client id.</p>
+    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+        self.vcenter_client_id.as_deref()
+    }
 }
-impl std::fmt::Debug for RetryDataReplicationOutput {
+impl std::fmt::Debug for StartReplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetryDataReplicationOutput");
+        let mut formatter = f.debug_struct("StartReplicationOutput");
         formatter.field("source_server_id", &self.source_server_id);
         formatter.field("arn", &self.arn);
         formatter.field("is_archived", &self.is_archived);
@@ -729,12 +1120,14 @@ impl std::fmt::Debug for RetryDataReplicationOutput {
         formatter.field("data_replication_info", &self.data_replication_info);
         formatter.field("life_cycle", &self.life_cycle);
         formatter.field("source_properties", &self.source_properties);
+        formatter.field("replication_type", &self.replication_type);
+        formatter.field("vcenter_client_id", &self.vcenter_client_id);
         formatter.finish()
     }
 }
-/// See [`RetryDataReplicationOutput`](crate::output::RetryDataReplicationOutput)
-pub mod retry_data_replication_output {
-    /// A builder for [`RetryDataReplicationOutput`](crate::output::RetryDataReplicationOutput)
+/// See [`StartReplicationOutput`](crate::output::StartReplicationOutput)
+pub mod start_replication_output {
+    /// A builder for [`StartReplicationOutput`](crate::output::StartReplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -748,6 +1141,8 @@ pub mod retry_data_replication_output {
         pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
         pub(crate) source_properties: std::option::Option<crate::model::SourceProperties>,
+        pub(crate) replication_type: std::option::Option<crate::model::ReplicationType>,
+        pub(crate) vcenter_client_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Source server ID.</p>
@@ -860,6 +1255,299 @@ pub mod retry_data_replication_output {
             self.source_properties = input;
             self
         }
+        /// <p>Source server replication type.</p>
+        pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
+            self.replication_type = Some(input);
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn set_replication_type(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationType>,
+        ) -> Self {
+            self.replication_type = input;
+            self
+        }
+        /// <p>Source server vCenter client id.</p>
+        pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vcenter_client_id = Some(input.into());
+            self
+        }
+        /// <p>Source server vCenter client id.</p>
+        pub fn set_vcenter_client_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vcenter_client_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartReplicationOutput`](crate::output::StartReplicationOutput)
+        pub fn build(self) -> crate::output::StartReplicationOutput {
+            crate::output::StartReplicationOutput {
+                source_server_id: self.source_server_id,
+                arn: self.arn,
+                is_archived: self.is_archived,
+                tags: self.tags,
+                launched_instance: self.launched_instance,
+                data_replication_info: self.data_replication_info,
+                life_cycle: self.life_cycle,
+                source_properties: self.source_properties,
+                replication_type: self.replication_type,
+                vcenter_client_id: self.vcenter_client_id,
+            }
+        }
+    }
+}
+impl StartReplicationOutput {
+    /// Creates a new builder-style object to manufacture [`StartReplicationOutput`](crate::output::StartReplicationOutput)
+    pub fn builder() -> crate::output::start_replication_output::Builder {
+        crate::output::start_replication_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RetryDataReplicationOutput {
+    /// <p>Source server ID.</p>
+    pub source_server_id: std::option::Option<std::string::String>,
+    /// <p>Source server ARN.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Source server archived status.</p>
+    pub is_archived: std::option::Option<bool>,
+    /// <p>Source server Tags.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Source server launched instance.</p>
+    pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
+    /// <p>Source server data replication info.</p>
+    pub data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
+    /// <p>Source server lifecycle state.</p>
+    pub life_cycle: std::option::Option<crate::model::LifeCycle>,
+    /// <p>Source server properties.</p>
+    pub source_properties: std::option::Option<crate::model::SourceProperties>,
+    /// <p>Source server replication type.</p>
+    pub replication_type: std::option::Option<crate::model::ReplicationType>,
+    /// <p>Source server vCenter client id.</p>
+    pub vcenter_client_id: std::option::Option<std::string::String>,
+}
+impl RetryDataReplicationOutput {
+    /// <p>Source server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>Source server ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Source server archived status.</p>
+    pub fn is_archived(&self) -> std::option::Option<bool> {
+        self.is_archived
+    }
+    /// <p>Source server Tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Source server launched instance.</p>
+    pub fn launched_instance(&self) -> std::option::Option<&crate::model::LaunchedInstance> {
+        self.launched_instance.as_ref()
+    }
+    /// <p>Source server data replication info.</p>
+    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
+        self.data_replication_info.as_ref()
+    }
+    /// <p>Source server lifecycle state.</p>
+    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
+        self.life_cycle.as_ref()
+    }
+    /// <p>Source server properties.</p>
+    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
+        self.source_properties.as_ref()
+    }
+    /// <p>Source server replication type.</p>
+    pub fn replication_type(&self) -> std::option::Option<&crate::model::ReplicationType> {
+        self.replication_type.as_ref()
+    }
+    /// <p>Source server vCenter client id.</p>
+    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+        self.vcenter_client_id.as_deref()
+    }
+}
+impl std::fmt::Debug for RetryDataReplicationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RetryDataReplicationOutput");
+        formatter.field("source_server_id", &self.source_server_id);
+        formatter.field("arn", &self.arn);
+        formatter.field("is_archived", &self.is_archived);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("launched_instance", &self.launched_instance);
+        formatter.field("data_replication_info", &self.data_replication_info);
+        formatter.field("life_cycle", &self.life_cycle);
+        formatter.field("source_properties", &self.source_properties);
+        formatter.field("replication_type", &self.replication_type);
+        formatter.field("vcenter_client_id", &self.vcenter_client_id);
+        formatter.finish()
+    }
+}
+/// See [`RetryDataReplicationOutput`](crate::output::RetryDataReplicationOutput)
+pub mod retry_data_replication_output {
+    /// A builder for [`RetryDataReplicationOutput`](crate::output::RetryDataReplicationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_server_id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) is_archived: std::option::Option<bool>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) launched_instance: std::option::Option<crate::model::LaunchedInstance>,
+        pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
+        pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
+        pub(crate) source_properties: std::option::Option<crate::model::SourceProperties>,
+        pub(crate) replication_type: std::option::Option<crate::model::ReplicationType>,
+        pub(crate) vcenter_client_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Source server ID.</p>
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_server_id = Some(input.into());
+            self
+        }
+        /// <p>Source server ID.</p>
+        pub fn set_source_server_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_server_id = input;
+            self
+        }
+        /// <p>Source server ARN.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>Source server ARN.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>Source server archived status.</p>
+        pub fn is_archived(mut self, input: bool) -> Self {
+            self.is_archived = Some(input);
+            self
+        }
+        /// <p>Source server archived status.</p>
+        pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_archived = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Source server Tags.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>Source server Tags.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>Source server launched instance.</p>
+        pub fn launched_instance(mut self, input: crate::model::LaunchedInstance) -> Self {
+            self.launched_instance = Some(input);
+            self
+        }
+        /// <p>Source server launched instance.</p>
+        pub fn set_launched_instance(
+            mut self,
+            input: std::option::Option<crate::model::LaunchedInstance>,
+        ) -> Self {
+            self.launched_instance = input;
+            self
+        }
+        /// <p>Source server data replication info.</p>
+        pub fn data_replication_info(mut self, input: crate::model::DataReplicationInfo) -> Self {
+            self.data_replication_info = Some(input);
+            self
+        }
+        /// <p>Source server data replication info.</p>
+        pub fn set_data_replication_info(
+            mut self,
+            input: std::option::Option<crate::model::DataReplicationInfo>,
+        ) -> Self {
+            self.data_replication_info = input;
+            self
+        }
+        /// <p>Source server lifecycle state.</p>
+        pub fn life_cycle(mut self, input: crate::model::LifeCycle) -> Self {
+            self.life_cycle = Some(input);
+            self
+        }
+        /// <p>Source server lifecycle state.</p>
+        pub fn set_life_cycle(
+            mut self,
+            input: std::option::Option<crate::model::LifeCycle>,
+        ) -> Self {
+            self.life_cycle = input;
+            self
+        }
+        /// <p>Source server properties.</p>
+        pub fn source_properties(mut self, input: crate::model::SourceProperties) -> Self {
+            self.source_properties = Some(input);
+            self
+        }
+        /// <p>Source server properties.</p>
+        pub fn set_source_properties(
+            mut self,
+            input: std::option::Option<crate::model::SourceProperties>,
+        ) -> Self {
+            self.source_properties = input;
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
+            self.replication_type = Some(input);
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn set_replication_type(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationType>,
+        ) -> Self {
+            self.replication_type = input;
+            self
+        }
+        /// <p>Source server vCenter client id.</p>
+        pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vcenter_client_id = Some(input.into());
+            self
+        }
+        /// <p>Source server vCenter client id.</p>
+        pub fn set_vcenter_client_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vcenter_client_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RetryDataReplicationOutput`](crate::output::RetryDataReplicationOutput)
         pub fn build(self) -> crate::output::RetryDataReplicationOutput {
             crate::output::RetryDataReplicationOutput {
@@ -871,6 +1559,8 @@ pub mod retry_data_replication_output {
                 data_replication_info: self.data_replication_info,
                 life_cycle: self.life_cycle,
                 source_properties: self.source_properties,
+                replication_type: self.replication_type,
+                vcenter_client_id: self.vcenter_client_id,
             }
         }
     }
@@ -903,6 +1593,10 @@ pub struct MarkAsArchivedOutput {
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>Source server properties.</p>
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
+    /// <p>Source server replication type.</p>
+    pub replication_type: std::option::Option<crate::model::ReplicationType>,
+    /// <p>Source server vCenter client id.</p>
+    pub vcenter_client_id: std::option::Option<std::string::String>,
 }
 impl MarkAsArchivedOutput {
     /// <p>Source server ID.</p>
@@ -940,6 +1634,14 @@ impl MarkAsArchivedOutput {
     pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
         self.source_properties.as_ref()
     }
+    /// <p>Source server replication type.</p>
+    pub fn replication_type(&self) -> std::option::Option<&crate::model::ReplicationType> {
+        self.replication_type.as_ref()
+    }
+    /// <p>Source server vCenter client id.</p>
+    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+        self.vcenter_client_id.as_deref()
+    }
 }
 impl std::fmt::Debug for MarkAsArchivedOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -952,6 +1654,8 @@ impl std::fmt::Debug for MarkAsArchivedOutput {
         formatter.field("data_replication_info", &self.data_replication_info);
         formatter.field("life_cycle", &self.life_cycle);
         formatter.field("source_properties", &self.source_properties);
+        formatter.field("replication_type", &self.replication_type);
+        formatter.field("vcenter_client_id", &self.vcenter_client_id);
         formatter.finish()
     }
 }
@@ -971,6 +1675,8 @@ pub mod mark_as_archived_output {
         pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
         pub(crate) source_properties: std::option::Option<crate::model::SourceProperties>,
+        pub(crate) replication_type: std::option::Option<crate::model::ReplicationType>,
+        pub(crate) vcenter_client_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Source server ID.</p>
@@ -1083,6 +1789,32 @@ pub mod mark_as_archived_output {
             self.source_properties = input;
             self
         }
+        /// <p>Source server replication type.</p>
+        pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
+            self.replication_type = Some(input);
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn set_replication_type(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationType>,
+        ) -> Self {
+            self.replication_type = input;
+            self
+        }
+        /// <p>Source server vCenter client id.</p>
+        pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vcenter_client_id = Some(input.into());
+            self
+        }
+        /// <p>Source server vCenter client id.</p>
+        pub fn set_vcenter_client_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vcenter_client_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MarkAsArchivedOutput`](crate::output::MarkAsArchivedOutput)
         pub fn build(self) -> crate::output::MarkAsArchivedOutput {
             crate::output::MarkAsArchivedOutput {
@@ -1094,6 +1826,8 @@ pub mod mark_as_archived_output {
                 data_replication_info: self.data_replication_info,
                 life_cycle: self.life_cycle,
                 source_properties: self.source_properties,
+                replication_type: self.replication_type,
+                vcenter_client_id: self.vcenter_client_id,
             }
         }
     }
@@ -1786,6 +2520,10 @@ pub struct FinalizeCutoverOutput {
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>Source server properties.</p>
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
+    /// <p>Source server replication type.</p>
+    pub replication_type: std::option::Option<crate::model::ReplicationType>,
+    /// <p>Source server vCenter client id.</p>
+    pub vcenter_client_id: std::option::Option<std::string::String>,
 }
 impl FinalizeCutoverOutput {
     /// <p>Source server ID.</p>
@@ -1823,6 +2561,14 @@ impl FinalizeCutoverOutput {
     pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
         self.source_properties.as_ref()
     }
+    /// <p>Source server replication type.</p>
+    pub fn replication_type(&self) -> std::option::Option<&crate::model::ReplicationType> {
+        self.replication_type.as_ref()
+    }
+    /// <p>Source server vCenter client id.</p>
+    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+        self.vcenter_client_id.as_deref()
+    }
 }
 impl std::fmt::Debug for FinalizeCutoverOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1835,6 +2581,8 @@ impl std::fmt::Debug for FinalizeCutoverOutput {
         formatter.field("data_replication_info", &self.data_replication_info);
         formatter.field("life_cycle", &self.life_cycle);
         formatter.field("source_properties", &self.source_properties);
+        formatter.field("replication_type", &self.replication_type);
+        formatter.field("vcenter_client_id", &self.vcenter_client_id);
         formatter.finish()
     }
 }
@@ -1854,6 +2602,8 @@ pub mod finalize_cutover_output {
         pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
         pub(crate) source_properties: std::option::Option<crate::model::SourceProperties>,
+        pub(crate) replication_type: std::option::Option<crate::model::ReplicationType>,
+        pub(crate) vcenter_client_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Source server ID.</p>
@@ -1966,6 +2716,32 @@ pub mod finalize_cutover_output {
             self.source_properties = input;
             self
         }
+        /// <p>Source server replication type.</p>
+        pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
+            self.replication_type = Some(input);
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn set_replication_type(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationType>,
+        ) -> Self {
+            self.replication_type = input;
+            self
+        }
+        /// <p>Source server vCenter client id.</p>
+        pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vcenter_client_id = Some(input.into());
+            self
+        }
+        /// <p>Source server vCenter client id.</p>
+        pub fn set_vcenter_client_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vcenter_client_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FinalizeCutoverOutput`](crate::output::FinalizeCutoverOutput)
         pub fn build(self) -> crate::output::FinalizeCutoverOutput {
             crate::output::FinalizeCutoverOutput {
@@ -1977,6 +2753,8 @@ pub mod finalize_cutover_output {
                 data_replication_info: self.data_replication_info,
                 life_cycle: self.life_cycle,
                 source_properties: self.source_properties,
+                replication_type: self.replication_type,
+                vcenter_client_id: self.vcenter_client_id,
             }
         }
     }
@@ -2009,6 +2787,10 @@ pub struct DisconnectFromServiceOutput {
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>Source server properties.</p>
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
+    /// <p>Source server replication type.</p>
+    pub replication_type: std::option::Option<crate::model::ReplicationType>,
+    /// <p>Source server vCenter client id.</p>
+    pub vcenter_client_id: std::option::Option<std::string::String>,
 }
 impl DisconnectFromServiceOutput {
     /// <p>Source server ID.</p>
@@ -2046,6 +2828,14 @@ impl DisconnectFromServiceOutput {
     pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
         self.source_properties.as_ref()
     }
+    /// <p>Source server replication type.</p>
+    pub fn replication_type(&self) -> std::option::Option<&crate::model::ReplicationType> {
+        self.replication_type.as_ref()
+    }
+    /// <p>Source server vCenter client id.</p>
+    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+        self.vcenter_client_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisconnectFromServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2058,6 +2848,8 @@ impl std::fmt::Debug for DisconnectFromServiceOutput {
         formatter.field("data_replication_info", &self.data_replication_info);
         formatter.field("life_cycle", &self.life_cycle);
         formatter.field("source_properties", &self.source_properties);
+        formatter.field("replication_type", &self.replication_type);
+        formatter.field("vcenter_client_id", &self.vcenter_client_id);
         formatter.finish()
     }
 }
@@ -2077,6 +2869,8 @@ pub mod disconnect_from_service_output {
         pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
         pub(crate) source_properties: std::option::Option<crate::model::SourceProperties>,
+        pub(crate) replication_type: std::option::Option<crate::model::ReplicationType>,
+        pub(crate) vcenter_client_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Source server ID.</p>
@@ -2189,6 +2983,32 @@ pub mod disconnect_from_service_output {
             self.source_properties = input;
             self
         }
+        /// <p>Source server replication type.</p>
+        pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
+            self.replication_type = Some(input);
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn set_replication_type(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationType>,
+        ) -> Self {
+            self.replication_type = input;
+            self
+        }
+        /// <p>Source server vCenter client id.</p>
+        pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vcenter_client_id = Some(input.into());
+            self
+        }
+        /// <p>Source server vCenter client id.</p>
+        pub fn set_vcenter_client_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vcenter_client_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DisconnectFromServiceOutput`](crate::output::DisconnectFromServiceOutput)
         pub fn build(self) -> crate::output::DisconnectFromServiceOutput {
             crate::output::DisconnectFromServiceOutput {
@@ -2200,6 +3020,8 @@ pub mod disconnect_from_service_output {
                 data_replication_info: self.data_replication_info,
                 life_cycle: self.life_cycle,
                 source_properties: self.source_properties,
+                replication_type: self.replication_type,
+                vcenter_client_id: self.vcenter_client_id,
             }
         }
     }
@@ -2232,6 +3054,10 @@ pub struct ChangeServerLifeCycleStateOutput {
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>Source server properties.</p>
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
+    /// <p>Source server replication type.</p>
+    pub replication_type: std::option::Option<crate::model::ReplicationType>,
+    /// <p>Source server vCenter client id.</p>
+    pub vcenter_client_id: std::option::Option<std::string::String>,
 }
 impl ChangeServerLifeCycleStateOutput {
     /// <p>Source server ID.</p>
@@ -2269,6 +3095,14 @@ impl ChangeServerLifeCycleStateOutput {
     pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
         self.source_properties.as_ref()
     }
+    /// <p>Source server replication type.</p>
+    pub fn replication_type(&self) -> std::option::Option<&crate::model::ReplicationType> {
+        self.replication_type.as_ref()
+    }
+    /// <p>Source server vCenter client id.</p>
+    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+        self.vcenter_client_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ChangeServerLifeCycleStateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2281,6 +3115,8 @@ impl std::fmt::Debug for ChangeServerLifeCycleStateOutput {
         formatter.field("data_replication_info", &self.data_replication_info);
         formatter.field("life_cycle", &self.life_cycle);
         formatter.field("source_properties", &self.source_properties);
+        formatter.field("replication_type", &self.replication_type);
+        formatter.field("vcenter_client_id", &self.vcenter_client_id);
         formatter.finish()
     }
 }
@@ -2300,6 +3136,8 @@ pub mod change_server_life_cycle_state_output {
         pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
         pub(crate) source_properties: std::option::Option<crate::model::SourceProperties>,
+        pub(crate) replication_type: std::option::Option<crate::model::ReplicationType>,
+        pub(crate) vcenter_client_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Source server ID.</p>
@@ -2412,6 +3250,32 @@ pub mod change_server_life_cycle_state_output {
             self.source_properties = input;
             self
         }
+        /// <p>Source server replication type.</p>
+        pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
+            self.replication_type = Some(input);
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn set_replication_type(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationType>,
+        ) -> Self {
+            self.replication_type = input;
+            self
+        }
+        /// <p>Source server vCenter client id.</p>
+        pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vcenter_client_id = Some(input.into());
+            self
+        }
+        /// <p>Source server vCenter client id.</p>
+        pub fn set_vcenter_client_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vcenter_client_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ChangeServerLifeCycleStateOutput`](crate::output::ChangeServerLifeCycleStateOutput)
         pub fn build(self) -> crate::output::ChangeServerLifeCycleStateOutput {
             crate::output::ChangeServerLifeCycleStateOutput {
@@ -2423,6 +3287,8 @@ pub mod change_server_life_cycle_state_output {
                 data_replication_info: self.data_replication_info,
                 life_cycle: self.life_cycle,
                 source_properties: self.source_properties,
+                replication_type: self.replication_type,
+                vcenter_client_id: self.vcenter_client_id,
             }
         }
     }

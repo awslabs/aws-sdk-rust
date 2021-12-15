@@ -3939,6 +3939,138 @@ impl std::error::Error for DescribeBotLocaleError {
     }
 }
 
+/// Error type for the `DescribeBotRecommendation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeBotRecommendationError {
+    /// Kind of error that occurred.
+    pub kind: DescribeBotRecommendationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeBotRecommendation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeBotRecommendationErrorKind {
+    /// <p>The service encountered an unexpected condition. Try your request
+    /// again.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>You asked to describe a resource that doesn't exist. Check the
+    /// resource that you are requesting and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Your request rate is too high. Reduce the frequency of
+    /// requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the input parameters in your request isn't valid. Check the
+    /// parameters and try your request again.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeBotRecommendationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeBotRecommendationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DescribeBotRecommendationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeBotRecommendationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeBotRecommendationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DescribeBotRecommendationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeBotRecommendationError {
+    fn code(&self) -> Option<&str> {
+        DescribeBotRecommendationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeBotRecommendationError {
+    /// Creates a new `DescribeBotRecommendationError`.
+    pub fn new(kind: DescribeBotRecommendationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeBotRecommendationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeBotRecommendationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeBotRecommendationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeBotRecommendationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeBotRecommendationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBotRecommendationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeBotRecommendationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBotRecommendationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeBotRecommendationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBotRecommendationErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeBotRecommendationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBotRecommendationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeBotRecommendationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeBotRecommendationErrorKind::InternalServerException(_inner) => Some(_inner),
+            DescribeBotRecommendationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeBotRecommendationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeBotRecommendationErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribeBotRecommendationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeBotVersion` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5254,6 +5386,138 @@ impl std::error::Error for ListBotLocalesError {
     }
 }
 
+/// Error type for the `ListBotRecommendations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListBotRecommendationsError {
+    /// Kind of error that occurred.
+    pub kind: ListBotRecommendationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListBotRecommendations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListBotRecommendationsErrorKind {
+    /// <p>The service encountered an unexpected condition. Try your request
+    /// again.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>You asked to describe a resource that doesn't exist. Check the
+    /// resource that you are requesting and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Your request rate is too high. Reduce the frequency of
+    /// requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the input parameters in your request isn't valid. Check the
+    /// parameters and try your request again.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListBotRecommendationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListBotRecommendationsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListBotRecommendationsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListBotRecommendationsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListBotRecommendationsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListBotRecommendationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListBotRecommendationsError {
+    fn code(&self) -> Option<&str> {
+        ListBotRecommendationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListBotRecommendationsError {
+    /// Creates a new `ListBotRecommendationsError`.
+    pub fn new(kind: ListBotRecommendationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListBotRecommendationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListBotRecommendationsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListBotRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListBotRecommendationsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListBotRecommendationsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListBotRecommendationsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListBotRecommendationsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListBotRecommendationsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListBotRecommendationsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListBotRecommendationsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListBotRecommendationsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListBotRecommendationsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListBotRecommendationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListBotRecommendationsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListBotRecommendationsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListBotRecommendationsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListBotRecommendationsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListBotRecommendationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListBots` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6107,6 +6371,149 @@ impl std::error::Error for ListIntentsError {
     }
 }
 
+/// Error type for the `ListRecommendedIntents` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListRecommendedIntentsError {
+    /// Kind of error that occurred.
+    pub kind: ListRecommendedIntentsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListRecommendedIntents` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListRecommendedIntentsErrorKind {
+    /// <p>The service encountered an unexpected condition. Try your request
+    /// again.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>You asked to describe a resource that doesn't exist. Check the
+    /// resource that you are requesting and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have reached a quota for your bot. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Your request rate is too high. Reduce the frequency of
+    /// requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the input parameters in your request isn't valid. Check the
+    /// parameters and try your request again.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListRecommendedIntentsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListRecommendedIntentsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListRecommendedIntentsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListRecommendedIntentsErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            ListRecommendedIntentsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListRecommendedIntentsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListRecommendedIntentsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListRecommendedIntentsError {
+    fn code(&self) -> Option<&str> {
+        ListRecommendedIntentsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListRecommendedIntentsError {
+    /// Creates a new `ListRecommendedIntentsError`.
+    pub fn new(kind: ListRecommendedIntentsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListRecommendedIntentsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListRecommendedIntentsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListRecommendedIntentsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListRecommendedIntentsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListRecommendedIntentsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRecommendedIntentsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListRecommendedIntentsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRecommendedIntentsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListRecommendedIntentsErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRecommendedIntentsErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListRecommendedIntentsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRecommendedIntentsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListRecommendedIntentsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRecommendedIntentsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListRecommendedIntentsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListRecommendedIntentsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListRecommendedIntentsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListRecommendedIntentsErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            ListRecommendedIntentsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListRecommendedIntentsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListRecommendedIntentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListSlots` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6482,6 +6889,324 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `SearchAssociatedTranscripts` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SearchAssociatedTranscriptsError {
+    /// Kind of error that occurred.
+    pub kind: SearchAssociatedTranscriptsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `SearchAssociatedTranscripts` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SearchAssociatedTranscriptsErrorKind {
+    /// <p>The service encountered an unexpected condition. Try your request
+    /// again.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>You asked to describe a resource that doesn't exist. Check the
+    /// resource that you are requesting and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have reached a quota for your bot. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Your request rate is too high. Reduce the frequency of
+    /// requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the input parameters in your request isn't valid. Check the
+    /// parameters and try your request again.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SearchAssociatedTranscriptsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SearchAssociatedTranscriptsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            SearchAssociatedTranscriptsErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            SearchAssociatedTranscriptsErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            SearchAssociatedTranscriptsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            SearchAssociatedTranscriptsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            SearchAssociatedTranscriptsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SearchAssociatedTranscriptsError {
+    fn code(&self) -> Option<&str> {
+        SearchAssociatedTranscriptsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SearchAssociatedTranscriptsError {
+    /// Creates a new `SearchAssociatedTranscriptsError`.
+    pub fn new(kind: SearchAssociatedTranscriptsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SearchAssociatedTranscriptsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SearchAssociatedTranscriptsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SearchAssociatedTranscriptsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SearchAssociatedTranscriptsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SearchAssociatedTranscriptsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchAssociatedTranscriptsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchAssociatedTranscriptsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchAssociatedTranscriptsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchAssociatedTranscriptsErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchAssociatedTranscriptsErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchAssociatedTranscriptsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchAssociatedTranscriptsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchAssociatedTranscriptsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchAssociatedTranscriptsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for SearchAssociatedTranscriptsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SearchAssociatedTranscriptsErrorKind::InternalServerException(_inner) => Some(_inner),
+            SearchAssociatedTranscriptsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            SearchAssociatedTranscriptsErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
+            SearchAssociatedTranscriptsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            SearchAssociatedTranscriptsErrorKind::ValidationException(_inner) => Some(_inner),
+            SearchAssociatedTranscriptsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `StartBotRecommendation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartBotRecommendationError {
+    /// Kind of error that occurred.
+    pub kind: StartBotRecommendationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartBotRecommendation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartBotRecommendationErrorKind {
+    /// <p>The action that you tried to perform couldn't be completed because
+    /// the resource is in a conflicting state. For example, deleting a bot
+    /// that is in the CREATING state. Try your request again. </p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The service encountered an unexpected condition. Try your request
+    /// again.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Your request couldn't be completed because one or more request
+    /// fields aren't valid. Check the fields in your request and try
+    /// again.</p>
+    PreconditionFailedException(crate::error::PreconditionFailedException),
+    /// <p>You asked to describe a resource that doesn't exist. Check the
+    /// resource that you are requesting and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have reached a quota for your bot. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Your request rate is too high. Reduce the frequency of
+    /// requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the input parameters in your request isn't valid. Check the
+    /// parameters and try your request again.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartBotRecommendationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartBotRecommendationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            StartBotRecommendationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            StartBotRecommendationErrorKind::PreconditionFailedException(_inner) => _inner.fmt(f),
+            StartBotRecommendationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            StartBotRecommendationErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            StartBotRecommendationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            StartBotRecommendationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            StartBotRecommendationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartBotRecommendationError {
+    fn code(&self) -> Option<&str> {
+        StartBotRecommendationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartBotRecommendationError {
+    /// Creates a new `StartBotRecommendationError`.
+    pub fn new(kind: StartBotRecommendationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartBotRecommendationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartBotRecommendationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartBotRecommendationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartBotRecommendationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartBotRecommendationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartBotRecommendationErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartBotRecommendationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartBotRecommendationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartBotRecommendationErrorKind::PreconditionFailedException`.
+    pub fn is_precondition_failed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartBotRecommendationErrorKind::PreconditionFailedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartBotRecommendationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartBotRecommendationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartBotRecommendationErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartBotRecommendationErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartBotRecommendationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartBotRecommendationErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartBotRecommendationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartBotRecommendationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for StartBotRecommendationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartBotRecommendationErrorKind::ConflictException(_inner) => Some(_inner),
+            StartBotRecommendationErrorKind::InternalServerException(_inner) => Some(_inner),
+            StartBotRecommendationErrorKind::PreconditionFailedException(_inner) => Some(_inner),
+            StartBotRecommendationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            StartBotRecommendationErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            StartBotRecommendationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            StartBotRecommendationErrorKind::ValidationException(_inner) => Some(_inner),
+            StartBotRecommendationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -7316,6 +8041,177 @@ impl std::error::Error for UpdateBotLocaleError {
             UpdateBotLocaleErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateBotLocaleErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateBotLocaleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateBotRecommendation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateBotRecommendationError {
+    /// Kind of error that occurred.
+    pub kind: UpdateBotRecommendationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateBotRecommendation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateBotRecommendationErrorKind {
+    /// <p>The action that you tried to perform couldn't be completed because
+    /// the resource is in a conflicting state. For example, deleting a bot
+    /// that is in the CREATING state. Try your request again. </p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The service encountered an unexpected condition. Try your request
+    /// again.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Your request couldn't be completed because one or more request
+    /// fields aren't valid. Check the fields in your request and try
+    /// again.</p>
+    PreconditionFailedException(crate::error::PreconditionFailedException),
+    /// <p>You asked to describe a resource that doesn't exist. Check the
+    /// resource that you are requesting and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have reached a quota for your bot. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Your request rate is too high. Reduce the frequency of
+    /// requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the input parameters in your request isn't valid. Check the
+    /// parameters and try your request again.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateBotRecommendationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateBotRecommendationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateBotRecommendationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateBotRecommendationErrorKind::PreconditionFailedException(_inner) => _inner.fmt(f),
+            UpdateBotRecommendationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateBotRecommendationErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateBotRecommendationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateBotRecommendationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateBotRecommendationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateBotRecommendationError {
+    fn code(&self) -> Option<&str> {
+        UpdateBotRecommendationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateBotRecommendationError {
+    /// Creates a new `UpdateBotRecommendationError`.
+    pub fn new(kind: UpdateBotRecommendationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateBotRecommendationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateBotRecommendationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateBotRecommendationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateBotRecommendationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateBotRecommendationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBotRecommendationErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateBotRecommendationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBotRecommendationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateBotRecommendationErrorKind::PreconditionFailedException`.
+    pub fn is_precondition_failed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBotRecommendationErrorKind::PreconditionFailedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateBotRecommendationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBotRecommendationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateBotRecommendationErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBotRecommendationErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateBotRecommendationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBotRecommendationErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateBotRecommendationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBotRecommendationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateBotRecommendationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateBotRecommendationErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateBotRecommendationErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateBotRecommendationErrorKind::PreconditionFailedException(_inner) => Some(_inner),
+            UpdateBotRecommendationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateBotRecommendationErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            UpdateBotRecommendationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateBotRecommendationErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateBotRecommendationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

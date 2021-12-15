@@ -344,8 +344,8 @@ impl ResourceDataSyncOrganizationalUnit {
     }
 }
 
-/// <p>Information about the patches to use to update the instances, including target operating
-/// systems and source repository. Applies to Linux instances only.</p>
+/// <p>Information about the patches to use to update the managed nodes, including target operating
+/// systems and source repository. Applies to Linux managed nodes only.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PatchSource {
@@ -735,9 +735,9 @@ pub struct PatchRule {
     /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example,
     /// <code>2021-12-31</code>.</p>
     pub approve_until_date: std::option::Option<std::string::String>,
-    /// <p>For instances identified by the approval rule filters, enables a patch baseline to apply
+    /// <p>For managed nodes identified by the approval rule filters, enables a patch baseline to apply
     /// non-security updates available in the specified repository. The default value is
-    /// <code>false</code>. Applies to Linux instances only.</p>
+    /// <code>false</code>. Applies to Linux managed nodes only.</p>
     pub enable_non_security: std::option::Option<bool>,
 }
 impl PatchRule {
@@ -763,9 +763,9 @@ impl PatchRule {
     pub fn approve_until_date(&self) -> std::option::Option<&str> {
         self.approve_until_date.as_deref()
     }
-    /// <p>For instances identified by the approval rule filters, enables a patch baseline to apply
+    /// <p>For managed nodes identified by the approval rule filters, enables a patch baseline to apply
     /// non-security updates available in the specified repository. The default value is
-    /// <code>false</code>. Applies to Linux instances only.</p>
+    /// <code>false</code>. Applies to Linux managed nodes only.</p>
     pub fn enable_non_security(&self) -> std::option::Option<bool> {
         self.enable_non_security
     }
@@ -855,16 +855,16 @@ pub mod patch_rule {
             self.approve_until_date = input;
             self
         }
-        /// <p>For instances identified by the approval rule filters, enables a patch baseline to apply
+        /// <p>For managed nodes identified by the approval rule filters, enables a patch baseline to apply
         /// non-security updates available in the specified repository. The default value is
-        /// <code>false</code>. Applies to Linux instances only.</p>
+        /// <code>false</code>. Applies to Linux managed nodes only.</p>
         pub fn enable_non_security(mut self, input: bool) -> Self {
             self.enable_non_security = Some(input);
             self
         }
-        /// <p>For instances identified by the approval rule filters, enables a patch baseline to apply
+        /// <p>For managed nodes identified by the approval rule filters, enables a patch baseline to apply
         /// non-security updates available in the specified repository. The default value is
-        /// <code>false</code>. Applies to Linux instances only.</p>
+        /// <code>false</code>. Applies to Linux managed nodes only.</p>
         pub fn set_enable_non_security(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_non_security = input;
             self
@@ -1805,7 +1805,7 @@ impl AsRef<str> for MaintenanceWindowTaskCutoffBehavior {
 }
 
 /// <p>Information about an Amazon Simple Storage Service (Amazon S3) bucket to write
-/// instance-level logs to.</p>
+/// managed node-level logs to.</p>
 /// <note>
 /// <p>
 /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
@@ -2478,7 +2478,7 @@ pub struct MaintenanceWindowRunCommandParameters {
     /// <code>--document-version "3"</code>
     /// </p>
     pub document_version: std::option::Option<std::string::String>,
-    /// <p>Configurations for sending notifications about command status changes on a per-instance
+    /// <p>Configurations for sending notifications about command status changes on a per-managed node
     /// basis.</p>
     pub notification_config: std::option::Option<crate::model::NotificationConfig>,
     /// <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
@@ -2532,7 +2532,7 @@ impl MaintenanceWindowRunCommandParameters {
     pub fn document_version(&self) -> std::option::Option<&str> {
         self.document_version.as_deref()
     }
-    /// <p>Configurations for sending notifications about command status changes on a per-instance
+    /// <p>Configurations for sending notifications about command status changes on a per-managed node
     /// basis.</p>
     pub fn notification_config(&self) -> std::option::Option<&crate::model::NotificationConfig> {
         self.notification_config.as_ref()
@@ -2575,7 +2575,7 @@ impl std::fmt::Debug for MaintenanceWindowRunCommandParameters {
         formatter.field("notification_config", &self.notification_config);
         formatter.field("output_s3_bucket_name", &self.output_s3_bucket_name);
         formatter.field("output_s3_key_prefix", &self.output_s3_key_prefix);
-        formatter.field("parameters", &self.parameters);
+        formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("service_role_arn", &self.service_role_arn);
         formatter.field("timeout_seconds", &self.timeout_seconds);
         formatter.finish()
@@ -2694,13 +2694,13 @@ pub mod maintenance_window_run_command_parameters {
             self.document_version = input;
             self
         }
-        /// <p>Configurations for sending notifications about command status changes on a per-instance
+        /// <p>Configurations for sending notifications about command status changes on a per-managed node
         /// basis.</p>
         pub fn notification_config(mut self, input: crate::model::NotificationConfig) -> Self {
             self.notification_config = Some(input);
             self
         }
-        /// <p>Configurations for sending notifications about command status changes on a per-instance
+        /// <p>Configurations for sending notifications about command status changes on a per-managed node
         /// basis.</p>
         pub fn set_notification_config(
             mut self,
@@ -2832,8 +2832,8 @@ pub struct NotificationConfig {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Invocation</code>: For commands sent to multiple instances, receive notification on
-    /// a per-instance basis when the status of a command changes. </p>
+    /// <code>Invocation</code>: For commands sent to multiple managed nodes, receive notification
+    /// on a per-node basis when the status of a command changes. </p>
     /// </li>
     /// </ul>
     pub notification_type: std::option::Option<crate::model::NotificationType>,
@@ -2859,8 +2859,8 @@ impl NotificationConfig {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Invocation</code>: For commands sent to multiple instances, receive notification on
-    /// a per-instance basis when the status of a command changes. </p>
+    /// <code>Invocation</code>: For commands sent to multiple managed nodes, receive notification
+    /// on a per-node basis when the status of a command changes. </p>
     /// </li>
     /// </ul>
     pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
@@ -2939,8 +2939,8 @@ pub mod notification_config {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>Invocation</code>: For commands sent to multiple instances, receive notification on
-        /// a per-instance basis when the status of a command changes. </p>
+        /// <code>Invocation</code>: For commands sent to multiple managed nodes, receive notification
+        /// on a per-node basis when the status of a command changes. </p>
         /// </li>
         /// </ul>
         pub fn notification_type(mut self, input: crate::model::NotificationType) -> Self {
@@ -2955,8 +2955,8 @@ pub mod notification_config {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>Invocation</code>: For commands sent to multiple instances, receive notification on
-        /// a per-instance basis when the status of a command changes. </p>
+        /// <code>Invocation</code>: For commands sent to multiple managed nodes, receive notification
+        /// on a per-node basis when the status of a command changes. </p>
         /// </li>
         /// </ul>
         pub fn set_notification_type(
@@ -3344,7 +3344,7 @@ impl MaintenanceWindowTaskParameterValueExpression {
     }
 }
 
-/// <p>An array of search criteria that targets instances using a key-value pair that you
+/// <p>An array of search criteria that targets managed nodes using a key-value pair that you
 /// specify.</p>
 /// <note>
 /// <p> One or more targets must be specified for maintenance window Run Command-type tasks.
@@ -3358,41 +3358,35 @@ impl MaintenanceWindowTaskParameterValueExpression {
 /// <ul>
 /// <li>
 /// <p>
-/// <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
-/// </code>
+/// <code>Key=InstanceIds,Values=<instance-id-1>,<instance-id-2>,<instance-id-3></code>
 /// </p>
 /// </li>
 /// <li>
 /// <p>
-/// <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
-/// </code>
+/// <code>Key=tag:<my-tag-key>,Values=<my-tag-value-1>,<my-tag-value-2></code>
 /// </p>
 /// </li>
 /// <li>
 /// <p>
-/// <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i>
-/// </code>
+/// <code>Key=tag-key,Values=<my-tag-key-1>,<my-tag-key-2></code>
 /// </p>
 /// </li>
 /// <li>
 /// <p>
 /// <b>Run Command and Maintenance window targets only</b>:
-/// <code>Key=resource-groups:Name,Values=<i>resource-group-name</i>
-/// </code>
+/// <code>Key=resource-groups:Name,Values=<resource-group-name></code>
 /// </p>
 /// </li>
 /// <li>
 /// <p>
 /// <b>Maintenance window targets only</b>:
-/// <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
-/// </code>
+/// <code>Key=resource-groups:ResourceTypeFilters,Values=<resource-type-1>,<resource-type-2></code>
 /// </p>
 /// </li>
 /// <li>
 /// <p>
 /// <b>Automation targets only</b>:
-/// <code>Key=ResourceGroup;Values=<i>resource-group-name</i>
-/// </code>
+/// <code>Key=ResourceGroup;Values=<resource-group-name></code>
 /// </p>
 /// </li>
 /// </ul>
@@ -3423,8 +3417,7 @@ impl MaintenanceWindowTaskParameterValueExpression {
 /// <li>
 /// <p>
 /// <b>Maintenance window targets only</b>:
-/// <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
-/// </code>
+/// <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code>
 /// </p>
 /// <p>This example demonstrates how to target only Amazon Elastic Compute Cloud (Amazon EC2)
 /// instances and VPCs in your maintenance window.</p>
@@ -3438,19 +3431,18 @@ impl MaintenanceWindowTaskParameterValueExpression {
 /// <li>
 /// <p>
 /// <b>State Manager association targets only</b>:
-/// <code>Key=InstanceIds,Values=<i>*</i>
-/// </code>
+/// <code>Key=InstanceIds,Values=*</code>
 /// </p>
 /// <p>This example demonstrates how to target all managed instances in the Amazon Web Services Region where
 /// the association was created.</p>
 /// </li>
 /// </ul>
-/// <p>For more information about how to send commands that target instances using
+/// <p>For more information about how to send commands that target managed nodes using
 /// <code>Key,Value</code> parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting multiple instances</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Target {
-    /// <p>User-defined criteria for sending commands that target instances that meet the
+    /// <p>User-defined criteria for sending commands that target managed nodes that meet the
     /// criteria.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>User-defined criteria that maps to <code>Key</code>. For example, if you specified
@@ -3461,7 +3453,7 @@ pub struct Target {
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Target {
-    /// <p>User-defined criteria for sending commands that target instances that meet the
+    /// <p>User-defined criteria for sending commands that target managed nodes that meet the
     /// criteria.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
@@ -3493,13 +3485,13 @@ pub mod target {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>User-defined criteria for sending commands that target instances that meet the
+        /// <p>User-defined criteria for sending commands that target managed nodes that meet the
         /// criteria.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>User-defined criteria for sending commands that target instances that meet the
+        /// <p>User-defined criteria for sending commands that target managed nodes that meet the
         /// criteria.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
@@ -4948,7 +4940,7 @@ impl AttachmentInformation {
 
 /// <p>Metadata that you assign to your Amazon Web Services resources. Tags enable you to categorize your
 /// resources in different ways, for example, by purpose, owner, or environment. In Amazon Web Services Systems Manager, you
-/// can apply tags to Systems Manager documents (SSM documents), managed instances, maintenance windows,
+/// can apply tags to Systems Manager documents (SSM documents), managed nodes, maintenance windows,
 /// parameters, patch baselines, OpsItems, and OpsMetadata.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5204,6 +5196,8 @@ pub enum PlatformType {
     #[allow(missing_docs)] // documentation missing in model
     Linux,
     #[allow(missing_docs)] // documentation missing in model
+    Macos,
+    #[allow(missing_docs)] // documentation missing in model
     Windows,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5212,6 +5206,7 @@ impl std::convert::From<&str> for PlatformType {
     fn from(s: &str) -> Self {
         match s {
             "Linux" => PlatformType::Linux,
+            "MacOS" => PlatformType::Macos,
             "Windows" => PlatformType::Windows,
             other => PlatformType::Unknown(other.to_owned()),
         }
@@ -5229,13 +5224,14 @@ impl PlatformType {
     pub fn as_str(&self) -> &str {
         match self {
             PlatformType::Linux => "Linux",
+            PlatformType::Macos => "MacOS",
             PlatformType::Windows => "Windows",
             PlatformType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["Linux", "Windows"]
+        &["Linux", "MacOS", "Windows"]
     }
 }
 impl AsRef<str> for PlatformType {
@@ -5798,7 +5794,7 @@ impl AsRef<str> for AttachmentsSourceKey {
 pub struct AssociationDescription {
     /// <p>The name of the SSM document.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The instance ID.</p>
+    /// <p>The managed node ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The association version.</p>
     pub association_version: std::option::Option<std::string::String>,
@@ -5822,7 +5818,7 @@ pub struct AssociationDescription {
     >,
     /// <p>The association ID.</p>
     pub association_id: std::option::Option<std::string::String>,
-    /// <p>The instances targeted by the request. </p>
+    /// <p>The managed nodes targeted by the request. </p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>A cron expression that specifies a schedule when the association runs.</p>
     pub schedule_expression: std::option::Option<std::string::String>,
@@ -5839,8 +5835,8 @@ pub struct AssociationDescription {
     /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
     /// the system stops sending requests when the fourth error is received. If you specify 0, then the
     /// system stops sending requests after the first error is returned. If you run an association on 50
-    /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
-    /// the sixth error is received.</p>
+    /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
+    /// when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
     /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
     /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
@@ -5849,9 +5845,9 @@ pub struct AssociationDescription {
     /// <p>The maximum number of targets allowed to run the association at the same time. You can
     /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
     /// value is 100%, which means all targets run the association at the same time.</p>
-    /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+    /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
     /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-    /// association interval, the new instance will process its association within the limit specified
+    /// association interval, the new managed node will process its association within the limit specified
     /// for <code>MaxConcurrency</code>.</p>
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The severity level that is assigned to the association.</p>
@@ -5886,7 +5882,7 @@ impl AssociationDescription {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The instance ID.</p>
+    /// <p>The managed node ID.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -5932,7 +5928,7 @@ impl AssociationDescription {
     pub fn association_id(&self) -> std::option::Option<&str> {
         self.association_id.as_deref()
     }
-    /// <p>The instances targeted by the request. </p>
+    /// <p>The managed nodes targeted by the request. </p>
     pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
         self.targets.as_deref()
     }
@@ -5965,8 +5961,8 @@ impl AssociationDescription {
     /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
     /// the system stops sending requests when the fourth error is received. If you specify 0, then the
     /// system stops sending requests after the first error is returned. If you run an association on 50
-    /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
-    /// the sixth error is received.</p>
+    /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
+    /// when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
     /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
     /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
@@ -5977,9 +5973,9 @@ impl AssociationDescription {
     /// <p>The maximum number of targets allowed to run the association at the same time. You can
     /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
     /// value is 100%, which means all targets run the association at the same time.</p>
-    /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+    /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
     /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-    /// association interval, the new instance will process its association within the limit specified
+    /// association interval, the new managed node will process its association within the limit specified
     /// for <code>MaxConcurrency</code>.</p>
     pub fn max_concurrency(&self) -> std::option::Option<&str> {
         self.max_concurrency.as_deref()
@@ -6041,7 +6037,7 @@ impl std::fmt::Debug for AssociationDescription {
             "automation_target_parameter_name",
             &self.automation_target_parameter_name,
         );
-        formatter.field("parameters", &self.parameters);
+        formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("association_id", &self.association_id);
         formatter.field("targets", &self.targets);
         formatter.field("schedule_expression", &self.schedule_expression);
@@ -6112,12 +6108,12 @@ pub mod association_description {
             self.name = input;
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -6259,14 +6255,14 @@ pub mod association_description {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The instances targeted by the request. </p>
+        /// <p>The managed nodes targeted by the request. </p>
         pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
             let mut v = self.targets.unwrap_or_default();
             v.push(input.into());
             self.targets = Some(v);
             self
         }
-        /// <p>The instances targeted by the request. </p>
+        /// <p>The managed nodes targeted by the request. </p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -6347,8 +6343,8 @@ pub mod association_description {
         /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
         /// the system stops sending requests when the fourth error is received. If you specify 0, then the
         /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
-        /// the sixth error is received.</p>
+        /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
+        /// when the sixth error is received.</p>
         /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
         /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
         /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
@@ -6362,8 +6358,8 @@ pub mod association_description {
         /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
         /// the system stops sending requests when the fourth error is received. If you specify 0, then the
         /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
-        /// the sixth error is received.</p>
+        /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
+        /// when the sixth error is received.</p>
         /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
         /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
         /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
@@ -6375,9 +6371,9 @@ pub mod association_description {
         /// <p>The maximum number of targets allowed to run the association at the same time. You can
         /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
         /// value is 100%, which means all targets run the association at the same time.</p>
-        /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
         /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-        /// association interval, the new instance will process its association within the limit specified
+        /// association interval, the new managed node will process its association within the limit specified
         /// for <code>MaxConcurrency</code>.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
@@ -6386,9 +6382,9 @@ pub mod association_description {
         /// <p>The maximum number of targets allowed to run the association at the same time. You can
         /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
         /// value is 100%, which means all targets run the association at the same time.</p>
-        /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
         /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-        /// association interval, the new instance will process its association within the limit specified
+        /// association interval, the new managed node will process its association within the limit specified
         /// for <code>MaxConcurrency</code>.</p>
         pub fn set_max_concurrency(
             mut self,
@@ -7014,8 +7010,8 @@ pub struct AssociationOverview {
     /// <p>A detailed status of the association.</p>
     pub detailed_status: std::option::Option<std::string::String>,
     /// <p>Returns the number of targets for the association status. For example, if you created an
-    /// association with two instances, and one of them was successful, this would return the count of
-    /// instances by status.</p>
+    /// association with two managed nodes, and one of them was successful, this would return the count
+    /// of managed nodes by status.</p>
     pub association_status_aggregated_count:
         std::option::Option<std::collections::HashMap<std::string::String, i32>>,
 }
@@ -7029,8 +7025,8 @@ impl AssociationOverview {
         self.detailed_status.as_deref()
     }
     /// <p>Returns the number of targets for the association status. For example, if you created an
-    /// association with two instances, and one of them was successful, this would return the count of
-    /// instances by status.</p>
+    /// association with two managed nodes, and one of them was successful, this would return the count
+    /// of managed nodes by status.</p>
     pub fn association_status_aggregated_count(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i32>> {
@@ -7089,8 +7085,8 @@ pub mod association_overview {
         /// To override the contents of this collection use [`set_association_status_aggregated_count`](Self::set_association_status_aggregated_count).
         ///
         /// <p>Returns the number of targets for the association status. For example, if you created an
-        /// association with two instances, and one of them was successful, this would return the count of
-        /// instances by status.</p>
+        /// association with two managed nodes, and one of them was successful, this would return the count
+        /// of managed nodes by status.</p>
         pub fn association_status_aggregated_count(
             mut self,
             k: impl Into<std::string::String>,
@@ -7102,8 +7098,8 @@ pub mod association_overview {
             self
         }
         /// <p>Returns the number of targets for the association status. For example, if you created an
-        /// association with two instances, and one of them was successful, this would return the count of
-        /// instances by status.</p>
+        /// association with two managed nodes, and one of them was successful, this would return the count
+        /// of managed nodes by status.</p>
         pub fn set_association_status_aggregated_count(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
@@ -7712,10 +7708,11 @@ pub struct Command {
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
-    /// <p>The instance IDs against which this command was requested.</p>
+    /// <p>The managed node IDs against which this command was requested.</p>
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An array of search criteria that targets instances using a Key,Value combination that you
-    /// specify. Targets is required if you don't provide one or more instance IDs in the call.</p>
+    /// <p>An array of search criteria that targets managed nodes using a Key,Value combination that
+    /// you specify. Targets is required if you don't provide one or more managed node IDs in the
+    /// call.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The date and time the command was requested.</p>
     pub requested_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -7729,11 +7726,11 @@ pub struct Command {
     /// following values:</p>
     /// <ul>
     /// <li>
-    /// <p>Pending: The command hasn't been sent to any instances.</p>
+    /// <p>Pending: The command hasn't been sent to any managed nodes.</p>
     /// </li>
     /// <li>
-    /// <p>In Progress: The command has been sent to at least one instance but hasn't reached a final
-    /// state on all instances.</p>
+    /// <p>In Progress: The command has been sent to at least one managed node but hasn't reached a final
+    /// state on all managed nodes.</p>
     /// </li>
     /// <li>
     /// <p>Success: The command successfully ran on all invocations. This is a terminal state.</p>
@@ -7751,18 +7748,18 @@ pub struct Command {
     /// is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Incomplete: The command was attempted on all instances and one or more invocations doesn't
-    /// have a value of Success but not enough invocations failed for the status to be Failed. This is
-    /// a terminal state.</p>
+    /// <p>Incomplete: The command was attempted on all managed nodes and one or more invocations
+    /// doesn't have a value of Success but not enough invocations failed for the status to be Failed.
+    /// This is a terminal state.</p>
     /// </li>
     /// <li>
     /// <p>Canceled: The command was terminated before it was completed. This is a terminal
     /// state.</p>
     /// </li>
     /// <li>
-    /// <p>Rate Exceeded: The number of instances targeted by the command exceeded the account limit
-    /// for pending invocations. The system has canceled the command before running it on any instance.
-    /// This is a terminal state.</p>
+    /// <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account
+    /// limit for pending invocations. The system has canceled the command before running it on any
+    /// managed node. This is a terminal state.</p>
     /// </li>
     /// </ul>
     pub status_details: std::option::Option<std::string::String>,
@@ -7775,8 +7772,8 @@ pub struct Command {
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should
     /// be stored. This was requested when issuing the command.</p>
     pub output_s3_key_prefix: std::option::Option<std::string::String>,
-    /// <p>The maximum number of instances that are allowed to run the command at the same time. You
-    /// can specify a number of instances, such as 10, or a percentage of instances, such as 10%. The
+    /// <p>The maximum number of managed nodes that are allowed to run the command at the same time.
+    /// You can specify a number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The
     /// default value is 50. For more information about how to use <code>MaxConcurrency</code>, see
     /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
     /// commands using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -7841,12 +7838,13 @@ impl Command {
     > {
         self.parameters.as_ref()
     }
-    /// <p>The instance IDs against which this command was requested.</p>
+    /// <p>The managed node IDs against which this command was requested.</p>
     pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_ids.as_deref()
     }
-    /// <p>An array of search criteria that targets instances using a Key,Value combination that you
-    /// specify. Targets is required if you don't provide one or more instance IDs in the call.</p>
+    /// <p>An array of search criteria that targets managed nodes using a Key,Value combination that
+    /// you specify. Targets is required if you don't provide one or more managed node IDs in the
+    /// call.</p>
     pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
         self.targets.as_deref()
     }
@@ -7866,11 +7864,11 @@ impl Command {
     /// following values:</p>
     /// <ul>
     /// <li>
-    /// <p>Pending: The command hasn't been sent to any instances.</p>
+    /// <p>Pending: The command hasn't been sent to any managed nodes.</p>
     /// </li>
     /// <li>
-    /// <p>In Progress: The command has been sent to at least one instance but hasn't reached a final
-    /// state on all instances.</p>
+    /// <p>In Progress: The command has been sent to at least one managed node but hasn't reached a final
+    /// state on all managed nodes.</p>
     /// </li>
     /// <li>
     /// <p>Success: The command successfully ran on all invocations. This is a terminal state.</p>
@@ -7888,18 +7886,18 @@ impl Command {
     /// is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Incomplete: The command was attempted on all instances and one or more invocations doesn't
-    /// have a value of Success but not enough invocations failed for the status to be Failed. This is
-    /// a terminal state.</p>
+    /// <p>Incomplete: The command was attempted on all managed nodes and one or more invocations
+    /// doesn't have a value of Success but not enough invocations failed for the status to be Failed.
+    /// This is a terminal state.</p>
     /// </li>
     /// <li>
     /// <p>Canceled: The command was terminated before it was completed. This is a terminal
     /// state.</p>
     /// </li>
     /// <li>
-    /// <p>Rate Exceeded: The number of instances targeted by the command exceeded the account limit
-    /// for pending invocations. The system has canceled the command before running it on any instance.
-    /// This is a terminal state.</p>
+    /// <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account
+    /// limit for pending invocations. The system has canceled the command before running it on any
+    /// managed node. This is a terminal state.</p>
     /// </li>
     /// </ul>
     pub fn status_details(&self) -> std::option::Option<&str> {
@@ -7920,8 +7918,8 @@ impl Command {
     pub fn output_s3_key_prefix(&self) -> std::option::Option<&str> {
         self.output_s3_key_prefix.as_deref()
     }
-    /// <p>The maximum number of instances that are allowed to run the command at the same time. You
-    /// can specify a number of instances, such as 10, or a percentage of instances, such as 10%. The
+    /// <p>The maximum number of managed nodes that are allowed to run the command at the same time.
+    /// You can specify a number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The
     /// default value is 50. For more information about how to use <code>MaxConcurrency</code>, see
     /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
     /// commands using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -7984,7 +7982,7 @@ impl std::fmt::Debug for Command {
         formatter.field("document_version", &self.document_version);
         formatter.field("comment", &self.comment);
         formatter.field("expires_after", &self.expires_after);
-        formatter.field("parameters", &self.parameters);
+        formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("instance_ids", &self.instance_ids);
         formatter.field("targets", &self.targets);
         formatter.field("requested_date_time", &self.requested_date_time);
@@ -8135,14 +8133,14 @@ pub mod command {
         ///
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
-        /// <p>The instance IDs against which this command was requested.</p>
+        /// <p>The managed node IDs against which this command was requested.</p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
             v.push(input.into());
             self.instance_ids = Some(v);
             self
         }
-        /// <p>The instance IDs against which this command was requested.</p>
+        /// <p>The managed node IDs against which this command was requested.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8154,16 +8152,18 @@ pub mod command {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>An array of search criteria that targets instances using a Key,Value combination that you
-        /// specify. Targets is required if you don't provide one or more instance IDs in the call.</p>
+        /// <p>An array of search criteria that targets managed nodes using a Key,Value combination that
+        /// you specify. Targets is required if you don't provide one or more managed node IDs in the
+        /// call.</p>
         pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
             let mut v = self.targets.unwrap_or_default();
             v.push(input.into());
             self.targets = Some(v);
             self
         }
-        /// <p>An array of search criteria that targets instances using a Key,Value combination that you
-        /// specify. Targets is required if you don't provide one or more instance IDs in the call.</p>
+        /// <p>An array of search criteria that targets managed nodes using a Key,Value combination that
+        /// you specify. Targets is required if you don't provide one or more managed node IDs in the
+        /// call.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -8205,11 +8205,11 @@ pub mod command {
         /// following values:</p>
         /// <ul>
         /// <li>
-        /// <p>Pending: The command hasn't been sent to any instances.</p>
+        /// <p>Pending: The command hasn't been sent to any managed nodes.</p>
         /// </li>
         /// <li>
-        /// <p>In Progress: The command has been sent to at least one instance but hasn't reached a final
-        /// state on all instances.</p>
+        /// <p>In Progress: The command has been sent to at least one managed node but hasn't reached a final
+        /// state on all managed nodes.</p>
         /// </li>
         /// <li>
         /// <p>Success: The command successfully ran on all invocations. This is a terminal state.</p>
@@ -8227,18 +8227,18 @@ pub mod command {
         /// is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Incomplete: The command was attempted on all instances and one or more invocations doesn't
-        /// have a value of Success but not enough invocations failed for the status to be Failed. This is
-        /// a terminal state.</p>
+        /// <p>Incomplete: The command was attempted on all managed nodes and one or more invocations
+        /// doesn't have a value of Success but not enough invocations failed for the status to be Failed.
+        /// This is a terminal state.</p>
         /// </li>
         /// <li>
         /// <p>Canceled: The command was terminated before it was completed. This is a terminal
         /// state.</p>
         /// </li>
         /// <li>
-        /// <p>Rate Exceeded: The number of instances targeted by the command exceeded the account limit
-        /// for pending invocations. The system has canceled the command before running it on any instance.
-        /// This is a terminal state.</p>
+        /// <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account
+        /// limit for pending invocations. The system has canceled the command before running it on any
+        /// managed node. This is a terminal state.</p>
         /// </li>
         /// </ul>
         pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8253,11 +8253,11 @@ pub mod command {
         /// following values:</p>
         /// <ul>
         /// <li>
-        /// <p>Pending: The command hasn't been sent to any instances.</p>
+        /// <p>Pending: The command hasn't been sent to any managed nodes.</p>
         /// </li>
         /// <li>
-        /// <p>In Progress: The command has been sent to at least one instance but hasn't reached a final
-        /// state on all instances.</p>
+        /// <p>In Progress: The command has been sent to at least one managed node but hasn't reached a final
+        /// state on all managed nodes.</p>
         /// </li>
         /// <li>
         /// <p>Success: The command successfully ran on all invocations. This is a terminal state.</p>
@@ -8275,18 +8275,18 @@ pub mod command {
         /// is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Incomplete: The command was attempted on all instances and one or more invocations doesn't
-        /// have a value of Success but not enough invocations failed for the status to be Failed. This is
-        /// a terminal state.</p>
+        /// <p>Incomplete: The command was attempted on all managed nodes and one or more invocations
+        /// doesn't have a value of Success but not enough invocations failed for the status to be Failed.
+        /// This is a terminal state.</p>
         /// </li>
         /// <li>
         /// <p>Canceled: The command was terminated before it was completed. This is a terminal
         /// state.</p>
         /// </li>
         /// <li>
-        /// <p>Rate Exceeded: The number of instances targeted by the command exceeded the account limit
-        /// for pending invocations. The system has canceled the command before running it on any instance.
-        /// This is a terminal state.</p>
+        /// <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account
+        /// limit for pending invocations. The system has canceled the command before running it on any
+        /// managed node. This is a terminal state.</p>
         /// </li>
         /// </ul>
         pub fn set_status_details(
@@ -8341,8 +8341,8 @@ pub mod command {
             self.output_s3_key_prefix = input;
             self
         }
-        /// <p>The maximum number of instances that are allowed to run the command at the same time. You
-        /// can specify a number of instances, such as 10, or a percentage of instances, such as 10%. The
+        /// <p>The maximum number of managed nodes that are allowed to run the command at the same time.
+        /// You can specify a number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The
         /// default value is 50. For more information about how to use <code>MaxConcurrency</code>, see
         /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
         /// commands using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -8350,8 +8350,8 @@ pub mod command {
             self.max_concurrency = Some(input.into());
             self
         }
-        /// <p>The maximum number of instances that are allowed to run the command at the same time. You
-        /// can specify a number of instances, such as 10, or a percentage of instances, such as 10%. The
+        /// <p>The maximum number of managed nodes that are allowed to run the command at the same time.
+        /// You can specify a number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The
         /// default value is 50. For more information about how to use <code>MaxConcurrency</code>, see
         /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
         /// commands using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -9217,7 +9217,7 @@ impl AsRef<str> for ParameterType {
     }
 }
 
-/// <p>Information collected from managed instances based on your inventory policy document</p>
+/// <p>Information collected from managed nodes based on your inventory policy document</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryItem {
@@ -11129,7 +11129,7 @@ impl NonCompliantSummary {
     }
 }
 
-/// <p>The number of managed instances found for each patch severity level defined in the request
+/// <p>The number of managed nodes found for each patch severity level defined in the request
 /// filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -12702,7 +12702,7 @@ impl AsRef<str> for OpsItemEventFilterKey {
 pub struct InventoryFilter {
     /// <p>The name of the filter key.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>Inventory filter values. Example: inventory filter where instance IDs are specified as
+    /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as
     /// values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g,
     /// i-1a2b3c4d5e6,Type=Equal</code>. </p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12719,7 +12719,7 @@ impl InventoryFilter {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Inventory filter values. Example: inventory filter where instance IDs are specified as
+    /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as
     /// values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g,
     /// i-1a2b3c4d5e6,Type=Equal</code>. </p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
@@ -12769,7 +12769,7 @@ pub mod inventory_filter {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>Inventory filter values. Example: inventory filter where instance IDs are specified as
+        /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as
         /// values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g,
         /// i-1a2b3c4d5e6,Type=Equal</code>. </p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12778,7 +12778,7 @@ pub mod inventory_filter {
             self.values = Some(v);
             self
         }
-        /// <p>Inventory filter values. Example: inventory filter where instance IDs are specified as
+        /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as
         /// values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g,
         /// i-1a2b3c4d5e6,Type=Equal</code>. </p>
         pub fn set_values(
@@ -14316,7 +14316,7 @@ pub struct ComplianceItem {
     /// <p>The type of resource. <code>ManagedInstance</code> is currently the only supported resource
     /// type.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>An ID for the resource. For a managed instance, this is the instance ID.</p>
+    /// <p>An ID for the resource. For a managed node, this is the node ID.</p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>An ID for the compliance item. For example, if the compliance item is a Windows patch, the
     /// ID could be the number of the KB article; for example: KB4010320.</p>
@@ -14349,7 +14349,7 @@ impl ComplianceItem {
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>An ID for the resource. For a managed instance, this is the instance ID.</p>
+    /// <p>An ID for the resource. For a managed node, this is the node ID.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -14453,12 +14453,12 @@ pub mod compliance_item {
             self.resource_type = input;
             self
         }
-        /// <p>An ID for the resource. For a managed instance, this is the instance ID.</p>
+        /// <p>An ID for the resource. For a managed node, this is the node ID.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>An ID for the resource. For a managed instance, this is the instance ID.</p>
+        /// <p>An ID for the resource. For a managed node, this is the node ID.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -14587,13 +14587,17 @@ impl ComplianceItem {
 
 /// <p>Describes a command filter.</p>
 /// <note>
-/// <p>An instance ID can't be specified when a command status is <code>Pending</code> because the
-/// command hasn't run on the instance yet.</p>
+/// <p>A managed node ID can't be specified when a command status is <code>Pending</code> because the
+/// command hasn't run on the node yet.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommandFilter {
     /// <p>The name of the filter.</p>
+    /// <note>
+    /// <p>The <code>ExecutionStage</code> filter can't be used with the
+    /// <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
+    /// </note>
     pub key: std::option::Option<crate::model::CommandFilterKey>,
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
@@ -14748,12 +14752,12 @@ pub struct CommandFilter {
     /// <b>DocumentName</b>: Specify name of the Amazon Web Services Systems Manager document (SSM
     /// document) for which you want to see command execution results. For example, specify
     /// <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM document to
-    /// perform security patching operations on instances. </p>
+    /// perform security patching operations on managed nodes. </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <b>ExecutionStage</b>: Specify one of the following
-    /// values:</p>
+    /// <b>ExecutionStage</b>: Specify one of the following values
+    /// (<code>ListCommands</code> operations only):</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -14772,6 +14776,10 @@ pub struct CommandFilter {
 }
 impl CommandFilter {
     /// <p>The name of the filter.</p>
+    /// <note>
+    /// <p>The <code>ExecutionStage</code> filter can't be used with the
+    /// <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
+    /// </note>
     pub fn key(&self) -> std::option::Option<&crate::model::CommandFilterKey> {
         self.key.as_ref()
     }
@@ -14928,12 +14936,12 @@ impl CommandFilter {
     /// <b>DocumentName</b>: Specify name of the Amazon Web Services Systems Manager document (SSM
     /// document) for which you want to see command execution results. For example, specify
     /// <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM document to
-    /// perform security patching operations on instances. </p>
+    /// perform security patching operations on managed nodes. </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <b>ExecutionStage</b>: Specify one of the following
-    /// values:</p>
+    /// <b>ExecutionStage</b>: Specify one of the following values
+    /// (<code>ListCommands</code> operations only):</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -14971,11 +14979,19 @@ pub mod command_filter {
     }
     impl Builder {
         /// <p>The name of the filter.</p>
+        /// <note>
+        /// <p>The <code>ExecutionStage</code> filter can't be used with the
+        /// <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
+        /// </note>
         pub fn key(mut self, input: crate::model::CommandFilterKey) -> Self {
             self.key = Some(input);
             self
         }
         /// <p>The name of the filter.</p>
+        /// <note>
+        /// <p>The <code>ExecutionStage</code> filter can't be used with the
+        /// <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
+        /// </note>
         pub fn set_key(
             mut self,
             input: std::option::Option<crate::model::CommandFilterKey>,
@@ -15136,12 +15152,12 @@ pub mod command_filter {
         /// <b>DocumentName</b>: Specify name of the Amazon Web Services Systems Manager document (SSM
         /// document) for which you want to see command execution results. For example, specify
         /// <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM document to
-        /// perform security patching operations on instances. </p>
+        /// perform security patching operations on managed nodes. </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <b>ExecutionStage</b>: Specify one of the following
-        /// values:</p>
+        /// <b>ExecutionStage</b>: Specify one of the following values
+        /// (<code>ListCommands</code> operations only):</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -15313,12 +15329,12 @@ pub mod command_filter {
         /// <b>DocumentName</b>: Specify name of the Amazon Web Services Systems Manager document (SSM
         /// document) for which you want to see command execution results. For example, specify
         /// <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM document to
-        /// perform security patching operations on instances. </p>
+        /// perform security patching operations on managed nodes. </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <b>ExecutionStage</b>: Specify one of the following
-        /// values:</p>
+        /// <b>ExecutionStage</b>: Specify one of the following values
+        /// (<code>ListCommands</code> operations only):</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -15426,19 +15442,19 @@ impl AsRef<str> for CommandFilterKey {
     }
 }
 
-/// <p>An invocation is copy of a command sent to a specific instance. A command can apply to one
-/// or more instances. A command invocation applies to one instance. For example, if a user runs
-/// SendCommand against three instances, then a command invocation is created for each requested
-/// instance ID. A command invocation returns status and detail information about a command you ran.
-/// </p>
+/// <p>An invocation is a copy of a command sent to a specific managed node. A command can apply to one
+/// or more managed nodes. A command invocation applies to one managed node. For example, if a user runs
+/// <code>SendCommand</code> against three managed nodes, then a command invocation is created for
+/// each requested managed node ID. A command invocation returns status and detail information about a
+/// command you ran. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommandInvocation {
     /// <p>The command against which this invocation was requested.</p>
     pub command_id: std::option::Option<std::string::String>,
-    /// <p>The instance ID in which this invocation was requested.</p>
+    /// <p>The managed node ID in which this invocation was requested.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The fully qualified host name of the managed instance.</p>
+    /// <p>The fully qualified host name of the managed node.</p>
     pub instance_name: std::option::Option<std::string::String>,
     /// <p>User-specified information about the command, such as a brief description of what the
     /// command should do.</p>
@@ -15447,11 +15463,11 @@ pub struct CommandInvocation {
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The Systems Manager document (SSM document) version.</p>
     pub document_version: std::option::Option<std::string::String>,
-    /// <p>The time and date the request was sent to this instance.</p>
+    /// <p>The time and date the request was sent to this managed node.</p>
     pub requested_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Whether or not the invocation succeeded, failed, or is pending.</p>
     pub status: std::option::Option<crate::model::CommandInvocationStatus>,
-    /// <p>A detailed status of the command execution for each invocation (each instance targeted by
+    /// <p>A detailed status of the command execution for each invocation (each managed node targeted by
     /// the command). StatusDetails includes more information than Status because it includes states
     /// resulting from error and concurrency control parameters. StatusDetails can show different results
     /// than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
@@ -15459,10 +15475,10 @@ pub struct CommandInvocation {
     /// following values:</p>
     /// <ul>
     /// <li>
-    /// <p>Pending: The command hasn't been sent to the instance.</p>
+    /// <p>Pending: The command hasn't been sent to the managed node.</p>
     /// </li>
     /// <li>
-    /// <p>In Progress: The command has been sent to the instance but hasn't reached a terminal
+    /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal
     /// state.</p>
     /// </li>
     /// <li>
@@ -15470,18 +15486,18 @@ pub struct CommandInvocation {
     /// terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+    /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
     /// timeout expired. Delivery timeouts don't count against the parent command's
     /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
     /// Success or Incomplete. This is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Execution Timed Out: Command execution started on the instance, but the execution wasn't
+    /// <p>Execution Timed Out: Command execution started on the managed node, but the execution wasn't
     /// complete before the execution timeout expired. Execution timeouts count against the
     /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Failed: The command wasn't successful on the instance. For a plugin, this indicates that
+    /// <p>Failed: The command wasn't successful on the managed node. For a plugin, this indicates that
     /// the result code wasn't zero. For a command invocation, this indicates that the result code for
     /// one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code>
     /// limit of the parent command. This is a terminal state.</p>
@@ -15491,7 +15507,7 @@ pub struct CommandInvocation {
     /// state.</p>
     /// </li>
     /// <li>
-    /// <p>Undeliverable: The command can't be delivered to the instance. The instance might not
+    /// <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not
     /// exist or might not be responding. Undeliverable invocations don't count against the parent
     /// command's MaxErrors limit and don't contribute to whether the parent command status is Success
     /// or Incomplete. This is a terminal state.</p>
@@ -15518,9 +15534,9 @@ pub struct CommandInvocation {
     pub command_plugins: std::option::Option<std::vec::Vec<crate::model::CommandPlugin>>,
     /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability
     /// of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes
-    /// on a per instance basis.</p>
+    /// on a per managed node basis.</p>
     pub service_role: std::option::Option<std::string::String>,
-    /// <p>Configurations for sending notifications about command status changes on a per instance
+    /// <p>Configurations for sending notifications about command status changes on a per managed node
     /// basis.</p>
     pub notification_config: std::option::Option<crate::model::NotificationConfig>,
     /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command
@@ -15532,11 +15548,11 @@ impl CommandInvocation {
     pub fn command_id(&self) -> std::option::Option<&str> {
         self.command_id.as_deref()
     }
-    /// <p>The instance ID in which this invocation was requested.</p>
+    /// <p>The managed node ID in which this invocation was requested.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The fully qualified host name of the managed instance.</p>
+    /// <p>The fully qualified host name of the managed node.</p>
     pub fn instance_name(&self) -> std::option::Option<&str> {
         self.instance_name.as_deref()
     }
@@ -15553,7 +15569,7 @@ impl CommandInvocation {
     pub fn document_version(&self) -> std::option::Option<&str> {
         self.document_version.as_deref()
     }
-    /// <p>The time and date the request was sent to this instance.</p>
+    /// <p>The time and date the request was sent to this managed node.</p>
     pub fn requested_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.requested_date_time.as_ref()
     }
@@ -15561,7 +15577,7 @@ impl CommandInvocation {
     pub fn status(&self) -> std::option::Option<&crate::model::CommandInvocationStatus> {
         self.status.as_ref()
     }
-    /// <p>A detailed status of the command execution for each invocation (each instance targeted by
+    /// <p>A detailed status of the command execution for each invocation (each managed node targeted by
     /// the command). StatusDetails includes more information than Status because it includes states
     /// resulting from error and concurrency control parameters. StatusDetails can show different results
     /// than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
@@ -15569,10 +15585,10 @@ impl CommandInvocation {
     /// following values:</p>
     /// <ul>
     /// <li>
-    /// <p>Pending: The command hasn't been sent to the instance.</p>
+    /// <p>Pending: The command hasn't been sent to the managed node.</p>
     /// </li>
     /// <li>
-    /// <p>In Progress: The command has been sent to the instance but hasn't reached a terminal
+    /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal
     /// state.</p>
     /// </li>
     /// <li>
@@ -15580,18 +15596,18 @@ impl CommandInvocation {
     /// terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+    /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
     /// timeout expired. Delivery timeouts don't count against the parent command's
     /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
     /// Success or Incomplete. This is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Execution Timed Out: Command execution started on the instance, but the execution wasn't
+    /// <p>Execution Timed Out: Command execution started on the managed node, but the execution wasn't
     /// complete before the execution timeout expired. Execution timeouts count against the
     /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Failed: The command wasn't successful on the instance. For a plugin, this indicates that
+    /// <p>Failed: The command wasn't successful on the managed node. For a plugin, this indicates that
     /// the result code wasn't zero. For a command invocation, this indicates that the result code for
     /// one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code>
     /// limit of the parent command. This is a terminal state.</p>
@@ -15601,7 +15617,7 @@ impl CommandInvocation {
     /// state.</p>
     /// </li>
     /// <li>
-    /// <p>Undeliverable: The command can't be delivered to the instance. The instance might not
+    /// <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not
     /// exist or might not be responding. Undeliverable invocations don't count against the parent
     /// command's MaxErrors limit and don't contribute to whether the parent command status is Success
     /// or Incomplete. This is a terminal state.</p>
@@ -15638,11 +15654,11 @@ impl CommandInvocation {
     }
     /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability
     /// of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes
-    /// on a per instance basis.</p>
+    /// on a per managed node basis.</p>
     pub fn service_role(&self) -> std::option::Option<&str> {
         self.service_role.as_deref()
     }
-    /// <p>Configurations for sending notifications about command status changes on a per instance
+    /// <p>Configurations for sending notifications about command status changes on a per managed node
     /// basis.</p>
     pub fn notification_config(&self) -> std::option::Option<&crate::model::NotificationConfig> {
         self.notification_config.as_ref()
@@ -15712,22 +15728,22 @@ pub mod command_invocation {
             self.command_id = input;
             self
         }
-        /// <p>The instance ID in which this invocation was requested.</p>
+        /// <p>The managed node ID in which this invocation was requested.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The instance ID in which this invocation was requested.</p>
+        /// <p>The managed node ID in which this invocation was requested.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
         }
-        /// <p>The fully qualified host name of the managed instance.</p>
+        /// <p>The fully qualified host name of the managed node.</p>
         pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_name = Some(input.into());
             self
         }
-        /// <p>The fully qualified host name of the managed instance.</p>
+        /// <p>The fully qualified host name of the managed node.</p>
         pub fn set_instance_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15773,12 +15789,12 @@ pub mod command_invocation {
             self.document_version = input;
             self
         }
-        /// <p>The time and date the request was sent to this instance.</p>
+        /// <p>The time and date the request was sent to this managed node.</p>
         pub fn requested_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.requested_date_time = Some(input);
             self
         }
-        /// <p>The time and date the request was sent to this instance.</p>
+        /// <p>The time and date the request was sent to this managed node.</p>
         pub fn set_requested_date_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -15799,7 +15815,7 @@ pub mod command_invocation {
             self.status = input;
             self
         }
-        /// <p>A detailed status of the command execution for each invocation (each instance targeted by
+        /// <p>A detailed status of the command execution for each invocation (each managed node targeted by
         /// the command). StatusDetails includes more information than Status because it includes states
         /// resulting from error and concurrency control parameters. StatusDetails can show different results
         /// than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
@@ -15807,10 +15823,10 @@ pub mod command_invocation {
         /// following values:</p>
         /// <ul>
         /// <li>
-        /// <p>Pending: The command hasn't been sent to the instance.</p>
+        /// <p>Pending: The command hasn't been sent to the managed node.</p>
         /// </li>
         /// <li>
-        /// <p>In Progress: The command has been sent to the instance but hasn't reached a terminal
+        /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal
         /// state.</p>
         /// </li>
         /// <li>
@@ -15818,18 +15834,18 @@ pub mod command_invocation {
         /// terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+        /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
         /// timeout expired. Delivery timeouts don't count against the parent command's
         /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
         /// Success or Incomplete. This is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Execution Timed Out: Command execution started on the instance, but the execution wasn't
+        /// <p>Execution Timed Out: Command execution started on the managed node, but the execution wasn't
         /// complete before the execution timeout expired. Execution timeouts count against the
         /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Failed: The command wasn't successful on the instance. For a plugin, this indicates that
+        /// <p>Failed: The command wasn't successful on the managed node. For a plugin, this indicates that
         /// the result code wasn't zero. For a command invocation, this indicates that the result code for
         /// one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code>
         /// limit of the parent command. This is a terminal state.</p>
@@ -15839,7 +15855,7 @@ pub mod command_invocation {
         /// state.</p>
         /// </li>
         /// <li>
-        /// <p>Undeliverable: The command can't be delivered to the instance. The instance might not
+        /// <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not
         /// exist or might not be responding. Undeliverable invocations don't count against the parent
         /// command's MaxErrors limit and don't contribute to whether the parent command status is Success
         /// or Incomplete. This is a terminal state.</p>
@@ -15853,7 +15869,7 @@ pub mod command_invocation {
             self.status_details = Some(input.into());
             self
         }
-        /// <p>A detailed status of the command execution for each invocation (each instance targeted by
+        /// <p>A detailed status of the command execution for each invocation (each managed node targeted by
         /// the command). StatusDetails includes more information than Status because it includes states
         /// resulting from error and concurrency control parameters. StatusDetails can show different results
         /// than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
@@ -15861,10 +15877,10 @@ pub mod command_invocation {
         /// following values:</p>
         /// <ul>
         /// <li>
-        /// <p>Pending: The command hasn't been sent to the instance.</p>
+        /// <p>Pending: The command hasn't been sent to the managed node.</p>
         /// </li>
         /// <li>
-        /// <p>In Progress: The command has been sent to the instance but hasn't reached a terminal
+        /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal
         /// state.</p>
         /// </li>
         /// <li>
@@ -15872,18 +15888,18 @@ pub mod command_invocation {
         /// terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+        /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
         /// timeout expired. Delivery timeouts don't count against the parent command's
         /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
         /// Success or Incomplete. This is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Execution Timed Out: Command execution started on the instance, but the execution wasn't
+        /// <p>Execution Timed Out: Command execution started on the managed node, but the execution wasn't
         /// complete before the execution timeout expired. Execution timeouts count against the
         /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Failed: The command wasn't successful on the instance. For a plugin, this indicates that
+        /// <p>Failed: The command wasn't successful on the managed node. For a plugin, this indicates that
         /// the result code wasn't zero. For a command invocation, this indicates that the result code for
         /// one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code>
         /// limit of the parent command. This is a terminal state.</p>
@@ -15893,7 +15909,7 @@ pub mod command_invocation {
         /// state.</p>
         /// </li>
         /// <li>
-        /// <p>Undeliverable: The command can't be delivered to the instance. The instance might not
+        /// <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not
         /// exist or might not be responding. Undeliverable invocations don't count against the parent
         /// command's MaxErrors limit and don't contribute to whether the parent command status is Success
         /// or Incomplete. This is a terminal state.</p>
@@ -15979,25 +15995,25 @@ pub mod command_invocation {
         }
         /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability
         /// of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes
-        /// on a per instance basis.</p>
+        /// on a per managed node basis.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());
             self
         }
         /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability
         /// of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes
-        /// on a per instance basis.</p>
+        /// on a per managed node basis.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
             self
         }
-        /// <p>Configurations for sending notifications about command status changes on a per instance
+        /// <p>Configurations for sending notifications about command status changes on a per managed node
         /// basis.</p>
         pub fn notification_config(mut self, input: crate::model::NotificationConfig) -> Self {
             self.notification_config = Some(input);
             self
         }
-        /// <p>Configurations for sending notifications about command status changes on a per instance
+        /// <p>Configurations for sending notifications about command status changes on a per managed node
         /// basis.</p>
         pub fn set_notification_config(
             mut self,
@@ -16073,10 +16089,10 @@ pub struct CommandPlugin {
     /// following values:</p>
     /// <ul>
     /// <li>
-    /// <p>Pending: The command hasn't been sent to the instance.</p>
+    /// <p>Pending: The command hasn't been sent to the managed node.</p>
     /// </li>
     /// <li>
-    /// <p>In Progress: The command has been sent to the instance but hasn't reached a terminal
+    /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal
     /// state.</p>
     /// </li>
     /// <li>
@@ -16084,18 +16100,18 @@ pub struct CommandPlugin {
     /// terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+    /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
     /// timeout expired. Delivery timeouts don't count against the parent command's
     /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
     /// Success or Incomplete. This is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Execution Timed Out: Command execution started on the instance, but the execution wasn't
+    /// <p>Execution Timed Out: Command execution started on the managed node, but the execution wasn't
     /// complete before the execution timeout expired. Execution timeouts count against the
     /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Failed: The command wasn't successful on the instance. For a plugin, this indicates that
+    /// <p>Failed: The command wasn't successful on the managed node. For a plugin, this indicates that
     /// the result code wasn't zero. For a command invocation, this indicates that the result code for
     /// one or more plugins wasn't zero. Invocation failures count against the MaxErrors limit of the
     /// parent command. This is a terminal state.</p>
@@ -16105,7 +16121,7 @@ pub struct CommandPlugin {
     /// state.</p>
     /// </li>
     /// <li>
-    /// <p>Undeliverable: The command can't be delivered to the instance. The instance might not
+    /// <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not
     /// exist, or it might not be responding. Undeliverable invocations don't count against the parent
     /// command's MaxErrors limit, and they don't contribute to whether the parent command status is
     /// Success or Incomplete. This is a terminal state.</p>
@@ -16144,7 +16160,7 @@ pub struct CommandPlugin {
     /// <p>
     /// <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
     /// <p>
-    /// <code>i-02573cafcfEXAMPLE</code> is the instance ID;</p>
+    /// <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p>
     /// <code>awsrunShellScript</code> is the name of the plugin.</p>
     pub output_s3_bucket_name: std::option::Option<std::string::String>,
@@ -16159,7 +16175,7 @@ pub struct CommandPlugin {
     /// <p>
     /// <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
     /// <p>
-    /// <code>i-02573cafcfEXAMPLE</code> is the instance ID;</p>
+    /// <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p>
     /// <code>awsrunShellScript</code> is the name of the plugin.</p>
     pub output_s3_key_prefix: std::option::Option<std::string::String>,
@@ -16184,10 +16200,10 @@ impl CommandPlugin {
     /// following values:</p>
     /// <ul>
     /// <li>
-    /// <p>Pending: The command hasn't been sent to the instance.</p>
+    /// <p>Pending: The command hasn't been sent to the managed node.</p>
     /// </li>
     /// <li>
-    /// <p>In Progress: The command has been sent to the instance but hasn't reached a terminal
+    /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal
     /// state.</p>
     /// </li>
     /// <li>
@@ -16195,18 +16211,18 @@ impl CommandPlugin {
     /// terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+    /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
     /// timeout expired. Delivery timeouts don't count against the parent command's
     /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
     /// Success or Incomplete. This is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Execution Timed Out: Command execution started on the instance, but the execution wasn't
+    /// <p>Execution Timed Out: Command execution started on the managed node, but the execution wasn't
     /// complete before the execution timeout expired. Execution timeouts count against the
     /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Failed: The command wasn't successful on the instance. For a plugin, this indicates that
+    /// <p>Failed: The command wasn't successful on the managed node. For a plugin, this indicates that
     /// the result code wasn't zero. For a command invocation, this indicates that the result code for
     /// one or more plugins wasn't zero. Invocation failures count against the MaxErrors limit of the
     /// parent command. This is a terminal state.</p>
@@ -16216,7 +16232,7 @@ impl CommandPlugin {
     /// state.</p>
     /// </li>
     /// <li>
-    /// <p>Undeliverable: The command can't be delivered to the instance. The instance might not
+    /// <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not
     /// exist, or it might not be responding. Undeliverable invocations don't count against the parent
     /// command's MaxErrors limit, and they don't contribute to whether the parent command status is
     /// Success or Incomplete. This is a terminal state.</p>
@@ -16271,7 +16287,7 @@ impl CommandPlugin {
     /// <p>
     /// <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
     /// <p>
-    /// <code>i-02573cafcfEXAMPLE</code> is the instance ID;</p>
+    /// <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p>
     /// <code>awsrunShellScript</code> is the name of the plugin.</p>
     pub fn output_s3_bucket_name(&self) -> std::option::Option<&str> {
@@ -16288,7 +16304,7 @@ impl CommandPlugin {
     /// <p>
     /// <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
     /// <p>
-    /// <code>i-02573cafcfEXAMPLE</code> is the instance ID;</p>
+    /// <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p>
     /// <code>awsrunShellScript</code> is the name of the plugin.</p>
     pub fn output_s3_key_prefix(&self) -> std::option::Option<&str> {
@@ -16370,10 +16386,10 @@ pub mod command_plugin {
         /// following values:</p>
         /// <ul>
         /// <li>
-        /// <p>Pending: The command hasn't been sent to the instance.</p>
+        /// <p>Pending: The command hasn't been sent to the managed node.</p>
         /// </li>
         /// <li>
-        /// <p>In Progress: The command has been sent to the instance but hasn't reached a terminal
+        /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal
         /// state.</p>
         /// </li>
         /// <li>
@@ -16381,18 +16397,18 @@ pub mod command_plugin {
         /// terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+        /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
         /// timeout expired. Delivery timeouts don't count against the parent command's
         /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
         /// Success or Incomplete. This is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Execution Timed Out: Command execution started on the instance, but the execution wasn't
+        /// <p>Execution Timed Out: Command execution started on the managed node, but the execution wasn't
         /// complete before the execution timeout expired. Execution timeouts count against the
         /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Failed: The command wasn't successful on the instance. For a plugin, this indicates that
+        /// <p>Failed: The command wasn't successful on the managed node. For a plugin, this indicates that
         /// the result code wasn't zero. For a command invocation, this indicates that the result code for
         /// one or more plugins wasn't zero. Invocation failures count against the MaxErrors limit of the
         /// parent command. This is a terminal state.</p>
@@ -16402,7 +16418,7 @@ pub mod command_plugin {
         /// state.</p>
         /// </li>
         /// <li>
-        /// <p>Undeliverable: The command can't be delivered to the instance. The instance might not
+        /// <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not
         /// exist, or it might not be responding. Undeliverable invocations don't count against the parent
         /// command's MaxErrors limit, and they don't contribute to whether the parent command status is
         /// Success or Incomplete. This is a terminal state.</p>
@@ -16424,10 +16440,10 @@ pub mod command_plugin {
         /// following values:</p>
         /// <ul>
         /// <li>
-        /// <p>Pending: The command hasn't been sent to the instance.</p>
+        /// <p>Pending: The command hasn't been sent to the managed node.</p>
         /// </li>
         /// <li>
-        /// <p>In Progress: The command has been sent to the instance but hasn't reached a terminal
+        /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal
         /// state.</p>
         /// </li>
         /// <li>
@@ -16435,18 +16451,18 @@ pub mod command_plugin {
         /// terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+        /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
         /// timeout expired. Delivery timeouts don't count against the parent command's
         /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
         /// Success or Incomplete. This is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Execution Timed Out: Command execution started on the instance, but the execution wasn't
+        /// <p>Execution Timed Out: Command execution started on the managed node, but the execution wasn't
         /// complete before the execution timeout expired. Execution timeouts count against the
         /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Failed: The command wasn't successful on the instance. For a plugin, this indicates that
+        /// <p>Failed: The command wasn't successful on the managed node. For a plugin, this indicates that
         /// the result code wasn't zero. For a command invocation, this indicates that the result code for
         /// one or more plugins wasn't zero. Invocation failures count against the MaxErrors limit of the
         /// parent command. This is a terminal state.</p>
@@ -16456,7 +16472,7 @@ pub mod command_plugin {
         /// state.</p>
         /// </li>
         /// <li>
-        /// <p>Undeliverable: The command can't be delivered to the instance. The instance might not
+        /// <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not
         /// exist, or it might not be responding. Undeliverable invocations don't count against the parent
         /// command's MaxErrors limit, and they don't contribute to whether the parent command status is
         /// Success or Incomplete. This is a terminal state.</p>
@@ -16576,7 +16592,7 @@ pub mod command_plugin {
         /// <p>
         /// <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
         /// <p>
-        /// <code>i-02573cafcfEXAMPLE</code> is the instance ID;</p>
+        /// <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
         /// <p>
         /// <code>awsrunShellScript</code> is the name of the plugin.</p>
         pub fn output_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16593,7 +16609,7 @@ pub mod command_plugin {
         /// <p>
         /// <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
         /// <p>
-        /// <code>i-02573cafcfEXAMPLE</code> is the instance ID;</p>
+        /// <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
         /// <p>
         /// <code>awsrunShellScript</code> is the name of the plugin.</p>
         pub fn set_output_s3_bucket_name(
@@ -16614,7 +16630,7 @@ pub mod command_plugin {
         /// <p>
         /// <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
         /// <p>
-        /// <code>i-02573cafcfEXAMPLE</code> is the instance ID;</p>
+        /// <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
         /// <p>
         /// <code>awsrunShellScript</code> is the name of the plugin.</p>
         pub fn output_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16632,7 +16648,7 @@ pub mod command_plugin {
         /// <p>
         /// <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
         /// <p>
-        /// <code>i-02573cafcfEXAMPLE</code> is the instance ID;</p>
+        /// <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
         /// <p>
         /// <code>awsrunShellScript</code> is the name of the plugin.</p>
         pub fn set_output_s3_key_prefix(
@@ -16869,8 +16885,8 @@ pub struct AssociationVersionInfo {
     /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
     /// the system stops sending requests when the fourth error is received. If you specify 0, then the
     /// system stops sending requests after the first error is returned. If you run an association on 50
-    /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
-    /// the sixth error is received.</p>
+    /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
+    /// when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
     /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
     /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
@@ -16879,9 +16895,9 @@ pub struct AssociationVersionInfo {
     /// <p>The maximum number of targets allowed to run the association at the same time. You can
     /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
     /// value is 100%, which means all targets run the association at the same time.</p>
-    /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+    /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
     /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-    /// association interval, the new instance will process its association within the limit specified
+    /// association interval, the new managed node will process its association within the limit specified
     /// for <code>MaxConcurrency</code>.</p>
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The severity level that is assigned to the association.</p>
@@ -16967,8 +16983,8 @@ impl AssociationVersionInfo {
     /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
     /// the system stops sending requests when the fourth error is received. If you specify 0, then the
     /// system stops sending requests after the first error is returned. If you run an association on 50
-    /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
-    /// the sixth error is received.</p>
+    /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
+    /// when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
     /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
     /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
@@ -16979,9 +16995,9 @@ impl AssociationVersionInfo {
     /// <p>The maximum number of targets allowed to run the association at the same time. You can
     /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
     /// value is 100%, which means all targets run the association at the same time.</p>
-    /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+    /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
     /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-    /// association interval, the new instance will process its association within the limit specified
+    /// association interval, the new managed node will process its association within the limit specified
     /// for <code>MaxConcurrency</code>.</p>
     pub fn max_concurrency(&self) -> std::option::Option<&str> {
         self.max_concurrency.as_deref()
@@ -17033,7 +17049,7 @@ impl std::fmt::Debug for AssociationVersionInfo {
         formatter.field("created_date", &self.created_date);
         formatter.field("name", &self.name);
         formatter.field("document_version", &self.document_version);
-        formatter.field("parameters", &self.parameters);
+        formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("targets", &self.targets);
         formatter.field("schedule_expression", &self.schedule_expression);
         formatter.field("output_location", &self.output_location);
@@ -17242,8 +17258,8 @@ pub mod association_version_info {
         /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
         /// the system stops sending requests when the fourth error is received. If you specify 0, then the
         /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
-        /// the sixth error is received.</p>
+        /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
+        /// when the sixth error is received.</p>
         /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
         /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
         /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
@@ -17257,8 +17273,8 @@ pub mod association_version_info {
         /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
         /// the system stops sending requests when the fourth error is received. If you specify 0, then the
         /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
-        /// the sixth error is received.</p>
+        /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
+        /// when the sixth error is received.</p>
         /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
         /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
         /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
@@ -17270,9 +17286,9 @@ pub mod association_version_info {
         /// <p>The maximum number of targets allowed to run the association at the same time. You can
         /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
         /// value is 100%, which means all targets run the association at the same time.</p>
-        /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
         /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-        /// association interval, the new instance will process its association within the limit specified
+        /// association interval, the new managed node will process its association within the limit specified
         /// for <code>MaxConcurrency</code>.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
@@ -17281,9 +17297,9 @@ pub mod association_version_info {
         /// <p>The maximum number of targets allowed to run the association at the same time. You can
         /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
         /// value is 100%, which means all targets run the association at the same time.</p>
-        /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
         /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-        /// association interval, the new instance will process its association within the limit specified
+        /// association interval, the new managed node will process its association within the limit specified
         /// for <code>MaxConcurrency</code>.</p>
         pub fn set_max_concurrency(
             mut self,
@@ -17432,13 +17448,13 @@ impl AssociationVersionInfo {
     }
 }
 
-/// <p>Describes an association of a Amazon Web Services Systems Manager document (SSM document) and an instance.</p>
+/// <p>Describes an association of a Amazon Web Services Systems Manager document (SSM document) and a managed node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Association {
     /// <p>The name of the SSM document.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The instance ID.</p>
+    /// <p>The managed node ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The ID created by the system when you create an association. An association is a binding
     /// between a document and a set of targets with a schedule.</p>
@@ -17447,8 +17463,8 @@ pub struct Association {
     pub association_version: std::option::Option<std::string::String>,
     /// <p>The version of the document used in the association.</p>
     pub document_version: std::option::Option<std::string::String>,
-    /// <p>The instances targeted by the request to create an association. You can target all instances
-    /// in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
+    /// <p>The managed nodes targeted by the request to create an association. You can target all
+    /// managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
     /// <code>*</code>.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The date on which the association was last run.</p>
@@ -17466,7 +17482,7 @@ impl Association {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The instance ID.</p>
+    /// <p>The managed node ID.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -17483,8 +17499,8 @@ impl Association {
     pub fn document_version(&self) -> std::option::Option<&str> {
         self.document_version.as_deref()
     }
-    /// <p>The instances targeted by the request to create an association. You can target all instances
-    /// in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
+    /// <p>The managed nodes targeted by the request to create an association. You can target all
+    /// managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
     /// <code>*</code>.</p>
     pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
         self.targets.as_deref()
@@ -17551,12 +17567,12 @@ pub mod association {
             self.name = input;
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -17606,8 +17622,8 @@ pub mod association {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The instances targeted by the request to create an association. You can target all instances
-        /// in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
+        /// <p>The managed nodes targeted by the request to create an association. You can target all
+        /// managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
         /// <code>*</code>.</p>
         pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
             let mut v = self.targets.unwrap_or_default();
@@ -17615,8 +17631,8 @@ pub mod association {
             self.targets = Some(v);
             self
         }
-        /// <p>The instances targeted by the request to create an association. You can target all instances
-        /// in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
+        /// <p>The managed nodes targeted by the request to create an association. You can target all
+        /// managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
         /// <code>*</code>.</p>
         pub fn set_targets(
             mut self,
@@ -20359,8 +20375,8 @@ impl AsRef<str> for InventoryAttributeDataType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryResultEntity {
-    /// <p>ID of the inventory result entity. For example, for managed instance inventory the result
-    /// will be the managed instance ID. For EC2 instance inventory, the result will be the instance ID.
+    /// <p>ID of the inventory result entity. For example, for managed node inventory the result
+    /// will be the managed node ID. For EC2 instance inventory, the result will be the instance ID.
     /// </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The data section in the inventory result entity JSON.</p>
@@ -20369,8 +20385,8 @@ pub struct InventoryResultEntity {
     >,
 }
 impl InventoryResultEntity {
-    /// <p>ID of the inventory result entity. For example, for managed instance inventory the result
-    /// will be the managed instance ID. For EC2 instance inventory, the result will be the instance ID.
+    /// <p>ID of the inventory result entity. For example, for managed node inventory the result
+    /// will be the managed node ID. For EC2 instance inventory, the result will be the instance ID.
     /// </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
@@ -20404,15 +20420,15 @@ pub mod inventory_result_entity {
         >,
     }
     impl Builder {
-        /// <p>ID of the inventory result entity. For example, for managed instance inventory the result
-        /// will be the managed instance ID. For EC2 instance inventory, the result will be the instance ID.
+        /// <p>ID of the inventory result entity. For example, for managed node inventory the result
+        /// will be the managed node ID. For EC2 instance inventory, the result will be the instance ID.
         /// </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>ID of the inventory result entity. For example, for managed instance inventory the result
-        /// will be the managed instance ID. For EC2 instance inventory, the result will be the instance ID.
+        /// <p>ID of the inventory result entity. For example, for managed node inventory the result
+        /// will be the managed node ID. For EC2 instance inventory, the result will be the instance ID.
         /// </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
@@ -21101,11 +21117,11 @@ pub struct BaselineOverride {
     /// package, or blocked entirely along with packages that include it as a dependency.</p>
     pub rejected_patches_action: std::option::Option<crate::model::PatchAction>,
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-    /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
-    /// only.</p>
+    /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
+    /// nodes only.</p>
     pub approved_patches_enable_non_security: bool,
-    /// <p>Information about the patches to use to update the instances, including target operating
-    /// systems and source repositories. Applies to Linux instances only.</p>
+    /// <p>Information about the patches to use to update the managed nodes, including target operating
+    /// systems and source repositories. Applies to Linux managed nodes only.</p>
     pub sources: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
 }
 impl BaselineOverride {
@@ -21149,13 +21165,13 @@ impl BaselineOverride {
         self.rejected_patches_action.as_ref()
     }
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-    /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
-    /// only.</p>
+    /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
+    /// nodes only.</p>
     pub fn approved_patches_enable_non_security(&self) -> bool {
         self.approved_patches_enable_non_security
     }
-    /// <p>Information about the patches to use to update the instances, including target operating
-    /// systems and source repositories. Applies to Linux instances only.</p>
+    /// <p>Information about the patches to use to update the managed nodes, including target operating
+    /// systems and source repositories. Applies to Linux managed nodes only.</p>
     pub fn sources(&self) -> std::option::Option<&[crate::model::PatchSource]> {
         self.sources.as_deref()
     }
@@ -21324,15 +21340,15 @@ pub mod baseline_override {
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
-        /// only.</p>
+        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
+        /// nodes only.</p>
         pub fn approved_patches_enable_non_security(mut self, input: bool) -> Self {
             self.approved_patches_enable_non_security = Some(input);
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
-        /// only.</p>
+        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
+        /// nodes only.</p>
         pub fn set_approved_patches_enable_non_security(
             mut self,
             input: std::option::Option<bool>,
@@ -21344,16 +21360,16 @@ pub mod baseline_override {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        /// <p>Information about the patches to use to update the instances, including target operating
-        /// systems and source repositories. Applies to Linux instances only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating
+        /// systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn sources(mut self, input: impl Into<crate::model::PatchSource>) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input.into());
             self.sources = Some(v);
             self
         }
-        /// <p>Information about the patches to use to update the instances, including target operating
-        /// systems and source repositories. Applies to Linux instances only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating
+        /// systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
@@ -23511,13 +23527,13 @@ impl AsRef<str> for AutomationExecutionStatus {
     }
 }
 
-/// <p>Information about a Session Manager connection to an instance.</p>
+/// <p>Information about a Session Manager connection to a managed node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Session {
     /// <p>The ID of the session.</p>
     pub session_id: std::option::Option<std::string::String>,
-    /// <p>The instance that the Session Manager session connected to.</p>
+    /// <p>The managed node that the Session Manager session connected to.</p>
     pub target: std::option::Option<std::string::String>,
     /// <p>The status of the session. For example, "Connected" or "Terminated".</p>
     pub status: std::option::Option<crate::model::SessionStatus>,
@@ -23544,7 +23560,7 @@ impl Session {
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>The instance that the Session Manager session connected to.</p>
+    /// <p>The managed node that the Session Manager session connected to.</p>
     pub fn target(&self) -> std::option::Option<&str> {
         self.target.as_deref()
     }
@@ -23632,12 +23648,12 @@ pub mod session {
             self.session_id = input;
             self
         }
-        /// <p>The instance that the Session Manager session connected to.</p>
+        /// <p>The managed node that the Session Manager session connected to.</p>
         pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
             self.target = Some(input.into());
             self
         }
-        /// <p>The instance that the Session Manager session connected to.</p>
+        /// <p>The managed node that the Session Manager session connected to.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
@@ -23951,7 +23967,7 @@ pub struct SessionFilter {
     /// 2018-08-29T00:00:00Z to see sessions that started before August 29, 2018.</p>
     /// </li>
     /// <li>
-    /// <p>Target: Specify an instance to which session connections have been made.</p>
+    /// <p>Target: Specify a managed node to which session connections have been made.</p>
     /// </li>
     /// <li>
     /// <p>Owner: Specify an Amazon Web Services user account to see a list of sessions started by that
@@ -24003,7 +24019,7 @@ impl SessionFilter {
     /// 2018-08-29T00:00:00Z to see sessions that started before August 29, 2018.</p>
     /// </li>
     /// <li>
-    /// <p>Target: Specify an instance to which session connections have been made.</p>
+    /// <p>Target: Specify a managed node to which session connections have been made.</p>
     /// </li>
     /// <li>
     /// <p>Owner: Specify an Amazon Web Services user account to see a list of sessions started by that
@@ -24083,7 +24099,7 @@ pub mod session_filter {
         /// 2018-08-29T00:00:00Z to see sessions that started before August 29, 2018.</p>
         /// </li>
         /// <li>
-        /// <p>Target: Specify an instance to which session connections have been made.</p>
+        /// <p>Target: Specify a managed node to which session connections have been made.</p>
         /// </li>
         /// <li>
         /// <p>Owner: Specify an Amazon Web Services user account to see a list of sessions started by that
@@ -24132,7 +24148,7 @@ pub mod session_filter {
         /// 2018-08-29T00:00:00Z to see sessions that started before August 29, 2018.</p>
         /// </li>
         /// <li>
-        /// <p>Target: Specify an instance to which session connections have been made.</p>
+        /// <p>Target: Specify a managed node to which session connections have been made.</p>
         /// </li>
         /// <li>
         /// <p>Owner: Specify an Amazon Web Services user account to see a list of sessions started by that
@@ -26018,7 +26034,7 @@ pub struct MaintenanceWindowTask {
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The type of task.</p>
     pub r#type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
-    /// <p>The targets (either instances or tags). Instances are specified using
+    /// <p>The targets (either managed nodes or tags). Managed nodes are specified using
     /// <code>Key=instanceids,Values=<instanceid1>,<instanceid2></code>. Tags are specified
     /// using <code>Key=<tag name>,Values=<tag value></code>.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -26083,7 +26099,7 @@ impl MaintenanceWindowTask {
     pub fn r#type(&self) -> std::option::Option<&crate::model::MaintenanceWindowTaskType> {
         self.r#type.as_ref()
     }
-    /// <p>The targets (either instances or tags). Instances are specified using
+    /// <p>The targets (either managed nodes or tags). Managed nodes are specified using
     /// <code>Key=instanceids,Values=<instanceid1>,<instanceid2></code>. Tags are specified
     /// using <code>Key=<tag name>,Values=<tag value></code>.</p>
     pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
@@ -26256,7 +26272,7 @@ pub mod maintenance_window_task {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The targets (either instances or tags). Instances are specified using
+        /// <p>The targets (either managed nodes or tags). Managed nodes are specified using
         /// <code>Key=instanceids,Values=<instanceid1>,<instanceid2></code>. Tags are specified
         /// using <code>Key=<tag name>,Values=<tag value></code>.</p>
         pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
@@ -26265,7 +26281,7 @@ pub mod maintenance_window_task {
             self.targets = Some(v);
             self
         }
-        /// <p>The targets (either instances or tags). Instances are specified using
+        /// <p>The targets (either managed nodes or tags). Managed nodes are specified using
         /// <code>Key=instanceids,Values=<instanceid1>,<instanceid2></code>. Tags are specified
         /// using <code>Key=<tag name>,Values=<tag value></code>.</p>
         pub fn set_targets(
@@ -26586,8 +26602,8 @@ pub struct MaintenanceWindowTarget {
     pub window_target_id: std::option::Option<std::string::String>,
     /// <p>The type of target that is being registered with the maintenance window.</p>
     pub resource_type: std::option::Option<crate::model::MaintenanceWindowResourceType>,
-    /// <p>The targets, either instances or tags.</p>
-    /// <p>Specify instances using the following format:</p>
+    /// <p>The targets, either managed nodes or tags.</p>
+    /// <p>Specify managed nodes using the following format:</p>
     /// <p>
     /// <code>Key=instanceids,Values=<instanceid1>,<instanceid2></code>
     /// </p>
@@ -26618,8 +26634,8 @@ impl MaintenanceWindowTarget {
     ) -> std::option::Option<&crate::model::MaintenanceWindowResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The targets, either instances or tags.</p>
-    /// <p>Specify instances using the following format:</p>
+    /// <p>The targets, either managed nodes or tags.</p>
+    /// <p>Specify managed nodes using the following format:</p>
     /// <p>
     /// <code>Key=instanceids,Values=<instanceid1>,<instanceid2></code>
     /// </p>
@@ -26711,8 +26727,8 @@ pub mod maintenance_window_target {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The targets, either instances or tags.</p>
-        /// <p>Specify instances using the following format:</p>
+        /// <p>The targets, either managed nodes or tags.</p>
+        /// <p>Specify managed nodes using the following format:</p>
         /// <p>
         /// <code>Key=instanceids,Values=<instanceid1>,<instanceid2></code>
         /// </p>
@@ -26725,8 +26741,8 @@ pub mod maintenance_window_target {
             self.targets = Some(v);
             self
         }
-        /// <p>The targets, either instances or tags.</p>
-        /// <p>Specify instances using the following format:</p>
+        /// <p>The targets, either managed nodes or tags.</p>
+        /// <p>Specify managed nodes using the following format:</p>
         /// <p>
         /// <code>Key=instanceids,Values=<instanceid1>,<instanceid2></code>
         /// </p>
@@ -28399,18 +28415,18 @@ impl AsRef<str> for InventoryDeletionStatus {
     }
 }
 
-/// <p>Defines the high-level patch compliance state for a managed instance, providing information
+/// <p>Defines the high-level patch compliance state for a managed node, providing information
 /// about the number of installed, missing, not applicable, and failed patches along with metadata
-/// about the operation when this information was gathered for the instance.</p>
+/// about the operation when this information was gathered for the managed node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstancePatchState {
-    /// <p>The ID of the managed instance the high-level patch compliance information was collected
+    /// <p>The ID of the managed node the high-level patch compliance information was collected
     /// for.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The name of the patch group the managed instance belongs to.</p>
+    /// <p>The name of the patch group the managed node belongs to.</p>
     pub patch_group: std::option::Option<std::string::String>,
-    /// <p>The ID of the patch baseline used to patch the instance.</p>
+    /// <p>The ID of the patch baseline used to patch the managed node.</p>
     pub baseline_id: std::option::Option<std::string::String>,
     /// <p>The ID of the patch baseline snapshot used during the patching operation when this
     /// compliance data was collected.</p>
@@ -28427,15 +28443,15 @@ pub struct InstancePatchState {
     /// <p>Placeholder information. This field will always be empty in the current release of the
     /// service.</p>
     pub owner_information: std::option::Option<std::string::String>,
-    /// <p>The number of patches from the patch baseline that are installed on the instance.</p>
+    /// <p>The number of patches from the patch baseline that are installed on the managed node.</p>
     pub installed_count: i32,
     /// <p>The number of patches not specified in the patch baseline that are installed on the
-    /// instance.</p>
+    /// managed node.</p>
     pub installed_other_count: i32,
-    /// <p>The number of patches installed by Patch Manager since the last time the instance was
+    /// <p>The number of patches installed by Patch Manager since the last time the managed node was
     /// rebooted.</p>
     pub installed_pending_reboot_count: std::option::Option<i32>,
-    /// <p>The number of patches installed on an instance that are specified in a
+    /// <p>The number of patches installed on a managed node that are specified in a
     /// <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were
     /// typically installed before they were added to a <code>RejectedPatches</code> list.</p>
     /// <note>
@@ -28444,7 +28460,7 @@ pub struct InstancePatchState {
     /// always be <code>0</code> (zero).</p>
     /// </note>
     pub installed_rejected_count: std::option::Option<i32>,
-    /// <p>The number of patches from the patch baseline that are applicable for the instance but
+    /// <p>The number of patches from the patch baseline that are applicable for the managed node but
     /// aren't currently installed.</p>
     pub missing_count: i32,
     /// <p>The number of patches from the patch baseline that were attempted to be installed during the
@@ -28453,14 +28469,14 @@ pub struct InstancePatchState {
     /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that
     /// aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
     pub unreported_not_applicable_count: std::option::Option<i32>,
-    /// <p>The number of patches from the patch baseline that aren't applicable for the instance and
-    /// therefore aren't installed on the instance. This number may be truncated if the list of patch
+    /// <p>The number of patches from the patch baseline that aren't applicable for the managed node and
+    /// therefore aren't installed on the node. This number may be truncated if the list of patch
     /// names is very large. The number of patches beyond this limit are reported in
     /// <code>UnreportedNotApplicableCount</code>.</p>
     pub not_applicable_count: i32,
-    /// <p>The time the most recent patching operation was started on the instance.</p>
+    /// <p>The time the most recent patching operation was started on the managed node.</p>
     pub operation_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time the most recent patching operation completed on the instance.</p>
+    /// <p>The time the most recent patching operation completed on the managed node.</p>
     pub operation_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of patching operation that was performed: or </p>
     /// <ul>
@@ -28474,7 +28490,7 @@ pub struct InstancePatchState {
     /// </li>
     /// </ul>
     pub operation: std::option::Option<crate::model::PatchOperationType>,
-    /// <p>The time of the last attempt to patch the instance with <code>NoReboot</code> specified as
+    /// <p>The time of the last attempt to patch the managed node with <code>NoReboot</code> specified as
     /// the reboot option.</p>
     pub last_no_reboot_install_operation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the reboot option specified in the patch baseline.</p>
@@ -28485,7 +28501,7 @@ pub struct InstancePatchState {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if it installed
+    /// <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed
     /// any patches, or if any patches are detected with a status of
     /// <code>InstalledPendingReboot</code>.</p>
     /// </li>
@@ -28498,32 +28514,32 @@ pub struct InstancePatchState {
     /// </li>
     /// </ul>
     pub reboot_option: std::option::Option<crate::model::RebootOption>,
-    /// <p>The number of instances where patches that are specified as <code>Critical</code> for
+    /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for
     /// compliance reporting in the patch baseline aren't installed. These patches might be missing, have
-    /// failed installation, were rejected, or were installed but awaiting a required instance reboot.
-    /// The status of these instances is <code>NON_COMPLIANT</code>.</p>
+    /// failed installation, were rejected, or were installed but awaiting a required managed node reboot.
+    /// The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub critical_non_compliant_count: std::option::Option<i32>,
-    /// <p>The number of instances where patches that are specified as <code>Security</code> in a patch
-    /// advisory aren't installed. These patches might be missing, have failed installation, were
-    /// rejected, or were installed but awaiting a required instance reboot. The status of these
-    /// instances is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a
+    /// patch advisory aren't installed. These patches might be missing, have failed installation, were
+    /// rejected, or were installed but awaiting a required managed node reboot. The status of these managed
+    /// nodes is <code>NON_COMPLIANT</code>.</p>
     pub security_non_compliant_count: std::option::Option<i32>,
-    /// <p>The number of instances with patches installed that are specified as other than
+    /// <p>The number of managed nodes with patches installed that are specified as other than
     /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The
-    /// status of these instances is <code>NON_COMPLIANT</code>.</p>
+    /// status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub other_non_compliant_count: std::option::Option<i32>,
 }
 impl InstancePatchState {
-    /// <p>The ID of the managed instance the high-level patch compliance information was collected
+    /// <p>The ID of the managed node the high-level patch compliance information was collected
     /// for.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The name of the patch group the managed instance belongs to.</p>
+    /// <p>The name of the patch group the managed node belongs to.</p>
     pub fn patch_group(&self) -> std::option::Option<&str> {
         self.patch_group.as_deref()
     }
-    /// <p>The ID of the patch baseline used to patch the instance.</p>
+    /// <p>The ID of the patch baseline used to patch the managed node.</p>
     pub fn baseline_id(&self) -> std::option::Option<&str> {
         self.baseline_id.as_deref()
     }
@@ -28548,21 +28564,21 @@ impl InstancePatchState {
     pub fn owner_information(&self) -> std::option::Option<&str> {
         self.owner_information.as_deref()
     }
-    /// <p>The number of patches from the patch baseline that are installed on the instance.</p>
+    /// <p>The number of patches from the patch baseline that are installed on the managed node.</p>
     pub fn installed_count(&self) -> i32 {
         self.installed_count
     }
     /// <p>The number of patches not specified in the patch baseline that are installed on the
-    /// instance.</p>
+    /// managed node.</p>
     pub fn installed_other_count(&self) -> i32 {
         self.installed_other_count
     }
-    /// <p>The number of patches installed by Patch Manager since the last time the instance was
+    /// <p>The number of patches installed by Patch Manager since the last time the managed node was
     /// rebooted.</p>
     pub fn installed_pending_reboot_count(&self) -> std::option::Option<i32> {
         self.installed_pending_reboot_count
     }
-    /// <p>The number of patches installed on an instance that are specified in a
+    /// <p>The number of patches installed on a managed node that are specified in a
     /// <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were
     /// typically installed before they were added to a <code>RejectedPatches</code> list.</p>
     /// <note>
@@ -28573,7 +28589,7 @@ impl InstancePatchState {
     pub fn installed_rejected_count(&self) -> std::option::Option<i32> {
         self.installed_rejected_count
     }
-    /// <p>The number of patches from the patch baseline that are applicable for the instance but
+    /// <p>The number of patches from the patch baseline that are applicable for the managed node but
     /// aren't currently installed.</p>
     pub fn missing_count(&self) -> i32 {
         self.missing_count
@@ -28588,18 +28604,18 @@ impl InstancePatchState {
     pub fn unreported_not_applicable_count(&self) -> std::option::Option<i32> {
         self.unreported_not_applicable_count
     }
-    /// <p>The number of patches from the patch baseline that aren't applicable for the instance and
-    /// therefore aren't installed on the instance. This number may be truncated if the list of patch
+    /// <p>The number of patches from the patch baseline that aren't applicable for the managed node and
+    /// therefore aren't installed on the node. This number may be truncated if the list of patch
     /// names is very large. The number of patches beyond this limit are reported in
     /// <code>UnreportedNotApplicableCount</code>.</p>
     pub fn not_applicable_count(&self) -> i32 {
         self.not_applicable_count
     }
-    /// <p>The time the most recent patching operation was started on the instance.</p>
+    /// <p>The time the most recent patching operation was started on the managed node.</p>
     pub fn operation_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.operation_start_time.as_ref()
     }
-    /// <p>The time the most recent patching operation completed on the instance.</p>
+    /// <p>The time the most recent patching operation completed on the managed node.</p>
     pub fn operation_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.operation_end_time.as_ref()
     }
@@ -28617,7 +28633,7 @@ impl InstancePatchState {
     pub fn operation(&self) -> std::option::Option<&crate::model::PatchOperationType> {
         self.operation.as_ref()
     }
-    /// <p>The time of the last attempt to patch the instance with <code>NoReboot</code> specified as
+    /// <p>The time of the last attempt to patch the managed node with <code>NoReboot</code> specified as
     /// the reboot option.</p>
     pub fn last_no_reboot_install_operation_time(
         &self,
@@ -28632,7 +28648,7 @@ impl InstancePatchState {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if it installed
+    /// <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed
     /// any patches, or if any patches are detected with a status of
     /// <code>InstalledPendingReboot</code>.</p>
     /// </li>
@@ -28647,23 +28663,23 @@ impl InstancePatchState {
     pub fn reboot_option(&self) -> std::option::Option<&crate::model::RebootOption> {
         self.reboot_option.as_ref()
     }
-    /// <p>The number of instances where patches that are specified as <code>Critical</code> for
+    /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for
     /// compliance reporting in the patch baseline aren't installed. These patches might be missing, have
-    /// failed installation, were rejected, or were installed but awaiting a required instance reboot.
-    /// The status of these instances is <code>NON_COMPLIANT</code>.</p>
+    /// failed installation, were rejected, or were installed but awaiting a required managed node reboot.
+    /// The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn critical_non_compliant_count(&self) -> std::option::Option<i32> {
         self.critical_non_compliant_count
     }
-    /// <p>The number of instances where patches that are specified as <code>Security</code> in a patch
-    /// advisory aren't installed. These patches might be missing, have failed installation, were
-    /// rejected, or were installed but awaiting a required instance reboot. The status of these
-    /// instances is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a
+    /// patch advisory aren't installed. These patches might be missing, have failed installation, were
+    /// rejected, or were installed but awaiting a required managed node reboot. The status of these managed
+    /// nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn security_non_compliant_count(&self) -> std::option::Option<i32> {
         self.security_non_compliant_count
     }
-    /// <p>The number of instances with patches installed that are specified as other than
+    /// <p>The number of managed nodes with patches installed that are specified as other than
     /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The
-    /// status of these instances is <code>NON_COMPLIANT</code>.</p>
+    /// status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn other_non_compliant_count(&self) -> std::option::Option<i32> {
         self.other_non_compliant_count
     }
@@ -28742,34 +28758,34 @@ pub mod instance_patch_state {
         pub(crate) other_non_compliant_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the managed instance the high-level patch compliance information was collected
+        /// <p>The ID of the managed node the high-level patch compliance information was collected
         /// for.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The ID of the managed instance the high-level patch compliance information was collected
+        /// <p>The ID of the managed node the high-level patch compliance information was collected
         /// for.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
         }
-        /// <p>The name of the patch group the managed instance belongs to.</p>
+        /// <p>The name of the patch group the managed node belongs to.</p>
         pub fn patch_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.patch_group = Some(input.into());
             self
         }
-        /// <p>The name of the patch group the managed instance belongs to.</p>
+        /// <p>The name of the patch group the managed node belongs to.</p>
         pub fn set_patch_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.patch_group = input;
             self
         }
-        /// <p>The ID of the patch baseline used to patch the instance.</p>
+        /// <p>The ID of the patch baseline used to patch the managed node.</p>
         pub fn baseline_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.baseline_id = Some(input.into());
             self
         }
-        /// <p>The ID of the patch baseline used to patch the instance.</p>
+        /// <p>The ID of the patch baseline used to patch the managed node.</p>
         pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.baseline_id = input;
             self
@@ -28828,35 +28844,35 @@ pub mod instance_patch_state {
             self.owner_information = input;
             self
         }
-        /// <p>The number of patches from the patch baseline that are installed on the instance.</p>
+        /// <p>The number of patches from the patch baseline that are installed on the managed node.</p>
         pub fn installed_count(mut self, input: i32) -> Self {
             self.installed_count = Some(input);
             self
         }
-        /// <p>The number of patches from the patch baseline that are installed on the instance.</p>
+        /// <p>The number of patches from the patch baseline that are installed on the managed node.</p>
         pub fn set_installed_count(mut self, input: std::option::Option<i32>) -> Self {
             self.installed_count = input;
             self
         }
         /// <p>The number of patches not specified in the patch baseline that are installed on the
-        /// instance.</p>
+        /// managed node.</p>
         pub fn installed_other_count(mut self, input: i32) -> Self {
             self.installed_other_count = Some(input);
             self
         }
         /// <p>The number of patches not specified in the patch baseline that are installed on the
-        /// instance.</p>
+        /// managed node.</p>
         pub fn set_installed_other_count(mut self, input: std::option::Option<i32>) -> Self {
             self.installed_other_count = input;
             self
         }
-        /// <p>The number of patches installed by Patch Manager since the last time the instance was
+        /// <p>The number of patches installed by Patch Manager since the last time the managed node was
         /// rebooted.</p>
         pub fn installed_pending_reboot_count(mut self, input: i32) -> Self {
             self.installed_pending_reboot_count = Some(input);
             self
         }
-        /// <p>The number of patches installed by Patch Manager since the last time the instance was
+        /// <p>The number of patches installed by Patch Manager since the last time the managed node was
         /// rebooted.</p>
         pub fn set_installed_pending_reboot_count(
             mut self,
@@ -28865,7 +28881,7 @@ pub mod instance_patch_state {
             self.installed_pending_reboot_count = input;
             self
         }
-        /// <p>The number of patches installed on an instance that are specified in a
+        /// <p>The number of patches installed on a managed node that are specified in a
         /// <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were
         /// typically installed before they were added to a <code>RejectedPatches</code> list.</p>
         /// <note>
@@ -28877,7 +28893,7 @@ pub mod instance_patch_state {
             self.installed_rejected_count = Some(input);
             self
         }
-        /// <p>The number of patches installed on an instance that are specified in a
+        /// <p>The number of patches installed on a managed node that are specified in a
         /// <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were
         /// typically installed before they were added to a <code>RejectedPatches</code> list.</p>
         /// <note>
@@ -28889,13 +28905,13 @@ pub mod instance_patch_state {
             self.installed_rejected_count = input;
             self
         }
-        /// <p>The number of patches from the patch baseline that are applicable for the instance but
+        /// <p>The number of patches from the patch baseline that are applicable for the managed node but
         /// aren't currently installed.</p>
         pub fn missing_count(mut self, input: i32) -> Self {
             self.missing_count = Some(input);
             self
         }
-        /// <p>The number of patches from the patch baseline that are applicable for the instance but
+        /// <p>The number of patches from the patch baseline that are applicable for the managed node but
         /// aren't currently installed.</p>
         pub fn set_missing_count(mut self, input: std::option::Option<i32>) -> Self {
             self.missing_count = input;
@@ -28928,28 +28944,28 @@ pub mod instance_patch_state {
             self.unreported_not_applicable_count = input;
             self
         }
-        /// <p>The number of patches from the patch baseline that aren't applicable for the instance and
-        /// therefore aren't installed on the instance. This number may be truncated if the list of patch
+        /// <p>The number of patches from the patch baseline that aren't applicable for the managed node and
+        /// therefore aren't installed on the node. This number may be truncated if the list of patch
         /// names is very large. The number of patches beyond this limit are reported in
         /// <code>UnreportedNotApplicableCount</code>.</p>
         pub fn not_applicable_count(mut self, input: i32) -> Self {
             self.not_applicable_count = Some(input);
             self
         }
-        /// <p>The number of patches from the patch baseline that aren't applicable for the instance and
-        /// therefore aren't installed on the instance. This number may be truncated if the list of patch
+        /// <p>The number of patches from the patch baseline that aren't applicable for the managed node and
+        /// therefore aren't installed on the node. This number may be truncated if the list of patch
         /// names is very large. The number of patches beyond this limit are reported in
         /// <code>UnreportedNotApplicableCount</code>.</p>
         pub fn set_not_applicable_count(mut self, input: std::option::Option<i32>) -> Self {
             self.not_applicable_count = input;
             self
         }
-        /// <p>The time the most recent patching operation was started on the instance.</p>
+        /// <p>The time the most recent patching operation was started on the managed node.</p>
         pub fn operation_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.operation_start_time = Some(input);
             self
         }
-        /// <p>The time the most recent patching operation was started on the instance.</p>
+        /// <p>The time the most recent patching operation was started on the managed node.</p>
         pub fn set_operation_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -28957,12 +28973,12 @@ pub mod instance_patch_state {
             self.operation_start_time = input;
             self
         }
-        /// <p>The time the most recent patching operation completed on the instance.</p>
+        /// <p>The time the most recent patching operation completed on the managed node.</p>
         pub fn operation_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.operation_end_time = Some(input);
             self
         }
-        /// <p>The time the most recent patching operation completed on the instance.</p>
+        /// <p>The time the most recent patching operation completed on the managed node.</p>
         pub fn set_operation_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -29003,7 +29019,7 @@ pub mod instance_patch_state {
             self.operation = input;
             self
         }
-        /// <p>The time of the last attempt to patch the instance with <code>NoReboot</code> specified as
+        /// <p>The time of the last attempt to patch the managed node with <code>NoReboot</code> specified as
         /// the reboot option.</p>
         pub fn last_no_reboot_install_operation_time(
             mut self,
@@ -29012,7 +29028,7 @@ pub mod instance_patch_state {
             self.last_no_reboot_install_operation_time = Some(input);
             self
         }
-        /// <p>The time of the last attempt to patch the instance with <code>NoReboot</code> specified as
+        /// <p>The time of the last attempt to patch the managed node with <code>NoReboot</code> specified as
         /// the reboot option.</p>
         pub fn set_last_no_reboot_install_operation_time(
             mut self,
@@ -29029,7 +29045,7 @@ pub mod instance_patch_state {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if it installed
+        /// <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed
         /// any patches, or if any patches are detected with a status of
         /// <code>InstalledPendingReboot</code>.</p>
         /// </li>
@@ -29053,7 +29069,7 @@ pub mod instance_patch_state {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if it installed
+        /// <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed
         /// any patches, or if any patches are detected with a status of
         /// <code>InstalledPendingReboot</code>.</p>
         /// </li>
@@ -29072,48 +29088,48 @@ pub mod instance_patch_state {
             self.reboot_option = input;
             self
         }
-        /// <p>The number of instances where patches that are specified as <code>Critical</code> for
+        /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for
         /// compliance reporting in the patch baseline aren't installed. These patches might be missing, have
-        /// failed installation, were rejected, or were installed but awaiting a required instance reboot.
-        /// The status of these instances is <code>NON_COMPLIANT</code>.</p>
+        /// failed installation, were rejected, or were installed but awaiting a required managed node reboot.
+        /// The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn critical_non_compliant_count(mut self, input: i32) -> Self {
             self.critical_non_compliant_count = Some(input);
             self
         }
-        /// <p>The number of instances where patches that are specified as <code>Critical</code> for
+        /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for
         /// compliance reporting in the patch baseline aren't installed. These patches might be missing, have
-        /// failed installation, were rejected, or were installed but awaiting a required instance reboot.
-        /// The status of these instances is <code>NON_COMPLIANT</code>.</p>
+        /// failed installation, were rejected, or were installed but awaiting a required managed node reboot.
+        /// The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn set_critical_non_compliant_count(mut self, input: std::option::Option<i32>) -> Self {
             self.critical_non_compliant_count = input;
             self
         }
-        /// <p>The number of instances where patches that are specified as <code>Security</code> in a patch
-        /// advisory aren't installed. These patches might be missing, have failed installation, were
-        /// rejected, or were installed but awaiting a required instance reboot. The status of these
-        /// instances is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a
+        /// patch advisory aren't installed. These patches might be missing, have failed installation, were
+        /// rejected, or were installed but awaiting a required managed node reboot. The status of these managed
+        /// nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn security_non_compliant_count(mut self, input: i32) -> Self {
             self.security_non_compliant_count = Some(input);
             self
         }
-        /// <p>The number of instances where patches that are specified as <code>Security</code> in a patch
-        /// advisory aren't installed. These patches might be missing, have failed installation, were
-        /// rejected, or were installed but awaiting a required instance reboot. The status of these
-        /// instances is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a
+        /// patch advisory aren't installed. These patches might be missing, have failed installation, were
+        /// rejected, or were installed but awaiting a required managed node reboot. The status of these managed
+        /// nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn set_security_non_compliant_count(mut self, input: std::option::Option<i32>) -> Self {
             self.security_non_compliant_count = input;
             self
         }
-        /// <p>The number of instances with patches installed that are specified as other than
+        /// <p>The number of managed nodes with patches installed that are specified as other than
         /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The
-        /// status of these instances is <code>NON_COMPLIANT</code>.</p>
+        /// status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn other_non_compliant_count(mut self, input: i32) -> Self {
             self.other_non_compliant_count = Some(input);
             self
         }
-        /// <p>The number of instances with patches installed that are specified as other than
+        /// <p>The number of managed nodes with patches installed that are specified as other than
         /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The
-        /// status of these instances is <code>NON_COMPLIANT</code>.</p>
+        /// status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn set_other_non_compliant_count(mut self, input: std::option::Option<i32>) -> Self {
             self.other_non_compliant_count = input;
             self
@@ -29267,7 +29283,7 @@ impl AsRef<str> for PatchOperationType {
 /// <p>Defines a filter used in <a>DescribeInstancePatchStatesForPatchGroup</a> to scope
 /// down the information returned by the API.</p>
 /// <p>
-/// <b>Example</b>: To filter for all instances in a patch group
+/// <b>Example</b>: To filter for all managed nodes in a patch group
 /// having more than three patches with a <code>FailedCount</code> status, use the following for the
 /// filter:</p>
 /// <ul>
@@ -29618,8 +29634,8 @@ impl AsRef<str> for InstancePatchStateOperatorType {
     }
 }
 
-/// <p>Information about the state of a patch on a particular instance as it relates to the patch
-/// baseline used to patch the instance.</p>
+/// <p>Information about the state of a patch on a particular managed node as it relates to the patch
+/// baseline used to patch the node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PatchComplianceData {
@@ -29633,10 +29649,10 @@ pub struct PatchComplianceData {
     /// <p>The severity of the patchsuch as <code>Critical</code>, <code>Important</code>, and
     /// <code>Moderate</code>.</p>
     pub severity: std::option::Option<std::string::String>,
-    /// <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
+    /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
     /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub state: std::option::Option<crate::model::PatchComplianceDataState>,
-    /// <p>The date/time the patch was installed on the instance. Not all operating systems provide
+    /// <p>The date/time the patch was installed on the managed node. Not all operating systems provide
     /// this level of information.</p>
     pub installed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by
@@ -29662,12 +29678,12 @@ impl PatchComplianceData {
     pub fn severity(&self) -> std::option::Option<&str> {
         self.severity.as_deref()
     }
-    /// <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
+    /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
     /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::PatchComplianceDataState> {
         self.state.as_ref()
     }
-    /// <p>The date/time the patch was installed on the instance. Not all operating systems provide
+    /// <p>The date/time the patch was installed on the managed node. Not all operating systems provide
     /// this level of information.</p>
     pub fn installed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.installed_time.as_ref()
@@ -29753,13 +29769,13 @@ pub mod patch_compliance_data {
             self.severity = input;
             self
         }
-        /// <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
+        /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
         /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn state(mut self, input: crate::model::PatchComplianceDataState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
+        /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
         /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_state(
             mut self,
@@ -29768,13 +29784,13 @@ pub mod patch_compliance_data {
             self.state = input;
             self
         }
-        /// <p>The date/time the patch was installed on the instance. Not all operating systems provide
+        /// <p>The date/time the patch was installed on the managed node. Not all operating systems provide
         /// this level of information.</p>
         pub fn installed_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.installed_time = Some(input);
             self
         }
-        /// <p>The date/time the patch was installed on the instance. Not all operating systems provide
+        /// <p>The date/time the patch was installed on the managed node. Not all operating systems provide
         /// this level of information.</p>
         pub fn set_installed_time(
             mut self,
@@ -29899,11 +29915,11 @@ impl AsRef<str> for PatchComplianceDataState {
     }
 }
 
-/// <p>Describes a filter for a specific list of instances. </p>
+/// <p>Describes a filter for a specific list of managed nodes. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceInformation {
-    /// <p>The instance ID. </p>
+    /// <p>The managed node ID. </p>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>Connection status of SSM Agent. </p>
     /// <note>
@@ -29912,46 +29928,45 @@ pub struct InstanceInformation {
     pub ping_status: std::option::Option<crate::model::PingStatus>,
     /// <p>The date and time when the agent last pinged the Systems Manager service. </p>
     pub last_ping_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The version of SSM Agent running on your Linux instance. </p>
+    /// <p>The version of SSM Agent running on your Linux managed node. </p>
     pub agent_version: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the latest version of SSM Agent is running on your Linux Managed Instance.
-    /// This field doesn't indicate whether or not the latest version is installed on Windows managed
-    /// instances, because some older versions of Windows Server use the EC2Config service to process
-    /// Systems Manager requests.</p>
+    /// <p>Indicates whether the latest version of SSM Agent is running on your Linux managed node. This
+    /// field doesn't indicate whether or not the latest version is installed on Windows managed nodes,
+    /// because some older versions of Windows Server use the EC2Config service to process Systems Manager
+    /// requests.</p>
     pub is_latest_version: std::option::Option<bool>,
     /// <p>The operating system platform type. </p>
     pub platform_type: std::option::Option<crate::model::PlatformType>,
-    /// <p>The name of the operating system platform running on your instance. </p>
+    /// <p>The name of the operating system platform running on your managed node. </p>
     pub platform_name: std::option::Option<std::string::String>,
-    /// <p>The version of the OS platform running on your instance. </p>
+    /// <p>The version of the OS platform running on your managed node. </p>
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>The activation ID created by Amazon Web Services Systems Manager when the server or virtual machine (VM) was
     /// registered.</p>
     pub activation_id: std::option::Option<std::string::String>,
     /// <p>The Identity and Access Management (IAM) role assigned to the on-premises Systems Manager
-    /// managed instance. This call doesn't return the IAM role for Amazon Elastic Compute Cloud
+    /// managed node. This call doesn't return the IAM role for Amazon Elastic Compute Cloud
     /// (Amazon EC2) instances. To retrieve the IAM role for an EC2 instance, use
     /// the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in
     /// the <i>Amazon Web Services CLI Command Reference</i>.</p>
     pub iam_role: std::option::Option<std::string::String>,
-    /// <p>The date the server or VM was registered with Amazon Web Services as a managed instance.</p>
+    /// <p>The date the server or VM was registered with Amazon Web Services as a managed node.</p>
     pub registration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of instance. Instances are either EC2 instances or managed instances. </p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
-    /// <p>The name assigned to an on-premises server or virtual machine (VM) when it is activated as a
-    /// Systems Manager managed instance. The name is specified as the <code>DefaultInstanceName</code> property
-    /// using the <a>CreateActivation</a> command. It is applied to the managed instance by
-    /// specifying the Activation Code and Activation ID when you install SSM Agent on the instance, as
+    /// <p>The name assigned to an on-premises server, edge device, or virtual machine (VM) when it is
+    /// activated as a Systems Manager managed node. The name is specified as the <code>DefaultInstanceName</code>
+    /// property using the <a>CreateActivation</a> command. It is applied to the managed node
+    /// by specifying the Activation Code and Activation ID when you install SSM Agent on the node, as
     /// explained in <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM Agent for a
     /// hybrid environment (Linux)</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM Agent for a
-    /// hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2 instance, use the Amazon EC2
-    /// <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
-    /// <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
-    /// <i>Amazon Web Services CLI Command Reference</i>.</p>
+    /// hybrid environment (Windows)</a>. To retrieve the <code>Name</code> tag of an EC2 instance,
+    /// use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in
+    /// the <i>Amazon Web Services CLI Command Reference</i>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The IP address of the managed instance.</p>
+    /// <p>The IP address of the managed node.</p>
     pub ip_address: std::option::Option<std::string::String>,
-    /// <p>The fully qualified host name of the managed instance.</p>
+    /// <p>The fully qualified host name of the managed node.</p>
     pub computer_name: std::option::Option<std::string::String>,
     /// <p>The status of the association.</p>
     pub association_status: std::option::Option<std::string::String>,
@@ -29962,9 +29977,15 @@ pub struct InstanceInformation {
     /// <p>Information about the association.</p>
     pub association_overview:
         std::option::Option<crate::model::InstanceAggregatedAssociationOverview>,
+    /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is
+    /// the Thing name. </p>
+    pub source_id: std::option::Option<std::string::String>,
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code>
+    /// is <code>AWS::IoT::Thing</code>. </p>
+    pub source_type: std::option::Option<crate::model::SourceType>,
 }
 impl InstanceInformation {
-    /// <p>The instance ID. </p>
+    /// <p>The managed node ID. </p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -29979,14 +30000,14 @@ impl InstanceInformation {
     pub fn last_ping_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_ping_date_time.as_ref()
     }
-    /// <p>The version of SSM Agent running on your Linux instance. </p>
+    /// <p>The version of SSM Agent running on your Linux managed node. </p>
     pub fn agent_version(&self) -> std::option::Option<&str> {
         self.agent_version.as_deref()
     }
-    /// <p>Indicates whether the latest version of SSM Agent is running on your Linux Managed Instance.
-    /// This field doesn't indicate whether or not the latest version is installed on Windows managed
-    /// instances, because some older versions of Windows Server use the EC2Config service to process
-    /// Systems Manager requests.</p>
+    /// <p>Indicates whether the latest version of SSM Agent is running on your Linux managed node. This
+    /// field doesn't indicate whether or not the latest version is installed on Windows managed nodes,
+    /// because some older versions of Windows Server use the EC2Config service to process Systems Manager
+    /// requests.</p>
     pub fn is_latest_version(&self) -> std::option::Option<bool> {
         self.is_latest_version
     }
@@ -29994,11 +30015,11 @@ impl InstanceInformation {
     pub fn platform_type(&self) -> std::option::Option<&crate::model::PlatformType> {
         self.platform_type.as_ref()
     }
-    /// <p>The name of the operating system platform running on your instance. </p>
+    /// <p>The name of the operating system platform running on your managed node. </p>
     pub fn platform_name(&self) -> std::option::Option<&str> {
         self.platform_name.as_deref()
     }
-    /// <p>The version of the OS platform running on your instance. </p>
+    /// <p>The version of the OS platform running on your managed node. </p>
     pub fn platform_version(&self) -> std::option::Option<&str> {
         self.platform_version.as_deref()
     }
@@ -30008,14 +30029,14 @@ impl InstanceInformation {
         self.activation_id.as_deref()
     }
     /// <p>The Identity and Access Management (IAM) role assigned to the on-premises Systems Manager
-    /// managed instance. This call doesn't return the IAM role for Amazon Elastic Compute Cloud
+    /// managed node. This call doesn't return the IAM role for Amazon Elastic Compute Cloud
     /// (Amazon EC2) instances. To retrieve the IAM role for an EC2 instance, use
     /// the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in
     /// the <i>Amazon Web Services CLI Command Reference</i>.</p>
     pub fn iam_role(&self) -> std::option::Option<&str> {
         self.iam_role.as_deref()
     }
-    /// <p>The date the server or VM was registered with Amazon Web Services as a managed instance.</p>
+    /// <p>The date the server or VM was registered with Amazon Web Services as a managed node.</p>
     pub fn registration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.registration_date.as_ref()
     }
@@ -30023,24 +30044,23 @@ impl InstanceInformation {
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The name assigned to an on-premises server or virtual machine (VM) when it is activated as a
-    /// Systems Manager managed instance. The name is specified as the <code>DefaultInstanceName</code> property
-    /// using the <a>CreateActivation</a> command. It is applied to the managed instance by
-    /// specifying the Activation Code and Activation ID when you install SSM Agent on the instance, as
+    /// <p>The name assigned to an on-premises server, edge device, or virtual machine (VM) when it is
+    /// activated as a Systems Manager managed node. The name is specified as the <code>DefaultInstanceName</code>
+    /// property using the <a>CreateActivation</a> command. It is applied to the managed node
+    /// by specifying the Activation Code and Activation ID when you install SSM Agent on the node, as
     /// explained in <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM Agent for a
     /// hybrid environment (Linux)</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM Agent for a
-    /// hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2 instance, use the Amazon EC2
-    /// <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
-    /// <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
-    /// <i>Amazon Web Services CLI Command Reference</i>.</p>
+    /// hybrid environment (Windows)</a>. To retrieve the <code>Name</code> tag of an EC2 instance,
+    /// use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in
+    /// the <i>Amazon Web Services CLI Command Reference</i>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The IP address of the managed instance.</p>
+    /// <p>The IP address of the managed node.</p>
     pub fn ip_address(&self) -> std::option::Option<&str> {
         self.ip_address.as_deref()
     }
-    /// <p>The fully qualified host name of the managed instance.</p>
+    /// <p>The fully qualified host name of the managed node.</p>
     pub fn computer_name(&self) -> std::option::Option<&str> {
         self.computer_name.as_deref()
     }
@@ -30065,6 +30085,16 @@ impl InstanceInformation {
         &self,
     ) -> std::option::Option<&crate::model::InstanceAggregatedAssociationOverview> {
         self.association_overview.as_ref()
+    }
+    /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is
+    /// the Thing name. </p>
+    pub fn source_id(&self) -> std::option::Option<&str> {
+        self.source_id.as_deref()
+    }
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code>
+    /// is <code>AWS::IoT::Thing</code>. </p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
     }
 }
 impl std::fmt::Debug for InstanceInformation {
@@ -30095,6 +30125,8 @@ impl std::fmt::Debug for InstanceInformation {
             &self.last_successful_association_execution_date,
         );
         formatter.field("association_overview", &self.association_overview);
+        formatter.field("source_id", &self.source_id);
+        formatter.field("source_type", &self.source_type);
         formatter.finish()
     }
 }
@@ -30125,14 +30157,16 @@ pub mod instance_information {
             std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) association_overview:
             std::option::Option<crate::model::InstanceAggregatedAssociationOverview>,
+        pub(crate) source_id: std::option::Option<std::string::String>,
+        pub(crate) source_type: std::option::Option<crate::model::SourceType>,
     }
     impl Builder {
-        /// <p>The instance ID. </p>
+        /// <p>The managed node ID. </p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The instance ID. </p>
+        /// <p>The managed node ID. </p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -30169,12 +30203,12 @@ pub mod instance_information {
             self.last_ping_date_time = input;
             self
         }
-        /// <p>The version of SSM Agent running on your Linux instance. </p>
+        /// <p>The version of SSM Agent running on your Linux managed node. </p>
         pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.agent_version = Some(input.into());
             self
         }
-        /// <p>The version of SSM Agent running on your Linux instance. </p>
+        /// <p>The version of SSM Agent running on your Linux managed node. </p>
         pub fn set_agent_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30182,18 +30216,18 @@ pub mod instance_information {
             self.agent_version = input;
             self
         }
-        /// <p>Indicates whether the latest version of SSM Agent is running on your Linux Managed Instance.
-        /// This field doesn't indicate whether or not the latest version is installed on Windows managed
-        /// instances, because some older versions of Windows Server use the EC2Config service to process
-        /// Systems Manager requests.</p>
+        /// <p>Indicates whether the latest version of SSM Agent is running on your Linux managed node. This
+        /// field doesn't indicate whether or not the latest version is installed on Windows managed nodes,
+        /// because some older versions of Windows Server use the EC2Config service to process Systems Manager
+        /// requests.</p>
         pub fn is_latest_version(mut self, input: bool) -> Self {
             self.is_latest_version = Some(input);
             self
         }
-        /// <p>Indicates whether the latest version of SSM Agent is running on your Linux Managed Instance.
-        /// This field doesn't indicate whether or not the latest version is installed on Windows managed
-        /// instances, because some older versions of Windows Server use the EC2Config service to process
-        /// Systems Manager requests.</p>
+        /// <p>Indicates whether the latest version of SSM Agent is running on your Linux managed node. This
+        /// field doesn't indicate whether or not the latest version is installed on Windows managed nodes,
+        /// because some older versions of Windows Server use the EC2Config service to process Systems Manager
+        /// requests.</p>
         pub fn set_is_latest_version(mut self, input: std::option::Option<bool>) -> Self {
             self.is_latest_version = input;
             self
@@ -30211,12 +30245,12 @@ pub mod instance_information {
             self.platform_type = input;
             self
         }
-        /// <p>The name of the operating system platform running on your instance. </p>
+        /// <p>The name of the operating system platform running on your managed node. </p>
         pub fn platform_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_name = Some(input.into());
             self
         }
-        /// <p>The name of the operating system platform running on your instance. </p>
+        /// <p>The name of the operating system platform running on your managed node. </p>
         pub fn set_platform_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30224,12 +30258,12 @@ pub mod instance_information {
             self.platform_name = input;
             self
         }
-        /// <p>The version of the OS platform running on your instance. </p>
+        /// <p>The version of the OS platform running on your managed node. </p>
         pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_version = Some(input.into());
             self
         }
-        /// <p>The version of the OS platform running on your instance. </p>
+        /// <p>The version of the OS platform running on your managed node. </p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30253,7 +30287,7 @@ pub mod instance_information {
             self
         }
         /// <p>The Identity and Access Management (IAM) role assigned to the on-premises Systems Manager
-        /// managed instance. This call doesn't return the IAM role for Amazon Elastic Compute Cloud
+        /// managed node. This call doesn't return the IAM role for Amazon Elastic Compute Cloud
         /// (Amazon EC2) instances. To retrieve the IAM role for an EC2 instance, use
         /// the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in
         /// the <i>Amazon Web Services CLI Command Reference</i>.</p>
@@ -30262,7 +30296,7 @@ pub mod instance_information {
             self
         }
         /// <p>The Identity and Access Management (IAM) role assigned to the on-premises Systems Manager
-        /// managed instance. This call doesn't return the IAM role for Amazon Elastic Compute Cloud
+        /// managed node. This call doesn't return the IAM role for Amazon Elastic Compute Cloud
         /// (Amazon EC2) instances. To retrieve the IAM role for an EC2 instance, use
         /// the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in
         /// the <i>Amazon Web Services CLI Command Reference</i>.</p>
@@ -30270,12 +30304,12 @@ pub mod instance_information {
             self.iam_role = input;
             self
         }
-        /// <p>The date the server or VM was registered with Amazon Web Services as a managed instance.</p>
+        /// <p>The date the server or VM was registered with Amazon Web Services as a managed node.</p>
         pub fn registration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.registration_date = Some(input);
             self
         }
-        /// <p>The date the server or VM was registered with Amazon Web Services as a managed instance.</p>
+        /// <p>The date the server or VM was registered with Amazon Web Services as a managed node.</p>
         pub fn set_registration_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -30296,50 +30330,48 @@ pub mod instance_information {
             self.resource_type = input;
             self
         }
-        /// <p>The name assigned to an on-premises server or virtual machine (VM) when it is activated as a
-        /// Systems Manager managed instance. The name is specified as the <code>DefaultInstanceName</code> property
-        /// using the <a>CreateActivation</a> command. It is applied to the managed instance by
-        /// specifying the Activation Code and Activation ID when you install SSM Agent on the instance, as
+        /// <p>The name assigned to an on-premises server, edge device, or virtual machine (VM) when it is
+        /// activated as a Systems Manager managed node. The name is specified as the <code>DefaultInstanceName</code>
+        /// property using the <a>CreateActivation</a> command. It is applied to the managed node
+        /// by specifying the Activation Code and Activation ID when you install SSM Agent on the node, as
         /// explained in <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM Agent for a
         /// hybrid environment (Linux)</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM Agent for a
-        /// hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2 instance, use the Amazon EC2
-        /// <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
-        /// <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
-        /// <i>Amazon Web Services CLI Command Reference</i>.</p>
+        /// hybrid environment (Windows)</a>. To retrieve the <code>Name</code> tag of an EC2 instance,
+        /// use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in
+        /// the <i>Amazon Web Services CLI Command Reference</i>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name assigned to an on-premises server or virtual machine (VM) when it is activated as a
-        /// Systems Manager managed instance. The name is specified as the <code>DefaultInstanceName</code> property
-        /// using the <a>CreateActivation</a> command. It is applied to the managed instance by
-        /// specifying the Activation Code and Activation ID when you install SSM Agent on the instance, as
+        /// <p>The name assigned to an on-premises server, edge device, or virtual machine (VM) when it is
+        /// activated as a Systems Manager managed node. The name is specified as the <code>DefaultInstanceName</code>
+        /// property using the <a>CreateActivation</a> command. It is applied to the managed node
+        /// by specifying the Activation Code and Activation ID when you install SSM Agent on the node, as
         /// explained in <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM Agent for a
         /// hybrid environment (Linux)</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM Agent for a
-        /// hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2 instance, use the Amazon EC2
-        /// <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
-        /// <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
-        /// <i>Amazon Web Services CLI Command Reference</i>.</p>
+        /// hybrid environment (Windows)</a>. To retrieve the <code>Name</code> tag of an EC2 instance,
+        /// use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in
+        /// the <i>Amazon Web Services CLI Command Reference</i>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The IP address of the managed instance.</p>
+        /// <p>The IP address of the managed node.</p>
         pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.ip_address = Some(input.into());
             self
         }
-        /// <p>The IP address of the managed instance.</p>
+        /// <p>The IP address of the managed node.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_address = input;
             self
         }
-        /// <p>The fully qualified host name of the managed instance.</p>
+        /// <p>The fully qualified host name of the managed node.</p>
         pub fn computer_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.computer_name = Some(input.into());
             self
         }
-        /// <p>The fully qualified host name of the managed instance.</p>
+        /// <p>The fully qualified host name of the managed node.</p>
         pub fn set_computer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30408,6 +30440,33 @@ pub mod instance_information {
             self.association_overview = input;
             self
         }
+        /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is
+        /// the Thing name. </p>
+        pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is
+        /// the Thing name. </p>
+        pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_id = input;
+            self
+        }
+        /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code>
+        /// is <code>AWS::IoT::Thing</code>. </p>
+        pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
+            self.source_type = Some(input);
+            self
+        }
+        /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code>
+        /// is <code>AWS::IoT::Thing</code>. </p>
+        pub fn set_source_type(
+            mut self,
+            input: std::option::Option<crate::model::SourceType>,
+        ) -> Self {
+            self.source_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InstanceInformation`](crate::model::InstanceInformation)
         pub fn build(self) -> crate::model::InstanceInformation {
             crate::model::InstanceInformation {
@@ -30431,6 +30490,8 @@ pub mod instance_information {
                 last_successful_association_execution_date: self
                     .last_successful_association_execution_date,
                 association_overview: self.association_overview,
+                source_id: self.source_id,
+                source_type: self.source_type,
             }
         }
     }
@@ -30442,13 +30503,76 @@ impl InstanceInformation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SourceType {
+    #[allow(missing_docs)] // documentation missing in model
+    AwsEc2Instance,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsIotThing,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSsmManagedinstance,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS::EC2::Instance" => SourceType::AwsEc2Instance,
+            "AWS::IoT::Thing" => SourceType::AwsIotThing,
+            "AWS::SSM::ManagedInstance" => SourceType::AwsSsmManagedinstance,
+            other => SourceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SourceType::from(s))
+    }
+}
+impl SourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SourceType::AwsEc2Instance => "AWS::EC2::Instance",
+            SourceType::AwsIotThing => "AWS::IoT::Thing",
+            SourceType::AwsSsmManagedinstance => "AWS::SSM::ManagedInstance",
+            SourceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AWS::EC2::Instance",
+            "AWS::IoT::Thing",
+            "AWS::SSM::ManagedInstance",
+        ]
+    }
+}
+impl AsRef<str> for SourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Status information about the aggregated associations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceAggregatedAssociationOverview {
     /// <p>Detailed status information about the aggregated associations.</p>
     pub detailed_status: std::option::Option<std::string::String>,
-    /// <p>The number of associations for the instance(s).</p>
+    /// <p>The number of associations for the managed node(s).</p>
     pub instance_association_status_aggregated_count:
         std::option::Option<std::collections::HashMap<std::string::String, i32>>,
 }
@@ -30457,7 +30581,7 @@ impl InstanceAggregatedAssociationOverview {
     pub fn detailed_status(&self) -> std::option::Option<&str> {
         self.detailed_status.as_deref()
     }
-    /// <p>The number of associations for the instance(s).</p>
+    /// <p>The number of associations for the managed node(s).</p>
     pub fn instance_association_status_aggregated_count(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i32>> {
@@ -30503,7 +30627,7 @@ pub mod instance_aggregated_association_overview {
         ///
         /// To override the contents of this collection use [`set_instance_association_status_aggregated_count`](Self::set_instance_association_status_aggregated_count).
         ///
-        /// <p>The number of associations for the instance(s).</p>
+        /// <p>The number of associations for the managed node(s).</p>
         pub fn instance_association_status_aggregated_count(
             mut self,
             k: impl Into<std::string::String>,
@@ -30516,7 +30640,7 @@ pub mod instance_aggregated_association_overview {
             self.instance_association_status_aggregated_count = Some(hash_map);
             self
         }
-        /// <p>The number of associations for the instance(s).</p>
+        /// <p>The number of associations for the managed node(s).</p>
         pub fn set_instance_association_status_aggregated_count(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
@@ -30659,11 +30783,11 @@ impl AsRef<str> for PingStatus {
     }
 }
 
-/// <p>The filters to describe or get information about your managed instances.</p>
+/// <p>The filters to describe or get information about your managed nodes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceInformationStringFilter {
-    /// <p>The filter key name to describe your instances. For example:</p>
+    /// <p>The filter key name to describe your managed nodes. For example:</p>
     /// <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
     /// Key"</p>
     /// <important>
@@ -30678,7 +30802,7 @@ pub struct InstanceInformationStringFilter {
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl InstanceInformationStringFilter {
-    /// <p>The filter key name to describe your instances. For example:</p>
+    /// <p>The filter key name to describe your managed nodes. For example:</p>
     /// <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
     /// Key"</p>
     /// <important>
@@ -30714,7 +30838,7 @@ pub mod instance_information_string_filter {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The filter key name to describe your instances. For example:</p>
+        /// <p>The filter key name to describe your managed nodes. For example:</p>
         /// <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
         /// Key"</p>
         /// <important>
@@ -30728,7 +30852,7 @@ pub mod instance_information_string_filter {
             self.key = Some(input.into());
             self
         }
-        /// <p>The filter key name to describe your instances. For example:</p>
+        /// <p>The filter key name to describe your managed nodes. For example:</p>
         /// <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
         /// Key"</p>
         /// <important>
@@ -30777,7 +30901,7 @@ impl InstanceInformationStringFilter {
     }
 }
 
-/// <p>Describes a filter for a specific list of instances. You can filter instances information by
+/// <p>Describes a filter for a specific list of managed nodes. You can filter node information by
 /// using tags. You specify tags by using a key-value mapping.</p>
 /// <p>Use this operation instead of the <a>DescribeInstanceInformationRequest$InstanceInformationFilterList</a> method. The
 /// <code>InstanceInformationFilterList</code> method is a legacy method and doesn't support tags.
@@ -30954,7 +31078,7 @@ impl AsRef<str> for InstanceInformationFilterKey {
     }
 }
 
-/// <p>Status information about the instance association.</p>
+/// <p>Status information about the association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceAssociationStatusInfo {
@@ -30964,15 +31088,15 @@ pub struct InstanceAssociationStatusInfo {
     pub name: std::option::Option<std::string::String>,
     /// <p>The association document versions.</p>
     pub document_version: std::option::Option<std::string::String>,
-    /// <p>The version of the association applied to the instance.</p>
+    /// <p>The version of the association applied to the managed node.</p>
     pub association_version: std::option::Option<std::string::String>,
-    /// <p>The instance ID where the association was created.</p>
+    /// <p>The managed node ID where the association was created.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The date the instance association ran. </p>
+    /// <p>The date the association ran. </p>
     pub execution_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Status information about the instance association.</p>
+    /// <p>Status information about the association.</p>
     pub status: std::option::Option<std::string::String>,
-    /// <p>Detailed status information about the instance association.</p>
+    /// <p>Detailed status information about the association.</p>
     pub detailed_status: std::option::Option<std::string::String>,
     /// <p>Summary information about association execution.</p>
     pub execution_summary: std::option::Option<std::string::String>,
@@ -30980,7 +31104,7 @@ pub struct InstanceAssociationStatusInfo {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
     pub output_url: std::option::Option<crate::model::InstanceAssociationOutputUrl>,
-    /// <p>The name of the association applied to the instance.</p>
+    /// <p>The name of the association applied to the managed node.</p>
     pub association_name: std::option::Option<std::string::String>,
 }
 impl InstanceAssociationStatusInfo {
@@ -30996,23 +31120,23 @@ impl InstanceAssociationStatusInfo {
     pub fn document_version(&self) -> std::option::Option<&str> {
         self.document_version.as_deref()
     }
-    /// <p>The version of the association applied to the instance.</p>
+    /// <p>The version of the association applied to the managed node.</p>
     pub fn association_version(&self) -> std::option::Option<&str> {
         self.association_version.as_deref()
     }
-    /// <p>The instance ID where the association was created.</p>
+    /// <p>The managed node ID where the association was created.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The date the instance association ran. </p>
+    /// <p>The date the association ran. </p>
     pub fn execution_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.execution_date.as_ref()
     }
-    /// <p>Status information about the instance association.</p>
+    /// <p>Status information about the association.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>Detailed status information about the instance association.</p>
+    /// <p>Detailed status information about the association.</p>
     pub fn detailed_status(&self) -> std::option::Option<&str> {
         self.detailed_status.as_deref()
     }
@@ -31028,7 +31152,7 @@ impl InstanceAssociationStatusInfo {
     pub fn output_url(&self) -> std::option::Option<&crate::model::InstanceAssociationOutputUrl> {
         self.output_url.as_ref()
     }
-    /// <p>The name of the association applied to the instance.</p>
+    /// <p>The name of the association applied to the managed node.</p>
     pub fn association_name(&self) -> std::option::Option<&str> {
         self.association_name.as_deref()
     }
@@ -31107,12 +31231,12 @@ pub mod instance_association_status_info {
             self.document_version = input;
             self
         }
-        /// <p>The version of the association applied to the instance.</p>
+        /// <p>The version of the association applied to the managed node.</p>
         pub fn association_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.association_version = Some(input.into());
             self
         }
-        /// <p>The version of the association applied to the instance.</p>
+        /// <p>The version of the association applied to the managed node.</p>
         pub fn set_association_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -31120,22 +31244,22 @@ pub mod instance_association_status_info {
             self.association_version = input;
             self
         }
-        /// <p>The instance ID where the association was created.</p>
+        /// <p>The managed node ID where the association was created.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The instance ID where the association was created.</p>
+        /// <p>The managed node ID where the association was created.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
         }
-        /// <p>The date the instance association ran. </p>
+        /// <p>The date the association ran. </p>
         pub fn execution_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.execution_date = Some(input);
             self
         }
-        /// <p>The date the instance association ran. </p>
+        /// <p>The date the association ran. </p>
         pub fn set_execution_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -31143,22 +31267,22 @@ pub mod instance_association_status_info {
             self.execution_date = input;
             self
         }
-        /// <p>Status information about the instance association.</p>
+        /// <p>Status information about the association.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>Status information about the instance association.</p>
+        /// <p>Status information about the association.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
-        /// <p>Detailed status information about the instance association.</p>
+        /// <p>Detailed status information about the association.</p>
         pub fn detailed_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.detailed_status = Some(input.into());
             self
         }
-        /// <p>Detailed status information about the instance association.</p>
+        /// <p>Detailed status information about the association.</p>
         pub fn set_detailed_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -31202,12 +31326,12 @@ pub mod instance_association_status_info {
             self.output_url = input;
             self
         }
-        /// <p>The name of the association applied to the instance.</p>
+        /// <p>The name of the association applied to the managed node.</p>
         pub fn association_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.association_name = Some(input.into());
             self
         }
-        /// <p>The name of the association applied to the instance.</p>
+        /// <p>The name of the association applied to the managed node.</p>
         pub fn set_association_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -31657,38 +31781,38 @@ pub struct Patch {
     /// <p>The language of the patch if it's language-specific.</p>
     pub language: std::option::Option<std::string::String>,
     /// <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to
-    /// Linux-based instances only.</p>
+    /// Linux-based managed nodes only.</p>
     pub advisory_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based
-    /// instances only.</p>
+    /// managed nodes only.</p>
     pub bugzilla_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-    /// <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
+    /// <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
     pub cve_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The name of the patch. Applies to Linux-based instances only.</p>
+    /// <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The epoch of the patch. For example in
     /// <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
-    /// <code>20180914-2</code>. Applies to Linux-based instances only.</p>
+    /// <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
     pub epoch: i32,
     /// <p>The version number of the patch. For example, in
     /// <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is indicated by
-    /// <code>-1</code>. Applies to Linux-based instances only.</p>
+    /// <code>-1</code>. Applies to Linux-based managed nodes only.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>The particular release of a patch. For example, in
     /// <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is <code>2.amaz1</code>.
-    /// Applies to Linux-based instances only.</p>
+    /// Applies to Linux-based managed nodes only.</p>
     pub release: std::option::Option<std::string::String>,
     /// <p>The architecture of the patch. For example, in
     /// <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated by
-    /// <code>x86_64</code>. Applies to Linux-based instances only.</p>
+    /// <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
     pub arch: std::option::Option<std::string::String>,
     /// <p>The severity level of the patch. For example, <code>CRITICAL</code> or
     /// <code>MODERATE</code>.</p>
     pub severity: std::option::Option<std::string::String>,
     /// <p>The source patch repository for the operating system and version, such as
     /// <code>trusty-security</code> for Ubuntu Server 14.04 LTE and <code>focal-security</code> for
-    /// Ubuntu Server 20.04 LTE. Applies to Linux-based instances only.</p>
+    /// Ubuntu Server 20.04 LTE. Applies to Linux-based managed nodes only.</p>
     pub repository: std::option::Option<std::string::String>,
 }
 impl Patch {
@@ -31753,45 +31877,45 @@ impl Patch {
         self.language.as_deref()
     }
     /// <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to
-    /// Linux-based instances only.</p>
+    /// Linux-based managed nodes only.</p>
     pub fn advisory_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.advisory_ids.as_deref()
     }
     /// <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based
-    /// instances only.</p>
+    /// managed nodes only.</p>
     pub fn bugzilla_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.bugzilla_ids.as_deref()
     }
     /// <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-    /// <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
+    /// <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
     pub fn cve_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.cve_ids.as_deref()
     }
-    /// <p>The name of the patch. Applies to Linux-based instances only.</p>
+    /// <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The epoch of the patch. For example in
     /// <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
-    /// <code>20180914-2</code>. Applies to Linux-based instances only.</p>
+    /// <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
     pub fn epoch(&self) -> i32 {
         self.epoch
     }
     /// <p>The version number of the patch. For example, in
     /// <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is indicated by
-    /// <code>-1</code>. Applies to Linux-based instances only.</p>
+    /// <code>-1</code>. Applies to Linux-based managed nodes only.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The particular release of a patch. For example, in
     /// <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is <code>2.amaz1</code>.
-    /// Applies to Linux-based instances only.</p>
+    /// Applies to Linux-based managed nodes only.</p>
     pub fn release(&self) -> std::option::Option<&str> {
         self.release.as_deref()
     }
     /// <p>The architecture of the patch. For example, in
     /// <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated by
-    /// <code>x86_64</code>. Applies to Linux-based instances only.</p>
+    /// <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
     pub fn arch(&self) -> std::option::Option<&str> {
         self.arch.as_deref()
     }
@@ -31802,7 +31926,7 @@ impl Patch {
     }
     /// <p>The source patch repository for the operating system and version, such as
     /// <code>trusty-security</code> for Ubuntu Server 14.04 LTE and <code>focal-security</code> for
-    /// Ubuntu Server 20.04 LTE. Applies to Linux-based instances only.</p>
+    /// Ubuntu Server 20.04 LTE. Applies to Linux-based managed nodes only.</p>
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
@@ -32030,7 +32154,7 @@ pub mod patch {
         /// To override the contents of this collection use [`set_advisory_ids`](Self::set_advisory_ids).
         ///
         /// <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to
-        /// Linux-based instances only.</p>
+        /// Linux-based managed nodes only.</p>
         pub fn advisory_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.advisory_ids.unwrap_or_default();
             v.push(input.into());
@@ -32038,7 +32162,7 @@ pub mod patch {
             self
         }
         /// <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to
-        /// Linux-based instances only.</p>
+        /// Linux-based managed nodes only.</p>
         pub fn set_advisory_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -32051,7 +32175,7 @@ pub mod patch {
         /// To override the contents of this collection use [`set_bugzilla_ids`](Self::set_bugzilla_ids).
         ///
         /// <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based
-        /// instances only.</p>
+        /// managed nodes only.</p>
         pub fn bugzilla_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.bugzilla_ids.unwrap_or_default();
             v.push(input.into());
@@ -32059,7 +32183,7 @@ pub mod patch {
             self
         }
         /// <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based
-        /// instances only.</p>
+        /// managed nodes only.</p>
         pub fn set_bugzilla_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -32072,7 +32196,7 @@ pub mod patch {
         /// To override the contents of this collection use [`set_cve_ids`](Self::set_cve_ids).
         ///
         /// <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-        /// <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
+        /// <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
         pub fn cve_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cve_ids.unwrap_or_default();
             v.push(input.into());
@@ -32080,7 +32204,7 @@ pub mod patch {
             self
         }
         /// <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-        /// <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
+        /// <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
         pub fn set_cve_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -32088,68 +32212,68 @@ pub mod patch {
             self.cve_ids = input;
             self
         }
-        /// <p>The name of the patch. Applies to Linux-based instances only.</p>
+        /// <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the patch. Applies to Linux-based instances only.</p>
+        /// <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
         /// <p>The epoch of the patch. For example in
         /// <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
-        /// <code>20180914-2</code>. Applies to Linux-based instances only.</p>
+        /// <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
         pub fn epoch(mut self, input: i32) -> Self {
             self.epoch = Some(input);
             self
         }
         /// <p>The epoch of the patch. For example in
         /// <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
-        /// <code>20180914-2</code>. Applies to Linux-based instances only.</p>
+        /// <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
         pub fn set_epoch(mut self, input: std::option::Option<i32>) -> Self {
             self.epoch = input;
             self
         }
         /// <p>The version number of the patch. For example, in
         /// <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is indicated by
-        /// <code>-1</code>. Applies to Linux-based instances only.</p>
+        /// <code>-1</code>. Applies to Linux-based managed nodes only.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
         /// <p>The version number of the patch. For example, in
         /// <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is indicated by
-        /// <code>-1</code>. Applies to Linux-based instances only.</p>
+        /// <code>-1</code>. Applies to Linux-based managed nodes only.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
         /// <p>The particular release of a patch. For example, in
         /// <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is <code>2.amaz1</code>.
-        /// Applies to Linux-based instances only.</p>
+        /// Applies to Linux-based managed nodes only.</p>
         pub fn release(mut self, input: impl Into<std::string::String>) -> Self {
             self.release = Some(input.into());
             self
         }
         /// <p>The particular release of a patch. For example, in
         /// <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is <code>2.amaz1</code>.
-        /// Applies to Linux-based instances only.</p>
+        /// Applies to Linux-based managed nodes only.</p>
         pub fn set_release(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.release = input;
             self
         }
         /// <p>The architecture of the patch. For example, in
         /// <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated by
-        /// <code>x86_64</code>. Applies to Linux-based instances only.</p>
+        /// <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
         pub fn arch(mut self, input: impl Into<std::string::String>) -> Self {
             self.arch = Some(input.into());
             self
         }
         /// <p>The architecture of the patch. For example, in
         /// <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated by
-        /// <code>x86_64</code>. Applies to Linux-based instances only.</p>
+        /// <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
         pub fn set_arch(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arch = input;
             self
@@ -32168,14 +32292,14 @@ pub mod patch {
         }
         /// <p>The source patch repository for the operating system and version, such as
         /// <code>trusty-security</code> for Ubuntu Server 14.04 LTE and <code>focal-security</code> for
-        /// Ubuntu Server 20.04 LTE. Applies to Linux-based instances only.</p>
+        /// Ubuntu Server 20.04 LTE. Applies to Linux-based managed nodes only.</p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository = Some(input.into());
             self
         }
         /// <p>The source patch repository for the operating system and version, such as
         /// <code>trusty-security</code> for Ubuntu Server 14.04 LTE and <code>focal-security</code> for
-        /// Ubuntu Server 20.04 LTE. Applies to Linux-based instances only.</p>
+        /// Ubuntu Server 20.04 LTE. Applies to Linux-based managed nodes only.</p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.repository = input;
             self
@@ -32217,17 +32341,17 @@ impl Patch {
     }
 }
 
-/// <p>One or more association documents on the instance. </p>
+/// <p>One or more association documents on the managed node. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceAssociation {
     /// <p>The association ID.</p>
     pub association_id: std::option::Option<std::string::String>,
-    /// <p>The instance ID.</p>
+    /// <p>The managed node ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The content of the association document for the instance(s).</p>
+    /// <p>The content of the association document for the managed node(s).</p>
     pub content: std::option::Option<std::string::String>,
-    /// <p>Version information for the association on the instance.</p>
+    /// <p>Version information for the association on the managed node.</p>
     pub association_version: std::option::Option<std::string::String>,
 }
 impl InstanceAssociation {
@@ -32235,15 +32359,15 @@ impl InstanceAssociation {
     pub fn association_id(&self) -> std::option::Option<&str> {
         self.association_id.as_deref()
     }
-    /// <p>The instance ID.</p>
+    /// <p>The managed node ID.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The content of the association document for the instance(s).</p>
+    /// <p>The content of the association document for the managed node(s).</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>Version information for the association on the instance.</p>
+    /// <p>Version information for the association on the managed node.</p>
     pub fn association_version(&self) -> std::option::Option<&str> {
         self.association_version.as_deref()
     }
@@ -32283,32 +32407,32 @@ pub mod instance_association {
             self.association_id = input;
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
         }
-        /// <p>The content of the association document for the instance(s).</p>
+        /// <p>The content of the association document for the managed node(s).</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The content of the association document for the instance(s).</p>
+        /// <p>The content of the association document for the managed node(s).</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
         }
-        /// <p>Version information for the association on the instance.</p>
+        /// <p>Version information for the association on the managed node.</p>
         pub fn association_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.association_version = Some(input.into());
             self
         }
-        /// <p>Version information for the association on the instance.</p>
+        /// <p>Version information for the association on the managed node.</p>
         pub fn set_association_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -33591,9 +33715,9 @@ pub struct AssociationExecutionTarget {
     pub association_version: std::option::Option<std::string::String>,
     /// <p>The execution ID.</p>
     pub execution_id: std::option::Option<std::string::String>,
-    /// <p>The resource ID, for example, the instance ID where the association ran.</p>
+    /// <p>The resource ID, for example, the managed node ID where the association ran.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The resource type, for example, instance.</p>
+    /// <p>The resource type, for example, EC2.</p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The association execution status.</p>
     pub status: std::option::Option<std::string::String>,
@@ -33617,11 +33741,11 @@ impl AssociationExecutionTarget {
     pub fn execution_id(&self) -> std::option::Option<&str> {
         self.execution_id.as_deref()
     }
-    /// <p>The resource ID, for example, the instance ID where the association ran.</p>
+    /// <p>The resource ID, for example, the managed node ID where the association ran.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The resource type, for example, instance.</p>
+    /// <p>The resource type, for example, EC2.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -33710,22 +33834,22 @@ pub mod association_execution_target {
             self.execution_id = input;
             self
         }
-        /// <p>The resource ID, for example, the instance ID where the association ran.</p>
+        /// <p>The resource ID, for example, the managed node ID where the association ran.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The resource ID, for example, the instance ID where the association ran.</p>
+        /// <p>The resource ID, for example, the managed node ID where the association ran.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>The resource type, for example, instance.</p>
+        /// <p>The resource type, for example, EC2.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The resource type, for example, instance.</p>
+        /// <p>The resource type, for example, EC2.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -34442,7 +34566,7 @@ impl AsRef<str> for AssociationExecutionFilterKey {
 
 /// <p>An activation registers one or more on-premises servers or virtual machines (VMs) with Amazon Web Services
 /// so that you can configure those servers or VMs using Run Command. A server or VM that has been
-/// registered with Amazon Web Services Systems Manager is called a managed instance.</p>
+/// registered with Amazon Web Services Systems Manager is called a managed node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Activation {
@@ -34450,16 +34574,16 @@ pub struct Activation {
     pub activation_id: std::option::Option<std::string::String>,
     /// <p>A user defined description of the activation.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A name for the managed instance when it is created.</p>
+    /// <p>A name for the managed node when it is created.</p>
     pub default_instance_name: std::option::Option<std::string::String>,
     /// <p>The Identity and Access Management (IAM) role to assign to the managed
-    /// instance.</p>
+    /// node.</p>
     pub iam_role: std::option::Option<std::string::String>,
-    /// <p>The maximum number of managed instances that can be registered using this activation.</p>
+    /// <p>The maximum number of managed nodes that can be registered using this activation.</p>
     pub registration_limit: i32,
-    /// <p>The number of managed instances already registered with this activation.</p>
+    /// <p>The number of managed nodes already registered with this activation.</p>
     pub registrations_count: i32,
-    /// <p>The date when this activation can no longer be used to register managed instances.</p>
+    /// <p>The date when this activation can no longer be used to register managed nodes.</p>
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Whether or not the activation is expired.</p>
     pub expired: bool,
@@ -34477,24 +34601,24 @@ impl Activation {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A name for the managed instance when it is created.</p>
+    /// <p>A name for the managed node when it is created.</p>
     pub fn default_instance_name(&self) -> std::option::Option<&str> {
         self.default_instance_name.as_deref()
     }
     /// <p>The Identity and Access Management (IAM) role to assign to the managed
-    /// instance.</p>
+    /// node.</p>
     pub fn iam_role(&self) -> std::option::Option<&str> {
         self.iam_role.as_deref()
     }
-    /// <p>The maximum number of managed instances that can be registered using this activation.</p>
+    /// <p>The maximum number of managed nodes that can be registered using this activation.</p>
     pub fn registration_limit(&self) -> i32 {
         self.registration_limit
     }
-    /// <p>The number of managed instances already registered with this activation.</p>
+    /// <p>The number of managed nodes already registered with this activation.</p>
     pub fn registrations_count(&self) -> i32 {
         self.registrations_count
     }
-    /// <p>The date when this activation can no longer be used to register managed instances.</p>
+    /// <p>The date when this activation can no longer be used to register managed nodes.</p>
     pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
@@ -34568,12 +34692,12 @@ pub mod activation {
             self.description = input;
             self
         }
-        /// <p>A name for the managed instance when it is created.</p>
+        /// <p>A name for the managed node when it is created.</p>
         pub fn default_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_instance_name = Some(input.into());
             self
         }
-        /// <p>A name for the managed instance when it is created.</p>
+        /// <p>A name for the managed node when it is created.</p>
         pub fn set_default_instance_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -34582,43 +34706,43 @@ pub mod activation {
             self
         }
         /// <p>The Identity and Access Management (IAM) role to assign to the managed
-        /// instance.</p>
+        /// node.</p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role = Some(input.into());
             self
         }
         /// <p>The Identity and Access Management (IAM) role to assign to the managed
-        /// instance.</p>
+        /// node.</p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role = input;
             self
         }
-        /// <p>The maximum number of managed instances that can be registered using this activation.</p>
+        /// <p>The maximum number of managed nodes that can be registered using this activation.</p>
         pub fn registration_limit(mut self, input: i32) -> Self {
             self.registration_limit = Some(input);
             self
         }
-        /// <p>The maximum number of managed instances that can be registered using this activation.</p>
+        /// <p>The maximum number of managed nodes that can be registered using this activation.</p>
         pub fn set_registration_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.registration_limit = input;
             self
         }
-        /// <p>The number of managed instances already registered with this activation.</p>
+        /// <p>The number of managed nodes already registered with this activation.</p>
         pub fn registrations_count(mut self, input: i32) -> Self {
             self.registrations_count = Some(input);
             self
         }
-        /// <p>The number of managed instances already registered with this activation.</p>
+        /// <p>The number of managed nodes already registered with this activation.</p>
         pub fn set_registrations_count(mut self, input: std::option::Option<i32>) -> Self {
             self.registrations_count = input;
             self
         }
-        /// <p>The date when this activation can no longer be used to register managed instances.</p>
+        /// <p>The date when this activation can no longer be used to register managed nodes.</p>
         pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_date = Some(input);
             self
         }
-        /// <p>The date when this activation can no longer be used to register managed instances.</p>
+        /// <p>The date when this activation can no longer be used to register managed nodes.</p>
         pub fn set_expiration_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -35045,11 +35169,11 @@ impl AsRef<str> for Fault {
     }
 }
 
-/// <p>Describes the association of a Amazon Web Services Systems Manager document (SSM document) and an instance.</p>
+/// <p>Describes the association of a Amazon Web Services Systems Manager document (SSM document) and a managed node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssociationBatchRequestEntry {
-    /// <p>The name of the SSM document that contains the configuration information for the instance.
+    /// <p>The name of the SSM document that contains the configuration information for the managed node.
     /// You can specify Command or Automation runbooks.</p>
     /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
     /// shared with you from another account.</p>
@@ -35067,10 +35191,10 @@ pub struct CreateAssociationBatchRequestEntry {
     /// to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
     /// <code>My-Document</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The instance ID.</p>
+    /// <p>The managed node ID.</p>
     /// <note>
     /// <p>
-    /// <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
+    /// <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association,
     /// use the <code>Targets</code> parameter. Requests that include the
     /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
     /// 2.0 or later will fail. In addition, if you use the parameter
@@ -35090,7 +35214,7 @@ pub struct CreateAssociationBatchRequestEntry {
     pub automation_target_parameter_name: std::option::Option<std::string::String>,
     /// <p>The document version.</p>
     pub document_version: std::option::Option<std::string::String>,
-    /// <p>The instances targeted by the request.</p>
+    /// <p>The managed nodes targeted by the request.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>A cron expression that specifies a schedule when the association runs.</p>
     pub schedule_expression: std::option::Option<std::string::String>,
@@ -35103,8 +35227,8 @@ pub struct CreateAssociationBatchRequestEntry {
     /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
     /// the system stops sending requests when the fourth error is received. If you specify 0, then the
     /// system stops sending requests after the first error is returned. If you run an association on 50
-    /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
-    /// the sixth error is received.</p>
+    /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
+    /// when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
     /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
     /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
@@ -35113,9 +35237,9 @@ pub struct CreateAssociationBatchRequestEntry {
     /// <p>The maximum number of targets allowed to run the association at the same time. You can
     /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
     /// value is 100%, which means all targets run the association at the same time.</p>
-    /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+    /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
     /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-    /// association interval, the new instance will process its association within the limit specified
+    /// association interval, the new managed node will process its association within the limit specified
     /// for <code>MaxConcurrency</code>.</p>
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The severity level to assign to the association.</p>
@@ -35145,7 +35269,7 @@ pub struct CreateAssociationBatchRequestEntry {
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
 }
 impl CreateAssociationBatchRequestEntry {
-    /// <p>The name of the SSM document that contains the configuration information for the instance.
+    /// <p>The name of the SSM document that contains the configuration information for the managed node.
     /// You can specify Command or Automation runbooks.</p>
     /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
     /// shared with you from another account.</p>
@@ -35165,10 +35289,10 @@ impl CreateAssociationBatchRequestEntry {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The instance ID.</p>
+    /// <p>The managed node ID.</p>
     /// <note>
     /// <p>
-    /// <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
+    /// <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association,
     /// use the <code>Targets</code> parameter. Requests that include the
     /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
     /// 2.0 or later will fail. In addition, if you use the parameter
@@ -35198,7 +35322,7 @@ impl CreateAssociationBatchRequestEntry {
     pub fn document_version(&self) -> std::option::Option<&str> {
         self.document_version.as_deref()
     }
-    /// <p>The instances targeted by the request.</p>
+    /// <p>The managed nodes targeted by the request.</p>
     pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
         self.targets.as_deref()
     }
@@ -35221,8 +35345,8 @@ impl CreateAssociationBatchRequestEntry {
     /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
     /// the system stops sending requests when the fourth error is received. If you specify 0, then the
     /// system stops sending requests after the first error is returned. If you run an association on 50
-    /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
-    /// the sixth error is received.</p>
+    /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
+    /// when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
     /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
     /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
@@ -35233,9 +35357,9 @@ impl CreateAssociationBatchRequestEntry {
     /// <p>The maximum number of targets allowed to run the association at the same time. You can
     /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
     /// value is 100%, which means all targets run the association at the same time.</p>
-    /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+    /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
     /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-    /// association interval, the new instance will process its association within the limit specified
+    /// association interval, the new managed node will process its association within the limit specified
     /// for <code>MaxConcurrency</code>.</p>
     pub fn max_concurrency(&self) -> std::option::Option<&str> {
         self.max_concurrency.as_deref()
@@ -35283,7 +35407,7 @@ impl std::fmt::Debug for CreateAssociationBatchRequestEntry {
         let mut formatter = f.debug_struct("CreateAssociationBatchRequestEntry");
         formatter.field("name", &self.name);
         formatter.field("instance_id", &self.instance_id);
-        formatter.field("parameters", &self.parameters);
+        formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field(
             "automation_target_parameter_name",
             &self.automation_target_parameter_name,
@@ -35335,7 +35459,7 @@ pub mod create_association_batch_request_entry {
             std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
     }
     impl Builder {
-        /// <p>The name of the SSM document that contains the configuration information for the instance.
+        /// <p>The name of the SSM document that contains the configuration information for the managed node.
         /// You can specify Command or Automation runbooks.</p>
         /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
         /// shared with you from another account.</p>
@@ -35356,7 +35480,7 @@ pub mod create_association_batch_request_entry {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the SSM document that contains the configuration information for the instance.
+        /// <p>The name of the SSM document that contains the configuration information for the managed node.
         /// You can specify Command or Automation runbooks.</p>
         /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
         /// shared with you from another account.</p>
@@ -35377,10 +35501,10 @@ pub mod create_association_batch_request_entry {
             self.name = input;
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         /// <note>
         /// <p>
-        /// <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
+        /// <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association,
         /// use the <code>Targets</code> parameter. Requests that include the
         /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
         /// 2.0 or later will fail. In addition, if you use the parameter
@@ -35393,10 +35517,10 @@ pub mod create_association_batch_request_entry {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         /// <note>
         /// <p>
-        /// <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
+        /// <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association,
         /// use the <code>Targets</code> parameter. Requests that include the
         /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
         /// 2.0 or later will fail. In addition, if you use the parameter
@@ -35471,14 +35595,14 @@ pub mod create_association_batch_request_entry {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The instances targeted by the request.</p>
+        /// <p>The managed nodes targeted by the request.</p>
         pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
             let mut v = self.targets.unwrap_or_default();
             v.push(input.into());
             self.targets = Some(v);
             self
         }
-        /// <p>The instances targeted by the request.</p>
+        /// <p>The managed nodes targeted by the request.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -35533,8 +35657,8 @@ pub mod create_association_batch_request_entry {
         /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
         /// the system stops sending requests when the fourth error is received. If you specify 0, then the
         /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
-        /// the sixth error is received.</p>
+        /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
+        /// when the sixth error is received.</p>
         /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
         /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
         /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
@@ -35548,8 +35672,8 @@ pub mod create_association_batch_request_entry {
         /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
         /// the system stops sending requests when the fourth error is received. If you specify 0, then the
         /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
-        /// the sixth error is received.</p>
+        /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
+        /// when the sixth error is received.</p>
         /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
         /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
         /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
@@ -35561,9 +35685,9 @@ pub mod create_association_batch_request_entry {
         /// <p>The maximum number of targets allowed to run the association at the same time. You can
         /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
         /// value is 100%, which means all targets run the association at the same time.</p>
-        /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
         /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-        /// association interval, the new instance will process its association within the limit specified
+        /// association interval, the new managed node will process its association within the limit specified
         /// for <code>MaxConcurrency</code>.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
@@ -35572,9 +35696,9 @@ pub mod create_association_batch_request_entry {
         /// <p>The maximum number of targets allowed to run the association at the same time. You can
         /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
         /// value is 100%, which means all targets run the association at the same time.</p>
-        /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
         /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-        /// association interval, the new instance will process its association within the limit specified
+        /// association interval, the new managed node will process its association within the limit specified
         /// for <code>MaxConcurrency</code>.</p>
         pub fn set_max_concurrency(
             mut self,
@@ -35717,5 +35841,78 @@ impl CreateAssociationBatchRequestEntry {
     /// Creates a new builder-style object to manufacture [`CreateAssociationBatchRequestEntry`](crate::model::CreateAssociationBatchRequestEntry)
     pub fn builder() -> crate::model::create_association_batch_request_entry::Builder {
         crate::model::create_association_batch_request_entry::Builder::default()
+    }
+}
+
+/// <p>Reserved for internal use.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegistrationMetadataItem {
+    /// <p>Reserved for internal use.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>Reserved for internal use.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl RegistrationMetadataItem {
+    /// <p>Reserved for internal use.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for RegistrationMetadataItem {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RegistrationMetadataItem");
+        formatter.field("key", &self.key);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`RegistrationMetadataItem`](crate::model::RegistrationMetadataItem)
+pub mod registration_metadata_item {
+    /// A builder for [`RegistrationMetadataItem`](crate::model::RegistrationMetadataItem)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Reserved for internal use.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>Reserved for internal use.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>Reserved for internal use.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>Reserved for internal use.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegistrationMetadataItem`](crate::model::RegistrationMetadataItem)
+        pub fn build(self) -> crate::model::RegistrationMetadataItem {
+            crate::model::RegistrationMetadataItem {
+                key: self.key,
+                value: self.value,
+            }
+        }
+    }
+}
+impl RegistrationMetadataItem {
+    /// Creates a new builder-style object to manufacture [`RegistrationMetadataItem`](crate::model::RegistrationMetadataItem)
+    pub fn builder() -> crate::model::registration_metadata_item::Builder {
+        crate::model::registration_metadata_item::Builder::default()
     }
 }

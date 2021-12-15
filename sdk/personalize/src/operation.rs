@@ -33,6 +33,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBatchInferenceJob 
     }
 }
 
+/// Operation shape for `CreateBatchSegmentJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_batch_segment_job`](crate::client::Client::create_batch_segment_job).
+///
+/// See [`crate::client::fluent_builders::CreateBatchSegmentJob`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateBatchSegmentJob {
+    _private: (),
+}
+impl CreateBatchSegmentJob {
+    /// Creates a new builder-style object to manufacture [`CreateBatchSegmentJobInput`](crate::input::CreateBatchSegmentJobInput)
+    pub fn builder() -> crate::input::create_batch_segment_job_input::Builder {
+        crate::input::create_batch_segment_job_input::Builder::default()
+    }
+    /// Creates a new `CreateBatchSegmentJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateBatchSegmentJob {
+    type Output = std::result::Result<
+        crate::output::CreateBatchSegmentJobOutput,
+        crate::error::CreateBatchSegmentJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_batch_segment_job_error(response)
+        } else {
+            crate::operation_deser::parse_create_batch_segment_job_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateCampaign`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -261,6 +295,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFilter {
             crate::operation_deser::parse_create_filter_error(response)
         } else {
             crate::operation_deser::parse_create_filter_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateRecommender`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_recommender`](crate::client::Client::create_recommender).
+///
+/// See [`crate::client::fluent_builders::CreateRecommender`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateRecommender {
+    _private: (),
+}
+impl CreateRecommender {
+    /// Creates a new builder-style object to manufacture [`CreateRecommenderInput`](crate::input::CreateRecommenderInput)
+    pub fn builder() -> crate::input::create_recommender_input::Builder {
+        crate::input::create_recommender_input::Builder::default()
+    }
+    /// Creates a new `CreateRecommender` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateRecommender {
+    type Output = std::result::Result<
+        crate::output::CreateRecommenderOutput,
+        crate::error::CreateRecommenderError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_recommender_error(response)
+        } else {
+            crate::operation_deser::parse_create_recommender_response(response)
         }
     }
 }
@@ -527,6 +595,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFilter {
     }
 }
 
+/// Operation shape for `DeleteRecommender`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_recommender`](crate::client::Client::delete_recommender).
+///
+/// See [`crate::client::fluent_builders::DeleteRecommender`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteRecommender {
+    _private: (),
+}
+impl DeleteRecommender {
+    /// Creates a new builder-style object to manufacture [`DeleteRecommenderInput`](crate::input::DeleteRecommenderInput)
+    pub fn builder() -> crate::input::delete_recommender_input::Builder {
+        crate::input::delete_recommender_input::Builder::default()
+    }
+    /// Creates a new `DeleteRecommender` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteRecommender {
+    type Output = std::result::Result<
+        crate::output::DeleteRecommenderOutput,
+        crate::error::DeleteRecommenderError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_recommender_error(response)
+        } else {
+            crate::operation_deser::parse_delete_recommender_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteSchema`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -655,6 +757,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBatchInferenceJo
             crate::operation_deser::parse_describe_batch_inference_job_error(response)
         } else {
             crate::operation_deser::parse_describe_batch_inference_job_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeBatchSegmentJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_batch_segment_job`](crate::client::Client::describe_batch_segment_job).
+///
+/// See [`crate::client::fluent_builders::DescribeBatchSegmentJob`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeBatchSegmentJob {
+    _private: (),
+}
+impl DescribeBatchSegmentJob {
+    /// Creates a new builder-style object to manufacture [`DescribeBatchSegmentJobInput`](crate::input::DescribeBatchSegmentJobInput)
+    pub fn builder() -> crate::input::describe_batch_segment_job_input::Builder {
+        crate::input::describe_batch_segment_job_input::Builder::default()
+    }
+    /// Creates a new `DescribeBatchSegmentJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeBatchSegmentJob {
+    type Output = std::result::Result<
+        crate::output::DescribeBatchSegmentJobOutput,
+        crate::error::DescribeBatchSegmentJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_batch_segment_job_error(response)
+        } else {
+            crate::operation_deser::parse_describe_batch_segment_job_response(response)
         }
     }
 }
@@ -961,6 +1097,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecipe {
     }
 }
 
+/// Operation shape for `DescribeRecommender`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_recommender`](crate::client::Client::describe_recommender).
+///
+/// See [`crate::client::fluent_builders::DescribeRecommender`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeRecommender {
+    _private: (),
+}
+impl DescribeRecommender {
+    /// Creates a new builder-style object to manufacture [`DescribeRecommenderInput`](crate::input::DescribeRecommenderInput)
+    pub fn builder() -> crate::input::describe_recommender_input::Builder {
+        crate::input::describe_recommender_input::Builder::default()
+    }
+    /// Creates a new `DescribeRecommender` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeRecommender {
+    type Output = std::result::Result<
+        crate::output::DescribeRecommenderOutput,
+        crate::error::DescribeRecommenderError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_recommender_error(response)
+        } else {
+            crate::operation_deser::parse_describe_recommender_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeSchema`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1125,6 +1295,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBatchInferenceJobs {
             crate::operation_deser::parse_list_batch_inference_jobs_error(response)
         } else {
             crate::operation_deser::parse_list_batch_inference_jobs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListBatchSegmentJobs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_batch_segment_jobs`](crate::client::Client::list_batch_segment_jobs).
+///
+/// See [`crate::client::fluent_builders::ListBatchSegmentJobs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListBatchSegmentJobs {
+    _private: (),
+}
+impl ListBatchSegmentJobs {
+    /// Creates a new builder-style object to manufacture [`ListBatchSegmentJobsInput`](crate::input::ListBatchSegmentJobsInput)
+    pub fn builder() -> crate::input::list_batch_segment_jobs_input::Builder {
+        crate::input::list_batch_segment_jobs_input::Builder::default()
+    }
+    /// Creates a new `ListBatchSegmentJobs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListBatchSegmentJobs {
+    type Output = std::result::Result<
+        crate::output::ListBatchSegmentJobsOutput,
+        crate::error::ListBatchSegmentJobsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_batch_segment_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_batch_segment_jobs_response(response)
         }
     }
 }
@@ -1393,6 +1597,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecipes {
     }
 }
 
+/// Operation shape for `ListRecommenders`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_recommenders`](crate::client::Client::list_recommenders).
+///
+/// See [`crate::client::fluent_builders::ListRecommenders`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListRecommenders {
+    _private: (),
+}
+impl ListRecommenders {
+    /// Creates a new builder-style object to manufacture [`ListRecommendersInput`](crate::input::ListRecommendersInput)
+    pub fn builder() -> crate::input::list_recommenders_input::Builder {
+        crate::input::list_recommenders_input::Builder::default()
+    }
+    /// Creates a new `ListRecommenders` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListRecommenders {
+    type Output = std::result::Result<
+        crate::output::ListRecommendersOutput,
+        crate::error::ListRecommendersError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_recommenders_error(response)
+        } else {
+            crate::operation_deser::parse_list_recommenders_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListSchemas`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1553,6 +1791,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCampaign {
             crate::operation_deser::parse_update_campaign_error(response)
         } else {
             crate::operation_deser::parse_update_campaign_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateRecommender`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_recommender`](crate::client::Client::update_recommender).
+///
+/// See [`crate::client::fluent_builders::UpdateRecommender`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateRecommender {
+    _private: (),
+}
+impl UpdateRecommender {
+    /// Creates a new builder-style object to manufacture [`UpdateRecommenderInput`](crate::input::UpdateRecommenderInput)
+    pub fn builder() -> crate::input::update_recommender_input::Builder {
+        crate::input::update_recommender_input::Builder::default()
+    }
+    /// Creates a new `UpdateRecommender` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateRecommender {
+    type Output = std::result::Result<
+        crate::output::UpdateRecommenderOutput,
+        crate::error::UpdateRecommenderError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_recommender_error(response)
+        } else {
+            crate::operation_deser::parse_update_recommender_response(response)
         }
     }
 }

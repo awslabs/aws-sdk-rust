@@ -4,8 +4,8 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
-use lambda::model::Runtime;
-use lambda::{Client, Error, Region, PKG_VERSION};
+use aws_sdk_lambda::model::Runtime;
+use aws_sdk_lambda::{Client, Error, Region, PKG_VERSION};
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]

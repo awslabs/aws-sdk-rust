@@ -1762,6 +1762,7 @@ pub mod start_text_translation_job_input {
         pub(crate) terminology_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) parallel_data_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) settings: std::option::Option<crate::model::TranslationSettings>,
     }
     impl Builder {
         /// <p>The name of the batch translation job to be performed.</p>
@@ -1931,6 +1932,21 @@ pub mod start_text_translation_job_input {
             self.client_token = input;
             self
         }
+        /// <p>Settings to configure your translation output, including the option to mask profane words
+        /// and phrases.</p>
+        pub fn settings(mut self, input: crate::model::TranslationSettings) -> Self {
+            self.settings = Some(input);
+            self
+        }
+        /// <p>Settings to configure your translation output, including the option to mask profane words
+        /// and phrases.</p>
+        pub fn set_settings(
+            mut self,
+            input: std::option::Option<crate::model::TranslationSettings>,
+        ) -> Self {
+            self.settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartTextTranslationJobInput`](crate::input::StartTextTranslationJobInput)
         pub fn build(
             self,
@@ -1948,6 +1964,7 @@ pub mod start_text_translation_job_input {
                 terminology_names: self.terminology_names,
                 parallel_data_names: self.parallel_data_names,
                 client_token: self.client_token,
+                settings: self.settings,
             })
         }
     }
@@ -2246,6 +2263,7 @@ pub mod translate_text_input {
         pub(crate) terminology_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) source_language_code: std::option::Option<std::string::String>,
         pub(crate) target_language_code: std::option::Option<std::string::String>,
+        pub(crate) settings: std::option::Option<crate::model::TranslationSettings>,
     }
     impl Builder {
         /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on
@@ -2321,6 +2339,21 @@ pub mod translate_text_input {
             self.target_language_code = input;
             self
         }
+        /// <p>Settings to configure your translation output, including the option to mask profane words
+        /// and phrases.</p>
+        pub fn settings(mut self, input: crate::model::TranslationSettings) -> Self {
+            self.settings = Some(input);
+            self
+        }
+        /// <p>Settings to configure your translation output, including the option to mask profane words
+        /// and phrases.</p>
+        pub fn set_settings(
+            mut self,
+            input: std::option::Option<crate::model::TranslationSettings>,
+        ) -> Self {
+            self.settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TranslateTextInput`](crate::input::TranslateTextInput)
         pub fn build(
             self,
@@ -2333,6 +2366,7 @@ pub mod translate_text_input {
                 terminology_names: self.terminology_names,
                 source_language_code: self.source_language_code,
                 target_language_code: self.target_language_code,
+                settings: self.settings,
             })
         }
     }
@@ -2721,6 +2755,9 @@ pub struct TranslateTextInput {
     /// <p>The language code requested for the language of the target text. The language must be a
     /// language supported by Amazon Translate.</p>
     pub target_language_code: std::option::Option<std::string::String>,
+    /// <p>Settings to configure your translation output, including the option to mask profane words
+    /// and phrases.</p>
+    pub settings: std::option::Option<crate::model::TranslationSettings>,
 }
 impl TranslateTextInput {
     /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on
@@ -2748,6 +2785,11 @@ impl TranslateTextInput {
     pub fn target_language_code(&self) -> std::option::Option<&str> {
         self.target_language_code.as_deref()
     }
+    /// <p>Settings to configure your translation output, including the option to mask profane words
+    /// and phrases.</p>
+    pub fn settings(&self) -> std::option::Option<&crate::model::TranslationSettings> {
+        self.settings.as_ref()
+    }
 }
 impl std::fmt::Debug for TranslateTextInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2756,6 +2798,7 @@ impl std::fmt::Debug for TranslateTextInput {
         formatter.field("terminology_names", &self.terminology_names);
         formatter.field("source_language_code", &self.source_language_code);
         formatter.field("target_language_code", &self.target_language_code);
+        formatter.field("settings", &self.settings);
         formatter.finish()
     }
 }
@@ -2822,6 +2865,9 @@ pub struct StartTextTranslationJobInput {
     /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate
     /// SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
+    /// <p>Settings to configure your translation output, including the option to mask profane words
+    /// and phrases.</p>
+    pub settings: std::option::Option<crate::model::TranslationSettings>,
 }
 impl StartTextTranslationJobInput {
     /// <p>The name of the batch translation job to be performed.</p>
@@ -2879,6 +2925,11 @@ impl StartTextTranslationJobInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>Settings to configure your translation output, including the option to mask profane words
+    /// and phrases.</p>
+    pub fn settings(&self) -> std::option::Option<&crate::model::TranslationSettings> {
+        self.settings.as_ref()
+    }
 }
 impl std::fmt::Debug for StartTextTranslationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2892,6 +2943,7 @@ impl std::fmt::Debug for StartTextTranslationJobInput {
         formatter.field("terminology_names", &self.terminology_names);
         formatter.field("parallel_data_names", &self.parallel_data_names);
         formatter.field("client_token", &self.client_token);
+        formatter.field("settings", &self.settings);
         formatter.finish()
     }
 }

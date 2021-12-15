@@ -32,12 +32,35 @@ pub fn serialize_operation_crate_operation_batch_get_image(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_batch_get_repository_scanning_configuration(
+    input: &crate::input::BatchGetRepositoryScanningConfigurationInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_batch_get_repository_scanning_configuration_input(&mut object, input)?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_complete_layer_upload(
     input: &crate::input::CompleteLayerUploadInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_complete_layer_upload_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_create_pull_through_cache_rule(
+    input: &crate::input::CreatePullThroughCacheRuleInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_create_pull_through_cache_rule_input(
         &mut object,
         input,
     )?;
@@ -61,6 +84,19 @@ pub fn serialize_operation_crate_operation_delete_lifecycle_policy(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_delete_lifecycle_policy_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_delete_pull_through_cache_rule(
+    input: &crate::input::DeletePullThroughCacheRuleInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_delete_pull_through_cache_rule_input(
         &mut object,
         input,
     )?;
@@ -126,6 +162,19 @@ pub fn serialize_operation_crate_operation_describe_image_scan_findings(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_describe_image_scan_findings_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_describe_pull_through_cache_rules(
+    input: &crate::input::DescribePullThroughCacheRulesInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_describe_pull_through_cache_rules_input(
         &mut object,
         input,
     )?;
@@ -206,6 +255,12 @@ pub fn serialize_operation_crate_operation_get_lifecycle_policy_preview(
 
 pub fn serialize_operation_crate_operation_get_registry_policy(
     _input: &crate::input::GetRegistryPolicyInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    Ok(aws_smithy_http::body::SdkBody::from("{}"))
+}
+
+pub fn serialize_operation_crate_operation_get_registry_scanning_configuration(
+    _input: &crate::input::GetRegistryScanningConfigurationInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
     Ok(aws_smithy_http::body::SdkBody::from("{}"))
 }
@@ -314,6 +369,19 @@ pub fn serialize_operation_crate_operation_put_registry_policy(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_put_registry_policy_input(&mut object, input)?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_put_registry_scanning_configuration(
+    input: &crate::input::PutRegistryScanningConfigurationInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_put_registry_scanning_configuration_input(
+        &mut object,
+        input,
+    )?;
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

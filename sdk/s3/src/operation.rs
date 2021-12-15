@@ -1869,6 +1869,26 @@ impl aws_smithy_http::response::ParseStrictResponse for HeadObject {
 #[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
 mod head_object_request_test {
+    /// https://github.com/awslabs/aws-sdk-rust/issues/331
+    /// Test ID: HeadObjectUriEncoding
+    #[tokio::test]
+    async fn head_object_uri_encoding_request() {
+        let config = crate::config::Config::builder().build();
+        let input = crate::input::HeadObjectInput::builder()
+            .set_bucket(Some("test-bucket".to_string()))
+            .set_key(Some("<> `?🐱".to_string()))
+            .build()
+            .unwrap()
+            .make_operation(&config)
+            .await
+            .expect("operation failed to build");
+        let (http_request, parts) = input.into_request_response().0.into_parts();
+        assert_eq!(http_request.method(), "HEAD");
+        assert_eq!(
+            http_request.uri().path(),
+            "/test-bucket/%3C%3E%20%60%3F%F0%9F%90%B1"
+        );
+    }
     /// This test case validates https://github.com/awslabs/smithy-rs/issues/456
     /// Test ID: HeadObjectEmptyBody
     #[tokio::test]
@@ -2641,14 +2661,14 @@ mod put_bucket_lifecycle_configuration_request_test {
         let (http_request, parts) = input.into_request_response().0.into_parts();
         assert_eq!(http_request.method(), "PUT");
         assert_eq!(http_request.uri().path(), "/test-bucket");
-        let expected_headers = &[("content-md5", "sUu+uAZPkTtAxJdaA+9uSg==")];
+        let expected_headers = &[("content-md5", "JP8DTuCSH6yDC8wNGg4+mA==")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
             &http_request,
             expected_headers,
         ));
         let body = http_request.body().bytes().expect("body should be strict");
         aws_smithy_protocol_test::assert_ok(
-        aws_smithy_protocol_test::validate_body(&body, "<LifecycleConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n    <Rule xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n        <Expiration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n            <Days xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">1</Days>\n        </Expiration>\n        <ID xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">Expire</ID>\n        <Status xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">Enabled</Status>\n    </Rule>\n</LifecycleConfiguration>\n", aws_smithy_protocol_test::MediaType::from("application/xml"))
+        aws_smithy_protocol_test::validate_body(&body, "<LifecycleConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n    <Rule>\n        <Expiration>\n            <Days>1</Days>\n        </Expiration>\n        <ID>Expire</ID>\n        <Status>Enabled</Status>\n    </Rule>\n</LifecycleConfiguration>\n", aws_smithy_protocol_test::MediaType::from("application/xml"))
         );
     }
 }

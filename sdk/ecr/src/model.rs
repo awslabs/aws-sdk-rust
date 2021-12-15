@@ -232,20 +232,35 @@ impl ImageScanStatus {
 )]
 pub enum ScanStatus {
     #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
     Complete,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    FindingsUnavailable,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    ScanEligibilityExpired,
+    #[allow(missing_docs)] // documentation missing in model
+    UnsupportedImage,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ScanStatus {
     fn from(s: &str) -> Self {
         match s {
+            "ACTIVE" => ScanStatus::Active,
             "COMPLETE" => ScanStatus::Complete,
             "FAILED" => ScanStatus::Failed,
+            "FINDINGS_UNAVAILABLE" => ScanStatus::FindingsUnavailable,
             "IN_PROGRESS" => ScanStatus::InProgress,
+            "PENDING" => ScanStatus::Pending,
+            "SCAN_ELIGIBILITY_EXPIRED" => ScanStatus::ScanEligibilityExpired,
+            "UNSUPPORTED_IMAGE" => ScanStatus::UnsupportedImage,
             other => ScanStatus::Unknown(other.to_owned()),
         }
     }
@@ -261,15 +276,29 @@ impl ScanStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ScanStatus::Active => "ACTIVE",
             ScanStatus::Complete => "COMPLETE",
             ScanStatus::Failed => "FAILED",
+            ScanStatus::FindingsUnavailable => "FINDINGS_UNAVAILABLE",
             ScanStatus::InProgress => "IN_PROGRESS",
+            ScanStatus::Pending => "PENDING",
+            ScanStatus::ScanEligibilityExpired => "SCAN_ELIGIBILITY_EXPIRED",
+            ScanStatus::UnsupportedImage => "UNSUPPORTED_IMAGE",
             ScanStatus::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["COMPLETE", "FAILED", "IN_PROGRESS"]
+        &[
+            "ACTIVE",
+            "COMPLETE",
+            "FAILED",
+            "FINDINGS_UNAVAILABLE",
+            "IN_PROGRESS",
+            "PENDING",
+            "SCAN_ELIGIBILITY_EXPIRED",
+            "UNSUPPORTED_IMAGE",
+        ]
     }
 }
 impl AsRef<str> for ScanStatus {
@@ -744,6 +773,425 @@ impl ReplicationDestination {
     /// Creates a new builder-style object to manufacture [`ReplicationDestination`](crate::model::ReplicationDestination)
     pub fn builder() -> crate::model::replication_destination::Builder {
         crate::model::replication_destination::Builder::default()
+    }
+}
+
+/// <p>The scanning configuration for a private registry.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegistryScanningConfiguration {
+    /// <p>The type of scanning configured for the registry.</p>
+    pub scan_type: std::option::Option<crate::model::ScanType>,
+    /// <p>The scanning rules associated with the registry.</p>
+    pub rules: std::option::Option<std::vec::Vec<crate::model::RegistryScanningRule>>,
+}
+impl RegistryScanningConfiguration {
+    /// <p>The type of scanning configured for the registry.</p>
+    pub fn scan_type(&self) -> std::option::Option<&crate::model::ScanType> {
+        self.scan_type.as_ref()
+    }
+    /// <p>The scanning rules associated with the registry.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::RegistryScanningRule]> {
+        self.rules.as_deref()
+    }
+}
+impl std::fmt::Debug for RegistryScanningConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RegistryScanningConfiguration");
+        formatter.field("scan_type", &self.scan_type);
+        formatter.field("rules", &self.rules);
+        formatter.finish()
+    }
+}
+/// See [`RegistryScanningConfiguration`](crate::model::RegistryScanningConfiguration)
+pub mod registry_scanning_configuration {
+    /// A builder for [`RegistryScanningConfiguration`](crate::model::RegistryScanningConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scan_type: std::option::Option<crate::model::ScanType>,
+        pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::RegistryScanningRule>>,
+    }
+    impl Builder {
+        /// <p>The type of scanning configured for the registry.</p>
+        pub fn scan_type(mut self, input: crate::model::ScanType) -> Self {
+            self.scan_type = Some(input);
+            self
+        }
+        /// <p>The type of scanning configured for the registry.</p>
+        pub fn set_scan_type(mut self, input: std::option::Option<crate::model::ScanType>) -> Self {
+            self.scan_type = input;
+            self
+        }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>The scanning rules associated with the registry.</p>
+        pub fn rules(mut self, input: impl Into<crate::model::RegistryScanningRule>) -> Self {
+            let mut v = self.rules.unwrap_or_default();
+            v.push(input.into());
+            self.rules = Some(v);
+            self
+        }
+        /// <p>The scanning rules associated with the registry.</p>
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RegistryScanningRule>>,
+        ) -> Self {
+            self.rules = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegistryScanningConfiguration`](crate::model::RegistryScanningConfiguration)
+        pub fn build(self) -> crate::model::RegistryScanningConfiguration {
+            crate::model::RegistryScanningConfiguration {
+                scan_type: self.scan_type,
+                rules: self.rules,
+            }
+        }
+    }
+}
+impl RegistryScanningConfiguration {
+    /// Creates a new builder-style object to manufacture [`RegistryScanningConfiguration`](crate::model::RegistryScanningConfiguration)
+    pub fn builder() -> crate::model::registry_scanning_configuration::Builder {
+        crate::model::registry_scanning_configuration::Builder::default()
+    }
+}
+
+/// <p>The details of a scanning rule for a private registry.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegistryScanningRule {
+    /// <p>The frequency that scans are performed at for a private registry.</p>
+    pub scan_frequency: std::option::Option<crate::model::ScanFrequency>,
+    /// <p>The repository filters associated with the scanning configuration for a private
+    /// registry.</p>
+    pub repository_filters:
+        std::option::Option<std::vec::Vec<crate::model::ScanningRepositoryFilter>>,
+}
+impl RegistryScanningRule {
+    /// <p>The frequency that scans are performed at for a private registry.</p>
+    pub fn scan_frequency(&self) -> std::option::Option<&crate::model::ScanFrequency> {
+        self.scan_frequency.as_ref()
+    }
+    /// <p>The repository filters associated with the scanning configuration for a private
+    /// registry.</p>
+    pub fn repository_filters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ScanningRepositoryFilter]> {
+        self.repository_filters.as_deref()
+    }
+}
+impl std::fmt::Debug for RegistryScanningRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RegistryScanningRule");
+        formatter.field("scan_frequency", &self.scan_frequency);
+        formatter.field("repository_filters", &self.repository_filters);
+        formatter.finish()
+    }
+}
+/// See [`RegistryScanningRule`](crate::model::RegistryScanningRule)
+pub mod registry_scanning_rule {
+    /// A builder for [`RegistryScanningRule`](crate::model::RegistryScanningRule)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scan_frequency: std::option::Option<crate::model::ScanFrequency>,
+        pub(crate) repository_filters:
+            std::option::Option<std::vec::Vec<crate::model::ScanningRepositoryFilter>>,
+    }
+    impl Builder {
+        /// <p>The frequency that scans are performed at for a private registry.</p>
+        pub fn scan_frequency(mut self, input: crate::model::ScanFrequency) -> Self {
+            self.scan_frequency = Some(input);
+            self
+        }
+        /// <p>The frequency that scans are performed at for a private registry.</p>
+        pub fn set_scan_frequency(
+            mut self,
+            input: std::option::Option<crate::model::ScanFrequency>,
+        ) -> Self {
+            self.scan_frequency = input;
+            self
+        }
+        /// Appends an item to `repository_filters`.
+        ///
+        /// To override the contents of this collection use [`set_repository_filters`](Self::set_repository_filters).
+        ///
+        /// <p>The repository filters associated with the scanning configuration for a private
+        /// registry.</p>
+        pub fn repository_filters(
+            mut self,
+            input: impl Into<crate::model::ScanningRepositoryFilter>,
+        ) -> Self {
+            let mut v = self.repository_filters.unwrap_or_default();
+            v.push(input.into());
+            self.repository_filters = Some(v);
+            self
+        }
+        /// <p>The repository filters associated with the scanning configuration for a private
+        /// registry.</p>
+        pub fn set_repository_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ScanningRepositoryFilter>>,
+        ) -> Self {
+            self.repository_filters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegistryScanningRule`](crate::model::RegistryScanningRule)
+        pub fn build(self) -> crate::model::RegistryScanningRule {
+            crate::model::RegistryScanningRule {
+                scan_frequency: self.scan_frequency,
+                repository_filters: self.repository_filters,
+            }
+        }
+    }
+}
+impl RegistryScanningRule {
+    /// Creates a new builder-style object to manufacture [`RegistryScanningRule`](crate::model::RegistryScanningRule)
+    pub fn builder() -> crate::model::registry_scanning_rule::Builder {
+        crate::model::registry_scanning_rule::Builder::default()
+    }
+}
+
+/// <p>The details of a scanning repository filter.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ScanningRepositoryFilter {
+    /// <p>The filter to use when scanning.</p>
+    pub filter: std::option::Option<std::string::String>,
+    /// <p>The type associated with the filter.</p>
+    pub filter_type: std::option::Option<crate::model::ScanningRepositoryFilterType>,
+}
+impl ScanningRepositoryFilter {
+    /// <p>The filter to use when scanning.</p>
+    pub fn filter(&self) -> std::option::Option<&str> {
+        self.filter.as_deref()
+    }
+    /// <p>The type associated with the filter.</p>
+    pub fn filter_type(&self) -> std::option::Option<&crate::model::ScanningRepositoryFilterType> {
+        self.filter_type.as_ref()
+    }
+}
+impl std::fmt::Debug for ScanningRepositoryFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScanningRepositoryFilter");
+        formatter.field("filter", &self.filter);
+        formatter.field("filter_type", &self.filter_type);
+        formatter.finish()
+    }
+}
+/// See [`ScanningRepositoryFilter`](crate::model::ScanningRepositoryFilter)
+pub mod scanning_repository_filter {
+    /// A builder for [`ScanningRepositoryFilter`](crate::model::ScanningRepositoryFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filter: std::option::Option<std::string::String>,
+        pub(crate) filter_type: std::option::Option<crate::model::ScanningRepositoryFilterType>,
+    }
+    impl Builder {
+        /// <p>The filter to use when scanning.</p>
+        pub fn filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.filter = Some(input.into());
+            self
+        }
+        /// <p>The filter to use when scanning.</p>
+        pub fn set_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.filter = input;
+            self
+        }
+        /// <p>The type associated with the filter.</p>
+        pub fn filter_type(mut self, input: crate::model::ScanningRepositoryFilterType) -> Self {
+            self.filter_type = Some(input);
+            self
+        }
+        /// <p>The type associated with the filter.</p>
+        pub fn set_filter_type(
+            mut self,
+            input: std::option::Option<crate::model::ScanningRepositoryFilterType>,
+        ) -> Self {
+            self.filter_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScanningRepositoryFilter`](crate::model::ScanningRepositoryFilter)
+        pub fn build(self) -> crate::model::ScanningRepositoryFilter {
+            crate::model::ScanningRepositoryFilter {
+                filter: self.filter,
+                filter_type: self.filter_type,
+            }
+        }
+    }
+}
+impl ScanningRepositoryFilter {
+    /// Creates a new builder-style object to manufacture [`ScanningRepositoryFilter`](crate::model::ScanningRepositoryFilter)
+    pub fn builder() -> crate::model::scanning_repository_filter::Builder {
+        crate::model::scanning_repository_filter::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ScanningRepositoryFilterType {
+    #[allow(missing_docs)] // documentation missing in model
+    Wildcard,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ScanningRepositoryFilterType {
+    fn from(s: &str) -> Self {
+        match s {
+            "WILDCARD" => ScanningRepositoryFilterType::Wildcard,
+            other => ScanningRepositoryFilterType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ScanningRepositoryFilterType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ScanningRepositoryFilterType::from(s))
+    }
+}
+impl ScanningRepositoryFilterType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ScanningRepositoryFilterType::Wildcard => "WILDCARD",
+            ScanningRepositoryFilterType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["WILDCARD"]
+    }
+}
+impl AsRef<str> for ScanningRepositoryFilterType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ScanFrequency {
+    #[allow(missing_docs)] // documentation missing in model
+    ContinuousScan,
+    #[allow(missing_docs)] // documentation missing in model
+    Manual,
+    #[allow(missing_docs)] // documentation missing in model
+    ScanOnPush,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ScanFrequency {
+    fn from(s: &str) -> Self {
+        match s {
+            "CONTINUOUS_SCAN" => ScanFrequency::ContinuousScan,
+            "MANUAL" => ScanFrequency::Manual,
+            "SCAN_ON_PUSH" => ScanFrequency::ScanOnPush,
+            other => ScanFrequency::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ScanFrequency {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ScanFrequency::from(s))
+    }
+}
+impl ScanFrequency {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ScanFrequency::ContinuousScan => "CONTINUOUS_SCAN",
+            ScanFrequency::Manual => "MANUAL",
+            ScanFrequency::ScanOnPush => "SCAN_ON_PUSH",
+            ScanFrequency::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CONTINUOUS_SCAN", "MANUAL", "SCAN_ON_PUSH"]
+    }
+}
+impl AsRef<str> for ScanFrequency {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ScanType {
+    #[allow(missing_docs)] // documentation missing in model
+    Basic,
+    #[allow(missing_docs)] // documentation missing in model
+    Enhanced,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ScanType {
+    fn from(s: &str) -> Self {
+        match s {
+            "BASIC" => ScanType::Basic,
+            "ENHANCED" => ScanType::Enhanced,
+            other => ScanType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ScanType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ScanType::from(s))
+    }
+}
+impl ScanType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ScanType::Basic => "BASIC",
+            ScanType::Enhanced => "ENHANCED",
+            ScanType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["BASIC", "ENHANCED"]
+    }
+}
+impl AsRef<str> for ScanType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1893,12 +2341,12 @@ pub struct EncryptionConfiguration {
     /// for Amazon ECR, or specify your own KMS key, which you already created. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting data using server-side
     /// encryption with an KMS key stored in Key Management Service (SSE-KMS)</a> in the
-    /// <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>
+    /// <i>Amazon Simple Storage Service Console Developer Guide</i>.</p>
     /// <p>If you use the <code>AES256</code> encryption type, Amazon ECR uses server-side encryption
     /// with Amazon S3-managed encryption keys which encrypts the images in the repository using an
     /// AES-256 encryption algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting data using
     /// server-side encryption with Amazon S3-managed encryption keys (SSE-S3)</a> in the
-    /// <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>
+    /// <i>Amazon Simple Storage Service Console Developer Guide</i>.</p>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
     /// <p>If you use the <code>KMS</code> encryption type, specify the KMS key to use for
     /// encryption. The alias, key ID, or full ARN of the KMS key can be specified. The key
@@ -1914,12 +2362,12 @@ impl EncryptionConfiguration {
     /// for Amazon ECR, or specify your own KMS key, which you already created. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting data using server-side
     /// encryption with an KMS key stored in Key Management Service (SSE-KMS)</a> in the
-    /// <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>
+    /// <i>Amazon Simple Storage Service Console Developer Guide</i>.</p>
     /// <p>If you use the <code>AES256</code> encryption type, Amazon ECR uses server-side encryption
     /// with Amazon S3-managed encryption keys which encrypts the images in the repository using an
     /// AES-256 encryption algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting data using
     /// server-side encryption with Amazon S3-managed encryption keys (SSE-S3)</a> in the
-    /// <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>
+    /// <i>Amazon Simple Storage Service Console Developer Guide</i>.</p>
     pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
         self.encryption_type.as_ref()
     }
@@ -1956,12 +2404,12 @@ pub mod encryption_configuration {
         /// for Amazon ECR, or specify your own KMS key, which you already created. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting data using server-side
         /// encryption with an KMS key stored in Key Management Service (SSE-KMS)</a> in the
-        /// <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>
+        /// <i>Amazon Simple Storage Service Console Developer Guide</i>.</p>
         /// <p>If you use the <code>AES256</code> encryption type, Amazon ECR uses server-side encryption
         /// with Amazon S3-managed encryption keys which encrypts the images in the repository using an
         /// AES-256 encryption algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting data using
         /// server-side encryption with Amazon S3-managed encryption keys (SSE-S3)</a> in the
-        /// <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>
+        /// <i>Amazon Simple Storage Service Console Developer Guide</i>.</p>
         pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
             self.encryption_type = Some(input);
             self
@@ -1973,12 +2421,12 @@ pub mod encryption_configuration {
         /// for Amazon ECR, or specify your own KMS key, which you already created. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting data using server-side
         /// encryption with an KMS key stored in Key Management Service (SSE-KMS)</a> in the
-        /// <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>
+        /// <i>Amazon Simple Storage Service Console Developer Guide</i>.</p>
         /// <p>If you use the <code>AES256</code> encryption type, Amazon ECR uses server-side encryption
         /// with Amazon S3-managed encryption keys which encrypts the images in the repository using an
         /// AES-256 encryption algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting data using
         /// server-side encryption with Amazon S3-managed encryption keys (SSE-S3)</a> in the
-        /// <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>
+        /// <i>Amazon Simple Storage Service Console Developer Guide</i>.</p>
         pub fn set_encryption_type(
             mut self,
             input: std::option::Option<crate::model::EncryptionType>,
@@ -2073,6 +2521,130 @@ impl AsRef<str> for EncryptionType {
     }
 }
 
+/// <p>The details of a pull through cache rule.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PullThroughCacheRule {
+    /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
+    pub ecr_repository_prefix: std::option::Option<std::string::String>,
+    /// <p>The upstream registry URL associated with the pull through cache rule.</p>
+    pub upstream_registry_url: std::option::Option<std::string::String>,
+    /// <p>The date and time the pull through cache was created.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services account ID associated with the registry the pull through cache rule is
+    /// associated with.</p>
+    pub registry_id: std::option::Option<std::string::String>,
+}
+impl PullThroughCacheRule {
+    /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
+    pub fn ecr_repository_prefix(&self) -> std::option::Option<&str> {
+        self.ecr_repository_prefix.as_deref()
+    }
+    /// <p>The upstream registry URL associated with the pull through cache rule.</p>
+    pub fn upstream_registry_url(&self) -> std::option::Option<&str> {
+        self.upstream_registry_url.as_deref()
+    }
+    /// <p>The date and time the pull through cache was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Amazon Web Services account ID associated with the registry the pull through cache rule is
+    /// associated with.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+}
+impl std::fmt::Debug for PullThroughCacheRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PullThroughCacheRule");
+        formatter.field("ecr_repository_prefix", &self.ecr_repository_prefix);
+        formatter.field("upstream_registry_url", &self.upstream_registry_url);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("registry_id", &self.registry_id);
+        formatter.finish()
+    }
+}
+/// See [`PullThroughCacheRule`](crate::model::PullThroughCacheRule)
+pub mod pull_through_cache_rule {
+    /// A builder for [`PullThroughCacheRule`](crate::model::PullThroughCacheRule)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ecr_repository_prefix: std::option::Option<std::string::String>,
+        pub(crate) upstream_registry_url: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) registry_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
+        pub fn ecr_repository_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ecr_repository_prefix = Some(input.into());
+            self
+        }
+        /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
+        pub fn set_ecr_repository_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ecr_repository_prefix = input;
+            self
+        }
+        /// <p>The upstream registry URL associated with the pull through cache rule.</p>
+        pub fn upstream_registry_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.upstream_registry_url = Some(input.into());
+            self
+        }
+        /// <p>The upstream registry URL associated with the pull through cache rule.</p>
+        pub fn set_upstream_registry_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.upstream_registry_url = input;
+            self
+        }
+        /// <p>The date and time the pull through cache was created.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>The date and time the pull through cache was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the registry the pull through cache rule is
+        /// associated with.</p>
+        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registry_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the registry the pull through cache rule is
+        /// associated with.</p>
+        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registry_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PullThroughCacheRule`](crate::model::PullThroughCacheRule)
+        pub fn build(self) -> crate::model::PullThroughCacheRule {
+            crate::model::PullThroughCacheRule {
+                ecr_repository_prefix: self.ecr_repository_prefix,
+                upstream_registry_url: self.upstream_registry_url,
+                created_at: self.created_at,
+                registry_id: self.registry_id,
+            }
+        }
+    }
+}
+impl PullThroughCacheRule {
+    /// Creates a new builder-style object to manufacture [`PullThroughCacheRule`](crate::model::PullThroughCacheRule)
+    pub fn builder() -> crate::model::pull_through_cache_rule::Builder {
+        crate::model::pull_through_cache_rule::Builder::default()
+    }
+}
+
 /// <p>The details of an image scan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2081,11 +2653,14 @@ pub struct ImageScanFindings {
     pub image_scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the vulnerability data was last scanned.</p>
     pub vulnerability_source_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The findings from the image scan.</p>
-    pub findings: std::option::Option<std::vec::Vec<crate::model::ImageScanFinding>>,
     /// <p>The image vulnerability counts, sorted by severity.</p>
     pub finding_severity_counts:
         std::option::Option<std::collections::HashMap<crate::model::FindingSeverity, i32>>,
+    /// <p>The findings from the image scan.</p>
+    pub findings: std::option::Option<std::vec::Vec<crate::model::ImageScanFinding>>,
+    /// <p>Details about the enhanced scan findings from Amazon Inspector.</p>
+    pub enhanced_findings:
+        std::option::Option<std::vec::Vec<crate::model::EnhancedImageScanFinding>>,
 }
 impl ImageScanFindings {
     /// <p>The time of the last completed image scan.</p>
@@ -2098,15 +2673,21 @@ impl ImageScanFindings {
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.vulnerability_source_updated_at.as_ref()
     }
-    /// <p>The findings from the image scan.</p>
-    pub fn findings(&self) -> std::option::Option<&[crate::model::ImageScanFinding]> {
-        self.findings.as_deref()
-    }
     /// <p>The image vulnerability counts, sorted by severity.</p>
     pub fn finding_severity_counts(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<crate::model::FindingSeverity, i32>> {
         self.finding_severity_counts.as_ref()
+    }
+    /// <p>The findings from the image scan.</p>
+    pub fn findings(&self) -> std::option::Option<&[crate::model::ImageScanFinding]> {
+        self.findings.as_deref()
+    }
+    /// <p>Details about the enhanced scan findings from Amazon Inspector.</p>
+    pub fn enhanced_findings(
+        &self,
+    ) -> std::option::Option<&[crate::model::EnhancedImageScanFinding]> {
+        self.enhanced_findings.as_deref()
     }
 }
 impl std::fmt::Debug for ImageScanFindings {
@@ -2117,8 +2698,9 @@ impl std::fmt::Debug for ImageScanFindings {
             "vulnerability_source_updated_at",
             &self.vulnerability_source_updated_at,
         );
-        formatter.field("findings", &self.findings);
         formatter.field("finding_severity_counts", &self.finding_severity_counts);
+        formatter.field("findings", &self.findings);
+        formatter.field("enhanced_findings", &self.enhanced_findings);
         formatter.finish()
     }
 }
@@ -2130,9 +2712,11 @@ pub mod image_scan_findings {
     pub struct Builder {
         pub(crate) image_scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) vulnerability_source_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) findings: std::option::Option<std::vec::Vec<crate::model::ImageScanFinding>>,
         pub(crate) finding_severity_counts:
             std::option::Option<std::collections::HashMap<crate::model::FindingSeverity, i32>>,
+        pub(crate) findings: std::option::Option<std::vec::Vec<crate::model::ImageScanFinding>>,
+        pub(crate) enhanced_findings:
+            std::option::Option<std::vec::Vec<crate::model::EnhancedImageScanFinding>>,
     }
     impl Builder {
         /// <p>The time of the last completed image scan.</p>
@@ -2164,25 +2748,6 @@ pub mod image_scan_findings {
             self.vulnerability_source_updated_at = input;
             self
         }
-        /// Appends an item to `findings`.
-        ///
-        /// To override the contents of this collection use [`set_findings`](Self::set_findings).
-        ///
-        /// <p>The findings from the image scan.</p>
-        pub fn findings(mut self, input: impl Into<crate::model::ImageScanFinding>) -> Self {
-            let mut v = self.findings.unwrap_or_default();
-            v.push(input.into());
-            self.findings = Some(v);
-            self
-        }
-        /// <p>The findings from the image scan.</p>
-        pub fn set_findings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ImageScanFinding>>,
-        ) -> Self {
-            self.findings = input;
-            self
-        }
         /// Adds a key-value pair to `finding_severity_counts`.
         ///
         /// To override the contents of this collection use [`set_finding_severity_counts`](Self::set_finding_severity_counts).
@@ -2208,13 +2773,55 @@ pub mod image_scan_findings {
             self.finding_severity_counts = input;
             self
         }
+        /// Appends an item to `findings`.
+        ///
+        /// To override the contents of this collection use [`set_findings`](Self::set_findings).
+        ///
+        /// <p>The findings from the image scan.</p>
+        pub fn findings(mut self, input: impl Into<crate::model::ImageScanFinding>) -> Self {
+            let mut v = self.findings.unwrap_or_default();
+            v.push(input.into());
+            self.findings = Some(v);
+            self
+        }
+        /// <p>The findings from the image scan.</p>
+        pub fn set_findings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ImageScanFinding>>,
+        ) -> Self {
+            self.findings = input;
+            self
+        }
+        /// Appends an item to `enhanced_findings`.
+        ///
+        /// To override the contents of this collection use [`set_enhanced_findings`](Self::set_enhanced_findings).
+        ///
+        /// <p>Details about the enhanced scan findings from Amazon Inspector.</p>
+        pub fn enhanced_findings(
+            mut self,
+            input: impl Into<crate::model::EnhancedImageScanFinding>,
+        ) -> Self {
+            let mut v = self.enhanced_findings.unwrap_or_default();
+            v.push(input.into());
+            self.enhanced_findings = Some(v);
+            self
+        }
+        /// <p>Details about the enhanced scan findings from Amazon Inspector.</p>
+        pub fn set_enhanced_findings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EnhancedImageScanFinding>>,
+        ) -> Self {
+            self.enhanced_findings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ImageScanFindings`](crate::model::ImageScanFindings)
         pub fn build(self) -> crate::model::ImageScanFindings {
             crate::model::ImageScanFindings {
                 image_scan_completed_at: self.image_scan_completed_at,
                 vulnerability_source_updated_at: self.vulnerability_source_updated_at,
-                findings: self.findings,
                 finding_severity_counts: self.finding_severity_counts,
+                findings: self.findings,
+                enhanced_findings: self.enhanced_findings,
             }
         }
     }
@@ -2226,81 +2833,1761 @@ impl ImageScanFindings {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The details of an enhanced image scan. This is returned when enhanced scanning is
+/// enabled for your private registry.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum FindingSeverity {
-    #[allow(missing_docs)] // documentation missing in model
-    Critical,
-    #[allow(missing_docs)] // documentation missing in model
-    High,
-    #[allow(missing_docs)] // documentation missing in model
-    Informational,
-    #[allow(missing_docs)] // documentation missing in model
-    Low,
-    #[allow(missing_docs)] // documentation missing in model
-    Medium,
-    #[allow(missing_docs)] // documentation missing in model
-    Undefined,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EnhancedImageScanFinding {
+    /// <p>The Amazon Web Services account ID associated with the image.</p>
+    pub aws_account_id: std::option::Option<std::string::String>,
+    /// <p>The description of the finding.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Number (ARN) of the finding.</p>
+    pub finding_arn: std::option::Option<std::string::String>,
+    /// <p>The date and time that the finding was first observed.</p>
+    pub first_observed_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time that the finding was last observed.</p>
+    pub last_observed_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>An object that contains the details of a package vulnerability finding.</p>
+    pub package_vulnerability_details:
+        std::option::Option<crate::model::PackageVulnerabilityDetails>,
+    /// <p>An object that contains the details about how to remediate a finding.</p>
+    pub remediation: std::option::Option<crate::model::Remediation>,
+    /// <p>Contains information on the resources involved in a finding.</p>
+    pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
+    /// <p>The Amazon Inspector score given to the finding.</p>
+    pub score: f64,
+    /// <p>An object that contains details of the Amazon Inspector score.</p>
+    pub score_details: std::option::Option<crate::model::ScoreDetails>,
+    /// <p>The severity of the finding.</p>
+    pub severity: std::option::Option<std::string::String>,
+    /// <p>The status of the finding.</p>
+    pub status: std::option::Option<std::string::String>,
+    /// <p>The title of the finding.</p>
+    pub title: std::option::Option<std::string::String>,
+    /// <p>The type of the finding.</p>
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p>The date and time the finding was last updated at.</p>
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
-impl std::convert::From<&str> for FindingSeverity {
-    fn from(s: &str) -> Self {
-        match s {
-            "CRITICAL" => FindingSeverity::Critical,
-            "HIGH" => FindingSeverity::High,
-            "INFORMATIONAL" => FindingSeverity::Informational,
-            "LOW" => FindingSeverity::Low,
-            "MEDIUM" => FindingSeverity::Medium,
-            "UNDEFINED" => FindingSeverity::Undefined,
-            other => FindingSeverity::Unknown(other.to_owned()),
+impl EnhancedImageScanFinding {
+    /// <p>The Amazon Web Services account ID associated with the image.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The description of the finding.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Number (ARN) of the finding.</p>
+    pub fn finding_arn(&self) -> std::option::Option<&str> {
+        self.finding_arn.as_deref()
+    }
+    /// <p>The date and time that the finding was first observed.</p>
+    pub fn first_observed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.first_observed_at.as_ref()
+    }
+    /// <p>The date and time that the finding was last observed.</p>
+    pub fn last_observed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_observed_at.as_ref()
+    }
+    /// <p>An object that contains the details of a package vulnerability finding.</p>
+    pub fn package_vulnerability_details(
+        &self,
+    ) -> std::option::Option<&crate::model::PackageVulnerabilityDetails> {
+        self.package_vulnerability_details.as_ref()
+    }
+    /// <p>An object that contains the details about how to remediate a finding.</p>
+    pub fn remediation(&self) -> std::option::Option<&crate::model::Remediation> {
+        self.remediation.as_ref()
+    }
+    /// <p>Contains information on the resources involved in a finding.</p>
+    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.resources.as_deref()
+    }
+    /// <p>The Amazon Inspector score given to the finding.</p>
+    pub fn score(&self) -> f64 {
+        self.score
+    }
+    /// <p>An object that contains details of the Amazon Inspector score.</p>
+    pub fn score_details(&self) -> std::option::Option<&crate::model::ScoreDetails> {
+        self.score_details.as_ref()
+    }
+    /// <p>The severity of the finding.</p>
+    pub fn severity(&self) -> std::option::Option<&str> {
+        self.severity.as_deref()
+    }
+    /// <p>The status of the finding.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The title of the finding.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The type of the finding.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The date and time the finding was last updated at.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.updated_at.as_ref()
+    }
+}
+impl std::fmt::Debug for EnhancedImageScanFinding {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EnhancedImageScanFinding");
+        formatter.field("aws_account_id", &self.aws_account_id);
+        formatter.field("description", &self.description);
+        formatter.field("finding_arn", &self.finding_arn);
+        formatter.field("first_observed_at", &self.first_observed_at);
+        formatter.field("last_observed_at", &self.last_observed_at);
+        formatter.field(
+            "package_vulnerability_details",
+            &self.package_vulnerability_details,
+        );
+        formatter.field("remediation", &self.remediation);
+        formatter.field("resources", &self.resources);
+        formatter.field("score", &self.score);
+        formatter.field("score_details", &self.score_details);
+        formatter.field("severity", &self.severity);
+        formatter.field("status", &self.status);
+        formatter.field("title", &self.title);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.finish()
+    }
+}
+/// See [`EnhancedImageScanFinding`](crate::model::EnhancedImageScanFinding)
+pub mod enhanced_image_scan_finding {
+    /// A builder for [`EnhancedImageScanFinding`](crate::model::EnhancedImageScanFinding)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) aws_account_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) finding_arn: std::option::Option<std::string::String>,
+        pub(crate) first_observed_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_observed_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) package_vulnerability_details:
+            std::option::Option<crate::model::PackageVulnerabilityDetails>,
+        pub(crate) remediation: std::option::Option<crate::model::Remediation>,
+        pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
+        pub(crate) score: std::option::Option<f64>,
+        pub(crate) score_details: std::option::Option<crate::model::ScoreDetails>,
+        pub(crate) severity: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) title: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account ID associated with the image.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_account_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the image.</p>
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_account_id = input;
+            self
+        }
+        /// <p>The description of the finding.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the finding.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The Amazon Resource Number (ARN) of the finding.</p>
+        pub fn finding_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.finding_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Number (ARN) of the finding.</p>
+        pub fn set_finding_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.finding_arn = input;
+            self
+        }
+        /// <p>The date and time that the finding was first observed.</p>
+        pub fn first_observed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.first_observed_at = Some(input);
+            self
+        }
+        /// <p>The date and time that the finding was first observed.</p>
+        pub fn set_first_observed_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.first_observed_at = input;
+            self
+        }
+        /// <p>The date and time that the finding was last observed.</p>
+        pub fn last_observed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_observed_at = Some(input);
+            self
+        }
+        /// <p>The date and time that the finding was last observed.</p>
+        pub fn set_last_observed_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_observed_at = input;
+            self
+        }
+        /// <p>An object that contains the details of a package vulnerability finding.</p>
+        pub fn package_vulnerability_details(
+            mut self,
+            input: crate::model::PackageVulnerabilityDetails,
+        ) -> Self {
+            self.package_vulnerability_details = Some(input);
+            self
+        }
+        /// <p>An object that contains the details of a package vulnerability finding.</p>
+        pub fn set_package_vulnerability_details(
+            mut self,
+            input: std::option::Option<crate::model::PackageVulnerabilityDetails>,
+        ) -> Self {
+            self.package_vulnerability_details = input;
+            self
+        }
+        /// <p>An object that contains the details about how to remediate a finding.</p>
+        pub fn remediation(mut self, input: crate::model::Remediation) -> Self {
+            self.remediation = Some(input);
+            self
+        }
+        /// <p>An object that contains the details about how to remediate a finding.</p>
+        pub fn set_remediation(
+            mut self,
+            input: std::option::Option<crate::model::Remediation>,
+        ) -> Self {
+            self.remediation = input;
+            self
+        }
+        /// Appends an item to `resources`.
+        ///
+        /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+        ///
+        /// <p>Contains information on the resources involved in a finding.</p>
+        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+            let mut v = self.resources.unwrap_or_default();
+            v.push(input.into());
+            self.resources = Some(v);
+            self
+        }
+        /// <p>Contains information on the resources involved in a finding.</p>
+        pub fn set_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
+        ) -> Self {
+            self.resources = input;
+            self
+        }
+        /// <p>The Amazon Inspector score given to the finding.</p>
+        pub fn score(mut self, input: f64) -> Self {
+            self.score = Some(input);
+            self
+        }
+        /// <p>The Amazon Inspector score given to the finding.</p>
+        pub fn set_score(mut self, input: std::option::Option<f64>) -> Self {
+            self.score = input;
+            self
+        }
+        /// <p>An object that contains details of the Amazon Inspector score.</p>
+        pub fn score_details(mut self, input: crate::model::ScoreDetails) -> Self {
+            self.score_details = Some(input);
+            self
+        }
+        /// <p>An object that contains details of the Amazon Inspector score.</p>
+        pub fn set_score_details(
+            mut self,
+            input: std::option::Option<crate::model::ScoreDetails>,
+        ) -> Self {
+            self.score_details = input;
+            self
+        }
+        /// <p>The severity of the finding.</p>
+        pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.severity = Some(input.into());
+            self
+        }
+        /// <p>The severity of the finding.</p>
+        pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.severity = input;
+            self
+        }
+        /// <p>The status of the finding.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The status of the finding.</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The title of the finding.</p>
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.title = Some(input.into());
+            self
+        }
+        /// <p>The title of the finding.</p>
+        pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.title = input;
+            self
+        }
+        /// <p>The type of the finding.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>The type of the finding.</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The date and time the finding was last updated at.</p>
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.updated_at = Some(input);
+            self
+        }
+        /// <p>The date and time the finding was last updated at.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.updated_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EnhancedImageScanFinding`](crate::model::EnhancedImageScanFinding)
+        pub fn build(self) -> crate::model::EnhancedImageScanFinding {
+            crate::model::EnhancedImageScanFinding {
+                aws_account_id: self.aws_account_id,
+                description: self.description,
+                finding_arn: self.finding_arn,
+                first_observed_at: self.first_observed_at,
+                last_observed_at: self.last_observed_at,
+                package_vulnerability_details: self.package_vulnerability_details,
+                remediation: self.remediation,
+                resources: self.resources,
+                score: self.score.unwrap_or_default(),
+                score_details: self.score_details,
+                severity: self.severity,
+                status: self.status,
+                title: self.title,
+                r#type: self.r#type,
+                updated_at: self.updated_at,
+            }
         }
     }
 }
-impl std::str::FromStr for FindingSeverity {
-    type Err = std::convert::Infallible;
+impl EnhancedImageScanFinding {
+    /// Creates a new builder-style object to manufacture [`EnhancedImageScanFinding`](crate::model::EnhancedImageScanFinding)
+    pub fn builder() -> crate::model::enhanced_image_scan_finding::Builder {
+        crate::model::enhanced_image_scan_finding::Builder::default()
+    }
+}
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FindingSeverity::from(s))
+/// <p>Information about the Amazon Inspector score given to a finding.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ScoreDetails {
+    /// <p>An object that contains details about the CVSS score given to a finding.</p>
+    pub cvss: std::option::Option<crate::model::CvssScoreDetails>,
+}
+impl ScoreDetails {
+    /// <p>An object that contains details about the CVSS score given to a finding.</p>
+    pub fn cvss(&self) -> std::option::Option<&crate::model::CvssScoreDetails> {
+        self.cvss.as_ref()
     }
 }
-impl FindingSeverity {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FindingSeverity::Critical => "CRITICAL",
-            FindingSeverity::High => "HIGH",
-            FindingSeverity::Informational => "INFORMATIONAL",
-            FindingSeverity::Low => "LOW",
-            FindingSeverity::Medium => "MEDIUM",
-            FindingSeverity::Undefined => "UNDEFINED",
-            FindingSeverity::Unknown(s) => s.as_ref(),
+impl std::fmt::Debug for ScoreDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScoreDetails");
+        formatter.field("cvss", &self.cvss);
+        formatter.finish()
+    }
+}
+/// See [`ScoreDetails`](crate::model::ScoreDetails)
+pub mod score_details {
+    /// A builder for [`ScoreDetails`](crate::model::ScoreDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cvss: std::option::Option<crate::model::CvssScoreDetails>,
+    }
+    impl Builder {
+        /// <p>An object that contains details about the CVSS score given to a finding.</p>
+        pub fn cvss(mut self, input: crate::model::CvssScoreDetails) -> Self {
+            self.cvss = Some(input);
+            self
+        }
+        /// <p>An object that contains details about the CVSS score given to a finding.</p>
+        pub fn set_cvss(
+            mut self,
+            input: std::option::Option<crate::model::CvssScoreDetails>,
+        ) -> Self {
+            self.cvss = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScoreDetails`](crate::model::ScoreDetails)
+        pub fn build(self) -> crate::model::ScoreDetails {
+            crate::model::ScoreDetails { cvss: self.cvss }
         }
     }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "CRITICAL",
-            "HIGH",
-            "INFORMATIONAL",
-            "LOW",
-            "MEDIUM",
-            "UNDEFINED",
-        ]
+}
+impl ScoreDetails {
+    /// Creates a new builder-style object to manufacture [`ScoreDetails`](crate::model::ScoreDetails)
+    pub fn builder() -> crate::model::score_details::Builder {
+        crate::model::score_details::Builder::default()
     }
 }
-impl AsRef<str> for FindingSeverity {
-    fn as_ref(&self) -> &str {
-        self.as_str()
+
+/// <p>Information about the CVSS score.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CvssScoreDetails {
+    /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
+    pub adjustments: std::option::Option<std::vec::Vec<crate::model::CvssScoreAdjustment>>,
+    /// <p>The CVSS score.</p>
+    pub score: f64,
+    /// <p>The source for the CVSS score.</p>
+    pub score_source: std::option::Option<std::string::String>,
+    /// <p>The vector for the CVSS score.</p>
+    pub scoring_vector: std::option::Option<std::string::String>,
+    /// <p>The CVSS version used in scoring.</p>
+    pub version: std::option::Option<std::string::String>,
+}
+impl CvssScoreDetails {
+    /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
+    pub fn adjustments(&self) -> std::option::Option<&[crate::model::CvssScoreAdjustment]> {
+        self.adjustments.as_deref()
+    }
+    /// <p>The CVSS score.</p>
+    pub fn score(&self) -> f64 {
+        self.score
+    }
+    /// <p>The source for the CVSS score.</p>
+    pub fn score_source(&self) -> std::option::Option<&str> {
+        self.score_source.as_deref()
+    }
+    /// <p>The vector for the CVSS score.</p>
+    pub fn scoring_vector(&self) -> std::option::Option<&str> {
+        self.scoring_vector.as_deref()
+    }
+    /// <p>The CVSS version used in scoring.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
+impl std::fmt::Debug for CvssScoreDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CvssScoreDetails");
+        formatter.field("adjustments", &self.adjustments);
+        formatter.field("score", &self.score);
+        formatter.field("score_source", &self.score_source);
+        formatter.field("scoring_vector", &self.scoring_vector);
+        formatter.field("version", &self.version);
+        formatter.finish()
+    }
+}
+/// See [`CvssScoreDetails`](crate::model::CvssScoreDetails)
+pub mod cvss_score_details {
+    /// A builder for [`CvssScoreDetails`](crate::model::CvssScoreDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) adjustments:
+            std::option::Option<std::vec::Vec<crate::model::CvssScoreAdjustment>>,
+        pub(crate) score: std::option::Option<f64>,
+        pub(crate) score_source: std::option::Option<std::string::String>,
+        pub(crate) scoring_vector: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `adjustments`.
+        ///
+        /// To override the contents of this collection use [`set_adjustments`](Self::set_adjustments).
+        ///
+        /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
+        pub fn adjustments(mut self, input: impl Into<crate::model::CvssScoreAdjustment>) -> Self {
+            let mut v = self.adjustments.unwrap_or_default();
+            v.push(input.into());
+            self.adjustments = Some(v);
+            self
+        }
+        /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
+        pub fn set_adjustments(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CvssScoreAdjustment>>,
+        ) -> Self {
+            self.adjustments = input;
+            self
+        }
+        /// <p>The CVSS score.</p>
+        pub fn score(mut self, input: f64) -> Self {
+            self.score = Some(input);
+            self
+        }
+        /// <p>The CVSS score.</p>
+        pub fn set_score(mut self, input: std::option::Option<f64>) -> Self {
+            self.score = input;
+            self
+        }
+        /// <p>The source for the CVSS score.</p>
+        pub fn score_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.score_source = Some(input.into());
+            self
+        }
+        /// <p>The source for the CVSS score.</p>
+        pub fn set_score_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.score_source = input;
+            self
+        }
+        /// <p>The vector for the CVSS score.</p>
+        pub fn scoring_vector(mut self, input: impl Into<std::string::String>) -> Self {
+            self.scoring_vector = Some(input.into());
+            self
+        }
+        /// <p>The vector for the CVSS score.</p>
+        pub fn set_scoring_vector(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.scoring_vector = input;
+            self
+        }
+        /// <p>The CVSS version used in scoring.</p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
+            self
+        }
+        /// <p>The CVSS version used in scoring.</p>
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CvssScoreDetails`](crate::model::CvssScoreDetails)
+        pub fn build(self) -> crate::model::CvssScoreDetails {
+            crate::model::CvssScoreDetails {
+                adjustments: self.adjustments,
+                score: self.score.unwrap_or_default(),
+                score_source: self.score_source,
+                scoring_vector: self.scoring_vector,
+                version: self.version,
+            }
+        }
+    }
+}
+impl CvssScoreDetails {
+    /// Creates a new builder-style object to manufacture [`CvssScoreDetails`](crate::model::CvssScoreDetails)
+    pub fn builder() -> crate::model::cvss_score_details::Builder {
+        crate::model::cvss_score_details::Builder::default()
+    }
+}
+
+/// <p>Details on adjustments Amazon Inspector made to the CVSS score for a finding.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CvssScoreAdjustment {
+    /// <p>The metric used to adjust the CVSS score.</p>
+    pub metric: std::option::Option<std::string::String>,
+    /// <p>The reason the CVSS score has been adjustment.</p>
+    pub reason: std::option::Option<std::string::String>,
+}
+impl CvssScoreAdjustment {
+    /// <p>The metric used to adjust the CVSS score.</p>
+    pub fn metric(&self) -> std::option::Option<&str> {
+        self.metric.as_deref()
+    }
+    /// <p>The reason the CVSS score has been adjustment.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+}
+impl std::fmt::Debug for CvssScoreAdjustment {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CvssScoreAdjustment");
+        formatter.field("metric", &self.metric);
+        formatter.field("reason", &self.reason);
+        formatter.finish()
+    }
+}
+/// See [`CvssScoreAdjustment`](crate::model::CvssScoreAdjustment)
+pub mod cvss_score_adjustment {
+    /// A builder for [`CvssScoreAdjustment`](crate::model::CvssScoreAdjustment)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric: std::option::Option<std::string::String>,
+        pub(crate) reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The metric used to adjust the CVSS score.</p>
+        pub fn metric(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric = Some(input.into());
+            self
+        }
+        /// <p>The metric used to adjust the CVSS score.</p>
+        pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric = input;
+            self
+        }
+        /// <p>The reason the CVSS score has been adjustment.</p>
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reason = Some(input.into());
+            self
+        }
+        /// <p>The reason the CVSS score has been adjustment.</p>
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CvssScoreAdjustment`](crate::model::CvssScoreAdjustment)
+        pub fn build(self) -> crate::model::CvssScoreAdjustment {
+            crate::model::CvssScoreAdjustment {
+                metric: self.metric,
+                reason: self.reason,
+            }
+        }
+    }
+}
+impl CvssScoreAdjustment {
+    /// Creates a new builder-style object to manufacture [`CvssScoreAdjustment`](crate::model::CvssScoreAdjustment)
+    pub fn builder() -> crate::model::cvss_score_adjustment::Builder {
+        crate::model::cvss_score_adjustment::Builder::default()
+    }
+}
+
+/// <p>Details about the resource involved in a finding.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Resource {
+    /// <p>An object that contains details about the resource involved in a finding.</p>
+    pub details: std::option::Option<crate::model::ResourceDetails>,
+    /// <p>The ID of the resource.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The tags attached to the resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The type of resource.</p>
+    pub r#type: std::option::Option<std::string::String>,
+}
+impl Resource {
+    /// <p>An object that contains details about the resource involved in a finding.</p>
+    pub fn details(&self) -> std::option::Option<&crate::model::ResourceDetails> {
+        self.details.as_ref()
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The tags attached to the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The type of resource.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
+impl std::fmt::Debug for Resource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Resource");
+        formatter.field("details", &self.details);
+        formatter.field("id", &self.id);
+        formatter.field("tags", &self.tags);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`Resource`](crate::model::Resource)
+pub mod resource {
+    /// A builder for [`Resource`](crate::model::Resource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) details: std::option::Option<crate::model::ResourceDetails>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>An object that contains details about the resource involved in a finding.</p>
+        pub fn details(mut self, input: crate::model::ResourceDetails) -> Self {
+            self.details = Some(input);
+            self
+        }
+        /// <p>An object that contains details about the resource involved in a finding.</p>
+        pub fn set_details(
+            mut self,
+            input: std::option::Option<crate::model::ResourceDetails>,
+        ) -> Self {
+            self.details = input;
+            self
+        }
+        /// <p>The ID of the resource.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the resource.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags attached to the resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags attached to the resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The type of resource.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>The type of resource.</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Resource`](crate::model::Resource)
+        pub fn build(self) -> crate::model::Resource {
+            crate::model::Resource {
+                details: self.details,
+                id: self.id,
+                tags: self.tags,
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl Resource {
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource)
+    pub fn builder() -> crate::model::resource::Builder {
+        crate::model::resource::Builder::default()
+    }
+}
+
+/// <p>Contains details about the resource involved in the finding.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceDetails {
+    /// <p>An object that contains details about the Amazon ECR container image involved in the
+    /// finding.</p>
+    pub aws_ecr_container_image: std::option::Option<crate::model::AwsEcrContainerImageDetails>,
+}
+impl ResourceDetails {
+    /// <p>An object that contains details about the Amazon ECR container image involved in the
+    /// finding.</p>
+    pub fn aws_ecr_container_image(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsEcrContainerImageDetails> {
+        self.aws_ecr_container_image.as_ref()
+    }
+}
+impl std::fmt::Debug for ResourceDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceDetails");
+        formatter.field("aws_ecr_container_image", &self.aws_ecr_container_image);
+        formatter.finish()
+    }
+}
+/// See [`ResourceDetails`](crate::model::ResourceDetails)
+pub mod resource_details {
+    /// A builder for [`ResourceDetails`](crate::model::ResourceDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) aws_ecr_container_image:
+            std::option::Option<crate::model::AwsEcrContainerImageDetails>,
+    }
+    impl Builder {
+        /// <p>An object that contains details about the Amazon ECR container image involved in the
+        /// finding.</p>
+        pub fn aws_ecr_container_image(
+            mut self,
+            input: crate::model::AwsEcrContainerImageDetails,
+        ) -> Self {
+            self.aws_ecr_container_image = Some(input);
+            self
+        }
+        /// <p>An object that contains details about the Amazon ECR container image involved in the
+        /// finding.</p>
+        pub fn set_aws_ecr_container_image(
+            mut self,
+            input: std::option::Option<crate::model::AwsEcrContainerImageDetails>,
+        ) -> Self {
+            self.aws_ecr_container_image = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceDetails`](crate::model::ResourceDetails)
+        pub fn build(self) -> crate::model::ResourceDetails {
+            crate::model::ResourceDetails {
+                aws_ecr_container_image: self.aws_ecr_container_image,
+            }
+        }
+    }
+}
+impl ResourceDetails {
+    /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails)
+    pub fn builder() -> crate::model::resource_details::Builder {
+        crate::model::resource_details::Builder::default()
+    }
+}
+
+/// <p>The image details of the Amazon ECR container image.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEcrContainerImageDetails {
+    /// <p>The architecture of the Amazon ECR container image.</p>
+    pub architecture: std::option::Option<std::string::String>,
+    /// <p>The image author of the Amazon ECR container image.</p>
+    pub author: std::option::Option<std::string::String>,
+    /// <p>The image hash of the Amazon ECR container image.</p>
+    pub image_hash: std::option::Option<std::string::String>,
+    /// <p>The image tags attached to the Amazon ECR container image.</p>
+    pub image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The platform of the Amazon ECR container image.</p>
+    pub platform: std::option::Option<std::string::String>,
+    /// <p>The date and time the Amazon ECR container image was pushed.</p>
+    pub pushed_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The registry the Amazon ECR container image belongs to.</p>
+    pub registry: std::option::Option<std::string::String>,
+    /// <p>The name of the repository the Amazon ECR container image resides in.</p>
+    pub repository_name: std::option::Option<std::string::String>,
+}
+impl AwsEcrContainerImageDetails {
+    /// <p>The architecture of the Amazon ECR container image.</p>
+    pub fn architecture(&self) -> std::option::Option<&str> {
+        self.architecture.as_deref()
+    }
+    /// <p>The image author of the Amazon ECR container image.</p>
+    pub fn author(&self) -> std::option::Option<&str> {
+        self.author.as_deref()
+    }
+    /// <p>The image hash of the Amazon ECR container image.</p>
+    pub fn image_hash(&self) -> std::option::Option<&str> {
+        self.image_hash.as_deref()
+    }
+    /// <p>The image tags attached to the Amazon ECR container image.</p>
+    pub fn image_tags(&self) -> std::option::Option<&[std::string::String]> {
+        self.image_tags.as_deref()
+    }
+    /// <p>The platform of the Amazon ECR container image.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The date and time the Amazon ECR container image was pushed.</p>
+    pub fn pushed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.pushed_at.as_ref()
+    }
+    /// <p>The registry the Amazon ECR container image belongs to.</p>
+    pub fn registry(&self) -> std::option::Option<&str> {
+        self.registry.as_deref()
+    }
+    /// <p>The name of the repository the Amazon ECR container image resides in.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+}
+impl std::fmt::Debug for AwsEcrContainerImageDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsEcrContainerImageDetails");
+        formatter.field("architecture", &self.architecture);
+        formatter.field("author", &self.author);
+        formatter.field("image_hash", &self.image_hash);
+        formatter.field("image_tags", &self.image_tags);
+        formatter.field("platform", &self.platform);
+        formatter.field("pushed_at", &self.pushed_at);
+        formatter.field("registry", &self.registry);
+        formatter.field("repository_name", &self.repository_name);
+        formatter.finish()
+    }
+}
+/// See [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails)
+pub mod aws_ecr_container_image_details {
+    /// A builder for [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) architecture: std::option::Option<std::string::String>,
+        pub(crate) author: std::option::Option<std::string::String>,
+        pub(crate) image_hash: std::option::Option<std::string::String>,
+        pub(crate) image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) platform: std::option::Option<std::string::String>,
+        pub(crate) pushed_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) registry: std::option::Option<std::string::String>,
+        pub(crate) repository_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The architecture of the Amazon ECR container image.</p>
+        pub fn architecture(mut self, input: impl Into<std::string::String>) -> Self {
+            self.architecture = Some(input.into());
+            self
+        }
+        /// <p>The architecture of the Amazon ECR container image.</p>
+        pub fn set_architecture(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.architecture = input;
+            self
+        }
+        /// <p>The image author of the Amazon ECR container image.</p>
+        pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
+            self.author = Some(input.into());
+            self
+        }
+        /// <p>The image author of the Amazon ECR container image.</p>
+        pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.author = input;
+            self
+        }
+        /// <p>The image hash of the Amazon ECR container image.</p>
+        pub fn image_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_hash = Some(input.into());
+            self
+        }
+        /// <p>The image hash of the Amazon ECR container image.</p>
+        pub fn set_image_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_hash = input;
+            self
+        }
+        /// Appends an item to `image_tags`.
+        ///
+        /// To override the contents of this collection use [`set_image_tags`](Self::set_image_tags).
+        ///
+        /// <p>The image tags attached to the Amazon ECR container image.</p>
+        pub fn image_tags(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.image_tags.unwrap_or_default();
+            v.push(input.into());
+            self.image_tags = Some(v);
+            self
+        }
+        /// <p>The image tags attached to the Amazon ECR container image.</p>
+        pub fn set_image_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.image_tags = input;
+            self
+        }
+        /// <p>The platform of the Amazon ECR container image.</p>
+        pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform = Some(input.into());
+            self
+        }
+        /// <p>The platform of the Amazon ECR container image.</p>
+        pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform = input;
+            self
+        }
+        /// <p>The date and time the Amazon ECR container image was pushed.</p>
+        pub fn pushed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.pushed_at = Some(input);
+            self
+        }
+        /// <p>The date and time the Amazon ECR container image was pushed.</p>
+        pub fn set_pushed_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.pushed_at = input;
+            self
+        }
+        /// <p>The registry the Amazon ECR container image belongs to.</p>
+        pub fn registry(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registry = Some(input.into());
+            self
+        }
+        /// <p>The registry the Amazon ECR container image belongs to.</p>
+        pub fn set_registry(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registry = input;
+            self
+        }
+        /// <p>The name of the repository the Amazon ECR container image resides in.</p>
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.repository_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the repository the Amazon ECR container image resides in.</p>
+        pub fn set_repository_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.repository_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails)
+        pub fn build(self) -> crate::model::AwsEcrContainerImageDetails {
+            crate::model::AwsEcrContainerImageDetails {
+                architecture: self.architecture,
+                author: self.author,
+                image_hash: self.image_hash,
+                image_tags: self.image_tags,
+                platform: self.platform,
+                pushed_at: self.pushed_at,
+                registry: self.registry,
+                repository_name: self.repository_name,
+            }
+        }
+    }
+}
+impl AwsEcrContainerImageDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails)
+    pub fn builder() -> crate::model::aws_ecr_container_image_details::Builder {
+        crate::model::aws_ecr_container_image_details::Builder::default()
+    }
+}
+
+/// <p>Information on how to remediate a finding.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Remediation {
+    /// <p>An object that contains information about the recommended course of action to
+    /// remediate the finding.</p>
+    pub recommendation: std::option::Option<crate::model::Recommendation>,
+}
+impl Remediation {
+    /// <p>An object that contains information about the recommended course of action to
+    /// remediate the finding.</p>
+    pub fn recommendation(&self) -> std::option::Option<&crate::model::Recommendation> {
+        self.recommendation.as_ref()
+    }
+}
+impl std::fmt::Debug for Remediation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Remediation");
+        formatter.field("recommendation", &self.recommendation);
+        formatter.finish()
+    }
+}
+/// See [`Remediation`](crate::model::Remediation)
+pub mod remediation {
+    /// A builder for [`Remediation`](crate::model::Remediation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recommendation: std::option::Option<crate::model::Recommendation>,
+    }
+    impl Builder {
+        /// <p>An object that contains information about the recommended course of action to
+        /// remediate the finding.</p>
+        pub fn recommendation(mut self, input: crate::model::Recommendation) -> Self {
+            self.recommendation = Some(input);
+            self
+        }
+        /// <p>An object that contains information about the recommended course of action to
+        /// remediate the finding.</p>
+        pub fn set_recommendation(
+            mut self,
+            input: std::option::Option<crate::model::Recommendation>,
+        ) -> Self {
+            self.recommendation = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Remediation`](crate::model::Remediation)
+        pub fn build(self) -> crate::model::Remediation {
+            crate::model::Remediation {
+                recommendation: self.recommendation,
+            }
+        }
+    }
+}
+impl Remediation {
+    /// Creates a new builder-style object to manufacture [`Remediation`](crate::model::Remediation)
+    pub fn builder() -> crate::model::remediation::Builder {
+        crate::model::remediation::Builder::default()
+    }
+}
+
+/// <p>Details about the recommended course of action to remediate the finding.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Recommendation {
+    /// <p>The URL address to the CVE remediation recommendations.</p>
+    pub url: std::option::Option<std::string::String>,
+    /// <p>The recommended course of action to remediate the finding.</p>
+    pub text: std::option::Option<std::string::String>,
+}
+impl Recommendation {
+    /// <p>The URL address to the CVE remediation recommendations.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>The recommended course of action to remediate the finding.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+}
+impl std::fmt::Debug for Recommendation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Recommendation");
+        formatter.field("url", &self.url);
+        formatter.field("text", &self.text);
+        formatter.finish()
+    }
+}
+/// See [`Recommendation`](crate::model::Recommendation)
+pub mod recommendation {
+    /// A builder for [`Recommendation`](crate::model::Recommendation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) url: std::option::Option<std::string::String>,
+        pub(crate) text: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The URL address to the CVE remediation recommendations.</p>
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
+            self
+        }
+        /// <p>The URL address to the CVE remediation recommendations.</p>
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
+            self
+        }
+        /// <p>The recommended course of action to remediate the finding.</p>
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text = Some(input.into());
+            self
+        }
+        /// <p>The recommended course of action to remediate the finding.</p>
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Recommendation`](crate::model::Recommendation)
+        pub fn build(self) -> crate::model::Recommendation {
+            crate::model::Recommendation {
+                url: self.url,
+                text: self.text,
+            }
+        }
+    }
+}
+impl Recommendation {
+    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation)
+    pub fn builder() -> crate::model::recommendation::Builder {
+        crate::model::recommendation::Builder::default()
+    }
+}
+
+/// <p>Information about a package vulnerability finding.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PackageVulnerabilityDetails {
+    /// <p>An object that contains details about the CVSS score of a finding.</p>
+    pub cvss: std::option::Option<std::vec::Vec<crate::model::CvssScore>>,
+    /// <p>One or more URLs that contain details about this vulnerability type.</p>
+    pub reference_urls: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>One or more vulnerabilities related to the one identified in this finding.</p>
+    pub related_vulnerabilities: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The source of the vulnerability information.</p>
+    pub source: std::option::Option<std::string::String>,
+    /// <p>A URL to the source of the vulnerability information.</p>
+    pub source_url: std::option::Option<std::string::String>,
+    /// <p>The date and time that this vulnerability was first added to the vendor's
+    /// database.</p>
+    pub vendor_created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The severity the vendor has given to this vulnerability type.</p>
+    pub vendor_severity: std::option::Option<std::string::String>,
+    /// <p>The date and time the vendor last updated this vulnerability in their database.</p>
+    pub vendor_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The ID given to this vulnerability.</p>
+    pub vulnerability_id: std::option::Option<std::string::String>,
+    /// <p>The packages impacted by this vulnerability.</p>
+    pub vulnerable_packages: std::option::Option<std::vec::Vec<crate::model::VulnerablePackage>>,
+}
+impl PackageVulnerabilityDetails {
+    /// <p>An object that contains details about the CVSS score of a finding.</p>
+    pub fn cvss(&self) -> std::option::Option<&[crate::model::CvssScore]> {
+        self.cvss.as_deref()
+    }
+    /// <p>One or more URLs that contain details about this vulnerability type.</p>
+    pub fn reference_urls(&self) -> std::option::Option<&[std::string::String]> {
+        self.reference_urls.as_deref()
+    }
+    /// <p>One or more vulnerabilities related to the one identified in this finding.</p>
+    pub fn related_vulnerabilities(&self) -> std::option::Option<&[std::string::String]> {
+        self.related_vulnerabilities.as_deref()
+    }
+    /// <p>The source of the vulnerability information.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>A URL to the source of the vulnerability information.</p>
+    pub fn source_url(&self) -> std::option::Option<&str> {
+        self.source_url.as_deref()
+    }
+    /// <p>The date and time that this vulnerability was first added to the vendor's
+    /// database.</p>
+    pub fn vendor_created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.vendor_created_at.as_ref()
+    }
+    /// <p>The severity the vendor has given to this vulnerability type.</p>
+    pub fn vendor_severity(&self) -> std::option::Option<&str> {
+        self.vendor_severity.as_deref()
+    }
+    /// <p>The date and time the vendor last updated this vulnerability in their database.</p>
+    pub fn vendor_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.vendor_updated_at.as_ref()
+    }
+    /// <p>The ID given to this vulnerability.</p>
+    pub fn vulnerability_id(&self) -> std::option::Option<&str> {
+        self.vulnerability_id.as_deref()
+    }
+    /// <p>The packages impacted by this vulnerability.</p>
+    pub fn vulnerable_packages(&self) -> std::option::Option<&[crate::model::VulnerablePackage]> {
+        self.vulnerable_packages.as_deref()
+    }
+}
+impl std::fmt::Debug for PackageVulnerabilityDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PackageVulnerabilityDetails");
+        formatter.field("cvss", &self.cvss);
+        formatter.field("reference_urls", &self.reference_urls);
+        formatter.field("related_vulnerabilities", &self.related_vulnerabilities);
+        formatter.field("source", &self.source);
+        formatter.field("source_url", &self.source_url);
+        formatter.field("vendor_created_at", &self.vendor_created_at);
+        formatter.field("vendor_severity", &self.vendor_severity);
+        formatter.field("vendor_updated_at", &self.vendor_updated_at);
+        formatter.field("vulnerability_id", &self.vulnerability_id);
+        formatter.field("vulnerable_packages", &self.vulnerable_packages);
+        formatter.finish()
+    }
+}
+/// See [`PackageVulnerabilityDetails`](crate::model::PackageVulnerabilityDetails)
+pub mod package_vulnerability_details {
+    /// A builder for [`PackageVulnerabilityDetails`](crate::model::PackageVulnerabilityDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cvss: std::option::Option<std::vec::Vec<crate::model::CvssScore>>,
+        pub(crate) reference_urls: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) related_vulnerabilities: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) source: std::option::Option<std::string::String>,
+        pub(crate) source_url: std::option::Option<std::string::String>,
+        pub(crate) vendor_created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) vendor_severity: std::option::Option<std::string::String>,
+        pub(crate) vendor_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) vulnerability_id: std::option::Option<std::string::String>,
+        pub(crate) vulnerable_packages:
+            std::option::Option<std::vec::Vec<crate::model::VulnerablePackage>>,
+    }
+    impl Builder {
+        /// Appends an item to `cvss`.
+        ///
+        /// To override the contents of this collection use [`set_cvss`](Self::set_cvss).
+        ///
+        /// <p>An object that contains details about the CVSS score of a finding.</p>
+        pub fn cvss(mut self, input: impl Into<crate::model::CvssScore>) -> Self {
+            let mut v = self.cvss.unwrap_or_default();
+            v.push(input.into());
+            self.cvss = Some(v);
+            self
+        }
+        /// <p>An object that contains details about the CVSS score of a finding.</p>
+        pub fn set_cvss(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CvssScore>>,
+        ) -> Self {
+            self.cvss = input;
+            self
+        }
+        /// Appends an item to `reference_urls`.
+        ///
+        /// To override the contents of this collection use [`set_reference_urls`](Self::set_reference_urls).
+        ///
+        /// <p>One or more URLs that contain details about this vulnerability type.</p>
+        pub fn reference_urls(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.reference_urls.unwrap_or_default();
+            v.push(input.into());
+            self.reference_urls = Some(v);
+            self
+        }
+        /// <p>One or more URLs that contain details about this vulnerability type.</p>
+        pub fn set_reference_urls(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.reference_urls = input;
+            self
+        }
+        /// Appends an item to `related_vulnerabilities`.
+        ///
+        /// To override the contents of this collection use [`set_related_vulnerabilities`](Self::set_related_vulnerabilities).
+        ///
+        /// <p>One or more vulnerabilities related to the one identified in this finding.</p>
+        pub fn related_vulnerabilities(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.related_vulnerabilities.unwrap_or_default();
+            v.push(input.into());
+            self.related_vulnerabilities = Some(v);
+            self
+        }
+        /// <p>One or more vulnerabilities related to the one identified in this finding.</p>
+        pub fn set_related_vulnerabilities(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.related_vulnerabilities = input;
+            self
+        }
+        /// <p>The source of the vulnerability information.</p>
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source = Some(input.into());
+            self
+        }
+        /// <p>The source of the vulnerability information.</p>
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source = input;
+            self
+        }
+        /// <p>A URL to the source of the vulnerability information.</p>
+        pub fn source_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_url = Some(input.into());
+            self
+        }
+        /// <p>A URL to the source of the vulnerability information.</p>
+        pub fn set_source_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_url = input;
+            self
+        }
+        /// <p>The date and time that this vulnerability was first added to the vendor's
+        /// database.</p>
+        pub fn vendor_created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.vendor_created_at = Some(input);
+            self
+        }
+        /// <p>The date and time that this vulnerability was first added to the vendor's
+        /// database.</p>
+        pub fn set_vendor_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.vendor_created_at = input;
+            self
+        }
+        /// <p>The severity the vendor has given to this vulnerability type.</p>
+        pub fn vendor_severity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vendor_severity = Some(input.into());
+            self
+        }
+        /// <p>The severity the vendor has given to this vulnerability type.</p>
+        pub fn set_vendor_severity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vendor_severity = input;
+            self
+        }
+        /// <p>The date and time the vendor last updated this vulnerability in their database.</p>
+        pub fn vendor_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.vendor_updated_at = Some(input);
+            self
+        }
+        /// <p>The date and time the vendor last updated this vulnerability in their database.</p>
+        pub fn set_vendor_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.vendor_updated_at = input;
+            self
+        }
+        /// <p>The ID given to this vulnerability.</p>
+        pub fn vulnerability_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vulnerability_id = Some(input.into());
+            self
+        }
+        /// <p>The ID given to this vulnerability.</p>
+        pub fn set_vulnerability_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vulnerability_id = input;
+            self
+        }
+        /// Appends an item to `vulnerable_packages`.
+        ///
+        /// To override the contents of this collection use [`set_vulnerable_packages`](Self::set_vulnerable_packages).
+        ///
+        /// <p>The packages impacted by this vulnerability.</p>
+        pub fn vulnerable_packages(
+            mut self,
+            input: impl Into<crate::model::VulnerablePackage>,
+        ) -> Self {
+            let mut v = self.vulnerable_packages.unwrap_or_default();
+            v.push(input.into());
+            self.vulnerable_packages = Some(v);
+            self
+        }
+        /// <p>The packages impacted by this vulnerability.</p>
+        pub fn set_vulnerable_packages(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VulnerablePackage>>,
+        ) -> Self {
+            self.vulnerable_packages = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PackageVulnerabilityDetails`](crate::model::PackageVulnerabilityDetails)
+        pub fn build(self) -> crate::model::PackageVulnerabilityDetails {
+            crate::model::PackageVulnerabilityDetails {
+                cvss: self.cvss,
+                reference_urls: self.reference_urls,
+                related_vulnerabilities: self.related_vulnerabilities,
+                source: self.source,
+                source_url: self.source_url,
+                vendor_created_at: self.vendor_created_at,
+                vendor_severity: self.vendor_severity,
+                vendor_updated_at: self.vendor_updated_at,
+                vulnerability_id: self.vulnerability_id,
+                vulnerable_packages: self.vulnerable_packages,
+            }
+        }
+    }
+}
+impl PackageVulnerabilityDetails {
+    /// Creates a new builder-style object to manufacture [`PackageVulnerabilityDetails`](crate::model::PackageVulnerabilityDetails)
+    pub fn builder() -> crate::model::package_vulnerability_details::Builder {
+        crate::model::package_vulnerability_details::Builder::default()
+    }
+}
+
+/// <p>Information on the vulnerable package identified by a finding.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VulnerablePackage {
+    /// <p>The architecture of the vulnerable package.</p>
+    pub arch: std::option::Option<std::string::String>,
+    /// <p>The epoch of the vulnerable package.</p>
+    pub epoch: std::option::Option<i32>,
+    /// <p>The file path of the vulnerable package.</p>
+    pub file_path: std::option::Option<std::string::String>,
+    /// <p>The name of the vulnerable package.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The package manager of the vulnerable package.</p>
+    pub package_manager: std::option::Option<std::string::String>,
+    /// <p>The release of the vulnerable package.</p>
+    pub release: std::option::Option<std::string::String>,
+    /// <p>The source layer hash of the vulnerable package.</p>
+    pub source_layer_hash: std::option::Option<std::string::String>,
+    /// <p>The version of the vulnerable package.</p>
+    pub version: std::option::Option<std::string::String>,
+}
+impl VulnerablePackage {
+    /// <p>The architecture of the vulnerable package.</p>
+    pub fn arch(&self) -> std::option::Option<&str> {
+        self.arch.as_deref()
+    }
+    /// <p>The epoch of the vulnerable package.</p>
+    pub fn epoch(&self) -> std::option::Option<i32> {
+        self.epoch
+    }
+    /// <p>The file path of the vulnerable package.</p>
+    pub fn file_path(&self) -> std::option::Option<&str> {
+        self.file_path.as_deref()
+    }
+    /// <p>The name of the vulnerable package.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The package manager of the vulnerable package.</p>
+    pub fn package_manager(&self) -> std::option::Option<&str> {
+        self.package_manager.as_deref()
+    }
+    /// <p>The release of the vulnerable package.</p>
+    pub fn release(&self) -> std::option::Option<&str> {
+        self.release.as_deref()
+    }
+    /// <p>The source layer hash of the vulnerable package.</p>
+    pub fn source_layer_hash(&self) -> std::option::Option<&str> {
+        self.source_layer_hash.as_deref()
+    }
+    /// <p>The version of the vulnerable package.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
+impl std::fmt::Debug for VulnerablePackage {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VulnerablePackage");
+        formatter.field("arch", &self.arch);
+        formatter.field("epoch", &self.epoch);
+        formatter.field("file_path", &self.file_path);
+        formatter.field("name", &self.name);
+        formatter.field("package_manager", &self.package_manager);
+        formatter.field("release", &self.release);
+        formatter.field("source_layer_hash", &self.source_layer_hash);
+        formatter.field("version", &self.version);
+        formatter.finish()
+    }
+}
+/// See [`VulnerablePackage`](crate::model::VulnerablePackage)
+pub mod vulnerable_package {
+    /// A builder for [`VulnerablePackage`](crate::model::VulnerablePackage)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arch: std::option::Option<std::string::String>,
+        pub(crate) epoch: std::option::Option<i32>,
+        pub(crate) file_path: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) package_manager: std::option::Option<std::string::String>,
+        pub(crate) release: std::option::Option<std::string::String>,
+        pub(crate) source_layer_hash: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The architecture of the vulnerable package.</p>
+        pub fn arch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arch = Some(input.into());
+            self
+        }
+        /// <p>The architecture of the vulnerable package.</p>
+        pub fn set_arch(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arch = input;
+            self
+        }
+        /// <p>The epoch of the vulnerable package.</p>
+        pub fn epoch(mut self, input: i32) -> Self {
+            self.epoch = Some(input);
+            self
+        }
+        /// <p>The epoch of the vulnerable package.</p>
+        pub fn set_epoch(mut self, input: std::option::Option<i32>) -> Self {
+            self.epoch = input;
+            self
+        }
+        /// <p>The file path of the vulnerable package.</p>
+        pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_path = Some(input.into());
+            self
+        }
+        /// <p>The file path of the vulnerable package.</p>
+        pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_path = input;
+            self
+        }
+        /// <p>The name of the vulnerable package.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the vulnerable package.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The package manager of the vulnerable package.</p>
+        pub fn package_manager(mut self, input: impl Into<std::string::String>) -> Self {
+            self.package_manager = Some(input.into());
+            self
+        }
+        /// <p>The package manager of the vulnerable package.</p>
+        pub fn set_package_manager(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.package_manager = input;
+            self
+        }
+        /// <p>The release of the vulnerable package.</p>
+        pub fn release(mut self, input: impl Into<std::string::String>) -> Self {
+            self.release = Some(input.into());
+            self
+        }
+        /// <p>The release of the vulnerable package.</p>
+        pub fn set_release(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.release = input;
+            self
+        }
+        /// <p>The source layer hash of the vulnerable package.</p>
+        pub fn source_layer_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_layer_hash = Some(input.into());
+            self
+        }
+        /// <p>The source layer hash of the vulnerable package.</p>
+        pub fn set_source_layer_hash(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_layer_hash = input;
+            self
+        }
+        /// <p>The version of the vulnerable package.</p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
+            self
+        }
+        /// <p>The version of the vulnerable package.</p>
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VulnerablePackage`](crate::model::VulnerablePackage)
+        pub fn build(self) -> crate::model::VulnerablePackage {
+            crate::model::VulnerablePackage {
+                arch: self.arch,
+                epoch: self.epoch,
+                file_path: self.file_path,
+                name: self.name,
+                package_manager: self.package_manager,
+                release: self.release,
+                source_layer_hash: self.source_layer_hash,
+                version: self.version,
+            }
+        }
+    }
+}
+impl VulnerablePackage {
+    /// Creates a new builder-style object to manufacture [`VulnerablePackage`](crate::model::VulnerablePackage)
+    pub fn builder() -> crate::model::vulnerable_package::Builder {
+        crate::model::vulnerable_package::Builder::default()
+    }
+}
+
+/// <p>The CVSS score for a finding.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CvssScore {
+    /// <p>The base CVSS score used for the finding.</p>
+    pub base_score: f64,
+    /// <p>The vector string of the CVSS score.</p>
+    pub scoring_vector: std::option::Option<std::string::String>,
+    /// <p>The source of the CVSS score.</p>
+    pub source: std::option::Option<std::string::String>,
+    /// <p>The version of CVSS used for the score.</p>
+    pub version: std::option::Option<std::string::String>,
+}
+impl CvssScore {
+    /// <p>The base CVSS score used for the finding.</p>
+    pub fn base_score(&self) -> f64 {
+        self.base_score
+    }
+    /// <p>The vector string of the CVSS score.</p>
+    pub fn scoring_vector(&self) -> std::option::Option<&str> {
+        self.scoring_vector.as_deref()
+    }
+    /// <p>The source of the CVSS score.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The version of CVSS used for the score.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
+impl std::fmt::Debug for CvssScore {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CvssScore");
+        formatter.field("base_score", &self.base_score);
+        formatter.field("scoring_vector", &self.scoring_vector);
+        formatter.field("source", &self.source);
+        formatter.field("version", &self.version);
+        formatter.finish()
+    }
+}
+/// See [`CvssScore`](crate::model::CvssScore)
+pub mod cvss_score {
+    /// A builder for [`CvssScore`](crate::model::CvssScore)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) base_score: std::option::Option<f64>,
+        pub(crate) scoring_vector: std::option::Option<std::string::String>,
+        pub(crate) source: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The base CVSS score used for the finding.</p>
+        pub fn base_score(mut self, input: f64) -> Self {
+            self.base_score = Some(input);
+            self
+        }
+        /// <p>The base CVSS score used for the finding.</p>
+        pub fn set_base_score(mut self, input: std::option::Option<f64>) -> Self {
+            self.base_score = input;
+            self
+        }
+        /// <p>The vector string of the CVSS score.</p>
+        pub fn scoring_vector(mut self, input: impl Into<std::string::String>) -> Self {
+            self.scoring_vector = Some(input.into());
+            self
+        }
+        /// <p>The vector string of the CVSS score.</p>
+        pub fn set_scoring_vector(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.scoring_vector = input;
+            self
+        }
+        /// <p>The source of the CVSS score.</p>
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source = Some(input.into());
+            self
+        }
+        /// <p>The source of the CVSS score.</p>
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source = input;
+            self
+        }
+        /// <p>The version of CVSS used for the score.</p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
+            self
+        }
+        /// <p>The version of CVSS used for the score.</p>
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CvssScore`](crate::model::CvssScore)
+        pub fn build(self) -> crate::model::CvssScore {
+            crate::model::CvssScore {
+                base_score: self.base_score.unwrap_or_default(),
+                scoring_vector: self.scoring_vector,
+                source: self.source,
+                version: self.version,
+            }
+        }
+    }
+}
+impl CvssScore {
+    /// Creates a new builder-style object to manufacture [`CvssScore`](crate::model::CvssScore)
+    pub fn builder() -> crate::model::cvss_score::Builder {
+        crate::model::cvss_score::Builder::default()
     }
 }
 
@@ -2516,6 +4803,84 @@ impl Attribute {
     /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute)
     pub fn builder() -> crate::model::attribute::Builder {
         crate::model::attribute::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FindingSeverity {
+    #[allow(missing_docs)] // documentation missing in model
+    Critical,
+    #[allow(missing_docs)] // documentation missing in model
+    High,
+    #[allow(missing_docs)] // documentation missing in model
+    Informational,
+    #[allow(missing_docs)] // documentation missing in model
+    Low,
+    #[allow(missing_docs)] // documentation missing in model
+    Medium,
+    #[allow(missing_docs)] // documentation missing in model
+    Undefined,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FindingSeverity {
+    fn from(s: &str) -> Self {
+        match s {
+            "CRITICAL" => FindingSeverity::Critical,
+            "HIGH" => FindingSeverity::High,
+            "INFORMATIONAL" => FindingSeverity::Informational,
+            "LOW" => FindingSeverity::Low,
+            "MEDIUM" => FindingSeverity::Medium,
+            "UNDEFINED" => FindingSeverity::Undefined,
+            other => FindingSeverity::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FindingSeverity {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FindingSeverity::from(s))
+    }
+}
+impl FindingSeverity {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FindingSeverity::Critical => "CRITICAL",
+            FindingSeverity::High => "HIGH",
+            FindingSeverity::Informational => "INFORMATIONAL",
+            FindingSeverity::Low => "LOW",
+            FindingSeverity::Medium => "MEDIUM",
+            FindingSeverity::Undefined => "UNDEFINED",
+            FindingSeverity::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CRITICAL",
+            "HIGH",
+            "INFORMATIONAL",
+            "LOW",
+            "MEDIUM",
+            "UNDEFINED",
+        ]
+    }
+}
+impl AsRef<str> for FindingSeverity {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3014,7 +5379,7 @@ impl DescribeImagesFilter {
 pub struct ImageReplicationStatus {
     /// <p>The destination Region for the image replication.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID associated with the registry to which the image belongs.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry to which the image belongs.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The image replication status.</p>
     pub status: std::option::Option<crate::model::ReplicationStatus>,
@@ -3026,7 +5391,7 @@ impl ImageReplicationStatus {
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>The AWS account ID associated with the registry to which the image belongs.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry to which the image belongs.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -3071,12 +5436,12 @@ pub mod image_replication_status {
             self.region = input;
             self
         }
-        /// <p>The AWS account ID associated with the registry to which the image belongs.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to which the image belongs.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID associated with the registry to which the image belongs.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to which the image belongs.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -3178,6 +5543,320 @@ impl ReplicationStatus {
 impl AsRef<str> for ReplicationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>The details about any failures associated with the scanning configuration of a
+/// repository.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RepositoryScanningConfigurationFailure {
+    /// <p>The name of the repository.</p>
+    pub repository_name: std::option::Option<std::string::String>,
+    /// <p>The failure code.</p>
+    pub failure_code: std::option::Option<crate::model::ScanningConfigurationFailureCode>,
+    /// <p>The reason for the failure.</p>
+    pub failure_reason: std::option::Option<std::string::String>,
+}
+impl RepositoryScanningConfigurationFailure {
+    /// <p>The name of the repository.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The failure code.</p>
+    pub fn failure_code(
+        &self,
+    ) -> std::option::Option<&crate::model::ScanningConfigurationFailureCode> {
+        self.failure_code.as_ref()
+    }
+    /// <p>The reason for the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
+impl std::fmt::Debug for RepositoryScanningConfigurationFailure {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RepositoryScanningConfigurationFailure");
+        formatter.field("repository_name", &self.repository_name);
+        formatter.field("failure_code", &self.failure_code);
+        formatter.field("failure_reason", &self.failure_reason);
+        formatter.finish()
+    }
+}
+/// See [`RepositoryScanningConfigurationFailure`](crate::model::RepositoryScanningConfigurationFailure)
+pub mod repository_scanning_configuration_failure {
+    /// A builder for [`RepositoryScanningConfigurationFailure`](crate::model::RepositoryScanningConfigurationFailure)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) repository_name: std::option::Option<std::string::String>,
+        pub(crate) failure_code:
+            std::option::Option<crate::model::ScanningConfigurationFailureCode>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the repository.</p>
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.repository_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the repository.</p>
+        pub fn set_repository_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.repository_name = input;
+            self
+        }
+        /// <p>The failure code.</p>
+        pub fn failure_code(
+            mut self,
+            input: crate::model::ScanningConfigurationFailureCode,
+        ) -> Self {
+            self.failure_code = Some(input);
+            self
+        }
+        /// <p>The failure code.</p>
+        pub fn set_failure_code(
+            mut self,
+            input: std::option::Option<crate::model::ScanningConfigurationFailureCode>,
+        ) -> Self {
+            self.failure_code = input;
+            self
+        }
+        /// <p>The reason for the failure.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>The reason for the failure.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RepositoryScanningConfigurationFailure`](crate::model::RepositoryScanningConfigurationFailure)
+        pub fn build(self) -> crate::model::RepositoryScanningConfigurationFailure {
+            crate::model::RepositoryScanningConfigurationFailure {
+                repository_name: self.repository_name,
+                failure_code: self.failure_code,
+                failure_reason: self.failure_reason,
+            }
+        }
+    }
+}
+impl RepositoryScanningConfigurationFailure {
+    /// Creates a new builder-style object to manufacture [`RepositoryScanningConfigurationFailure`](crate::model::RepositoryScanningConfigurationFailure)
+    pub fn builder() -> crate::model::repository_scanning_configuration_failure::Builder {
+        crate::model::repository_scanning_configuration_failure::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ScanningConfigurationFailureCode {
+    #[allow(missing_docs)] // documentation missing in model
+    RepositoryNotFound,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ScanningConfigurationFailureCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "REPOSITORY_NOT_FOUND" => ScanningConfigurationFailureCode::RepositoryNotFound,
+            other => ScanningConfigurationFailureCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ScanningConfigurationFailureCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ScanningConfigurationFailureCode::from(s))
+    }
+}
+impl ScanningConfigurationFailureCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ScanningConfigurationFailureCode::RepositoryNotFound => "REPOSITORY_NOT_FOUND",
+            ScanningConfigurationFailureCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["REPOSITORY_NOT_FOUND"]
+    }
+}
+impl AsRef<str> for ScanningConfigurationFailureCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The details of the scanning configuration for a repository.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RepositoryScanningConfiguration {
+    /// <p>The ARN of the repository.</p>
+    pub repository_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the repository.</p>
+    pub repository_name: std::option::Option<std::string::String>,
+    /// <p>Whether or not scan on push is configured for the repository.</p>
+    pub scan_on_push: bool,
+    /// <p>The scan frequency for the repository.</p>
+    pub scan_frequency: std::option::Option<crate::model::ScanFrequency>,
+    /// <p>The scan filters applied to the repository.</p>
+    pub applied_scan_filters:
+        std::option::Option<std::vec::Vec<crate::model::ScanningRepositoryFilter>>,
+}
+impl RepositoryScanningConfiguration {
+    /// <p>The ARN of the repository.</p>
+    pub fn repository_arn(&self) -> std::option::Option<&str> {
+        self.repository_arn.as_deref()
+    }
+    /// <p>The name of the repository.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>Whether or not scan on push is configured for the repository.</p>
+    pub fn scan_on_push(&self) -> bool {
+        self.scan_on_push
+    }
+    /// <p>The scan frequency for the repository.</p>
+    pub fn scan_frequency(&self) -> std::option::Option<&crate::model::ScanFrequency> {
+        self.scan_frequency.as_ref()
+    }
+    /// <p>The scan filters applied to the repository.</p>
+    pub fn applied_scan_filters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ScanningRepositoryFilter]> {
+        self.applied_scan_filters.as_deref()
+    }
+}
+impl std::fmt::Debug for RepositoryScanningConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RepositoryScanningConfiguration");
+        formatter.field("repository_arn", &self.repository_arn);
+        formatter.field("repository_name", &self.repository_name);
+        formatter.field("scan_on_push", &self.scan_on_push);
+        formatter.field("scan_frequency", &self.scan_frequency);
+        formatter.field("applied_scan_filters", &self.applied_scan_filters);
+        formatter.finish()
+    }
+}
+/// See [`RepositoryScanningConfiguration`](crate::model::RepositoryScanningConfiguration)
+pub mod repository_scanning_configuration {
+    /// A builder for [`RepositoryScanningConfiguration`](crate::model::RepositoryScanningConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) repository_arn: std::option::Option<std::string::String>,
+        pub(crate) repository_name: std::option::Option<std::string::String>,
+        pub(crate) scan_on_push: std::option::Option<bool>,
+        pub(crate) scan_frequency: std::option::Option<crate::model::ScanFrequency>,
+        pub(crate) applied_scan_filters:
+            std::option::Option<std::vec::Vec<crate::model::ScanningRepositoryFilter>>,
+    }
+    impl Builder {
+        /// <p>The ARN of the repository.</p>
+        pub fn repository_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.repository_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the repository.</p>
+        pub fn set_repository_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.repository_arn = input;
+            self
+        }
+        /// <p>The name of the repository.</p>
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.repository_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the repository.</p>
+        pub fn set_repository_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.repository_name = input;
+            self
+        }
+        /// <p>Whether or not scan on push is configured for the repository.</p>
+        pub fn scan_on_push(mut self, input: bool) -> Self {
+            self.scan_on_push = Some(input);
+            self
+        }
+        /// <p>Whether or not scan on push is configured for the repository.</p>
+        pub fn set_scan_on_push(mut self, input: std::option::Option<bool>) -> Self {
+            self.scan_on_push = input;
+            self
+        }
+        /// <p>The scan frequency for the repository.</p>
+        pub fn scan_frequency(mut self, input: crate::model::ScanFrequency) -> Self {
+            self.scan_frequency = Some(input);
+            self
+        }
+        /// <p>The scan frequency for the repository.</p>
+        pub fn set_scan_frequency(
+            mut self,
+            input: std::option::Option<crate::model::ScanFrequency>,
+        ) -> Self {
+            self.scan_frequency = input;
+            self
+        }
+        /// Appends an item to `applied_scan_filters`.
+        ///
+        /// To override the contents of this collection use [`set_applied_scan_filters`](Self::set_applied_scan_filters).
+        ///
+        /// <p>The scan filters applied to the repository.</p>
+        pub fn applied_scan_filters(
+            mut self,
+            input: impl Into<crate::model::ScanningRepositoryFilter>,
+        ) -> Self {
+            let mut v = self.applied_scan_filters.unwrap_or_default();
+            v.push(input.into());
+            self.applied_scan_filters = Some(v);
+            self
+        }
+        /// <p>The scan filters applied to the repository.</p>
+        pub fn set_applied_scan_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ScanningRepositoryFilter>>,
+        ) -> Self {
+            self.applied_scan_filters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RepositoryScanningConfiguration`](crate::model::RepositoryScanningConfiguration)
+        pub fn build(self) -> crate::model::RepositoryScanningConfiguration {
+            crate::model::RepositoryScanningConfiguration {
+                repository_arn: self.repository_arn,
+                repository_name: self.repository_name,
+                scan_on_push: self.scan_on_push.unwrap_or_default(),
+                scan_frequency: self.scan_frequency,
+                applied_scan_filters: self.applied_scan_filters,
+            }
+        }
+    }
+}
+impl RepositoryScanningConfiguration {
+    /// Creates a new builder-style object to manufacture [`RepositoryScanningConfiguration`](crate::model::RepositoryScanningConfiguration)
+    pub fn builder() -> crate::model::repository_scanning_configuration::Builder {
+        crate::model::repository_scanning_configuration::Builder::default()
     }
 }
 

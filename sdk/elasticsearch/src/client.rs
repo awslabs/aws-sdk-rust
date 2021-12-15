@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_elasticsearch::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -428,7 +428,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AcceptInboundCrossClusterSearchConnection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -507,7 +507,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AddTags<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -594,7 +594,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociatePackage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -674,7 +674,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelElasticsearchServiceSoftwareUpdate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -747,7 +747,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateElasticsearchDomain<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1052,7 +1052,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateOutboundCrossClusterSearchConnection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1153,7 +1153,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreatePackage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1262,7 +1262,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteElasticsearchDomain<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1332,7 +1332,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteElasticsearchServiceRole<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1392,7 +1392,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteInboundCrossClusterSearchConnection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1470,7 +1470,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteOutboundCrossClusterSearchConnection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1548,7 +1548,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeletePackage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1618,7 +1618,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDomainAutoTunes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1708,7 +1708,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeElasticsearchDomain<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1778,7 +1778,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeElasticsearchDomainConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1848,7 +1848,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeElasticsearchDomains<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1932,7 +1932,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeElasticsearchInstanceTypeLimits<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2070,7 +2070,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeInboundCrossClusterSearchConnections<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2189,7 +2189,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeOutboundCrossClusterSearchConnections<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2299,7 +2299,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribePackages<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2396,7 +2396,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeReservedElasticsearchInstanceOfferings<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2489,7 +2489,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeReservedElasticsearchInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2589,7 +2589,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DissociatePackage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2676,7 +2676,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetCompatibleElasticsearchVersions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2748,7 +2748,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetPackageVersionHistory<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2838,7 +2838,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetUpgradeHistory<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2938,7 +2938,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetUpgradeStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3008,7 +3008,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListDomainNames<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3081,7 +3081,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListDomainsForPackage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3171,7 +3171,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListElasticsearchInstanceTypes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3292,7 +3292,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListElasticsearchVersions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3384,7 +3384,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListPackagesForDomain<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3474,7 +3474,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3544,7 +3544,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PurchaseReservedElasticsearchInstanceOffering<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3638,7 +3638,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RejectInboundCrossClusterSearchConnection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3716,7 +3716,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RemoveTags<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3803,7 +3803,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartElasticsearchServiceSoftwareUpdate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3875,7 +3875,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateElasticsearchDomainConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4141,6 +4141,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_tune_options(input);
             self
         }
+        /// <p>
+        /// This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change.
+        /// This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain.
+        /// This will not actually perform the Update.
+        /// </p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>
+        /// This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change.
+        /// This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain.
+        /// This will not actually perform the Update.
+        /// </p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdatePackage`.
     ///
@@ -4148,7 +4166,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdatePackage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4257,7 +4275,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpgradeElasticsearchDomain<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4351,17 +4369,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -4370,7 +4392,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -4386,11 +4408,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

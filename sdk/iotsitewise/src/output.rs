@@ -541,33 +541,60 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutStorageConfigurationOutput {
-    /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+    /// <p>The storage tier that you specified for your data.
+    /// The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
+    /// The hot tier is a service-managed database.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+    /// The cold tier is a customer-managed Amazon S3 bucket.</p>
     /// </li>
     /// </ul>
     pub storage_type: std::option::Option<crate::model::StorageType>,
     /// <p>Contains information about the storage destination.</p>
     pub multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
+    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
+    /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
+    /// <important>
+    /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
+    /// </important>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
+    /// in the <i>IoT SiteWise User Guide</i>.</p>
+    pub disassociated_data_storage:
+        std::option::Option<crate::model::DisassociatedDataStorageState>,
+    /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+    pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Contains current status information for the configuration.</p>
     pub configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
 }
 impl PutStorageConfigurationOutput {
-    /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+    /// <p>The storage tier that you specified for your data.
+    /// The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
+    /// The hot tier is a service-managed database.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+    /// The cold tier is a customer-managed Amazon S3 bucket.</p>
     /// </li>
     /// </ul>
     pub fn storage_type(&self) -> std::option::Option<&crate::model::StorageType> {
@@ -576,6 +603,32 @@ impl PutStorageConfigurationOutput {
     /// <p>Contains information about the storage destination.</p>
     pub fn multi_layer_storage(&self) -> std::option::Option<&crate::model::MultiLayerStorage> {
         self.multi_layer_storage.as_ref()
+    }
+    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
+    /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
+    /// <important>
+    /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
+    /// </important>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
+    /// in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn disassociated_data_storage(
+        &self,
+    ) -> std::option::Option<&crate::model::DisassociatedDataStorageState> {
+        self.disassociated_data_storage.as_ref()
+    }
+    /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+        self.retention_period.as_ref()
     }
     /// <p>Contains current status information for the configuration.</p>
     pub fn configuration_status(&self) -> std::option::Option<&crate::model::ConfigurationStatus> {
@@ -587,6 +640,11 @@ impl std::fmt::Debug for PutStorageConfigurationOutput {
         let mut formatter = f.debug_struct("PutStorageConfigurationOutput");
         formatter.field("storage_type", &self.storage_type);
         formatter.field("multi_layer_storage", &self.multi_layer_storage);
+        formatter.field(
+            "disassociated_data_storage",
+            &self.disassociated_data_storage,
+        );
+        formatter.field("retention_period", &self.retention_period);
         formatter.field("configuration_status", &self.configuration_status);
         formatter.finish()
     }
@@ -599,33 +657,42 @@ pub mod put_storage_configuration_output {
     pub struct Builder {
         pub(crate) storage_type: std::option::Option<crate::model::StorageType>,
         pub(crate) multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
+        pub(crate) disassociated_data_storage:
+            std::option::Option<crate::model::DisassociatedDataStorageState>,
+        pub(crate) retention_period: std::option::Option<crate::model::RetentionPeriod>,
         pub(crate) configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
     }
     impl Builder {
-        /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+        /// <p>The storage tier that you specified for your data.
+        /// The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
+        /// The hot tier is a service-managed database.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+        /// The cold tier is a customer-managed Amazon S3 bucket.</p>
         /// </li>
         /// </ul>
         pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
             self.storage_type = Some(input);
             self
         }
-        /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+        /// <p>The storage tier that you specified for your data.
+        /// The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
+        /// The hot tier is a service-managed database.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+        /// The cold tier is a customer-managed Amazon S3 bucket.</p>
         /// </li>
         /// </ul>
         pub fn set_storage_type(
@@ -648,6 +715,67 @@ pub mod put_storage_configuration_output {
             self.multi_layer_storage = input;
             self
         }
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
+        /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
+        /// <important>
+        /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
+        /// </important>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
+        /// in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn disassociated_data_storage(
+            mut self,
+            input: crate::model::DisassociatedDataStorageState,
+        ) -> Self {
+            self.disassociated_data_storage = Some(input);
+            self
+        }
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
+        /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
+        /// <important>
+        /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
+        /// </important>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
+        /// in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn set_disassociated_data_storage(
+            mut self,
+            input: std::option::Option<crate::model::DisassociatedDataStorageState>,
+        ) -> Self {
+            self.disassociated_data_storage = input;
+            self
+        }
+        /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+        pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
+            self.retention_period = Some(input);
+            self
+        }
+        /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+        pub fn set_retention_period(
+            mut self,
+            input: std::option::Option<crate::model::RetentionPeriod>,
+        ) -> Self {
+            self.retention_period = input;
+            self
+        }
         /// <p>Contains current status information for the configuration.</p>
         pub fn configuration_status(mut self, input: crate::model::ConfigurationStatus) -> Self {
             self.configuration_status = Some(input);
@@ -666,6 +794,8 @@ pub mod put_storage_configuration_output {
             crate::output::PutStorageConfigurationOutput {
                 storage_type: self.storage_type,
                 multi_layer_storage: self.multi_layer_storage,
+                disassociated_data_storage: self.disassociated_data_storage,
+                retention_period: self.retention_period,
                 configuration_status: self.configuration_status,
             }
         }
@@ -714,7 +844,7 @@ impl PutLoggingOptionsOutput {
 pub struct PutDefaultEncryptionConfigurationOutput {
     /// <p>The type of encryption used for the encryption configuration.</p>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The Key ARN of the KMS CMK used for KMS encryption if you use
+    /// <p>The Key ARN of the KMS key used for KMS encryption if you use
     /// <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The status of the account configuration. This contains the
@@ -727,7 +857,7 @@ impl PutDefaultEncryptionConfigurationOutput {
     pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
         self.encryption_type.as_ref()
     }
-    /// <p>The Key ARN of the KMS CMK used for KMS encryption if you use
+    /// <p>The Key ARN of the KMS key used for KMS encryption if you use
     /// <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
@@ -772,13 +902,13 @@ pub mod put_default_encryption_configuration_output {
             self.encryption_type = input;
             self
         }
-        /// <p>The Key ARN of the KMS CMK used for KMS encryption if you use
+        /// <p>The Key ARN of the KMS key used for KMS encryption if you use
         /// <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The Key ARN of the KMS CMK used for KMS encryption if you use
+        /// <p>The Key ARN of the KMS key used for KMS encryption if you use
         /// <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
@@ -815,6 +945,92 @@ impl PutDefaultEncryptionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutDefaultEncryptionConfigurationOutput`](crate::output::PutDefaultEncryptionConfigurationOutput)
     pub fn builder() -> crate::output::put_default_encryption_configuration_output::Builder {
         crate::output::put_default_encryption_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTimeSeriesOutput {
+    /// <p>One or more time series summaries to list.</p>
+    pub time_series_summaries: std::option::Option<std::vec::Vec<crate::model::TimeSeriesSummary>>,
+    /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTimeSeriesOutput {
+    /// <p>One or more time series summaries to list.</p>
+    pub fn time_series_summaries(&self) -> std::option::Option<&[crate::model::TimeSeriesSummary]> {
+        self.time_series_summaries.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListTimeSeriesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTimeSeriesOutput");
+        formatter.field("time_series_summaries", &self.time_series_summaries);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListTimeSeriesOutput`](crate::output::ListTimeSeriesOutput)
+pub mod list_time_series_output {
+    /// A builder for [`ListTimeSeriesOutput`](crate::output::ListTimeSeriesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) time_series_summaries:
+            std::option::Option<std::vec::Vec<crate::model::TimeSeriesSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `time_series_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_time_series_summaries`](Self::set_time_series_summaries).
+        ///
+        /// <p>One or more time series summaries to list.</p>
+        pub fn time_series_summaries(
+            mut self,
+            input: impl Into<crate::model::TimeSeriesSummary>,
+        ) -> Self {
+            let mut v = self.time_series_summaries.unwrap_or_default();
+            v.push(input.into());
+            self.time_series_summaries = Some(v);
+            self
+        }
+        /// <p>One or more time series summaries to list.</p>
+        pub fn set_time_series_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TimeSeriesSummary>>,
+        ) -> Self {
+            self.time_series_summaries = input;
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no additional results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no additional results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTimeSeriesOutput`](crate::output::ListTimeSeriesOutput)
+        pub fn build(self) -> crate::output::ListTimeSeriesOutput {
+            crate::output::ListTimeSeriesOutput {
+                time_series_summaries: self.time_series_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListTimeSeriesOutput {
+    /// Creates a new builder-style object to manufacture [`ListTimeSeriesOutput`](crate::output::ListTimeSeriesOutput)
+    pub fn builder() -> crate::output::list_time_series_output::Builder {
+        crate::output::list_time_series_output::Builder::default()
     }
 }
 
@@ -2081,6 +2297,37 @@ impl GetAssetPropertyAggregatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateTimeSeriesFromAssetPropertyOutput {}
+impl std::fmt::Debug for DisassociateTimeSeriesFromAssetPropertyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateTimeSeriesFromAssetPropertyOutput");
+        formatter.finish()
+    }
+}
+/// See [`DisassociateTimeSeriesFromAssetPropertyOutput`](crate::output::DisassociateTimeSeriesFromAssetPropertyOutput)
+pub mod disassociate_time_series_from_asset_property_output {
+    /// A builder for [`DisassociateTimeSeriesFromAssetPropertyOutput`](crate::output::DisassociateTimeSeriesFromAssetPropertyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DisassociateTimeSeriesFromAssetPropertyOutput`](crate::output::DisassociateTimeSeriesFromAssetPropertyOutput)
+        pub fn build(self) -> crate::output::DisassociateTimeSeriesFromAssetPropertyOutput {
+            crate::output::DisassociateTimeSeriesFromAssetPropertyOutput {}
+        }
+    }
+}
+impl DisassociateTimeSeriesFromAssetPropertyOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateTimeSeriesFromAssetPropertyOutput`](crate::output::DisassociateTimeSeriesFromAssetPropertyOutput)
+    pub fn builder() -> crate::output::disassociate_time_series_from_asset_property_output::Builder
+    {
+        crate::output::disassociate_time_series_from_asset_property_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateAssetsOutput {}
 impl std::fmt::Debug for DisassociateAssetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2111,36 +2358,288 @@ impl DisassociateAssetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeTimeSeriesOutput {
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub asset_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the asset property.</p>
+    pub property_id: std::option::Option<std::string::String>,
+    /// <p>The alias that identifies the time series.</p>
+    pub alias: std::option::Option<std::string::String>,
+    /// <p>The ID of the time series.</p>
+    pub time_series_id: std::option::Option<std::string::String>,
+    /// <p>The data type of the time series.</p>
+    /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
+    pub data_type: std::option::Option<crate::model::PropertyDataType>,
+    /// <p>The data type of the structure for this time series. This parameter is required for time series
+    /// that have the <code>STRUCT</code> data type.</p>
+    /// <p>The options for this parameter depend on the type of the composite model
+    /// in which you created the asset property that is associated with your time series.
+    /// Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+    pub data_type_spec: std::option::Option<std::string::String>,
+    /// <p>The date that the time series was created, in Unix epoch time.</p>
+    pub time_series_creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date that the time series was last updated, in Unix epoch time.</p>
+    pub time_series_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl DescribeTimeSeriesOutput {
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+    /// <p>The alias that identifies the time series.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The ID of the time series.</p>
+    pub fn time_series_id(&self) -> std::option::Option<&str> {
+        self.time_series_id.as_deref()
+    }
+    /// <p>The data type of the time series.</p>
+    /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
+    pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
+        self.data_type.as_ref()
+    }
+    /// <p>The data type of the structure for this time series. This parameter is required for time series
+    /// that have the <code>STRUCT</code> data type.</p>
+    /// <p>The options for this parameter depend on the type of the composite model
+    /// in which you created the asset property that is associated with your time series.
+    /// Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+    pub fn data_type_spec(&self) -> std::option::Option<&str> {
+        self.data_type_spec.as_deref()
+    }
+    /// <p>The date that the time series was created, in Unix epoch time.</p>
+    pub fn time_series_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.time_series_creation_date.as_ref()
+    }
+    /// <p>The date that the time series was last updated, in Unix epoch time.</p>
+    pub fn time_series_last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.time_series_last_update_date.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeTimeSeriesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeTimeSeriesOutput");
+        formatter.field("asset_id", &self.asset_id);
+        formatter.field("property_id", &self.property_id);
+        formatter.field("alias", &self.alias);
+        formatter.field("time_series_id", &self.time_series_id);
+        formatter.field("data_type", &self.data_type);
+        formatter.field("data_type_spec", &self.data_type_spec);
+        formatter.field("time_series_creation_date", &self.time_series_creation_date);
+        formatter.field(
+            "time_series_last_update_date",
+            &self.time_series_last_update_date,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DescribeTimeSeriesOutput`](crate::output::DescribeTimeSeriesOutput)
+pub mod describe_time_series_output {
+    /// A builder for [`DescribeTimeSeriesOutput`](crate::output::DescribeTimeSeriesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) asset_id: std::option::Option<std::string::String>,
+        pub(crate) property_id: std::option::Option<std::string::String>,
+        pub(crate) alias: std::option::Option<std::string::String>,
+        pub(crate) time_series_id: std::option::Option<std::string::String>,
+        pub(crate) data_type: std::option::Option<crate::model::PropertyDataType>,
+        pub(crate) data_type_spec: std::option::Option<std::string::String>,
+        pub(crate) time_series_creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) time_series_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_id = input;
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.property_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.property_id = input;
+            self
+        }
+        /// <p>The alias that identifies the time series.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        /// <p>The alias that identifies the time series.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
+        /// <p>The ID of the time series.</p>
+        pub fn time_series_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.time_series_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the time series.</p>
+        pub fn set_time_series_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.time_series_id = input;
+            self
+        }
+        /// <p>The data type of the time series.</p>
+        /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
+        pub fn data_type(mut self, input: crate::model::PropertyDataType) -> Self {
+            self.data_type = Some(input);
+            self
+        }
+        /// <p>The data type of the time series.</p>
+        /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
+        pub fn set_data_type(
+            mut self,
+            input: std::option::Option<crate::model::PropertyDataType>,
+        ) -> Self {
+            self.data_type = input;
+            self
+        }
+        /// <p>The data type of the structure for this time series. This parameter is required for time series
+        /// that have the <code>STRUCT</code> data type.</p>
+        /// <p>The options for this parameter depend on the type of the composite model
+        /// in which you created the asset property that is associated with your time series.
+        /// Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+        pub fn data_type_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_type_spec = Some(input.into());
+            self
+        }
+        /// <p>The data type of the structure for this time series. This parameter is required for time series
+        /// that have the <code>STRUCT</code> data type.</p>
+        /// <p>The options for this parameter depend on the type of the composite model
+        /// in which you created the asset property that is associated with your time series.
+        /// Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+        pub fn set_data_type_spec(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_type_spec = input;
+            self
+        }
+        /// <p>The date that the time series was created, in Unix epoch time.</p>
+        pub fn time_series_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.time_series_creation_date = Some(input);
+            self
+        }
+        /// <p>The date that the time series was created, in Unix epoch time.</p>
+        pub fn set_time_series_creation_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.time_series_creation_date = input;
+            self
+        }
+        /// <p>The date that the time series was last updated, in Unix epoch time.</p>
+        pub fn time_series_last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.time_series_last_update_date = Some(input);
+            self
+        }
+        /// <p>The date that the time series was last updated, in Unix epoch time.</p>
+        pub fn set_time_series_last_update_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.time_series_last_update_date = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeTimeSeriesOutput`](crate::output::DescribeTimeSeriesOutput)
+        pub fn build(self) -> crate::output::DescribeTimeSeriesOutput {
+            crate::output::DescribeTimeSeriesOutput {
+                asset_id: self.asset_id,
+                property_id: self.property_id,
+                alias: self.alias,
+                time_series_id: self.time_series_id,
+                data_type: self.data_type,
+                data_type_spec: self.data_type_spec,
+                time_series_creation_date: self.time_series_creation_date,
+                time_series_last_update_date: self.time_series_last_update_date,
+            }
+        }
+    }
+}
+impl DescribeTimeSeriesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTimeSeriesOutput`](crate::output::DescribeTimeSeriesOutput)
+    pub fn builder() -> crate::output::describe_time_series_output::Builder {
+        crate::output::describe_time_series_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStorageConfigurationOutput {
-    /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+    /// <p>The storage tier that you specified for your data.
+    /// The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
+    /// The hot tier is a service-managed database.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+    /// The cold tier is a customer-managed Amazon S3 bucket.</p>
     /// </li>
     /// </ul>
     pub storage_type: std::option::Option<crate::model::StorageType>,
     /// <p>Contains information about the storage destination.</p>
     pub multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
+    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
+    /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
+    /// <important>
+    /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
+    /// </important>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
+    /// in the <i>IoT SiteWise User Guide</i>.</p>
+    pub disassociated_data_storage:
+        std::option::Option<crate::model::DisassociatedDataStorageState>,
+    /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+    pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Contains current status information for the configuration.</p>
     pub configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
     /// <p>The date the storage configuration was last updated, in Unix epoch time.</p>
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeStorageConfigurationOutput {
-    /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+    /// <p>The storage tier that you specified for your data.
+    /// The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
+    /// The hot tier is a service-managed database.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+    /// The cold tier is a customer-managed Amazon S3 bucket.</p>
     /// </li>
     /// </ul>
     pub fn storage_type(&self) -> std::option::Option<&crate::model::StorageType> {
@@ -2149,6 +2648,32 @@ impl DescribeStorageConfigurationOutput {
     /// <p>Contains information about the storage destination.</p>
     pub fn multi_layer_storage(&self) -> std::option::Option<&crate::model::MultiLayerStorage> {
         self.multi_layer_storage.as_ref()
+    }
+    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
+    /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
+    /// <important>
+    /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
+    /// </important>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
+    /// in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn disassociated_data_storage(
+        &self,
+    ) -> std::option::Option<&crate::model::DisassociatedDataStorageState> {
+        self.disassociated_data_storage.as_ref()
+    }
+    /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+        self.retention_period.as_ref()
     }
     /// <p>Contains current status information for the configuration.</p>
     pub fn configuration_status(&self) -> std::option::Option<&crate::model::ConfigurationStatus> {
@@ -2164,6 +2689,11 @@ impl std::fmt::Debug for DescribeStorageConfigurationOutput {
         let mut formatter = f.debug_struct("DescribeStorageConfigurationOutput");
         formatter.field("storage_type", &self.storage_type);
         formatter.field("multi_layer_storage", &self.multi_layer_storage);
+        formatter.field(
+            "disassociated_data_storage",
+            &self.disassociated_data_storage,
+        );
+        formatter.field("retention_period", &self.retention_period);
         formatter.field("configuration_status", &self.configuration_status);
         formatter.field("last_update_date", &self.last_update_date);
         formatter.finish()
@@ -2177,34 +2707,43 @@ pub mod describe_storage_configuration_output {
     pub struct Builder {
         pub(crate) storage_type: std::option::Option<crate::model::StorageType>,
         pub(crate) multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
+        pub(crate) disassociated_data_storage:
+            std::option::Option<crate::model::DisassociatedDataStorageState>,
+        pub(crate) retention_period: std::option::Option<crate::model::RetentionPeriod>,
         pub(crate) configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
         pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+        /// <p>The storage tier that you specified for your data.
+        /// The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
+        /// The hot tier is a service-managed database.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+        /// The cold tier is a customer-managed Amazon S3 bucket.</p>
         /// </li>
         /// </ul>
         pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
             self.storage_type = Some(input);
             self
         }
-        /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+        /// <p>The storage tier that you specified for your data.
+        /// The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
+        /// The hot tier is a service-managed database.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+        /// The cold tier is a customer-managed Amazon S3 bucket.</p>
         /// </li>
         /// </ul>
         pub fn set_storage_type(
@@ -2225,6 +2764,67 @@ pub mod describe_storage_configuration_output {
             input: std::option::Option<crate::model::MultiLayerStorage>,
         ) -> Self {
             self.multi_layer_storage = input;
+            self
+        }
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
+        /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
+        /// <important>
+        /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
+        /// </important>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
+        /// in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn disassociated_data_storage(
+            mut self,
+            input: crate::model::DisassociatedDataStorageState,
+        ) -> Self {
+            self.disassociated_data_storage = Some(input);
+            self
+        }
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
+        /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
+        /// <important>
+        /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
+        /// </important>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
+        /// in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn set_disassociated_data_storage(
+            mut self,
+            input: std::option::Option<crate::model::DisassociatedDataStorageState>,
+        ) -> Self {
+            self.disassociated_data_storage = input;
+            self
+        }
+        /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+        pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
+            self.retention_period = Some(input);
+            self
+        }
+        /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+        pub fn set_retention_period(
+            mut self,
+            input: std::option::Option<crate::model::RetentionPeriod>,
+        ) -> Self {
+            self.retention_period = input;
             self
         }
         /// <p>Contains current status information for the configuration.</p>
@@ -2258,6 +2858,8 @@ pub mod describe_storage_configuration_output {
             crate::output::DescribeStorageConfigurationOutput {
                 storage_type: self.storage_type,
                 multi_layer_storage: self.multi_layer_storage,
+                disassociated_data_storage: self.disassociated_data_storage,
+                retention_period: self.retention_period,
                 configuration_status: self.configuration_status,
                 last_update_date: self.last_update_date,
             }
@@ -3306,8 +3908,8 @@ impl DescribeGatewayOutput {
 pub struct DescribeDefaultEncryptionConfigurationOutput {
     /// <p>The type of encryption used for the encryption configuration.</p>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The key ARN of the customer managed customer master key (CMK) used for KMS encryption if
-    /// you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+    /// <p>The key ARN of the customer managed key used for KMS encryption if you use
+    /// <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The status of the account configuration. This contains the
     /// <code>ConfigurationState</code>. If there's an error, it also contains the
@@ -3319,8 +3921,8 @@ impl DescribeDefaultEncryptionConfigurationOutput {
     pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
         self.encryption_type.as_ref()
     }
-    /// <p>The key ARN of the customer managed customer master key (CMK) used for KMS encryption if
-    /// you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+    /// <p>The key ARN of the customer managed key used for KMS encryption if you use
+    /// <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -3364,14 +3966,14 @@ pub mod describe_default_encryption_configuration_output {
             self.encryption_type = input;
             self
         }
-        /// <p>The key ARN of the customer managed customer master key (CMK) used for KMS encryption if
-        /// you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+        /// <p>The key ARN of the customer managed key used for KMS encryption if you use
+        /// <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The key ARN of the customer managed customer master key (CMK) used for KMS encryption if
-        /// you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+        /// <p>The key ARN of the customer managed key used for KMS encryption if you use
+        /// <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -4638,6 +5240,36 @@ impl DescribeAccessPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteTimeSeriesOutput {}
+impl std::fmt::Debug for DeleteTimeSeriesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteTimeSeriesOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteTimeSeriesOutput`](crate::output::DeleteTimeSeriesOutput)
+pub mod delete_time_series_output {
+    /// A builder for [`DeleteTimeSeriesOutput`](crate::output::DeleteTimeSeriesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteTimeSeriesOutput`](crate::output::DeleteTimeSeriesOutput)
+        pub fn build(self) -> crate::output::DeleteTimeSeriesOutput {
+            crate::output::DeleteTimeSeriesOutput {}
+        }
+    }
+}
+impl DeleteTimeSeriesOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTimeSeriesOutput`](crate::output::DeleteTimeSeriesOutput)
+    pub fn builder() -> crate::output::delete_time_series_output::Builder {
+        crate::output::delete_time_series_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectOutput {}
 impl std::fmt::Debug for DeleteProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5881,6 +6513,36 @@ impl BatchAssociateProjectAssetsOutput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateProjectAssetsOutput`](crate::output::BatchAssociateProjectAssetsOutput)
     pub fn builder() -> crate::output::batch_associate_project_assets_output::Builder {
         crate::output::batch_associate_project_assets_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateTimeSeriesToAssetPropertyOutput {}
+impl std::fmt::Debug for AssociateTimeSeriesToAssetPropertyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateTimeSeriesToAssetPropertyOutput");
+        formatter.finish()
+    }
+}
+/// See [`AssociateTimeSeriesToAssetPropertyOutput`](crate::output::AssociateTimeSeriesToAssetPropertyOutput)
+pub mod associate_time_series_to_asset_property_output {
+    /// A builder for [`AssociateTimeSeriesToAssetPropertyOutput`](crate::output::AssociateTimeSeriesToAssetPropertyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`AssociateTimeSeriesToAssetPropertyOutput`](crate::output::AssociateTimeSeriesToAssetPropertyOutput)
+        pub fn build(self) -> crate::output::AssociateTimeSeriesToAssetPropertyOutput {
+            crate::output::AssociateTimeSeriesToAssetPropertyOutput {}
+        }
+    }
+}
+impl AssociateTimeSeriesToAssetPropertyOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateTimeSeriesToAssetPropertyOutput`](crate::output::AssociateTimeSeriesToAssetPropertyOutput)
+    pub fn builder() -> crate::output::associate_time_series_to_asset_property_output::Builder {
+        crate::output::associate_time_series_to_asset_property_output::Builder::default()
     }
 }
 

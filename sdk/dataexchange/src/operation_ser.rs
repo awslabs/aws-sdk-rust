@@ -39,6 +39,17 @@ pub fn serialize_operation_crate_operation_create_revision(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn ser_payload_send_api_asset_input(
+    payload: &std::option::Option<std::string::String>,
+) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
+    let payload = match payload.as_ref() {
+        Some(t) => t,
+        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+    };
+    #[allow(clippy::useless_conversion)]
+    Ok(aws_smithy_http::body::SdkBody::from(payload.to_string()))
+}
+
 pub fn serialize_operation_crate_operation_tag_resource(
     input: &crate::input::TagResourceInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {

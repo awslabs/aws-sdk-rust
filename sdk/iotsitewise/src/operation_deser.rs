@@ -132,6 +132,114 @@ pub fn parse_associate_assets_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_associate_time_series_to_asset_property_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AssociateTimeSeriesToAssetPropertyOutput,
+    crate::error::AssociateTimeSeriesToAssetPropertyError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::AssociateTimeSeriesToAssetPropertyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::AssociateTimeSeriesToAssetPropertyError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictingOperationException" => crate::error::AssociateTimeSeriesToAssetPropertyError { meta: generic, kind: crate::error::AssociateTimeSeriesToAssetPropertyErrorKind::ConflictingOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::conflicting_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_conflicting_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTimeSeriesToAssetPropertyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalFailureException" => crate::error::AssociateTimeSeriesToAssetPropertyError { meta: generic, kind: crate::error::AssociateTimeSeriesToAssetPropertyErrorKind::InternalFailureException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTimeSeriesToAssetPropertyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidRequestException" => crate::error::AssociateTimeSeriesToAssetPropertyError { meta: generic, kind: crate::error::AssociateTimeSeriesToAssetPropertyErrorKind::InvalidRequestException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTimeSeriesToAssetPropertyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::AssociateTimeSeriesToAssetPropertyError { meta: generic, kind: crate::error::AssociateTimeSeriesToAssetPropertyErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTimeSeriesToAssetPropertyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ThrottlingException" => crate::error::AssociateTimeSeriesToAssetPropertyError { meta: generic, kind: crate::error::AssociateTimeSeriesToAssetPropertyErrorKind::ThrottlingException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTimeSeriesToAssetPropertyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::AssociateTimeSeriesToAssetPropertyError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_associate_time_series_to_asset_property_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AssociateTimeSeriesToAssetPropertyOutput,
+    crate::error::AssociateTimeSeriesToAssetPropertyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::associate_time_series_to_asset_property_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_batch_associate_project_assets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2214,6 +2322,123 @@ pub fn parse_delete_project_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_time_series_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteTimeSeriesOutput, crate::error::DeleteTimeSeriesError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteTimeSeriesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteTimeSeriesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictingOperationException" => crate::error::DeleteTimeSeriesError {
+            meta: generic,
+            kind: crate::error::DeleteTimeSeriesErrorKind::ConflictingOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::conflicting_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_conflicting_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTimeSeriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalFailureException" => crate::error::DeleteTimeSeriesError {
+            meta: generic,
+            kind: crate::error::DeleteTimeSeriesErrorKind::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTimeSeriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::DeleteTimeSeriesError {
+            meta: generic,
+            kind: crate::error::DeleteTimeSeriesErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTimeSeriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DeleteTimeSeriesError {
+            meta: generic,
+            kind: crate::error::DeleteTimeSeriesErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTimeSeriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::DeleteTimeSeriesError {
+            meta: generic,
+            kind: crate::error::DeleteTimeSeriesErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTimeSeriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteTimeSeriesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_time_series_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteTimeSeriesOutput, crate::error::DeleteTimeSeriesError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_time_series_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_access_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -3492,6 +3717,114 @@ pub fn parse_describe_storage_configuration_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_time_series_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeTimeSeriesOutput,
+    crate::error::DescribeTimeSeriesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeTimeSeriesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeTimeSeriesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalFailureException" => crate::error::DescribeTimeSeriesError {
+            meta: generic,
+            kind: crate::error::DescribeTimeSeriesErrorKind::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTimeSeriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::DescribeTimeSeriesError {
+            meta: generic,
+            kind: crate::error::DescribeTimeSeriesErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTimeSeriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DescribeTimeSeriesError {
+            meta: generic,
+            kind: crate::error::DescribeTimeSeriesErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTimeSeriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::DescribeTimeSeriesError {
+            meta: generic,
+            kind: crate::error::DescribeTimeSeriesErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTimeSeriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeTimeSeriesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_time_series_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeTimeSeriesOutput,
+    crate::error::DescribeTimeSeriesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_time_series_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_time_series(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeTimeSeriesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_assets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -3607,6 +3940,116 @@ pub fn parse_disassociate_assets_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::disassociate_assets_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_disassociate_time_series_from_asset_property_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisassociateTimeSeriesFromAssetPropertyOutput,
+    crate::error::DisassociateTimeSeriesFromAssetPropertyError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::DisassociateTimeSeriesFromAssetPropertyError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictingOperationException" => crate::error::DisassociateTimeSeriesFromAssetPropertyError { meta: generic, kind: crate::error::DisassociateTimeSeriesFromAssetPropertyErrorKind::ConflictingOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::conflicting_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_conflicting_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalFailureException" => crate::error::DisassociateTimeSeriesFromAssetPropertyError { meta: generic, kind: crate::error::DisassociateTimeSeriesFromAssetPropertyErrorKind::InternalFailureException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidRequestException" => crate::error::DisassociateTimeSeriesFromAssetPropertyError { meta: generic, kind: crate::error::DisassociateTimeSeriesFromAssetPropertyErrorKind::InvalidRequestException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::DisassociateTimeSeriesFromAssetPropertyError { meta: generic, kind: crate::error::DisassociateTimeSeriesFromAssetPropertyErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ThrottlingException" => crate::error::DisassociateTimeSeriesFromAssetPropertyError { meta: generic, kind: crate::error::DisassociateTimeSeriesFromAssetPropertyErrorKind::ThrottlingException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DisassociateTimeSeriesFromAssetPropertyError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_disassociate_time_series_from_asset_property_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisassociateTimeSeriesFromAssetPropertyOutput,
+    crate::error::DisassociateTimeSeriesFromAssetPropertyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::disassociate_time_series_from_asset_property_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -5191,6 +5634,108 @@ pub fn parse_list_tags_for_resource_response(
             output,
         )
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_time_series_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListTimeSeriesOutput, crate::error::ListTimeSeriesError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListTimeSeriesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListTimeSeriesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalFailureException" => crate::error::ListTimeSeriesError {
+            meta: generic,
+            kind: crate::error::ListTimeSeriesErrorKind::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTimeSeriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::ListTimeSeriesError {
+            meta: generic,
+            kind: crate::error::ListTimeSeriesErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTimeSeriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::ListTimeSeriesError {
+            meta: generic,
+            kind: crate::error::ListTimeSeriesErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTimeSeriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::ListTimeSeriesError {
+            meta: generic,
+            kind: crate::error::ListTimeSeriesErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTimeSeriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListTimeSeriesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_time_series_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListTimeSeriesOutput, crate::error::ListTimeSeriesError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_time_series_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_time_series(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListTimeSeriesError::unhandled)?;
         output.build()
     })
 }

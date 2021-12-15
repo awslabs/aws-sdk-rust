@@ -663,6 +663,11 @@ pub fn deser_operation_crate_operation_create_event_source_mapping(
                             .transpose()?,
                         );
                     }
+                    "FilterCriteria" => {
+                        builder = builder.set_filter_criteria(
+                            crate::json_deser::deser_structure_crate_model_filter_criteria(tokens)?,
+                        );
+                    }
                     "FunctionArn" => {
                         builder = builder.set_function_arn(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -1452,6 +1457,11 @@ pub fn deser_operation_crate_operation_delete_event_source_mapping(
                             .transpose()?,
                         );
                     }
+                    "FilterCriteria" => {
+                        builder = builder.set_filter_criteria(
+                            crate::json_deser::deser_structure_crate_model_filter_criteria(tokens)?,
+                        );
+                    }
                     "FunctionArn" => {
                         builder = builder.set_function_arn(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -1825,6 +1835,11 @@ pub fn deser_operation_crate_operation_get_event_source_mapping(
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
+                        );
+                    }
+                    "FilterCriteria" => {
+                        builder = builder.set_filter_criteria(
+                            crate::json_deser::deser_structure_crate_model_filter_criteria(tokens)?,
                         );
                     }
                     "FunctionArn" => {
@@ -5494,6 +5509,11 @@ pub fn deser_operation_crate_operation_update_event_source_mapping(
                             .transpose()?,
                         );
                     }
+                    "FilterCriteria" => {
+                        builder = builder.set_filter_criteria(
+                            crate::json_deser::deser_structure_crate_model_filter_criteria(tokens)?,
+                        );
+                    }
                     "FunctionArn" => {
                         builder = builder.set_function_arn(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -6526,6 +6546,50 @@ where
                             "OnFailure" => {
                                 builder = builder.set_on_failure(
                                     crate::json_deser::deser_structure_crate_model_on_failure(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_filter_criteria<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::FilterCriteria>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::FilterCriteria::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Filters" => {
+                                builder = builder.set_filters(
+                                    crate::json_deser::deser_list_com_amazonaws_lambda_filter_list(
                                         tokens,
                                     )?,
                                 );
@@ -8485,6 +8549,41 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_lambda_filter_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<std::vec::Vec<crate::model::Filter>>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value = crate::json_deser::deser_structure_crate_model_filter(tokens)?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
 pub fn deser_map_com_amazonaws_lambda_endpoints<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
@@ -9184,6 +9283,13 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "FilterCriteria" => {
+                                builder = builder.set_filter_criteria(
+                                    crate::json_deser::deser_structure_crate_model_filter_criteria(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             "FunctionArn" => {
                                 builder = builder.set_function_arn(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -9679,6 +9785,52 @@ where
         }
         _ => Err(aws_smithy_json::deserialize::Error::custom(
             "expected start array or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_filter<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::Filter>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::Filter::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Pattern" => {
+                                builder = builder.set_pattern(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
         )),
     }
 }

@@ -133,6 +133,8 @@ pub struct CancelStatementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelStatementErrorKind {
+    /// <p>Connection to a database failed.</p>
+    DatabaseConnectionException(crate::error::DatabaseConnectionException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The Amazon Redshift Data API operation failed due to a missing resource. </p>
@@ -145,6 +147,7 @@ pub enum CancelStatementErrorKind {
 impl std::fmt::Display for CancelStatementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            CancelStatementErrorKind::DatabaseConnectionException(_inner) => _inner.fmt(f),
             CancelStatementErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             CancelStatementErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CancelStatementErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -204,6 +207,13 @@ impl CancelStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `CancelStatementErrorKind::DatabaseConnectionException`.
+    pub fn is_database_connection_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelStatementErrorKind::DatabaseConnectionException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CancelStatementErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -226,6 +236,7 @@ impl CancelStatementError {
 impl std::error::Error for CancelStatementError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            CancelStatementErrorKind::DatabaseConnectionException(_inner) => Some(_inner),
             CancelStatementErrorKind::InternalServerException(_inner) => Some(_inner),
             CancelStatementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelStatementErrorKind::ValidationException(_inner) => Some(_inner),
@@ -364,6 +375,8 @@ pub struct DescribeTableError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTableErrorKind {
+    /// <p>Connection to a database failed.</p>
+    DatabaseConnectionException(crate::error::DatabaseConnectionException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
@@ -374,6 +387,7 @@ pub enum DescribeTableErrorKind {
 impl std::fmt::Display for DescribeTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DescribeTableErrorKind::DatabaseConnectionException(_inner) => _inner.fmt(f),
             DescribeTableErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             DescribeTableErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DescribeTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -432,6 +446,13 @@ impl DescribeTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DescribeTableErrorKind::DatabaseConnectionException`.
+    pub fn is_database_connection_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTableErrorKind::DatabaseConnectionException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DescribeTableErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -447,6 +468,7 @@ impl DescribeTableError {
 impl std::error::Error for DescribeTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DescribeTableErrorKind::DatabaseConnectionException(_inner) => Some(_inner),
             DescribeTableErrorKind::InternalServerException(_inner) => Some(_inner),
             DescribeTableErrorKind::ValidationException(_inner) => Some(_inner),
             DescribeTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -701,6 +723,8 @@ pub struct ListDatabasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDatabasesErrorKind {
+    /// <p>Connection to a database failed.</p>
+    DatabaseConnectionException(crate::error::DatabaseConnectionException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
@@ -711,6 +735,7 @@ pub enum ListDatabasesErrorKind {
 impl std::fmt::Display for ListDatabasesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListDatabasesErrorKind::DatabaseConnectionException(_inner) => _inner.fmt(f),
             ListDatabasesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             ListDatabasesErrorKind::ValidationException(_inner) => _inner.fmt(f),
             ListDatabasesErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -769,6 +794,13 @@ impl ListDatabasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListDatabasesErrorKind::DatabaseConnectionException`.
+    pub fn is_database_connection_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatabasesErrorKind::DatabaseConnectionException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ListDatabasesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -784,6 +816,7 @@ impl ListDatabasesError {
 impl std::error::Error for ListDatabasesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListDatabasesErrorKind::DatabaseConnectionException(_inner) => Some(_inner),
             ListDatabasesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListDatabasesErrorKind::ValidationException(_inner) => Some(_inner),
             ListDatabasesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -804,6 +837,8 @@ pub struct ListSchemasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSchemasErrorKind {
+    /// <p>Connection to a database failed.</p>
+    DatabaseConnectionException(crate::error::DatabaseConnectionException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
@@ -814,6 +849,7 @@ pub enum ListSchemasErrorKind {
 impl std::fmt::Display for ListSchemasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListSchemasErrorKind::DatabaseConnectionException(_inner) => _inner.fmt(f),
             ListSchemasErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             ListSchemasErrorKind::ValidationException(_inner) => _inner.fmt(f),
             ListSchemasErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -872,6 +908,13 @@ impl ListSchemasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListSchemasErrorKind::DatabaseConnectionException`.
+    pub fn is_database_connection_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSchemasErrorKind::DatabaseConnectionException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ListSchemasErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListSchemasErrorKind::InternalServerException(_))
@@ -884,6 +927,7 @@ impl ListSchemasError {
 impl std::error::Error for ListSchemasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListSchemasErrorKind::DatabaseConnectionException(_inner) => Some(_inner),
             ListSchemasErrorKind::InternalServerException(_inner) => Some(_inner),
             ListSchemasErrorKind::ValidationException(_inner) => Some(_inner),
             ListSchemasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1007,6 +1051,8 @@ pub struct ListTablesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTablesErrorKind {
+    /// <p>Connection to a database failed.</p>
+    DatabaseConnectionException(crate::error::DatabaseConnectionException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
@@ -1017,6 +1063,7 @@ pub enum ListTablesErrorKind {
 impl std::fmt::Display for ListTablesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListTablesErrorKind::DatabaseConnectionException(_inner) => _inner.fmt(f),
             ListTablesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             ListTablesErrorKind::ValidationException(_inner) => _inner.fmt(f),
             ListTablesErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1075,6 +1122,13 @@ impl ListTablesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListTablesErrorKind::DatabaseConnectionException`.
+    pub fn is_database_connection_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTablesErrorKind::DatabaseConnectionException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ListTablesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListTablesErrorKind::InternalServerException(_))
@@ -1087,6 +1141,7 @@ impl ListTablesError {
 impl std::error::Error for ListTablesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListTablesErrorKind::DatabaseConnectionException(_inner) => Some(_inner),
             ListTablesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListTablesErrorKind::ValidationException(_inner) => Some(_inner),
             ListTablesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1222,6 +1277,70 @@ impl InternalServerException {
     }
 }
 
+/// <p>Connection to a database failed.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DatabaseConnectionException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DatabaseConnectionException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DatabaseConnectionException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl DatabaseConnectionException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for DatabaseConnectionException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DatabaseConnectionException")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DatabaseConnectionException {}
+/// See [`DatabaseConnectionException`](crate::error::DatabaseConnectionException)
+pub mod database_connection_exception {
+    /// A builder for [`DatabaseConnectionException`](crate::error::DatabaseConnectionException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DatabaseConnectionException`](crate::error::DatabaseConnectionException)
+        pub fn build(self) -> crate::error::DatabaseConnectionException {
+            crate::error::DatabaseConnectionException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl DatabaseConnectionException {
+    /// Creates a new builder-style object to manufacture [`DatabaseConnectionException`](crate::error::DatabaseConnectionException)
+    pub fn builder() -> crate::error::database_connection_exception::Builder {
+        crate::error::database_connection_exception::Builder::default()
+    }
+}
+
 /// <p>The Amazon Redshift Data API operation failed due to a missing resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1254,8 +1373,8 @@ impl ResourceNotFoundException {
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
@@ -1339,8 +1458,8 @@ impl ExecuteStatementException {
 impl std::fmt::Display for ExecuteStatementException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExecuteStatementException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
@@ -1415,8 +1534,8 @@ impl ActiveStatementsExceededException {
 impl std::fmt::Display for ActiveStatementsExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ActiveStatementsExceededException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -1488,8 +1607,8 @@ impl BatchExecuteStatementException {
 impl std::fmt::Display for BatchExecuteStatementException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BatchExecuteStatementException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }

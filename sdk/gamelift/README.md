@@ -1,6 +1,6 @@
 # aws-sdk-gamelift
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on AWS global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand.
@@ -30,8 +30,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-gamelift = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-gamelift = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

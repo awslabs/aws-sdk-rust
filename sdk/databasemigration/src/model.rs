@@ -14475,6 +14475,18 @@ pub struct S3Settings {
     /// <p>The default value is <code>true</code>. Valid values include <code>true</code>, <code>false</code>,
     /// <code>y</code>, and <code>n</code>.</p>
     pub rfc4180: std::option::Option<bool>,
+    /// <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code> to convert
+    /// the current UTC time into a specified time zone. The conversion occurs when a date
+    /// partition folder is created and a CDC filename is generated. The time zone format is Area/Location.
+    /// Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+    /// following example.</p>
+    /// <p>
+    /// <code>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH",
+    /// "DatePartitionDelimiter": "SLASH",
+    /// "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+    /// "dms-nattarat-test"}'</code>
+    /// </p>
+    pub date_partition_timezone: std::option::Option<std::string::String>,
 }
 impl S3Settings {
     /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role.
@@ -14981,6 +14993,20 @@ impl S3Settings {
     pub fn rfc4180(&self) -> std::option::Option<bool> {
         self.rfc4180
     }
+    /// <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code> to convert
+    /// the current UTC time into a specified time zone. The conversion occurs when a date
+    /// partition folder is created and a CDC filename is generated. The time zone format is Area/Location.
+    /// Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+    /// following example.</p>
+    /// <p>
+    /// <code>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH",
+    /// "DatePartitionDelimiter": "SLASH",
+    /// "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+    /// "dms-nattarat-test"}'</code>
+    /// </p>
+    pub fn date_partition_timezone(&self) -> std::option::Option<&str> {
+        self.date_partition_timezone.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15031,6 +15057,7 @@ impl std::fmt::Debug for S3Settings {
         formatter.field("ignore_header_rows", &self.ignore_header_rows);
         formatter.field("max_file_size", &self.max_file_size);
         formatter.field("rfc4180", &self.rfc4180);
+        formatter.field("date_partition_timezone", &self.date_partition_timezone);
         formatter.finish()
     }
 }
@@ -15080,6 +15107,7 @@ pub mod s3_settings {
         pub(crate) ignore_header_rows: std::option::Option<i32>,
         pub(crate) max_file_size: std::option::Option<i32>,
         pub(crate) rfc4180: std::option::Option<bool>,
+        pub(crate) date_partition_timezone: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role.
@@ -16221,6 +16249,39 @@ pub mod s3_settings {
             self.rfc4180 = input;
             self
         }
+        /// <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code> to convert
+        /// the current UTC time into a specified time zone. The conversion occurs when a date
+        /// partition folder is created and a CDC filename is generated. The time zone format is Area/Location.
+        /// Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+        /// following example.</p>
+        /// <p>
+        /// <code>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH",
+        /// "DatePartitionDelimiter": "SLASH",
+        /// "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+        /// "dms-nattarat-test"}'</code>
+        /// </p>
+        pub fn date_partition_timezone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.date_partition_timezone = Some(input.into());
+            self
+        }
+        /// <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code> to convert
+        /// the current UTC time into a specified time zone. The conversion occurs when a date
+        /// partition folder is created and a CDC filename is generated. The time zone format is Area/Location.
+        /// Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+        /// following example.</p>
+        /// <p>
+        /// <code>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH",
+        /// "DatePartitionDelimiter": "SLASH",
+        /// "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+        /// "dms-nattarat-test"}'</code>
+        /// </p>
+        pub fn set_date_partition_timezone(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.date_partition_timezone = input;
+            self
+        }
         /// Consumes the builder and constructs a [`S3Settings`](crate::model::S3Settings)
         pub fn build(self) -> crate::model::S3Settings {
             crate::model::S3Settings {
@@ -16262,6 +16323,7 @@ pub mod s3_settings {
                 ignore_header_rows: self.ignore_header_rows,
                 max_file_size: self.max_file_size,
                 rfc4180: self.rfc4180,
+                date_partition_timezone: self.date_partition_timezone,
             }
         }
     }

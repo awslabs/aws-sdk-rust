@@ -8,7 +8,6 @@ description = "Example usage of the KMS service"
 [dependencies]
 aws-config = { path = "../../sdk/aws-config" }
 kms = { package = "aws-sdk-kms", path = "../../sdk/kms" }
-aws-hyper = { path = "../../sdk/aws-hyper" }
 aws-types = { path = "../../sdk/aws-types" }
 tokio = { version = "1", features = ["full"]}
 structopt = { version = "0.3", default-features = false }

@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_ssm::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -1128,11 +1128,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddTagsToResource`.
     ///
     /// <p>Adds or overwrites one or more tags for the specified resource. Tags are metadata that you
-    /// can assign to your documents, managed instances, maintenance windows, Parameter Store parameters,
-    /// and patch baselines. Tags enable you to categorize your resources in different ways, for example,
-    /// by purpose, owner, or environment. Each tag consists of a key and an optional value, both of
-    /// which you define. For example, you could define a set of tags for your account's managed
-    /// instances that helps you track each instance's owner and stack level. For example:</p>
+    /// can assign to your documents, managed nodes, maintenance windows, Parameter Store parameters, and
+    /// patch baselines. Tags enable you to categorize your resources in different ways, for example, by
+    /// purpose, owner, or environment. Each tag consists of a key and an optional value, both of which
+    /// you define. For example, you could define a set of tags for your account's managed nodes that
+    /// helps you track each node's owner and stack level. For example:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -1175,7 +1175,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AddTagsToResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1231,7 +1231,7 @@ pub mod fluent_builders {
         /// <p>Specifies the type of resource you are tagging.</p>
         /// <note>
         /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed
-        /// instances. You must specify the name of the managed instance in the following format:
+        /// nodes. You must specify the name of the managed node in the following format:
         /// <code>mi-<i>ID_number</i>
         /// </code>. For example,
         /// <code>mi-1a2b3c4d5e6f</code>.</p>
@@ -1243,7 +1243,7 @@ pub mod fluent_builders {
         /// <p>Specifies the type of resource you are tagging.</p>
         /// <note>
         /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed
-        /// instances. You must specify the name of the managed instance in the following format:
+        /// nodes. You must specify the name of the managed node in the following format:
         /// <code>mi-<i>ID_number</i>
         /// </code>. For example,
         /// <code>mi-1a2b3c4d5e6f</code>.</p>
@@ -1278,7 +1278,7 @@ pub mod fluent_builders {
         /// </p>
         /// <note>
         /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
-        /// managed instances. You must specify the name of the managed instance in the following format:
+        /// managed nodes. You must specify the name of the managed node in the following format:
         /// <code>mi-<i>ID_number</i>
         /// </code>. For example,
         /// <code>mi-1a2b3c4d5e6f</code>.</p>
@@ -1310,7 +1310,7 @@ pub mod fluent_builders {
         /// </p>
         /// <note>
         /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
-        /// managed instances. You must specify the name of the managed instance in the following format:
+        /// managed nodes. You must specify the name of the managed node in the following format:
         /// <code>mi-<i>ID_number</i>
         /// </code>. For example,
         /// <code>mi-1a2b3c4d5e6f</code>.</p>
@@ -1351,7 +1351,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateOpsItemRelatedItem<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1472,7 +1472,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelCommand<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1539,14 +1539,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
-        /// <p>(Optional) A list of instance IDs on which you want to cancel the command. If not provided,
-        /// the command is canceled on every instance on which it was requested.</p>
+        /// <p>(Optional) A list of managed node IDs on which you want to cancel the command. If not provided,
+        /// the command is canceled on every node on which it was requested.</p>
         pub fn instance_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_ids(inp);
             self
         }
-        /// <p>(Optional) A list of instance IDs on which you want to cancel the command. If not provided,
-        /// the command is canceled on every instance on which it was requested.</p>
+        /// <p>(Optional) A list of managed node IDs on which you want to cancel the command. If not provided,
+        /// the command is canceled on every node on which it was requested.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1563,7 +1563,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelMaintenanceWindowExecution<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1633,19 +1633,19 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateActivation`.
     ///
     /// <p>Generates an activation code and activation ID you can use to register your on-premises
-    /// server or virtual machine (VM) with Amazon Web Services Systems Manager. Registering these machines with Systems Manager makes it
-    /// possible to manage them using Systems Manager capabilities. You use the activation code and ID when
-    /// installing SSM Agent on machines in your hybrid environment. For more information about
-    /// requirements for managing on-premises instances and VMs using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting up
+    /// servers, edge devices, or virtual machine (VM) with Amazon Web Services Systems Manager. Registering these machines with
+    /// Systems Manager makes it possible to manage them using Systems Manager capabilities. You use the activation code and
+    /// ID when installing SSM Agent on machines in your hybrid environment. For more information about
+    /// requirements for managing on-premises machines using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting up
     /// Amazon Web Services Systems Manager for hybrid environments</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     /// <note>
-    /// <p>On-premises servers or VMs that are registered with Systems Manager and Amazon Elastic Compute Cloud (Amazon EC2) instances
-    /// that you manage with Systems Manager are all called <i>managed instances</i>.</p>
+    /// <p>Amazon Elastic Compute Cloud (Amazon EC2) instances, edge devices, and on-premises servers and VMs that are configured for Systems Manager are all called <i>managed
+    /// nodes</i>.</p>
     /// </note>
     #[derive(std::fmt::Debug)]
     pub struct CreateActivation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1714,8 +1714,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The name of the registered, managed instance as it will appear in the Amazon Web Services Systems Manager console or
-        /// when you use the Amazon Web Services command line tools to list Systems Manager resources.</p>
+        /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when
+        /// you use the Amazon Web Services command line tools to list Systems Manager resources.</p>
         /// <important>
         /// <p>Don't enter personally identifiable information in this field.</p>
         /// </important>
@@ -1723,8 +1723,8 @@ pub mod fluent_builders {
             self.inner = self.inner.default_instance_name(inp);
             self
         }
-        /// <p>The name of the registered, managed instance as it will appear in the Amazon Web Services Systems Manager console or
-        /// when you use the Amazon Web Services command line tools to list Systems Manager resources.</p>
+        /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when
+        /// you use the Amazon Web Services command line tools to list Systems Manager resources.</p>
         /// <important>
         /// <p>Don't enter personally identifiable information in this field.</p>
         /// </important>
@@ -1736,7 +1736,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to
-        /// the managed instance. This IAM role must provide AssumeRole permissions for the
+        /// the managed node. This IAM role must provide AssumeRole permissions for the
         /// Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an
         /// IAM service role for a hybrid environment</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -1745,7 +1745,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to
-        /// the managed instance. This IAM role must provide AssumeRole permissions for the
+        /// the managed node. This IAM role must provide AssumeRole permissions for the
         /// Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an
         /// IAM service role for a hybrid environment</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -1753,13 +1753,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_iam_role(input);
             self
         }
-        /// <p>Specify the maximum number of managed instances you want to register. The default value is
+        /// <p>Specify the maximum number of managed nodes you want to register. The default value is
         /// <code>1</code>.</p>
         pub fn registration_limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.registration_limit(inp);
             self
         }
-        /// <p>Specify the maximum number of managed instances you want to register. The default value is
+        /// <p>Specify the maximum number of managed nodes you want to register. The default value is
         /// <code>1</code>.</p>
         pub fn set_registration_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_registration_limit(input);
@@ -1808,10 +1808,10 @@ pub mod fluent_builders {
         /// automatically applied to the on-premises servers or VMs.</p>
         /// </important>
         /// <p>You can't add tags to or delete tags from an existing activation. You can tag your
-        /// on-premises servers and VMs after they connect to Systems Manager for the first time and are assigned a
-        /// managed instance ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is
-        /// prefixed with "mi-". For information about how to add tags to your managed instances, see <a>AddTagsToResource</a>. For information about how to remove tags from your managed
-        /// instances, see <a>RemoveTagsFromResource</a>.</p>
+        /// on-premises servers, edge devices, and VMs after they connect to Systems Manager for the first time and are assigned a
+        /// managed node ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is
+        /// prefixed with "mi-". For information about how to add tags to your managed nodes, see <a>AddTagsToResource</a>. For information about how to remove tags from your managed nodes,
+        /// see <a>RemoveTagsFromResource</a>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -1838,10 +1838,10 @@ pub mod fluent_builders {
         /// automatically applied to the on-premises servers or VMs.</p>
         /// </important>
         /// <p>You can't add tags to or delete tags from an existing activation. You can tag your
-        /// on-premises servers and VMs after they connect to Systems Manager for the first time and are assigned a
-        /// managed instance ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is
-        /// prefixed with "mi-". For information about how to add tags to your managed instances, see <a>AddTagsToResource</a>. For information about how to remove tags from your managed
-        /// instances, see <a>RemoveTagsFromResource</a>.</p>
+        /// on-premises servers, edge devices, and VMs after they connect to Systems Manager for the first time and are assigned a
+        /// managed node ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is
+        /// prefixed with "mi-". For information about how to add tags to your managed nodes, see <a>AddTagsToResource</a>. For information about how to remove tags from your managed nodes,
+        /// see <a>RemoveTagsFromResource</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1849,23 +1849,43 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// Appends an item to `RegistrationMetadata`.
+        ///
+        /// To override the contents of this collection use [`set_registration_metadata`](Self::set_registration_metadata).
+        ///
+        /// <p>Reserved for internal use.</p>
+        pub fn registration_metadata(
+            mut self,
+            inp: impl Into<crate::model::RegistrationMetadataItem>,
+        ) -> Self {
+            self.inner = self.inner.registration_metadata(inp);
+            self
+        }
+        /// <p>Reserved for internal use.</p>
+        pub fn set_registration_metadata(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RegistrationMetadataItem>>,
+        ) -> Self {
+            self.inner = self.inner.set_registration_metadata(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateAssociation`.
     ///
-    /// <p>A State Manager association defines the state that you want to maintain on your instances.
-    /// For example, an association can specify that anti-virus software must be installed and running on
-    /// your instances, or that certain ports must be closed. For static targets, the association
-    /// specifies a schedule for when the configuration is reapplied. For dynamic targets, such as an
-    /// Amazon Web Services resource group or an Amazon Web Services autoscaling group, State Manager, a capability of Amazon Web Services Systems Manager
-    /// applies the configuration when new instances are added to the group. The association also
-    /// specifies actions to take when applying the configuration. For example, an association for
-    /// anti-virus software might run once a day. If the software isn't installed, then State Manager
-    /// installs it. If the software is installed, but the service isn't running, then the association
-    /// might instruct State Manager to start the service. </p>
+    /// <p>A State Manager association defines the state that you want to maintain on your managed
+    /// nodes. For example, an association can specify that anti-virus software must be installed and
+    /// running on your managed nodes, or that certain ports must be closed. For static targets, the
+    /// association specifies a schedule for when the configuration is reapplied. For dynamic targets,
+    /// such as an Amazon Web Services resource group or an Amazon Web Services autoscaling group, State Manager, a capability of
+    /// Amazon Web Services Systems Manager applies the configuration when new managed nodes are added to the group. The
+    /// association also specifies actions to take when applying the configuration. For example, an
+    /// association for anti-virus software might run once a day. If the software isn't installed, then
+    /// State Manager installs it. If the software is installed, but the service isn't running, then the
+    /// association might instruct State Manager to start the service. </p>
     #[derive(std::fmt::Debug)]
     pub struct CreateAssociation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1919,7 +1939,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the SSM Command document or Automation runbook that contains the configuration
-        /// information for the instance.</p>
+        /// information for the managed node.</p>
         /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
         /// shared with you from another account.</p>
         /// <p>For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you
@@ -1940,7 +1960,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the SSM Command document or Automation runbook that contains the configuration
-        /// information for the instance.</p>
+        /// information for the managed node.</p>
         /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
         /// shared with you from another account.</p>
         /// <p>For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you
@@ -1975,10 +1995,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_version(input);
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         /// <note>
         /// <p>
-        /// <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
+        /// <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association,
         /// use the <code>Targets</code> parameter. Requests that include the
         /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
         /// 2.0 or later will fail. In addition, if you use the parameter
@@ -1991,10 +2011,10 @@ pub mod fluent_builders {
             self.inner = self.inner.instance_id(inp);
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         /// <note>
         /// <p>
-        /// <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
+        /// <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association,
         /// use the <code>Targets</code> parameter. Requests that include the
         /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
         /// 2.0 or later will fail. In addition, if you use the parameter
@@ -2034,18 +2054,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The targets for the association. You can target instances by using tags, Amazon Web Services resource
-        /// groups, all instances in an Amazon Web Services account, or individual instance IDs. You can target all
-        /// instances in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
+        /// <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource
+        /// groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all
+        /// managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
         /// <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn targets(mut self, inp: impl Into<crate::model::Target>) -> Self {
             self.inner = self.inner.targets(inp);
             self
         }
-        /// <p>The targets for the association. You can target instances by using tags, Amazon Web Services resource
-        /// groups, all instances in an Amazon Web Services account, or individual instance IDs. You can target all
-        /// instances in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
+        /// <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource
+        /// groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all
+        /// managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
         /// <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_targets(
@@ -2124,8 +2144,8 @@ pub mod fluent_builders {
         /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
         /// the system stops sending requests when the fourth error is received. If you specify 0, then the
         /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
-        /// the sixth error is received.</p>
+        /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
+        /// when the sixth error is received.</p>
         /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
         /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
         /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
@@ -2139,8 +2159,8 @@ pub mod fluent_builders {
         /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
         /// the system stops sending requests when the fourth error is received. If you specify 0, then the
         /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
-        /// the sixth error is received.</p>
+        /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
+        /// when the sixth error is received.</p>
         /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
         /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
         /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
@@ -2152,9 +2172,9 @@ pub mod fluent_builders {
         /// <p>The maximum number of targets allowed to run the association at the same time. You can
         /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
         /// value is 100%, which means all targets run the association at the same time.</p>
-        /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
         /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-        /// association interval, the new instance will process its association within the limit specified
+        /// association interval, the new managed node will process its association within the limit specified
         /// for <code>MaxConcurrency</code>.</p>
         pub fn max_concurrency(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.max_concurrency(inp);
@@ -2163,9 +2183,9 @@ pub mod fluent_builders {
         /// <p>The maximum number of targets allowed to run the association at the same time. You can
         /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
         /// value is 100%, which means all targets run the association at the same time.</p>
-        /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
         /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-        /// association interval, the new instance will process its association within the limit specified
+        /// association interval, the new managed node will process its association within the limit specified
         /// for <code>MaxConcurrency</code>.</p>
         pub fn set_max_concurrency(
             mut self,
@@ -2282,17 +2302,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAssociationBatch`.
     ///
-    /// <p>Associates the specified Amazon Web Services Systems Manager document (SSM document) with the specified instances or
-    /// targets.</p>
-    /// <p>When you associate a document with one or more instances using instance IDs or tags,
-    /// Amazon Web Services Systems Manager Agent (SSM Agent) running on the instance processes the document and configures the
-    /// instance as specified.</p>
-    /// <p>If you associate a document with an instance that already has an associated document, the
+    /// <p>Associates the specified Amazon Web Services Systems Manager document (SSM document) with the specified managed nodes
+    /// or targets.</p>
+    /// <p>When you associate a document with one or more managed nodes using IDs or tags,
+    /// Amazon Web Services Systems Manager Agent (SSM Agent) running on the managed node processes the document and configures the
+    /// node as specified.</p>
+    /// <p>If you associate a document with a managed node that already has an associated document, the
     /// system returns the AssociationAlreadyExists exception.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateAssociationBatch<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2371,13 +2391,13 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDocument`.
     ///
     /// <p>Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines the actions that Systems Manager performs
-    /// on your managed instances. For more information about SSM documents, including information about
+    /// on your managed nodes. For more information about SSM documents, including information about
     /// supported schemas, features, and syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon Web Services Systems Manager Documents</a> in the
     /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateDocument<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2724,7 +2744,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateMaintenanceWindow<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2904,18 +2924,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cutoff(input);
             self
         }
-        /// <p>Enables a maintenance window task to run on managed instances, even if you haven't
-        /// registered those instances as targets. If enabled, then you must specify the unregistered
-        /// instances (by instance ID) when you register a task with the maintenance window.</p>
+        /// <p>Enables a maintenance window task to run on managed nodes, even if you haven't registered
+        /// those nodes as targets. If enabled, then you must specify the unregistered managed nodes (by
+        /// node ID) when you register a task with the maintenance window.</p>
         /// <p>If you don't enable this option, then you must specify previously-registered targets when
         /// you register a task with the maintenance window.</p>
         pub fn allow_unassociated_targets(mut self, inp: bool) -> Self {
             self.inner = self.inner.allow_unassociated_targets(inp);
             self
         }
-        /// <p>Enables a maintenance window task to run on managed instances, even if you haven't
-        /// registered those instances as targets. If enabled, then you must specify the unregistered
-        /// instances (by instance ID) when you register a task with the maintenance window.</p>
+        /// <p>Enables a maintenance window task to run on managed nodes, even if you haven't registered
+        /// those nodes as targets. If enabled, then you must specify the unregistered managed nodes (by
+        /// node ID) when you register a task with the maintenance window.</p>
         /// <p>If you don't enable this option, then you must specify previously-registered targets when
         /// you register a task with the maintenance window.</p>
         pub fn set_allow_unassociated_targets(mut self, input: std::option::Option<bool>) -> Self {
@@ -3009,7 +3029,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateOpsItem<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3349,7 +3369,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateOpsMetadata<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3495,7 +3515,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreatePatchBaseline<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3643,15 +3663,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
-        /// only.</p>
+        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
+        /// nodes only.</p>
         pub fn approved_patches_enable_non_security(mut self, inp: bool) -> Self {
             self.inner = self.inner.approved_patches_enable_non_security(inp);
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
-        /// only.</p>
+        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
+        /// nodes only.</p>
         pub fn set_approved_patches_enable_non_security(
             mut self,
             input: std::option::Option<bool>,
@@ -3753,14 +3773,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        /// <p>Information about the patches to use to update the instances, including target operating
-        /// systems and source repositories. Applies to Linux instances only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating
+        /// systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn sources(mut self, inp: impl Into<crate::model::PatchSource>) -> Self {
             self.inner = self.inner.sources(inp);
             self
         }
-        /// <p>Information about the patches to use to update the instances, including target operating
-        /// systems and source repositories. Applies to Linux instances only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating
+        /// systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
@@ -3860,7 +3880,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateResourceDataSync<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3977,13 +3997,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteActivation`.
     ///
     /// <p>Deletes an activation. You aren't required to delete an activation. If you delete an
-    /// activation, you can no longer use it to register additional managed instances. Deleting an
-    /// activation doesn't de-register managed instances. You must manually de-register managed
-    /// instances.</p>
+    /// activation, you can no longer use it to register additional managed nodes. Deleting an activation
+    /// doesn't de-register managed nodes. You must manually de-register managed nodes.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteActivation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4052,17 +4071,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAssociation`.
     ///
-    /// <p>Disassociates the specified Amazon Web Services Systems Manager document (SSM document) from the specified instance.
+    /// <p>Disassociates the specified Amazon Web Services Systems Manager document (SSM document) from the specified managed node.
     /// If you created the association by using the <code>Targets</code> parameter, then you must delete
     /// the association by using the association ID.</p>
-    /// <p>When you disassociate a document from an instance, it doesn't change the configuration of
-    /// the instance. To change the configuration state of an instance after you disassociate a document,
+    /// <p>When you disassociate a document from a managed node, it doesn't change the configuration of
+    /// the node. To change the configuration state of a managed node after you disassociate a document,
     /// you must create a new document with the desired configuration and associate it with the
-    /// instance.</p>
+    /// node.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteAssociation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4125,10 +4144,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         /// <note>
         /// <p>
-        /// <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
+        /// <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association,
         /// use the <code>Targets</code> parameter. Requests that include the
         /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
         /// 2.0 or later will fail. In addition, if you use the parameter
@@ -4141,10 +4160,10 @@ pub mod fluent_builders {
             self.inner = self.inner.instance_id(inp);
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         /// <note>
         /// <p>
-        /// <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
+        /// <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association,
         /// use the <code>Targets</code> parameter. Requests that include the
         /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
         /// 2.0 or later will fail. In addition, if you use the parameter
@@ -4173,13 +4192,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDocument`.
     ///
-    /// <p>Deletes the Amazon Web Services Systems Manager document (SSM document) and all instance associations to the
+    /// <p>Deletes the Amazon Web Services Systems Manager document (SSM document) and all managed node associations to the
     /// document.</p>
-    /// <p>Before you delete the document, we recommend that you use <a>DeleteAssociation</a> to disassociate all instances that are associated with the document.</p>
+    /// <p>Before you delete the document, we recommend that you use <a>DeleteAssociation</a> to disassociate all managed nodes that are associated with the document.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteDocument<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4293,7 +4312,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteInventory<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4421,7 +4440,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteMaintenanceWindow<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4491,7 +4510,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteOpsMetadata<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4565,7 +4584,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteParameter<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4636,7 +4655,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteParameters<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4715,7 +4734,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeletePatchBaseline<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4782,12 +4801,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourceDataSync`.
     ///
     /// <p>Deletes a resource data sync configuration. After the configuration is deleted, changes to
-    /// data on managed instances are no longer synced to or from the target. Deleting a sync
-    /// configuration doesn't delete data.</p>
+    /// data on managed nodes are no longer synced to or from the target. Deleting a sync configuration
+    /// doesn't delete data.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteResourceDataSync<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4864,12 +4883,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterManagedInstance`.
     ///
     /// <p>Removes the server or virtual machine from the list of registered servers. You can
-    /// reregister the instance again at any time. If you don't plan to use Run Command on the server, we
+    /// reregister the node again at any time. If you don't plan to use Run Command on the server, we
     /// suggest uninstalling SSM Agent first.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeregisterManagedInstance<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4922,13 +4941,13 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the managed instance when you registered it using the activation process.
+        /// <p>The ID assigned to the managed node when you registered it using the activation process.
         /// </p>
         pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(inp);
             self
         }
-        /// <p>The ID assigned to the managed instance when you registered it using the activation process.
+        /// <p>The ID assigned to the managed node when you registered it using the activation process.
         /// </p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
@@ -4941,7 +4960,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeregisterPatchBaselineForPatchGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5023,7 +5042,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeregisterTargetFromMaintenanceWindow<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5122,7 +5141,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeregisterTaskFromMaintenanceWindow<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5205,12 +5224,12 @@ pub mod fluent_builders {
     ///
     /// <p>Describes details about the activation, such as the date and time the activation was
     /// created, its expiration date, the Identity and Access Management (IAM) role assigned to
-    /// the instances in the activation, and the number of instances registered by using this
+    /// the managed nodes in the activation, and the number of nodes registered by using this
     /// activation.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeActivations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5305,13 +5324,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAssociation`.
     ///
-    /// <p>Describes the association for the specified target or instance. If you created the
+    /// <p>Describes the association for the specified target or managed node. If you created the
     /// association by using the <code>Targets</code> parameter, then you must retrieve the association
     /// by using the association ID.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeAssociation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5374,12 +5393,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(inp);
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
@@ -5399,7 +5418,7 @@ pub mod fluent_builders {
         }
         /// <p>Specify the association version to retrieve. To view the latest version, either specify
         /// <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all
-        /// associations for an instance, use <a>ListAssociations</a>. To get a list of versions
+        /// associations for a managed node, use <a>ListAssociations</a>. To get a list of versions
         /// for a specific association, use <a>ListAssociationVersions</a>. </p>
         pub fn association_version(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.association_version(inp);
@@ -5407,7 +5426,7 @@ pub mod fluent_builders {
         }
         /// <p>Specify the association version to retrieve. To view the latest version, either specify
         /// <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all
-        /// associations for an instance, use <a>ListAssociations</a>. To get a list of versions
+        /// associations for a managed node, use <a>ListAssociations</a>. To get a list of versions
         /// for a specific association, use <a>ListAssociationVersions</a>. </p>
         pub fn set_association_version(
             mut self,
@@ -5423,7 +5442,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAssociationExecutions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5541,7 +5560,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAssociationExecutionTargets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5676,7 +5695,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAutomationExecutions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5778,7 +5797,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAutomationStepExecutions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5904,7 +5923,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAvailablePatches<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5965,7 +5984,7 @@ pub mod fluent_builders {
         /// <p>
         /// <b>Windows Server</b>
         /// </p>
-        /// <p>Supported keys for Windows Server instance patches include the following:</p>
+        /// <p>Supported keys for Windows Server managed node patches include the following:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -6041,7 +6060,7 @@ pub mod fluent_builders {
         /// Key=CVE_ID,Values=CVE-2018-3615</code>
         /// </p>
         /// </important>
-        /// <p>Supported keys for Linux instance patches include the following:</p>
+        /// <p>Supported keys for Linux managed node patches include the following:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -6152,7 +6171,7 @@ pub mod fluent_builders {
         /// <p>
         /// <b>Windows Server</b>
         /// </p>
-        /// <p>Supported keys for Windows Server instance patches include the following:</p>
+        /// <p>Supported keys for Windows Server managed node patches include the following:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -6228,7 +6247,7 @@ pub mod fluent_builders {
         /// Key=CVE_ID,Values=CVE-2018-3615</code>
         /// </p>
         /// </important>
-        /// <p>Supported keys for Linux instance patches include the following:</p>
+        /// <p>Supported keys for Linux managed node patches include the following:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -6367,7 +6386,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDocument<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6468,7 +6487,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDocumentPermission<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6573,11 +6592,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEffectiveInstanceAssociations`.
     ///
-    /// <p>All associations for the instance(s).</p>
+    /// <p>All associations for the managed node(s).</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeEffectiveInstanceAssociations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6632,12 +6651,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The instance ID for which you want to view all associations.</p>
+        /// <p>The managed node ID for which you want to view all associations.</p>
         pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(inp);
             self
         }
-        /// <p>The instance ID for which you want to view all associations.</p>
+        /// <p>The managed node ID for which you want to view all associations.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
@@ -6674,7 +6693,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeEffectivePatchesForPatchBaseline<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6764,11 +6783,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInstanceAssociationsStatus`.
     ///
-    /// <p>The status of the associations for the instance(s).</p>
+    /// <p>The status of the associations for the managed node(s).</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeInstanceAssociationsStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6823,12 +6842,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The instance IDs for which you want association status information.</p>
+        /// <p>The managed node IDs for which you want association status information.</p>
         pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(inp);
             self
         }
-        /// <p>The instance IDs for which you want association status information.</p>
+        /// <p>The managed node IDs for which you want association status information.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
@@ -6860,20 +6879,21 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInstanceInformation`.
     ///
-    /// <p>Describes one or more of your instances, including information about the operating system
-    /// platform, the version of SSM Agent installed on the instance, instance status, and so on.</p>
-    /// <p>If you specify one or more instance IDs, it returns information for those instances. If you
-    /// don't specify instance IDs, it returns information for all your instances. If you specify an
-    /// instance ID that isn't valid or an instance that you don't own, you receive an error.</p>
+    /// <p>Describes one or more of your managed nodes, including information about the operating
+    /// system platform, the version of SSM Agent installed on the managed node, node status, and so
+    /// on.</p>
+    /// <p>If you specify one or more managed node IDs, it returns information for those managed nodes. If
+    /// you don't specify node IDs, it returns information for all your managed nodes. If you specify
+    /// a node ID that isn't valid or a node that you don't own, you receive an error.</p>
     /// <note>
     /// <p>The <code>IamRole</code> field for this API operation is the Identity and Access Management
-    /// (IAM) role assigned to on-premises instances. This call doesn't return the
+    /// (IAM) role assigned to on-premises managed nodes. This call doesn't return the
     /// IAM role for EC2 instances.</p>
     /// </note>
     #[derive(std::fmt::Debug)]
     pub struct DescribeInstanceInformation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6931,8 +6951,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_information_filter_list`](Self::set_instance_information_filter_list).
         ///
         /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the
-        /// <code>Filters</code> data type. <code>Filters</code> enables you to return instance information
-        /// by filtering based on tags applied to managed instances.</p>
+        /// <code>Filters</code> data type. <code>Filters</code> enables you to return node information
+        /// by filtering based on tags applied to managed nodes.</p>
         /// <note>
         /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads
         /// to an exception error. </p>
@@ -6945,8 +6965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the
-        /// <code>Filters</code> data type. <code>Filters</code> enables you to return instance information
-        /// by filtering based on tags applied to managed instances.</p>
+        /// <code>Filters</code> data type. <code>Filters</code> enables you to return node information
+        /// by filtering based on tags applied to managed nodes.</p>
         /// <note>
         /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads
         /// to an exception error. </p>
@@ -6962,7 +6982,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>One or more filters. Use a filter to return a more specific list of instances. You can
+        /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can
         /// filter based on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of
         /// <code>InstanceInformationFilterList</code>, which is deprecated.</p>
         pub fn filters(
@@ -6972,7 +6992,7 @@ pub mod fluent_builders {
             self.inner = self.inner.filters(inp);
             self
         }
-        /// <p>One or more filters. Use a filter to return a more specific list of instances. You can
+        /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can
         /// filter based on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of
         /// <code>InstanceInformationFilterList</code>, which is deprecated.</p>
         pub fn set_filters(
@@ -7011,12 +7031,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInstancePatches`.
     ///
-    /// <p>Retrieves information about the patches on the specified instance and their state relative
-    /// to the patch baseline being used for the instance.</p>
+    /// <p>Retrieves information about the patches on the specified managed node and their state relative
+    /// to the patch baseline being used for the node.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeInstancePatches<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7069,12 +7089,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the instance whose patch state information should be retrieved.</p>
+        /// <p>The ID of the managed node whose patch state information should be retrieved.</p>
         pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(inp);
             self
         }
-        /// <p>The ID of the instance whose patch state information should be retrieved.</p>
+        /// <p>The ID of the managed node whose patch state information should be retrieved.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
@@ -7201,11 +7221,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInstancePatchStates`.
     ///
-    /// <p>Retrieves the high-level patch state of one or more instances.</p>
+    /// <p>Retrieves the high-level patch state of one or more managed nodes.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeInstancePatchStates<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7262,12 +7282,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
-        /// <p>The ID of the instance for which patch state information should be retrieved.</p>
+        /// <p>The ID of the managed node for which patch state information should be retrieved.</p>
         pub fn instance_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_ids(inp);
             self
         }
-        /// <p>The ID of the instance for which patch state information should be retrieved.</p>
+        /// <p>The ID of the managed node for which patch state information should be retrieved.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7287,12 +7307,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of instances to return (per page).</p>
+        /// <p>The maximum number of managed nodes to return (per page).</p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>The maximum number of instances to return (per page).</p>
+        /// <p>The maximum number of managed nodes to return (per page).</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -7300,11 +7320,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInstancePatchStatesForPatchGroup`.
     ///
-    /// <p>Retrieves the high-level patch state for the instances in the specified patch group.</p>
+    /// <p>Retrieves the high-level patch state for the managed nodes in the specified patch group.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeInstancePatchStatesForPatchGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7439,7 +7459,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeInventoryDeletions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7535,7 +7555,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowExecutions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7671,7 +7691,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowExecutionTaskInvocations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7794,7 +7814,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowExecutionTasks<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7916,7 +7936,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeMaintenanceWindows<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8021,7 +8041,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowSchedule<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8088,12 +8108,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The instance ID or key-value pair to retrieve information about.</p>
+        /// <p>The managed node ID or key-value pair to retrieve information about.</p>
         pub fn targets(mut self, inp: impl Into<crate::model::Target>) -> Self {
             self.inner = self.inner.targets(inp);
             self
         }
-        /// <p>The instance ID or key-value pair to retrieve information about.</p>
+        /// <p>The managed node ID or key-value pair to retrieve information about.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -8162,12 +8182,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeMaintenanceWindowsForTarget`.
     ///
-    /// <p>Retrieves information about the maintenance window targets or tasks that an instance is
+    /// <p>Retrieves information about the maintenance window targets or tasks that a managed node is
     /// associated with.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowsForTarget<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8226,12 +8246,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The instance ID or key-value pair to retrieve information about.</p>
+        /// <p>The managed node ID or key-value pair to retrieve information about.</p>
         pub fn targets(mut self, inp: impl Into<crate::model::Target>) -> Self {
             self.inner = self.inner.targets(inp);
             self
         }
-        /// <p>The instance ID or key-value pair to retrieve information about.</p>
+        /// <p>The managed node ID or key-value pair to retrieve information about.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -8285,7 +8305,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowTargets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8406,7 +8426,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowTasks<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8526,7 +8546,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeOpsItems<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8755,7 +8775,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeParameters<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8876,7 +8896,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribePatchBaselines<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9035,7 +9055,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribePatchGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9174,7 +9194,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribePatchGroupState<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9307,7 +9327,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribePatchProperties<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9430,7 +9450,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSessions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9543,7 +9563,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateOpsItemRelatedItem<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9630,7 +9650,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetAutomationExecution<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9715,7 +9735,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetCalendarState<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9805,12 +9825,12 @@ pub mod fluent_builders {
     /// <p>Returns detailed information about command execution for an invocation or plugin.</p>
     /// <p>
     /// <code>GetCommandInvocation</code> only gives the execution status of a plugin in a document.
-    /// To get the command execution status on a specific instance, use <a>ListCommandInvocations</a>. To get the command execution status across instances, use
-    /// <a>ListCommands</a>.</p>
+    /// To get the command execution status on a specific managed node, use <a>ListCommandInvocations</a>. To get the command execution status across managed nodes,
+    /// use <a>ListCommands</a>.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetCommandInvocation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9873,16 +9893,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_command_id(input);
             self
         }
-        /// <p>(Required) The ID of the managed instance targeted by the command. A managed instance can be
-        /// an Amazon Elastic Compute Cloud (Amazon EC2) instance or an instance in your hybrid environment that is configured for
-        /// Amazon Web Services Systems Manager.</p>
+        /// <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an
+        /// Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
         pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(inp);
             self
         }
-        /// <p>(Required) The ID of the managed instance targeted by the command. A managed instance can be
-        /// an Amazon Elastic Compute Cloud (Amazon EC2) instance or an instance in your hybrid environment that is configured for
-        /// Amazon Web Services Systems Manager.</p>
+        /// <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an
+        /// Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
@@ -9918,12 +9936,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetConnectionStatus`.
     ///
-    /// <p>Retrieves the Session Manager connection status for an instance to determine whether it is running and
+    /// <p>Retrieves the Session Manager connection status for a managed node to determine whether it is running and
     /// ready to receive Session Manager connections.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetConnectionStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9976,12 +9994,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         pub fn target(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target(inp);
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_target(input);
             self
@@ -9996,7 +10014,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetDefaultPatchBaseline<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10065,19 +10083,19 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDeployablePatchSnapshotForInstance`.
     ///
-    /// <p>Retrieves the current snapshot for the patch baseline the instance uses. This API is
+    /// <p>Retrieves the current snapshot for the patch baseline the managed node uses. This API is
     /// primarily used by the <code>AWS-RunPatchBaseline</code> Systems Manager document (SSM document).</p>
     /// <note>
     /// <p>If you run the command locally, such as with the Command Line Interface (CLI), the system attempts to use your local Amazon Web Services credentials and the operation fails. To avoid
     /// this, you can run the command in the Amazon Web Services Systems Manager console. Use Run Command, a capability of
-    /// Amazon Web Services Systems Manager, with an SSM document that enables you to target an instance with a script or command.
+    /// Amazon Web Services Systems Manager, with an SSM document that enables you to target a managed node with a script or command.
     /// For example, run the command using the <code>AWS-RunShellScript</code> document or the
     /// <code>AWS-RunPowerShellScript</code> document.</p>
     /// </note>
     #[derive(std::fmt::Debug)]
     pub struct GetDeployablePatchSnapshotForInstance<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10132,12 +10150,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the instance for which the appropriate patch snapshot should be retrieved.</p>
+        /// <p>The ID of the managed node for which the appropriate patch snapshot should be retrieved.</p>
         pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(inp);
             self
         }
-        /// <p>The ID of the instance for which the appropriate patch snapshot should be retrieved.</p>
+        /// <p>The ID of the managed node for which the appropriate patch snapshot should be retrieved.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
@@ -10172,7 +10190,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetDocument<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10280,12 +10298,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInventory`.
     ///
-    /// <p>Query inventory information. This includes instance status, such as <code>Stopped</code> or
+    /// <p>Query inventory information. This includes managed node status, such as <code>Stopped</code> or
     /// <code>Terminated</code>.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetInventory<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10361,7 +10379,7 @@ pub mod fluent_builders {
         ///
         /// <p>Returns counts of inventory types based on one or more expressions. For example, if you
         /// aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code>
-        /// type, you can see a count of how many Windows and Linux instances exist in your inventoried
+        /// type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried
         /// fleet.</p>
         pub fn aggregators(mut self, inp: impl Into<crate::model::InventoryAggregator>) -> Self {
             self.inner = self.inner.aggregators(inp);
@@ -10369,7 +10387,7 @@ pub mod fluent_builders {
         }
         /// <p>Returns counts of inventory types based on one or more expressions. For example, if you
         /// aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code>
-        /// type, you can see a count of how many Windows and Linux instances exist in your inventoried
+        /// type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried
         /// fleet.</p>
         pub fn set_aggregators(
             mut self,
@@ -10427,7 +10445,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetInventorySchema<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10547,7 +10565,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetMaintenanceWindow<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10617,7 +10635,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetMaintenanceWindowExecution<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10691,7 +10709,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetMaintenanceWindowExecutionTask<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10776,7 +10794,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetMaintenanceWindowExecutionTaskInvocation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10880,7 +10898,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetMaintenanceWindowTask<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10969,7 +10987,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetOpsItem<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11039,7 +11057,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetOpsMetadata<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11137,7 +11155,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetOpsSummary<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11286,7 +11304,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetParameter<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11378,7 +11396,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetParameterHistory<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11488,7 +11506,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetParameters<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11587,7 +11605,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetParametersByPath<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11757,7 +11775,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetPatchBaseline<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11841,7 +11859,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetPatchBaselineForPatchGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11937,7 +11955,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetServiceSetting<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12107,7 +12125,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct LabelParameterVersion<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12203,12 +12221,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssociations`.
     ///
     /// <p>Returns all State Manager associations in the current Amazon Web Services account and Amazon Web Services Region. You
-    /// can limit the results to a specific State Manager association document or instance by specifying
+    /// can limit the results to a specific State Manager association document or managed node by specifying
     /// a filter. State Manager is a capability of Amazon Web Services Systems Manager.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListAssociations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12269,7 +12287,7 @@ pub mod fluent_builders {
         /// <note>
         /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy
         /// associations created using the <code>InstanceID</code> attribute. Associations targeting the
-        /// instance that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
+        /// managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
         /// aren't returned.</p>
         /// </note>
         pub fn association_filter_list(
@@ -12283,7 +12301,7 @@ pub mod fluent_builders {
         /// <note>
         /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy
         /// associations created using the <code>InstanceID</code> attribute. Associations targeting the
-        /// instance that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
+        /// managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
         /// aren't returned.</p>
         /// </note>
         pub fn set_association_filter_list(
@@ -12324,7 +12342,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListAssociationVersions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12415,15 +12433,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListCommandInvocations`.
     ///
-    /// <p>An invocation is copy of a command sent to a specific instance. A command can apply to one
-    /// or more instances. A command invocation applies to one instance. For example, if a user runs
-    /// <code>SendCommand</code> against three instances, then a command invocation is created for each
-    /// requested instance ID. <code>ListCommandInvocations</code> provide status about command
+    /// <p>An invocation is copy of a command sent to a specific managed node. A command can apply to one
+    /// or more managed nodes. A command invocation applies to one managed node. For example, if a user runs
+    /// <code>SendCommand</code> against three managed nodes, then a command invocation is created for
+    /// each requested managed node ID. <code>ListCommandInvocations</code> provide status about command
     /// execution.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListCommandInvocations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12486,12 +12504,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_command_id(input);
             self
         }
-        /// <p>(Optional) The command execution details for a specific instance ID.</p>
+        /// <p>(Optional) The command execution details for a specific managed node ID.</p>
         pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(inp);
             self
         }
-        /// <p>(Optional) The command execution details for a specific instance ID.</p>
+        /// <p>(Optional) The command execution details for a specific managed node ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
@@ -12558,7 +12576,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListCommands<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12621,19 +12639,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_command_id(input);
             self
         }
-        /// <p>(Optional) Lists commands issued against this instance ID.</p>
+        /// <p>(Optional) Lists commands issued against this managed node ID.</p>
         /// <note>
-        /// <p>You can't specify an instance ID in the same command that you specify <code>Status</code> =
-        /// <code>Pending</code>. This is because the command hasn't reached the instance yet.</p>
+        /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> =
+        /// <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
         /// </note>
         pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(inp);
             self
         }
-        /// <p>(Optional) Lists commands issued against this instance ID.</p>
+        /// <p>(Optional) Lists commands issued against this managed node ID.</p>
         /// <note>
-        /// <p>You can't specify an instance ID in the same command that you specify <code>Status</code> =
-        /// <code>Pending</code>. This is because the command hasn't reached the instance yet.</p>
+        /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> =
+        /// <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
         /// </note>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
@@ -12691,7 +12709,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListComplianceItems<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12832,7 +12850,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListComplianceSummaries<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12935,7 +12953,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListDocumentMetadataHistory<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13058,7 +13076,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListDocuments<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13199,7 +13217,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListDocumentVersions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13293,7 +13311,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListInventoryEntries<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13346,12 +13364,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The instance ID for which you want inventory information.</p>
+        /// <p>The managed node ID for which you want inventory information.</p>
         pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(inp);
             self
         }
-        /// <p>The instance ID for which you want inventory information.</p>
+        /// <p>The managed node ID for which you want inventory information.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
@@ -13415,7 +13433,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListOpsItemEvents<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13515,7 +13533,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListOpsItemRelatedItems<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13627,7 +13645,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListOpsMetadata<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13728,7 +13746,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListResourceComplianceSummaries<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13835,7 +13853,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListResourceDataSync<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13932,7 +13950,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14018,7 +14036,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyDocumentPermission<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14171,7 +14189,7 @@ pub mod fluent_builders {
     /// </li>
     /// <li>
     /// <p>ExecutionTime. The time the patch, association, or custom compliance item was applied to
-    /// the instance.</p>
+    /// the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Id: The patch, association, or custom compliance ID.</p>
@@ -14215,7 +14233,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutComplianceItems<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14268,12 +14286,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specify an ID for this resource. For a managed instance, this is the instance ID.</p>
+        /// <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
         pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(inp);
             self
         }
-        /// <p>Specify an ID for this resource. For a managed instance, this is the instance ID.</p>
+        /// <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
@@ -14397,12 +14415,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutInventory`.
     ///
-    /// <p>Bulk update custom inventory items on one more instance. The request adds an inventory item,
+    /// <p>Bulk update custom inventory items on one or more managed nodes. The request adds an inventory item,
     /// if it doesn't already exist, or updates an inventory item, if it does exist.</p>
     #[derive(std::fmt::Debug)]
     pub struct PutInventory<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14455,12 +14473,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An instance ID where you want to add or update inventory items.</p>
+        /// <p>An managed node ID where you want to add or update inventory items.</p>
         pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(inp);
             self
         }
-        /// <p>An instance ID where you want to add or update inventory items.</p>
+        /// <p>An managed node ID where you want to add or update inventory items.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
@@ -14469,12 +14487,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>The inventory items that you want to add or update on instances.</p>
+        /// <p>The inventory items that you want to add or update on managed nodes.</p>
         pub fn items(mut self, inp: impl Into<crate::model::InventoryItem>) -> Self {
             self.inner = self.inner.items(inp);
             self
         }
-        /// <p>The inventory items that you want to add or update on instances.</p>
+        /// <p>The inventory items that you want to add or update on managed nodes.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InventoryItem>>,
@@ -14489,7 +14507,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutParameter<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14968,10 +14986,10 @@ pub mod fluent_builders {
         /// you specify the expiration date. You can update the expiration date and time by updating the
         /// policy. Updating the <i>parameter</i> doesn't affect the expiration date and time.
         /// When the expiration time is reached, Parameter Store deletes the parameter.</p>
-        /// <p>ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that
+        /// <p>ExpirationNotification: This policy initiates an event in Amazon CloudWatch Events that
         /// notifies you about the expiration. By using this policy, you can receive notification before or
         /// after the expiration time is reached, in units of days or hours.</p>
-        /// <p>NoChangeNotification: This policy triggers a CloudWatch Events event if a parameter hasn't
+        /// <p>NoChangeNotification: This policy initiates a CloudWatch Events event if a parameter hasn't
         /// been modified for a specified period of time. This policy type is useful when, for example, a
         /// secret needs to be changed within a period of time, but it hasn't been changed.</p>
         /// <p>All existing policies are preserved until you send new policies or an empty policy. For more
@@ -14987,10 +15005,10 @@ pub mod fluent_builders {
         /// you specify the expiration date. You can update the expiration date and time by updating the
         /// policy. Updating the <i>parameter</i> doesn't affect the expiration date and time.
         /// When the expiration time is reached, Parameter Store deletes the parameter.</p>
-        /// <p>ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that
+        /// <p>ExpirationNotification: This policy initiates an event in Amazon CloudWatch Events that
         /// notifies you about the expiration. By using this policy, you can receive notification before or
         /// after the expiration time is reached, in units of days or hours.</p>
-        /// <p>NoChangeNotification: This policy triggers a CloudWatch Events event if a parameter hasn't
+        /// <p>NoChangeNotification: This policy initiates a CloudWatch Events event if a parameter hasn't
         /// been modified for a specified period of time. This policy type is useful when, for example, a
         /// secret needs to be changed within a period of time, but it hasn't been changed.</p>
         /// <p>All existing policies are preserved until you send new policies or an empty policy. For more
@@ -15063,7 +15081,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RegisterDefaultPatchBaseline<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -15133,7 +15151,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RegisterPatchBaselineForPatchGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -15215,7 +15233,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RegisterTargetWithMaintenanceWindow<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -15297,53 +15315,48 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The targets to register with the maintenance window. In other words, the instances to run
-        /// commands on when the maintenance window runs.</p>
+        /// <p>The targets to register with the maintenance window. In other words, the managed nodes to
+        /// run commands on when the maintenance window runs.</p>
         /// <note>
         /// <p>If a single maintenance window task is registered with multiple targets, its task
         /// invocations occur sequentially and not in parallel. If your task must run on multiple targets at
         /// the same time, register a task for each target individually and assign each task the same
         /// priority level.</p>
         /// </note>
-        /// <p>You can specify targets using instance IDs, resource group names, or tags that have been
-        /// applied to instances.</p>
+        /// <p>You can specify targets using managed node IDs, resource group names, or tags that have been
+        /// applied to managed nodes.</p>
         /// <p>
-        /// <b>Example 1</b>: Specify instance IDs</p>
+        /// <b>Example 1</b>: Specify managed node IDs</p>
         /// <p>
-        /// <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
-        /// </code>
+        /// <code>Key=InstanceIds,Values=<instance-id-1>,<instance-id-2>,<instance-id-3></code>
         /// </p>
         /// <p>
-        /// <b>Example 2</b>: Use tag key-pairs applied to instances</p>
+        /// <b>Example 2</b>: Use tag key-pairs applied to managed
+        /// nodes</p>
         /// <p>
-        /// <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
-        /// </code>
+        /// <code>Key=tag:<my-tag-key>,Values=<my-tag-value-1>,<my-tag-value-2></code>
         /// </p>
         /// <p>
-        /// <b>Example 3</b>: Use tag-keys applied to instances</p>
+        /// <b>Example 3</b>: Use tag-keys applied to managed nodes</p>
         /// <p>
-        /// <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i>
-        /// </code>
+        /// <code>Key=tag-key,Values=<my-tag-key-1>,<my-tag-key-2></code>
         /// </p>
         ///
         /// <p>
         /// <b>Example 4</b>: Use resource group names</p>
         /// <p>
-        /// <code>Key=resource-groups:Name,Values=<i>resource-group-name</i>
-        /// </code>
+        /// <code>Key=resource-groups:Name,Values=<resource-group-name></code>
         /// </p>
         /// <p>
         /// <b>Example 5</b>: Use filters for resource group types</p>
         /// <p>
-        /// <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
-        /// </code>
+        /// <code>Key=resource-groups:ResourceTypeFilters,Values=<resource-type-1>,<resource-type-2></code>
         /// </p>
         /// <note>
         /// <p>For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the
         /// following format</p>
         /// <p>
-        /// <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
-        /// </code>
+        /// <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code>
         /// </p>
         /// </note>
         ///
@@ -15354,53 +15367,48 @@ pub mod fluent_builders {
             self.inner = self.inner.targets(inp);
             self
         }
-        /// <p>The targets to register with the maintenance window. In other words, the instances to run
-        /// commands on when the maintenance window runs.</p>
+        /// <p>The targets to register with the maintenance window. In other words, the managed nodes to
+        /// run commands on when the maintenance window runs.</p>
         /// <note>
         /// <p>If a single maintenance window task is registered with multiple targets, its task
         /// invocations occur sequentially and not in parallel. If your task must run on multiple targets at
         /// the same time, register a task for each target individually and assign each task the same
         /// priority level.</p>
         /// </note>
-        /// <p>You can specify targets using instance IDs, resource group names, or tags that have been
-        /// applied to instances.</p>
+        /// <p>You can specify targets using managed node IDs, resource group names, or tags that have been
+        /// applied to managed nodes.</p>
         /// <p>
-        /// <b>Example 1</b>: Specify instance IDs</p>
+        /// <b>Example 1</b>: Specify managed node IDs</p>
         /// <p>
-        /// <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
-        /// </code>
+        /// <code>Key=InstanceIds,Values=<instance-id-1>,<instance-id-2>,<instance-id-3></code>
         /// </p>
         /// <p>
-        /// <b>Example 2</b>: Use tag key-pairs applied to instances</p>
+        /// <b>Example 2</b>: Use tag key-pairs applied to managed
+        /// nodes</p>
         /// <p>
-        /// <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
-        /// </code>
+        /// <code>Key=tag:<my-tag-key>,Values=<my-tag-value-1>,<my-tag-value-2></code>
         /// </p>
         /// <p>
-        /// <b>Example 3</b>: Use tag-keys applied to instances</p>
+        /// <b>Example 3</b>: Use tag-keys applied to managed nodes</p>
         /// <p>
-        /// <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i>
-        /// </code>
+        /// <code>Key=tag-key,Values=<my-tag-key-1>,<my-tag-key-2></code>
         /// </p>
         ///
         /// <p>
         /// <b>Example 4</b>: Use resource group names</p>
         /// <p>
-        /// <code>Key=resource-groups:Name,Values=<i>resource-group-name</i>
-        /// </code>
+        /// <code>Key=resource-groups:Name,Values=<resource-group-name></code>
         /// </p>
         /// <p>
         /// <b>Example 5</b>: Use filters for resource group types</p>
         /// <p>
-        /// <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
-        /// </code>
+        /// <code>Key=resource-groups:ResourceTypeFilters,Values=<resource-type-1>,<resource-type-2></code>
         /// </p>
         /// <note>
         /// <p>For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the
         /// following format</p>
         /// <p>
-        /// <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
-        /// </code>
+        /// <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code>
         /// </p>
         /// </note>
         ///
@@ -15466,7 +15474,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RegisterTaskWithMaintenanceWindow<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -15533,7 +15541,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The targets (either instances or maintenance window targets).</p>
+        /// <p>The targets (either managed nodes or maintenance window targets).</p>
         /// <note>
         /// <p>One or more targets must be specified for maintenance window Run Command-type tasks.
         /// Depending on the task, targets are optional for other maintenance window task types (Automation,
@@ -15542,7 +15550,7 @@ pub mod fluent_builders {
         /// maintenance window tasks without targets</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         /// </note>
-        /// <p>Specify instances using the following format: </p>
+        /// <p>Specify managed nodes using the following format: </p>
         /// <p>
         /// <code>Key=InstanceIds,Values=<instance-id-1>,<instance-id-2></code>
         /// </p>
@@ -15554,7 +15562,7 @@ pub mod fluent_builders {
             self.inner = self.inner.targets(inp);
             self
         }
-        /// <p>The targets (either instances or maintenance window targets).</p>
+        /// <p>The targets (either managed nodes or maintenance window targets).</p>
         /// <note>
         /// <p>One or more targets must be specified for maintenance window Run Command-type tasks.
         /// Depending on the task, targets are optional for other maintenance window task types (Automation,
@@ -15563,7 +15571,7 @@ pub mod fluent_builders {
         /// maintenance window tasks without targets</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         /// </note>
-        /// <p>Specify instances using the following format: </p>
+        /// <p>Specify managed nodes using the following format: </p>
         /// <p>
         /// <code>Key=InstanceIds,Values=<instance-id-1>,<instance-id-2></code>
         /// </p>
@@ -15766,7 +15774,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket
-        /// to write instance-level logs to. </p>
+        /// to write managed node-level logs to. </p>
         /// <note>
         /// <p>
         /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
@@ -15779,7 +15787,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket
-        /// to write instance-level logs to. </p>
+        /// to write managed node-level logs to. </p>
         /// <note>
         /// <p>
         /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
@@ -15897,7 +15905,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RemoveTagsFromResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -15953,7 +15961,7 @@ pub mod fluent_builders {
         /// <p>The type of resource from which you want to remove a tag.</p>
         /// <note>
         /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
-        /// managed instances. Specify the name of the managed instance in the following format:
+        /// managed nodes. Specify the name of the managed node in the following format:
         /// <code>mi-<i>ID_number</i>
         /// </code>. For example,
         /// <code>mi-1a2b3c4d5e6f</code>.</p>
@@ -15965,7 +15973,7 @@ pub mod fluent_builders {
         /// <p>The type of resource from which you want to remove a tag.</p>
         /// <note>
         /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
-        /// managed instances. Specify the name of the managed instance in the following format:
+        /// managed nodes. Specify the name of the managed node in the following format:
         /// <code>mi-<i>ID_number</i>
         /// </code>. For example,
         /// <code>mi-1a2b3c4d5e6f</code>.</p>
@@ -15989,9 +15997,9 @@ pub mod fluent_builders {
         /// <code>/aws/ssm/MyGroup/appmanager</code>.</p>
         /// <p>For the Document and Parameter values, use the name of the resource.</p>
         /// <note>
-        /// <p>The ManagedInstance type for this API operation is only for on-premises managed instances.
-        /// Specify the name of the managed instance in the following format: mi-ID_number. For example,
-        /// mi-1a2b3c4d5e6f.</p>
+        /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
+        /// managed nodes. Specify the name of the managed node in the following format: mi-ID_number. For
+        /// example, mi-1a2b3c4d5e6f.</p>
         /// </note>
         pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(inp);
@@ -16009,9 +16017,9 @@ pub mod fluent_builders {
         /// <code>/aws/ssm/MyGroup/appmanager</code>.</p>
         /// <p>For the Document and Parameter values, use the name of the resource.</p>
         /// <note>
-        /// <p>The ManagedInstance type for this API operation is only for on-premises managed instances.
-        /// Specify the name of the managed instance in the following format: mi-ID_number. For example,
-        /// mi-1a2b3c4d5e6f.</p>
+        /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
+        /// managed nodes. Specify the name of the managed node in the following format: mi-ID_number. For
+        /// example, mi-1a2b3c4d5e6f.</p>
         /// </note>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
@@ -16055,7 +16063,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ResetServiceSetting<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -16187,7 +16195,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ResumeSession`.
     ///
-    /// <p>Reconnects a session to an instance after it has been disconnected. Connections can be
+    /// <p>Reconnects a session to a managed node after it has been disconnected. Connections can be
     /// resumed for disconnected sessions, but not terminated sessions.</p>
     /// <note>
     /// <p>This command is primarily for use by client machines to automatically reconnect during
@@ -16196,7 +16204,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ResumeSession<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -16267,7 +16275,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct SendAutomationSignal<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -16406,11 +16414,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendCommand`.
     ///
-    /// <p>Runs commands on one or more managed instances.</p>
+    /// <p>Runs commands on one or more managed nodes.</p>
     #[derive(std::fmt::Debug)]
     pub struct SendCommand<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -16467,13 +16475,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
-        /// <p>The IDs of the instances where the command should run. Specifying instance IDs is most
-        /// useful when you are targeting a limited number of instances, though you can specify up to 50
+        /// <p>The IDs of the managed nodes where the command should run. Specifying managed node IDs is most
+        /// useful when you are targeting a limited number of managed nodes, though you can specify up to 50
         /// IDs.</p>
-        /// <p>To target a larger number of instances, or if you prefer not to list individual instance
+        /// <p>To target a larger number of managed nodes, or if you prefer not to list individual node
         /// IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>,
-        /// which accepts tag key-value pairs to identify the instances to send commands to, you can a send
-        /// command to tens, hundreds, or thousands of instances at once.</p>
+        /// which accepts tag key-value pairs to identify the managed nodes to send commands to, you can a
+        /// send command to tens, hundreds, or thousands of nodes at once.</p>
         /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate
         /// controls to send commands to a fleet</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -16481,13 +16489,13 @@ pub mod fluent_builders {
             self.inner = self.inner.instance_ids(inp);
             self
         }
-        /// <p>The IDs of the instances where the command should run. Specifying instance IDs is most
-        /// useful when you are targeting a limited number of instances, though you can specify up to 50
+        /// <p>The IDs of the managed nodes where the command should run. Specifying managed node IDs is most
+        /// useful when you are targeting a limited number of managed nodes, though you can specify up to 50
         /// IDs.</p>
-        /// <p>To target a larger number of instances, or if you prefer not to list individual instance
+        /// <p>To target a larger number of managed nodes, or if you prefer not to list individual node
         /// IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>,
-        /// which accepts tag key-value pairs to identify the instances to send commands to, you can a send
-        /// command to tens, hundreds, or thousands of instances at once.</p>
+        /// which accepts tag key-value pairs to identify the managed nodes to send commands to, you can a
+        /// send command to tens, hundreds, or thousands of nodes at once.</p>
         /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate
         /// controls to send commands to a fleet</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -16502,26 +16510,26 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>An array of search criteria that targets instances using a <code>Key,Value</code>
+        /// <p>An array of search criteria that targets managed nodes using a <code>Key,Value</code>
         /// combination that you specify. Specifying targets is most useful when you want to send a command
-        /// to a large number of instances at once. Using <code>Targets</code>, which accepts tag key-value
-        /// pairs to identify instances, you can send a command to tens, hundreds, or thousands of instances
-        /// at once.</p>
-        /// <p>To send a command to a smaller number of instances, you can use the <code>InstanceIds</code>
-        /// option instead.</p>
+        /// to a large number of managed nodes at once. Using <code>Targets</code>, which accepts tag
+        /// key-value pairs to identify managed nodes, you can send a command to tens, hundreds, or thousands
+        /// of nodes at once.</p>
+        /// <p>To send a command to a smaller number of managed nodes, you can use the
+        /// <code>InstanceIds</code> option instead.</p>
         /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands to a
         /// fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn targets(mut self, inp: impl Into<crate::model::Target>) -> Self {
             self.inner = self.inner.targets(inp);
             self
         }
-        /// <p>An array of search criteria that targets instances using a <code>Key,Value</code>
+        /// <p>An array of search criteria that targets managed nodes using a <code>Key,Value</code>
         /// combination that you specify. Specifying targets is most useful when you want to send a command
-        /// to a large number of instances at once. Using <code>Targets</code>, which accepts tag key-value
-        /// pairs to identify instances, you can send a command to tens, hundreds, or thousands of instances
-        /// at once.</p>
-        /// <p>To send a command to a smaller number of instances, you can use the <code>InstanceIds</code>
-        /// option instead.</p>
+        /// to a large number of managed nodes at once. Using <code>Targets</code>, which accepts tag
+        /// key-value pairs to identify managed nodes, you can send a command to tens, hundreds, or thousands
+        /// of nodes at once.</p>
+        /// <p>To send a command to a smaller number of managed nodes, you can use the
+        /// <code>InstanceIds</code> option instead.</p>
         /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands to a
         /// fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_targets(
@@ -16707,16 +16715,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_s3_key_prefix(input);
             self
         }
-        /// <p>(Optional) The maximum number of instances that are allowed to run the command at the same
-        /// time. You can specify a number such as 10 or a percentage such as 10%. The default value is
+        /// <p>(Optional) The maximum number of managed nodes that are allowed to run the command at the
+        /// same time. You can specify a number such as 10 or a percentage such as 10%. The default value is
         /// <code>50</code>. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
         /// concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn max_concurrency(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.max_concurrency(inp);
             self
         }
-        /// <p>(Optional) The maximum number of instances that are allowed to run the command at the same
-        /// time. You can specify a number such as 10 or a percentage such as 10%. The default value is
+        /// <p>(Optional) The maximum number of managed nodes that are allowed to run the command at the
+        /// same time. You can specify a number such as 10 or a percentage such as 10%. The default value is
         /// <code>50</code>. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
         /// concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_max_concurrency(
@@ -16798,7 +16806,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartAssociationsOnce<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -16875,7 +16883,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartAutomationExecution<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -17206,7 +17214,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartChangeRequestExecution<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -17495,7 +17503,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartSession`.
     ///
-    /// <p>Initiates a connection to a target (for example, an instance) for a Session Manager session. Returns a
+    /// <p>Initiates a connection to a target (for example, a managed node) for a Session Manager session. Returns a
     /// URL and token that can be used to open a WebSocket connection for sending input and receiving
     /// outputs.</p>
     /// <note>
@@ -17508,7 +17516,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartSession<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -17561,26 +17569,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The instance to connect to for the session.</p>
+        /// <p>The managed node to connect to for the session.</p>
         pub fn target(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target(inp);
             self
         }
-        /// <p>The instance to connect to for the session.</p>
+        /// <p>The managed node to connect to for the session.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_target(input);
             self
         }
         /// <p>The name of the SSM document to define the parameters and plugin settings for the session.
         /// For example, <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API to verify the document exists before attempting to start a session.
-        /// If no document name is provided, a shell to the instance is launched by default.</p>
+        /// If no document name is provided, a shell to the managed node is launched by default.</p>
         pub fn document_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.document_name(inp);
             self
         }
         /// <p>The name of the SSM document to define the parameters and plugin settings for the session.
         /// For example, <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API to verify the document exists before attempting to start a session.
-        /// If no document name is provided, a shell to the instance is launched by default.</p>
+        /// If no document name is provided, a shell to the managed node is launched by default.</p>
         pub fn set_document_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17588,12 +17596,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_name(input);
             self
         }
-        /// <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
+        /// <p>The reason for connecting to the instance. This value is included in the details for the
+        /// Amazon CloudWatch Events event created when you start the session.</p>
         pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.reason(inp);
             self
         }
-        /// <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
+        /// <p>The reason for connecting to the instance. This value is included in the details for the
+        /// Amazon CloudWatch Events event created when you start the session.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_reason(input);
             self
@@ -17628,7 +17638,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StopAutomationExecution<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -17710,11 +17720,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TerminateSession`.
     ///
     /// <p>Permanently ends a session and closes the data connection between the Session Manager client and
-    /// SSM Agent on the instance. A terminated session isn't be resumed.</p>
+    /// SSM Agent on the managed node. A terminated session isn't be resumed.</p>
     #[derive(std::fmt::Debug)]
     pub struct TerminateSession<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -17784,7 +17794,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UnlabelParameterVersion<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -17895,7 +17905,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateAssociation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -18031,7 +18041,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the SSM Command document or Automation runbook that contains the configuration
-        /// information for the instance.</p>
+        /// information for the managed node.</p>
         /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
         /// shared with you from another account.</p>
         /// <p>For Systems Manager document (SSM document) that are shared with you from other Amazon Web Services accounts, you
@@ -18052,7 +18062,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the SSM Command document or Automation runbook that contains the configuration
-        /// information for the instance.</p>
+        /// information for the managed node.</p>
         /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
         /// shared with you from another account.</p>
         /// <p>For Systems Manager document (SSM document) that are shared with you from other Amazon Web Services accounts, you
@@ -18144,8 +18154,8 @@ pub mod fluent_builders {
         /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
         /// the system stops sending requests when the fourth error is received. If you specify 0, then the
         /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
-        /// the sixth error is received.</p>
+        /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
+        /// when the sixth error is received.</p>
         /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
         /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
         /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
@@ -18159,8 +18169,8 @@ pub mod fluent_builders {
         /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
         /// the system stops sending requests when the fourth error is received. If you specify 0, then the
         /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
-        /// the sixth error is received.</p>
+        /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
+        /// when the sixth error is received.</p>
         /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
         /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
         /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
@@ -18172,9 +18182,9 @@ pub mod fluent_builders {
         /// <p>The maximum number of targets allowed to run the association at the same time. You can
         /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
         /// value is 100%, which means all targets run the association at the same time.</p>
-        /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
         /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-        /// association interval, the new instance will process its association within the limit specified
+        /// association interval, the new managed node will process its association within the limit specified
         /// for <code>MaxConcurrency</code>.</p>
         pub fn max_concurrency(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.max_concurrency(inp);
@@ -18183,9 +18193,9 @@ pub mod fluent_builders {
         /// <p>The maximum number of targets allowed to run the association at the same time. You can
         /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
         /// value is 100%, which means all targets run the association at the same time.</p>
-        /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
         /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-        /// association interval, the new instance will process its association within the limit specified
+        /// association interval, the new managed node will process its association within the limit specified
         /// for <code>MaxConcurrency</code>.</p>
         pub fn set_max_concurrency(
             mut self,
@@ -18313,7 +18323,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAssociationStatus`.
     ///
     /// <p>Updates the status of the Amazon Web Services Systems Manager document (SSM document) associated with the specified
-    /// instance.</p>
+    /// managed node.</p>
     /// <p>
     /// <code>UpdateAssociationStatus</code> is primarily used by the Amazon Web Services Systems Manager Agent (SSM Agent) to
     /// report status updates about your associations and is only used for associations created with the
@@ -18321,7 +18331,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateAssociationStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -18384,12 +18394,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(inp);
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
@@ -18414,7 +18424,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateDocument<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -18581,7 +18591,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateDocumentDefaultVersion<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -18665,7 +18675,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateDocumentMetadata<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -18769,7 +18779,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateMaintenanceWindow<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -19026,7 +19036,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateMaintenanceWindowTarget<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -19228,7 +19238,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateMaintenanceWindowTask<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -19308,9 +19318,9 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The targets (either instances or tags) to modify. Instances are specified using the format
-        /// <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the
-        /// format <code> Key=tag_name,Values=tag_value</code>. </p>
+        /// <p>The targets (either managed nodes or tags) to modify. Managed nodes are specified using the
+        /// format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using
+        /// the format <code> Key=tag_name,Values=tag_value</code>. </p>
         /// <note>
         /// <p>One or more targets must be specified for maintenance window Run Command-type tasks.
         /// Depending on the task, targets are optional for other maintenance window task types (Automation,
@@ -19323,9 +19333,9 @@ pub mod fluent_builders {
             self.inner = self.inner.targets(inp);
             self
         }
-        /// <p>The targets (either instances or tags) to modify. Instances are specified using the format
-        /// <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the
-        /// format <code> Key=tag_name,Values=tag_value</code>. </p>
+        /// <p>The targets (either managed nodes or tags) to modify. Managed nodes are specified using the
+        /// format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using
+        /// the format <code> Key=tag_name,Values=tag_value</code>. </p>
         /// <note>
         /// <p>One or more targets must be specified for maintenance window Run Command-type tasks.
         /// Depending on the task, targets are optional for other maintenance window task types (Automation,
@@ -19676,12 +19686,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateManagedInstanceRole`.
     ///
     /// <p>Changes the Identity and Access Management (IAM) role that is assigned to the
-    /// on-premises instance or virtual machines (VM). IAM roles are first assigned to
-    /// these hybrid instances during the activation process. For more information, see <a>CreateActivation</a>.</p>
+    /// on-premises server, edge device, or virtual machines (VM). IAM roles are first
+    /// assigned to these hybrid nodes during the activation process. For more information, see <a>CreateActivation</a>.</p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateManagedInstanceRole<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -19734,12 +19744,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the managed instance where you want to update the role.</p>
+        /// <p>The ID of the managed node where you want to update the role.</p>
         pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(inp);
             self
         }
-        /// <p>The ID of the managed instance where you want to update the role.</p>
+        /// <p>The ID of the managed node where you want to update the role.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
@@ -19766,7 +19776,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateOpsItem<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -20081,7 +20091,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateOpsMetadata<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -20199,7 +20209,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdatePatchBaseline<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -20338,15 +20348,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
-        /// only.</p>
+        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
+        /// nodes only.</p>
         pub fn approved_patches_enable_non_security(mut self, inp: bool) -> Self {
             self.inner = self.inner.approved_patches_enable_non_security(inp);
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
-        /// only.</p>
+        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
+        /// nodes only.</p>
         pub fn set_approved_patches_enable_non_security(
             mut self,
             input: std::option::Option<bool>,
@@ -20448,14 +20458,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        /// <p>Information about the patches to use to update the instances, including target operating
-        /// systems and source repositories. Applies to Linux instances only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating
+        /// systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn sources(mut self, inp: impl Into<crate::model::PatchSource>) -> Self {
             self.inner = self.inner.sources(inp);
             self
         }
-        /// <p>Information about the patches to use to update the instances, including target operating
-        /// systems and source repositories. Applies to Linux instances only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating
+        /// systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
@@ -20493,7 +20503,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateResourceDataSync<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -20601,7 +20611,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateServiceSetting<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -20831,17 +20841,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -20850,7 +20864,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -20866,11 +20880,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

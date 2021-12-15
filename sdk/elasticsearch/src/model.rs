@@ -517,6 +517,110 @@ impl PackageSource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DryRunResults {
+    /// <p>
+    /// Specifies the deployment mechanism through which the update shall be applied on the domain.
+    /// Possible responses are
+    /// <code>Blue/Green</code> (The update will require a blue/green deployment.)
+    /// <code>DynamicUpdate</code> (The update can be applied in-place without a Blue/Green deployment required.)
+    /// <code>Undetermined</code> (The domain is undergoing an update which needs to complete before the deployment type can be predicted.)
+    /// <code>None</code> (The configuration change matches the current configuration and will not result in any update.)
+    /// </p>
+    pub deployment_type: std::option::Option<std::string::String>,
+    /// <p>Contains an optional message associated with the DryRunResults.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl DryRunResults {
+    /// <p>
+    /// Specifies the deployment mechanism through which the update shall be applied on the domain.
+    /// Possible responses are
+    /// <code>Blue/Green</code> (The update will require a blue/green deployment.)
+    /// <code>DynamicUpdate</code> (The update can be applied in-place without a Blue/Green deployment required.)
+    /// <code>Undetermined</code> (The domain is undergoing an update which needs to complete before the deployment type can be predicted.)
+    /// <code>None</code> (The configuration change matches the current configuration and will not result in any update.)
+    /// </p>
+    pub fn deployment_type(&self) -> std::option::Option<&str> {
+        self.deployment_type.as_deref()
+    }
+    /// <p>Contains an optional message associated with the DryRunResults.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for DryRunResults {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DryRunResults");
+        formatter.field("deployment_type", &self.deployment_type);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`DryRunResults`](crate::model::DryRunResults)
+pub mod dry_run_results {
+    /// A builder for [`DryRunResults`](crate::model::DryRunResults)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) deployment_type: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>
+        /// Specifies the deployment mechanism through which the update shall be applied on the domain.
+        /// Possible responses are
+        /// <code>Blue/Green</code> (The update will require a blue/green deployment.)
+        /// <code>DynamicUpdate</code> (The update can be applied in-place without a Blue/Green deployment required.)
+        /// <code>Undetermined</code> (The domain is undergoing an update which needs to complete before the deployment type can be predicted.)
+        /// <code>None</code> (The configuration change matches the current configuration and will not result in any update.)
+        /// </p>
+        pub fn deployment_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.deployment_type = Some(input.into());
+            self
+        }
+        /// <p>
+        /// Specifies the deployment mechanism through which the update shall be applied on the domain.
+        /// Possible responses are
+        /// <code>Blue/Green</code> (The update will require a blue/green deployment.)
+        /// <code>DynamicUpdate</code> (The update can be applied in-place without a Blue/Green deployment required.)
+        /// <code>Undetermined</code> (The domain is undergoing an update which needs to complete before the deployment type can be predicted.)
+        /// <code>None</code> (The configuration change matches the current configuration and will not result in any update.)
+        /// </p>
+        pub fn set_deployment_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.deployment_type = input;
+            self
+        }
+        /// <p>Contains an optional message associated with the DryRunResults.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Contains an optional message associated with the DryRunResults.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DryRunResults`](crate::model::DryRunResults)
+        pub fn build(self) -> crate::model::DryRunResults {
+            crate::model::DryRunResults {
+                deployment_type: self.deployment_type,
+                message: self.message,
+            }
+        }
+    }
+}
+impl DryRunResults {
+    /// Creates a new builder-style object to manufacture [`DryRunResults`](crate::model::DryRunResults)
+    pub fn builder() -> crate::model::dry_run_results::Builder {
+        crate::model::dry_run_results::Builder::default()
+    }
+}
+
 /// <p>The configuration of an Elasticsearch domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

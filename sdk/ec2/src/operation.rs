@@ -312,6 +312,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AllocateHosts {
     }
 }
 
+/// Operation shape for `AllocateIpamPoolCidr`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`allocate_ipam_pool_cidr`](crate::client::Client::allocate_ipam_pool_cidr).
+///
+/// See [`crate::client::fluent_builders::AllocateIpamPoolCidr`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AllocateIpamPoolCidr {
+    _private: (),
+}
+impl AllocateIpamPoolCidr {
+    /// Creates a new builder-style object to manufacture [`AllocateIpamPoolCidrInput`](crate::input::AllocateIpamPoolCidrInput)
+    pub fn builder() -> crate::input::allocate_ipam_pool_cidr_input::Builder {
+        crate::input::allocate_ipam_pool_cidr_input::Builder::default()
+    }
+    /// Creates a new `AllocateIpamPoolCidr` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AllocateIpamPoolCidr {
+    type Output = std::result::Result<
+        crate::output::AllocateIpamPoolCidrOutput,
+        crate::error::AllocateIpamPoolCidrError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_allocate_ipam_pool_cidr_error(response)
+        } else {
+            crate::operation_deser::parse_allocate_ipam_pool_cidr_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ApplySecurityGroupsToClientVpnTargetNetwork`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2138,6 +2172,104 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInternetGateway {
     }
 }
 
+/// Operation shape for `CreateIpam`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_ipam`](crate::client::Client::create_ipam).
+///
+/// See [`crate::client::fluent_builders::CreateIpam`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateIpam {
+    _private: (),
+}
+impl CreateIpam {
+    /// Creates a new builder-style object to manufacture [`CreateIpamInput`](crate::input::CreateIpamInput)
+    pub fn builder() -> crate::input::create_ipam_input::Builder {
+        crate::input::create_ipam_input::Builder::default()
+    }
+    /// Creates a new `CreateIpam` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateIpam {
+    type Output =
+        std::result::Result<crate::output::CreateIpamOutput, crate::error::CreateIpamError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_ipam_error(response)
+        } else {
+            crate::operation_deser::parse_create_ipam_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateIpamPool`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_ipam_pool`](crate::client::Client::create_ipam_pool).
+///
+/// See [`crate::client::fluent_builders::CreateIpamPool`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateIpamPool {
+    _private: (),
+}
+impl CreateIpamPool {
+    /// Creates a new builder-style object to manufacture [`CreateIpamPoolInput`](crate::input::CreateIpamPoolInput)
+    pub fn builder() -> crate::input::create_ipam_pool_input::Builder {
+        crate::input::create_ipam_pool_input::Builder::default()
+    }
+    /// Creates a new `CreateIpamPool` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateIpamPool {
+    type Output =
+        std::result::Result<crate::output::CreateIpamPoolOutput, crate::error::CreateIpamPoolError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_ipam_pool_error(response)
+        } else {
+            crate::operation_deser::parse_create_ipam_pool_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateIpamScope`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_ipam_scope`](crate::client::Client::create_ipam_scope).
+///
+/// See [`crate::client::fluent_builders::CreateIpamScope`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateIpamScope {
+    _private: (),
+}
+impl CreateIpamScope {
+    /// Creates a new builder-style object to manufacture [`CreateIpamScopeInput`](crate::input::CreateIpamScopeInput)
+    pub fn builder() -> crate::input::create_ipam_scope_input::Builder {
+        crate::input::create_ipam_scope_input::Builder::default()
+    }
+    /// Creates a new `CreateIpamScope` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateIpamScope {
+    type Output = std::result::Result<
+        crate::output::CreateIpamScopeOutput,
+        crate::error::CreateIpamScopeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_ipam_scope_error(response)
+        } else {
+            crate::operation_deser::parse_create_ipam_scope_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateKeyPair`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2447,6 +2579,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkAclEntry {
     }
 }
 
+/// Operation shape for `CreateNetworkInsightsAccessScope`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_network_insights_access_scope`](crate::client::Client::create_network_insights_access_scope).
+///
+/// See [`crate::client::fluent_builders::CreateNetworkInsightsAccessScope`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateNetworkInsightsAccessScope {
+    _private: (),
+}
+impl CreateNetworkInsightsAccessScope {
+    /// Creates a new builder-style object to manufacture [`CreateNetworkInsightsAccessScopeInput`](crate::input::CreateNetworkInsightsAccessScopeInput)
+    pub fn builder() -> crate::input::create_network_insights_access_scope_input::Builder {
+        crate::input::create_network_insights_access_scope_input::Builder::default()
+    }
+    /// Creates a new `CreateNetworkInsightsAccessScope` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkInsightsAccessScope {
+    type Output = std::result::Result<
+        crate::output::CreateNetworkInsightsAccessScopeOutput,
+        crate::error::CreateNetworkInsightsAccessScopeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_network_insights_access_scope_error(response)
+        } else {
+            crate::operation_deser::parse_create_network_insights_access_scope_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateNetworkInsightsPath`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2579,6 +2745,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePlacementGroup {
             crate::operation_deser::parse_create_placement_group_error(response)
         } else {
             crate::operation_deser::parse_create_placement_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreatePublicIpv4Pool`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_public_ipv4_pool`](crate::client::Client::create_public_ipv4_pool).
+///
+/// See [`crate::client::fluent_builders::CreatePublicIpv4Pool`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreatePublicIpv4Pool {
+    _private: (),
+}
+impl CreatePublicIpv4Pool {
+    /// Creates a new builder-style object to manufacture [`CreatePublicIpv4PoolInput`](crate::input::CreatePublicIpv4PoolInput)
+    pub fn builder() -> crate::input::create_public_ipv4_pool_input::Builder {
+        crate::input::create_public_ipv4_pool_input::Builder::default()
+    }
+    /// Creates a new `CreatePublicIpv4Pool` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreatePublicIpv4Pool {
+    type Output = std::result::Result<
+        crate::output::CreatePublicIpv4PoolOutput,
+        crate::error::CreatePublicIpv4PoolError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_public_ipv4_pool_error(response)
+        } else {
+            crate::operation_deser::parse_create_public_ipv4_pool_response(response)
         }
     }
 }
@@ -4142,6 +4342,104 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInternetGateway {
     }
 }
 
+/// Operation shape for `DeleteIpam`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_ipam`](crate::client::Client::delete_ipam).
+///
+/// See [`crate::client::fluent_builders::DeleteIpam`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteIpam {
+    _private: (),
+}
+impl DeleteIpam {
+    /// Creates a new builder-style object to manufacture [`DeleteIpamInput`](crate::input::DeleteIpamInput)
+    pub fn builder() -> crate::input::delete_ipam_input::Builder {
+        crate::input::delete_ipam_input::Builder::default()
+    }
+    /// Creates a new `DeleteIpam` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteIpam {
+    type Output =
+        std::result::Result<crate::output::DeleteIpamOutput, crate::error::DeleteIpamError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_ipam_error(response)
+        } else {
+            crate::operation_deser::parse_delete_ipam_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteIpamPool`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_ipam_pool`](crate::client::Client::delete_ipam_pool).
+///
+/// See [`crate::client::fluent_builders::DeleteIpamPool`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteIpamPool {
+    _private: (),
+}
+impl DeleteIpamPool {
+    /// Creates a new builder-style object to manufacture [`DeleteIpamPoolInput`](crate::input::DeleteIpamPoolInput)
+    pub fn builder() -> crate::input::delete_ipam_pool_input::Builder {
+        crate::input::delete_ipam_pool_input::Builder::default()
+    }
+    /// Creates a new `DeleteIpamPool` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteIpamPool {
+    type Output =
+        std::result::Result<crate::output::DeleteIpamPoolOutput, crate::error::DeleteIpamPoolError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_ipam_pool_error(response)
+        } else {
+            crate::operation_deser::parse_delete_ipam_pool_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteIpamScope`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_ipam_scope`](crate::client::Client::delete_ipam_scope).
+///
+/// See [`crate::client::fluent_builders::DeleteIpamScope`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteIpamScope {
+    _private: (),
+}
+impl DeleteIpamScope {
+    /// Creates a new builder-style object to manufacture [`DeleteIpamScopeInput`](crate::input::DeleteIpamScopeInput)
+    pub fn builder() -> crate::input::delete_ipam_scope_input::Builder {
+        crate::input::delete_ipam_scope_input::Builder::default()
+    }
+    /// Creates a new `DeleteIpamScope` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteIpamScope {
+    type Output = std::result::Result<
+        crate::output::DeleteIpamScopeOutput,
+        crate::error::DeleteIpamScopeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_ipam_scope_error(response)
+        } else {
+            crate::operation_deser::parse_delete_ipam_scope_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteKeyPair`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -4451,6 +4749,78 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkAclEntry {
     }
 }
 
+/// Operation shape for `DeleteNetworkInsightsAccessScope`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_network_insights_access_scope`](crate::client::Client::delete_network_insights_access_scope).
+///
+/// See [`crate::client::fluent_builders::DeleteNetworkInsightsAccessScope`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteNetworkInsightsAccessScope {
+    _private: (),
+}
+impl DeleteNetworkInsightsAccessScope {
+    /// Creates a new builder-style object to manufacture [`DeleteNetworkInsightsAccessScopeInput`](crate::input::DeleteNetworkInsightsAccessScopeInput)
+    pub fn builder() -> crate::input::delete_network_insights_access_scope_input::Builder {
+        crate::input::delete_network_insights_access_scope_input::Builder::default()
+    }
+    /// Creates a new `DeleteNetworkInsightsAccessScope` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkInsightsAccessScope {
+    type Output = std::result::Result<
+        crate::output::DeleteNetworkInsightsAccessScopeOutput,
+        crate::error::DeleteNetworkInsightsAccessScopeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_network_insights_access_scope_error(response)
+        } else {
+            crate::operation_deser::parse_delete_network_insights_access_scope_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteNetworkInsightsAccessScopeAnalysis`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_network_insights_access_scope_analysis`](crate::client::Client::delete_network_insights_access_scope_analysis).
+///
+/// See [`crate::client::fluent_builders::DeleteNetworkInsightsAccessScopeAnalysis`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteNetworkInsightsAccessScopeAnalysis {
+    _private: (),
+}
+impl DeleteNetworkInsightsAccessScopeAnalysis {
+    /// Creates a new builder-style object to manufacture [`DeleteNetworkInsightsAccessScopeAnalysisInput`](crate::input::DeleteNetworkInsightsAccessScopeAnalysisInput)
+    pub fn builder() -> crate::input::delete_network_insights_access_scope_analysis_input::Builder {
+        crate::input::delete_network_insights_access_scope_analysis_input::Builder::default()
+    }
+    /// Creates a new `DeleteNetworkInsightsAccessScopeAnalysis` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkInsightsAccessScopeAnalysis {
+    type Output = std::result::Result<
+        crate::output::DeleteNetworkInsightsAccessScopeAnalysisOutput,
+        crate::error::DeleteNetworkInsightsAccessScopeAnalysisError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_network_insights_access_scope_analysis_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_delete_network_insights_access_scope_analysis_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `DeleteNetworkInsightsAnalysis`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -4617,6 +4987,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePlacementGroup {
             crate::operation_deser::parse_delete_placement_group_error(response)
         } else {
             crate::operation_deser::parse_delete_placement_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeletePublicIpv4Pool`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_public_ipv4_pool`](crate::client::Client::delete_public_ipv4_pool).
+///
+/// See [`crate::client::fluent_builders::DeletePublicIpv4Pool`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeletePublicIpv4Pool {
+    _private: (),
+}
+impl DeletePublicIpv4Pool {
+    /// Creates a new builder-style object to manufacture [`DeletePublicIpv4PoolInput`](crate::input::DeletePublicIpv4PoolInput)
+    pub fn builder() -> crate::input::delete_public_ipv4_pool_input::Builder {
+        crate::input::delete_public_ipv4_pool_input::Builder::default()
+    }
+    /// Creates a new `DeletePublicIpv4Pool` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeletePublicIpv4Pool {
+    type Output = std::result::Result<
+        crate::output::DeletePublicIpv4PoolOutput,
+        crate::error::DeletePublicIpv4PoolError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_public_ipv4_pool_error(response)
+        } else {
+            crate::operation_deser::parse_delete_public_ipv4_pool_response(response)
         }
     }
 }
@@ -5704,6 +6108,74 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprovisionByoipCidr {
             crate::operation_deser::parse_deprovision_byoip_cidr_error(response)
         } else {
             crate::operation_deser::parse_deprovision_byoip_cidr_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeprovisionIpamPoolCidr`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`deprovision_ipam_pool_cidr`](crate::client::Client::deprovision_ipam_pool_cidr).
+///
+/// See [`crate::client::fluent_builders::DeprovisionIpamPoolCidr`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeprovisionIpamPoolCidr {
+    _private: (),
+}
+impl DeprovisionIpamPoolCidr {
+    /// Creates a new builder-style object to manufacture [`DeprovisionIpamPoolCidrInput`](crate::input::DeprovisionIpamPoolCidrInput)
+    pub fn builder() -> crate::input::deprovision_ipam_pool_cidr_input::Builder {
+        crate::input::deprovision_ipam_pool_cidr_input::Builder::default()
+    }
+    /// Creates a new `DeprovisionIpamPoolCidr` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeprovisionIpamPoolCidr {
+    type Output = std::result::Result<
+        crate::output::DeprovisionIpamPoolCidrOutput,
+        crate::error::DeprovisionIpamPoolCidrError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_deprovision_ipam_pool_cidr_error(response)
+        } else {
+            crate::operation_deser::parse_deprovision_ipam_pool_cidr_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeprovisionPublicIpv4PoolCidr`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`deprovision_public_ipv4_pool_cidr`](crate::client::Client::deprovision_public_ipv4_pool_cidr).
+///
+/// See [`crate::client::fluent_builders::DeprovisionPublicIpv4PoolCidr`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeprovisionPublicIpv4PoolCidr {
+    _private: (),
+}
+impl DeprovisionPublicIpv4PoolCidr {
+    /// Creates a new builder-style object to manufacture [`DeprovisionPublicIpv4PoolCidrInput`](crate::input::DeprovisionPublicIpv4PoolCidrInput)
+    pub fn builder() -> crate::input::deprovision_public_ipv4_pool_cidr_input::Builder {
+        crate::input::deprovision_public_ipv4_pool_cidr_input::Builder::default()
+    }
+    /// Creates a new `DeprovisionPublicIpv4PoolCidr` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeprovisionPublicIpv4PoolCidr {
+    type Output = std::result::Result<
+        crate::output::DeprovisionPublicIpv4PoolCidrOutput,
+        crate::error::DeprovisionPublicIpv4PoolCidrError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_deprovision_public_ipv4_pool_cidr_error(response)
+        } else {
+            crate::operation_deser::parse_deprovision_public_ipv4_pool_cidr_response(response)
         }
     }
 }
@@ -7564,6 +8036,106 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInternetGateways
     }
 }
 
+/// Operation shape for `DescribeIpamPools`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_ipam_pools`](crate::client::Client::describe_ipam_pools).
+///
+/// See [`crate::client::fluent_builders::DescribeIpamPools`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeIpamPools {
+    _private: (),
+}
+impl DescribeIpamPools {
+    /// Creates a new builder-style object to manufacture [`DescribeIpamPoolsInput`](crate::input::DescribeIpamPoolsInput)
+    pub fn builder() -> crate::input::describe_ipam_pools_input::Builder {
+        crate::input::describe_ipam_pools_input::Builder::default()
+    }
+    /// Creates a new `DescribeIpamPools` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeIpamPools {
+    type Output = std::result::Result<
+        crate::output::DescribeIpamPoolsOutput,
+        crate::error::DescribeIpamPoolsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_ipam_pools_error(response)
+        } else {
+            crate::operation_deser::parse_describe_ipam_pools_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeIpams`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_ipams`](crate::client::Client::describe_ipams).
+///
+/// See [`crate::client::fluent_builders::DescribeIpams`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeIpams {
+    _private: (),
+}
+impl DescribeIpams {
+    /// Creates a new builder-style object to manufacture [`DescribeIpamsInput`](crate::input::DescribeIpamsInput)
+    pub fn builder() -> crate::input::describe_ipams_input::Builder {
+        crate::input::describe_ipams_input::Builder::default()
+    }
+    /// Creates a new `DescribeIpams` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeIpams {
+    type Output =
+        std::result::Result<crate::output::DescribeIpamsOutput, crate::error::DescribeIpamsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_ipams_error(response)
+        } else {
+            crate::operation_deser::parse_describe_ipams_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeIpamScopes`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_ipam_scopes`](crate::client::Client::describe_ipam_scopes).
+///
+/// See [`crate::client::fluent_builders::DescribeIpamScopes`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeIpamScopes {
+    _private: (),
+}
+impl DescribeIpamScopes {
+    /// Creates a new builder-style object to manufacture [`DescribeIpamScopesInput`](crate::input::DescribeIpamScopesInput)
+    pub fn builder() -> crate::input::describe_ipam_scopes_input::Builder {
+        crate::input::describe_ipam_scopes_input::Builder::default()
+    }
+    /// Creates a new `DescribeIpamScopes` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeIpamScopes {
+    type Output = std::result::Result<
+        crate::output::DescribeIpamScopesOutput,
+        crate::error::DescribeIpamScopesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_ipam_scopes_error(response)
+        } else {
+            crate::operation_deser::parse_describe_ipam_scopes_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeIpv6Pools`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -8050,6 +8622,79 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNetworkAcls {
             crate::operation_deser::parse_describe_network_acls_error(response)
         } else {
             crate::operation_deser::parse_describe_network_acls_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeNetworkInsightsAccessScopeAnalyses`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_network_insights_access_scope_analyses`](crate::client::Client::describe_network_insights_access_scope_analyses).
+///
+/// See [`crate::client::fluent_builders::DescribeNetworkInsightsAccessScopeAnalyses`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeNetworkInsightsAccessScopeAnalyses {
+    _private: (),
+}
+impl DescribeNetworkInsightsAccessScopeAnalyses {
+    /// Creates a new builder-style object to manufacture [`DescribeNetworkInsightsAccessScopeAnalysesInput`](crate::input::DescribeNetworkInsightsAccessScopeAnalysesInput)
+    pub fn builder() -> crate::input::describe_network_insights_access_scope_analyses_input::Builder
+    {
+        crate::input::describe_network_insights_access_scope_analyses_input::Builder::default()
+    }
+    /// Creates a new `DescribeNetworkInsightsAccessScopeAnalyses` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeNetworkInsightsAccessScopeAnalyses {
+    type Output = std::result::Result<
+        crate::output::DescribeNetworkInsightsAccessScopeAnalysesOutput,
+        crate::error::DescribeNetworkInsightsAccessScopeAnalysesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_network_insights_access_scope_analyses_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_describe_network_insights_access_scope_analyses_response(
+                response,
+            )
+        }
+    }
+}
+
+/// Operation shape for `DescribeNetworkInsightsAccessScopes`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_network_insights_access_scopes`](crate::client::Client::describe_network_insights_access_scopes).
+///
+/// See [`crate::client::fluent_builders::DescribeNetworkInsightsAccessScopes`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeNetworkInsightsAccessScopes {
+    _private: (),
+}
+impl DescribeNetworkInsightsAccessScopes {
+    /// Creates a new builder-style object to manufacture [`DescribeNetworkInsightsAccessScopesInput`](crate::input::DescribeNetworkInsightsAccessScopesInput)
+    pub fn builder() -> crate::input::describe_network_insights_access_scopes_input::Builder {
+        crate::input::describe_network_insights_access_scopes_input::Builder::default()
+    }
+    /// Creates a new `DescribeNetworkInsightsAccessScopes` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeNetworkInsightsAccessScopes {
+    type Output = std::result::Result<
+        crate::output::DescribeNetworkInsightsAccessScopesOutput,
+        crate::error::DescribeNetworkInsightsAccessScopesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_network_insights_access_scopes_error(response)
+        } else {
+            crate::operation_deser::parse_describe_network_insights_access_scopes_response(response)
         }
     }
 }
@@ -8836,6 +9481,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSnapshots {
             crate::operation_deser::parse_describe_snapshots_error(response)
         } else {
             crate::operation_deser::parse_describe_snapshots_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeSnapshotTierStatus`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_snapshot_tier_status`](crate::client::Client::describe_snapshot_tier_status).
+///
+/// See [`crate::client::fluent_builders::DescribeSnapshotTierStatus`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeSnapshotTierStatus {
+    _private: (),
+}
+impl DescribeSnapshotTierStatus {
+    /// Creates a new builder-style object to manufacture [`DescribeSnapshotTierStatusInput`](crate::input::DescribeSnapshotTierStatusInput)
+    pub fn builder() -> crate::input::describe_snapshot_tier_status_input::Builder {
+        crate::input::describe_snapshot_tier_status_input::Builder::default()
+    }
+    /// Creates a new `DescribeSnapshotTierStatus` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeSnapshotTierStatus {
+    type Output = std::result::Result<
+        crate::output::DescribeSnapshotTierStatusOutput,
+        crate::error::DescribeSnapshotTierStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_snapshot_tier_status_error(response)
+        } else {
+            crate::operation_deser::parse_describe_snapshot_tier_status_response(response)
         }
     }
 }
@@ -10451,6 +11130,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableImageDeprecation 
     }
 }
 
+/// Operation shape for `DisableIpamOrganizationAdminAccount`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`disable_ipam_organization_admin_account`](crate::client::Client::disable_ipam_organization_admin_account).
+///
+/// See [`crate::client::fluent_builders::DisableIpamOrganizationAdminAccount`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DisableIpamOrganizationAdminAccount {
+    _private: (),
+}
+impl DisableIpamOrganizationAdminAccount {
+    /// Creates a new builder-style object to manufacture [`DisableIpamOrganizationAdminAccountInput`](crate::input::DisableIpamOrganizationAdminAccountInput)
+    pub fn builder() -> crate::input::disable_ipam_organization_admin_account_input::Builder {
+        crate::input::disable_ipam_organization_admin_account_input::Builder::default()
+    }
+    /// Creates a new `DisableIpamOrganizationAdminAccount` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DisableIpamOrganizationAdminAccount {
+    type Output = std::result::Result<
+        crate::output::DisableIpamOrganizationAdminAccountOutput,
+        crate::error::DisableIpamOrganizationAdminAccountError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disable_ipam_organization_admin_account_error(response)
+        } else {
+            crate::operation_deser::parse_disable_ipam_organization_admin_account_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DisableSerialConsoleAccess`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -11106,6 +11819,40 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableImageDeprecation {
             crate::operation_deser::parse_enable_image_deprecation_error(response)
         } else {
             crate::operation_deser::parse_enable_image_deprecation_response(response)
+        }
+    }
+}
+
+/// Operation shape for `EnableIpamOrganizationAdminAccount`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`enable_ipam_organization_admin_account`](crate::client::Client::enable_ipam_organization_admin_account).
+///
+/// See [`crate::client::fluent_builders::EnableIpamOrganizationAdminAccount`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct EnableIpamOrganizationAdminAccount {
+    _private: (),
+}
+impl EnableIpamOrganizationAdminAccount {
+    /// Creates a new builder-style object to manufacture [`EnableIpamOrganizationAdminAccountInput`](crate::input::EnableIpamOrganizationAdminAccountInput)
+    pub fn builder() -> crate::input::enable_ipam_organization_admin_account_input::Builder {
+        crate::input::enable_ipam_organization_admin_account_input::Builder::default()
+    }
+    /// Creates a new `EnableIpamOrganizationAdminAccount` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for EnableIpamOrganizationAdminAccount {
+    type Output = std::result::Result<
+        crate::output::EnableIpamOrganizationAdminAccountOutput,
+        crate::error::EnableIpamOrganizationAdminAccountError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_enable_ipam_organization_admin_account_error(response)
+        } else {
+            crate::operation_deser::parse_enable_ipam_organization_admin_account_response(response)
         }
     }
 }
@@ -11906,6 +12653,142 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInstanceTypesFromInst
     }
 }
 
+/// Operation shape for `GetIpamAddressHistory`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_ipam_address_history`](crate::client::Client::get_ipam_address_history).
+///
+/// See [`crate::client::fluent_builders::GetIpamAddressHistory`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetIpamAddressHistory {
+    _private: (),
+}
+impl GetIpamAddressHistory {
+    /// Creates a new builder-style object to manufacture [`GetIpamAddressHistoryInput`](crate::input::GetIpamAddressHistoryInput)
+    pub fn builder() -> crate::input::get_ipam_address_history_input::Builder {
+        crate::input::get_ipam_address_history_input::Builder::default()
+    }
+    /// Creates a new `GetIpamAddressHistory` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetIpamAddressHistory {
+    type Output = std::result::Result<
+        crate::output::GetIpamAddressHistoryOutput,
+        crate::error::GetIpamAddressHistoryError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_ipam_address_history_error(response)
+        } else {
+            crate::operation_deser::parse_get_ipam_address_history_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetIpamPoolAllocations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_ipam_pool_allocations`](crate::client::Client::get_ipam_pool_allocations).
+///
+/// See [`crate::client::fluent_builders::GetIpamPoolAllocations`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetIpamPoolAllocations {
+    _private: (),
+}
+impl GetIpamPoolAllocations {
+    /// Creates a new builder-style object to manufacture [`GetIpamPoolAllocationsInput`](crate::input::GetIpamPoolAllocationsInput)
+    pub fn builder() -> crate::input::get_ipam_pool_allocations_input::Builder {
+        crate::input::get_ipam_pool_allocations_input::Builder::default()
+    }
+    /// Creates a new `GetIpamPoolAllocations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetIpamPoolAllocations {
+    type Output = std::result::Result<
+        crate::output::GetIpamPoolAllocationsOutput,
+        crate::error::GetIpamPoolAllocationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_ipam_pool_allocations_error(response)
+        } else {
+            crate::operation_deser::parse_get_ipam_pool_allocations_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetIpamPoolCidrs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_ipam_pool_cidrs`](crate::client::Client::get_ipam_pool_cidrs).
+///
+/// See [`crate::client::fluent_builders::GetIpamPoolCidrs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetIpamPoolCidrs {
+    _private: (),
+}
+impl GetIpamPoolCidrs {
+    /// Creates a new builder-style object to manufacture [`GetIpamPoolCidrsInput`](crate::input::GetIpamPoolCidrsInput)
+    pub fn builder() -> crate::input::get_ipam_pool_cidrs_input::Builder {
+        crate::input::get_ipam_pool_cidrs_input::Builder::default()
+    }
+    /// Creates a new `GetIpamPoolCidrs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetIpamPoolCidrs {
+    type Output = std::result::Result<
+        crate::output::GetIpamPoolCidrsOutput,
+        crate::error::GetIpamPoolCidrsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_ipam_pool_cidrs_error(response)
+        } else {
+            crate::operation_deser::parse_get_ipam_pool_cidrs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetIpamResourceCidrs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_ipam_resource_cidrs`](crate::client::Client::get_ipam_resource_cidrs).
+///
+/// See [`crate::client::fluent_builders::GetIpamResourceCidrs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetIpamResourceCidrs {
+    _private: (),
+}
+impl GetIpamResourceCidrs {
+    /// Creates a new builder-style object to manufacture [`GetIpamResourceCidrsInput`](crate::input::GetIpamResourceCidrsInput)
+    pub fn builder() -> crate::input::get_ipam_resource_cidrs_input::Builder {
+        crate::input::get_ipam_resource_cidrs_input::Builder::default()
+    }
+    /// Creates a new `GetIpamResourceCidrs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetIpamResourceCidrs {
+    type Output = std::result::Result<
+        crate::output::GetIpamResourceCidrsOutput,
+        crate::error::GetIpamResourceCidrsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_ipam_resource_cidrs_error(response)
+        } else {
+            crate::operation_deser::parse_get_ipam_resource_cidrs_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetLaunchTemplateData`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -12004,6 +12887,81 @@ impl aws_smithy_http::response::ParseStrictResponse for GetManagedPrefixListEntr
             crate::operation_deser::parse_get_managed_prefix_list_entries_error(response)
         } else {
             crate::operation_deser::parse_get_managed_prefix_list_entries_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetNetworkInsightsAccessScopeAnalysisFindings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_network_insights_access_scope_analysis_findings`](crate::client::Client::get_network_insights_access_scope_analysis_findings).
+///
+/// See [`crate::client::fluent_builders::GetNetworkInsightsAccessScopeAnalysisFindings`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetNetworkInsightsAccessScopeAnalysisFindings {
+    _private: (),
+}
+impl GetNetworkInsightsAccessScopeAnalysisFindings {
+    /// Creates a new builder-style object to manufacture [`GetNetworkInsightsAccessScopeAnalysisFindingsInput`](crate::input::GetNetworkInsightsAccessScopeAnalysisFindingsInput)
+    pub fn builder(
+    ) -> crate::input::get_network_insights_access_scope_analysis_findings_input::Builder {
+        crate::input::get_network_insights_access_scope_analysis_findings_input::Builder::default()
+    }
+    /// Creates a new `GetNetworkInsightsAccessScopeAnalysisFindings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse
+    for GetNetworkInsightsAccessScopeAnalysisFindings
+{
+    type Output = std::result::Result<
+        crate::output::GetNetworkInsightsAccessScopeAnalysisFindingsOutput,
+        crate::error::GetNetworkInsightsAccessScopeAnalysisFindingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_network_insights_access_scope_analysis_findings_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_get_network_insights_access_scope_analysis_findings_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetNetworkInsightsAccessScopeContent`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_network_insights_access_scope_content`](crate::client::Client::get_network_insights_access_scope_content).
+///
+/// See [`crate::client::fluent_builders::GetNetworkInsightsAccessScopeContent`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetNetworkInsightsAccessScopeContent {
+    _private: (),
+}
+impl GetNetworkInsightsAccessScopeContent {
+    /// Creates a new builder-style object to manufacture [`GetNetworkInsightsAccessScopeContentInput`](crate::input::GetNetworkInsightsAccessScopeContentInput)
+    pub fn builder() -> crate::input::get_network_insights_access_scope_content_input::Builder {
+        crate::input::get_network_insights_access_scope_content_input::Builder::default()
+    }
+    /// Creates a new `GetNetworkInsightsAccessScopeContent` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetNetworkInsightsAccessScopeContent {
+    type Output = std::result::Result<
+        crate::output::GetNetworkInsightsAccessScopeContentOutput,
+        crate::error::GetNetworkInsightsAccessScopeContentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_network_insights_access_scope_content_error(response)
+        } else {
+            crate::operation_deser::parse_get_network_insights_access_scope_content_response(
+                response,
+            )
         }
     }
 }
@@ -12637,6 +13595,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportVolume {
             crate::operation_deser::parse_import_volume_error(response)
         } else {
             crate::operation_deser::parse_import_volume_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListSnapshotsInRecycleBin`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_snapshots_in_recycle_bin`](crate::client::Client::list_snapshots_in_recycle_bin).
+///
+/// See [`crate::client::fluent_builders::ListSnapshotsInRecycleBin`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListSnapshotsInRecycleBin {
+    _private: (),
+}
+impl ListSnapshotsInRecycleBin {
+    /// Creates a new builder-style object to manufacture [`ListSnapshotsInRecycleBinInput`](crate::input::ListSnapshotsInRecycleBinInput)
+    pub fn builder() -> crate::input::list_snapshots_in_recycle_bin_input::Builder {
+        crate::input::list_snapshots_in_recycle_bin_input::Builder::default()
+    }
+    /// Creates a new `ListSnapshotsInRecycleBin` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListSnapshotsInRecycleBin {
+    type Output = std::result::Result<
+        crate::output::ListSnapshotsInRecycleBinOutput,
+        crate::error::ListSnapshotsInRecycleBinError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_snapshots_in_recycle_bin_error(response)
+        } else {
+            crate::operation_deser::parse_list_snapshots_in_recycle_bin_response(response)
         }
     }
 }
@@ -13322,6 +14314,138 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyInstancePlacement 
     }
 }
 
+/// Operation shape for `ModifyIpam`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`modify_ipam`](crate::client::Client::modify_ipam).
+///
+/// See [`crate::client::fluent_builders::ModifyIpam`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ModifyIpam {
+    _private: (),
+}
+impl ModifyIpam {
+    /// Creates a new builder-style object to manufacture [`ModifyIpamInput`](crate::input::ModifyIpamInput)
+    pub fn builder() -> crate::input::modify_ipam_input::Builder {
+        crate::input::modify_ipam_input::Builder::default()
+    }
+    /// Creates a new `ModifyIpam` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ModifyIpam {
+    type Output =
+        std::result::Result<crate::output::ModifyIpamOutput, crate::error::ModifyIpamError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_modify_ipam_error(response)
+        } else {
+            crate::operation_deser::parse_modify_ipam_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ModifyIpamPool`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`modify_ipam_pool`](crate::client::Client::modify_ipam_pool).
+///
+/// See [`crate::client::fluent_builders::ModifyIpamPool`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ModifyIpamPool {
+    _private: (),
+}
+impl ModifyIpamPool {
+    /// Creates a new builder-style object to manufacture [`ModifyIpamPoolInput`](crate::input::ModifyIpamPoolInput)
+    pub fn builder() -> crate::input::modify_ipam_pool_input::Builder {
+        crate::input::modify_ipam_pool_input::Builder::default()
+    }
+    /// Creates a new `ModifyIpamPool` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ModifyIpamPool {
+    type Output =
+        std::result::Result<crate::output::ModifyIpamPoolOutput, crate::error::ModifyIpamPoolError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_modify_ipam_pool_error(response)
+        } else {
+            crate::operation_deser::parse_modify_ipam_pool_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ModifyIpamResourceCidr`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`modify_ipam_resource_cidr`](crate::client::Client::modify_ipam_resource_cidr).
+///
+/// See [`crate::client::fluent_builders::ModifyIpamResourceCidr`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ModifyIpamResourceCidr {
+    _private: (),
+}
+impl ModifyIpamResourceCidr {
+    /// Creates a new builder-style object to manufacture [`ModifyIpamResourceCidrInput`](crate::input::ModifyIpamResourceCidrInput)
+    pub fn builder() -> crate::input::modify_ipam_resource_cidr_input::Builder {
+        crate::input::modify_ipam_resource_cidr_input::Builder::default()
+    }
+    /// Creates a new `ModifyIpamResourceCidr` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ModifyIpamResourceCidr {
+    type Output = std::result::Result<
+        crate::output::ModifyIpamResourceCidrOutput,
+        crate::error::ModifyIpamResourceCidrError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_modify_ipam_resource_cidr_error(response)
+        } else {
+            crate::operation_deser::parse_modify_ipam_resource_cidr_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ModifyIpamScope`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`modify_ipam_scope`](crate::client::Client::modify_ipam_scope).
+///
+/// See [`crate::client::fluent_builders::ModifyIpamScope`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ModifyIpamScope {
+    _private: (),
+}
+impl ModifyIpamScope {
+    /// Creates a new builder-style object to manufacture [`ModifyIpamScopeInput`](crate::input::ModifyIpamScopeInput)
+    pub fn builder() -> crate::input::modify_ipam_scope_input::Builder {
+        crate::input::modify_ipam_scope_input::Builder::default()
+    }
+    /// Creates a new `ModifyIpamScope` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ModifyIpamScope {
+    type Output = std::result::Result<
+        crate::output::ModifyIpamScopeOutput,
+        crate::error::ModifyIpamScopeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_modify_ipam_scope_error(response)
+        } else {
+            crate::operation_deser::parse_modify_ipam_scope_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ModifyLaunchTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -13424,6 +14548,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyNetworkInterfaceAt
     }
 }
 
+/// Operation shape for `ModifyPrivateDnsNameOptions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`modify_private_dns_name_options`](crate::client::Client::modify_private_dns_name_options).
+///
+/// See [`crate::client::fluent_builders::ModifyPrivateDnsNameOptions`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ModifyPrivateDnsNameOptions {
+    _private: (),
+}
+impl ModifyPrivateDnsNameOptions {
+    /// Creates a new builder-style object to manufacture [`ModifyPrivateDnsNameOptionsInput`](crate::input::ModifyPrivateDnsNameOptionsInput)
+    pub fn builder() -> crate::input::modify_private_dns_name_options_input::Builder {
+        crate::input::modify_private_dns_name_options_input::Builder::default()
+    }
+    /// Creates a new `ModifyPrivateDnsNameOptions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ModifyPrivateDnsNameOptions {
+    type Output = std::result::Result<
+        crate::output::ModifyPrivateDnsNameOptionsOutput,
+        crate::error::ModifyPrivateDnsNameOptionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_modify_private_dns_name_options_error(response)
+        } else {
+            crate::operation_deser::parse_modify_private_dns_name_options_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ModifyReservedInstances`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -13522,6 +14680,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifySnapshotAttribute 
             crate::operation_deser::parse_modify_snapshot_attribute_error(response)
         } else {
             crate::operation_deser::parse_modify_snapshot_attribute_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ModifySnapshotTier`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`modify_snapshot_tier`](crate::client::Client::modify_snapshot_tier).
+///
+/// See [`crate::client::fluent_builders::ModifySnapshotTier`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ModifySnapshotTier {
+    _private: (),
+}
+impl ModifySnapshotTier {
+    /// Creates a new builder-style object to manufacture [`ModifySnapshotTierInput`](crate::input::ModifySnapshotTierInput)
+    pub fn builder() -> crate::input::modify_snapshot_tier_input::Builder {
+        crate::input::modify_snapshot_tier_input::Builder::default()
+    }
+    /// Creates a new `ModifySnapshotTier` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ModifySnapshotTier {
+    type Output = std::result::Result<
+        crate::output::ModifySnapshotTierOutput,
+        crate::error::ModifySnapshotTierError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_modify_snapshot_tier_error(response)
+        } else {
+            crate::operation_deser::parse_modify_snapshot_tier_response(response)
         }
     }
 }
@@ -14320,6 +15512,40 @@ impl aws_smithy_http::response::ParseStrictResponse for MoveAddressToVpc {
     }
 }
 
+/// Operation shape for `MoveByoipCidrToIpam`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`move_byoip_cidr_to_ipam`](crate::client::Client::move_byoip_cidr_to_ipam).
+///
+/// See [`crate::client::fluent_builders::MoveByoipCidrToIpam`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct MoveByoipCidrToIpam {
+    _private: (),
+}
+impl MoveByoipCidrToIpam {
+    /// Creates a new builder-style object to manufacture [`MoveByoipCidrToIpamInput`](crate::input::MoveByoipCidrToIpamInput)
+    pub fn builder() -> crate::input::move_byoip_cidr_to_ipam_input::Builder {
+        crate::input::move_byoip_cidr_to_ipam_input::Builder::default()
+    }
+    /// Creates a new `MoveByoipCidrToIpam` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for MoveByoipCidrToIpam {
+    type Output = std::result::Result<
+        crate::output::MoveByoipCidrToIpamOutput,
+        crate::error::MoveByoipCidrToIpamError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_move_byoip_cidr_to_ipam_error(response)
+        } else {
+            crate::operation_deser::parse_move_byoip_cidr_to_ipam_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ProvisionByoipCidr`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -14350,6 +15576,74 @@ impl aws_smithy_http::response::ParseStrictResponse for ProvisionByoipCidr {
             crate::operation_deser::parse_provision_byoip_cidr_error(response)
         } else {
             crate::operation_deser::parse_provision_byoip_cidr_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ProvisionIpamPoolCidr`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`provision_ipam_pool_cidr`](crate::client::Client::provision_ipam_pool_cidr).
+///
+/// See [`crate::client::fluent_builders::ProvisionIpamPoolCidr`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ProvisionIpamPoolCidr {
+    _private: (),
+}
+impl ProvisionIpamPoolCidr {
+    /// Creates a new builder-style object to manufacture [`ProvisionIpamPoolCidrInput`](crate::input::ProvisionIpamPoolCidrInput)
+    pub fn builder() -> crate::input::provision_ipam_pool_cidr_input::Builder {
+        crate::input::provision_ipam_pool_cidr_input::Builder::default()
+    }
+    /// Creates a new `ProvisionIpamPoolCidr` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ProvisionIpamPoolCidr {
+    type Output = std::result::Result<
+        crate::output::ProvisionIpamPoolCidrOutput,
+        crate::error::ProvisionIpamPoolCidrError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_provision_ipam_pool_cidr_error(response)
+        } else {
+            crate::operation_deser::parse_provision_ipam_pool_cidr_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ProvisionPublicIpv4PoolCidr`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`provision_public_ipv4_pool_cidr`](crate::client::Client::provision_public_ipv4_pool_cidr).
+///
+/// See [`crate::client::fluent_builders::ProvisionPublicIpv4PoolCidr`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ProvisionPublicIpv4PoolCidr {
+    _private: (),
+}
+impl ProvisionPublicIpv4PoolCidr {
+    /// Creates a new builder-style object to manufacture [`ProvisionPublicIpv4PoolCidrInput`](crate::input::ProvisionPublicIpv4PoolCidrInput)
+    pub fn builder() -> crate::input::provision_public_ipv4_pool_cidr_input::Builder {
+        crate::input::provision_public_ipv4_pool_cidr_input::Builder::default()
+    }
+    /// Creates a new `ProvisionPublicIpv4PoolCidr` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ProvisionPublicIpv4PoolCidr {
+    type Output = std::result::Result<
+        crate::output::ProvisionPublicIpv4PoolCidrOutput,
+        crate::error::ProvisionPublicIpv4PoolCidrError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_provision_public_ipv4_pool_cidr_error(response)
+        } else {
+            crate::operation_deser::parse_provision_public_ipv4_pool_cidr_response(response)
         }
     }
 }
@@ -14882,6 +16176,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ReleaseHosts {
             crate::operation_deser::parse_release_hosts_error(response)
         } else {
             crate::operation_deser::parse_release_hosts_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ReleaseIpamPoolAllocation`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`release_ipam_pool_allocation`](crate::client::Client::release_ipam_pool_allocation).
+///
+/// See [`crate::client::fluent_builders::ReleaseIpamPoolAllocation`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ReleaseIpamPoolAllocation {
+    _private: (),
+}
+impl ReleaseIpamPoolAllocation {
+    /// Creates a new builder-style object to manufacture [`ReleaseIpamPoolAllocationInput`](crate::input::ReleaseIpamPoolAllocationInput)
+    pub fn builder() -> crate::input::release_ipam_pool_allocation_input::Builder {
+        crate::input::release_ipam_pool_allocation_input::Builder::default()
+    }
+    /// Creates a new `ReleaseIpamPoolAllocation` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ReleaseIpamPoolAllocation {
+    type Output = std::result::Result<
+        crate::output::ReleaseIpamPoolAllocationOutput,
+        crate::error::ReleaseIpamPoolAllocationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_release_ipam_pool_allocation_error(response)
+        } else {
+            crate::operation_deser::parse_release_ipam_pool_allocation_response(response)
         }
     }
 }
@@ -15498,6 +16826,74 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreManagedPrefixList
     }
 }
 
+/// Operation shape for `RestoreSnapshotFromRecycleBin`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`restore_snapshot_from_recycle_bin`](crate::client::Client::restore_snapshot_from_recycle_bin).
+///
+/// See [`crate::client::fluent_builders::RestoreSnapshotFromRecycleBin`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RestoreSnapshotFromRecycleBin {
+    _private: (),
+}
+impl RestoreSnapshotFromRecycleBin {
+    /// Creates a new builder-style object to manufacture [`RestoreSnapshotFromRecycleBinInput`](crate::input::RestoreSnapshotFromRecycleBinInput)
+    pub fn builder() -> crate::input::restore_snapshot_from_recycle_bin_input::Builder {
+        crate::input::restore_snapshot_from_recycle_bin_input::Builder::default()
+    }
+    /// Creates a new `RestoreSnapshotFromRecycleBin` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RestoreSnapshotFromRecycleBin {
+    type Output = std::result::Result<
+        crate::output::RestoreSnapshotFromRecycleBinOutput,
+        crate::error::RestoreSnapshotFromRecycleBinError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_restore_snapshot_from_recycle_bin_error(response)
+        } else {
+            crate::operation_deser::parse_restore_snapshot_from_recycle_bin_response(response)
+        }
+    }
+}
+
+/// Operation shape for `RestoreSnapshotTier`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`restore_snapshot_tier`](crate::client::Client::restore_snapshot_tier).
+///
+/// See [`crate::client::fluent_builders::RestoreSnapshotTier`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RestoreSnapshotTier {
+    _private: (),
+}
+impl RestoreSnapshotTier {
+    /// Creates a new builder-style object to manufacture [`RestoreSnapshotTierInput`](crate::input::RestoreSnapshotTierInput)
+    pub fn builder() -> crate::input::restore_snapshot_tier_input::Builder {
+        crate::input::restore_snapshot_tier_input::Builder::default()
+    }
+    /// Creates a new `RestoreSnapshotTier` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RestoreSnapshotTier {
+    type Output = std::result::Result<
+        crate::output::RestoreSnapshotTierOutput,
+        crate::error::RestoreSnapshotTierError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_restore_snapshot_tier_error(response)
+        } else {
+            crate::operation_deser::parse_restore_snapshot_tier_response(response)
+        }
+    }
+}
+
 /// Operation shape for `RevokeClientVpnIngress`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -15830,6 +17226,44 @@ impl aws_smithy_http::response::ParseStrictResponse for StartInstances {
             crate::operation_deser::parse_start_instances_error(response)
         } else {
             crate::operation_deser::parse_start_instances_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartNetworkInsightsAccessScopeAnalysis`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_network_insights_access_scope_analysis`](crate::client::Client::start_network_insights_access_scope_analysis).
+///
+/// See [`crate::client::fluent_builders::StartNetworkInsightsAccessScopeAnalysis`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartNetworkInsightsAccessScopeAnalysis {
+    _private: (),
+}
+impl StartNetworkInsightsAccessScopeAnalysis {
+    /// Creates a new builder-style object to manufacture [`StartNetworkInsightsAccessScopeAnalysisInput`](crate::input::StartNetworkInsightsAccessScopeAnalysisInput)
+    pub fn builder() -> crate::input::start_network_insights_access_scope_analysis_input::Builder {
+        crate::input::start_network_insights_access_scope_analysis_input::Builder::default()
+    }
+    /// Creates a new `StartNetworkInsightsAccessScopeAnalysis` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartNetworkInsightsAccessScopeAnalysis {
+    type Output = std::result::Result<
+        crate::output::StartNetworkInsightsAccessScopeAnalysisOutput,
+        crate::error::StartNetworkInsightsAccessScopeAnalysisError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_network_insights_access_scope_analysis_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_start_network_insights_access_scope_analysis_response(
+                response,
+            )
         }
     }
 }

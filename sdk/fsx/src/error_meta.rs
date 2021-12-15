@@ -17,6 +17,8 @@ pub enum Error {
     BackupRestoring(crate::error::BackupRestoring),
     /// <p>A generic error indicating a failure with a client request.</p>
     BadRequest(crate::error::BadRequest),
+    /// <p>No data repository associations were found based upon the supplied parameters.</p>
+    DataRepositoryAssociationNotFound(crate::error::DataRepositoryAssociationNotFound),
     /// <p>The data repository task could not be canceled because the task has already ended.</p>
     DataRepositoryTaskEnded(crate::error::DataRepositoryTaskEnded),
     /// <p>An existing data repository task is currently executing on the file system.  
@@ -30,14 +32,15 @@ pub enum Error {
     /// token but different parameters settings. A client request token should always uniquely
     /// identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
-    /// <p>Amazon FSx doesn't support Multi-AZ Windows File Server
-    /// copy backup in the destination Region, so the copied backup
-    /// can't be restored.</p>
+    /// <p>Amazon FSx doesn't support Multi-AZ Windows File Server copy backup in the
+    /// destination Region, so the copied backup can't be restored.</p>
     IncompatibleRegionForMultiAz(crate::error::IncompatibleRegionForMultiAz),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The Key Management Service (KMS) key of the destination
-    /// backup is invalid.</p>
+    /// <p>You have filtered the response to a data repository type that is not supported.</p>
+    InvalidDataRepositoryType(crate::error::InvalidDataRepositoryType),
+    /// <p>The Key Management Service (KMS) key of the destination backup is not
+    /// valid.</p>
     InvalidDestinationKmsKey(crate::error::InvalidDestinationKmsKey),
     /// <p>The path provided for data repository export isn't valid.</p>
     InvalidExportPath(crate::error::InvalidExportPath),
@@ -47,11 +50,11 @@ pub enum Error {
     InvalidNetworkSettings(crate::error::InvalidNetworkSettings),
     /// <p>An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create your file system again, using a valid value.</p>
     InvalidPerUnitStorageThroughput(crate::error::InvalidPerUnitStorageThroughput),
-    /// <p>The Region provided for <code>Source Region</code> is invalid or
-    /// is in a different Amazon Web Services partition.</p>
+    /// <p>The Region provided for <code>SourceRegion</code> is not valid or is in a different
+    /// Amazon Web Services partition.</p>
     InvalidRegion(crate::error::InvalidRegion),
-    /// <p>The Key Management Service (KMS) key of the source backup
-    /// is invalid.</p>
+    /// <p>The Key Management Service (KMS) key of the source backup is not
+    /// valid.</p>
     InvalidSourceKmsKey(crate::error::InvalidSourceKmsKey),
     /// <p>A file system configuration is required for this operation.</p>
     MissingFileSystemConfiguration(crate::error::MissingFileSystemConfiguration),
@@ -67,8 +70,10 @@ pub enum Error {
     /// <p>An error indicating that a particular service limit was exceeded. You can increase
     /// some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
-    /// <p>The request was rejected because the lifecycle status of the
-    /// source backup is not <code>AVAILABLE</code>.</p>
+    /// <p>No Amazon FSx snapshots were found based on the supplied parameters.</p>
+    SnapshotNotFound(crate::error::SnapshotNotFound),
+    /// <p>The request was rejected because the lifecycle status of the source backup isn't
+    /// <code>AVAILABLE</code>.</p>
     SourceBackupUnavailable(crate::error::SourceBackupUnavailable),
     /// <p>No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.</p>
     StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
@@ -88,6 +93,7 @@ impl std::fmt::Display for Error {
             Error::BackupNotFound(inner) => inner.fmt(f),
             Error::BackupRestoring(inner) => inner.fmt(f),
             Error::BadRequest(inner) => inner.fmt(f),
+            Error::DataRepositoryAssociationNotFound(inner) => inner.fmt(f),
             Error::DataRepositoryTaskEnded(inner) => inner.fmt(f),
             Error::DataRepositoryTaskExecuting(inner) => inner.fmt(f),
             Error::DataRepositoryTaskNotFound(inner) => inner.fmt(f),
@@ -95,6 +101,7 @@ impl std::fmt::Display for Error {
             Error::IncompatibleParameterError(inner) => inner.fmt(f),
             Error::IncompatibleRegionForMultiAz(inner) => inner.fmt(f),
             Error::InternalServerError(inner) => inner.fmt(f),
+            Error::InvalidDataRepositoryType(inner) => inner.fmt(f),
             Error::InvalidDestinationKmsKey(inner) => inner.fmt(f),
             Error::InvalidExportPath(inner) => inner.fmt(f),
             Error::InvalidImportPath(inner) => inner.fmt(f),
@@ -108,6 +115,7 @@ impl std::fmt::Display for Error {
             Error::ResourceDoesNotSupportTagging(inner) => inner.fmt(f),
             Error::ResourceNotFound(inner) => inner.fmt(f),
             Error::ServiceLimitExceeded(inner) => inner.fmt(f),
+            Error::SnapshotNotFound(inner) => inner.fmt(f),
             Error::SourceBackupUnavailable(inner) => inner.fmt(f),
             Error::StorageVirtualMachineNotFound(inner) => inner.fmt(f),
             Error::UnsupportedOperation(inner) => inner.fmt(f),
@@ -255,6 +263,32 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::CreateDataRepositoryAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::CreateDataRepositoryAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateDataRepositoryAssociationErrorKind::BadRequest(inner) => Error::BadRequest(inner),
+                crate::error::CreateDataRepositoryAssociationErrorKind::FileSystemNotFound(inner) => Error::FileSystemNotFound(inner),
+                crate::error::CreateDataRepositoryAssociationErrorKind::IncompatibleParameterError(inner) => Error::IncompatibleParameterError(inner),
+                crate::error::CreateDataRepositoryAssociationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::CreateDataRepositoryAssociationErrorKind::ServiceLimitExceeded(inner) => Error::ServiceLimitExceeded(inner),
+                crate::error::CreateDataRepositoryAssociationErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+                crate::error::CreateDataRepositoryAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDataRepositoryTaskError, R>>
     for Error
 where
@@ -362,6 +396,31 @@ where
                 crate::error::CreateFileSystemFromBackupErrorKind::ServiceLimitExceeded(inner) => Error::ServiceLimitExceeded(inner),
                 crate::error::CreateFileSystemFromBackupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateSnapshotError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateSnapshotErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
+                crate::error::CreateSnapshotErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::CreateSnapshotErrorKind::ServiceLimitExceeded(inner) => {
+                    Error::ServiceLimitExceeded(inner)
+                }
+                crate::error::CreateSnapshotErrorKind::VolumeNotFound(inner) => {
+                    Error::VolumeNotFound(inner)
+                }
+                crate::error::CreateSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -514,6 +573,31 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DeleteDataRepositoryAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DeleteDataRepositoryAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeleteDataRepositoryAssociationErrorKind::BadRequest(inner) => Error::BadRequest(inner),
+                crate::error::DeleteDataRepositoryAssociationErrorKind::DataRepositoryAssociationNotFound(inner) => Error::DataRepositoryAssociationNotFound(inner),
+                crate::error::DeleteDataRepositoryAssociationErrorKind::IncompatibleParameterError(inner) => Error::IncompatibleParameterError(inner),
+                crate::error::DeleteDataRepositoryAssociationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::DeleteDataRepositoryAssociationErrorKind::ServiceLimitExceeded(inner) => Error::ServiceLimitExceeded(inner),
+                crate::error::DeleteDataRepositoryAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFileSystemError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -541,6 +625,28 @@ where
                 crate::error::DeleteFileSystemErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteSnapshotError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteSnapshotErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
+                crate::error::DeleteSnapshotErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::DeleteSnapshotErrorKind::SnapshotNotFound(inner) => {
+                    Error::SnapshotNotFound(inner)
+                }
+                crate::error::DeleteSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -613,6 +719,32 @@ where
                 }
                 crate::error::DescribeBackupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::error::DescribeDataRepositoryAssociationsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeDataRepositoryAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeDataRepositoryAssociationsErrorKind::BadRequest(inner) => Error::BadRequest(inner),
+                crate::error::DescribeDataRepositoryAssociationsErrorKind::DataRepositoryAssociationNotFound(inner) => Error::DataRepositoryAssociationNotFound(inner),
+                crate::error::DescribeDataRepositoryAssociationsErrorKind::FileSystemNotFound(inner) => Error::FileSystemNotFound(inner),
+                crate::error::DescribeDataRepositoryAssociationsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::DescribeDataRepositoryAssociationsErrorKind::InvalidDataRepositoryType(inner) => Error::InvalidDataRepositoryType(inner),
+                crate::error::DescribeDataRepositoryAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -693,6 +825,32 @@ where
                     Error::InternalServerError(inner)
                 }
                 crate::error::DescribeFileSystemsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSnapshotsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeSnapshotsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeSnapshotsErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
+                crate::error::DescribeSnapshotsErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::DescribeSnapshotsErrorKind::SnapshotNotFound(inner) => {
+                    Error::SnapshotNotFound(inner)
+                }
+                crate::error::DescribeSnapshotsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -804,6 +962,66 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ReleaseFileSystemNfsV3LocksError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ReleaseFileSystemNfsV3LocksError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ReleaseFileSystemNfsV3LocksErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
+                crate::error::ReleaseFileSystemNfsV3LocksErrorKind::FileSystemNotFound(inner) => {
+                    Error::FileSystemNotFound(inner)
+                }
+                crate::error::ReleaseFileSystemNfsV3LocksErrorKind::IncompatibleParameterError(
+                    inner,
+                ) => Error::IncompatibleParameterError(inner),
+                crate::error::ReleaseFileSystemNfsV3LocksErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::ReleaseFileSystemNfsV3LocksErrorKind::ServiceLimitExceeded(inner) => {
+                    Error::ServiceLimitExceeded(inner)
+                }
+                crate::error::ReleaseFileSystemNfsV3LocksErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RestoreVolumeFromSnapshotError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::RestoreVolumeFromSnapshotError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::RestoreVolumeFromSnapshotErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
+                crate::error::RestoreVolumeFromSnapshotErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::RestoreVolumeFromSnapshotErrorKind::VolumeNotFound(inner) => {
+                    Error::VolumeNotFound(inner)
+                }
+                crate::error::RestoreVolumeFromSnapshotErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -856,6 +1074,31 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::UpdateDataRepositoryAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateDataRepositoryAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateDataRepositoryAssociationErrorKind::BadRequest(inner) => Error::BadRequest(inner),
+                crate::error::UpdateDataRepositoryAssociationErrorKind::DataRepositoryAssociationNotFound(inner) => Error::DataRepositoryAssociationNotFound(inner),
+                crate::error::UpdateDataRepositoryAssociationErrorKind::IncompatibleParameterError(inner) => Error::IncompatibleParameterError(inner),
+                crate::error::UpdateDataRepositoryAssociationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::UpdateDataRepositoryAssociationErrorKind::ServiceLimitExceeded(inner) => Error::ServiceLimitExceeded(inner),
+                crate::error::UpdateDataRepositoryAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFileSystemError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -889,6 +1132,28 @@ where
                 crate::error::UpdateFileSystemErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateSnapshotError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateSnapshotErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
+                crate::error::UpdateSnapshotErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::UpdateSnapshotErrorKind::SnapshotNotFound(inner) => {
+                    Error::SnapshotNotFound(inner)
+                }
+                crate::error::UpdateSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

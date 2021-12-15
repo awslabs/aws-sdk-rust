@@ -497,12 +497,14 @@ mod tests {
     use crate::http_request::canonical_request::{
         normalize_header_value, trim_all, CanonicalRequest, SigningScope, StringToSign,
     };
+    use crate::http_request::query_writer::QueryWriter;
     use crate::http_request::test::{test_canonical_request, test_request, test_sts};
     use crate::http_request::{
         PayloadChecksumKind, SignableBody, SignableRequest, SigningSettings,
     };
     use crate::http_request::{SignatureLocation, SigningParams};
     use crate::sign::sha256_hex_string;
+    use http::Uri;
     use pretty_assertions::assert_eq;
     use proptest::{proptest, strategy::Strategy};
     use std::time::Duration;
@@ -648,6 +650,28 @@ mod tests {
             Some("k=&list-type=2&prefix=~objprefix&single=&unreserved=-_.~"),
             creq.params.as_deref(),
         );
+    }
+
+    #[test]
+    fn test_signing_urls_with_percent_encoded_query_strings() {
+        let all_printable_ascii_chars: String = (32u8..127).map(char::from).collect();
+        let uri = Uri::from_static("https://s3.us-east-1.amazonaws.com/my-bucket");
+
+        let mut query_writer = QueryWriter::new(&uri);
+        query_writer.insert("list-type", "2");
+        query_writer.insert("prefix", &all_printable_ascii_chars);
+
+        let req = http::Request::builder()
+            .uri(query_writer.build_uri())
+            .body("")
+            .unwrap();
+        let req = SignableRequest::from(&req);
+        let signing_params = signing_params(SigningSettings::default());
+        let creq = CanonicalRequest::from(&req, &signing_params).unwrap();
+
+        let expected = "list-type=2&prefix=%20%21%22%23%24%25%26%27%28%29%2A%2B%2C-.%2F0123456789%3A%3B%3C%3D%3E%3F%40ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D~";
+        let actual = creq.params.unwrap();
+        assert_eq!(expected, actual);
     }
 
     // It should exclude user-agent, content-type, content-length, and x-amz-user-agent headers from presigning

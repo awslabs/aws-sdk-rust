@@ -62,23 +62,450 @@ impl AsRef<str> for Status {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EnhancedInfrastructureMetrics {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Inactive,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EnhancedInfrastructureMetrics {
+    fn from(s: &str) -> Self {
+        match s {
+            "Active" => EnhancedInfrastructureMetrics::Active,
+            "Inactive" => EnhancedInfrastructureMetrics::Inactive,
+            other => EnhancedInfrastructureMetrics::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EnhancedInfrastructureMetrics {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EnhancedInfrastructureMetrics::from(s))
+    }
+}
+impl EnhancedInfrastructureMetrics {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EnhancedInfrastructureMetrics::Active => "Active",
+            EnhancedInfrastructureMetrics::Inactive => "Inactive",
+            EnhancedInfrastructureMetrics::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Active", "Inactive"]
+    }
+}
+impl AsRef<str> for EnhancedInfrastructureMetrics {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes the scope of a recommendation preference.</p>
+/// <p>Recommendation preferences can be created at the organization level (for management
+/// accounts of an organization only), account level, and resource level. For more
+/// information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+/// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+/// Guide</i>.</p>
+/// <note>
+/// <p>You cannot create recommendation preferences for Auto Scaling groups at the
+/// organization and account levels. You can create recommendation preferences for
+/// Auto Scaling groups only at the resource level by specifying a scope name
+/// of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon
+/// Resource Name (ARN). This will configure the preference for all instances that are
+/// part of the specified the Auto Scaling group.</p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Scope {
+    /// <p>The name of the scope.</p>
+    /// <p>The following scopes are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Organization</code> - Specifies that the recommendation preference
+    /// applies at the organization level, for all member accounts of an
+    /// organization.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AccountId</code> - Specifies that the recommendation preference applies
+    /// at the account level, for all resources of a given resource type in an
+    /// account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ResourceArn</code> - Specifies that the recommendation preference
+    /// applies at the individual resource level.</p>
+    /// </li>
+    /// </ul>
+    pub name: std::option::Option<crate::model::ScopeName>,
+    /// <p>The value of the scope.</p>
+    /// <p>If you specified the <code>name</code> of the scope as:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Organization</code> - The <code>value</code> must be
+    /// <code>ALL_ACCOUNTS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource
+    /// Name (ARN) of an EC2 instance or an Auto Scaling group.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl Scope {
+    /// <p>The name of the scope.</p>
+    /// <p>The following scopes are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Organization</code> - Specifies that the recommendation preference
+    /// applies at the organization level, for all member accounts of an
+    /// organization.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AccountId</code> - Specifies that the recommendation preference applies
+    /// at the account level, for all resources of a given resource type in an
+    /// account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ResourceArn</code> - Specifies that the recommendation preference
+    /// applies at the individual resource level.</p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&crate::model::ScopeName> {
+        self.name.as_ref()
+    }
+    /// <p>The value of the scope.</p>
+    /// <p>If you specified the <code>name</code> of the scope as:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Organization</code> - The <code>value</code> must be
+    /// <code>ALL_ACCOUNTS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource
+    /// Name (ARN) of an EC2 instance or an Auto Scaling group.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for Scope {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Scope");
+        formatter.field("name", &self.name);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`Scope`](crate::model::Scope)
+pub mod scope {
+    /// A builder for [`Scope`](crate::model::Scope)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<crate::model::ScopeName>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the scope.</p>
+        /// <p>The following scopes are possible:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Organization</code> - Specifies that the recommendation preference
+        /// applies at the organization level, for all member accounts of an
+        /// organization.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AccountId</code> - Specifies that the recommendation preference applies
+        /// at the account level, for all resources of a given resource type in an
+        /// account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ResourceArn</code> - Specifies that the recommendation preference
+        /// applies at the individual resource level.</p>
+        /// </li>
+        /// </ul>
+        pub fn name(mut self, input: crate::model::ScopeName) -> Self {
+            self.name = Some(input);
+            self
+        }
+        /// <p>The name of the scope.</p>
+        /// <p>The following scopes are possible:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Organization</code> - Specifies that the recommendation preference
+        /// applies at the organization level, for all member accounts of an
+        /// organization.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AccountId</code> - Specifies that the recommendation preference applies
+        /// at the account level, for all resources of a given resource type in an
+        /// account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ResourceArn</code> - Specifies that the recommendation preference
+        /// applies at the individual resource level.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_name(mut self, input: std::option::Option<crate::model::ScopeName>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The value of the scope.</p>
+        /// <p>If you specified the <code>name</code> of the scope as:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Organization</code> - The <code>value</code> must be
+        /// <code>ALL_ACCOUNTS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource
+        /// Name (ARN) of an EC2 instance or an Auto Scaling group.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The value of the scope.</p>
+        /// <p>If you specified the <code>name</code> of the scope as:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Organization</code> - The <code>value</code> must be
+        /// <code>ALL_ACCOUNTS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource
+        /// Name (ARN) of an EC2 instance or an Auto Scaling group.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Scope`](crate::model::Scope)
+        pub fn build(self) -> crate::model::Scope {
+            crate::model::Scope {
+                name: self.name,
+                value: self.value,
+            }
+        }
+    }
+}
+impl Scope {
+    /// Creates a new builder-style object to manufacture [`Scope`](crate::model::Scope)
+    pub fn builder() -> crate::model::scope::Builder {
+        crate::model::scope::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ScopeName {
+    #[allow(missing_docs)] // documentation missing in model
+    AccountId,
+    #[allow(missing_docs)] // documentation missing in model
+    Organization,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceArn,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ScopeName {
+    fn from(s: &str) -> Self {
+        match s {
+            "AccountId" => ScopeName::AccountId,
+            "Organization" => ScopeName::Organization,
+            "ResourceArn" => ScopeName::ResourceArn,
+            other => ScopeName::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ScopeName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ScopeName::from(s))
+    }
+}
+impl ScopeName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ScopeName::AccountId => "AccountId",
+            ScopeName::Organization => "Organization",
+            ScopeName::ResourceArn => "ResourceArn",
+            ScopeName::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AccountId", "Organization", "ResourceArn"]
+    }
+}
+impl AsRef<str> for ScopeName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
+    AutoScalingGroup,
+    #[allow(missing_docs)] // documentation missing in model
+    EbsVolume,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2Instance,
+    #[allow(missing_docs)] // documentation missing in model
+    LambdaFunction,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ResourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AutoScalingGroup" => ResourceType::AutoScalingGroup,
+            "EbsVolume" => ResourceType::EbsVolume,
+            "Ec2Instance" => ResourceType::Ec2Instance,
+            "LambdaFunction" => ResourceType::LambdaFunction,
+            other => ResourceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ResourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ResourceType::from(s))
+    }
+}
+impl ResourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ResourceType::AutoScalingGroup => "AutoScalingGroup",
+            ResourceType::EbsVolume => "EbsVolume",
+            ResourceType::Ec2Instance => "Ec2Instance",
+            ResourceType::LambdaFunction => "LambdaFunction",
+            ResourceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AutoScalingGroup",
+            "EbsVolume",
+            "Ec2Instance",
+            "LambdaFunction",
+        ]
+    }
+}
+impl AsRef<str> for ResourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>A summary of a recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationSummary {
     /// <p>An array of objects that describe a recommendation summary.</p>
     pub summaries: std::option::Option<std::vec::Vec<crate::model::Summary>>,
-    /// <p>The resource type of the recommendation.</p>
+    /// <p>The resource type that the recommendation summary applies to.</p>
     pub recommendation_resource_type: std::option::Option<crate::model::RecommendationSourceType>,
     /// <p>The Amazon Web Services account ID of the recommendation summary.</p>
     pub account_id: std::option::Option<std::string::String>,
+    /// <p>An object that describes the savings opportunity for a given resource type. Savings
+    /// opportunity includes the estimated monthly savings amount and percentage.</p>
+    pub savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
+    /// <p>An object that describes the performance risk ratings for a given resource
+    /// type.</p>
+    pub current_performance_risk_ratings:
+        std::option::Option<crate::model::CurrentPerformanceRiskRatings>,
 }
 impl RecommendationSummary {
     /// <p>An array of objects that describe a recommendation summary.</p>
     pub fn summaries(&self) -> std::option::Option<&[crate::model::Summary]> {
         self.summaries.as_deref()
     }
-    /// <p>The resource type of the recommendation.</p>
+    /// <p>The resource type that the recommendation summary applies to.</p>
     pub fn recommendation_resource_type(
         &self,
     ) -> std::option::Option<&crate::model::RecommendationSourceType> {
@@ -87,6 +514,18 @@ impl RecommendationSummary {
     /// <p>The Amazon Web Services account ID of the recommendation summary.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
+    }
+    /// <p>An object that describes the savings opportunity for a given resource type. Savings
+    /// opportunity includes the estimated monthly savings amount and percentage.</p>
+    pub fn savings_opportunity(&self) -> std::option::Option<&crate::model::SavingsOpportunity> {
+        self.savings_opportunity.as_ref()
+    }
+    /// <p>An object that describes the performance risk ratings for a given resource
+    /// type.</p>
+    pub fn current_performance_risk_ratings(
+        &self,
+    ) -> std::option::Option<&crate::model::CurrentPerformanceRiskRatings> {
+        self.current_performance_risk_ratings.as_ref()
     }
 }
 impl std::fmt::Debug for RecommendationSummary {
@@ -98,6 +537,11 @@ impl std::fmt::Debug for RecommendationSummary {
             &self.recommendation_resource_type,
         );
         formatter.field("account_id", &self.account_id);
+        formatter.field("savings_opportunity", &self.savings_opportunity);
+        formatter.field(
+            "current_performance_risk_ratings",
+            &self.current_performance_risk_ratings,
+        );
         formatter.finish()
     }
 }
@@ -111,6 +555,9 @@ pub mod recommendation_summary {
         pub(crate) recommendation_resource_type:
             std::option::Option<crate::model::RecommendationSourceType>,
         pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
+        pub(crate) current_performance_risk_ratings:
+            std::option::Option<crate::model::CurrentPerformanceRiskRatings>,
     }
     impl Builder {
         /// Appends an item to `summaries`.
@@ -132,7 +579,7 @@ pub mod recommendation_summary {
             self.summaries = input;
             self
         }
-        /// <p>The resource type of the recommendation.</p>
+        /// <p>The resource type that the recommendation summary applies to.</p>
         pub fn recommendation_resource_type(
             mut self,
             input: crate::model::RecommendationSourceType,
@@ -140,7 +587,7 @@ pub mod recommendation_summary {
             self.recommendation_resource_type = Some(input);
             self
         }
-        /// <p>The resource type of the recommendation.</p>
+        /// <p>The resource type that the recommendation summary applies to.</p>
         pub fn set_recommendation_resource_type(
             mut self,
             input: std::option::Option<crate::model::RecommendationSourceType>,
@@ -158,12 +605,47 @@ pub mod recommendation_summary {
             self.account_id = input;
             self
         }
+        /// <p>An object that describes the savings opportunity for a given resource type. Savings
+        /// opportunity includes the estimated monthly savings amount and percentage.</p>
+        pub fn savings_opportunity(mut self, input: crate::model::SavingsOpportunity) -> Self {
+            self.savings_opportunity = Some(input);
+            self
+        }
+        /// <p>An object that describes the savings opportunity for a given resource type. Savings
+        /// opportunity includes the estimated monthly savings amount and percentage.</p>
+        pub fn set_savings_opportunity(
+            mut self,
+            input: std::option::Option<crate::model::SavingsOpportunity>,
+        ) -> Self {
+            self.savings_opportunity = input;
+            self
+        }
+        /// <p>An object that describes the performance risk ratings for a given resource
+        /// type.</p>
+        pub fn current_performance_risk_ratings(
+            mut self,
+            input: crate::model::CurrentPerformanceRiskRatings,
+        ) -> Self {
+            self.current_performance_risk_ratings = Some(input);
+            self
+        }
+        /// <p>An object that describes the performance risk ratings for a given resource
+        /// type.</p>
+        pub fn set_current_performance_risk_ratings(
+            mut self,
+            input: std::option::Option<crate::model::CurrentPerformanceRiskRatings>,
+        ) -> Self {
+            self.current_performance_risk_ratings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RecommendationSummary`](crate::model::RecommendationSummary)
         pub fn build(self) -> crate::model::RecommendationSummary {
             crate::model::RecommendationSummary {
                 summaries: self.summaries,
                 recommendation_resource_type: self.recommendation_resource_type,
                 account_id: self.account_id,
+                savings_opportunity: self.savings_opportunity,
+                current_performance_risk_ratings: self.current_performance_risk_ratings,
             }
         }
     }
@@ -172,6 +654,368 @@ impl RecommendationSummary {
     /// Creates a new builder-style object to manufacture [`RecommendationSummary`](crate::model::RecommendationSummary)
     pub fn builder() -> crate::model::recommendation_summary::Builder {
         crate::model::recommendation_summary::Builder::default()
+    }
+}
+
+/// <p>Describes the performance risk ratings for a given resource type.</p>
+/// <p>Resources with a <code>high</code> or <code>medium</code> rating are at risk of not
+/// meeting the performance needs of their workloads, while resources with a
+/// <code>low</code> rating are performing well in their workloads.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CurrentPerformanceRiskRatings {
+    /// <p>A count of the applicable resource types with a high performance risk rating.</p>
+    pub high: i64,
+    /// <p>A count of the applicable resource types with a medium performance risk rating.</p>
+    pub medium: i64,
+    /// <p>A count of the applicable resource types with a low performance risk rating.</p>
+    pub low: i64,
+    /// <p>A count of the applicable resource types with a very low performance risk
+    /// rating.</p>
+    pub very_low: i64,
+}
+impl CurrentPerformanceRiskRatings {
+    /// <p>A count of the applicable resource types with a high performance risk rating.</p>
+    pub fn high(&self) -> i64 {
+        self.high
+    }
+    /// <p>A count of the applicable resource types with a medium performance risk rating.</p>
+    pub fn medium(&self) -> i64 {
+        self.medium
+    }
+    /// <p>A count of the applicable resource types with a low performance risk rating.</p>
+    pub fn low(&self) -> i64 {
+        self.low
+    }
+    /// <p>A count of the applicable resource types with a very low performance risk
+    /// rating.</p>
+    pub fn very_low(&self) -> i64 {
+        self.very_low
+    }
+}
+impl std::fmt::Debug for CurrentPerformanceRiskRatings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CurrentPerformanceRiskRatings");
+        formatter.field("high", &self.high);
+        formatter.field("medium", &self.medium);
+        formatter.field("low", &self.low);
+        formatter.field("very_low", &self.very_low);
+        formatter.finish()
+    }
+}
+/// See [`CurrentPerformanceRiskRatings`](crate::model::CurrentPerformanceRiskRatings)
+pub mod current_performance_risk_ratings {
+    /// A builder for [`CurrentPerformanceRiskRatings`](crate::model::CurrentPerformanceRiskRatings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) high: std::option::Option<i64>,
+        pub(crate) medium: std::option::Option<i64>,
+        pub(crate) low: std::option::Option<i64>,
+        pub(crate) very_low: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>A count of the applicable resource types with a high performance risk rating.</p>
+        pub fn high(mut self, input: i64) -> Self {
+            self.high = Some(input);
+            self
+        }
+        /// <p>A count of the applicable resource types with a high performance risk rating.</p>
+        pub fn set_high(mut self, input: std::option::Option<i64>) -> Self {
+            self.high = input;
+            self
+        }
+        /// <p>A count of the applicable resource types with a medium performance risk rating.</p>
+        pub fn medium(mut self, input: i64) -> Self {
+            self.medium = Some(input);
+            self
+        }
+        /// <p>A count of the applicable resource types with a medium performance risk rating.</p>
+        pub fn set_medium(mut self, input: std::option::Option<i64>) -> Self {
+            self.medium = input;
+            self
+        }
+        /// <p>A count of the applicable resource types with a low performance risk rating.</p>
+        pub fn low(mut self, input: i64) -> Self {
+            self.low = Some(input);
+            self
+        }
+        /// <p>A count of the applicable resource types with a low performance risk rating.</p>
+        pub fn set_low(mut self, input: std::option::Option<i64>) -> Self {
+            self.low = input;
+            self
+        }
+        /// <p>A count of the applicable resource types with a very low performance risk
+        /// rating.</p>
+        pub fn very_low(mut self, input: i64) -> Self {
+            self.very_low = Some(input);
+            self
+        }
+        /// <p>A count of the applicable resource types with a very low performance risk
+        /// rating.</p>
+        pub fn set_very_low(mut self, input: std::option::Option<i64>) -> Self {
+            self.very_low = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CurrentPerformanceRiskRatings`](crate::model::CurrentPerformanceRiskRatings)
+        pub fn build(self) -> crate::model::CurrentPerformanceRiskRatings {
+            crate::model::CurrentPerformanceRiskRatings {
+                high: self.high.unwrap_or_default(),
+                medium: self.medium.unwrap_or_default(),
+                low: self.low.unwrap_or_default(),
+                very_low: self.very_low.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl CurrentPerformanceRiskRatings {
+    /// Creates a new builder-style object to manufacture [`CurrentPerformanceRiskRatings`](crate::model::CurrentPerformanceRiskRatings)
+    pub fn builder() -> crate::model::current_performance_risk_ratings::Builder {
+        crate::model::current_performance_risk_ratings::Builder::default()
+    }
+}
+
+/// <p>Describes the savings opportunity for recommendations of a given resource type or for
+/// the recommendation option of an individual resource.</p>
+/// <p>Savings opportunity represents the estimated monthly savings you can achieve by
+/// implementing a given Compute Optimizer recommendation.</p>
+/// <important>
+/// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as
+/// activate <b>Receive Amazon EC2 resource
+/// recommendations</b> in the Cost Explorer preferences page. That
+/// creates a connection between Cost Explorer and Compute Optimizer. With this
+/// connection, Cost Explorer generates savings estimates considering the price of
+/// existing resources, the price of recommended resources, and historical usage data.
+/// Estimated monthly savings reflects the projected dollar savings associated with each
+/// of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost
+/// with Rightsizing Recommendations</a> in the <i>Cost Management User
+/// Guide</i>.</p>
+/// </important>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SavingsOpportunity {
+    /// <p>The estimated monthly savings possible as a percentage of monthly cost.</p>
+    pub savings_opportunity_percentage: f64,
+    /// <p>An object that describes the estimated monthly savings amount possible based on
+    /// On-Demand instance pricing.</p>
+    pub estimated_monthly_savings: std::option::Option<crate::model::EstimatedMonthlySavings>,
+}
+impl SavingsOpportunity {
+    /// <p>The estimated monthly savings possible as a percentage of monthly cost.</p>
+    pub fn savings_opportunity_percentage(&self) -> f64 {
+        self.savings_opportunity_percentage
+    }
+    /// <p>An object that describes the estimated monthly savings amount possible based on
+    /// On-Demand instance pricing.</p>
+    pub fn estimated_monthly_savings(
+        &self,
+    ) -> std::option::Option<&crate::model::EstimatedMonthlySavings> {
+        self.estimated_monthly_savings.as_ref()
+    }
+}
+impl std::fmt::Debug for SavingsOpportunity {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SavingsOpportunity");
+        formatter.field(
+            "savings_opportunity_percentage",
+            &self.savings_opportunity_percentage,
+        );
+        formatter.field("estimated_monthly_savings", &self.estimated_monthly_savings);
+        formatter.finish()
+    }
+}
+/// See [`SavingsOpportunity`](crate::model::SavingsOpportunity)
+pub mod savings_opportunity {
+    /// A builder for [`SavingsOpportunity`](crate::model::SavingsOpportunity)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) savings_opportunity_percentage: std::option::Option<f64>,
+        pub(crate) estimated_monthly_savings:
+            std::option::Option<crate::model::EstimatedMonthlySavings>,
+    }
+    impl Builder {
+        /// <p>The estimated monthly savings possible as a percentage of monthly cost.</p>
+        pub fn savings_opportunity_percentage(mut self, input: f64) -> Self {
+            self.savings_opportunity_percentage = Some(input);
+            self
+        }
+        /// <p>The estimated monthly savings possible as a percentage of monthly cost.</p>
+        pub fn set_savings_opportunity_percentage(
+            mut self,
+            input: std::option::Option<f64>,
+        ) -> Self {
+            self.savings_opportunity_percentage = input;
+            self
+        }
+        /// <p>An object that describes the estimated monthly savings amount possible based on
+        /// On-Demand instance pricing.</p>
+        pub fn estimated_monthly_savings(
+            mut self,
+            input: crate::model::EstimatedMonthlySavings,
+        ) -> Self {
+            self.estimated_monthly_savings = Some(input);
+            self
+        }
+        /// <p>An object that describes the estimated monthly savings amount possible based on
+        /// On-Demand instance pricing.</p>
+        pub fn set_estimated_monthly_savings(
+            mut self,
+            input: std::option::Option<crate::model::EstimatedMonthlySavings>,
+        ) -> Self {
+            self.estimated_monthly_savings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SavingsOpportunity`](crate::model::SavingsOpportunity)
+        pub fn build(self) -> crate::model::SavingsOpportunity {
+            crate::model::SavingsOpportunity {
+                savings_opportunity_percentage: self
+                    .savings_opportunity_percentage
+                    .unwrap_or_default(),
+                estimated_monthly_savings: self.estimated_monthly_savings,
+            }
+        }
+    }
+}
+impl SavingsOpportunity {
+    /// Creates a new builder-style object to manufacture [`SavingsOpportunity`](crate::model::SavingsOpportunity)
+    pub fn builder() -> crate::model::savings_opportunity::Builder {
+        crate::model::savings_opportunity::Builder::default()
+    }
+}
+
+/// <p>Describes the estimated monthly savings amount possible for a given resource based on
+/// On-Demand instance pricing</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/view-ec2-recommendations.html#ec2-savings-calculation">Estimated monthly savings and savings opportunities</a> in the
+/// <i>Compute Optimizer User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EstimatedMonthlySavings {
+    /// <p>The currency of the estimated monthly
+    /// savings.</p>
+    pub currency: std::option::Option<crate::model::Currency>,
+    /// <p>The value of the estimated monthly savings.</p>
+    pub value: f64,
+}
+impl EstimatedMonthlySavings {
+    /// <p>The currency of the estimated monthly
+    /// savings.</p>
+    pub fn currency(&self) -> std::option::Option<&crate::model::Currency> {
+        self.currency.as_ref()
+    }
+    /// <p>The value of the estimated monthly savings.</p>
+    pub fn value(&self) -> f64 {
+        self.value
+    }
+}
+impl std::fmt::Debug for EstimatedMonthlySavings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EstimatedMonthlySavings");
+        formatter.field("currency", &self.currency);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`EstimatedMonthlySavings`](crate::model::EstimatedMonthlySavings)
+pub mod estimated_monthly_savings {
+    /// A builder for [`EstimatedMonthlySavings`](crate::model::EstimatedMonthlySavings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) currency: std::option::Option<crate::model::Currency>,
+        pub(crate) value: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>The currency of the estimated monthly
+        /// savings.</p>
+        pub fn currency(mut self, input: crate::model::Currency) -> Self {
+            self.currency = Some(input);
+            self
+        }
+        /// <p>The currency of the estimated monthly
+        /// savings.</p>
+        pub fn set_currency(mut self, input: std::option::Option<crate::model::Currency>) -> Self {
+            self.currency = input;
+            self
+        }
+        /// <p>The value of the estimated monthly savings.</p>
+        pub fn value(mut self, input: f64) -> Self {
+            self.value = Some(input);
+            self
+        }
+        /// <p>The value of the estimated monthly savings.</p>
+        pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EstimatedMonthlySavings`](crate::model::EstimatedMonthlySavings)
+        pub fn build(self) -> crate::model::EstimatedMonthlySavings {
+            crate::model::EstimatedMonthlySavings {
+                currency: self.currency,
+                value: self.value.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl EstimatedMonthlySavings {
+    /// Creates a new builder-style object to manufacture [`EstimatedMonthlySavings`](crate::model::EstimatedMonthlySavings)
+    pub fn builder() -> crate::model::estimated_monthly_savings::Builder {
+        crate::model::estimated_monthly_savings::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Currency {
+    #[allow(missing_docs)] // documentation missing in model
+    Cny,
+    #[allow(missing_docs)] // documentation missing in model
+    Usd,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Currency {
+    fn from(s: &str) -> Self {
+        match s {
+            "CNY" => Currency::Cny,
+            "USD" => Currency::Usd,
+            other => Currency::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Currency {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Currency::from(s))
+    }
+}
+impl Currency {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Currency::Cny => "CNY",
+            Currency::Usd => "USD",
+            Currency::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CNY", "USD"]
+    }
+}
+impl AsRef<str> for Currency {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -547,6 +1391,158 @@ impl AsRef<str> for Finding {
     }
 }
 
+/// <p>Describes a recommendation preference.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RecommendationPreferencesDetail {
+    /// <p>An object that describes the scope of the recommendation preference.</p>
+    /// <p>Recommendation preferences can be created at the organization level (for management
+    /// accounts of an organization only), account level, and resource level. For more
+    /// information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+    /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+    /// Guide</i>.</p>
+    pub scope: std::option::Option<crate::model::Scope>,
+    /// <p>The target resource type of the recommendation preference to create.</p>
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances
+    /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option
+    /// encompasses only instances that are part of an Auto Scaling group.</p>
+    pub resource_type: std::option::Option<crate::model::ResourceType>,
+    /// <p>The status of the enhanced infrastructure metrics recommendation preference.</p>
+    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest
+    /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet
+    /// applied.</p>
+    pub enhanced_infrastructure_metrics:
+        std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
+}
+impl RecommendationPreferencesDetail {
+    /// <p>An object that describes the scope of the recommendation preference.</p>
+    /// <p>Recommendation preferences can be created at the organization level (for management
+    /// accounts of an organization only), account level, and resource level. For more
+    /// information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+    /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+    /// Guide</i>.</p>
+    pub fn scope(&self) -> std::option::Option<&crate::model::Scope> {
+        self.scope.as_ref()
+    }
+    /// <p>The target resource type of the recommendation preference to create.</p>
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances
+    /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option
+    /// encompasses only instances that are part of an Auto Scaling group.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The status of the enhanced infrastructure metrics recommendation preference.</p>
+    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest
+    /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet
+    /// applied.</p>
+    pub fn enhanced_infrastructure_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::EnhancedInfrastructureMetrics> {
+        self.enhanced_infrastructure_metrics.as_ref()
+    }
+}
+impl std::fmt::Debug for RecommendationPreferencesDetail {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RecommendationPreferencesDetail");
+        formatter.field("scope", &self.scope);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field(
+            "enhanced_infrastructure_metrics",
+            &self.enhanced_infrastructure_metrics,
+        );
+        formatter.finish()
+    }
+}
+/// See [`RecommendationPreferencesDetail`](crate::model::RecommendationPreferencesDetail)
+pub mod recommendation_preferences_detail {
+    /// A builder for [`RecommendationPreferencesDetail`](crate::model::RecommendationPreferencesDetail)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scope: std::option::Option<crate::model::Scope>,
+        pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
+        pub(crate) enhanced_infrastructure_metrics:
+            std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
+    }
+    impl Builder {
+        /// <p>An object that describes the scope of the recommendation preference.</p>
+        /// <p>Recommendation preferences can be created at the organization level (for management
+        /// accounts of an organization only), account level, and resource level. For more
+        /// information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+        /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+        /// Guide</i>.</p>
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.scope = Some(input);
+            self
+        }
+        /// <p>An object that describes the scope of the recommendation preference.</p>
+        /// <p>Recommendation preferences can be created at the organization level (for management
+        /// accounts of an organization only), account level, and resource level. For more
+        /// information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+        /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+        /// Guide</i>.</p>
+        pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
+            self.scope = input;
+            self
+        }
+        /// <p>The target resource type of the recommendation preference to create.</p>
+        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances
+        /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option
+        /// encompasses only instances that are part of an Auto Scaling group.</p>
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.resource_type = Some(input);
+            self
+        }
+        /// <p>The target resource type of the recommendation preference to create.</p>
+        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances
+        /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option
+        /// encompasses only instances that are part of an Auto Scaling group.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::ResourceType>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>The status of the enhanced infrastructure metrics recommendation preference.</p>
+        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest
+        /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet
+        /// applied.</p>
+        pub fn enhanced_infrastructure_metrics(
+            mut self,
+            input: crate::model::EnhancedInfrastructureMetrics,
+        ) -> Self {
+            self.enhanced_infrastructure_metrics = Some(input);
+            self
+        }
+        /// <p>The status of the enhanced infrastructure metrics recommendation preference.</p>
+        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest
+        /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet
+        /// applied.</p>
+        pub fn set_enhanced_infrastructure_metrics(
+            mut self,
+            input: std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
+        ) -> Self {
+            self.enhanced_infrastructure_metrics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RecommendationPreferencesDetail`](crate::model::RecommendationPreferencesDetail)
+        pub fn build(self) -> crate::model::RecommendationPreferencesDetail {
+            crate::model::RecommendationPreferencesDetail {
+                scope: self.scope,
+                resource_type: self.resource_type,
+                enhanced_infrastructure_metrics: self.enhanced_infrastructure_metrics,
+            }
+        }
+    }
+}
+impl RecommendationPreferencesDetail {
+    /// Creates a new builder-style object to manufacture [`RecommendationPreferencesDetail`](crate::model::RecommendationPreferencesDetail)
+    pub fn builder() -> crate::model::recommendation_preferences_detail::Builder {
+        crate::model::recommendation_preferences_detail::Builder::default()
+    }
+}
+
 /// <p>Describes an Lambda function recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -567,10 +1563,9 @@ pub struct LambdaFunctionRecommendation {
     /// <p>The number of days for which utilization metrics were analyzed for the
     /// function.</p>
     pub lookback_period_in_days: f64,
-    /// <p>The timestamp of when the function recommendation was last refreshed.</p>
+    /// <p>The timestamp of when the function recommendation was last generated.</p>
     pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The finding classification of the function.</p>
-    ///
     /// <p>Findings for functions include:</p>
     /// <ul>
     /// <li>
@@ -670,6 +1665,10 @@ pub struct LambdaFunctionRecommendation {
     /// the function.</p>
     pub memory_size_recommendation_options:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionMemoryRecommendationOption>>,
+    /// <p>The risk of the current Lambda function not meeting the performance needs
+    /// of its workloads. The higher the risk, the more likely the current Lambda
+    /// function configuration is underperforming in its workload.</p>
+    pub current_performance_risk: std::option::Option<crate::model::CurrentPerformanceRisk>,
 }
 impl LambdaFunctionRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current function.</p>
@@ -703,12 +1702,11 @@ impl LambdaFunctionRecommendation {
     pub fn lookback_period_in_days(&self) -> f64 {
         self.lookback_period_in_days
     }
-    /// <p>The timestamp of when the function recommendation was last refreshed.</p>
+    /// <p>The timestamp of when the function recommendation was last generated.</p>
     pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_refresh_timestamp.as_ref()
     }
     /// <p>The finding classification of the function.</p>
-    ///
     /// <p>Findings for functions include:</p>
     /// <ul>
     /// <li>
@@ -817,6 +1815,14 @@ impl LambdaFunctionRecommendation {
     ) -> std::option::Option<&[crate::model::LambdaFunctionMemoryRecommendationOption]> {
         self.memory_size_recommendation_options.as_deref()
     }
+    /// <p>The risk of the current Lambda function not meeting the performance needs
+    /// of its workloads. The higher the risk, the more likely the current Lambda
+    /// function configuration is underperforming in its workload.</p>
+    pub fn current_performance_risk(
+        &self,
+    ) -> std::option::Option<&crate::model::CurrentPerformanceRisk> {
+        self.current_performance_risk.as_ref()
+    }
 }
 impl std::fmt::Debug for LambdaFunctionRecommendation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -835,6 +1841,7 @@ impl std::fmt::Debug for LambdaFunctionRecommendation {
             "memory_size_recommendation_options",
             &self.memory_size_recommendation_options,
         );
+        formatter.field("current_performance_risk", &self.current_performance_risk);
         formatter.finish()
     }
 }
@@ -860,6 +1867,8 @@ pub mod lambda_function_recommendation {
         pub(crate) memory_size_recommendation_options: std::option::Option<
             std::vec::Vec<crate::model::LambdaFunctionMemoryRecommendationOption>,
         >,
+        pub(crate) current_performance_risk:
+            std::option::Option<crate::model::CurrentPerformanceRisk>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the current function.</p>
@@ -951,12 +1960,12 @@ pub mod lambda_function_recommendation {
             self.lookback_period_in_days = input;
             self
         }
-        /// <p>The timestamp of when the function recommendation was last refreshed.</p>
+        /// <p>The timestamp of when the function recommendation was last generated.</p>
         pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_refresh_timestamp = Some(input);
             self
         }
-        /// <p>The timestamp of when the function recommendation was last refreshed.</p>
+        /// <p>The timestamp of when the function recommendation was last generated.</p>
         pub fn set_last_refresh_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -965,7 +1974,6 @@ pub mod lambda_function_recommendation {
             self
         }
         /// <p>The finding classification of the function.</p>
-        ///
         /// <p>Findings for functions include:</p>
         /// <ul>
         /// <li>
@@ -1013,7 +2021,6 @@ pub mod lambda_function_recommendation {
             self
         }
         /// <p>The finding classification of the function.</p>
-        ///
         /// <p>Findings for functions include:</p>
         /// <ul>
         /// <li>
@@ -1209,6 +2216,26 @@ pub mod lambda_function_recommendation {
             self.memory_size_recommendation_options = input;
             self
         }
+        /// <p>The risk of the current Lambda function not meeting the performance needs
+        /// of its workloads. The higher the risk, the more likely the current Lambda
+        /// function configuration is underperforming in its workload.</p>
+        pub fn current_performance_risk(
+            mut self,
+            input: crate::model::CurrentPerformanceRisk,
+        ) -> Self {
+            self.current_performance_risk = Some(input);
+            self
+        }
+        /// <p>The risk of the current Lambda function not meeting the performance needs
+        /// of its workloads. The higher the risk, the more likely the current Lambda
+        /// function configuration is underperforming in its workload.</p>
+        pub fn set_current_performance_risk(
+            mut self,
+            input: std::option::Option<crate::model::CurrentPerformanceRisk>,
+        ) -> Self {
+            self.current_performance_risk = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LambdaFunctionRecommendation`](crate::model::LambdaFunctionRecommendation)
         pub fn build(self) -> crate::model::LambdaFunctionRecommendation {
             crate::model::LambdaFunctionRecommendation {
@@ -1223,6 +2250,7 @@ pub mod lambda_function_recommendation {
                 finding: self.finding,
                 finding_reason_codes: self.finding_reason_codes,
                 memory_size_recommendation_options: self.memory_size_recommendation_options,
+                current_performance_risk: self.current_performance_risk,
             }
         }
     }
@@ -1234,12 +2262,74 @@ impl LambdaFunctionRecommendation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CurrentPerformanceRisk {
+    #[allow(missing_docs)] // documentation missing in model
+    High,
+    #[allow(missing_docs)] // documentation missing in model
+    Low,
+    #[allow(missing_docs)] // documentation missing in model
+    Medium,
+    #[allow(missing_docs)] // documentation missing in model
+    VeryLow,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CurrentPerformanceRisk {
+    fn from(s: &str) -> Self {
+        match s {
+            "High" => CurrentPerformanceRisk::High,
+            "Low" => CurrentPerformanceRisk::Low,
+            "Medium" => CurrentPerformanceRisk::Medium,
+            "VeryLow" => CurrentPerformanceRisk::VeryLow,
+            other => CurrentPerformanceRisk::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CurrentPerformanceRisk {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CurrentPerformanceRisk::from(s))
+    }
+}
+impl CurrentPerformanceRisk {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CurrentPerformanceRisk::High => "High",
+            CurrentPerformanceRisk::Low => "Low",
+            CurrentPerformanceRisk::Medium => "Medium",
+            CurrentPerformanceRisk::VeryLow => "VeryLow",
+            CurrentPerformanceRisk::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["High", "Low", "Medium", "VeryLow"]
+    }
+}
+impl AsRef<str> for CurrentPerformanceRisk {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Describes a recommendation option for an Lambda function.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionMemoryRecommendationOption {
     /// <p>The rank of the function recommendation option.</p>
-    ///
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub rank: i32,
     /// <p>The memory size, in MB, of the function recommendation option.</p>
@@ -1248,10 +2338,13 @@ pub struct LambdaFunctionMemoryRecommendationOption {
     /// recommendation option.</p>
     pub projected_utilization_metrics:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionMemoryProjectedMetric>>,
+    /// <p>An object that describes the savings opportunity for the Lambda function
+    /// recommendation option. Savings opportunity includes the estimated monthly savings amount
+    /// and percentage.</p>
+    pub savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
 }
 impl LambdaFunctionMemoryRecommendationOption {
     /// <p>The rank of the function recommendation option.</p>
-    ///
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub fn rank(&self) -> i32 {
         self.rank
@@ -1267,6 +2360,12 @@ impl LambdaFunctionMemoryRecommendationOption {
     ) -> std::option::Option<&[crate::model::LambdaFunctionMemoryProjectedMetric]> {
         self.projected_utilization_metrics.as_deref()
     }
+    /// <p>An object that describes the savings opportunity for the Lambda function
+    /// recommendation option. Savings opportunity includes the estimated monthly savings amount
+    /// and percentage.</p>
+    pub fn savings_opportunity(&self) -> std::option::Option<&crate::model::SavingsOpportunity> {
+        self.savings_opportunity.as_ref()
+    }
 }
 impl std::fmt::Debug for LambdaFunctionMemoryRecommendationOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1277,6 +2376,7 @@ impl std::fmt::Debug for LambdaFunctionMemoryRecommendationOption {
             "projected_utilization_metrics",
             &self.projected_utilization_metrics,
         );
+        formatter.field("savings_opportunity", &self.savings_opportunity);
         formatter.finish()
     }
 }
@@ -1290,17 +2390,16 @@ pub mod lambda_function_memory_recommendation_option {
         pub(crate) memory_size: std::option::Option<i32>,
         pub(crate) projected_utilization_metrics:
             std::option::Option<std::vec::Vec<crate::model::LambdaFunctionMemoryProjectedMetric>>,
+        pub(crate) savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
     }
     impl Builder {
         /// <p>The rank of the function recommendation option.</p>
-        ///
         /// <p>The top recommendation option is ranked as <code>1</code>.</p>
         pub fn rank(mut self, input: i32) -> Self {
             self.rank = Some(input);
             self
         }
         /// <p>The rank of the function recommendation option.</p>
-        ///
         /// <p>The top recommendation option is ranked as <code>1</code>.</p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.rank = input;
@@ -1342,12 +2441,30 @@ pub mod lambda_function_memory_recommendation_option {
             self.projected_utilization_metrics = input;
             self
         }
+        /// <p>An object that describes the savings opportunity for the Lambda function
+        /// recommendation option. Savings opportunity includes the estimated monthly savings amount
+        /// and percentage.</p>
+        pub fn savings_opportunity(mut self, input: crate::model::SavingsOpportunity) -> Self {
+            self.savings_opportunity = Some(input);
+            self
+        }
+        /// <p>An object that describes the savings opportunity for the Lambda function
+        /// recommendation option. Savings opportunity includes the estimated monthly savings amount
+        /// and percentage.</p>
+        pub fn set_savings_opportunity(
+            mut self,
+            input: std::option::Option<crate::model::SavingsOpportunity>,
+        ) -> Self {
+            self.savings_opportunity = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LambdaFunctionMemoryRecommendationOption`](crate::model::LambdaFunctionMemoryRecommendationOption)
         pub fn build(self) -> crate::model::LambdaFunctionMemoryRecommendationOption {
             crate::model::LambdaFunctionMemoryRecommendationOption {
                 rank: self.rank.unwrap_or_default(),
                 memory_size: self.memory_size.unwrap_or_default(),
                 projected_utilization_metrics: self.projected_utilization_metrics,
+                savings_opportunity: self.savings_opportunity,
             }
         }
     }
@@ -1714,7 +2831,6 @@ impl AsRef<str> for LambdaFunctionRecommendationFinding {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionUtilizationMetric {
     /// <p>The name of the utilization metric.</p>
-    ///
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
     /// <li>
@@ -1729,11 +2845,9 @@ pub struct LambdaFunctionUtilizationMetric {
     /// </ul>
     pub name: std::option::Option<crate::model::LambdaFunctionMetricName>,
     /// <p>The statistic of the utilization metric.</p>
-    ///
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs
     /// return utilization metrics using only the <code>Maximum</code> statistic, which is the
     /// highest value observed during the specified period.</p>
-    ///
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the
     /// <code>Average</code> statistic, which is the value of <code>Sum</code> /
     /// <code>SampleCount</code> during the specified period. For more information, see
@@ -1748,7 +2862,6 @@ pub struct LambdaFunctionUtilizationMetric {
 }
 impl LambdaFunctionUtilizationMetric {
     /// <p>The name of the utilization metric.</p>
-    ///
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
     /// <li>
@@ -1765,11 +2878,9 @@ impl LambdaFunctionUtilizationMetric {
         self.name.as_ref()
     }
     /// <p>The statistic of the utilization metric.</p>
-    ///
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs
     /// return utilization metrics using only the <code>Maximum</code> statistic, which is the
     /// highest value observed during the specified period.</p>
-    ///
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the
     /// <code>Average</code> statistic, which is the value of <code>Sum</code> /
     /// <code>SampleCount</code> during the specified period. For more information, see
@@ -1807,7 +2918,6 @@ pub mod lambda_function_utilization_metric {
     }
     impl Builder {
         /// <p>The name of the utilization metric.</p>
-        ///
         /// <p>The following utilization metrics are available:</p>
         /// <ul>
         /// <li>
@@ -1825,7 +2935,6 @@ pub mod lambda_function_utilization_metric {
             self
         }
         /// <p>The name of the utilization metric.</p>
-        ///
         /// <p>The following utilization metrics are available:</p>
         /// <ul>
         /// <li>
@@ -1846,11 +2955,9 @@ pub mod lambda_function_utilization_metric {
             self
         }
         /// <p>The statistic of the utilization metric.</p>
-        ///
         /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs
         /// return utilization metrics using only the <code>Maximum</code> statistic, which is the
         /// highest value observed during the specified period.</p>
-        ///
         /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the
         /// <code>Average</code> statistic, which is the value of <code>Sum</code> /
         /// <code>SampleCount</code> during the specified period. For more information, see
@@ -1864,11 +2971,9 @@ pub mod lambda_function_utilization_metric {
             self
         }
         /// <p>The statistic of the utilization metric.</p>
-        ///
         /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs
         /// return utilization metrics using only the <code>Maximum</code> statistic, which is the
         /// highest value observed during the specified period.</p>
-        ///
         /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the
         /// <code>Average</code> statistic, which is the value of <code>Sum</code> /
         /// <code>SampleCount</code> during the specified period. For more information, see
@@ -2023,7 +3128,6 @@ impl AsRef<str> for LambdaFunctionMetricName {
 
 /// <p>Describes a filter that returns a more specific list of Lambda
 /// function recommendations. Use this filter with the <a>GetLambdaFunctionRecommendations</a> action.</p>
-///
 /// <p>You can use <code>EBSFilter</code> with the <a>GetEBSVolumeRecommendations</a> action, <code>JobFilter</code> with the
 /// <a>DescribeRecommendationExportJobs</a> action, and <code>Filter</code>
 /// with the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a> actions.</p>
@@ -2031,18 +3135,14 @@ impl AsRef<str> for LambdaFunctionMetricName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionRecommendationFilter {
     /// <p>The name of the filter.</p>
-    ///
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding
     /// classification (for example, <code>NotOptimized</code>).</p>
-    ///
     /// <p>Specify <code>FindingReasonCode</code> to return recommendations with a specific
     /// finding reason code (for example, <code>MemoryUnderprovisioned</code>).</p>
     pub name: std::option::Option<crate::model::LambdaFunctionRecommendationFilterName>,
     /// <p>The value of the filter.</p>
-    ///
     /// <p>The valid values for this parameter are as follows, depending on what you specify for
     /// the <code>name</code> parameter:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>Specify <code>Optimized</code>, <code>NotOptimized</code>, or
@@ -2060,10 +3160,8 @@ pub struct LambdaFunctionRecommendationFilter {
 }
 impl LambdaFunctionRecommendationFilter {
     /// <p>The name of the filter.</p>
-    ///
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding
     /// classification (for example, <code>NotOptimized</code>).</p>
-    ///
     /// <p>Specify <code>FindingReasonCode</code> to return recommendations with a specific
     /// finding reason code (for example, <code>MemoryUnderprovisioned</code>).</p>
     pub fn name(
@@ -2072,10 +3170,8 @@ impl LambdaFunctionRecommendationFilter {
         self.name.as_ref()
     }
     /// <p>The value of the filter.</p>
-    ///
     /// <p>The valid values for this parameter are as follows, depending on what you specify for
     /// the <code>name</code> parameter:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>Specify <code>Optimized</code>, <code>NotOptimized</code>, or
@@ -2112,10 +3208,8 @@ pub mod lambda_function_recommendation_filter {
     }
     impl Builder {
         /// <p>The name of the filter.</p>
-        ///
         /// <p>Specify <code>Finding</code> to return recommendations with a specific finding
         /// classification (for example, <code>NotOptimized</code>).</p>
-        ///
         /// <p>Specify <code>FindingReasonCode</code> to return recommendations with a specific
         /// finding reason code (for example, <code>MemoryUnderprovisioned</code>).</p>
         pub fn name(mut self, input: crate::model::LambdaFunctionRecommendationFilterName) -> Self {
@@ -2123,10 +3217,8 @@ pub mod lambda_function_recommendation_filter {
             self
         }
         /// <p>The name of the filter.</p>
-        ///
         /// <p>Specify <code>Finding</code> to return recommendations with a specific finding
         /// classification (for example, <code>NotOptimized</code>).</p>
-        ///
         /// <p>Specify <code>FindingReasonCode</code> to return recommendations with a specific
         /// finding reason code (for example, <code>MemoryUnderprovisioned</code>).</p>
         pub fn set_name(
@@ -2141,10 +3233,8 @@ pub mod lambda_function_recommendation_filter {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>The value of the filter.</p>
-        ///
         /// <p>The valid values for this parameter are as follows, depending on what you specify for
         /// the <code>name</code> parameter:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>Specify <code>Optimized</code>, <code>NotOptimized</code>, or
@@ -2165,10 +3255,8 @@ pub mod lambda_function_recommendation_filter {
             self
         }
         /// <p>The value of the filter.</p>
-        ///
         /// <p>The valid values for this parameter are as follows, depending on what you specify for
         /// the <code>name</code> parameter:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>Specify <code>Optimized</code>, <code>NotOptimized</code>, or
@@ -2269,7 +3357,6 @@ pub struct AccountEnrollmentStatus {
     /// <p>The account enrollment status.</p>
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The reason for the account enrollment status.</p>
-    ///
     /// <p>For example, an account might show a status of <code>Pending</code> because member
     /// accounts of an organization require more time to be enrolled in the service.</p>
     pub status_reason: std::option::Option<std::string::String>,
@@ -2287,7 +3374,6 @@ impl AccountEnrollmentStatus {
         self.status.as_ref()
     }
     /// <p>The reason for the account enrollment status.</p>
-    ///
     /// <p>For example, an account might show a status of <code>Pending</code> because member
     /// accounts of an organization require more time to be enrolled in the service.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
@@ -2342,7 +3428,6 @@ pub mod account_enrollment_status {
             self
         }
         /// <p>The reason for the account enrollment status.</p>
-        ///
         /// <p>For example, an account might show a status of <code>Pending</code> because member
         /// accounts of an organization require more time to be enrolled in the service.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2350,7 +3435,6 @@ pub mod account_enrollment_status {
             self
         }
         /// <p>The reason for the account enrollment status.</p>
-        ///
         /// <p>For example, an account might show a status of <code>Pending</code> because member
         /// accounts of an organization require more time to be enrolled in the service.</p>
         pub fn set_status_reason(
@@ -2400,26 +3484,22 @@ impl AccountEnrollmentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnrollmentFilter {
     /// <p>The name of the filter.</p>
-    ///
     /// <p>Specify <code>Status</code> to return accounts with a specific enrollment status (for
     /// example, <code>Active</code>).</p>
     pub name: std::option::Option<crate::model::EnrollmentFilterName>,
     /// <p>The value of the filter.</p>
-    ///
     /// <p>The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>,
     /// and <code>Failed</code>.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EnrollmentFilter {
     /// <p>The name of the filter.</p>
-    ///
     /// <p>Specify <code>Status</code> to return accounts with a specific enrollment status (for
     /// example, <code>Active</code>).</p>
     pub fn name(&self) -> std::option::Option<&crate::model::EnrollmentFilterName> {
         self.name.as_ref()
     }
     /// <p>The value of the filter.</p>
-    ///
     /// <p>The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>,
     /// and <code>Failed</code>.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
@@ -2445,7 +3525,6 @@ pub mod enrollment_filter {
     }
     impl Builder {
         /// <p>The name of the filter.</p>
-        ///
         /// <p>Specify <code>Status</code> to return accounts with a specific enrollment status (for
         /// example, <code>Active</code>).</p>
         pub fn name(mut self, input: crate::model::EnrollmentFilterName) -> Self {
@@ -2453,7 +3532,6 @@ pub mod enrollment_filter {
             self
         }
         /// <p>The name of the filter.</p>
-        ///
         /// <p>Specify <code>Status</code> to return accounts with a specific enrollment status (for
         /// example, <code>Active</code>).</p>
         pub fn set_name(
@@ -2468,7 +3546,6 @@ pub mod enrollment_filter {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>The value of the filter.</p>
-        ///
         /// <p>The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>,
         /// and <code>Failed</code>.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2478,7 +3555,6 @@ pub mod enrollment_filter {
             self
         }
         /// <p>The value of the filter.</p>
-        ///
         /// <p>The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>,
         /// and <code>Failed</code>.</p>
         pub fn set_values(
@@ -2556,7 +3632,6 @@ impl AsRef<str> for EnrollmentFilterName {
 }
 
 /// <p>Describes a projected utilization metric of a recommendation option.</p>
-///
 /// <note>
 /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected
 /// utilization metrics returned when you run the <a>GetEC2RecommendationProjectedMetrics</a> action. Additionally, the
@@ -2569,9 +3644,7 @@ pub struct RecommendedOptionProjectedMetric {
     /// <p>The recommended instance type.</p>
     pub recommended_instance_type: std::option::Option<std::string::String>,
     /// <p>The rank of the recommendation option projected metric.</p>
-    ///
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
-    ///
     /// <p>The projected metric rank correlates to the recommendation option rank. For example,
     /// the projected metric ranked as <code>1</code> is related to the recommendation option
     /// that is also ranked as <code>1</code> in the same response.</p>
@@ -2585,9 +3658,7 @@ impl RecommendedOptionProjectedMetric {
         self.recommended_instance_type.as_deref()
     }
     /// <p>The rank of the recommendation option projected metric.</p>
-    ///
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
-    ///
     /// <p>The projected metric rank correlates to the recommendation option rank. For example,
     /// the projected metric ranked as <code>1</code> is related to the recommendation option
     /// that is also ranked as <code>1</code> in the same response.</p>
@@ -2634,9 +3705,7 @@ pub mod recommended_option_projected_metric {
             self
         }
         /// <p>The rank of the recommendation option projected metric.</p>
-        ///
         /// <p>The top recommendation option is ranked as <code>1</code>.</p>
-        ///
         /// <p>The projected metric rank correlates to the recommendation option rank. For example,
         /// the projected metric ranked as <code>1</code> is related to the recommendation option
         /// that is also ranked as <code>1</code> in the same response.</p>
@@ -2645,9 +3714,7 @@ pub mod recommended_option_projected_metric {
             self
         }
         /// <p>The rank of the recommendation option projected metric.</p>
-        ///
         /// <p>The top recommendation option is ranked as <code>1</code>.</p>
-        ///
         /// <p>The projected metric rank correlates to the recommendation option rank. For example,
         /// the projected metric ranked as <code>1</code> is related to the recommendation option
         /// that is also ranked as <code>1</code> in the same response.</p>
@@ -2697,11 +3764,9 @@ impl RecommendedOptionProjectedMetric {
 /// <p>Describes a projected utilization metric of a recommendation option, such as an
 /// Amazon EC2 instance. This represents the projected utilization of a
 /// recommendation option had you used that resource during the analyzed period.</p>
-///
 /// <p>Compare the utilization metric data of your resource against its projected utilization
 /// metric data to determine the performance difference between your current resource and
 /// the recommended option.</p>
-///
 /// <note>
 /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected
 /// utilization metrics returned when you run the <a>GetEC2RecommendationProjectedMetrics</a> action. Additionally, the
@@ -2712,7 +3777,6 @@ impl RecommendedOptionProjectedMetric {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectedMetric {
     /// <p>The name of the projected utilization metric.</p>
-    ///
     /// <p>The following projected utilization metrics are returned:</p>
     /// <ul>
     /// <li>
@@ -2749,7 +3813,6 @@ pub struct ProjectedMetric {
 }
 impl ProjectedMetric {
     /// <p>The name of the projected utilization metric.</p>
-    ///
     /// <p>The following projected utilization metrics are returned:</p>
     /// <ul>
     /// <li>
@@ -2811,7 +3874,6 @@ pub mod projected_metric {
     }
     impl Builder {
         /// <p>The name of the projected utilization metric.</p>
-        ///
         /// <p>The following projected utilization metrics are returned:</p>
         /// <ul>
         /// <li>
@@ -2845,7 +3907,6 @@ pub mod projected_metric {
             self
         }
         /// <p>The name of the projected utilization metric.</p>
-        ///
         /// <p>The following projected utilization metrics are returned:</p>
         /// <ul>
         /// <li>
@@ -3048,14 +4109,12 @@ impl AsRef<str> for MetricName {
     }
 }
 
-/// <p>Describes preferences for recommendations.</p>
+/// <p>Describes the recommendation preferences to return in the response of a <a>GetAutoScalingGroupRecommendations</a>, <a>GetEC2InstanceRecommendations</a>, and <a>GetEC2RecommendationProjectedMetrics</a> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationPreferences {
     /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
-    ///
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>A <a>GetEC2InstanceRecommendations</a> or <a>GetAutoScalingGroupRecommendations</a> request, Compute Optimizer
@@ -3075,9 +4134,7 @@ pub struct RecommendationPreferences {
 }
 impl RecommendationPreferences {
     /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
-    ///
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>A <a>GetEC2InstanceRecommendations</a> or <a>GetAutoScalingGroupRecommendations</a> request, Compute Optimizer
@@ -3120,9 +4177,7 @@ pub mod recommendation_preferences {
         /// To override the contents of this collection use [`set_cpu_vendor_architectures`](Self::set_cpu_vendor_architectures).
         ///
         /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
-        ///
         /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>A <a>GetEC2InstanceRecommendations</a> or <a>GetAutoScalingGroupRecommendations</a> request, Compute Optimizer
@@ -3147,9 +4202,7 @@ pub mod recommendation_preferences {
             self
         }
         /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
-        ///
         /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>A <a>GetEC2InstanceRecommendations</a> or <a>GetAutoScalingGroupRecommendations</a> request, Compute Optimizer
@@ -3297,7 +4350,6 @@ impl AsRef<str> for MetricStatistic {
 }
 
 /// <p>Describes an error experienced when getting recommendations.</p>
-///
 /// <p>For example, an error is returned if you request recommendations for an unsupported
 /// Auto Scaling group, or if you request recommendations for an instance of an
 /// unsupported instance family.</p>
@@ -3405,9 +4457,7 @@ pub struct InstanceRecommendation {
     /// <p>The instance type of the current instance.</p>
     pub current_instance_type: std::option::Option<std::string::String>,
     /// <p>The finding classification of the instance.</p>
-    ///
     /// <p>Findings for instances include:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -3443,9 +4493,7 @@ pub struct InstanceRecommendation {
     /// </ul>
     pub finding: std::option::Option<crate::model::Finding>,
     /// <p>The reason for the finding classification of the instance.</p>
-    ///
     /// <p>Finding reason codes for instances include:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -3486,7 +4534,6 @@ pub struct InstanceRecommendation {
     /// your workload and there is an alternative instance type that provides better
     /// memory performance. This is identified by analyzing the memory utilization
     /// metric of the current instance during the look-back period.</p>
-    ///
     /// <note>
     /// <p>Memory utilization is analyzed only for resources that have the unified
     /// CloudWatch agent installed on them. For more information, see
@@ -3632,7 +4679,6 @@ pub struct InstanceRecommendation {
     /// current instance during the look-back period.</p>
     /// </li>
     /// </ul>
-    ///
     /// <note>
     /// <p>For more information about instance metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html">List the
     /// available CloudWatch metrics for your instances</a> in the
@@ -3654,8 +4700,16 @@ pub struct InstanceRecommendation {
     /// <p>An array of objects that describe the source resource of the recommendation.</p>
     pub recommendation_sources:
         std::option::Option<std::vec::Vec<crate::model::RecommendationSource>>,
-    /// <p>The timestamp of when the instance recommendation was last refreshed.</p>
+    /// <p>The timestamp of when the instance recommendation was last generated.</p>
     pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The risk of the current instance not meeting the performance needs of its workloads.
+    /// The higher the risk, the more likely the current Lambda function requires
+    /// more memory.</p>
+    pub current_performance_risk: std::option::Option<crate::model::CurrentPerformanceRisk>,
+    /// <p>An object that describes the effective recommendation preferences for the
+    /// instance.</p>
+    pub effective_recommendation_preferences:
+        std::option::Option<crate::model::EffectiveRecommendationPreferences>,
 }
 impl InstanceRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
@@ -3675,9 +4729,7 @@ impl InstanceRecommendation {
         self.current_instance_type.as_deref()
     }
     /// <p>The finding classification of the instance.</p>
-    ///
     /// <p>Findings for instances include:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -3715,9 +4767,7 @@ impl InstanceRecommendation {
         self.finding.as_ref()
     }
     /// <p>The reason for the finding classification of the instance.</p>
-    ///
     /// <p>Finding reason codes for instances include:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -3758,7 +4808,6 @@ impl InstanceRecommendation {
     /// your workload and there is an alternative instance type that provides better
     /// memory performance. This is identified by analyzing the memory utilization
     /// metric of the current instance during the look-back period.</p>
-    ///
     /// <note>
     /// <p>Memory utilization is analyzed only for resources that have the unified
     /// CloudWatch agent installed on them. For more information, see
@@ -3904,7 +4953,6 @@ impl InstanceRecommendation {
     /// current instance during the look-back period.</p>
     /// </li>
     /// </ul>
-    ///
     /// <note>
     /// <p>For more information about instance metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html">List the
     /// available CloudWatch metrics for your instances</a> in the
@@ -3939,9 +4987,24 @@ impl InstanceRecommendation {
     ) -> std::option::Option<&[crate::model::RecommendationSource]> {
         self.recommendation_sources.as_deref()
     }
-    /// <p>The timestamp of when the instance recommendation was last refreshed.</p>
+    /// <p>The timestamp of when the instance recommendation was last generated.</p>
     pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_refresh_timestamp.as_ref()
+    }
+    /// <p>The risk of the current instance not meeting the performance needs of its workloads.
+    /// The higher the risk, the more likely the current Lambda function requires
+    /// more memory.</p>
+    pub fn current_performance_risk(
+        &self,
+    ) -> std::option::Option<&crate::model::CurrentPerformanceRisk> {
+        self.current_performance_risk.as_ref()
+    }
+    /// <p>An object that describes the effective recommendation preferences for the
+    /// instance.</p>
+    pub fn effective_recommendation_preferences(
+        &self,
+    ) -> std::option::Option<&crate::model::EffectiveRecommendationPreferences> {
+        self.effective_recommendation_preferences.as_ref()
     }
 }
 impl std::fmt::Debug for InstanceRecommendation {
@@ -3958,6 +5021,11 @@ impl std::fmt::Debug for InstanceRecommendation {
         formatter.field("recommendation_options", &self.recommendation_options);
         formatter.field("recommendation_sources", &self.recommendation_sources);
         formatter.field("last_refresh_timestamp", &self.last_refresh_timestamp);
+        formatter.field("current_performance_risk", &self.current_performance_risk);
+        formatter.field(
+            "effective_recommendation_preferences",
+            &self.effective_recommendation_preferences,
+        );
         formatter.finish()
     }
 }
@@ -3983,6 +5051,10 @@ pub mod instance_recommendation {
         pub(crate) recommendation_sources:
             std::option::Option<std::vec::Vec<crate::model::RecommendationSource>>,
         pub(crate) last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) current_performance_risk:
+            std::option::Option<crate::model::CurrentPerformanceRisk>,
+        pub(crate) effective_recommendation_preferences:
+            std::option::Option<crate::model::EffectiveRecommendationPreferences>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
@@ -4032,9 +5104,7 @@ pub mod instance_recommendation {
             self
         }
         /// <p>The finding classification of the instance.</p>
-        ///
         /// <p>Findings for instances include:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -4073,9 +5143,7 @@ pub mod instance_recommendation {
             self
         }
         /// <p>The finding classification of the instance.</p>
-        ///
         /// <p>Findings for instances include:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -4118,9 +5186,7 @@ pub mod instance_recommendation {
         /// To override the contents of this collection use [`set_finding_reason_codes`](Self::set_finding_reason_codes).
         ///
         /// <p>The reason for the finding classification of the instance.</p>
-        ///
         /// <p>Finding reason codes for instances include:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -4161,7 +5227,6 @@ pub mod instance_recommendation {
         /// your workload and there is an alternative instance type that provides better
         /// memory performance. This is identified by analyzing the memory utilization
         /// metric of the current instance during the look-back period.</p>
-        ///
         /// <note>
         /// <p>Memory utilization is analyzed only for resources that have the unified
         /// CloudWatch agent installed on them. For more information, see
@@ -4307,7 +5372,6 @@ pub mod instance_recommendation {
         /// current instance during the look-back period.</p>
         /// </li>
         /// </ul>
-        ///
         /// <note>
         /// <p>For more information about instance metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html">List the
         /// available CloudWatch metrics for your instances</a> in the
@@ -4326,9 +5390,7 @@ pub mod instance_recommendation {
             self
         }
         /// <p>The reason for the finding classification of the instance.</p>
-        ///
         /// <p>Finding reason codes for instances include:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -4369,7 +5431,6 @@ pub mod instance_recommendation {
         /// your workload and there is an alternative instance type that provides better
         /// memory performance. This is identified by analyzing the memory utilization
         /// metric of the current instance during the look-back period.</p>
-        ///
         /// <note>
         /// <p>Memory utilization is analyzed only for resources that have the unified
         /// CloudWatch agent installed on them. For more information, see
@@ -4515,7 +5576,6 @@ pub mod instance_recommendation {
         /// current instance during the look-back period.</p>
         /// </li>
         /// </ul>
-        ///
         /// <note>
         /// <p>For more information about instance metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html">List the
         /// available CloudWatch metrics for your instances</a> in the
@@ -4611,17 +5671,55 @@ pub mod instance_recommendation {
             self.recommendation_sources = input;
             self
         }
-        /// <p>The timestamp of when the instance recommendation was last refreshed.</p>
+        /// <p>The timestamp of when the instance recommendation was last generated.</p>
         pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_refresh_timestamp = Some(input);
             self
         }
-        /// <p>The timestamp of when the instance recommendation was last refreshed.</p>
+        /// <p>The timestamp of when the instance recommendation was last generated.</p>
         pub fn set_last_refresh_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_refresh_timestamp = input;
+            self
+        }
+        /// <p>The risk of the current instance not meeting the performance needs of its workloads.
+        /// The higher the risk, the more likely the current Lambda function requires
+        /// more memory.</p>
+        pub fn current_performance_risk(
+            mut self,
+            input: crate::model::CurrentPerformanceRisk,
+        ) -> Self {
+            self.current_performance_risk = Some(input);
+            self
+        }
+        /// <p>The risk of the current instance not meeting the performance needs of its workloads.
+        /// The higher the risk, the more likely the current Lambda function requires
+        /// more memory.</p>
+        pub fn set_current_performance_risk(
+            mut self,
+            input: std::option::Option<crate::model::CurrentPerformanceRisk>,
+        ) -> Self {
+            self.current_performance_risk = input;
+            self
+        }
+        /// <p>An object that describes the effective recommendation preferences for the
+        /// instance.</p>
+        pub fn effective_recommendation_preferences(
+            mut self,
+            input: crate::model::EffectiveRecommendationPreferences,
+        ) -> Self {
+            self.effective_recommendation_preferences = Some(input);
+            self
+        }
+        /// <p>An object that describes the effective recommendation preferences for the
+        /// instance.</p>
+        pub fn set_effective_recommendation_preferences(
+            mut self,
+            input: std::option::Option<crate::model::EffectiveRecommendationPreferences>,
+        ) -> Self {
+            self.effective_recommendation_preferences = input;
             self
         }
         /// Consumes the builder and constructs a [`InstanceRecommendation`](crate::model::InstanceRecommendation)
@@ -4638,6 +5736,8 @@ pub mod instance_recommendation {
                 recommendation_options: self.recommendation_options,
                 recommendation_sources: self.recommendation_sources,
                 last_refresh_timestamp: self.last_refresh_timestamp,
+                current_performance_risk: self.current_performance_risk,
+                effective_recommendation_preferences: self.effective_recommendation_preferences,
             }
         }
     }
@@ -4646,6 +5746,188 @@ impl InstanceRecommendation {
     /// Creates a new builder-style object to manufacture [`InstanceRecommendation`](crate::model::InstanceRecommendation)
     pub fn builder() -> crate::model::instance_recommendation::Builder {
         crate::model::instance_recommendation::Builder::default()
+    }
+}
+
+/// <p>Describes the effective recommendation preferences for a resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EffectiveRecommendationPreferences {
+    /// <p>Describes the CPU vendor and architecture for an instance or Auto Scaling group
+    /// recommendations.</p>
+    /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
+    /// <ul>
+    /// <li>
+    /// <p>A <a>GetEC2InstanceRecommendations</a> or <a>GetAutoScalingGroupRecommendations</a> request, Compute Optimizer
+    /// returns recommendations that consist of Graviton2 instance types only.</p>
+    /// </li>
+    /// <li>
+    /// <p>A <a>GetEC2RecommendationProjectedMetrics</a> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type
+    /// recommendations only.</p>
+    /// </li>
+    /// <li>
+    /// <p>A <a>ExportEC2InstanceRecommendations</a> or <a>ExportAutoScalingGroupRecommendations</a> request, Compute Optimizer
+    /// exports recommendations that consist of Graviton2 instance types only.</p>
+    /// </li>
+    /// </ul>
+    pub cpu_vendor_architectures:
+        std::option::Option<std::vec::Vec<crate::model::CpuVendorArchitecture>>,
+    /// <p>Describes the activation status of the enhanced infrastructure metrics
+    /// preference.</p>
+    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest
+    /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet
+    /// applied.</p>
+    pub enhanced_infrastructure_metrics:
+        std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
+}
+impl EffectiveRecommendationPreferences {
+    /// <p>Describes the CPU vendor and architecture for an instance or Auto Scaling group
+    /// recommendations.</p>
+    /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
+    /// <ul>
+    /// <li>
+    /// <p>A <a>GetEC2InstanceRecommendations</a> or <a>GetAutoScalingGroupRecommendations</a> request, Compute Optimizer
+    /// returns recommendations that consist of Graviton2 instance types only.</p>
+    /// </li>
+    /// <li>
+    /// <p>A <a>GetEC2RecommendationProjectedMetrics</a> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type
+    /// recommendations only.</p>
+    /// </li>
+    /// <li>
+    /// <p>A <a>ExportEC2InstanceRecommendations</a> or <a>ExportAutoScalingGroupRecommendations</a> request, Compute Optimizer
+    /// exports recommendations that consist of Graviton2 instance types only.</p>
+    /// </li>
+    /// </ul>
+    pub fn cpu_vendor_architectures(
+        &self,
+    ) -> std::option::Option<&[crate::model::CpuVendorArchitecture]> {
+        self.cpu_vendor_architectures.as_deref()
+    }
+    /// <p>Describes the activation status of the enhanced infrastructure metrics
+    /// preference.</p>
+    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest
+    /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet
+    /// applied.</p>
+    pub fn enhanced_infrastructure_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::EnhancedInfrastructureMetrics> {
+        self.enhanced_infrastructure_metrics.as_ref()
+    }
+}
+impl std::fmt::Debug for EffectiveRecommendationPreferences {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EffectiveRecommendationPreferences");
+        formatter.field("cpu_vendor_architectures", &self.cpu_vendor_architectures);
+        formatter.field(
+            "enhanced_infrastructure_metrics",
+            &self.enhanced_infrastructure_metrics,
+        );
+        formatter.finish()
+    }
+}
+/// See [`EffectiveRecommendationPreferences`](crate::model::EffectiveRecommendationPreferences)
+pub mod effective_recommendation_preferences {
+    /// A builder for [`EffectiveRecommendationPreferences`](crate::model::EffectiveRecommendationPreferences)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cpu_vendor_architectures:
+            std::option::Option<std::vec::Vec<crate::model::CpuVendorArchitecture>>,
+        pub(crate) enhanced_infrastructure_metrics:
+            std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
+    }
+    impl Builder {
+        /// Appends an item to `cpu_vendor_architectures`.
+        ///
+        /// To override the contents of this collection use [`set_cpu_vendor_architectures`](Self::set_cpu_vendor_architectures).
+        ///
+        /// <p>Describes the CPU vendor and architecture for an instance or Auto Scaling group
+        /// recommendations.</p>
+        /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
+        /// <ul>
+        /// <li>
+        /// <p>A <a>GetEC2InstanceRecommendations</a> or <a>GetAutoScalingGroupRecommendations</a> request, Compute Optimizer
+        /// returns recommendations that consist of Graviton2 instance types only.</p>
+        /// </li>
+        /// <li>
+        /// <p>A <a>GetEC2RecommendationProjectedMetrics</a> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type
+        /// recommendations only.</p>
+        /// </li>
+        /// <li>
+        /// <p>A <a>ExportEC2InstanceRecommendations</a> or <a>ExportAutoScalingGroupRecommendations</a> request, Compute Optimizer
+        /// exports recommendations that consist of Graviton2 instance types only.</p>
+        /// </li>
+        /// </ul>
+        pub fn cpu_vendor_architectures(
+            mut self,
+            input: impl Into<crate::model::CpuVendorArchitecture>,
+        ) -> Self {
+            let mut v = self.cpu_vendor_architectures.unwrap_or_default();
+            v.push(input.into());
+            self.cpu_vendor_architectures = Some(v);
+            self
+        }
+        /// <p>Describes the CPU vendor and architecture for an instance or Auto Scaling group
+        /// recommendations.</p>
+        /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
+        /// <ul>
+        /// <li>
+        /// <p>A <a>GetEC2InstanceRecommendations</a> or <a>GetAutoScalingGroupRecommendations</a> request, Compute Optimizer
+        /// returns recommendations that consist of Graviton2 instance types only.</p>
+        /// </li>
+        /// <li>
+        /// <p>A <a>GetEC2RecommendationProjectedMetrics</a> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type
+        /// recommendations only.</p>
+        /// </li>
+        /// <li>
+        /// <p>A <a>ExportEC2InstanceRecommendations</a> or <a>ExportAutoScalingGroupRecommendations</a> request, Compute Optimizer
+        /// exports recommendations that consist of Graviton2 instance types only.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_cpu_vendor_architectures(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CpuVendorArchitecture>>,
+        ) -> Self {
+            self.cpu_vendor_architectures = input;
+            self
+        }
+        /// <p>Describes the activation status of the enhanced infrastructure metrics
+        /// preference.</p>
+        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest
+        /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet
+        /// applied.</p>
+        pub fn enhanced_infrastructure_metrics(
+            mut self,
+            input: crate::model::EnhancedInfrastructureMetrics,
+        ) -> Self {
+            self.enhanced_infrastructure_metrics = Some(input);
+            self
+        }
+        /// <p>Describes the activation status of the enhanced infrastructure metrics
+        /// preference.</p>
+        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest
+        /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet
+        /// applied.</p>
+        pub fn set_enhanced_infrastructure_metrics(
+            mut self,
+            input: std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
+        ) -> Self {
+            self.enhanced_infrastructure_metrics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EffectiveRecommendationPreferences`](crate::model::EffectiveRecommendationPreferences)
+        pub fn build(self) -> crate::model::EffectiveRecommendationPreferences {
+            crate::model::EffectiveRecommendationPreferences {
+                cpu_vendor_architectures: self.cpu_vendor_architectures,
+                enhanced_infrastructure_metrics: self.enhanced_infrastructure_metrics,
+            }
+        }
+    }
+}
+impl EffectiveRecommendationPreferences {
+    /// Creates a new builder-style object to manufacture [`EffectiveRecommendationPreferences`](crate::model::EffectiveRecommendationPreferences)
+    pub fn builder() -> crate::model::effective_recommendation_preferences::Builder {
+        crate::model::effective_recommendation_preferences::Builder::default()
     }
 }
 
@@ -4746,7 +6028,6 @@ pub struct InstanceRecommendationOption {
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>An array of objects that describe the projected utilization metrics of the instance
     /// recommendation option.</p>
-    ///
     /// <note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected
     /// utilization metrics returned. Additionally, the <code>Memory</code> metric is
@@ -4762,9 +6043,7 @@ pub struct InstanceRecommendationOption {
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change the instance type guide for Linux</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-resize.html">Change the instance type
     /// guide for Windows</a> provide general guidance for getting started with an
     /// instance migration.</p>
-    ///
     /// <p>Platform differences include:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -4856,7 +6135,6 @@ pub struct InstanceRecommendationOption {
     /// </ul>
     pub platform_differences: std::option::Option<std::vec::Vec<crate::model::PlatformDifference>>,
     /// <p>The performance risk of the instance recommendation option.</p>
-    ///
     /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting
     /// the resource needs of your workload. Compute Optimizer calculates an individual
     /// performance risk score for each specification of the recommended instance, including
@@ -4865,7 +6143,6 @@ pub struct InstanceRecommendationOption {
     /// The performance
     /// risk of the recommended instance is calculated as the maximum performance risk score
     /// across the analyzed resource specifications.</p>
-    ///
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
     /// that the recommended resource is predicted to always provide enough hardware capability.
     /// The higher the performance risk is, the more likely you should validate whether the
@@ -4873,9 +6150,12 @@ pub struct InstanceRecommendationOption {
     /// your resource.</p>
     pub performance_risk: f64,
     /// <p>The rank of the instance recommendation option.</p>
-    ///
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub rank: i32,
+    /// <p>An object that describes the savings opportunity for the instance recommendation
+    /// option. Savings opportunity includes the estimated monthly savings amount and
+    /// percentage.</p>
+    pub savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
 }
 impl InstanceRecommendationOption {
     /// <p>The instance type of the instance recommendation.</p>
@@ -4884,7 +6164,6 @@ impl InstanceRecommendationOption {
     }
     /// <p>An array of objects that describe the projected utilization metrics of the instance
     /// recommendation option.</p>
-    ///
     /// <note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected
     /// utilization metrics returned. Additionally, the <code>Memory</code> metric is
@@ -4903,9 +6182,7 @@ impl InstanceRecommendationOption {
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change the instance type guide for Linux</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-resize.html">Change the instance type
     /// guide for Windows</a> provide general guidance for getting started with an
     /// instance migration.</p>
-    ///
     /// <p>Platform differences include:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -4999,7 +6276,6 @@ impl InstanceRecommendationOption {
         self.platform_differences.as_deref()
     }
     /// <p>The performance risk of the instance recommendation option.</p>
-    ///
     /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting
     /// the resource needs of your workload. Compute Optimizer calculates an individual
     /// performance risk score for each specification of the recommended instance, including
@@ -5008,7 +6284,6 @@ impl InstanceRecommendationOption {
     /// The performance
     /// risk of the recommended instance is calculated as the maximum performance risk score
     /// across the analyzed resource specifications.</p>
-    ///
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
     /// that the recommended resource is predicted to always provide enough hardware capability.
     /// The higher the performance risk is, the more likely you should validate whether the
@@ -5018,10 +6293,15 @@ impl InstanceRecommendationOption {
         self.performance_risk
     }
     /// <p>The rank of the instance recommendation option.</p>
-    ///
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub fn rank(&self) -> i32 {
         self.rank
+    }
+    /// <p>An object that describes the savings opportunity for the instance recommendation
+    /// option. Savings opportunity includes the estimated monthly savings amount and
+    /// percentage.</p>
+    pub fn savings_opportunity(&self) -> std::option::Option<&crate::model::SavingsOpportunity> {
+        self.savings_opportunity.as_ref()
     }
 }
 impl std::fmt::Debug for InstanceRecommendationOption {
@@ -5035,6 +6315,7 @@ impl std::fmt::Debug for InstanceRecommendationOption {
         formatter.field("platform_differences", &self.platform_differences);
         formatter.field("performance_risk", &self.performance_risk);
         formatter.field("rank", &self.rank);
+        formatter.field("savings_opportunity", &self.savings_opportunity);
         formatter.finish()
     }
 }
@@ -5051,6 +6332,7 @@ pub mod instance_recommendation_option {
             std::option::Option<std::vec::Vec<crate::model::PlatformDifference>>,
         pub(crate) performance_risk: std::option::Option<f64>,
         pub(crate) rank: std::option::Option<i32>,
+        pub(crate) savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
     }
     impl Builder {
         /// <p>The instance type of the instance recommendation.</p>
@@ -5072,7 +6354,6 @@ pub mod instance_recommendation_option {
         ///
         /// <p>An array of objects that describe the projected utilization metrics of the instance
         /// recommendation option.</p>
-        ///
         /// <note>
         /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected
         /// utilization metrics returned. Additionally, the <code>Memory</code> metric is
@@ -5091,7 +6372,6 @@ pub mod instance_recommendation_option {
         }
         /// <p>An array of objects that describe the projected utilization metrics of the instance
         /// recommendation option.</p>
-        ///
         /// <note>
         /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected
         /// utilization metrics returned. Additionally, the <code>Memory</code> metric is
@@ -5116,9 +6396,7 @@ pub mod instance_recommendation_option {
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change the instance type guide for Linux</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-resize.html">Change the instance type
         /// guide for Windows</a> provide general guidance for getting started with an
         /// instance migration.</p>
-        ///
         /// <p>Platform differences include:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -5223,9 +6501,7 @@ pub mod instance_recommendation_option {
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change the instance type guide for Linux</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-resize.html">Change the instance type
         /// guide for Windows</a> provide general guidance for getting started with an
         /// instance migration.</p>
-        ///
         /// <p>Platform differences include:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -5323,7 +6599,6 @@ pub mod instance_recommendation_option {
             self
         }
         /// <p>The performance risk of the instance recommendation option.</p>
-        ///
         /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting
         /// the resource needs of your workload. Compute Optimizer calculates an individual
         /// performance risk score for each specification of the recommended instance, including
@@ -5332,7 +6607,6 @@ pub mod instance_recommendation_option {
         /// The performance
         /// risk of the recommended instance is calculated as the maximum performance risk score
         /// across the analyzed resource specifications.</p>
-        ///
         /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
         /// that the recommended resource is predicted to always provide enough hardware capability.
         /// The higher the performance risk is, the more likely you should validate whether the
@@ -5343,7 +6617,6 @@ pub mod instance_recommendation_option {
             self
         }
         /// <p>The performance risk of the instance recommendation option.</p>
-        ///
         /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting
         /// the resource needs of your workload. Compute Optimizer calculates an individual
         /// performance risk score for each specification of the recommended instance, including
@@ -5352,7 +6625,6 @@ pub mod instance_recommendation_option {
         /// The performance
         /// risk of the recommended instance is calculated as the maximum performance risk score
         /// across the analyzed resource specifications.</p>
-        ///
         /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
         /// that the recommended resource is predicted to always provide enough hardware capability.
         /// The higher the performance risk is, the more likely you should validate whether the
@@ -5363,17 +6635,32 @@ pub mod instance_recommendation_option {
             self
         }
         /// <p>The rank of the instance recommendation option.</p>
-        ///
         /// <p>The top recommendation option is ranked as <code>1</code>.</p>
         pub fn rank(mut self, input: i32) -> Self {
             self.rank = Some(input);
             self
         }
         /// <p>The rank of the instance recommendation option.</p>
-        ///
         /// <p>The top recommendation option is ranked as <code>1</code>.</p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.rank = input;
+            self
+        }
+        /// <p>An object that describes the savings opportunity for the instance recommendation
+        /// option. Savings opportunity includes the estimated monthly savings amount and
+        /// percentage.</p>
+        pub fn savings_opportunity(mut self, input: crate::model::SavingsOpportunity) -> Self {
+            self.savings_opportunity = Some(input);
+            self
+        }
+        /// <p>An object that describes the savings opportunity for the instance recommendation
+        /// option. Savings opportunity includes the estimated monthly savings amount and
+        /// percentage.</p>
+        pub fn set_savings_opportunity(
+            mut self,
+            input: std::option::Option<crate::model::SavingsOpportunity>,
+        ) -> Self {
+            self.savings_opportunity = input;
             self
         }
         /// Consumes the builder and constructs a [`InstanceRecommendationOption`](crate::model::InstanceRecommendationOption)
@@ -5384,6 +6671,7 @@ pub mod instance_recommendation_option {
                 platform_differences: self.platform_differences,
                 performance_risk: self.performance_risk.unwrap_or_default(),
                 rank: self.rank.unwrap_or_default(),
+                savings_opportunity: self.savings_opportunity,
             }
         }
     }
@@ -5475,7 +6763,6 @@ impl AsRef<str> for PlatformDifference {
 
 /// <p>Describes a utilization metric of a resource, such as an Amazon EC2
 /// instance.</p>
-///
 /// <p>Compare the utilization metric data of your resource against its projected utilization
 /// metric data to determine the performance difference between your current resource and
 /// the recommended option.</p>
@@ -5483,7 +6770,6 @@ impl AsRef<str> for PlatformDifference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UtilizationMetric {
     /// <p>The name of the utilization metric.</p>
-    ///
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
     /// <li>
@@ -5594,12 +6880,9 @@ pub struct UtilizationMetric {
     /// </ul>
     pub name: std::option::Option<crate::model::MetricName>,
     /// <p>The statistic of the utilization metric.</p>
-    ///
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs
     /// return utilization metrics using only the <code>Maximum</code> statistic, which is the
     /// highest value observed during the specified period.</p>
-    ///
-    ///
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the
     /// <code>Average</code> statistic, which is the value of <code>Sum</code> /
     /// <code>SampleCount</code> during the specified period. For more information, see
@@ -5614,7 +6897,6 @@ pub struct UtilizationMetric {
 }
 impl UtilizationMetric {
     /// <p>The name of the utilization metric.</p>
-    ///
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
     /// <li>
@@ -5727,12 +7009,9 @@ impl UtilizationMetric {
         self.name.as_ref()
     }
     /// <p>The statistic of the utilization metric.</p>
-    ///
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs
     /// return utilization metrics using only the <code>Maximum</code> statistic, which is the
     /// highest value observed during the specified period.</p>
-    ///
-    ///
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the
     /// <code>Average</code> statistic, which is the value of <code>Sum</code> /
     /// <code>SampleCount</code> during the specified period. For more information, see
@@ -5770,7 +7049,6 @@ pub mod utilization_metric {
     }
     impl Builder {
         /// <p>The name of the utilization metric.</p>
-        ///
         /// <p>The following utilization metrics are available:</p>
         /// <ul>
         /// <li>
@@ -5884,7 +7162,6 @@ pub mod utilization_metric {
             self
         }
         /// <p>The name of the utilization metric.</p>
-        ///
         /// <p>The following utilization metrics are available:</p>
         /// <ul>
         /// <li>
@@ -5998,12 +7275,9 @@ pub mod utilization_metric {
             self
         }
         /// <p>The statistic of the utilization metric.</p>
-        ///
         /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs
         /// return utilization metrics using only the <code>Maximum</code> statistic, which is the
         /// highest value observed during the specified period.</p>
-        ///
-        ///
         /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the
         /// <code>Average</code> statistic, which is the value of <code>Sum</code> /
         /// <code>SampleCount</code> during the specified period. For more information, see
@@ -6017,12 +7291,9 @@ pub mod utilization_metric {
             self
         }
         /// <p>The statistic of the utilization metric.</p>
-        ///
         /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs
         /// return utilization metrics using only the <code>Maximum</code> statistic, which is the
         /// highest value observed during the specified period.</p>
-        ///
-        ///
         /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the
         /// <code>Average</code> statistic, which is the value of <code>Sum</code> /
         /// <code>SampleCount</code> during the specified period. For more information, see
@@ -6251,7 +7522,6 @@ impl AsRef<str> for InstanceRecommendationFindingReasonCode {
 
 /// <p>Describes a filter that returns a more specific list of recommendations. Use this
 /// filter with the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a> actions.</p>
-///
 /// <p>You can use <code>EBSFilter</code> with the <a>GetEBSVolumeRecommendations</a> action,
 /// <code>LambdaFunctionRecommendationFilter</code> with the <a>GetLambdaFunctionRecommendations</a> action, and <code>JobFilter</code> with
 /// the <a>DescribeRecommendationExportJobs</a> action.</p>
@@ -6259,22 +7529,17 @@ impl AsRef<str> for InstanceRecommendationFindingReasonCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>The name of the filter.</p>
-    ///
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding
     /// classification (for example, <code>Underprovisioned</code>).</p>
-    ///
     /// <p>Specify <code>RecommendationSourceType</code> to return recommendations of a specific
     /// resource type (for example, <code>Ec2Instance</code>).</p>
-    ///
     /// <p>Specify <code>FindingReasonCodes</code> to return recommendations with a specific
     /// finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
     pub name: std::option::Option<crate::model::FilterName>,
     /// <p>The value of the filter.</p>
-    ///
     /// <p>The valid values for this parameter are as follows, depending on what you specify for
     /// the <code>name</code> parameter and the resource type that you wish to filter results
     /// for:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>Specify <code>Optimized</code> or <code>NotOptimized</code> if you specify the
@@ -6295,7 +7560,6 @@ pub struct Filter {
     /// <li>
     /// <p>Specify one of the following options if you specify the <code>name</code>
     /// parameter as <code>FindingReasonCodes</code>:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -6442,24 +7706,19 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The name of the filter.</p>
-    ///
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding
     /// classification (for example, <code>Underprovisioned</code>).</p>
-    ///
     /// <p>Specify <code>RecommendationSourceType</code> to return recommendations of a specific
     /// resource type (for example, <code>Ec2Instance</code>).</p>
-    ///
     /// <p>Specify <code>FindingReasonCodes</code> to return recommendations with a specific
     /// finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
     pub fn name(&self) -> std::option::Option<&crate::model::FilterName> {
         self.name.as_ref()
     }
     /// <p>The value of the filter.</p>
-    ///
     /// <p>The valid values for this parameter are as follows, depending on what you specify for
     /// the <code>name</code> parameter and the resource type that you wish to filter results
     /// for:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>Specify <code>Optimized</code> or <code>NotOptimized</code> if you specify the
@@ -6480,7 +7739,6 @@ impl Filter {
     /// <li>
     /// <p>Specify one of the following options if you specify the <code>name</code>
     /// parameter as <code>FindingReasonCodes</code>:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -6646,13 +7904,10 @@ pub mod filter {
     }
     impl Builder {
         /// <p>The name of the filter.</p>
-        ///
         /// <p>Specify <code>Finding</code> to return recommendations with a specific finding
         /// classification (for example, <code>Underprovisioned</code>).</p>
-        ///
         /// <p>Specify <code>RecommendationSourceType</code> to return recommendations of a specific
         /// resource type (for example, <code>Ec2Instance</code>).</p>
-        ///
         /// <p>Specify <code>FindingReasonCodes</code> to return recommendations with a specific
         /// finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
         pub fn name(mut self, input: crate::model::FilterName) -> Self {
@@ -6660,13 +7915,10 @@ pub mod filter {
             self
         }
         /// <p>The name of the filter.</p>
-        ///
         /// <p>Specify <code>Finding</code> to return recommendations with a specific finding
         /// classification (for example, <code>Underprovisioned</code>).</p>
-        ///
         /// <p>Specify <code>RecommendationSourceType</code> to return recommendations of a specific
         /// resource type (for example, <code>Ec2Instance</code>).</p>
-        ///
         /// <p>Specify <code>FindingReasonCodes</code> to return recommendations with a specific
         /// finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::FilterName>) -> Self {
@@ -6678,11 +7930,9 @@ pub mod filter {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>The value of the filter.</p>
-        ///
         /// <p>The valid values for this parameter are as follows, depending on what you specify for
         /// the <code>name</code> parameter and the resource type that you wish to filter results
         /// for:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>Specify <code>Optimized</code> or <code>NotOptimized</code> if you specify the
@@ -6703,7 +7953,6 @@ pub mod filter {
         /// <li>
         /// <p>Specify one of the following options if you specify the <code>name</code>
         /// parameter as <code>FindingReasonCodes</code>:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -6853,11 +8102,9 @@ pub mod filter {
             self
         }
         /// <p>The value of the filter.</p>
-        ///
         /// <p>The valid values for this parameter are as follows, depending on what you specify for
         /// the <code>name</code> parameter and the resource type that you wish to filter results
         /// for:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>Specify <code>Optimized</code> or <code>NotOptimized</code> if you specify the
@@ -6878,7 +8125,6 @@ pub mod filter {
         /// <li>
         /// <p>Specify one of the following options if you specify the <code>name</code>
         /// parameter as <code>FindingReasonCodes</code>:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -7114,7 +8360,6 @@ pub struct VolumeRecommendation {
     /// <p>An array of objects that describe the current configuration of the volume.</p>
     pub current_configuration: std::option::Option<crate::model::VolumeConfiguration>,
     /// <p>The finding classification of the volume.</p>
-    ///
     /// <p>Findings for volumes include:</p>
     /// <ul>
     /// <li>
@@ -7146,8 +8391,12 @@ pub struct VolumeRecommendation {
     /// <p>An array of objects that describe the recommendation options for the volume.</p>
     pub volume_recommendation_options:
         std::option::Option<std::vec::Vec<crate::model::VolumeRecommendationOption>>,
-    /// <p>The timestamp of when the volume recommendation was last refreshed.</p>
+    /// <p>The timestamp of when the volume recommendation was last generated.</p>
     pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The risk of the current EBS volume not meeting the performance needs of its workloads.
+    /// The higher the risk, the more likely the current EBS volume doesn't have sufficient
+    /// capacity.</p>
+    pub current_performance_risk: std::option::Option<crate::model::CurrentPerformanceRisk>,
 }
 impl VolumeRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current volume.</p>
@@ -7163,7 +8412,6 @@ impl VolumeRecommendation {
         self.current_configuration.as_ref()
     }
     /// <p>The finding classification of the volume.</p>
-    ///
     /// <p>Findings for volumes include:</p>
     /// <ul>
     /// <li>
@@ -7206,9 +8454,17 @@ impl VolumeRecommendation {
     ) -> std::option::Option<&[crate::model::VolumeRecommendationOption]> {
         self.volume_recommendation_options.as_deref()
     }
-    /// <p>The timestamp of when the volume recommendation was last refreshed.</p>
+    /// <p>The timestamp of when the volume recommendation was last generated.</p>
     pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_refresh_timestamp.as_ref()
+    }
+    /// <p>The risk of the current EBS volume not meeting the performance needs of its workloads.
+    /// The higher the risk, the more likely the current EBS volume doesn't have sufficient
+    /// capacity.</p>
+    pub fn current_performance_risk(
+        &self,
+    ) -> std::option::Option<&crate::model::CurrentPerformanceRisk> {
+        self.current_performance_risk.as_ref()
     }
 }
 impl std::fmt::Debug for VolumeRecommendation {
@@ -7225,6 +8481,7 @@ impl std::fmt::Debug for VolumeRecommendation {
             &self.volume_recommendation_options,
         );
         formatter.field("last_refresh_timestamp", &self.last_refresh_timestamp);
+        formatter.field("current_performance_risk", &self.current_performance_risk);
         formatter.finish()
     }
 }
@@ -7244,6 +8501,8 @@ pub mod volume_recommendation {
         pub(crate) volume_recommendation_options:
             std::option::Option<std::vec::Vec<crate::model::VolumeRecommendationOption>>,
         pub(crate) last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) current_performance_risk:
+            std::option::Option<crate::model::CurrentPerformanceRisk>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the current volume.</p>
@@ -7280,7 +8539,6 @@ pub mod volume_recommendation {
             self
         }
         /// <p>The finding classification of the volume.</p>
-        ///
         /// <p>Findings for volumes include:</p>
         /// <ul>
         /// <li>
@@ -7309,7 +8567,6 @@ pub mod volume_recommendation {
             self
         }
         /// <p>The finding classification of the volume.</p>
-        ///
         /// <p>Findings for volumes include:</p>
         /// <ul>
         /// <li>
@@ -7391,17 +8648,37 @@ pub mod volume_recommendation {
             self.volume_recommendation_options = input;
             self
         }
-        /// <p>The timestamp of when the volume recommendation was last refreshed.</p>
+        /// <p>The timestamp of when the volume recommendation was last generated.</p>
         pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_refresh_timestamp = Some(input);
             self
         }
-        /// <p>The timestamp of when the volume recommendation was last refreshed.</p>
+        /// <p>The timestamp of when the volume recommendation was last generated.</p>
         pub fn set_last_refresh_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_refresh_timestamp = input;
+            self
+        }
+        /// <p>The risk of the current EBS volume not meeting the performance needs of its workloads.
+        /// The higher the risk, the more likely the current EBS volume doesn't have sufficient
+        /// capacity.</p>
+        pub fn current_performance_risk(
+            mut self,
+            input: crate::model::CurrentPerformanceRisk,
+        ) -> Self {
+            self.current_performance_risk = Some(input);
+            self
+        }
+        /// <p>The risk of the current EBS volume not meeting the performance needs of its workloads.
+        /// The higher the risk, the more likely the current EBS volume doesn't have sufficient
+        /// capacity.</p>
+        pub fn set_current_performance_risk(
+            mut self,
+            input: std::option::Option<crate::model::CurrentPerformanceRisk>,
+        ) -> Self {
+            self.current_performance_risk = input;
             self
         }
         /// Consumes the builder and constructs a [`VolumeRecommendation`](crate::model::VolumeRecommendation)
@@ -7415,6 +8692,7 @@ pub mod volume_recommendation {
                 look_back_period_in_days: self.look_back_period_in_days.unwrap_or_default(),
                 volume_recommendation_options: self.volume_recommendation_options,
                 last_refresh_timestamp: self.last_refresh_timestamp,
+                current_performance_risk: self.current_performance_risk,
             }
         }
     }
@@ -7434,10 +8712,8 @@ pub struct VolumeRecommendationOption {
     /// <p>An array of objects that describe a volume configuration.</p>
     pub configuration: std::option::Option<crate::model::VolumeConfiguration>,
     /// <p>The performance risk of the volume recommendation option.</p>
-    ///
     /// <p>Performance risk is the likelihood of the recommended volume type meeting the
     /// performance requirement of your workload.</p>
-    ///
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
     /// that the recommended resource is predicted to always provide enough hardware capability.
     /// The higher the performance risk is, the more likely you should validate whether the
@@ -7445,9 +8721,12 @@ pub struct VolumeRecommendationOption {
     /// your resource.</p>
     pub performance_risk: f64,
     /// <p>The rank of the volume recommendation option.</p>
-    ///
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub rank: i32,
+    /// <p>An object that describes the savings opportunity for the EBS volume recommendation
+    /// option. Savings opportunity includes the estimated monthly savings amount and
+    /// percentage.</p>
+    pub savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
 }
 impl VolumeRecommendationOption {
     /// <p>An array of objects that describe a volume configuration.</p>
@@ -7455,10 +8734,8 @@ impl VolumeRecommendationOption {
         self.configuration.as_ref()
     }
     /// <p>The performance risk of the volume recommendation option.</p>
-    ///
     /// <p>Performance risk is the likelihood of the recommended volume type meeting the
     /// performance requirement of your workload.</p>
-    ///
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
     /// that the recommended resource is predicted to always provide enough hardware capability.
     /// The higher the performance risk is, the more likely you should validate whether the
@@ -7468,10 +8745,15 @@ impl VolumeRecommendationOption {
         self.performance_risk
     }
     /// <p>The rank of the volume recommendation option.</p>
-    ///
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub fn rank(&self) -> i32 {
         self.rank
+    }
+    /// <p>An object that describes the savings opportunity for the EBS volume recommendation
+    /// option. Savings opportunity includes the estimated monthly savings amount and
+    /// percentage.</p>
+    pub fn savings_opportunity(&self) -> std::option::Option<&crate::model::SavingsOpportunity> {
+        self.savings_opportunity.as_ref()
     }
 }
 impl std::fmt::Debug for VolumeRecommendationOption {
@@ -7480,6 +8762,7 @@ impl std::fmt::Debug for VolumeRecommendationOption {
         formatter.field("configuration", &self.configuration);
         formatter.field("performance_risk", &self.performance_risk);
         formatter.field("rank", &self.rank);
+        formatter.field("savings_opportunity", &self.savings_opportunity);
         formatter.finish()
     }
 }
@@ -7492,6 +8775,7 @@ pub mod volume_recommendation_option {
         pub(crate) configuration: std::option::Option<crate::model::VolumeConfiguration>,
         pub(crate) performance_risk: std::option::Option<f64>,
         pub(crate) rank: std::option::Option<i32>,
+        pub(crate) savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
     }
     impl Builder {
         /// <p>An array of objects that describe a volume configuration.</p>
@@ -7508,10 +8792,8 @@ pub mod volume_recommendation_option {
             self
         }
         /// <p>The performance risk of the volume recommendation option.</p>
-        ///
         /// <p>Performance risk is the likelihood of the recommended volume type meeting the
         /// performance requirement of your workload.</p>
-        ///
         /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
         /// that the recommended resource is predicted to always provide enough hardware capability.
         /// The higher the performance risk is, the more likely you should validate whether the
@@ -7522,10 +8804,8 @@ pub mod volume_recommendation_option {
             self
         }
         /// <p>The performance risk of the volume recommendation option.</p>
-        ///
         /// <p>Performance risk is the likelihood of the recommended volume type meeting the
         /// performance requirement of your workload.</p>
-        ///
         /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
         /// that the recommended resource is predicted to always provide enough hardware capability.
         /// The higher the performance risk is, the more likely you should validate whether the
@@ -7536,17 +8816,32 @@ pub mod volume_recommendation_option {
             self
         }
         /// <p>The rank of the volume recommendation option.</p>
-        ///
         /// <p>The top recommendation option is ranked as <code>1</code>.</p>
         pub fn rank(mut self, input: i32) -> Self {
             self.rank = Some(input);
             self
         }
         /// <p>The rank of the volume recommendation option.</p>
-        ///
         /// <p>The top recommendation option is ranked as <code>1</code>.</p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.rank = input;
+            self
+        }
+        /// <p>An object that describes the savings opportunity for the EBS volume recommendation
+        /// option. Savings opportunity includes the estimated monthly savings amount and
+        /// percentage.</p>
+        pub fn savings_opportunity(mut self, input: crate::model::SavingsOpportunity) -> Self {
+            self.savings_opportunity = Some(input);
+            self
+        }
+        /// <p>An object that describes the savings opportunity for the EBS volume recommendation
+        /// option. Savings opportunity includes the estimated monthly savings amount and
+        /// percentage.</p>
+        pub fn set_savings_opportunity(
+            mut self,
+            input: std::option::Option<crate::model::SavingsOpportunity>,
+        ) -> Self {
+            self.savings_opportunity = input;
             self
         }
         /// Consumes the builder and constructs a [`VolumeRecommendationOption`](crate::model::VolumeRecommendationOption)
@@ -7555,6 +8850,7 @@ pub mod volume_recommendation_option {
                 configuration: self.configuration,
                 performance_risk: self.performance_risk.unwrap_or_default(),
                 rank: self.rank.unwrap_or_default(),
+                savings_opportunity: self.savings_opportunity,
             }
         }
     }
@@ -7572,7 +8868,6 @@ impl VolumeRecommendationOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VolumeConfiguration {
     /// <p>The volume type.</p>
-    ///
     /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or
     /// <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
     /// HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
@@ -7591,7 +8886,6 @@ pub struct VolumeConfiguration {
 }
 impl VolumeConfiguration {
     /// <p>The volume type.</p>
-    ///
     /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or
     /// <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
     /// HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
@@ -7650,7 +8944,6 @@ pub mod volume_configuration {
     }
     impl Builder {
         /// <p>The volume type.</p>
-        ///
         /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or
         /// <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
         /// HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
@@ -7660,7 +8953,6 @@ pub mod volume_configuration {
             self
         }
         /// <p>The volume type.</p>
-        ///
         /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or
         /// <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
         /// HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
@@ -7741,7 +9033,6 @@ impl VolumeConfiguration {
 
 /// <p>Describes a utilization metric of an Amazon Elastic Block Store (Amazon EBS)
 /// volume.</p>
-///
 /// <p>Compare the utilization metric data of your resource against its projected utilization
 /// metric data to determine the performance difference between your current resource and
 /// the recommended option.</p>
@@ -7749,7 +9040,6 @@ impl VolumeConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsUtilizationMetric {
     /// <p>The name of the utilization metric.</p>
-    ///
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
     /// <li>
@@ -7779,11 +9069,9 @@ pub struct EbsUtilizationMetric {
     /// </ul>
     pub name: std::option::Option<crate::model::EbsMetricName>,
     /// <p>The statistic of the utilization metric.</p>
-    ///
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs
     /// return utilization metrics using only the <code>Maximum</code> statistic, which is the
     /// highest value observed during the specified period.</p>
-    ///
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the
     /// <code>Average</code> statistic, which is the value of <code>Sum</code> /
     /// <code>SampleCount</code> during the specified period. For more information, see
@@ -7798,7 +9086,6 @@ pub struct EbsUtilizationMetric {
 }
 impl EbsUtilizationMetric {
     /// <p>The name of the utilization metric.</p>
-    ///
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
     /// <li>
@@ -7830,11 +9117,9 @@ impl EbsUtilizationMetric {
         self.name.as_ref()
     }
     /// <p>The statistic of the utilization metric.</p>
-    ///
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs
     /// return utilization metrics using only the <code>Maximum</code> statistic, which is the
     /// highest value observed during the specified period.</p>
-    ///
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the
     /// <code>Average</code> statistic, which is the value of <code>Sum</code> /
     /// <code>SampleCount</code> during the specified period. For more information, see
@@ -7872,7 +9157,6 @@ pub mod ebs_utilization_metric {
     }
     impl Builder {
         /// <p>The name of the utilization metric.</p>
-        ///
         /// <p>The following utilization metrics are available:</p>
         /// <ul>
         /// <li>
@@ -7905,7 +9189,6 @@ pub mod ebs_utilization_metric {
             self
         }
         /// <p>The name of the utilization metric.</p>
-        ///
         /// <p>The following utilization metrics are available:</p>
         /// <ul>
         /// <li>
@@ -7938,11 +9221,9 @@ pub mod ebs_utilization_metric {
             self
         }
         /// <p>The statistic of the utilization metric.</p>
-        ///
         /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs
         /// return utilization metrics using only the <code>Maximum</code> statistic, which is the
         /// highest value observed during the specified period.</p>
-        ///
         /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the
         /// <code>Average</code> statistic, which is the value of <code>Sum</code> /
         /// <code>SampleCount</code> during the specified period. For more information, see
@@ -7956,11 +9237,9 @@ pub mod ebs_utilization_metric {
             self
         }
         /// <p>The statistic of the utilization metric.</p>
-        ///
         /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs
         /// return utilization metrics using only the <code>Maximum</code> statistic, which is the
         /// highest value observed during the specified period.</p>
-        ///
         /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the
         /// <code>Average</code> statistic, which is the value of <code>Sum</code> /
         /// <code>SampleCount</code> during the specified period. For more information, see
@@ -8128,7 +9407,6 @@ impl AsRef<str> for EbsFinding {
 
 /// <p>Describes a filter that returns a more specific list of Amazon Elastic Block Store
 /// (Amazon EBS) volume recommendations. Use this filter with the <a>GetEBSVolumeRecommendations</a> action.</p>
-///
 /// <p>You can use <code>LambdaFunctionRecommendationFilter</code> with the <a>GetLambdaFunctionRecommendations</a> action, <code>JobFilter</code> with the
 /// <a>DescribeRecommendationExportJobs</a> action, and <code>Filter</code>
 /// with the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a> actions.</p>
@@ -8136,25 +9414,21 @@ impl AsRef<str> for EbsFinding {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsFilter {
     /// <p>The name of the filter.</p>
-    ///
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding
     /// classification (for example, <code>NotOptimized</code>).</p>
     pub name: std::option::Option<crate::model::EbsFilterName>,
     /// <p>The value of the filter.</p>
-    ///
     /// <p>The valid values are <code>Optimized</code>, or <code>NotOptimized</code>.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EbsFilter {
     /// <p>The name of the filter.</p>
-    ///
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding
     /// classification (for example, <code>NotOptimized</code>).</p>
     pub fn name(&self) -> std::option::Option<&crate::model::EbsFilterName> {
         self.name.as_ref()
     }
     /// <p>The value of the filter.</p>
-    ///
     /// <p>The valid values are <code>Optimized</code>, or <code>NotOptimized</code>.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
@@ -8179,7 +9453,6 @@ pub mod ebs_filter {
     }
     impl Builder {
         /// <p>The name of the filter.</p>
-        ///
         /// <p>Specify <code>Finding</code> to return recommendations with a specific finding
         /// classification (for example, <code>NotOptimized</code>).</p>
         pub fn name(mut self, input: crate::model::EbsFilterName) -> Self {
@@ -8187,7 +9460,6 @@ pub mod ebs_filter {
             self
         }
         /// <p>The name of the filter.</p>
-        ///
         /// <p>Specify <code>Finding</code> to return recommendations with a specific finding
         /// classification (for example, <code>NotOptimized</code>).</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::EbsFilterName>) -> Self {
@@ -8199,7 +9471,6 @@ pub mod ebs_filter {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>The value of the filter.</p>
-        ///
         /// <p>The valid values are <code>Optimized</code>, or <code>NotOptimized</code>.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
@@ -8208,7 +9479,6 @@ pub mod ebs_filter {
             self
         }
         /// <p>The value of the filter.</p>
-        ///
         /// <p>The valid values are <code>Optimized</code>, or <code>NotOptimized</code>.</p>
         pub fn set_values(
             mut self,
@@ -8295,9 +9565,7 @@ pub struct AutoScalingGroupRecommendation {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
     /// <p>The finding classification of the Auto Scaling group.</p>
-    ///
     /// <p>Findings for Auto Scaling groups include:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -8330,9 +9598,16 @@ pub struct AutoScalingGroupRecommendation {
     /// group.</p>
     pub recommendation_options:
         std::option::Option<std::vec::Vec<crate::model::AutoScalingGroupRecommendationOption>>,
-    /// <p>The timestamp  of when the Auto Scaling group recommendation was last
-    /// refreshed.</p>
+    /// <p>The timestamp of when the Auto Scaling group recommendation was last
+    /// generated.</p>
     pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The risk of the current Auto Scaling group not meeting the performance needs of
+    /// its workloads. The higher the risk, the more likely the current Auto Scaling group
+    /// configuration has insufficient capacity and cannot meet workload requirements.</p>
+    pub current_performance_risk: std::option::Option<crate::model::CurrentPerformanceRisk>,
+    /// <p>An object that describes the effective recommendation preferences for the Auto Scaling group.</p>
+    pub effective_recommendation_preferences:
+        std::option::Option<crate::model::EffectiveRecommendationPreferences>,
 }
 impl AutoScalingGroupRecommendation {
     /// <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
@@ -8348,9 +9623,7 @@ impl AutoScalingGroupRecommendation {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The finding classification of the Auto Scaling group.</p>
-    ///
     /// <p>Findings for Auto Scaling groups include:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -8396,10 +9669,24 @@ impl AutoScalingGroupRecommendation {
     ) -> std::option::Option<&[crate::model::AutoScalingGroupRecommendationOption]> {
         self.recommendation_options.as_deref()
     }
-    /// <p>The timestamp  of when the Auto Scaling group recommendation was last
-    /// refreshed.</p>
+    /// <p>The timestamp of when the Auto Scaling group recommendation was last
+    /// generated.</p>
     pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_refresh_timestamp.as_ref()
+    }
+    /// <p>The risk of the current Auto Scaling group not meeting the performance needs of
+    /// its workloads. The higher the risk, the more likely the current Auto Scaling group
+    /// configuration has insufficient capacity and cannot meet workload requirements.</p>
+    pub fn current_performance_risk(
+        &self,
+    ) -> std::option::Option<&crate::model::CurrentPerformanceRisk> {
+        self.current_performance_risk.as_ref()
+    }
+    /// <p>An object that describes the effective recommendation preferences for the Auto Scaling group.</p>
+    pub fn effective_recommendation_preferences(
+        &self,
+    ) -> std::option::Option<&crate::model::EffectiveRecommendationPreferences> {
+        self.effective_recommendation_preferences.as_ref()
     }
 }
 impl std::fmt::Debug for AutoScalingGroupRecommendation {
@@ -8414,6 +9701,11 @@ impl std::fmt::Debug for AutoScalingGroupRecommendation {
         formatter.field("current_configuration", &self.current_configuration);
         formatter.field("recommendation_options", &self.recommendation_options);
         formatter.field("last_refresh_timestamp", &self.last_refresh_timestamp);
+        formatter.field("current_performance_risk", &self.current_performance_risk);
+        formatter.field(
+            "effective_recommendation_preferences",
+            &self.effective_recommendation_preferences,
+        );
         formatter.finish()
     }
 }
@@ -8435,6 +9727,10 @@ pub mod auto_scaling_group_recommendation {
         pub(crate) recommendation_options:
             std::option::Option<std::vec::Vec<crate::model::AutoScalingGroupRecommendationOption>>,
         pub(crate) last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) current_performance_risk:
+            std::option::Option<crate::model::CurrentPerformanceRisk>,
+        pub(crate) effective_recommendation_preferences:
+            std::option::Option<crate::model::EffectiveRecommendationPreferences>,
     }
     impl Builder {
         /// <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
@@ -8474,9 +9770,7 @@ pub mod auto_scaling_group_recommendation {
             self
         }
         /// <p>The finding classification of the Auto Scaling group.</p>
-        ///
         /// <p>Findings for Auto Scaling groups include:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -8501,9 +9795,7 @@ pub mod auto_scaling_group_recommendation {
             self
         }
         /// <p>The finding classification of the Auto Scaling group.</p>
-        ///
         /// <p>Findings for Auto Scaling groups include:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -8605,19 +9897,55 @@ pub mod auto_scaling_group_recommendation {
             self.recommendation_options = input;
             self
         }
-        /// <p>The timestamp  of when the Auto Scaling group recommendation was last
-        /// refreshed.</p>
+        /// <p>The timestamp of when the Auto Scaling group recommendation was last
+        /// generated.</p>
         pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_refresh_timestamp = Some(input);
             self
         }
-        /// <p>The timestamp  of when the Auto Scaling group recommendation was last
-        /// refreshed.</p>
+        /// <p>The timestamp of when the Auto Scaling group recommendation was last
+        /// generated.</p>
         pub fn set_last_refresh_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.last_refresh_timestamp = input;
+            self
+        }
+        /// <p>The risk of the current Auto Scaling group not meeting the performance needs of
+        /// its workloads. The higher the risk, the more likely the current Auto Scaling group
+        /// configuration has insufficient capacity and cannot meet workload requirements.</p>
+        pub fn current_performance_risk(
+            mut self,
+            input: crate::model::CurrentPerformanceRisk,
+        ) -> Self {
+            self.current_performance_risk = Some(input);
+            self
+        }
+        /// <p>The risk of the current Auto Scaling group not meeting the performance needs of
+        /// its workloads. The higher the risk, the more likely the current Auto Scaling group
+        /// configuration has insufficient capacity and cannot meet workload requirements.</p>
+        pub fn set_current_performance_risk(
+            mut self,
+            input: std::option::Option<crate::model::CurrentPerformanceRisk>,
+        ) -> Self {
+            self.current_performance_risk = input;
+            self
+        }
+        /// <p>An object that describes the effective recommendation preferences for the Auto Scaling group.</p>
+        pub fn effective_recommendation_preferences(
+            mut self,
+            input: crate::model::EffectiveRecommendationPreferences,
+        ) -> Self {
+            self.effective_recommendation_preferences = Some(input);
+            self
+        }
+        /// <p>An object that describes the effective recommendation preferences for the Auto Scaling group.</p>
+        pub fn set_effective_recommendation_preferences(
+            mut self,
+            input: std::option::Option<crate::model::EffectiveRecommendationPreferences>,
+        ) -> Self {
+            self.effective_recommendation_preferences = input;
             self
         }
         /// Consumes the builder and constructs a [`AutoScalingGroupRecommendation`](crate::model::AutoScalingGroupRecommendation)
@@ -8632,6 +9960,8 @@ pub mod auto_scaling_group_recommendation {
                 current_configuration: self.current_configuration,
                 recommendation_options: self.recommendation_options,
                 last_refresh_timestamp: self.last_refresh_timestamp,
+                current_performance_risk: self.current_performance_risk,
+                effective_recommendation_preferences: self.effective_recommendation_preferences,
             }
         }
     }
@@ -8650,7 +9980,6 @@ pub struct AutoScalingGroupRecommendationOption {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
     pub configuration: std::option::Option<crate::model::AutoScalingGroupConfiguration>,
     /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p>
-    ///
     /// <note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected
     /// utilization metrics returned. Additionally, the <code>Memory</code> metric is
@@ -8662,7 +9991,6 @@ pub struct AutoScalingGroupRecommendationOption {
         std::option::Option<std::vec::Vec<crate::model::UtilizationMetric>>,
     /// <p>The performance risk of the Auto Scaling group configuration
     /// recommendation.</p>
-    ///
     /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting
     /// the resource needs of your workload. Compute Optimizer calculates an individual
     /// performance risk score for each specification of the recommended instance, including
@@ -8671,7 +9999,6 @@ pub struct AutoScalingGroupRecommendationOption {
     /// The performance
     /// risk of the recommended instance is calculated as the maximum performance risk score
     /// across the analyzed resource specifications.</p>
-    ///
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
     /// that the recommended resource is predicted to always provide enough hardware capability.
     /// The higher the performance risk is, the more likely you should validate whether the
@@ -8679,9 +10006,12 @@ pub struct AutoScalingGroupRecommendationOption {
     /// your resource.</p>
     pub performance_risk: f64,
     /// <p>The rank of the Auto Scaling group recommendation option.</p>
-    ///
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub rank: i32,
+    /// <p>An object that describes the savings opportunity for the Auto Scaling group
+    /// recommendation option. Savings opportunity includes the estimated monthly savings amount
+    /// and percentage.</p>
+    pub savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
 }
 impl AutoScalingGroupRecommendationOption {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
@@ -8691,7 +10021,6 @@ impl AutoScalingGroupRecommendationOption {
         self.configuration.as_ref()
     }
     /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p>
-    ///
     /// <note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected
     /// utilization metrics returned. Additionally, the <code>Memory</code> metric is
@@ -8706,7 +10035,6 @@ impl AutoScalingGroupRecommendationOption {
     }
     /// <p>The performance risk of the Auto Scaling group configuration
     /// recommendation.</p>
-    ///
     /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting
     /// the resource needs of your workload. Compute Optimizer calculates an individual
     /// performance risk score for each specification of the recommended instance, including
@@ -8715,7 +10043,6 @@ impl AutoScalingGroupRecommendationOption {
     /// The performance
     /// risk of the recommended instance is calculated as the maximum performance risk score
     /// across the analyzed resource specifications.</p>
-    ///
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
     /// that the recommended resource is predicted to always provide enough hardware capability.
     /// The higher the performance risk is, the more likely you should validate whether the
@@ -8725,10 +10052,15 @@ impl AutoScalingGroupRecommendationOption {
         self.performance_risk
     }
     /// <p>The rank of the Auto Scaling group recommendation option.</p>
-    ///
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub fn rank(&self) -> i32 {
         self.rank
+    }
+    /// <p>An object that describes the savings opportunity for the Auto Scaling group
+    /// recommendation option. Savings opportunity includes the estimated monthly savings amount
+    /// and percentage.</p>
+    pub fn savings_opportunity(&self) -> std::option::Option<&crate::model::SavingsOpportunity> {
+        self.savings_opportunity.as_ref()
     }
 }
 impl std::fmt::Debug for AutoScalingGroupRecommendationOption {
@@ -8741,6 +10073,7 @@ impl std::fmt::Debug for AutoScalingGroupRecommendationOption {
         );
         formatter.field("performance_risk", &self.performance_risk);
         formatter.field("rank", &self.rank);
+        formatter.field("savings_opportunity", &self.savings_opportunity);
         formatter.finish()
     }
 }
@@ -8755,6 +10088,7 @@ pub mod auto_scaling_group_recommendation_option {
             std::option::Option<std::vec::Vec<crate::model::UtilizationMetric>>,
         pub(crate) performance_risk: std::option::Option<f64>,
         pub(crate) rank: std::option::Option<i32>,
+        pub(crate) savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
     }
     impl Builder {
         /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
@@ -8775,7 +10109,6 @@ pub mod auto_scaling_group_recommendation_option {
         /// To override the contents of this collection use [`set_projected_utilization_metrics`](Self::set_projected_utilization_metrics).
         ///
         /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p>
-        ///
         /// <note>
         /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected
         /// utilization metrics returned. Additionally, the <code>Memory</code> metric is
@@ -8793,7 +10126,6 @@ pub mod auto_scaling_group_recommendation_option {
             self
         }
         /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p>
-        ///
         /// <note>
         /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected
         /// utilization metrics returned. Additionally, the <code>Memory</code> metric is
@@ -8810,7 +10142,6 @@ pub mod auto_scaling_group_recommendation_option {
         }
         /// <p>The performance risk of the Auto Scaling group configuration
         /// recommendation.</p>
-        ///
         /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting
         /// the resource needs of your workload. Compute Optimizer calculates an individual
         /// performance risk score for each specification of the recommended instance, including
@@ -8819,7 +10150,6 @@ pub mod auto_scaling_group_recommendation_option {
         /// The performance
         /// risk of the recommended instance is calculated as the maximum performance risk score
         /// across the analyzed resource specifications.</p>
-        ///
         /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
         /// that the recommended resource is predicted to always provide enough hardware capability.
         /// The higher the performance risk is, the more likely you should validate whether the
@@ -8831,7 +10161,6 @@ pub mod auto_scaling_group_recommendation_option {
         }
         /// <p>The performance risk of the Auto Scaling group configuration
         /// recommendation.</p>
-        ///
         /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting
         /// the resource needs of your workload. Compute Optimizer calculates an individual
         /// performance risk score for each specification of the recommended instance, including
@@ -8840,7 +10169,6 @@ pub mod auto_scaling_group_recommendation_option {
         /// The performance
         /// risk of the recommended instance is calculated as the maximum performance risk score
         /// across the analyzed resource specifications.</p>
-        ///
         /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
         /// that the recommended resource is predicted to always provide enough hardware capability.
         /// The higher the performance risk is, the more likely you should validate whether the
@@ -8851,17 +10179,32 @@ pub mod auto_scaling_group_recommendation_option {
             self
         }
         /// <p>The rank of the Auto Scaling group recommendation option.</p>
-        ///
         /// <p>The top recommendation option is ranked as <code>1</code>.</p>
         pub fn rank(mut self, input: i32) -> Self {
             self.rank = Some(input);
             self
         }
         /// <p>The rank of the Auto Scaling group recommendation option.</p>
-        ///
         /// <p>The top recommendation option is ranked as <code>1</code>.</p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.rank = input;
+            self
+        }
+        /// <p>An object that describes the savings opportunity for the Auto Scaling group
+        /// recommendation option. Savings opportunity includes the estimated monthly savings amount
+        /// and percentage.</p>
+        pub fn savings_opportunity(mut self, input: crate::model::SavingsOpportunity) -> Self {
+            self.savings_opportunity = Some(input);
+            self
+        }
+        /// <p>An object that describes the savings opportunity for the Auto Scaling group
+        /// recommendation option. Savings opportunity includes the estimated monthly savings amount
+        /// and percentage.</p>
+        pub fn set_savings_opportunity(
+            mut self,
+            input: std::option::Option<crate::model::SavingsOpportunity>,
+        ) -> Self {
+            self.savings_opportunity = input;
             self
         }
         /// Consumes the builder and constructs a [`AutoScalingGroupRecommendationOption`](crate::model::AutoScalingGroupRecommendationOption)
@@ -8871,6 +10214,7 @@ pub mod auto_scaling_group_recommendation_option {
                 projected_utilization_metrics: self.projected_utilization_metrics,
                 performance_risk: self.performance_risk.unwrap_or_default(),
                 rank: self.rank.unwrap_or_default(),
+                savings_opportunity: self.savings_opportunity,
             }
         }
     }
@@ -9013,11 +10357,9 @@ pub struct S3Destination {
     /// file.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket key of an export file.</p>
-    ///
     /// <p>The key uniquely identifies the object, or export file, in the S3 bucket.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket key of a metadata file.</p>
-    ///
     /// <p>The key uniquely identifies the object, or metadata file, in the S3 bucket.</p>
     pub metadata_key: std::option::Option<std::string::String>,
 }
@@ -9028,13 +10370,11 @@ impl S3Destination {
         self.bucket.as_deref()
     }
     /// <p>The Amazon S3 bucket key of an export file.</p>
-    ///
     /// <p>The key uniquely identifies the object, or export file, in the S3 bucket.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The Amazon S3 bucket key of a metadata file.</p>
-    ///
     /// <p>The key uniquely identifies the object, or metadata file, in the S3 bucket.</p>
     pub fn metadata_key(&self) -> std::option::Option<&str> {
         self.metadata_key.as_deref()
@@ -9073,28 +10413,24 @@ pub mod s3_destination {
             self
         }
         /// <p>The Amazon S3 bucket key of an export file.</p>
-        ///
         /// <p>The key uniquely identifies the object, or export file, in the S3 bucket.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
         /// <p>The Amazon S3 bucket key of an export file.</p>
-        ///
         /// <p>The key uniquely identifies the object, or export file, in the S3 bucket.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
         /// <p>The Amazon S3 bucket key of a metadata file.</p>
-        ///
         /// <p>The key uniquely identifies the object, or metadata file, in the S3 bucket.</p>
         pub fn metadata_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.metadata_key = Some(input.into());
             self
         }
         /// <p>The Amazon S3 bucket key of a metadata file.</p>
-        ///
         /// <p>The key uniquely identifies the object, or metadata file, in the S3 bucket.</p>
         pub fn set_metadata_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metadata_key = input;
@@ -9170,7 +10506,6 @@ impl AsRef<str> for FileFormat {
 
 /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
 /// key prefix for a recommendations export job.</p>
-///
 /// <p>You must create the destination Amazon S3 bucket for your recommendations
 /// export before you create the export job. Compute Optimizer does not create the S3 bucket
 /// for you. After you create the S3 bucket, ensure that it has the required permission
@@ -9277,6 +10612,8 @@ pub enum ExportableLambdaFunctionField {
     #[allow(missing_docs)] // documentation missing in model
     CurrentCostTotal,
     #[allow(missing_docs)] // documentation missing in model
+    CurrentPerformanceRisk,
+    #[allow(missing_docs)] // documentation missing in model
     Finding,
     #[allow(missing_docs)] // documentation missing in model
     FindingReasonCodes,
@@ -9297,11 +10634,17 @@ pub enum ExportableLambdaFunctionField {
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsCostLow,
     #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsCurrency,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsValue,
+    #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsProjectedUtilizationMetricsDurationExpected,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsSavingsOpportunityPercentage,
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsDurationAverage,
     #[allow(missing_docs)] // documentation missing in model
@@ -9321,6 +10664,7 @@ impl std::convert::From<&str> for ExportableLambdaFunctionField {
             "CurrentConfigurationTimeout" => ExportableLambdaFunctionField::CurrentConfigurationTimeout,
             "CurrentCostAverage" => ExportableLambdaFunctionField::CurrentCostAverage,
             "CurrentCostTotal" => ExportableLambdaFunctionField::CurrentCostTotal,
+            "CurrentPerformanceRisk" => ExportableLambdaFunctionField::CurrentPerformanceRisk,
             "Finding" => ExportableLambdaFunctionField::Finding,
             "FindingReasonCodes" => ExportableLambdaFunctionField::FindingReasonCodes,
             "FunctionArn" => ExportableLambdaFunctionField::FunctionArn,
@@ -9331,9 +10675,12 @@ impl std::convert::From<&str> for ExportableLambdaFunctionField {
             "RecommendationOptionsConfigurationMemorySize" => ExportableLambdaFunctionField::RecommendationOptionsConfigurationMemorySize,
             "RecommendationOptionsCostHigh" => ExportableLambdaFunctionField::RecommendationOptionsCostHigh,
             "RecommendationOptionsCostLow" => ExportableLambdaFunctionField::RecommendationOptionsCostLow,
+            "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
+            "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue,
             "RecommendationOptionsProjectedUtilizationMetricsDurationExpected" => ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationExpected,
             "RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound" => ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound,
             "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound" => ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound,
+            "RecommendationOptionsSavingsOpportunityPercentage" => ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage,
             "UtilizationMetricsDurationAverage" => ExportableLambdaFunctionField::UtilizationMetricsDurationAverage,
             "UtilizationMetricsDurationMaximum" => ExportableLambdaFunctionField::UtilizationMetricsDurationMaximum,
             "UtilizationMetricsMemoryAverage" => ExportableLambdaFunctionField::UtilizationMetricsMemoryAverage,
@@ -9358,6 +10705,7 @@ impl ExportableLambdaFunctionField {
             ExportableLambdaFunctionField::CurrentConfigurationTimeout => "CurrentConfigurationTimeout",
             ExportableLambdaFunctionField::CurrentCostAverage => "CurrentCostAverage",
             ExportableLambdaFunctionField::CurrentCostTotal => "CurrentCostTotal",
+            ExportableLambdaFunctionField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
             ExportableLambdaFunctionField::Finding => "Finding",
             ExportableLambdaFunctionField::FindingReasonCodes => "FindingReasonCodes",
             ExportableLambdaFunctionField::FunctionArn => "FunctionArn",
@@ -9368,9 +10716,12 @@ impl ExportableLambdaFunctionField {
             ExportableLambdaFunctionField::RecommendationOptionsConfigurationMemorySize => "RecommendationOptionsConfigurationMemorySize",
             ExportableLambdaFunctionField::RecommendationOptionsCostHigh => "RecommendationOptionsCostHigh",
             ExportableLambdaFunctionField::RecommendationOptionsCostLow => "RecommendationOptionsCostLow",
+            ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
             ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationExpected => "RecommendationOptionsProjectedUtilizationMetricsDurationExpected",
             ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound => "RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound",
             ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound => "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound",
+            ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
             ExportableLambdaFunctionField::UtilizationMetricsDurationAverage => "UtilizationMetricsDurationAverage",
             ExportableLambdaFunctionField::UtilizationMetricsDurationMaximum => "UtilizationMetricsDurationMaximum",
             ExportableLambdaFunctionField::UtilizationMetricsMemoryAverage => "UtilizationMetricsMemoryAverage",
@@ -9386,6 +10737,7 @@ impl ExportableLambdaFunctionField {
             "CurrentConfigurationTimeout",
             "CurrentCostAverage",
             "CurrentCostTotal",
+            "CurrentPerformanceRisk",
             "Finding",
             "FindingReasonCodes",
             "FunctionArn",
@@ -9396,9 +10748,12 @@ impl ExportableLambdaFunctionField {
             "RecommendationOptionsConfigurationMemorySize",
             "RecommendationOptionsCostHigh",
             "RecommendationOptionsCostLow",
+            "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            "RecommendationOptionsEstimatedMonthlySavingsValue",
             "RecommendationOptionsProjectedUtilizationMetricsDurationExpected",
             "RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound",
             "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound",
+            "RecommendationOptionsSavingsOpportunityPercentage",
             "UtilizationMetricsDurationAverage",
             "UtilizationMetricsDurationMaximum",
             "UtilizationMetricsMemoryAverage",
@@ -9435,6 +10790,8 @@ pub enum ExportableInstanceField {
     #[allow(missing_docs)] // documentation missing in model
     CurrentOnDemandPrice,
     #[allow(missing_docs)] // documentation missing in model
+    CurrentPerformanceRisk,
+    #[allow(missing_docs)] // documentation missing in model
     CurrentStandardOneYearNoUpfrontReservedPrice,
     #[allow(missing_docs)] // documentation missing in model
     CurrentStandardThreeYearNoUpfrontReservedPrice,
@@ -9442,6 +10799,10 @@ pub enum ExportableInstanceField {
     CurrentStorage,
     #[allow(missing_docs)] // documentation missing in model
     CurrentVcpus,
+    #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesCpuVendorArchitectures,
+    #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
     #[allow(missing_docs)] // documentation missing in model
     Finding,
     #[allow(missing_docs)] // documentation missing in model
@@ -9454,6 +10815,10 @@ pub enum ExportableInstanceField {
     LastRefreshTimestamp,
     #[allow(missing_docs)] // documentation missing in model
     LookbackPeriodInDays,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsCurrency,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsValue,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsInstanceType,
     #[allow(missing_docs)] // documentation missing in model
@@ -9470,6 +10835,8 @@ pub enum ExportableInstanceField {
     RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsSavingsOpportunityPercentage,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
     #[allow(missing_docs)] // documentation missing in model
@@ -9521,16 +10888,21 @@ impl std::convert::From<&str> for ExportableInstanceField {
             "CurrentMemory" => ExportableInstanceField::CurrentMemory,
             "CurrentNetwork" => ExportableInstanceField::CurrentNetwork,
             "CurrentOnDemandPrice" => ExportableInstanceField::CurrentOnDemandPrice,
+            "CurrentPerformanceRisk" => ExportableInstanceField::CurrentPerformanceRisk,
             "CurrentStandardOneYearNoUpfrontReservedPrice" => ExportableInstanceField::CurrentStandardOneYearNoUpfrontReservedPrice,
             "CurrentStandardThreeYearNoUpfrontReservedPrice" => ExportableInstanceField::CurrentStandardThreeYearNoUpfrontReservedPrice,
             "CurrentStorage" => ExportableInstanceField::CurrentStorage,
             "CurrentVCpus" => ExportableInstanceField::CurrentVcpus,
+            "EffectiveRecommendationPreferencesCpuVendorArchitectures" => ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures,
+            "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics" => ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
             "Finding" => ExportableInstanceField::Finding,
             "FindingReasonCodes" => ExportableInstanceField::FindingReasonCodes,
             "InstanceArn" => ExportableInstanceField::InstanceArn,
             "InstanceName" => ExportableInstanceField::InstanceName,
             "LastRefreshTimestamp" => ExportableInstanceField::LastRefreshTimestamp,
             "LookbackPeriodInDays" => ExportableInstanceField::LookbackPeriodInDays,
+            "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
+            "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue,
             "RecommendationOptionsInstanceType" => ExportableInstanceField::RecommendationOptionsInstanceType,
             "RecommendationOptionsMemory" => ExportableInstanceField::RecommendationOptionsMemory,
             "RecommendationOptionsNetwork" => ExportableInstanceField::RecommendationOptionsNetwork,
@@ -9539,6 +10911,7 @@ impl std::convert::From<&str> for ExportableInstanceField {
             "RecommendationOptionsPlatformDifferences" => ExportableInstanceField::RecommendationOptionsPlatformDifferences,
             "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
             "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+            "RecommendationOptionsSavingsOpportunityPercentage" => ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage,
             "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice" => ExportableInstanceField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
             "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice" => ExportableInstanceField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
             "RecommendationOptionsStorage" => ExportableInstanceField::RecommendationOptionsStorage,
@@ -9579,16 +10952,21 @@ impl ExportableInstanceField {
             ExportableInstanceField::CurrentMemory => "CurrentMemory",
             ExportableInstanceField::CurrentNetwork => "CurrentNetwork",
             ExportableInstanceField::CurrentOnDemandPrice => "CurrentOnDemandPrice",
+            ExportableInstanceField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
             ExportableInstanceField::CurrentStandardOneYearNoUpfrontReservedPrice => "CurrentStandardOneYearNoUpfrontReservedPrice",
             ExportableInstanceField::CurrentStandardThreeYearNoUpfrontReservedPrice => "CurrentStandardThreeYearNoUpfrontReservedPrice",
             ExportableInstanceField::CurrentStorage => "CurrentStorage",
             ExportableInstanceField::CurrentVcpus => "CurrentVCpus",
+            ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures => "EffectiveRecommendationPreferencesCpuVendorArchitectures",
+            ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
             ExportableInstanceField::Finding => "Finding",
             ExportableInstanceField::FindingReasonCodes => "FindingReasonCodes",
             ExportableInstanceField::InstanceArn => "InstanceArn",
             ExportableInstanceField::InstanceName => "InstanceName",
             ExportableInstanceField::LastRefreshTimestamp => "LastRefreshTimestamp",
             ExportableInstanceField::LookbackPeriodInDays => "LookbackPeriodInDays",
+            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
             ExportableInstanceField::RecommendationOptionsInstanceType => "RecommendationOptionsInstanceType",
             ExportableInstanceField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
             ExportableInstanceField::RecommendationOptionsNetwork => "RecommendationOptionsNetwork",
@@ -9597,6 +10975,7 @@ impl ExportableInstanceField {
             ExportableInstanceField::RecommendationOptionsPlatformDifferences => "RecommendationOptionsPlatformDifferences",
             ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
             ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
+            ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
             ExportableInstanceField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice",
             ExportableInstanceField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice => "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice",
             ExportableInstanceField::RecommendationOptionsStorage => "RecommendationOptionsStorage",
@@ -9628,16 +11007,21 @@ impl ExportableInstanceField {
             "CurrentMemory",
             "CurrentNetwork",
             "CurrentOnDemandPrice",
+            "CurrentPerformanceRisk",
             "CurrentStandardOneYearNoUpfrontReservedPrice",
             "CurrentStandardThreeYearNoUpfrontReservedPrice",
             "CurrentStorage",
             "CurrentVCpus",
+            "EffectiveRecommendationPreferencesCpuVendorArchitectures",
+            "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
             "Finding",
             "FindingReasonCodes",
             "InstanceArn",
             "InstanceName",
             "LastRefreshTimestamp",
             "LookbackPeriodInDays",
+            "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            "RecommendationOptionsEstimatedMonthlySavingsValue",
             "RecommendationOptionsInstanceType",
             "RecommendationOptionsMemory",
             "RecommendationOptionsNetwork",
@@ -9646,6 +11030,7 @@ impl ExportableInstanceField {
             "RecommendationOptionsPlatformDifferences",
             "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
             "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
+            "RecommendationOptionsSavingsOpportunityPercentage",
             "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice",
             "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice",
             "RecommendationOptionsStorage",
@@ -9704,6 +11089,8 @@ pub enum ExportableVolumeField {
     #[allow(missing_docs)] // documentation missing in model
     CurrentMonthlyPrice,
     #[allow(missing_docs)] // documentation missing in model
+    CurrentPerformanceRisk,
+    #[allow(missing_docs)] // documentation missing in model
     Finding,
     #[allow(missing_docs)] // documentation missing in model
     LastRefreshTimestamp,
@@ -9722,9 +11109,15 @@ pub enum ExportableVolumeField {
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsConfigurationVolumeType,
     #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsCurrency,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsValue,
+    #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsMonthlyPrice,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsPerformanceRisk,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsSavingsOpportunityPercentage,
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsVolumeReadBytesPerSecondMaximum,
     #[allow(missing_docs)] // documentation missing in model
@@ -9761,6 +11154,7 @@ impl std::convert::From<&str> for ExportableVolumeField {
                 ExportableVolumeField::CurrentConfigurationVolumeType
             }
             "CurrentMonthlyPrice" => ExportableVolumeField::CurrentMonthlyPrice,
+            "CurrentPerformanceRisk" => ExportableVolumeField::CurrentPerformanceRisk,
             "Finding" => ExportableVolumeField::Finding,
             "LastRefreshTimestamp" => ExportableVolumeField::LastRefreshTimestamp,
             "LookbackPeriodInDays" => ExportableVolumeField::LookbackPeriodInDays,
@@ -9782,11 +11176,20 @@ impl std::convert::From<&str> for ExportableVolumeField {
             "RecommendationOptionsConfigurationVolumeType" => {
                 ExportableVolumeField::RecommendationOptionsConfigurationVolumeType
             }
+            "RecommendationOptionsEstimatedMonthlySavingsCurrency" => {
+                ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrency
+            }
+            "RecommendationOptionsEstimatedMonthlySavingsValue" => {
+                ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue
+            }
             "RecommendationOptionsMonthlyPrice" => {
                 ExportableVolumeField::RecommendationOptionsMonthlyPrice
             }
             "RecommendationOptionsPerformanceRisk" => {
                 ExportableVolumeField::RecommendationOptionsPerformanceRisk
+            }
+            "RecommendationOptionsSavingsOpportunityPercentage" => {
+                ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage
             }
             "UtilizationMetricsVolumeReadBytesPerSecondMaximum" => {
                 ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum
@@ -9836,6 +11239,7 @@ impl ExportableVolumeField {
                 "CurrentConfigurationVolumeType"
             }
             ExportableVolumeField::CurrentMonthlyPrice => "CurrentMonthlyPrice",
+            ExportableVolumeField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
             ExportableVolumeField::Finding => "Finding",
             ExportableVolumeField::LastRefreshTimestamp => "LastRefreshTimestamp",
             ExportableVolumeField::LookbackPeriodInDays => "LookbackPeriodInDays",
@@ -9857,11 +11261,20 @@ impl ExportableVolumeField {
             ExportableVolumeField::RecommendationOptionsConfigurationVolumeType => {
                 "RecommendationOptionsConfigurationVolumeType"
             }
+            ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrency => {
+                "RecommendationOptionsEstimatedMonthlySavingsCurrency"
+            }
+            ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue => {
+                "RecommendationOptionsEstimatedMonthlySavingsValue"
+            }
             ExportableVolumeField::RecommendationOptionsMonthlyPrice => {
                 "RecommendationOptionsMonthlyPrice"
             }
             ExportableVolumeField::RecommendationOptionsPerformanceRisk => {
                 "RecommendationOptionsPerformanceRisk"
+            }
+            ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage => {
+                "RecommendationOptionsSavingsOpportunityPercentage"
             }
             ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum => {
                 "UtilizationMetricsVolumeReadBytesPerSecondMaximum"
@@ -9890,6 +11303,7 @@ impl ExportableVolumeField {
             "CurrentConfigurationVolumeSize",
             "CurrentConfigurationVolumeType",
             "CurrentMonthlyPrice",
+            "CurrentPerformanceRisk",
             "Finding",
             "LastRefreshTimestamp",
             "LookbackPeriodInDays",
@@ -9899,8 +11313,11 @@ impl ExportableVolumeField {
             "RecommendationOptionsConfigurationVolumeBurstThroughput",
             "RecommendationOptionsConfigurationVolumeSize",
             "RecommendationOptionsConfigurationVolumeType",
+            "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            "RecommendationOptionsEstimatedMonthlySavingsValue",
             "RecommendationOptionsMonthlyPrice",
             "RecommendationOptionsPerformanceRisk",
+            "RecommendationOptionsSavingsOpportunityPercentage",
             "UtilizationMetricsVolumeReadBytesPerSecondMaximum",
             "UtilizationMetricsVolumeReadOpsPerSecondMaximum",
             "UtilizationMetricsVolumeWriteBytesPerSecondMaximum",
@@ -9948,6 +11365,8 @@ pub enum ExportableAutoScalingGroupField {
     #[allow(missing_docs)] // documentation missing in model
     CurrentOnDemandPrice,
     #[allow(missing_docs)] // documentation missing in model
+    CurrentPerformanceRisk,
+    #[allow(missing_docs)] // documentation missing in model
     CurrentStandardOneYearNoUpfrontReservedPrice,
     #[allow(missing_docs)] // documentation missing in model
     CurrentStandardThreeYearNoUpfrontReservedPrice,
@@ -9955,6 +11374,10 @@ pub enum ExportableAutoScalingGroupField {
     CurrentStorage,
     #[allow(missing_docs)] // documentation missing in model
     CurrentVcpus,
+    #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesCpuVendorArchitectures,
+    #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
     #[allow(missing_docs)] // documentation missing in model
     Finding,
     #[allow(missing_docs)] // documentation missing in model
@@ -9970,6 +11393,10 @@ pub enum ExportableAutoScalingGroupField {
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsConfigurationMinSize,
     #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsCurrency,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsValue,
+    #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsMemory,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsNetwork,
@@ -9981,6 +11408,8 @@ pub enum ExportableAutoScalingGroupField {
     RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsSavingsOpportunityPercentage,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
     #[allow(missing_docs)] // documentation missing in model
@@ -10033,10 +11462,13 @@ impl std::convert::From<&str> for ExportableAutoScalingGroupField {
             "CurrentMemory" => ExportableAutoScalingGroupField::CurrentMemory,
             "CurrentNetwork" => ExportableAutoScalingGroupField::CurrentNetwork,
             "CurrentOnDemandPrice" => ExportableAutoScalingGroupField::CurrentOnDemandPrice,
+            "CurrentPerformanceRisk" => ExportableAutoScalingGroupField::CurrentPerformanceRisk,
             "CurrentStandardOneYearNoUpfrontReservedPrice" => ExportableAutoScalingGroupField::CurrentStandardOneYearNoUpfrontReservedPrice,
             "CurrentStandardThreeYearNoUpfrontReservedPrice" => ExportableAutoScalingGroupField::CurrentStandardThreeYearNoUpfrontReservedPrice,
             "CurrentStorage" => ExportableAutoScalingGroupField::CurrentStorage,
             "CurrentVCpus" => ExportableAutoScalingGroupField::CurrentVcpus,
+            "EffectiveRecommendationPreferencesCpuVendorArchitectures" => ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesCpuVendorArchitectures,
+            "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics" => ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
             "Finding" => ExportableAutoScalingGroupField::Finding,
             "LastRefreshTimestamp" => ExportableAutoScalingGroupField::LastRefreshTimestamp,
             "LookbackPeriodInDays" => ExportableAutoScalingGroupField::LookbackPeriodInDays,
@@ -10044,12 +11476,15 @@ impl std::convert::From<&str> for ExportableAutoScalingGroupField {
             "RecommendationOptionsConfigurationInstanceType" => ExportableAutoScalingGroupField::RecommendationOptionsConfigurationInstanceType,
             "RecommendationOptionsConfigurationMaxSize" => ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMaxSize,
             "RecommendationOptionsConfigurationMinSize" => ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMinSize,
+            "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
+            "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue,
             "RecommendationOptionsMemory" => ExportableAutoScalingGroupField::RecommendationOptionsMemory,
             "RecommendationOptionsNetwork" => ExportableAutoScalingGroupField::RecommendationOptionsNetwork,
             "RecommendationOptionsOnDemandPrice" => ExportableAutoScalingGroupField::RecommendationOptionsOnDemandPrice,
             "RecommendationOptionsPerformanceRisk" => ExportableAutoScalingGroupField::RecommendationOptionsPerformanceRisk,
             "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
             "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+            "RecommendationOptionsSavingsOpportunityPercentage" => ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityPercentage,
             "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice" => ExportableAutoScalingGroupField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
             "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice" => ExportableAutoScalingGroupField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
             "RecommendationOptionsStorage" => ExportableAutoScalingGroupField::RecommendationOptionsStorage,
@@ -10093,10 +11528,13 @@ impl ExportableAutoScalingGroupField {
             ExportableAutoScalingGroupField::CurrentMemory => "CurrentMemory",
             ExportableAutoScalingGroupField::CurrentNetwork => "CurrentNetwork",
             ExportableAutoScalingGroupField::CurrentOnDemandPrice => "CurrentOnDemandPrice",
+            ExportableAutoScalingGroupField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
             ExportableAutoScalingGroupField::CurrentStandardOneYearNoUpfrontReservedPrice => "CurrentStandardOneYearNoUpfrontReservedPrice",
             ExportableAutoScalingGroupField::CurrentStandardThreeYearNoUpfrontReservedPrice => "CurrentStandardThreeYearNoUpfrontReservedPrice",
             ExportableAutoScalingGroupField::CurrentStorage => "CurrentStorage",
             ExportableAutoScalingGroupField::CurrentVcpus => "CurrentVCpus",
+            ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesCpuVendorArchitectures => "EffectiveRecommendationPreferencesCpuVendorArchitectures",
+            ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
             ExportableAutoScalingGroupField::Finding => "Finding",
             ExportableAutoScalingGroupField::LastRefreshTimestamp => "LastRefreshTimestamp",
             ExportableAutoScalingGroupField::LookbackPeriodInDays => "LookbackPeriodInDays",
@@ -10104,12 +11542,15 @@ impl ExportableAutoScalingGroupField {
             ExportableAutoScalingGroupField::RecommendationOptionsConfigurationInstanceType => "RecommendationOptionsConfigurationInstanceType",
             ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMaxSize => "RecommendationOptionsConfigurationMaxSize",
             ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMinSize => "RecommendationOptionsConfigurationMinSize",
+            ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
             ExportableAutoScalingGroupField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
             ExportableAutoScalingGroupField::RecommendationOptionsNetwork => "RecommendationOptionsNetwork",
             ExportableAutoScalingGroupField::RecommendationOptionsOnDemandPrice => "RecommendationOptionsOnDemandPrice",
             ExportableAutoScalingGroupField::RecommendationOptionsPerformanceRisk => "RecommendationOptionsPerformanceRisk",
             ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
             ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
+            ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
             ExportableAutoScalingGroupField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice",
             ExportableAutoScalingGroupField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice => "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice",
             ExportableAutoScalingGroupField::RecommendationOptionsStorage => "RecommendationOptionsStorage",
@@ -10144,10 +11585,13 @@ impl ExportableAutoScalingGroupField {
             "CurrentMemory",
             "CurrentNetwork",
             "CurrentOnDemandPrice",
+            "CurrentPerformanceRisk",
             "CurrentStandardOneYearNoUpfrontReservedPrice",
             "CurrentStandardThreeYearNoUpfrontReservedPrice",
             "CurrentStorage",
             "CurrentVCpus",
+            "EffectiveRecommendationPreferencesCpuVendorArchitectures",
+            "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
             "Finding",
             "LastRefreshTimestamp",
             "LookbackPeriodInDays",
@@ -10155,12 +11599,15 @@ impl ExportableAutoScalingGroupField {
             "RecommendationOptionsConfigurationInstanceType",
             "RecommendationOptionsConfigurationMaxSize",
             "RecommendationOptionsConfigurationMinSize",
+            "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            "RecommendationOptionsEstimatedMonthlySavingsValue",
             "RecommendationOptionsMemory",
             "RecommendationOptionsNetwork",
             "RecommendationOptionsOnDemandPrice",
             "RecommendationOptionsPerformanceRisk",
             "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
             "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
+            "RecommendationOptionsSavingsOpportunityPercentage",
             "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice",
             "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice",
             "RecommendationOptionsStorage",
@@ -10189,12 +11636,8 @@ impl AsRef<str> for ExportableAutoScalingGroupField {
 }
 
 /// <p>Describes a recommendation export job.</p>
-///
-///
 /// <p>Use the <a>DescribeRecommendationExportJobs</a> action to view your
 /// recommendation export jobs.</p>
-///
-///
 /// <p>Use the <a>ExportAutoScalingGroupRecommendations</a> or <a>ExportEC2InstanceRecommendations</a> actions to request an export of your
 /// recommendations.</p>
 #[non_exhaustive]
@@ -10442,74 +11885,6 @@ impl AsRef<str> for JobStatus {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ResourceType {
-    #[allow(missing_docs)] // documentation missing in model
-    AutoScalingGroup,
-    #[allow(missing_docs)] // documentation missing in model
-    EbsVolume,
-    #[allow(missing_docs)] // documentation missing in model
-    Ec2Instance,
-    #[allow(missing_docs)] // documentation missing in model
-    LambdaFunction,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ResourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AutoScalingGroup" => ResourceType::AutoScalingGroup,
-            "EbsVolume" => ResourceType::EbsVolume,
-            "Ec2Instance" => ResourceType::Ec2Instance,
-            "LambdaFunction" => ResourceType::LambdaFunction,
-            other => ResourceType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
-impl ResourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceType::AutoScalingGroup => "AutoScalingGroup",
-            ResourceType::EbsVolume => "EbsVolume",
-            ResourceType::Ec2Instance => "Ec2Instance",
-            ResourceType::LambdaFunction => "LambdaFunction",
-            ResourceType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "AutoScalingGroup",
-            "EbsVolume",
-            "Ec2Instance",
-            "LambdaFunction",
-        ]
-    }
-}
-impl AsRef<str> for ResourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p>Describes the destination of the recommendations export and metadata files.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -10573,7 +11948,6 @@ impl ExportDestination {
 /// <p>Describes a filter that returns a more specific list of recommendation export jobs.
 /// Use this filter with the <a>DescribeRecommendationExportJobs</a>
 /// action.</p>
-///
 /// <p>You can use <code>EBSFilter</code> with the <a>GetEBSVolumeRecommendations</a> action,
 /// <code>LambdaFunctionRecommendationFilter</code> with the <a>GetLambdaFunctionRecommendations</a> action, and <code>Filter</code> with
 /// the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a> actions.</p>
@@ -10581,18 +11955,14 @@ impl ExportDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobFilter {
     /// <p>The name of the filter.</p>
-    ///
     /// <p>Specify <code>ResourceType</code> to return export jobs of a specific resource type
     /// (for example, <code>Ec2Instance</code>).</p>
-    ///
     /// <p>Specify <code>JobStatus</code> to return export jobs with a specific status (e.g,
     /// <code>Complete</code>).</p>
     pub name: std::option::Option<crate::model::JobFilterName>,
     /// <p>The value of the filter.</p>
-    ///
     /// <p>The valid values for this parameter are as follows, depending on what you specify for
     /// the <code>name</code> parameter:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you
@@ -10610,20 +11980,16 @@ pub struct JobFilter {
 }
 impl JobFilter {
     /// <p>The name of the filter.</p>
-    ///
     /// <p>Specify <code>ResourceType</code> to return export jobs of a specific resource type
     /// (for example, <code>Ec2Instance</code>).</p>
-    ///
     /// <p>Specify <code>JobStatus</code> to return export jobs with a specific status (e.g,
     /// <code>Complete</code>).</p>
     pub fn name(&self) -> std::option::Option<&crate::model::JobFilterName> {
         self.name.as_ref()
     }
     /// <p>The value of the filter.</p>
-    ///
     /// <p>The valid values for this parameter are as follows, depending on what you specify for
     /// the <code>name</code> parameter:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you
@@ -10660,10 +12026,8 @@ pub mod job_filter {
     }
     impl Builder {
         /// <p>The name of the filter.</p>
-        ///
         /// <p>Specify <code>ResourceType</code> to return export jobs of a specific resource type
         /// (for example, <code>Ec2Instance</code>).</p>
-        ///
         /// <p>Specify <code>JobStatus</code> to return export jobs with a specific status (e.g,
         /// <code>Complete</code>).</p>
         pub fn name(mut self, input: crate::model::JobFilterName) -> Self {
@@ -10671,10 +12035,8 @@ pub mod job_filter {
             self
         }
         /// <p>The name of the filter.</p>
-        ///
         /// <p>Specify <code>ResourceType</code> to return export jobs of a specific resource type
         /// (for example, <code>Ec2Instance</code>).</p>
-        ///
         /// <p>Specify <code>JobStatus</code> to return export jobs with a specific status (e.g,
         /// <code>Complete</code>).</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::JobFilterName>) -> Self {
@@ -10686,10 +12048,8 @@ pub mod job_filter {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>The value of the filter.</p>
-        ///
         /// <p>The valid values for this parameter are as follows, depending on what you specify for
         /// the <code>name</code> parameter:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you
@@ -10710,10 +12070,8 @@ pub mod job_filter {
             self
         }
         /// <p>The value of the filter.</p>
-        ///
         /// <p>The valid values for this parameter are as follows, depending on what you specify for
         /// the <code>name</code> parameter:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you
@@ -10800,6 +12158,61 @@ impl JobFilterName {
     }
 }
 impl AsRef<str> for JobFilterName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RecommendationPreferenceName {
+    #[allow(missing_docs)] // documentation missing in model
+    EnhancedInfrastructureMetrics,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RecommendationPreferenceName {
+    fn from(s: &str) -> Self {
+        match s {
+            "EnhancedInfrastructureMetrics" => {
+                RecommendationPreferenceName::EnhancedInfrastructureMetrics
+            }
+            other => RecommendationPreferenceName::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RecommendationPreferenceName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RecommendationPreferenceName::from(s))
+    }
+}
+impl RecommendationPreferenceName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RecommendationPreferenceName::EnhancedInfrastructureMetrics => {
+                "EnhancedInfrastructureMetrics"
+            }
+            RecommendationPreferenceName::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["EnhancedInfrastructureMetrics"]
+    }
+}
+impl AsRef<str> for RecommendationPreferenceName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

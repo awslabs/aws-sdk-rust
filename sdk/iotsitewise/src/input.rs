@@ -213,6 +213,215 @@ impl AssociateAssetsInput {
     }
 }
 
+/// See [`AssociateTimeSeriesToAssetPropertyInput`](crate::input::AssociateTimeSeriesToAssetPropertyInput)
+pub mod associate_time_series_to_asset_property_input {
+    /// A builder for [`AssociateTimeSeriesToAssetPropertyInput`](crate::input::AssociateTimeSeriesToAssetPropertyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) alias: std::option::Option<std::string::String>,
+        pub(crate) asset_id: std::option::Option<std::string::String>,
+        pub(crate) property_id: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The alias that identifies the time series.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        /// <p>The alias that identifies the time series.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_id = input;
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.property_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.property_id = input;
+            self
+        }
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateTimeSeriesToAssetPropertyInput`](crate::input::AssociateTimeSeriesToAssetPropertyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::AssociateTimeSeriesToAssetPropertyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::AssociateTimeSeriesToAssetPropertyInput {
+                alias: self.alias,
+                asset_id: self.asset_id,
+                property_id: self.property_id,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type AssociateTimeSeriesToAssetPropertyInputOperationOutputAlias =
+    crate::operation::AssociateTimeSeriesToAssetProperty;
+#[doc(hidden)]
+pub type AssociateTimeSeriesToAssetPropertyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl AssociateTimeSeriesToAssetPropertyInput {
+    /// Consumes the builder and constructs an Operation<[`AssociateTimeSeriesToAssetProperty`](crate::operation::AssociateTimeSeriesToAssetProperty)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AssociateTimeSeriesToAssetProperty,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::AssociateTimeSeriesToAssetPropertyInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/timeseries/associate").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::AssociateTimeSeriesToAssetPropertyInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_2) = &_input.alias {
+                query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_2));
+            }
+            if let Some(inner_3) = &_input.asset_id {
+                query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_3));
+            }
+            if let Some(inner_4) = &_input.property_id {
+                query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_4));
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::AssociateTimeSeriesToAssetPropertyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::AssociateTimeSeriesToAssetPropertyInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_associate_time_series_to_asset_property(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociateTimeSeriesToAssetProperty::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AssociateTimeSeriesToAssetProperty",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`AssociateTimeSeriesToAssetPropertyInput`](crate::input::AssociateTimeSeriesToAssetPropertyInput)
+    pub fn builder() -> crate::input::associate_time_series_to_asset_property_input::Builder {
+        crate::input::associate_time_series_to_asset_property_input::Builder::default()
+    }
+}
+
 /// See [`BatchAssociateProjectAssetsInput`](crate::input::BatchAssociateProjectAssetsInput)
 pub mod batch_associate_project_assets_input {
     /// A builder for [`BatchAssociateProjectAssetsInput`](crate::input::BatchAssociateProjectAssetsInput)
@@ -301,15 +510,15 @@ impl BatchAssociateProjectAssetsInput {
             _input: &crate::input::BatchAssociateProjectAssetsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_2 = &_input.project_id;
-            let input_2 =
-                input_2
+            let input_5 = &_input.project_id;
+            let input_5 =
+                input_5
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_id",
                         details: "cannot be empty or unset",
                     })?;
-            let project_id = aws_smithy_http::label::fmt_string(input_2, false);
+            let project_id = aws_smithy_http::label::fmt_string(input_5, false);
             if project_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_id",
@@ -510,15 +719,15 @@ impl BatchDisassociateProjectAssetsInput {
             _input: &crate::input::BatchDisassociateProjectAssetsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_3 = &_input.project_id;
-            let input_3 =
-                input_3
+            let input_6 = &_input.project_id;
+            let input_6 =
+                input_6
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_id",
                         details: "cannot be empty or unset",
                     })?;
-            let project_id = aws_smithy_http::label::fmt_string(input_3, false);
+            let project_id = aws_smithy_http::label::fmt_string(input_6, false);
             if project_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_id",
@@ -2140,7 +2349,7 @@ pub mod create_portal_input {
         /// <li>
         /// <p>
         /// <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage
-        /// user permissions. This option is only available in the China Regions.</p>
+        /// user permissions.</p>
         /// </li>
         /// </ul>
         /// <p>You can't change this value after you create a portal.</p>
@@ -2164,7 +2373,7 @@ pub mod create_portal_input {
         /// <li>
         /// <p>
         /// <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage
-        /// user permissions. This option is only available in the China Regions.</p>
+        /// user permissions.</p>
         /// </li>
         /// </ul>
         /// <p>You can't change this value after you create a portal.</p>
@@ -2651,15 +2860,15 @@ impl DeleteAccessPolicyInput {
             _input: &crate::input::DeleteAccessPolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_4 = &_input.access_policy_id;
-            let input_4 =
-                input_4
+            let input_7 = &_input.access_policy_id;
+            let input_7 =
+                input_7
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "access_policy_id",
                         details: "cannot be empty or unset",
                     })?;
-            let access_policy_id = aws_smithy_http::label::fmt_string(input_4, false);
+            let access_policy_id = aws_smithy_http::label::fmt_string(input_7, false);
             if access_policy_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "access_policy_id",
@@ -2679,8 +2888,8 @@ impl DeleteAccessPolicyInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_5) = &_input.client_token {
-                query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_5));
+            if let Some(inner_8) = &_input.client_token {
+                query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_8));
             }
             Ok(())
         }
@@ -2834,15 +3043,15 @@ impl DeleteAssetInput {
             _input: &crate::input::DeleteAssetInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_6 = &_input.asset_id;
-            let input_6 =
-                input_6
+            let input_9 = &_input.asset_id;
+            let input_9 =
+                input_9
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "asset_id",
                         details: "cannot be empty or unset",
                     })?;
-            let asset_id = aws_smithy_http::label::fmt_string(input_6, false);
+            let asset_id = aws_smithy_http::label::fmt_string(input_9, false);
             if asset_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
@@ -2858,8 +3067,11 @@ impl DeleteAssetInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_7) = &_input.client_token {
-                query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_7));
+            if let Some(inner_10) = &_input.client_token {
+                query.push_kv(
+                    "clientToken",
+                    &aws_smithy_http::query::fmt_string(&inner_10),
+                );
             }
             Ok(())
         }
@@ -3016,15 +3228,15 @@ impl DeleteAssetModelInput {
             _input: &crate::input::DeleteAssetModelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_8 = &_input.asset_model_id;
-            let input_8 =
-                input_8
+            let input_11 = &_input.asset_model_id;
+            let input_11 =
+                input_11
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "asset_model_id",
                         details: "cannot be empty or unset",
                     })?;
-            let asset_model_id = aws_smithy_http::label::fmt_string(input_8, false);
+            let asset_model_id = aws_smithy_http::label::fmt_string(input_11, false);
             if asset_model_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "asset_model_id",
@@ -3044,8 +3256,11 @@ impl DeleteAssetModelInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_9) = &_input.client_token {
-                query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_9));
+            if let Some(inner_12) = &_input.client_token {
+                query.push_kv(
+                    "clientToken",
+                    &aws_smithy_http::query::fmt_string(&inner_12),
+                );
             }
             Ok(())
         }
@@ -3199,15 +3414,15 @@ impl DeleteDashboardInput {
             _input: &crate::input::DeleteDashboardInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_10 = &_input.dashboard_id;
-            let input_10 =
-                input_10
+            let input_13 = &_input.dashboard_id;
+            let input_13 =
+                input_13
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dashboard_id",
                         details: "cannot be empty or unset",
                     })?;
-            let dashboard_id = aws_smithy_http::label::fmt_string(input_10, false);
+            let dashboard_id = aws_smithy_http::label::fmt_string(input_13, false);
             if dashboard_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
@@ -3227,10 +3442,10 @@ impl DeleteDashboardInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_11) = &_input.client_token {
+            if let Some(inner_14) = &_input.client_token {
                 query.push_kv(
                     "clientToken",
-                    &aws_smithy_http::query::fmt_string(&inner_11),
+                    &aws_smithy_http::query::fmt_string(&inner_14),
                 );
             }
             Ok(())
@@ -3373,15 +3588,15 @@ impl DeleteGatewayInput {
             _input: &crate::input::DeleteGatewayInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_12 = &_input.gateway_id;
-            let input_12 =
-                input_12
+            let input_15 = &_input.gateway_id;
+            let input_15 =
+                input_15
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "gateway_id",
                         details: "cannot be empty or unset",
                     })?;
-            let gateway_id = aws_smithy_http::label::fmt_string(input_12, false);
+            let gateway_id = aws_smithy_http::label::fmt_string(input_15, false);
             if gateway_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "gateway_id",
@@ -3542,15 +3757,15 @@ impl DeletePortalInput {
             _input: &crate::input::DeletePortalInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_13 = &_input.portal_id;
-            let input_13 =
-                input_13
+            let input_16 = &_input.portal_id;
+            let input_16 =
+                input_16
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "portal_id",
                         details: "cannot be empty or unset",
                     })?;
-            let portal_id = aws_smithy_http::label::fmt_string(input_13, false);
+            let portal_id = aws_smithy_http::label::fmt_string(input_16, false);
             if portal_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "portal_id",
@@ -3566,10 +3781,10 @@ impl DeletePortalInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_14) = &_input.client_token {
+            if let Some(inner_17) = &_input.client_token {
                 query.push_kv(
                     "clientToken",
-                    &aws_smithy_http::query::fmt_string(&inner_14),
+                    &aws_smithy_http::query::fmt_string(&inner_17),
                 );
             }
             Ok(())
@@ -3724,15 +3939,15 @@ impl DeleteProjectInput {
             _input: &crate::input::DeleteProjectInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_15 = &_input.project_id;
-            let input_15 =
-                input_15
+            let input_18 = &_input.project_id;
+            let input_18 =
+                input_18
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_id",
                         details: "cannot be empty or unset",
                     })?;
-            let project_id = aws_smithy_http::label::fmt_string(input_15, false);
+            let project_id = aws_smithy_http::label::fmt_string(input_18, false);
             if project_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_id",
@@ -3748,10 +3963,10 @@ impl DeleteProjectInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_16) = &_input.client_token {
+            if let Some(inner_19) = &_input.client_token {
                 query.push_kv(
                     "clientToken",
-                    &aws_smithy_http::query::fmt_string(&inner_16),
+                    &aws_smithy_http::query::fmt_string(&inner_19),
                 );
             }
             Ok(())
@@ -3840,6 +4055,213 @@ impl DeleteProjectInput {
     }
 }
 
+/// See [`DeleteTimeSeriesInput`](crate::input::DeleteTimeSeriesInput)
+pub mod delete_time_series_input {
+    /// A builder for [`DeleteTimeSeriesInput`](crate::input::DeleteTimeSeriesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) alias: std::option::Option<std::string::String>,
+        pub(crate) asset_id: std::option::Option<std::string::String>,
+        pub(crate) property_id: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The alias that identifies the time series.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        /// <p>The alias that identifies the time series.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_id = input;
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.property_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.property_id = input;
+            self
+        }
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteTimeSeriesInput`](crate::input::DeleteTimeSeriesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteTimeSeriesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteTimeSeriesInput {
+                alias: self.alias,
+                asset_id: self.asset_id,
+                property_id: self.property_id,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteTimeSeriesInputOperationOutputAlias = crate::operation::DeleteTimeSeries;
+#[doc(hidden)]
+pub type DeleteTimeSeriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteTimeSeriesInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteTimeSeries`](crate::operation::DeleteTimeSeries)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteTimeSeries,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteTimeSeriesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/timeseries/delete").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::DeleteTimeSeriesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_20) = &_input.alias {
+                query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_20));
+            }
+            if let Some(inner_21) = &_input.asset_id {
+                query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_21));
+            }
+            if let Some(inner_22) = &_input.property_id {
+                query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_22));
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteTimeSeriesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteTimeSeriesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_time_series(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteTimeSeries::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteTimeSeries",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteTimeSeriesInput`](crate::input::DeleteTimeSeriesInput)
+    pub fn builder() -> crate::input::delete_time_series_input::Builder {
+        crate::input::delete_time_series_input::Builder::default()
+    }
+}
+
 /// See [`DescribeAccessPolicyInput`](crate::input::DescribeAccessPolicyInput)
 pub mod describe_access_policy_input {
     /// A builder for [`DescribeAccessPolicyInput`](crate::input::DescribeAccessPolicyInput)
@@ -3897,15 +4319,15 @@ impl DescribeAccessPolicyInput {
             _input: &crate::input::DescribeAccessPolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_17 = &_input.access_policy_id;
-            let input_17 =
-                input_17
+            let input_23 = &_input.access_policy_id;
+            let input_23 =
+                input_23
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "access_policy_id",
                         details: "cannot be empty or unset",
                     })?;
-            let access_policy_id = aws_smithy_http::label::fmt_string(input_17, false);
+            let access_policy_id = aws_smithy_http::label::fmt_string(input_23, false);
             if access_policy_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "access_policy_id",
@@ -4054,15 +4476,15 @@ impl DescribeAssetInput {
             _input: &crate::input::DescribeAssetInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_18 = &_input.asset_id;
-            let input_18 =
-                input_18
+            let input_24 = &_input.asset_id;
+            let input_24 =
+                input_24
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "asset_id",
                         details: "cannot be empty or unset",
                     })?;
-            let asset_id = aws_smithy_http::label::fmt_string(input_18, false);
+            let asset_id = aws_smithy_http::label::fmt_string(input_24, false);
             if asset_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
@@ -4210,15 +4632,15 @@ impl DescribeAssetModelInput {
             _input: &crate::input::DescribeAssetModelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_19 = &_input.asset_model_id;
-            let input_19 =
-                input_19
+            let input_25 = &_input.asset_model_id;
+            let input_25 =
+                input_25
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "asset_model_id",
                         details: "cannot be empty or unset",
                     })?;
-            let asset_model_id = aws_smithy_http::label::fmt_string(input_19, false);
+            let asset_model_id = aws_smithy_http::label::fmt_string(input_25, false);
             if asset_model_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "asset_model_id",
@@ -4379,30 +4801,30 @@ impl DescribeAssetPropertyInput {
             _input: &crate::input::DescribeAssetPropertyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_20 = &_input.asset_id;
-            let input_20 =
-                input_20
+            let input_26 = &_input.asset_id;
+            let input_26 =
+                input_26
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "asset_id",
                         details: "cannot be empty or unset",
                     })?;
-            let asset_id = aws_smithy_http::label::fmt_string(input_20, false);
+            let asset_id = aws_smithy_http::label::fmt_string(input_26, false);
             if asset_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_21 = &_input.property_id;
-            let input_21 =
-                input_21
+            let input_27 = &_input.property_id;
+            let input_27 =
+                input_27
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "property_id",
                         details: "cannot be empty or unset",
                     })?;
-            let property_id = aws_smithy_http::label::fmt_string(input_21, false);
+            let property_id = aws_smithy_http::label::fmt_string(input_27, false);
             if property_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "property_id",
@@ -4552,15 +4974,15 @@ impl DescribeDashboardInput {
             _input: &crate::input::DescribeDashboardInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_22 = &_input.dashboard_id;
-            let input_22 =
-                input_22
+            let input_28 = &_input.dashboard_id;
+            let input_28 =
+                input_28
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dashboard_id",
                         details: "cannot be empty or unset",
                     })?;
-            let dashboard_id = aws_smithy_http::label::fmt_string(input_22, false);
+            let dashboard_id = aws_smithy_http::label::fmt_string(input_28, false);
             if dashboard_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
@@ -4834,15 +5256,15 @@ impl DescribeGatewayInput {
             _input: &crate::input::DescribeGatewayInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_23 = &_input.gateway_id;
-            let input_23 =
-                input_23
+            let input_29 = &_input.gateway_id;
+            let input_29 =
+                input_29
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "gateway_id",
                         details: "cannot be empty or unset",
                     })?;
-            let gateway_id = aws_smithy_http::label::fmt_string(input_23, false);
+            let gateway_id = aws_smithy_http::label::fmt_string(input_29, false);
             if gateway_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "gateway_id",
@@ -5016,30 +5438,30 @@ impl DescribeGatewayCapabilityConfigurationInput {
             _input: &crate::input::DescribeGatewayCapabilityConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_24 = &_input.gateway_id;
-            let input_24 =
-                input_24
+            let input_30 = &_input.gateway_id;
+            let input_30 =
+                input_30
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "gateway_id",
                         details: "cannot be empty or unset",
                     })?;
-            let gateway_id = aws_smithy_http::label::fmt_string(input_24, false);
+            let gateway_id = aws_smithy_http::label::fmt_string(input_30, false);
             if gateway_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "gateway_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_25 = &_input.capability_namespace;
-            let input_25 =
-                input_25
+            let input_31 = &_input.capability_namespace;
+            let input_31 =
+                input_31
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "capability_namespace",
                         details: "cannot be empty or unset",
                     })?;
-            let capability_namespace = aws_smithy_http::label::fmt_string(input_25, false);
+            let capability_namespace = aws_smithy_http::label::fmt_string(input_31, false);
             if capability_namespace.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "capability_namespace",
@@ -5312,15 +5734,15 @@ impl DescribePortalInput {
             _input: &crate::input::DescribePortalInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_26 = &_input.portal_id;
-            let input_26 =
-                input_26
+            let input_32 = &_input.portal_id;
+            let input_32 =
+                input_32
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "portal_id",
                         details: "cannot be empty or unset",
                     })?;
-            let portal_id = aws_smithy_http::label::fmt_string(input_26, false);
+            let portal_id = aws_smithy_http::label::fmt_string(input_32, false);
             if portal_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "portal_id",
@@ -5465,15 +5887,15 @@ impl DescribeProjectInput {
             _input: &crate::input::DescribeProjectInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_27 = &_input.project_id;
-            let input_27 =
-                input_27
+            let input_33 = &_input.project_id;
+            let input_33 =
+                input_33
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_id",
                         details: "cannot be empty or unset",
                     })?;
-            let project_id = aws_smithy_http::label::fmt_string(input_27, false);
+            let project_id = aws_smithy_http::label::fmt_string(input_33, false);
             if project_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_id",
@@ -5688,6 +6110,184 @@ impl DescribeStorageConfigurationInput {
     }
 }
 
+/// See [`DescribeTimeSeriesInput`](crate::input::DescribeTimeSeriesInput)
+pub mod describe_time_series_input {
+    /// A builder for [`DescribeTimeSeriesInput`](crate::input::DescribeTimeSeriesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) alias: std::option::Option<std::string::String>,
+        pub(crate) asset_id: std::option::Option<std::string::String>,
+        pub(crate) property_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The alias that identifies the time series.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        /// <p>The alias that identifies the time series.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_id = input;
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.property_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.property_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeTimeSeriesInput`](crate::input::DescribeTimeSeriesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeTimeSeriesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeTimeSeriesInput {
+                alias: self.alias,
+                asset_id: self.asset_id,
+                property_id: self.property_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeTimeSeriesInputOperationOutputAlias = crate::operation::DescribeTimeSeries;
+#[doc(hidden)]
+pub type DescribeTimeSeriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeTimeSeriesInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeTimeSeries`](crate::operation::DescribeTimeSeries)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeTimeSeries,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeTimeSeriesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/timeseries/describe").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::DescribeTimeSeriesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_34) = &_input.alias {
+                query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_34));
+            }
+            if let Some(inner_35) = &_input.asset_id {
+                query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_35));
+            }
+            if let Some(inner_36) = &_input.property_id {
+                query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_36));
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeTimeSeriesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeTimeSeriesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeTimeSeries::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeTimeSeries",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeTimeSeriesInput`](crate::input::DescribeTimeSeriesInput)
+    pub fn builder() -> crate::input::describe_time_series_input::Builder {
+        crate::input::describe_time_series_input::Builder::default()
+    }
+}
+
 /// See [`DisassociateAssetsInput`](crate::input::DisassociateAssetsInput)
 pub mod disassociate_assets_input {
     /// A builder for [`DisassociateAssetsInput`](crate::input::DisassociateAssetsInput)
@@ -5787,15 +6387,15 @@ impl DisassociateAssetsInput {
             _input: &crate::input::DisassociateAssetsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_28 = &_input.asset_id;
-            let input_28 =
-                input_28
+            let input_37 = &_input.asset_id;
+            let input_37 =
+                input_37
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "asset_id",
                         details: "cannot be empty or unset",
                     })?;
-            let asset_id = aws_smithy_http::label::fmt_string(input_28, false);
+            let asset_id = aws_smithy_http::label::fmt_string(input_37, false);
             if asset_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
@@ -5900,6 +6500,216 @@ impl DisassociateAssetsInput {
     /// Creates a new builder-style object to manufacture [`DisassociateAssetsInput`](crate::input::DisassociateAssetsInput)
     pub fn builder() -> crate::input::disassociate_assets_input::Builder {
         crate::input::disassociate_assets_input::Builder::default()
+    }
+}
+
+/// See [`DisassociateTimeSeriesFromAssetPropertyInput`](crate::input::DisassociateTimeSeriesFromAssetPropertyInput)
+pub mod disassociate_time_series_from_asset_property_input {
+    /// A builder for [`DisassociateTimeSeriesFromAssetPropertyInput`](crate::input::DisassociateTimeSeriesFromAssetPropertyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) alias: std::option::Option<std::string::String>,
+        pub(crate) asset_id: std::option::Option<std::string::String>,
+        pub(crate) property_id: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The alias that identifies the time series.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        /// <p>The alias that identifies the time series.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_id = input;
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.property_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.property_id = input;
+            self
+        }
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateTimeSeriesFromAssetPropertyInput`](crate::input::DisassociateTimeSeriesFromAssetPropertyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DisassociateTimeSeriesFromAssetPropertyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DisassociateTimeSeriesFromAssetPropertyInput {
+                alias: self.alias,
+                asset_id: self.asset_id,
+                property_id: self.property_id,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DisassociateTimeSeriesFromAssetPropertyInputOperationOutputAlias =
+    crate::operation::DisassociateTimeSeriesFromAssetProperty;
+#[doc(hidden)]
+pub type DisassociateTimeSeriesFromAssetPropertyInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl DisassociateTimeSeriesFromAssetPropertyInput {
+    /// Consumes the builder and constructs an Operation<[`DisassociateTimeSeriesFromAssetProperty`](crate::operation::DisassociateTimeSeriesFromAssetProperty)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DisassociateTimeSeriesFromAssetProperty,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DisassociateTimeSeriesFromAssetPropertyInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/timeseries/disassociate").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::DisassociateTimeSeriesFromAssetPropertyInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_38) = &_input.alias {
+                query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_38));
+            }
+            if let Some(inner_39) = &_input.asset_id {
+                query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_39));
+            }
+            if let Some(inner_40) = &_input.property_id {
+                query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_40));
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DisassociateTimeSeriesFromAssetPropertyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DisassociateTimeSeriesFromAssetPropertyInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_time_series_from_asset_property(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisassociateTimeSeriesFromAssetProperty::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DisassociateTimeSeriesFromAssetProperty",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DisassociateTimeSeriesFromAssetPropertyInput`](crate::input::DisassociateTimeSeriesFromAssetPropertyInput)
+    pub fn builder() -> crate::input::disassociate_time_series_from_asset_property_input::Builder {
+        crate::input::disassociate_time_series_from_asset_property_input::Builder::default()
     }
 }
 
@@ -6128,65 +6938,65 @@ impl GetAssetPropertyAggregatesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_29) = &_input.asset_id {
-                query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_29));
+            if let Some(inner_41) = &_input.asset_id {
+                query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_41));
             }
-            if let Some(inner_30) = &_input.property_id {
-                query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_30));
+            if let Some(inner_42) = &_input.property_id {
+                query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_42));
             }
-            if let Some(inner_31) = &_input.property_alias {
+            if let Some(inner_43) = &_input.property_alias {
                 query.push_kv(
                     "propertyAlias",
-                    &aws_smithy_http::query::fmt_string(&inner_31),
+                    &aws_smithy_http::query::fmt_string(&inner_43),
                 );
             }
-            if let Some(inner_32) = &_input.aggregate_types {
-                for inner_33 in inner_32 {
+            if let Some(inner_44) = &_input.aggregate_types {
+                for inner_45 in inner_44 {
                     query.push_kv(
                         "aggregateTypes",
-                        &aws_smithy_http::query::fmt_string(&inner_33),
+                        &aws_smithy_http::query::fmt_string(&inner_45),
                     );
                 }
             }
-            if let Some(inner_34) = &_input.resolution {
-                query.push_kv("resolution", &aws_smithy_http::query::fmt_string(&inner_34));
+            if let Some(inner_46) = &_input.resolution {
+                query.push_kv("resolution", &aws_smithy_http::query::fmt_string(&inner_46));
             }
-            if let Some(inner_35) = &_input.qualities {
-                for inner_36 in inner_35 {
-                    query.push_kv("qualities", &aws_smithy_http::query::fmt_string(&inner_36));
+            if let Some(inner_47) = &_input.qualities {
+                for inner_48 in inner_47 {
+                    query.push_kv("qualities", &aws_smithy_http::query::fmt_string(&inner_48));
                 }
             }
-            if let Some(inner_37) = &_input.start_date {
+            if let Some(inner_49) = &_input.start_date {
                 query.push_kv(
                     "startDate",
                     &aws_smithy_http::query::fmt_timestamp(
-                        inner_37,
+                        inner_49,
                         aws_smithy_types::date_time::Format::DateTime,
                     )?,
                 );
             }
-            if let Some(inner_38) = &_input.end_date {
+            if let Some(inner_50) = &_input.end_date {
                 query.push_kv(
                     "endDate",
                     &aws_smithy_http::query::fmt_timestamp(
-                        inner_38,
+                        inner_50,
                         aws_smithy_types::date_time::Format::DateTime,
                     )?,
                 );
             }
-            if let Some(inner_39) = &_input.time_ordering {
+            if let Some(inner_51) = &_input.time_ordering {
                 query.push_kv(
                     "timeOrdering",
-                    &aws_smithy_http::query::fmt_string(&inner_39),
+                    &aws_smithy_http::query::fmt_string(&inner_51),
                 );
             }
-            if let Some(inner_40) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
+            if let Some(inner_52) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_52));
             }
-            if let Some(inner_41) = &_input.max_results {
+            if let Some(inner_53) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_53).encode(),
                 );
             }
             Ok(())
@@ -6367,16 +7177,16 @@ impl GetAssetPropertyValueInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_42) = &_input.asset_id {
-                query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_42));
+            if let Some(inner_54) = &_input.asset_id {
+                query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_54));
             }
-            if let Some(inner_43) = &_input.property_id {
-                query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_43));
+            if let Some(inner_55) = &_input.property_id {
+                query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_55));
             }
-            if let Some(inner_44) = &_input.property_alias {
+            if let Some(inner_56) = &_input.property_alias {
                 query.push_kv(
                     "propertyAlias",
-                    &aws_smithy_http::query::fmt_string(&inner_44),
+                    &aws_smithy_http::query::fmt_string(&inner_56),
                 );
             }
             Ok(())
@@ -6654,54 +7464,54 @@ impl GetAssetPropertyValueHistoryInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_45) = &_input.asset_id {
-                query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_45));
+            if let Some(inner_57) = &_input.asset_id {
+                query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_57));
             }
-            if let Some(inner_46) = &_input.property_id {
-                query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_46));
+            if let Some(inner_58) = &_input.property_id {
+                query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_58));
             }
-            if let Some(inner_47) = &_input.property_alias {
+            if let Some(inner_59) = &_input.property_alias {
                 query.push_kv(
                     "propertyAlias",
-                    &aws_smithy_http::query::fmt_string(&inner_47),
+                    &aws_smithy_http::query::fmt_string(&inner_59),
                 );
             }
-            if let Some(inner_48) = &_input.start_date {
+            if let Some(inner_60) = &_input.start_date {
                 query.push_kv(
                     "startDate",
                     &aws_smithy_http::query::fmt_timestamp(
-                        inner_48,
+                        inner_60,
                         aws_smithy_types::date_time::Format::DateTime,
                     )?,
                 );
             }
-            if let Some(inner_49) = &_input.end_date {
+            if let Some(inner_61) = &_input.end_date {
                 query.push_kv(
                     "endDate",
                     &aws_smithy_http::query::fmt_timestamp(
-                        inner_49,
+                        inner_61,
                         aws_smithy_types::date_time::Format::DateTime,
                     )?,
                 );
             }
-            if let Some(inner_50) = &_input.qualities {
-                for inner_51 in inner_50 {
-                    query.push_kv("qualities", &aws_smithy_http::query::fmt_string(&inner_51));
+            if let Some(inner_62) = &_input.qualities {
+                for inner_63 in inner_62 {
+                    query.push_kv("qualities", &aws_smithy_http::query::fmt_string(&inner_63));
                 }
             }
-            if let Some(inner_52) = &_input.time_ordering {
+            if let Some(inner_64) = &_input.time_ordering {
                 query.push_kv(
                     "timeOrdering",
-                    &aws_smithy_http::query::fmt_string(&inner_52),
+                    &aws_smithy_http::query::fmt_string(&inner_64),
                 );
             }
-            if let Some(inner_53) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_53));
+            if let Some(inner_65) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_65));
             }
-            if let Some(inner_54) = &_input.max_results {
+            if let Some(inner_66) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_66).encode(),
                 );
             }
             Ok(())
@@ -6941,21 +7751,25 @@ pub mod get_interpolated_asset_property_values_input {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p>
-        /// <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days.
-        /// If the interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value
-        /// on July 3, 2021, at 9 AM, and so on.</p>
+        /// <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
+        /// interpolation</a>.</p>
+        /// <p>For example, you can use this operation to return the interpolated temperature values
+        /// for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts
+        /// July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM,
+        /// the second interpolated value on July 3, 2021, at 9 AM, and so on.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p>
-        /// <p>If no data point is found for an interval,
-        /// IoT SiteWise returns the last observed data point for the previous interval
-        /// and carries forward this interpolated value until a new data point is found.</p>
-        /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days.
-        /// If the interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021,
-        /// at 9 AM and July 2, 2021, at 9 AM as the first interpolated value.
-        /// If no data point is found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p>
+        /// <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation
+        /// carried forward interpolation</p>
+        /// <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point
+        /// for the previous interval and carries forward this interpolated value until a new data
+        /// point is found.</p>
+        /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration
+        /// of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last
+        /// observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first
+        /// interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the
+        /// same interpolated value for the rest of the days.</p>
         /// </li>
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6968,75 +7782,83 @@ pub mod get_interpolated_asset_property_values_input {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p>
-        /// <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days.
-        /// If the interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value
-        /// on July 3, 2021, at 9 AM, and so on.</p>
+        /// <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
+        /// interpolation</a>.</p>
+        /// <p>For example, you can use this operation to return the interpolated temperature values
+        /// for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts
+        /// July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM,
+        /// the second interpolated value on July 3, 2021, at 9 AM, and so on.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p>
-        /// <p>If no data point is found for an interval,
-        /// IoT SiteWise returns the last observed data point for the previous interval
-        /// and carries forward this interpolated value until a new data point is found.</p>
-        /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days.
-        /// If the interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021,
-        /// at 9 AM and July 2, 2021, at 9 AM as the first interpolated value.
-        /// If no data point is found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p>
+        /// <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation
+        /// carried forward interpolation</p>
+        /// <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point
+        /// for the previous interval and carries forward this interpolated value until a new data
+        /// point is found.</p>
+        /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration
+        /// of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last
+        /// observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first
+        /// interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the
+        /// same interpolated value for the rest of the days.</p>
         /// </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>The query interval for the window in seconds. IoT SiteWise computes each interpolated value by using data points
-        /// from the timestamp of each interval minus the window to the timestamp of each interval plus the window.
-        /// If not specified, the window is between the start time minus the interval and the end time plus the interval. </p>
+        /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by
+        /// using data points from the timestamp of each interval, minus the window to the timestamp of
+        /// each interval plus the window. If not specified, the window ranges between the start time
+        /// minus the interval and the end time plus the interval.</p>
         /// <note>
         /// <ul>
         /// <li>
-        /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter,
-        /// the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p>
+        /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the
+        /// value for the <code>type</code> parameter must be
+        /// <code>LINEAR_INTERPOLATION</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If no data point is found during the specified query window,
-        /// IoT SiteWise won't return an interpolated value for the interval.
-        /// This indicates that there's a gap in the ingested data points.</p>
+        /// <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an
+        /// interpolated value for the interval. This indicates that there's a gap in the ingested
+        /// data points.</p>
         /// </li>
         /// </ul>
         /// </note>
-        /// <p>For example, you can get the interpolated temperature values for a wind turbine
-        /// every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021,
-        /// at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM - 2 hours)
-        /// to 11 AM (9 AM + 2 hours) on July 2, 2021 to compute the first interpolated value,
-        /// uses the data points from 7 AM (9 AM - 2 hours) to 11 AM (9 AM + 2 hours) on July 3, 2021
-        /// to compute the second interpolated value, and so on. </p>
+        /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24
+        /// hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a
+        /// window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM
+        /// plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the
+        /// data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to
+        /// compute the second interpolated value, and so on. </p>
         pub fn interval_window_in_seconds(mut self, input: i64) -> Self {
             self.interval_window_in_seconds = Some(input);
             self
         }
-        /// <p>The query interval for the window in seconds. IoT SiteWise computes each interpolated value by using data points
-        /// from the timestamp of each interval minus the window to the timestamp of each interval plus the window.
-        /// If not specified, the window is between the start time minus the interval and the end time plus the interval. </p>
+        /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by
+        /// using data points from the timestamp of each interval, minus the window to the timestamp of
+        /// each interval plus the window. If not specified, the window ranges between the start time
+        /// minus the interval and the end time plus the interval.</p>
         /// <note>
         /// <ul>
         /// <li>
-        /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter,
-        /// the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p>
+        /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the
+        /// value for the <code>type</code> parameter must be
+        /// <code>LINEAR_INTERPOLATION</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If no data point is found during the specified query window,
-        /// IoT SiteWise won't return an interpolated value for the interval.
-        /// This indicates that there's a gap in the ingested data points.</p>
+        /// <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an
+        /// interpolated value for the interval. This indicates that there's a gap in the ingested
+        /// data points.</p>
         /// </li>
         /// </ul>
         /// </note>
-        /// <p>For example, you can get the interpolated temperature values for a wind turbine
-        /// every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021,
-        /// at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM - 2 hours)
-        /// to 11 AM (9 AM + 2 hours) on July 2, 2021 to compute the first interpolated value,
-        /// uses the data points from 7 AM (9 AM - 2 hours) to 11 AM (9 AM + 2 hours) on July 3, 2021
-        /// to compute the second interpolated value, and so on. </p>
+        /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24
+        /// hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a
+        /// window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM
+        /// plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the
+        /// data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to
+        /// compute the second interpolated value, and so on. </p>
         pub fn set_interval_window_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.interval_window_in_seconds = input;
             self
@@ -7097,67 +7919,67 @@ impl GetInterpolatedAssetPropertyValuesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_55) = &_input.asset_id {
-                query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_55));
+            if let Some(inner_67) = &_input.asset_id {
+                query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_67));
             }
-            if let Some(inner_56) = &_input.property_id {
-                query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_56));
+            if let Some(inner_68) = &_input.property_id {
+                query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_68));
             }
-            if let Some(inner_57) = &_input.property_alias {
+            if let Some(inner_69) = &_input.property_alias {
                 query.push_kv(
                     "propertyAlias",
-                    &aws_smithy_http::query::fmt_string(&inner_57),
+                    &aws_smithy_http::query::fmt_string(&inner_69),
                 );
             }
-            if let Some(inner_58) = &_input.start_time_in_seconds {
+            if let Some(inner_70) = &_input.start_time_in_seconds {
                 query.push_kv(
                     "startTimeInSeconds",
-                    aws_smithy_types::primitive::Encoder::from(*inner_58).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_70).encode(),
                 );
             }
-            if let Some(inner_59) = &_input.start_time_offset_in_nanos {
+            if let Some(inner_71) = &_input.start_time_offset_in_nanos {
                 query.push_kv(
                     "startTimeOffsetInNanos",
-                    aws_smithy_types::primitive::Encoder::from(*inner_59).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_71).encode(),
                 );
             }
-            if let Some(inner_60) = &_input.end_time_in_seconds {
+            if let Some(inner_72) = &_input.end_time_in_seconds {
                 query.push_kv(
                     "endTimeInSeconds",
-                    aws_smithy_types::primitive::Encoder::from(*inner_60).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_72).encode(),
                 );
             }
-            if let Some(inner_61) = &_input.end_time_offset_in_nanos {
+            if let Some(inner_73) = &_input.end_time_offset_in_nanos {
                 query.push_kv(
                     "endTimeOffsetInNanos",
-                    aws_smithy_types::primitive::Encoder::from(*inner_61).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_73).encode(),
                 );
             }
-            if let Some(inner_62) = &_input.quality {
-                query.push_kv("quality", &aws_smithy_http::query::fmt_string(&inner_62));
+            if let Some(inner_74) = &_input.quality {
+                query.push_kv("quality", &aws_smithy_http::query::fmt_string(&inner_74));
             }
-            if let Some(inner_63) = &_input.interval_in_seconds {
+            if let Some(inner_75) = &_input.interval_in_seconds {
                 query.push_kv(
                     "intervalInSeconds",
-                    aws_smithy_types::primitive::Encoder::from(*inner_63).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_75).encode(),
                 );
             }
-            if let Some(inner_64) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_64));
+            if let Some(inner_76) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_76));
             }
-            if let Some(inner_65) = &_input.max_results {
+            if let Some(inner_77) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_65).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_77).encode(),
                 );
             }
-            if let Some(inner_66) = &_input.r#type {
-                query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_66));
+            if let Some(inner_78) = &_input.r#type {
+                query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_78));
             }
-            if let Some(inner_67) = &_input.interval_window_in_seconds {
+            if let Some(inner_79) = &_input.interval_window_in_seconds {
                 query.push_kv(
                     "intervalWindowInSeconds",
-                    aws_smithy_types::primitive::Encoder::from(*inner_67).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_79).encode(),
                 );
             }
             Ok(())
@@ -7397,34 +8219,34 @@ impl ListAccessPoliciesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_68) = &_input.identity_type {
+            if let Some(inner_80) = &_input.identity_type {
                 query.push_kv(
                     "identityType",
-                    &aws_smithy_http::query::fmt_string(&inner_68),
+                    &aws_smithy_http::query::fmt_string(&inner_80),
                 );
             }
-            if let Some(inner_69) = &_input.identity_id {
-                query.push_kv("identityId", &aws_smithy_http::query::fmt_string(&inner_69));
+            if let Some(inner_81) = &_input.identity_id {
+                query.push_kv("identityId", &aws_smithy_http::query::fmt_string(&inner_81));
             }
-            if let Some(inner_70) = &_input.resource_type {
+            if let Some(inner_82) = &_input.resource_type {
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_70),
+                    &aws_smithy_http::query::fmt_string(&inner_82),
                 );
             }
-            if let Some(inner_71) = &_input.resource_id {
-                query.push_kv("resourceId", &aws_smithy_http::query::fmt_string(&inner_71));
+            if let Some(inner_83) = &_input.resource_id {
+                query.push_kv("resourceId", &aws_smithy_http::query::fmt_string(&inner_83));
             }
-            if let Some(inner_72) = &_input.iam_arn {
-                query.push_kv("iamArn", &aws_smithy_http::query::fmt_string(&inner_72));
+            if let Some(inner_84) = &_input.iam_arn {
+                query.push_kv("iamArn", &aws_smithy_http::query::fmt_string(&inner_84));
             }
-            if let Some(inner_73) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_73));
+            if let Some(inner_85) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_85));
             }
-            if let Some(inner_74) = &_input.max_results {
+            if let Some(inner_86) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_74).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_86).encode(),
                 );
             }
             Ok(())
@@ -7586,13 +8408,13 @@ impl ListAssetModelsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_75) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_75));
+            if let Some(inner_87) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_87));
             }
-            if let Some(inner_76) = &_input.max_results {
+            if let Some(inner_88) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_88).encode(),
                 );
             }
             Ok(())
@@ -7789,15 +8611,15 @@ impl ListAssetRelationshipsInput {
             _input: &crate::input::ListAssetRelationshipsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_77 = &_input.asset_id;
-            let input_77 =
-                input_77
+            let input_89 = &_input.asset_id;
+            let input_89 =
+                input_89
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "asset_id",
                         details: "cannot be empty or unset",
                     })?;
-            let asset_id = aws_smithy_http::label::fmt_string(input_77, false);
+            let asset_id = aws_smithy_http::label::fmt_string(input_89, false);
             if asset_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
@@ -7817,19 +8639,19 @@ impl ListAssetRelationshipsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_78) = &_input.traversal_type {
+            if let Some(inner_90) = &_input.traversal_type {
                 query.push_kv(
                     "traversalType",
-                    &aws_smithy_http::query::fmt_string(&inner_78),
+                    &aws_smithy_http::query::fmt_string(&inner_90),
                 );
             }
-            if let Some(inner_79) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_79));
+            if let Some(inner_91) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_91));
             }
-            if let Some(inner_80) = &_input.max_results {
+            if let Some(inner_92) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_80).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_92).encode(),
                 );
             }
             Ok(())
@@ -8053,23 +8875,23 @@ impl ListAssetsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_81) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_81));
+            if let Some(inner_93) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_93));
             }
-            if let Some(inner_82) = &_input.max_results {
+            if let Some(inner_94) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_82).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_94).encode(),
                 );
             }
-            if let Some(inner_83) = &_input.asset_model_id {
+            if let Some(inner_95) = &_input.asset_model_id {
                 query.push_kv(
                     "assetModelId",
-                    &aws_smithy_http::query::fmt_string(&inner_83),
+                    &aws_smithy_http::query::fmt_string(&inner_95),
                 );
             }
-            if let Some(inner_84) = &_input.filter {
-                query.push_kv("filter", &aws_smithy_http::query::fmt_string(&inner_84));
+            if let Some(inner_96) = &_input.filter {
+                query.push_kv("filter", &aws_smithy_http::query::fmt_string(&inner_96));
             }
             Ok(())
         }
@@ -8297,15 +9119,15 @@ impl ListAssociatedAssetsInput {
             _input: &crate::input::ListAssociatedAssetsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_85 = &_input.asset_id;
-            let input_85 =
-                input_85
+            let input_97 = &_input.asset_id;
+            let input_97 =
+                input_97
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "asset_id",
                         details: "cannot be empty or unset",
                     })?;
-            let asset_id = aws_smithy_http::label::fmt_string(input_85, false);
+            let asset_id = aws_smithy_http::label::fmt_string(input_97, false);
             if asset_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
@@ -8321,25 +9143,25 @@ impl ListAssociatedAssetsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_86) = &_input.hierarchy_id {
+            if let Some(inner_98) = &_input.hierarchy_id {
                 query.push_kv(
                     "hierarchyId",
-                    &aws_smithy_http::query::fmt_string(&inner_86),
+                    &aws_smithy_http::query::fmt_string(&inner_98),
                 );
             }
-            if let Some(inner_87) = &_input.traversal_direction {
+            if let Some(inner_99) = &_input.traversal_direction {
                 query.push_kv(
                     "traversalDirection",
-                    &aws_smithy_http::query::fmt_string(&inner_87),
+                    &aws_smithy_http::query::fmt_string(&inner_99),
                 );
             }
-            if let Some(inner_88) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_88));
+            if let Some(inner_100) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_100));
             }
-            if let Some(inner_89) = &_input.max_results {
+            if let Some(inner_101) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_89).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_101).encode(),
                 );
             }
             Ok(())
@@ -8513,16 +9335,16 @@ impl ListDashboardsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_90) = &_input.project_id {
-                query.push_kv("projectId", &aws_smithy_http::query::fmt_string(&inner_90));
+            if let Some(inner_102) = &_input.project_id {
+                query.push_kv("projectId", &aws_smithy_http::query::fmt_string(&inner_102));
             }
-            if let Some(inner_91) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_91));
+            if let Some(inner_103) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_103));
             }
-            if let Some(inner_92) = &_input.max_results {
+            if let Some(inner_104) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_92).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_104).encode(),
                 );
             }
             Ok(())
@@ -8684,13 +9506,13 @@ impl ListGatewaysInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_93) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_93));
+            if let Some(inner_105) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_105));
             }
-            if let Some(inner_94) = &_input.max_results {
+            if let Some(inner_106) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_94).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_106).encode(),
                 );
             }
             Ok(())
@@ -8852,13 +9674,13 @@ impl ListPortalsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_95) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_95));
+            if let Some(inner_107) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_107));
             }
-            if let Some(inner_96) = &_input.max_results {
+            if let Some(inner_108) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_96).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_108).encode(),
                 );
             }
             Ok(())
@@ -9024,15 +9846,15 @@ impl ListProjectAssetsInput {
             _input: &crate::input::ListProjectAssetsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_97 = &_input.project_id;
-            let input_97 =
-                input_97
+            let input_109 = &_input.project_id;
+            let input_109 =
+                input_109
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_id",
                         details: "cannot be empty or unset",
                     })?;
-            let project_id = aws_smithy_http::label::fmt_string(input_97, false);
+            let project_id = aws_smithy_http::label::fmt_string(input_109, false);
             if project_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_id",
@@ -9052,13 +9874,13 @@ impl ListProjectAssetsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_98) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_98));
+            if let Some(inner_110) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_110));
             }
-            if let Some(inner_99) = &_input.max_results {
+            if let Some(inner_111) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_99).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_111).encode(),
                 );
             }
             Ok(())
@@ -9232,16 +10054,16 @@ impl ListProjectsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_100) = &_input.portal_id {
-                query.push_kv("portalId", &aws_smithy_http::query::fmt_string(&inner_100));
+            if let Some(inner_112) = &_input.portal_id {
+                query.push_kv("portalId", &aws_smithy_http::query::fmt_string(&inner_112));
             }
-            if let Some(inner_101) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_101));
+            if let Some(inner_113) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_113));
             }
-            if let Some(inner_102) = &_input.max_results {
+            if let Some(inner_114) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_102).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_114).encode(),
                 );
             }
             Ok(())
@@ -9389,10 +10211,10 @@ impl ListTagsForResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_103) = &_input.resource_arn {
+            if let Some(inner_115) = &_input.resource_arn {
                 query.push_kv(
                     "resourceArn",
-                    &aws_smithy_http::query::fmt_string(&inner_103),
+                    &aws_smithy_http::query::fmt_string(&inner_115),
                 );
             }
             Ok(())
@@ -9478,6 +10300,252 @@ impl ListTagsForResourceInput {
     }
 }
 
+/// See [`ListTimeSeriesInput`](crate::input::ListTimeSeriesInput)
+pub mod list_time_series_input {
+    /// A builder for [`ListTimeSeriesInput`](crate::input::ListTimeSeriesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) asset_id: std::option::Option<std::string::String>,
+        pub(crate) alias_prefix: std::option::Option<std::string::String>,
+        pub(crate) time_series_type: std::option::Option<crate::model::ListTimeSeriesType>,
+    }
+    impl Builder {
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_id = input;
+            self
+        }
+        /// <p>The alias prefix of the time series.</p>
+        pub fn alias_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias_prefix = Some(input.into());
+            self
+        }
+        /// <p>The alias prefix of the time series.</p>
+        pub fn set_alias_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias_prefix = input;
+            self
+        }
+        /// <p>The type of the time series. The time series type can be one of the following
+        /// values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ASSOCIATED</code> – The time series is associated with an asset
+        /// property.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISASSOCIATED</code> – The time series isn't associated with any asset
+        /// property.</p>
+        /// </li>
+        /// </ul>
+        pub fn time_series_type(mut self, input: crate::model::ListTimeSeriesType) -> Self {
+            self.time_series_type = Some(input);
+            self
+        }
+        /// <p>The type of the time series. The time series type can be one of the following
+        /// values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ASSOCIATED</code> – The time series is associated with an asset
+        /// property.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISASSOCIATED</code> – The time series isn't associated with any asset
+        /// property.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_time_series_type(
+            mut self,
+            input: std::option::Option<crate::model::ListTimeSeriesType>,
+        ) -> Self {
+            self.time_series_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTimeSeriesInput`](crate::input::ListTimeSeriesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListTimeSeriesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListTimeSeriesInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                asset_id: self.asset_id,
+                alias_prefix: self.alias_prefix,
+                time_series_type: self.time_series_type,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListTimeSeriesInputOperationOutputAlias = crate::operation::ListTimeSeries;
+#[doc(hidden)]
+pub type ListTimeSeriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListTimeSeriesInput {
+    /// Consumes the builder and constructs an Operation<[`ListTimeSeries`](crate::operation::ListTimeSeries)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTimeSeries,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListTimeSeriesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/timeseries").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::ListTimeSeriesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_116) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_116));
+            }
+            if let Some(inner_117) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    aws_smithy_types::primitive::Encoder::from(*inner_117).encode(),
+                );
+            }
+            if let Some(inner_118) = &_input.asset_id {
+                query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_118));
+            }
+            if let Some(inner_119) = &_input.alias_prefix {
+                query.push_kv(
+                    "aliasPrefix",
+                    &aws_smithy_http::query::fmt_string(&inner_119),
+                );
+            }
+            if let Some(inner_120) = &_input.time_series_type {
+                query.push_kv(
+                    "timeSeriesType",
+                    &aws_smithy_http::query::fmt_string(&inner_120),
+                );
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListTimeSeriesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListTimeSeriesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTimeSeries::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTimeSeries",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListTimeSeriesInput`](crate::input::ListTimeSeriesInput)
+    pub fn builder() -> crate::input::list_time_series_input::Builder {
+        crate::input::list_time_series_input::Builder::default()
+    }
+}
+
 /// See [`PutDefaultEncryptionConfigurationInput`](crate::input::PutDefaultEncryptionConfigurationInput)
 pub mod put_default_encryption_configuration_input {
     /// A builder for [`PutDefaultEncryptionConfigurationInput`](crate::input::PutDefaultEncryptionConfigurationInput)
@@ -9501,14 +10569,14 @@ pub mod put_default_encryption_configuration_input {
             self.encryption_type = input;
             self
         }
-        /// <p>The Key ID of the customer managed customer master key (CMK) used for KMS encryption.
-        /// This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+        /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you
+        /// use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Key ID of the customer managed customer master key (CMK) used for KMS encryption.
-        /// This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+        /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you
+        /// use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -9810,32 +10878,41 @@ pub mod put_storage_configuration_input {
     pub struct Builder {
         pub(crate) storage_type: std::option::Option<crate::model::StorageType>,
         pub(crate) multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
+        pub(crate) disassociated_data_storage:
+            std::option::Option<crate::model::DisassociatedDataStorageState>,
+        pub(crate) retention_period: std::option::Option<crate::model::RetentionPeriod>,
     }
     impl Builder {
-        /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+        /// <p>The storage tier that you specified for your data.
+        /// The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
+        /// The hot tier is a service-managed database.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+        /// The cold tier is a customer-managed Amazon S3 bucket.</p>
         /// </li>
         /// </ul>
         pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
             self.storage_type = Some(input);
             self
         }
-        /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+        /// <p>The storage tier that you specified for your data.
+        /// The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
+        /// The hot tier is a service-managed database.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+        /// The cold tier is a customer-managed Amazon S3 bucket.</p>
         /// </li>
         /// </ul>
         pub fn set_storage_type(
@@ -9860,6 +10937,67 @@ pub mod put_storage_configuration_input {
             self.multi_layer_storage = input;
             self
         }
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
+        /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
+        /// <important>
+        /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
+        /// </important>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
+        /// in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn disassociated_data_storage(
+            mut self,
+            input: crate::model::DisassociatedDataStorageState,
+        ) -> Self {
+            self.disassociated_data_storage = Some(input);
+            self
+        }
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
+        /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
+        /// <important>
+        /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
+        /// </important>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
+        /// in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn set_disassociated_data_storage(
+            mut self,
+            input: std::option::Option<crate::model::DisassociatedDataStorageState>,
+        ) -> Self {
+            self.disassociated_data_storage = input;
+            self
+        }
+        /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+        pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
+            self.retention_period = Some(input);
+            self
+        }
+        /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+        pub fn set_retention_period(
+            mut self,
+            input: std::option::Option<crate::model::RetentionPeriod>,
+        ) -> Self {
+            self.retention_period = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PutStorageConfigurationInput`](crate::input::PutStorageConfigurationInput)
         pub fn build(
             self,
@@ -9870,6 +11008,8 @@ pub mod put_storage_configuration_input {
             Ok(crate::input::PutStorageConfigurationInput {
                 storage_type: self.storage_type,
                 multi_layer_storage: self.multi_layer_storage,
+                disassociated_data_storage: self.disassociated_data_storage,
+                retention_period: self.retention_period,
             })
         }
     }
@@ -10091,10 +11231,10 @@ impl TagResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_104) = &_input.resource_arn {
+            if let Some(inner_121) = &_input.resource_arn {
                 query.push_kv(
                     "resourceArn",
-                    &aws_smithy_http::query::fmt_string(&inner_104),
+                    &aws_smithy_http::query::fmt_string(&inner_121),
                 );
             }
             Ok(())
@@ -10276,15 +11416,15 @@ impl UntagResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_105) = &_input.resource_arn {
+            if let Some(inner_122) = &_input.resource_arn {
                 query.push_kv(
                     "resourceArn",
-                    &aws_smithy_http::query::fmt_string(&inner_105),
+                    &aws_smithy_http::query::fmt_string(&inner_122),
                 );
             }
-            if let Some(inner_106) = &_input.tag_keys {
-                for inner_107 in inner_106 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_107));
+            if let Some(inner_123) = &_input.tag_keys {
+                for inner_124 in inner_123 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_124));
                 }
             }
             Ok(())
@@ -10484,15 +11624,15 @@ impl UpdateAccessPolicyInput {
             _input: &crate::input::UpdateAccessPolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_108 = &_input.access_policy_id;
-            let input_108 =
-                input_108
+            let input_125 = &_input.access_policy_id;
+            let input_125 =
+                input_125
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "access_policy_id",
                         details: "cannot be empty or unset",
                     })?;
-            let access_policy_id = aws_smithy_http::label::fmt_string(input_108, false);
+            let access_policy_id = aws_smithy_http::label::fmt_string(input_125, false);
             if access_policy_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "access_policy_id",
@@ -10682,15 +11822,15 @@ impl UpdateAssetInput {
             _input: &crate::input::UpdateAssetInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_109 = &_input.asset_id;
-            let input_109 =
-                input_109
+            let input_126 = &_input.asset_id;
+            let input_126 =
+                input_126
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "asset_id",
                         details: "cannot be empty or unset",
                     })?;
-            let asset_id = aws_smithy_http::label::fmt_string(input_109, false);
+            let asset_id = aws_smithy_http::label::fmt_string(input_126, false);
             if asset_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
@@ -10991,15 +12131,15 @@ impl UpdateAssetModelInput {
             _input: &crate::input::UpdateAssetModelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_110 = &_input.asset_model_id;
-            let input_110 =
-                input_110
+            let input_127 = &_input.asset_model_id;
+            let input_127 =
+                input_127
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "asset_model_id",
                         details: "cannot be empty or unset",
                     })?;
-            let asset_model_id = aws_smithy_http::label::fmt_string(input_110, false);
+            let asset_model_id = aws_smithy_http::label::fmt_string(input_127, false);
             if asset_model_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "asset_model_id",
@@ -11237,30 +12377,30 @@ impl UpdateAssetPropertyInput {
             _input: &crate::input::UpdateAssetPropertyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_111 = &_input.asset_id;
-            let input_111 =
-                input_111
+            let input_128 = &_input.asset_id;
+            let input_128 =
+                input_128
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "asset_id",
                         details: "cannot be empty or unset",
                     })?;
-            let asset_id = aws_smithy_http::label::fmt_string(input_111, false);
+            let asset_id = aws_smithy_http::label::fmt_string(input_128, false);
             if asset_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_112 = &_input.property_id;
-            let input_112 =
-                input_112
+            let input_129 = &_input.property_id;
+            let input_129 =
+                input_129
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "property_id",
                         details: "cannot be empty or unset",
                     })?;
-            let property_id = aws_smithy_http::label::fmt_string(input_112, false);
+            let property_id = aws_smithy_http::label::fmt_string(input_129, false);
             if property_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "property_id",
@@ -11486,15 +12626,15 @@ impl UpdateDashboardInput {
             _input: &crate::input::UpdateDashboardInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_113 = &_input.dashboard_id;
-            let input_113 =
-                input_113
+            let input_130 = &_input.dashboard_id;
+            let input_130 =
+                input_130
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dashboard_id",
                         details: "cannot be empty or unset",
                     })?;
-            let dashboard_id = aws_smithy_http::label::fmt_string(input_113, false);
+            let dashboard_id = aws_smithy_http::label::fmt_string(input_130, false);
             if dashboard_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
@@ -11672,15 +12812,15 @@ impl UpdateGatewayInput {
             _input: &crate::input::UpdateGatewayInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_114 = &_input.gateway_id;
-            let input_114 =
-                input_114
+            let input_131 = &_input.gateway_id;
+            let input_131 =
+                input_131
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "gateway_id",
                         details: "cannot be empty or unset",
                     })?;
-            let gateway_id = aws_smithy_http::label::fmt_string(input_114, false);
+            let gateway_id = aws_smithy_http::label::fmt_string(input_131, false);
             if gateway_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "gateway_id",
@@ -11884,15 +13024,15 @@ impl UpdateGatewayCapabilityConfigurationInput {
             _input: &crate::input::UpdateGatewayCapabilityConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_115 = &_input.gateway_id;
-            let input_115 =
-                input_115
+            let input_132 = &_input.gateway_id;
+            let input_132 =
+                input_132
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "gateway_id",
                         details: "cannot be empty or unset",
                     })?;
-            let gateway_id = aws_smithy_http::label::fmt_string(input_115, false);
+            let gateway_id = aws_smithy_http::label::fmt_string(input_132, false);
             if gateway_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "gateway_id",
@@ -12188,15 +13328,15 @@ impl UpdatePortalInput {
             _input: &crate::input::UpdatePortalInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_116 = &_input.portal_id;
-            let input_116 =
-                input_116
+            let input_133 = &_input.portal_id;
+            let input_133 =
+                input_133
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "portal_id",
                         details: "cannot be empty or unset",
                     })?;
-            let portal_id = aws_smithy_http::label::fmt_string(input_116, false);
+            let portal_id = aws_smithy_http::label::fmt_string(input_133, false);
             if portal_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "portal_id",
@@ -12396,15 +13536,15 @@ impl UpdateProjectInput {
             _input: &crate::input::UpdateProjectInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_117 = &_input.project_id;
-            let input_117 =
-                input_117
+            let input_134 = &_input.project_id;
+            let input_134 =
+                input_134
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_id",
                         details: "cannot be empty or unset",
                     })?;
-            let project_id = aws_smithy_http::label::fmt_string(input_117, false);
+            let project_id = aws_smithy_http::label::fmt_string(input_134, false);
             if project_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_id",
@@ -13093,32 +14233,59 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutStorageConfigurationInput {
-    /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+    /// <p>The storage tier that you specified for your data.
+    /// The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
+    /// The hot tier is a service-managed database.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+    /// The cold tier is a customer-managed Amazon S3 bucket.</p>
     /// </li>
     /// </ul>
     pub storage_type: std::option::Option<crate::model::StorageType>,
     /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type,
     /// you must specify a <code>MultiLayerStorage</code> object.</p>
     pub multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
-}
-impl PutStorageConfigurationInput {
-    /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
+    /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+    /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
+    /// <important>
+    /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
+    /// </important>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+    /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
+    /// in the <i>IoT SiteWise User Guide</i>.</p>
+    pub disassociated_data_storage:
+        std::option::Option<crate::model::DisassociatedDataStorageState>,
+    /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+    pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
+}
+impl PutStorageConfigurationInput {
+    /// <p>The storage tier that you specified for your data.
+    /// The <code>storageType</code> parameter can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
+    /// The hot tier is a service-managed database.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+    /// The cold tier is a customer-managed Amazon S3 bucket.</p>
     /// </li>
     /// </ul>
     pub fn storage_type(&self) -> std::option::Option<&crate::model::StorageType> {
@@ -13129,12 +14296,43 @@ impl PutStorageConfigurationInput {
     pub fn multi_layer_storage(&self) -> std::option::Option<&crate::model::MultiLayerStorage> {
         self.multi_layer_storage.as_ref()
     }
+    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
+    /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
+    /// <important>
+    /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
+    /// </important>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
+    /// in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn disassociated_data_storage(
+        &self,
+    ) -> std::option::Option<&crate::model::DisassociatedDataStorageState> {
+        self.disassociated_data_storage.as_ref()
+    }
+    /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+        self.retention_period.as_ref()
+    }
 }
 impl std::fmt::Debug for PutStorageConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutStorageConfigurationInput");
         formatter.field("storage_type", &self.storage_type);
         formatter.field("multi_layer_storage", &self.multi_layer_storage);
+        formatter.field(
+            "disassociated_data_storage",
+            &self.disassociated_data_storage,
+        );
+        formatter.field("retention_period", &self.retention_period);
         formatter.finish()
     }
 }
@@ -13166,8 +14364,8 @@ impl std::fmt::Debug for PutLoggingOptionsInput {
 pub struct PutDefaultEncryptionConfigurationInput {
     /// <p>The type of encryption used for the encryption configuration.</p>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The Key ID of the customer managed customer master key (CMK) used for KMS encryption.
-    /// This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+    /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you
+    /// use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl PutDefaultEncryptionConfigurationInput {
@@ -13175,8 +14373,8 @@ impl PutDefaultEncryptionConfigurationInput {
     pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
         self.encryption_type.as_ref()
     }
-    /// <p>The Key ID of the customer managed customer master key (CMK) used for KMS encryption.
-    /// This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+    /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you
+    /// use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -13186,6 +14384,81 @@ impl std::fmt::Debug for PutDefaultEncryptionConfigurationInput {
         let mut formatter = f.debug_struct("PutDefaultEncryptionConfigurationInput");
         formatter.field("encryption_type", &self.encryption_type);
         formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTimeSeriesInput {
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub asset_id: std::option::Option<std::string::String>,
+    /// <p>The alias prefix of the time series.</p>
+    pub alias_prefix: std::option::Option<std::string::String>,
+    /// <p>The type of the time series. The time series type can be one of the following
+    /// values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ASSOCIATED</code> – The time series is associated with an asset
+    /// property.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISASSOCIATED</code> – The time series isn't associated with any asset
+    /// property.</p>
+    /// </li>
+    /// </ul>
+    pub time_series_type: std::option::Option<crate::model::ListTimeSeriesType>,
+}
+impl ListTimeSeriesInput {
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The alias prefix of the time series.</p>
+    pub fn alias_prefix(&self) -> std::option::Option<&str> {
+        self.alias_prefix.as_deref()
+    }
+    /// <p>The type of the time series. The time series type can be one of the following
+    /// values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ASSOCIATED</code> – The time series is associated with an asset
+    /// property.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISASSOCIATED</code> – The time series isn't associated with any asset
+    /// property.</p>
+    /// </li>
+    /// </ul>
+    pub fn time_series_type(&self) -> std::option::Option<&crate::model::ListTimeSeriesType> {
+        self.time_series_type.as_ref()
+    }
+}
+impl std::fmt::Debug for ListTimeSeriesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTimeSeriesInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("asset_id", &self.asset_id);
+        formatter.field("alias_prefix", &self.alias_prefix);
+        formatter.field("time_series_type", &self.time_series_type);
         formatter.finish()
     }
 }
@@ -13751,46 +15024,52 @@ pub struct GetInterpolatedAssetPropertyValuesInput {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p>
-    /// <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days.
-    /// If the interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value
-    /// on July 3, 2021, at 9 AM, and so on.</p>
+    /// <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
+    /// interpolation</a>.</p>
+    /// <p>For example, you can use this operation to return the interpolated temperature values
+    /// for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts
+    /// July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM,
+    /// the second interpolated value on July 3, 2021, at 9 AM, and so on.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p>
-    /// <p>If no data point is found for an interval,
-    /// IoT SiteWise returns the last observed data point for the previous interval
-    /// and carries forward this interpolated value until a new data point is found.</p>
-    /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days.
-    /// If the interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021,
-    /// at 9 AM and July 2, 2021, at 9 AM as the first interpolated value.
-    /// If no data point is found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p>
+    /// <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation
+    /// carried forward interpolation</p>
+    /// <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point
+    /// for the previous interval and carries forward this interpolated value until a new data
+    /// point is found.</p>
+    /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration
+    /// of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last
+    /// observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first
+    /// interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the
+    /// same interpolated value for the rest of the days.</p>
     /// </li>
     /// </ul>
     pub r#type: std::option::Option<std::string::String>,
-    /// <p>The query interval for the window in seconds. IoT SiteWise computes each interpolated value by using data points
-    /// from the timestamp of each interval minus the window to the timestamp of each interval plus the window.
-    /// If not specified, the window is between the start time minus the interval and the end time plus the interval. </p>
+    /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by
+    /// using data points from the timestamp of each interval, minus the window to the timestamp of
+    /// each interval plus the window. If not specified, the window ranges between the start time
+    /// minus the interval and the end time plus the interval.</p>
     /// <note>
     /// <ul>
     /// <li>
-    /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter,
-    /// the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p>
+    /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the
+    /// value for the <code>type</code> parameter must be
+    /// <code>LINEAR_INTERPOLATION</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If no data point is found during the specified query window,
-    /// IoT SiteWise won't return an interpolated value for the interval.
-    /// This indicates that there's a gap in the ingested data points.</p>
+    /// <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an
+    /// interpolated value for the interval. This indicates that there's a gap in the ingested
+    /// data points.</p>
     /// </li>
     /// </ul>
     /// </note>
-    /// <p>For example, you can get the interpolated temperature values for a wind turbine
-    /// every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021,
-    /// at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM - 2 hours)
-    /// to 11 AM (9 AM + 2 hours) on July 2, 2021 to compute the first interpolated value,
-    /// uses the data points from 7 AM (9 AM - 2 hours) to 11 AM (9 AM + 2 hours) on July 3, 2021
-    /// to compute the second interpolated value, and so on. </p>
+    /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24
+    /// hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a
+    /// window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM
+    /// plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the
+    /// data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to
+    /// compute the second interpolated value, and so on. </p>
     pub interval_window_in_seconds: std::option::Option<i64>,
 }
 impl GetInterpolatedAssetPropertyValuesInput {
@@ -13851,48 +15130,54 @@ impl GetInterpolatedAssetPropertyValuesInput {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p>
-    /// <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days.
-    /// If the interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value
-    /// on July 3, 2021, at 9 AM, and so on.</p>
+    /// <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
+    /// interpolation</a>.</p>
+    /// <p>For example, you can use this operation to return the interpolated temperature values
+    /// for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts
+    /// July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM,
+    /// the second interpolated value on July 3, 2021, at 9 AM, and so on.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p>
-    /// <p>If no data point is found for an interval,
-    /// IoT SiteWise returns the last observed data point for the previous interval
-    /// and carries forward this interpolated value until a new data point is found.</p>
-    /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days.
-    /// If the interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021,
-    /// at 9 AM and July 2, 2021, at 9 AM as the first interpolated value.
-    /// If no data point is found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p>
+    /// <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation
+    /// carried forward interpolation</p>
+    /// <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point
+    /// for the previous interval and carries forward this interpolated value until a new data
+    /// point is found.</p>
+    /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration
+    /// of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last
+    /// observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first
+    /// interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the
+    /// same interpolated value for the rest of the days.</p>
     /// </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p>The query interval for the window in seconds. IoT SiteWise computes each interpolated value by using data points
-    /// from the timestamp of each interval minus the window to the timestamp of each interval plus the window.
-    /// If not specified, the window is between the start time minus the interval and the end time plus the interval. </p>
+    /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by
+    /// using data points from the timestamp of each interval, minus the window to the timestamp of
+    /// each interval plus the window. If not specified, the window ranges between the start time
+    /// minus the interval and the end time plus the interval.</p>
     /// <note>
     /// <ul>
     /// <li>
-    /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter,
-    /// the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p>
+    /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the
+    /// value for the <code>type</code> parameter must be
+    /// <code>LINEAR_INTERPOLATION</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If no data point is found during the specified query window,
-    /// IoT SiteWise won't return an interpolated value for the interval.
-    /// This indicates that there's a gap in the ingested data points.</p>
+    /// <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an
+    /// interpolated value for the interval. This indicates that there's a gap in the ingested
+    /// data points.</p>
     /// </li>
     /// </ul>
     /// </note>
-    /// <p>For example, you can get the interpolated temperature values for a wind turbine
-    /// every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021,
-    /// at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM - 2 hours)
-    /// to 11 AM (9 AM + 2 hours) on July 2, 2021 to compute the first interpolated value,
-    /// uses the data points from 7 AM (9 AM - 2 hours) to 11 AM (9 AM + 2 hours) on July 3, 2021
-    /// to compute the second interpolated value, and so on. </p>
+    /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24
+    /// hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a
+    /// window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM
+    /// plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the
+    /// data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to
+    /// compute the second interpolated value, and so on. </p>
     pub fn interval_window_in_seconds(&self) -> std::option::Option<i64> {
         self.interval_window_in_seconds
     }
@@ -14159,6 +15444,48 @@ impl std::fmt::Debug for GetAssetPropertyAggregatesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateTimeSeriesFromAssetPropertyInput {
+    /// <p>The alias that identifies the time series.</p>
+    pub alias: std::option::Option<std::string::String>,
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub asset_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the asset property.</p>
+    pub property_id: std::option::Option<std::string::String>,
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl DisassociateTimeSeriesFromAssetPropertyInput {
+    /// <p>The alias that identifies the time series.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DisassociateTimeSeriesFromAssetPropertyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateTimeSeriesFromAssetPropertyInput");
+        formatter.field("alias", &self.alias);
+        formatter.field("asset_id", &self.asset_id);
+        formatter.field("property_id", &self.property_id);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateAssetsInput {
     /// <p>The ID of the parent asset from which to disassociate the child asset.</p>
     pub asset_id: std::option::Option<std::string::String>,
@@ -14200,6 +15527,41 @@ impl std::fmt::Debug for DisassociateAssetsInput {
         formatter.field("hierarchy_id", &self.hierarchy_id);
         formatter.field("child_asset_id", &self.child_asset_id);
         formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeTimeSeriesInput {
+    /// <p>The alias that identifies the time series.</p>
+    pub alias: std::option::Option<std::string::String>,
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub asset_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the asset property.</p>
+    pub property_id: std::option::Option<std::string::String>,
+}
+impl DescribeTimeSeriesInput {
+    /// <p>The alias that identifies the time series.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeTimeSeriesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeTimeSeriesInput");
+        formatter.field("alias", &self.alias);
+        formatter.field("asset_id", &self.asset_id);
+        formatter.field("property_id", &self.property_id);
         formatter.finish()
     }
 }
@@ -14444,6 +15806,48 @@ impl std::fmt::Debug for DescribeAccessPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAccessPolicyInput");
         formatter.field("access_policy_id", &self.access_policy_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteTimeSeriesInput {
+    /// <p>The alias that identifies the time series.</p>
+    pub alias: std::option::Option<std::string::String>,
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub asset_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the asset property.</p>
+    pub property_id: std::option::Option<std::string::String>,
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl DeleteTimeSeriesInput {
+    /// <p>The alias that identifies the time series.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteTimeSeriesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteTimeSeriesInput");
+        formatter.field("alias", &self.alias);
+        formatter.field("asset_id", &self.asset_id);
+        formatter.field("property_id", &self.property_id);
+        formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
 }
@@ -14732,7 +16136,7 @@ pub struct CreatePortalInput {
     /// <li>
     /// <p>
     /// <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage
-    /// user permissions. This option is only available in the China Regions.</p>
+    /// user permissions.</p>
     /// </li>
     /// </ul>
     /// <p>You can't change this value after you create a portal.</p>
@@ -14802,7 +16206,7 @@ impl CreatePortalInput {
     /// <li>
     /// <p>
     /// <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage
-    /// user permissions. This option is only available in the China Regions.</p>
+    /// user permissions.</p>
     /// </li>
     /// </ul>
     /// <p>You can't change this value after you create a portal.</p>
@@ -15251,6 +16655,48 @@ impl std::fmt::Debug for BatchAssociateProjectAssetsInput {
         let mut formatter = f.debug_struct("BatchAssociateProjectAssetsInput");
         formatter.field("project_id", &self.project_id);
         formatter.field("asset_ids", &self.asset_ids);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateTimeSeriesToAssetPropertyInput {
+    /// <p>The alias that identifies the time series.</p>
+    pub alias: std::option::Option<std::string::String>,
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub asset_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the asset property.</p>
+    pub property_id: std::option::Option<std::string::String>,
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl AssociateTimeSeriesToAssetPropertyInput {
+    /// <p>The alias that identifies the time series.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for AssociateTimeSeriesToAssetPropertyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateTimeSeriesToAssetPropertyInput");
+        formatter.field("alias", &self.alias);
+        formatter.field("asset_id", &self.asset_id);
+        formatter.field("property_id", &self.property_id);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }

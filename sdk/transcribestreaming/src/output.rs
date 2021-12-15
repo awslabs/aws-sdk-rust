@@ -4,10 +4,10 @@
 pub struct StartStreamTranscriptionOutput {
     /// <p>An identifier for the streaming transcription.</p>
     pub request_id: std::option::Option<std::string::String>,
-    /// <p>The language code for the input audio stream.</p>
+    /// <p>The language code of the input audio stream.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The sample rate for the input audio stream. Use 8,000 Hz for low quality audio and 16,000 Hz
-    /// for high quality audio.</p>
+    /// <p>The sample rate, in Hertz (Hz), for the input audio stream. Use 8,000 Hz for low quality
+    /// audio and 16,000 Hz or higher for high quality audio.</p>
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>The encoding used for the input audio stream.</p>
     pub media_encoding: std::option::Option<crate::model::MediaEncoding>,
@@ -20,9 +20,9 @@ pub struct StartStreamTranscriptionOutput {
         crate::model::TranscriptResultStream,
         crate::error::StartStreamTranscriptionError,
     >,
-    /// <p>The name of the vocabulary filter used in your real-time stream.</p>
+    /// <p>The name of the vocabulary filter used in your media stream.</p>
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
-    /// <p>The vocabulary filtering method used in the real-time stream.</p>
+    /// <p>The vocabulary filtering method used in the media stream.</p>
     pub vocabulary_filter_method: std::option::Option<crate::model::VocabularyFilterMethod>,
     /// <p>Shows whether speaker identification was enabled in the stream.</p>
     pub show_speaker_label: bool,
@@ -41,20 +41,27 @@ pub struct StartStreamTranscriptionOutput {
     pub content_redaction_type: std::option::Option<crate::model::ContentRedactionType>,
     /// <p>Lists the PII entity types you specified in your request.</p>
     pub pii_entity_types: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the language model used in your media stream.</p>
     pub language_model_name: std::option::Option<std::string::String>,
+    /// <p>The language code of the language identified in your media stream.</p>
+    pub identify_language: bool,
+    /// <p>The language codes used in the identification of your media stream's predominant
+    /// language.</p>
+    pub language_options: std::option::Option<std::string::String>,
+    /// <p>The preferred language you specified in your request.</p>
+    pub preferred_language: std::option::Option<crate::model::LanguageCode>,
 }
 impl StartStreamTranscriptionOutput {
     /// <p>An identifier for the streaming transcription.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The language code for the input audio stream.</p>
+    /// <p>The language code of the input audio stream.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The sample rate for the input audio stream. Use 8,000 Hz for low quality audio and 16,000 Hz
-    /// for high quality audio.</p>
+    /// <p>The sample rate, in Hertz (Hz), for the input audio stream. Use 8,000 Hz for low quality
+    /// audio and 16,000 Hz or higher for high quality audio.</p>
     pub fn media_sample_rate_hertz(&self) -> std::option::Option<i32> {
         self.media_sample_rate_hertz
     }
@@ -79,11 +86,11 @@ impl StartStreamTranscriptionOutput {
     > {
         &self.transcript_result_stream
     }
-    /// <p>The name of the vocabulary filter used in your real-time stream.</p>
+    /// <p>The name of the vocabulary filter used in your media stream.</p>
     pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
         self.vocabulary_filter_name.as_deref()
     }
-    /// <p>The vocabulary filtering method used in the real-time stream.</p>
+    /// <p>The vocabulary filtering method used in the media stream.</p>
     pub fn vocabulary_filter_method(
         &self,
     ) -> std::option::Option<&crate::model::VocabularyFilterMethod> {
@@ -128,9 +135,22 @@ impl StartStreamTranscriptionOutput {
     pub fn pii_entity_types(&self) -> std::option::Option<&str> {
         self.pii_entity_types.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the language model used in your media stream.</p>
     pub fn language_model_name(&self) -> std::option::Option<&str> {
         self.language_model_name.as_deref()
+    }
+    /// <p>The language code of the language identified in your media stream.</p>
+    pub fn identify_language(&self) -> bool {
+        self.identify_language
+    }
+    /// <p>The language codes used in the identification of your media stream's predominant
+    /// language.</p>
+    pub fn language_options(&self) -> std::option::Option<&str> {
+        self.language_options.as_deref()
+    }
+    /// <p>The preferred language you specified in your request.</p>
+    pub fn preferred_language(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.preferred_language.as_ref()
     }
 }
 impl std::fmt::Debug for StartStreamTranscriptionOutput {
@@ -163,6 +183,9 @@ impl std::fmt::Debug for StartStreamTranscriptionOutput {
         formatter.field("content_redaction_type", &self.content_redaction_type);
         formatter.field("pii_entity_types", &self.pii_entity_types);
         formatter.field("language_model_name", &self.language_model_name);
+        formatter.field("identify_language", &self.identify_language);
+        formatter.field("language_options", &self.language_options);
+        formatter.field("preferred_language", &self.preferred_language);
         formatter.finish()
     }
 }
@@ -198,6 +221,9 @@ pub mod start_stream_transcription_output {
         pub(crate) content_redaction_type: std::option::Option<crate::model::ContentRedactionType>,
         pub(crate) pii_entity_types: std::option::Option<std::string::String>,
         pub(crate) language_model_name: std::option::Option<std::string::String>,
+        pub(crate) identify_language: std::option::Option<bool>,
+        pub(crate) language_options: std::option::Option<std::string::String>,
+        pub(crate) preferred_language: std::option::Option<crate::model::LanguageCode>,
     }
     impl Builder {
         /// <p>An identifier for the streaming transcription.</p>
@@ -210,12 +236,12 @@ pub mod start_stream_transcription_output {
             self.request_id = input;
             self
         }
-        /// <p>The language code for the input audio stream.</p>
+        /// <p>The language code of the input audio stream.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language code for the input audio stream.</p>
+        /// <p>The language code of the input audio stream.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -223,14 +249,14 @@ pub mod start_stream_transcription_output {
             self.language_code = input;
             self
         }
-        /// <p>The sample rate for the input audio stream. Use 8,000 Hz for low quality audio and 16,000 Hz
-        /// for high quality audio.</p>
+        /// <p>The sample rate, in Hertz (Hz), for the input audio stream. Use 8,000 Hz for low quality
+        /// audio and 16,000 Hz or higher for high quality audio.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
             self.media_sample_rate_hertz = Some(input);
             self
         }
-        /// <p>The sample rate for the input audio stream. Use 8,000 Hz for low quality audio and 16,000 Hz
-        /// for high quality audio.</p>
+        /// <p>The sample rate, in Hertz (Hz), for the input audio stream. Use 8,000 Hz for low quality
+        /// audio and 16,000 Hz or higher for high quality audio.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
             self.media_sample_rate_hertz = input;
             self
@@ -295,12 +321,12 @@ pub mod start_stream_transcription_output {
             self.transcript_result_stream = input;
             self
         }
-        /// <p>The name of the vocabulary filter used in your real-time stream.</p>
+        /// <p>The name of the vocabulary filter used in your media stream.</p>
         pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_filter_name = Some(input.into());
             self
         }
-        /// <p>The name of the vocabulary filter used in your real-time stream.</p>
+        /// <p>The name of the vocabulary filter used in your media stream.</p>
         pub fn set_vocabulary_filter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -308,7 +334,7 @@ pub mod start_stream_transcription_output {
             self.vocabulary_filter_name = input;
             self
         }
-        /// <p>The vocabulary filtering method used in the real-time stream.</p>
+        /// <p>The vocabulary filtering method used in the media stream.</p>
         pub fn vocabulary_filter_method(
             mut self,
             input: crate::model::VocabularyFilterMethod,
@@ -316,7 +342,7 @@ pub mod start_stream_transcription_output {
             self.vocabulary_filter_method = Some(input);
             self
         }
-        /// <p>The vocabulary filtering method used in the real-time stream.</p>
+        /// <p>The vocabulary filtering method used in the media stream.</p>
         pub fn set_vocabulary_filter_method(
             mut self,
             input: std::option::Option<crate::model::VocabularyFilterMethod>,
@@ -430,17 +456,55 @@ pub mod start_stream_transcription_output {
             self.pii_entity_types = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The name of the language model used in your media stream.</p>
         pub fn language_model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.language_model_name = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The name of the language model used in your media stream.</p>
         pub fn set_language_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.language_model_name = input;
+            self
+        }
+        /// <p>The language code of the language identified in your media stream.</p>
+        pub fn identify_language(mut self, input: bool) -> Self {
+            self.identify_language = Some(input);
+            self
+        }
+        /// <p>The language code of the language identified in your media stream.</p>
+        pub fn set_identify_language(mut self, input: std::option::Option<bool>) -> Self {
+            self.identify_language = input;
+            self
+        }
+        /// <p>The language codes used in the identification of your media stream's predominant
+        /// language.</p>
+        pub fn language_options(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_options = Some(input.into());
+            self
+        }
+        /// <p>The language codes used in the identification of your media stream's predominant
+        /// language.</p>
+        pub fn set_language_options(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_options = input;
+            self
+        }
+        /// <p>The preferred language you specified in your request.</p>
+        pub fn preferred_language(mut self, input: crate::model::LanguageCode) -> Self {
+            self.preferred_language = Some(input);
+            self
+        }
+        /// <p>The preferred language you specified in your request.</p>
+        pub fn set_preferred_language(
+            mut self,
+            input: std::option::Option<crate::model::LanguageCode>,
+        ) -> Self {
+            self.preferred_language = input;
             self
         }
         /// Consumes the builder and constructs a [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput)
@@ -493,6 +557,13 @@ pub mod start_stream_transcription_output {
                     pii_entity_types: self.pii_entity_types
                     ,
                     language_model_name: self.language_model_name
+                    ,
+                    identify_language: self.identify_language
+                        .unwrap_or_default()
+                    ,
+                    language_options: self.language_options
+                    ,
+                    preferred_language: self.preferred_language
                     ,
                 }
             )

@@ -4455,6 +4455,12 @@ pub struct DescribeRegionSettingsOutput {
     /// <p>Returns a list of all services along with the opt-in preferences in the Region.</p>
     pub resource_type_opt_in_preference:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+    /// <p>Returns whether a DynamoDB recovery point was taken using
+    /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+    /// Backup's advanced DynamoDB backup features</a>.
+    /// </p>
+    pub resource_type_management_preference:
+        std::option::Option<std::collections::HashMap<std::string::String, bool>>,
 }
 impl DescribeRegionSettingsOutput {
     /// <p>Returns a list of all services along with the opt-in preferences in the Region.</p>
@@ -4463,6 +4469,15 @@ impl DescribeRegionSettingsOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
         self.resource_type_opt_in_preference.as_ref()
     }
+    /// <p>Returns whether a DynamoDB recovery point was taken using
+    /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+    /// Backup's advanced DynamoDB backup features</a>.
+    /// </p>
+    pub fn resource_type_management_preference(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
+        self.resource_type_management_preference.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeRegionSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4470,6 +4485,10 @@ impl std::fmt::Debug for DescribeRegionSettingsOutput {
         formatter.field(
             "resource_type_opt_in_preference",
             &self.resource_type_opt_in_preference,
+        );
+        formatter.field(
+            "resource_type_management_preference",
+            &self.resource_type_management_preference,
         );
         formatter.finish()
     }
@@ -4481,6 +4500,8 @@ pub mod describe_region_settings_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type_opt_in_preference:
+            std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+        pub(crate) resource_type_management_preference:
             std::option::Option<std::collections::HashMap<std::string::String, bool>>,
     }
     impl Builder {
@@ -4507,10 +4528,40 @@ pub mod describe_region_settings_output {
             self.resource_type_opt_in_preference = input;
             self
         }
+        /// Adds a key-value pair to `resource_type_management_preference`.
+        ///
+        /// To override the contents of this collection use [`set_resource_type_management_preference`](Self::set_resource_type_management_preference).
+        ///
+        /// <p>Returns whether a DynamoDB recovery point was taken using
+        /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+        /// Backup's advanced DynamoDB backup features</a>.
+        /// </p>
+        pub fn resource_type_management_preference(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<bool>,
+        ) -> Self {
+            let mut hash_map = self.resource_type_management_preference.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.resource_type_management_preference = Some(hash_map);
+            self
+        }
+        /// <p>Returns whether a DynamoDB recovery point was taken using
+        /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+        /// Backup's advanced DynamoDB backup features</a>.
+        /// </p>
+        pub fn set_resource_type_management_preference(
+            mut self,
+            input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+        ) -> Self {
+            self.resource_type_management_preference = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeRegionSettingsOutput`](crate::output::DescribeRegionSettingsOutput)
         pub fn build(self) -> crate::output::DescribeRegionSettingsOutput {
             crate::output::DescribeRegionSettingsOutput {
                 resource_type_opt_in_preference: self.resource_type_opt_in_preference,
+                resource_type_management_preference: self.resource_type_management_preference,
             }
         }
     }

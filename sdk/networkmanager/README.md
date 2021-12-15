@@ -1,6 +1,6 @@
 # aws-sdk-networkmanager
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 Transit Gateway Network Manager (Network Manager) enables you to create a global network, in which you can monitor your Amazon Web Services and on-premises networks that are built around transit gateways.
@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-networkmanager = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-networkmanager = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

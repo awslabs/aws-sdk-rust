@@ -1724,6 +1724,7 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::UpdateRecoveryPointLifecycleErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::UpdateRecoveryPointLifecycleErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::UpdateRecoveryPointLifecycleErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
                 crate::error::UpdateRecoveryPointLifecycleErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateRecoveryPointLifecycleErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),

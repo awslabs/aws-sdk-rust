@@ -1,6 +1,6 @@
 # aws-sdk-macie
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 Amazon Macie Classic is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS. Macie Classic recognizes sensitive data such as personally identifiable information (PII) or intellectual property, and provides you with dashboards and alerts that give visibility into how this data is being accessed or moved. For more information, see the [Amazon Macie Classic User Guide](https://docs.aws.amazon.com/macie/latest/userguide/what-is-macie.html).
@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-macie = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-macie = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

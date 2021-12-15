@@ -92,6 +92,36 @@ impl UpdateEmergencyContactSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateApplicationLayerAutomaticResponseOutput {}
+impl std::fmt::Debug for UpdateApplicationLayerAutomaticResponseOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateApplicationLayerAutomaticResponseOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput)
+pub mod update_application_layer_automatic_response_output {
+    /// A builder for [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput)
+        pub fn build(self) -> crate::output::UpdateApplicationLayerAutomaticResponseOutput {
+            crate::output::UpdateApplicationLayerAutomaticResponseOutput {}
+        }
+    }
+}
+impl UpdateApplicationLayerAutomaticResponseOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput)
+    pub fn builder() -> crate::output::update_application_layer_automatic_response_output::Builder {
+        crate::output::update_application_layer_automatic_response_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
 impl std::fmt::Debug for UntagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -216,7 +246,12 @@ impl ListTagsForResourceOutput {
 pub struct ListResourcesInProtectionGroupOutput {
     /// <p>The Amazon Resource Names (ARNs) of the resources that are included in the protection group.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If you specify a value for <code>MaxResults</code> and you have more resources in the protection group than the value of MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+    /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+    /// providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+    /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourcesInProtectionGroupOutput {
@@ -224,7 +259,12 @@ impl ListResourcesInProtectionGroupOutput {
     pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arns.as_deref()
     }
-    /// <p>If you specify a value for <code>MaxResults</code> and you have more resources in the protection group than the value of MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+    /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+    /// providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+    /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -266,12 +306,22 @@ pub mod list_resources_in_protection_group_output {
             self.resource_arns = input;
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more resources in the protection group than the value of MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+        /// providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more resources in the protection group than the value of MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+        /// providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -298,8 +348,12 @@ impl ListResourcesInProtectionGroupOutput {
 pub struct ListProtectionsOutput {
     /// <p>The array of enabled <a>Protection</a> objects.</p>
     pub protections: std::option::Option<std::vec::Vec<crate::model::Protection>>,
-    /// <p>If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.</p>
-    /// <p>Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number specified by MaxResults. If there are more <a>Protection</a> objects to return, Shield Advanced will always also return a <code>NextToken</code>.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+    /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+    /// providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+    /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProtectionsOutput {
@@ -307,8 +361,12 @@ impl ListProtectionsOutput {
     pub fn protections(&self) -> std::option::Option<&[crate::model::Protection]> {
         self.protections.as_deref()
     }
-    /// <p>If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.</p>
-    /// <p>Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number specified by MaxResults. If there are more <a>Protection</a> objects to return, Shield Advanced will always also return a <code>NextToken</code>.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+    /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+    /// providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+    /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -350,14 +408,22 @@ pub mod list_protections_output {
             self.protections = input;
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.</p>
-        /// <p>Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number specified by MaxResults. If there are more <a>Protection</a> objects to return, Shield Advanced will always also return a <code>NextToken</code>.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+        /// providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.</p>
-        /// <p>Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number specified by MaxResults. If there are more <a>Protection</a> objects to return, Shield Advanced will always also return a <code>NextToken</code>.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+        /// providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -384,7 +450,12 @@ impl ListProtectionsOutput {
 pub struct ListProtectionGroupsOutput {
     /// <p></p>
     pub protection_groups: std::option::Option<std::vec::Vec<crate::model::ProtectionGroup>>,
-    /// <p>If you specify a value for <code>MaxResults</code> and you have more protection groups than the value of MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+    /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+    /// providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+    /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProtectionGroupsOutput {
@@ -392,7 +463,12 @@ impl ListProtectionGroupsOutput {
     pub fn protection_groups(&self) -> std::option::Option<&[crate::model::ProtectionGroup]> {
         self.protection_groups.as_deref()
     }
-    /// <p>If you specify a value for <code>MaxResults</code> and you have more protection groups than the value of MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+    /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+    /// providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+    /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -438,12 +514,22 @@ pub mod list_protection_groups_output {
             self.protection_groups = input;
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more protection groups than the value of MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+        /// providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more protection groups than the value of MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+        /// providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -470,11 +556,12 @@ impl ListProtectionGroupsOutput {
 pub struct ListAttacksOutput {
     /// <p>The attack information for the specified time range.</p>
     pub attack_summaries: std::option::Option<std::vec::Vec<crate::model::AttackSummary>>,
-    /// <p>The token returned by a previous call to indicate that there is more data available.
-    /// If not null, more results are available. Pass this value for the <code>NextMarker</code>
-    /// parameter in a subsequent call to <code>ListAttacks</code> to retrieve the next set of
-    /// items.</p>
-    /// <p>Shield Advanced might return the list of <a>AttackSummary</a> objects in batches smaller than the number specified by MaxResults. If there are more attack summary objects to return, Shield Advanced will always also return a <code>NextToken</code>.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+    /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+    /// providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+    /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAttacksOutput {
@@ -482,11 +569,12 @@ impl ListAttacksOutput {
     pub fn attack_summaries(&self) -> std::option::Option<&[crate::model::AttackSummary]> {
         self.attack_summaries.as_deref()
     }
-    /// <p>The token returned by a previous call to indicate that there is more data available.
-    /// If not null, more results are available. Pass this value for the <code>NextMarker</code>
-    /// parameter in a subsequent call to <code>ListAttacks</code> to retrieve the next set of
-    /// items.</p>
-    /// <p>Shield Advanced might return the list of <a>AttackSummary</a> objects in batches smaller than the number specified by MaxResults. If there are more attack summary objects to return, Shield Advanced will always also return a <code>NextToken</code>.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+    /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+    /// providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+    /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -529,20 +617,22 @@ pub mod list_attacks_output {
             self.attack_summaries = input;
             self
         }
-        /// <p>The token returned by a previous call to indicate that there is more data available.
-        /// If not null, more results are available. Pass this value for the <code>NextMarker</code>
-        /// parameter in a subsequent call to <code>ListAttacks</code> to retrieve the next set of
-        /// items.</p>
-        /// <p>Shield Advanced might return the list of <a>AttackSummary</a> objects in batches smaller than the number specified by MaxResults. If there are more attack summary objects to return, Shield Advanced will always also return a <code>NextToken</code>.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+        /// providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token returned by a previous call to indicate that there is more data available.
-        /// If not null, more results are available. Pass this value for the <code>NextMarker</code>
-        /// parameter in a subsequent call to <code>ListAttacks</code> to retrieve the next set of
-        /// items.</p>
-        /// <p>Shield Advanced might return the list of <a>AttackSummary</a> objects in batches smaller than the number specified by MaxResults. If there are more attack summary objects to return, Shield Advanced will always also return a <code>NextToken</code>.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+        /// providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -647,6 +737,36 @@ impl EnableProactiveEngagementOutput {
     /// Creates a new builder-style object to manufacture [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput)
     pub fn builder() -> crate::output::enable_proactive_engagement_output::Builder {
         crate::output::enable_proactive_engagement_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EnableApplicationLayerAutomaticResponseOutput {}
+impl std::fmt::Debug for EnableApplicationLayerAutomaticResponseOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EnableApplicationLayerAutomaticResponseOutput");
+        formatter.finish()
+    }
+}
+/// See [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput)
+pub mod enable_application_layer_automatic_response_output {
+    /// A builder for [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput)
+        pub fn build(self) -> crate::output::EnableApplicationLayerAutomaticResponseOutput {
+            crate::output::EnableApplicationLayerAutomaticResponseOutput {}
+        }
+    }
+}
+impl EnableApplicationLayerAutomaticResponseOutput {
+    /// Creates a new builder-style object to manufacture [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput)
+    pub fn builder() -> crate::output::enable_application_layer_automatic_response_output::Builder {
+        crate::output::enable_application_layer_automatic_response_output::Builder::default()
     }
 }
 
@@ -767,6 +887,37 @@ impl DisableProactiveEngagementOutput {
     /// Creates a new builder-style object to manufacture [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput)
     pub fn builder() -> crate::output::disable_proactive_engagement_output::Builder {
         crate::output::disable_proactive_engagement_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisableApplicationLayerAutomaticResponseOutput {}
+impl std::fmt::Debug for DisableApplicationLayerAutomaticResponseOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisableApplicationLayerAutomaticResponseOutput");
+        formatter.finish()
+    }
+}
+/// See [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput)
+pub mod disable_application_layer_automatic_response_output {
+    /// A builder for [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput)
+        pub fn build(self) -> crate::output::DisableApplicationLayerAutomaticResponseOutput {
+            crate::output::DisableApplicationLayerAutomaticResponseOutput {}
+        }
+    }
+}
+impl DisableApplicationLayerAutomaticResponseOutput {
+    /// Creates a new builder-style object to manufacture [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput)
+    pub fn builder() -> crate::output::disable_application_layer_automatic_response_output::Builder
+    {
+        crate::output::disable_application_layer_automatic_response_output::Builder::default()
     }
 }
 

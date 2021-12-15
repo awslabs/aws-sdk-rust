@@ -3270,6 +3270,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJobTemplate {
     }
 }
 
+/// Operation shape for `DescribeManagedJobTemplate`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_managed_job_template`](crate::client::Client::describe_managed_job_template).
+///
+/// See [`crate::client::fluent_builders::DescribeManagedJobTemplate`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeManagedJobTemplate {
+    _private: (),
+}
+impl DescribeManagedJobTemplate {
+    /// Creates a new builder-style object to manufacture [`DescribeManagedJobTemplateInput`](crate::input::DescribeManagedJobTemplateInput)
+    pub fn builder() -> crate::input::describe_managed_job_template_input::Builder {
+        crate::input::describe_managed_job_template_input::Builder::default()
+    }
+    /// Creates a new `DescribeManagedJobTemplate` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeManagedJobTemplate {
+    type Output = std::result::Result<
+        crate::output::DescribeManagedJobTemplateOutput,
+        crate::error::DescribeManagedJobTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_managed_job_template_error(response)
+        } else {
+            crate::operation_deser::parse_describe_managed_job_template_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeMitigationAction`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -5144,6 +5178,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobTemplates {
             crate::operation_deser::parse_list_job_templates_error(response)
         } else {
             crate::operation_deser::parse_list_job_templates_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListManagedJobTemplates`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_managed_job_templates`](crate::client::Client::list_managed_job_templates).
+///
+/// See [`crate::client::fluent_builders::ListManagedJobTemplates`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListManagedJobTemplates {
+    _private: (),
+}
+impl ListManagedJobTemplates {
+    /// Creates a new builder-style object to manufacture [`ListManagedJobTemplatesInput`](crate::input::ListManagedJobTemplatesInput)
+    pub fn builder() -> crate::input::list_managed_job_templates_input::Builder {
+        crate::input::list_managed_job_templates_input::Builder::default()
+    }
+    /// Creates a new `ListManagedJobTemplates` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListManagedJobTemplates {
+    type Output = std::result::Result<
+        crate::output::ListManagedJobTemplatesOutput,
+        crate::error::ListManagedJobTemplatesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_managed_job_templates_error(response)
+        } else {
+            crate::operation_deser::parse_list_managed_job_templates_response(response)
         }
     }
 }

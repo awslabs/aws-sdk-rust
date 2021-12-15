@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_kendra::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -83,6 +83,24 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
+    /// Constructs a fluent builder for the `AssociateEntitiesToExperience` operation.
+    ///
+    /// See [`AssociateEntitiesToExperience`](crate::client::fluent_builders::AssociateEntitiesToExperience) for more information about the
+    /// operation and its arguments.
+    pub fn associate_entities_to_experience(
+        &self,
+    ) -> fluent_builders::AssociateEntitiesToExperience<C, M, R> {
+        fluent_builders::AssociateEntitiesToExperience::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `AssociatePersonasToEntities` operation.
+    ///
+    /// See [`AssociatePersonasToEntities`](crate::client::fluent_builders::AssociatePersonasToEntities) for more information about the
+    /// operation and its arguments.
+    pub fn associate_personas_to_entities(
+        &self,
+    ) -> fluent_builders::AssociatePersonasToEntities<C, M, R> {
+        fluent_builders::AssociatePersonasToEntities::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `BatchDeleteDocument` operation.
     ///
     /// See [`BatchDeleteDocument`](crate::client::fluent_builders::BatchDeleteDocument) for more information about the
@@ -117,6 +135,13 @@ where
     /// operation and its arguments.
     pub fn create_data_source(&self) -> fluent_builders::CreateDataSource<C, M, R> {
         fluent_builders::CreateDataSource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateExperience` operation.
+    ///
+    /// See [`CreateExperience`](crate::client::fluent_builders::CreateExperience) for more information about the
+    /// operation and its arguments.
+    pub fn create_experience(&self) -> fluent_builders::CreateExperience<C, M, R> {
+        fluent_builders::CreateExperience::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `CreateFaq` operation.
     ///
@@ -154,6 +179,13 @@ where
     /// operation and its arguments.
     pub fn delete_data_source(&self) -> fluent_builders::DeleteDataSource<C, M, R> {
         fluent_builders::DeleteDataSource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteExperience` operation.
+    ///
+    /// See [`DeleteExperience`](crate::client::fluent_builders::DeleteExperience) for more information about the
+    /// operation and its arguments.
+    pub fn delete_experience(&self) -> fluent_builders::DeleteExperience<C, M, R> {
+        fluent_builders::DeleteExperience::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DeleteFaq` operation.
     ///
@@ -198,6 +230,13 @@ where
     /// operation and its arguments.
     pub fn describe_data_source(&self) -> fluent_builders::DescribeDataSource<C, M, R> {
         fluent_builders::DescribeDataSource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeExperience` operation.
+    ///
+    /// See [`DescribeExperience`](crate::client::fluent_builders::DescribeExperience) for more information about the
+    /// operation and its arguments.
+    pub fn describe_experience(&self) -> fluent_builders::DescribeExperience<C, M, R> {
+        fluent_builders::DescribeExperience::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DescribeFaq` operation.
     ///
@@ -245,12 +284,37 @@ where
     pub fn describe_thesaurus(&self) -> fluent_builders::DescribeThesaurus<C, M, R> {
         fluent_builders::DescribeThesaurus::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DisassociateEntitiesFromExperience` operation.
+    ///
+    /// See [`DisassociateEntitiesFromExperience`](crate::client::fluent_builders::DisassociateEntitiesFromExperience) for more information about the
+    /// operation and its arguments.
+    pub fn disassociate_entities_from_experience(
+        &self,
+    ) -> fluent_builders::DisassociateEntitiesFromExperience<C, M, R> {
+        fluent_builders::DisassociateEntitiesFromExperience::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DisassociatePersonasFromEntities` operation.
+    ///
+    /// See [`DisassociatePersonasFromEntities`](crate::client::fluent_builders::DisassociatePersonasFromEntities) for more information about the
+    /// operation and its arguments.
+    pub fn disassociate_personas_from_entities(
+        &self,
+    ) -> fluent_builders::DisassociatePersonasFromEntities<C, M, R> {
+        fluent_builders::DisassociatePersonasFromEntities::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetQuerySuggestions` operation.
     ///
     /// See [`GetQuerySuggestions`](crate::client::fluent_builders::GetQuerySuggestions) for more information about the
     /// operation and its arguments.
     pub fn get_query_suggestions(&self) -> fluent_builders::GetQuerySuggestions<C, M, R> {
         fluent_builders::GetQuerySuggestions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetSnapshots` operation.
+    ///
+    /// See [`GetSnapshots`](crate::client::fluent_builders::GetSnapshots) for more information about the
+    /// operation and its arguments.
+    pub fn get_snapshots(&self) -> fluent_builders::GetSnapshots<C, M, R> {
+        fluent_builders::GetSnapshots::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListDataSources` operation.
     ///
@@ -265,6 +329,27 @@ where
     /// operation and its arguments.
     pub fn list_data_source_sync_jobs(&self) -> fluent_builders::ListDataSourceSyncJobs<C, M, R> {
         fluent_builders::ListDataSourceSyncJobs::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListEntityPersonas` operation.
+    ///
+    /// See [`ListEntityPersonas`](crate::client::fluent_builders::ListEntityPersonas) for more information about the
+    /// operation and its arguments.
+    pub fn list_entity_personas(&self) -> fluent_builders::ListEntityPersonas<C, M, R> {
+        fluent_builders::ListEntityPersonas::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListExperienceEntities` operation.
+    ///
+    /// See [`ListExperienceEntities`](crate::client::fluent_builders::ListExperienceEntities) for more information about the
+    /// operation and its arguments.
+    pub fn list_experience_entities(&self) -> fluent_builders::ListExperienceEntities<C, M, R> {
+        fluent_builders::ListExperienceEntities::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListExperiences` operation.
+    ///
+    /// See [`ListExperiences`](crate::client::fluent_builders::ListExperiences) for more information about the
+    /// operation and its arguments.
+    pub fn list_experiences(&self) -> fluent_builders::ListExperiences<C, M, R> {
+        fluent_builders::ListExperiences::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListFaqs` operation.
     ///
@@ -368,6 +453,13 @@ where
     pub fn update_data_source(&self) -> fluent_builders::UpdateDataSource<C, M, R> {
         fluent_builders::UpdateDataSource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateExperience` operation.
+    ///
+    /// See [`UpdateExperience`](crate::client::fluent_builders::UpdateExperience) for more information about the
+    /// operation and its arguments.
+    pub fn update_experience(&self) -> fluent_builders::UpdateExperience<C, M, R> {
+        fluent_builders::UpdateExperience::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `UpdateIndex` operation.
     ///
     /// See [`UpdateIndex`](crate::client::fluent_builders::UpdateIndex) for more information about the
@@ -409,6 +501,219 @@ pub mod fluent_builders {
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
     //!
+    /// Fluent builder constructing a request to `AssociateEntitiesToExperience`.
+    ///
+    /// <p>Grants users or groups in your Amazon Web Services SSO identity source access
+    /// to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a
+    /// search application. For more information on creating a search application
+    /// experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+    /// a search experience with no code</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct AssociateEntitiesToExperience<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::associate_entities_to_experience_input::Builder,
+    }
+    impl<C, M, R> AssociateEntitiesToExperience<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `AssociateEntitiesToExperience`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateEntitiesToExperienceOutput,
+            aws_smithy_http::result::SdkError<crate::error::AssociateEntitiesToExperienceError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::AssociateEntitiesToExperienceInputOperationOutputAlias,
+                crate::output::AssociateEntitiesToExperienceOutput,
+                crate::error::AssociateEntitiesToExperienceError,
+                crate::input::AssociateEntitiesToExperienceInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of your Amazon Kendra experience.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The identifier of your Amazon Kendra experience.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+        pub fn index_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(inp);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// Appends an item to `EntityList`.
+        ///
+        /// To override the contents of this collection use [`set_entity_list`](Self::set_entity_list).
+        ///
+        /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+        pub fn entity_list(mut self, inp: impl Into<crate::model::EntityConfiguration>) -> Self {
+            self.inner = self.inner.entity_list(inp);
+            self
+        }
+        /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+        pub fn set_entity_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EntityConfiguration>>,
+        ) -> Self {
+            self.inner = self.inner.set_entity_list(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `AssociatePersonasToEntities`.
+    ///
+    /// <p>Defines the specific permissions of users or groups in your Amazon Web Services SSO
+    /// identity source with access to your Amazon Kendra experience. You can create an Amazon Kendra
+    /// experience such as a search application. For more information on creating a
+    /// search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+    /// a search experience with no code</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct AssociatePersonasToEntities<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::associate_personas_to_entities_input::Builder,
+    }
+    impl<C, M, R> AssociatePersonasToEntities<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `AssociatePersonasToEntities`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociatePersonasToEntitiesOutput,
+            aws_smithy_http::result::SdkError<crate::error::AssociatePersonasToEntitiesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::AssociatePersonasToEntitiesInputOperationOutputAlias,
+                crate::output::AssociatePersonasToEntitiesOutput,
+                crate::error::AssociatePersonasToEntitiesError,
+                crate::input::AssociatePersonasToEntitiesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of your Amazon Kendra experience.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The identifier of your Amazon Kendra experience.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+        pub fn index_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(inp);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// Appends an item to `Personas`.
+        ///
+        /// To override the contents of this collection use [`set_personas`](Self::set_personas).
+        ///
+        /// <p>The personas that define the specific permissions of users or groups in
+        /// your Amazon Web Services SSO identity source. The available personas or access
+        /// roles are <code>Owner</code> and <code>Viewer</code>. For more information
+        /// on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
+        /// access to your search page</a>.</p>
+        pub fn personas(
+            mut self,
+            inp: impl Into<crate::model::EntityPersonaConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.personas(inp);
+            self
+        }
+        /// <p>The personas that define the specific permissions of users or groups in
+        /// your Amazon Web Services SSO identity source. The available personas or access
+        /// roles are <code>Owner</code> and <code>Viewer</code>. For more information
+        /// on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
+        /// access to your search page</a>.</p>
+        pub fn set_personas(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EntityPersonaConfiguration>>,
+        ) -> Self {
+            self.inner = self.inner.set_personas(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `BatchDeleteDocument`.
     ///
     /// <p>Removes one or more documents from an index. The documents must have
@@ -419,7 +724,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchDeleteDocument<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -538,7 +843,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchGetDocumentStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -641,7 +946,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchPutDocument<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -781,6 +1086,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_documents(input);
             self
         }
+        /// <p>Configuration information for altering your document metadata and content during
+        /// the document ingestion process when you use the <code>BatchPutDocument</code>
+        /// operation.</p>
+        /// <p>For more information on how to create, modify and delete document metadata,
+        /// or make other content alterations when you ingest documents into Amazon Kendra, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+        /// document metadata during the ingestion process</a>.</p>
+        pub fn custom_document_enrichment_configuration(
+            mut self,
+            inp: crate::model::CustomDocumentEnrichmentConfiguration,
+        ) -> Self {
+            self.inner = self.inner.custom_document_enrichment_configuration(inp);
+            self
+        }
+        /// <p>Configuration information for altering your document metadata and content during
+        /// the document ingestion process when you use the <code>BatchPutDocument</code>
+        /// operation.</p>
+        /// <p>For more information on how to create, modify and delete document metadata,
+        /// or make other content alterations when you ingest documents into Amazon Kendra, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+        /// document metadata during the ingestion process</a>.</p>
+        pub fn set_custom_document_enrichment_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_custom_document_enrichment_configuration(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ClearQuerySuggestions`.
     ///
@@ -791,10 +1126,13 @@ pub mod fluent_builders {
     /// from the time you cleared suggestions. If you do not see any
     /// new suggestions, then please allow Amazon Kendra to collect
     /// enough queries to learn new suggestions.</p>
+    /// <p>
+    /// <code>ClearQuerySuggestions</code> is currently not supported in the
+    /// Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::fmt::Debug)]
     pub struct ClearQuerySuggestions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -868,10 +1206,12 @@ pub mod fluent_builders {
     /// <code>CreateDataSource</code> is a synchronous operation. The
     /// operation returns 200 if the data source was successfully created.
     /// Otherwise, an exception is raised.</p>
+    /// <p>Amazon S3 and <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-custom.html">custom</a> data sources are
+    /// the only supported data sources in the Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateDataSource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1100,6 +1440,175 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_code(input);
             self
         }
+        /// <p>Configuration information for altering document metadata and content during the
+        /// document ingestion process when you create a data source.</p>
+        /// <p>For more information on how to create, modify and delete document metadata, or make
+        /// other content alterations when you ingest documents into Amazon Kendra, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+        /// document metadata during the ingestion process</a>.</p>
+        pub fn custom_document_enrichment_configuration(
+            mut self,
+            inp: crate::model::CustomDocumentEnrichmentConfiguration,
+        ) -> Self {
+            self.inner = self.inner.custom_document_enrichment_configuration(inp);
+            self
+        }
+        /// <p>Configuration information for altering document metadata and content during the
+        /// document ingestion process when you create a data source.</p>
+        /// <p>For more information on how to create, modify and delete document metadata, or make
+        /// other content alterations when you ingest documents into Amazon Kendra, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+        /// document metadata during the ingestion process</a>.</p>
+        pub fn set_custom_document_enrichment_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_custom_document_enrichment_configuration(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateExperience`.
+    ///
+    /// <p>Creates an Amazon Kendra experience such as a search application. For more information
+    /// on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a
+    /// search experience with no code</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateExperience<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_experience_input::Builder,
+    }
+    impl<C, M, R> CreateExperience<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateExperience`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateExperienceOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateExperienceError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateExperienceInputOperationOutputAlias,
+                crate::output::CreateExperienceOutput,
+                crate::error::CreateExperienceError,
+                crate::input::CreateExperienceInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A name for your Amazon Kendra experience.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>A name for your Amazon Kendra experience.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+        pub fn index_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(inp);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
+        /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
+        /// operations, and Amazon Web Services SSO that stores your user and group information.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
+        /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
+        /// operations, and Amazon Web Services SSO that stores your user and group information.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
+            self
+        }
+        /// <p>Provides the configuration information for your Amazon Kendra experience. This includes
+        /// <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+        /// and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+        /// user or group information to grant access to your Amazon Kendra experience.</p>
+        pub fn configuration(mut self, inp: crate::model::ExperienceConfiguration) -> Self {
+            self.inner = self.inner.configuration(inp);
+            self
+        }
+        /// <p>Provides the configuration information for your Amazon Kendra experience. This includes
+        /// <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+        /// and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+        /// user or group information to grant access to your Amazon Kendra experience.</p>
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ExperienceConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration(input);
+            self
+        }
+        /// <p>A description for your Amazon Kendra experience.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>A description for your Amazon Kendra experience.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>A token that you provide to identify the request to create your Amazon Kendra experience.
+        /// Multiple calls to the <code>CreateExperience</code> operation with the same client
+        /// token creates only one Amazon Kendra experience.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>A token that you provide to identify the request to create your Amazon Kendra experience.
+        /// Multiple calls to the <code>CreateExperience</code> operation with the same client
+        /// token creates only one Amazon Kendra experience.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateFaq`.
     ///
@@ -1107,7 +1616,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateFaq<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1305,7 +1814,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateIndex<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1551,7 +2060,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_context_policy(input);
             self
         }
-        /// <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On
         /// identity source. To configure this, see
         /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn user_group_resolution_configuration(
@@ -1561,7 +2070,7 @@ pub mod fluent_builders {
             self.inner = self.inner.user_group_resolution_configuration(inp);
             self
         }
-        /// <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On
         /// identity source. To configure this, see
         /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn set_user_group_resolution_configuration(
@@ -1583,10 +2092,13 @@ pub mod fluent_builders {
     /// <p>For information on the current quota limits for block lists, see
     /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
     /// for Amazon Kendra</a>.</p>
+    /// <p>
+    /// <code>CreateQuerySuggestionsBlockList</code> is currently not supported in the
+    /// Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateQuerySuggestionsBlockList<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1759,7 +2271,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateThesaurus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1844,14 +2356,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions
+        /// <p>An IAM role that gives Amazon Kendra permissions
         /// to access thesaurus file specified in <code>SourceS3Path</code>.
         /// </p>
         pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(inp);
             self
         }
-        /// <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions
+        /// <p>An IAM role that gives Amazon Kendra permissions
         /// to access thesaurus file specified in <code>SourceS3Path</code>.
         /// </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -1923,7 +2435,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteDataSource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1999,13 +2511,95 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteExperience`.
+    ///
+    /// <p>Deletes your Amazon Kendra experience such as a search application. For more information on
+    /// creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search
+    /// experience with no code</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteExperience<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_experience_input::Builder,
+    }
+    impl<C, M, R> DeleteExperience<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteExperience`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteExperienceOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteExperienceError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteExperienceInputOperationOutputAlias,
+                crate::output::DeleteExperienceOutput,
+                crate::error::DeleteExperienceError,
+                crate::input::DeleteExperienceInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of your Amazon Kendra experience you want to delete.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The identifier of your Amazon Kendra experience you want to delete.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience you want to delete.</p>
+        pub fn index_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(inp);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience you want to delete.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteFaq`.
     ///
     /// <p>Removes an FAQ from an index.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteFaq<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2089,7 +2683,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteIndex<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2167,10 +2761,13 @@ pub mod fluent_builders {
     /// to the "Engineering" group when calling <code>PutPrincipalMapping</code>. You
     /// can update your internal list of users or sub groups and input this list
     /// when calling <code>PutPrincipalMapping</code>.</p>
+    /// <p>
+    /// <code>DeletePrincipalMapping</code> is currently not supported in the
+    /// Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeletePrincipalMapping<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2315,10 +2912,13 @@ pub mod fluent_builders {
     /// <p>A deleted block list might not take effect right away. Amazon Kendra
     /// needs to refresh the entire suggestions list to add back the
     /// queries that were previously blocked.</p>
+    /// <p>
+    /// <code>DeleteQuerySuggestionsBlockList</code> is currently not supported in the
+    /// Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteQuerySuggestionsBlockList<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2399,7 +2999,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteThesaurus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2479,7 +3079,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDataSource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2553,13 +3153,98 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeExperience`.
+    ///
+    /// <p>Gets information about your Amazon Kendra experience such as a search application.
+    /// For more information on creating a search application experience,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+    /// a search experience with no code</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeExperience<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_experience_input::Builder,
+    }
+    impl<C, M, R> DescribeExperience<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeExperience`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeExperienceOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeExperienceError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeExperienceInputOperationOutputAlias,
+                crate::output::DescribeExperienceOutput,
+                crate::error::DescribeExperienceError,
+                crate::input::DescribeExperienceInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience you want to get
+        /// information on.</p>
+        pub fn index_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(inp);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience you want to get
+        /// information on.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeFaq`.
     ///
     /// <p>Gets information about an FAQ list.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeFaq<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2639,7 +3324,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeIndex<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2711,10 +3396,13 @@ pub mod fluent_builders {
     /// when actions were received by Amazon Kendra, the latest action that should process
     /// and apply after other actions, and useful error messages if an action could
     /// not be processed.</p>
+    /// <p>
+    /// <code>DescribePrincipalMapping</code> is currently not supported in the
+    /// Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribePrincipalMapping<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2818,10 +3506,13 @@ pub mod fluent_builders {
     /// <p>Describes a block list used for query suggestions for an index.</p>
     /// <p>This is used to check the current settings that are applied to a
     /// block list.</p>
+    /// <p>
+    /// <code>DescribeQuerySuggestionsBlockList</code> is currently not supported in the
+    /// Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeQuerySuggestionsBlockList<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2900,10 +3591,13 @@ pub mod fluent_builders {
     /// <p>Describes the settings of query suggestions for an index.</p>
     /// <p>This is used to check the current settings applied
     /// to query suggestions.</p>
+    /// <p>
+    /// <code>DescribeQuerySuggestionsConfig</code> is currently not supported in the
+    /// Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeQuerySuggestionsConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2975,7 +3669,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeThesaurus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3049,13 +3743,222 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DisassociateEntitiesFromExperience`.
+    ///
+    /// <p>Prevents users or groups in your Amazon Web Services SSO identity source
+    /// from accessing your Amazon Kendra experience. You can create an Amazon Kendra experience
+    /// such as a search application. For more information on creating a search
+    /// application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+    /// a search experience with no code</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DisassociateEntitiesFromExperience<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::disassociate_entities_from_experience_input::Builder,
+    }
+    impl<C, M, R> DisassociateEntitiesFromExperience<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DisassociateEntitiesFromExperience`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateEntitiesFromExperienceOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DisassociateEntitiesFromExperienceError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DisassociateEntitiesFromExperienceInputOperationOutputAlias,
+                crate::output::DisassociateEntitiesFromExperienceOutput,
+                crate::error::DisassociateEntitiesFromExperienceError,
+                crate::input::DisassociateEntitiesFromExperienceInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of your Amazon Kendra experience.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The identifier of your Amazon Kendra experience.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+        pub fn index_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(inp);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// Appends an item to `EntityList`.
+        ///
+        /// To override the contents of this collection use [`set_entity_list`](Self::set_entity_list).
+        ///
+        /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+        pub fn entity_list(mut self, inp: impl Into<crate::model::EntityConfiguration>) -> Self {
+            self.inner = self.inner.entity_list(inp);
+            self
+        }
+        /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+        pub fn set_entity_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EntityConfiguration>>,
+        ) -> Self {
+            self.inner = self.inner.set_entity_list(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DisassociatePersonasFromEntities`.
+    ///
+    /// <p>Removes the specific permissions of users or groups in your Amazon Web Services SSO
+    /// identity source with access to your Amazon Kendra experience. You can create an Amazon Kendra
+    /// experience such as a search application. For more information on creating a
+    /// search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a
+    /// search experience with no code</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DisassociatePersonasFromEntities<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::disassociate_personas_from_entities_input::Builder,
+    }
+    impl<C, M, R> DisassociatePersonasFromEntities<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DisassociatePersonasFromEntities`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociatePersonasFromEntitiesOutput,
+            aws_smithy_http::result::SdkError<crate::error::DisassociatePersonasFromEntitiesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DisassociatePersonasFromEntitiesInputOperationOutputAlias,
+                crate::output::DisassociatePersonasFromEntitiesOutput,
+                crate::error::DisassociatePersonasFromEntitiesError,
+                crate::input::DisassociatePersonasFromEntitiesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of your Amazon Kendra experience.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The identifier of your Amazon Kendra experience.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+        pub fn index_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(inp);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// Appends an item to `EntityIds`.
+        ///
+        /// To override the contents of this collection use [`set_entity_ids`](Self::set_entity_ids).
+        ///
+        /// <p>The identifiers of users or groups in your Amazon Web Services SSO identity
+        /// source. For example, user IDs could be user emails.</p>
+        pub fn entity_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_ids(inp);
+            self
+        }
+        /// <p>The identifiers of users or groups in your Amazon Web Services SSO identity
+        /// source. For example, user IDs could be user emails.</p>
+        pub fn set_entity_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_entity_ids(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetQuerySuggestions`.
     ///
     /// <p>Fetches the queries that are suggested to your users.</p>
+    /// <p>
+    /// <code>GetQuerySuggestions</code> is currently not supported in the
+    /// Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetQuerySuggestions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3153,13 +4056,210 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetSnapshots`.
+    ///
+    /// <p>Retrieves search metrics data. The data provides a snapshot of how
+    /// your users interact with your search application and how effective
+    /// the application is.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetSnapshots<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_snapshots_input::Builder,
+    }
+    impl<C, M, R> GetSnapshots<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetSnapshots`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetSnapshotsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetSnapshotsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetSnapshotsInputOperationOutputAlias,
+                crate::output::GetSnapshotsOutput,
+                crate::error::GetSnapshotsError,
+                crate::input::GetSnapshotsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the index to get search metrics data.</p>
+        pub fn index_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(inp);
+            self
+        }
+        /// <p>The identifier of the index to get search metrics data.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// <p>The time interval or time window to get search metrics data.
+        /// The time interval uses the time zone of your index.
+        /// You can view data in the following time windows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>THIS_WEEK</code>: The current week, starting on
+        /// the Sunday and ending on the day before the current date.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ONE_WEEK_AGO</code>: The previous week, starting on
+        /// the Sunday and ending on the following Saturday.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TWO_WEEKS_AGO</code>: The week before the previous week,
+        /// starting on the Sunday and ending on the following Saturday.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>THIS_MONTH</code>: The current month, starting on the
+        /// first day of the month and ending on the day before the current date.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ONE_MONTH_AGO</code>: The previous month, starting on the
+        /// first day of the month and ending on the last day of the month.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TWO_MONTHS_AGO</code>: The month before the previous month,
+        /// starting on the first day of the month and ending on last day of the month.</p>
+        /// </li>
+        /// </ul>
+        pub fn interval(mut self, inp: crate::model::Interval) -> Self {
+            self.inner = self.inner.interval(inp);
+            self
+        }
+        /// <p>The time interval or time window to get search metrics data.
+        /// The time interval uses the time zone of your index.
+        /// You can view data in the following time windows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>THIS_WEEK</code>: The current week, starting on
+        /// the Sunday and ending on the day before the current date.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ONE_WEEK_AGO</code>: The previous week, starting on
+        /// the Sunday and ending on the following Saturday.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TWO_WEEKS_AGO</code>: The week before the previous week,
+        /// starting on the Sunday and ending on the following Saturday.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>THIS_MONTH</code>: The current month, starting on the
+        /// first day of the month and ending on the day before the current date.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ONE_MONTH_AGO</code>: The previous month, starting on the
+        /// first day of the month and ending on the last day of the month.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TWO_MONTHS_AGO</code>: The month before the previous month,
+        /// starting on the first day of the month and ending on last day of the month.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_interval(mut self, input: std::option::Option<crate::model::Interval>) -> Self {
+            self.inner = self.inner.set_interval(input);
+            self
+        }
+        /// <p>The metric you want to retrieve. You
+        /// can specify only one metric per call.</p>
+        /// <p>For more information about the metrics you can view, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining
+        /// insights with search analytics</a>.</p>
+        pub fn metric_type(mut self, inp: crate::model::MetricType) -> Self {
+            self.inner = self.inner.metric_type(inp);
+            self
+        }
+        /// <p>The metric you want to retrieve. You
+        /// can specify only one metric per call.</p>
+        /// <p>For more information about the metrics you can view, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining
+        /// insights with search analytics</a>.</p>
+        pub fn set_metric_type(
+            mut self,
+            input: std::option::Option<crate::model::MetricType>,
+        ) -> Self {
+            self.inner = self.inner.set_metric_type(input);
+            self
+        }
+        /// <p>If the previous response was incomplete (because there
+        /// is more data to retrieve), Amazon Kendra returns a pagination token in
+        /// the response. You can use this pagination token to
+        /// retrieve the next set of search metrics data.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>If the previous response was incomplete (because there
+        /// is more data to retrieve), Amazon Kendra returns a pagination token in
+        /// the response. You can use this pagination token to
+        /// retrieve the next set of search metrics data.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of returned data for the metric.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of returned data for the metric.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListDataSources`.
     ///
     /// <p>Lists the data sources that you have created.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListDataSources<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3256,7 +4356,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListDataSourceSyncJobs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3388,13 +4488,313 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListEntityPersonas`.
+    ///
+    /// <p>Lists specific permissions of users and groups with access to your
+    /// Amazon Kendra experience.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListEntityPersonas<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_entity_personas_input::Builder,
+    }
+    impl<C, M, R> ListEntityPersonas<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListEntityPersonas`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListEntityPersonasOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListEntityPersonasError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListEntityPersonasInputOperationOutputAlias,
+                crate::output::ListEntityPersonasOutput,
+                crate::error::ListEntityPersonasError,
+                crate::input::ListEntityPersonasInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of your Amazon Kendra experience.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The identifier of your Amazon Kendra experience.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+        pub fn index_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(inp);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more data to retrieve),
+        /// Amazon Kendra returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of users or groups.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more data to retrieve),
+        /// Amazon Kendra returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of users or groups.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of returned users or groups.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of returned users or groups.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListExperienceEntities`.
+    ///
+    /// <p>Lists users or groups in your Amazon Web Services SSO identity source that are
+    /// granted access to your Amazon Kendra experience. You can create an Amazon Kendra experience
+    /// such as a search application. For more information on creating a search
+    /// application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+    /// a search experience with no code</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListExperienceEntities<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_experience_entities_input::Builder,
+    }
+    impl<C, M, R> ListExperienceEntities<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListExperienceEntities`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListExperienceEntitiesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListExperienceEntitiesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListExperienceEntitiesInputOperationOutputAlias,
+                crate::output::ListExperienceEntitiesOutput,
+                crate::error::ListExperienceEntitiesError,
+                crate::input::ListExperienceEntitiesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of your Amazon Kendra experience.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The identifier of your Amazon Kendra experience.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+        pub fn index_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(inp);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more data to retrieve),
+        /// Amazon Kendra returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of users or groups.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more data to retrieve),
+        /// Amazon Kendra returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of users or groups.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListExperiences`.
+    ///
+    /// <p>Lists one or more Amazon Kendra experiences. You can create an Amazon Kendra experience such
+    /// as a search application. For more information on creating a search application
+    /// experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a
+    /// search experience with no code</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListExperiences<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_experiences_input::Builder,
+    }
+    impl<C, M, R> ListExperiences<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListExperiences`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListExperiencesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListExperiencesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListExperiencesInputOperationOutputAlias,
+                crate::output::ListExperiencesOutput,
+                crate::error::ListExperiencesError,
+                crate::input::ListExperiencesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+        pub fn index_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(inp);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more data
+        /// to retrieve), Amazon Kendra returns a pagination token in the response. You can use this
+        /// pagination token to retrieve the next set of Amazon Kendra experiences.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more data
+        /// to retrieve), Amazon Kendra returns a pagination token in the response. You can use this
+        /// pagination token to retrieve the next set of Amazon Kendra experiences.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of returned Amazon Kendra experiences.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of returned Amazon Kendra experiences.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListFaqs`.
     ///
     /// <p>Gets a list of FAQ lists associated with an index.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListFaqs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3488,10 +4888,13 @@ pub mod fluent_builders {
     ///
     /// <p>Provides a list of groups that are mapped to users before a
     /// given ordering or timestamp identifier.</p>
+    /// <p>
+    /// <code>ListGroupsOlderThanOrderingId</code> is currently not supported in the
+    /// Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListGroupsOlderThanOrderingId<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3626,7 +5029,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListIndices<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3712,10 +5115,13 @@ pub mod fluent_builders {
     /// <p>For information on the current quota limits for block lists, see
     /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
     /// for Amazon Kendra</a>.</p>
+    /// <p>
+    /// <code>ListQuerySuggestionsBlockLists</code> is currently not supported in the
+    /// Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListQuerySuggestionsBlockLists<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3818,7 +5224,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3890,7 +5296,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListThesauri<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3998,10 +5404,13 @@ pub mod fluent_builders {
     /// on user context</a>.</p>
     /// <p>If more than five <code>PUT</code> actions for a group are currently
     /// processing, a validation exception is thrown.</p>
+    /// <p>
+    /// <code>PutPrincipalMapping</code> is currently not supported in the
+    /// Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::fmt::Debug)]
     pub struct PutPrincipalMapping<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4204,7 +5613,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct Query<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4497,7 +5906,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartDataSourceSyncJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4578,7 +5987,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StopDataSourceSyncJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4657,11 +6066,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SubmitFeedback`.
     ///
     /// <p>Enables you to provide feedback to Amazon Kendra to improve the
-    /// performance of your index. </p>
+    /// performance of your index.</p>
+    /// <p>
+    /// <code>SubmitFeedback</code> is currently not supported in the
+    /// Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::fmt::Debug)]
     pub struct SubmitFeedback<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4788,7 +6200,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4879,7 +6291,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4970,7 +6382,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateDataSource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5059,12 +6471,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>Configuration information for a Amazon Kendra data source.</p>
+        /// <p>Configuration information for an Amazon Kendra data source.</p>
         pub fn configuration(mut self, inp: crate::model::DataSourceConfiguration) -> Self {
             self.inner = self.inner.configuration(inp);
             self
         }
-        /// <p>Configuration information for a Amazon Kendra data source.</p>
+        /// <p>Configuration information for an Amazon Kendra data source.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceConfiguration>,
@@ -5125,6 +6537,167 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_code(input);
             self
         }
+        /// <p>Configuration information for altering document metadata and content during the
+        /// document ingestion process when you update a data source.</p>
+        /// <p>For more information on how to create, modify and delete document metadata, or make
+        /// other content alterations when you ingest documents into Amazon Kendra, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+        /// document metadata during the ingestion process</a>.</p>
+        pub fn custom_document_enrichment_configuration(
+            mut self,
+            inp: crate::model::CustomDocumentEnrichmentConfiguration,
+        ) -> Self {
+            self.inner = self.inner.custom_document_enrichment_configuration(inp);
+            self
+        }
+        /// <p>Configuration information for altering document metadata and content during the
+        /// document ingestion process when you update a data source.</p>
+        /// <p>For more information on how to create, modify and delete document metadata, or make
+        /// other content alterations when you ingest documents into Amazon Kendra, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+        /// document metadata during the ingestion process</a>.</p>
+        pub fn set_custom_document_enrichment_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_custom_document_enrichment_configuration(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateExperience`.
+    ///
+    /// <p>Updates your Amazon Kendra experience such as a search application. For more information on
+    /// creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a
+    /// search experience with no code</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateExperience<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_experience_input::Builder,
+    }
+    impl<C, M, R> UpdateExperience<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateExperience`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateExperienceOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateExperienceError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateExperienceInputOperationOutputAlias,
+                crate::output::UpdateExperienceOutput,
+                crate::error::UpdateExperienceError,
+                crate::input::UpdateExperienceInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of your Amazon Kendra experience you want to update.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The identifier of your Amazon Kendra experience you want to update.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The name of your Amazon Kendra experience you want to update.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of your Amazon Kendra experience you want to update.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience you want to update.</p>
+        pub fn index_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(inp);
+            self
+        }
+        /// <p>The identifier of the index for your Amazon Kendra experience you want to update.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
+        /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
+        /// operations, and Amazon Web Services SSO that stores your user and group information.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
+        /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
+        /// operations, and Amazon Web Services SSO that stores your user and group information.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
+            self
+        }
+        /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO
+        /// field name that contains the identifiers of your users, such as their emails.</p>
+        pub fn configuration(mut self, inp: crate::model::ExperienceConfiguration) -> Self {
+            self.inner = self.inner.configuration(inp);
+            self
+        }
+        /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO
+        /// field name that contains the identifiers of your users, such as their emails.</p>
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ExperienceConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration(input);
+            self
+        }
+        /// <p>The description of your Amazon Kendra experience you want to update.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of your Amazon Kendra experience you want to update.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateIndex`.
     ///
@@ -5132,7 +6705,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateIndex<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5305,7 +6878,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_context_policy(input);
             self
         }
-        /// <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On
         /// identity source. To configure this, see
         /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn user_group_resolution_configuration(
@@ -5315,7 +6888,7 @@ pub mod fluent_builders {
             self.inner = self.inner.user_group_resolution_configuration(inp);
             self
         }
-        /// <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On
         /// identity source. To configure this, see
         /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn set_user_group_resolution_configuration(
@@ -5336,10 +6909,13 @@ pub mod fluent_builders {
     /// finish before submitting another update.</p>
     /// <p>Amazon Kendra supports partial updates, so you only need to provide the fields
     /// you want to update.</p>
+    /// <p>
+    /// <code>UpdateQuerySuggestionsBlockList</code> is currently not supported in the
+    /// Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateQuerySuggestionsBlockList<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5485,10 +7061,13 @@ pub mod fluent_builders {
     /// The time for your updated settings to take effect depends on the updates
     /// made and the number of search queries in your index.</p>
     /// <p>You can still enable/disable query suggestions at any time.</p>
+    /// <p>
+    /// <code>UpdateQuerySuggestionsConfig</code> is currently not supported in the
+    /// Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateQuerySuggestionsConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5675,7 +7254,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateThesaurus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5795,17 +7374,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -5814,7 +7397,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -5830,11 +7413,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

@@ -7231,6 +7231,8 @@ pub struct InputSettings {
     pub input_filter: std::option::Option<crate::model::InputFilter>,
     /// Input settings.
     pub network_input_settings: std::option::Option<crate::model::NetworkInputSettings>,
+    /// PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in the input.
+    pub scte35_pid: i32,
     /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages.
     /// - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any).
     /// - IGNORE: Never extract any ancillary data from SMPTE-2038.
@@ -7274,6 +7276,10 @@ impl InputSettings {
     ) -> std::option::Option<&crate::model::NetworkInputSettings> {
         self.network_input_settings.as_ref()
     }
+    /// PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in the input.
+    pub fn scte35_pid(&self) -> i32 {
+        self.scte35_pid
+    }
     /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages.
     /// - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any).
     /// - IGNORE: Never extract any ancillary data from SMPTE-2038.
@@ -7303,6 +7309,7 @@ impl std::fmt::Debug for InputSettings {
         formatter.field("filter_strength", &self.filter_strength);
         formatter.field("input_filter", &self.input_filter);
         formatter.field("network_input_settings", &self.network_input_settings);
+        formatter.field("scte35_pid", &self.scte35_pid);
         formatter.field("smpte2038_data_preference", &self.smpte2038_data_preference);
         formatter.field("source_end_behavior", &self.source_end_behavior);
         formatter.field("video_selector", &self.video_selector);
@@ -7323,6 +7330,7 @@ pub mod input_settings {
         pub(crate) filter_strength: std::option::Option<i32>,
         pub(crate) input_filter: std::option::Option<crate::model::InputFilter>,
         pub(crate) network_input_settings: std::option::Option<crate::model::NetworkInputSettings>,
+        pub(crate) scte35_pid: std::option::Option<i32>,
         pub(crate) smpte2038_data_preference:
             std::option::Option<crate::model::Smpte2038DataPreference>,
         pub(crate) source_end_behavior: std::option::Option<crate::model::InputSourceEndBehavior>,
@@ -7438,6 +7446,16 @@ pub mod input_settings {
             self.network_input_settings = input;
             self
         }
+        /// PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in the input.
+        pub fn scte35_pid(mut self, input: i32) -> Self {
+            self.scte35_pid = Some(input);
+            self
+        }
+        /// PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in the input.
+        pub fn set_scte35_pid(mut self, input: std::option::Option<i32>) -> Self {
+            self.scte35_pid = input;
+            self
+        }
         /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages.
         /// - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any).
         /// - IGNORE: Never extract any ancillary data from SMPTE-2038.
@@ -7494,6 +7512,7 @@ pub mod input_settings {
                 filter_strength: self.filter_strength.unwrap_or_default(),
                 input_filter: self.input_filter,
                 network_input_settings: self.network_input_settings,
+                scte35_pid: self.scte35_pid.unwrap_or_default(),
                 smpte2038_data_preference: self.smpte2038_data_preference,
                 source_end_behavior: self.source_end_behavior,
                 video_selector: self.video_selector,

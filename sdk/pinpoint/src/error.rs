@@ -13913,6 +13913,158 @@ impl std::error::Error for SendMessagesError {
     }
 }
 
+/// Error type for the `SendOTPMessage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SendOTPMessageError {
+    /// Kind of error that occurred.
+    pub kind: SendOTPMessageErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `SendOTPMessage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SendOTPMessageErrorKind {
+    /// <p>Provides information about an API request or response.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>Provides information about an API request or response.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>Provides information about an API request or response.</p>
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// <p>Provides information about an API request or response.</p>
+    MethodNotAllowedException(crate::error::MethodNotAllowedException),
+    /// <p>Provides information about an API request or response.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>Provides information about an API request or response.</p>
+    PayloadTooLargeException(crate::error::PayloadTooLargeException),
+    /// <p>Provides information about an API request or response.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SendOTPMessageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SendOTPMessageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            SendOTPMessageErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            SendOTPMessageErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            SendOTPMessageErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
+            SendOTPMessageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            SendOTPMessageErrorKind::PayloadTooLargeException(_inner) => _inner.fmt(f),
+            SendOTPMessageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            SendOTPMessageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SendOTPMessageError {
+    fn code(&self) -> Option<&str> {
+        SendOTPMessageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SendOTPMessageError {
+    /// Creates a new `SendOTPMessageError`.
+    pub fn new(kind: SendOTPMessageErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SendOTPMessageError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SendOTPMessageErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SendOTPMessageError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SendOTPMessageErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SendOTPMessageErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, SendOTPMessageErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `SendOTPMessageErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, SendOTPMessageErrorKind::ForbiddenException(_))
+    }
+    /// Returns `true` if the error kind is `SendOTPMessageErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendOTPMessageErrorKind::InternalServerErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SendOTPMessageErrorKind::MethodNotAllowedException`.
+    pub fn is_method_not_allowed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendOTPMessageErrorKind::MethodNotAllowedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SendOTPMessageErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, SendOTPMessageErrorKind::NotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `SendOTPMessageErrorKind::PayloadTooLargeException`.
+    pub fn is_payload_too_large_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendOTPMessageErrorKind::PayloadTooLargeException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SendOTPMessageErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendOTPMessageErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for SendOTPMessageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SendOTPMessageErrorKind::BadRequestException(_inner) => Some(_inner),
+            SendOTPMessageErrorKind::ForbiddenException(_inner) => Some(_inner),
+            SendOTPMessageErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            SendOTPMessageErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
+            SendOTPMessageErrorKind::NotFoundException(_inner) => Some(_inner),
+            SendOTPMessageErrorKind::PayloadTooLargeException(_inner) => Some(_inner),
+            SendOTPMessageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            SendOTPMessageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `SendUsersMessages` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -18090,6 +18242,161 @@ impl std::error::Error for UpdateVoiceTemplateError {
             UpdateVoiceTemplateErrorKind::PayloadTooLargeException(_inner) => Some(_inner),
             UpdateVoiceTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateVoiceTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `VerifyOTPMessage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct VerifyOTPMessageError {
+    /// Kind of error that occurred.
+    pub kind: VerifyOTPMessageErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `VerifyOTPMessage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum VerifyOTPMessageErrorKind {
+    /// <p>Provides information about an API request or response.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>Provides information about an API request or response.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>Provides information about an API request or response.</p>
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// <p>Provides information about an API request or response.</p>
+    MethodNotAllowedException(crate::error::MethodNotAllowedException),
+    /// <p>Provides information about an API request or response.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>Provides information about an API request or response.</p>
+    PayloadTooLargeException(crate::error::PayloadTooLargeException),
+    /// <p>Provides information about an API request or response.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for VerifyOTPMessageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            VerifyOTPMessageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            VerifyOTPMessageErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            VerifyOTPMessageErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            VerifyOTPMessageErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
+            VerifyOTPMessageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            VerifyOTPMessageErrorKind::PayloadTooLargeException(_inner) => _inner.fmt(f),
+            VerifyOTPMessageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            VerifyOTPMessageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for VerifyOTPMessageError {
+    fn code(&self) -> Option<&str> {
+        VerifyOTPMessageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl VerifyOTPMessageError {
+    /// Creates a new `VerifyOTPMessageError`.
+    pub fn new(kind: VerifyOTPMessageErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `VerifyOTPMessageError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: VerifyOTPMessageErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `VerifyOTPMessageError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: VerifyOTPMessageErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `VerifyOTPMessageErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            VerifyOTPMessageErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `VerifyOTPMessageErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, VerifyOTPMessageErrorKind::ForbiddenException(_))
+    }
+    /// Returns `true` if the error kind is `VerifyOTPMessageErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            VerifyOTPMessageErrorKind::InternalServerErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `VerifyOTPMessageErrorKind::MethodNotAllowedException`.
+    pub fn is_method_not_allowed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            VerifyOTPMessageErrorKind::MethodNotAllowedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `VerifyOTPMessageErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, VerifyOTPMessageErrorKind::NotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `VerifyOTPMessageErrorKind::PayloadTooLargeException`.
+    pub fn is_payload_too_large_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            VerifyOTPMessageErrorKind::PayloadTooLargeException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `VerifyOTPMessageErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            VerifyOTPMessageErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for VerifyOTPMessageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            VerifyOTPMessageErrorKind::BadRequestException(_inner) => Some(_inner),
+            VerifyOTPMessageErrorKind::ForbiddenException(_inner) => Some(_inner),
+            VerifyOTPMessageErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            VerifyOTPMessageErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
+            VerifyOTPMessageErrorKind::NotFoundException(_inner) => Some(_inner),
+            VerifyOTPMessageErrorKind::PayloadTooLargeException(_inner) => Some(_inner),
+            VerifyOTPMessageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            VerifyOTPMessageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

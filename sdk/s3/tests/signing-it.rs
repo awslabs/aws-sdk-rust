@@ -4,11 +4,14 @@
  */
 
 use aws_http::user_agent::AwsUserAgent;
+use aws_sdk_s3::middleware::DefaultMiddleware;
 use aws_sdk_s3::operation::ListObjectsV2;
 use aws_sdk_s3::{Credentials, Region};
 use aws_smithy_client::test_connection::TestConnection;
+use aws_smithy_client::Client as CoreClient;
 use aws_smithy_http::body::SdkBody;
 use std::time::{Duration, UNIX_EPOCH};
+pub type Client<C> = CoreClient<C, DefaultMiddleware>;
 
 #[tokio::test]
 async fn test_signer() -> Result<(), aws_sdk_s3::Error> {
@@ -31,7 +34,7 @@ async fn test_signer() -> Result<(), aws_sdk_s3::Error> {
             .unwrap(),
         http::Response::builder().status(200).body("").unwrap(),
     )]);
-    let client = aws_hyper::Client::new(conn.clone());
+    let client = Client::new(conn.clone());
     let mut op = ListObjectsV2::builder()
         .bucket("test-bucket")
         .prefix("prefix~")

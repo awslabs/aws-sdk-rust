@@ -258,6 +258,8 @@ pub enum Error {
     ReservedNodeAlreadyExistsFault(crate::error::ReservedNodeAlreadyExistsFault),
     /// <p>Indicates that the reserved node has already been exchanged.</p>
     ReservedNodeAlreadyMigratedFault(crate::error::ReservedNodeAlreadyMigratedFault),
+    /// <p>The reserved-node exchange status wasn't found.</p>
+    ReservedNodeExchangeNotFoundFault(crate::error::ReservedNodeExchangeNotFoundFault),
     /// <p>The specified reserved compute node not found.</p>
     ReservedNodeNotFoundFault(crate::error::ReservedNodeNotFoundFault),
     /// <p>Specified offering does not exist.</p>
@@ -445,6 +447,7 @@ impl std::fmt::Display for Error {
             Error::PartnerNotFoundFault(inner) => inner.fmt(f),
             Error::ReservedNodeAlreadyExistsFault(inner) => inner.fmt(f),
             Error::ReservedNodeAlreadyMigratedFault(inner) => inner.fmt(f),
+            Error::ReservedNodeExchangeNotFoundFault(inner) => inner.fmt(f),
             Error::ReservedNodeNotFoundFault(inner) => inner.fmt(f),
             Error::ReservedNodeOfferingNotFoundFault(inner) => inner.fmt(f),
             Error::ReservedNodeQuotaExceededFault(inner) => inner.fmt(f),
@@ -2069,6 +2072,30 @@ where
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::error::DescribeReservedNodeExchangeStatusError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeReservedNodeExchangeStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeReservedNodeExchangeStatusErrorKind::ReservedNodeExchangeNotFoundFault(inner) => Error::ReservedNodeExchangeNotFoundFault(inner),
+                crate::error::DescribeReservedNodeExchangeStatusErrorKind::ReservedNodeNotFoundFault(inner) => Error::ReservedNodeNotFoundFault(inner),
+                crate::error::DescribeReservedNodeExchangeStatusErrorKind::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+                crate::error::DescribeReservedNodeExchangeStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeReservedNodeOfferingsError, R>>
     for Error
 where
@@ -2419,6 +2446,38 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::GetReservedNodeExchangeConfigurationOptionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetReservedNodeExchangeConfigurationOptionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+                crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
+                crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::DependentServiceUnavailableFault(inner) => Error::DependentServiceUnavailableFault(inner),
+                crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::InvalidReservedNodeStateFault(inner) => Error::InvalidReservedNodeStateFault(inner),
+                crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeAlreadyMigratedFault(inner) => Error::ReservedNodeAlreadyMigratedFault(inner),
+                crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeNotFoundFault(inner) => Error::ReservedNodeNotFoundFault(inner),
+                crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeOfferingNotFoundFault(inner) => Error::ReservedNodeOfferingNotFoundFault(inner),
+                crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+                crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -2966,11 +3025,17 @@ where
                 crate::error::ResizeClusterErrorKind::ClusterNotFoundFault(inner) => {
                     Error::ClusterNotFoundFault(inner)
                 }
+                crate::error::ResizeClusterErrorKind::DependentServiceUnavailableFault(inner) => {
+                    Error::DependentServiceUnavailableFault(inner)
+                }
                 crate::error::ResizeClusterErrorKind::InsufficientClusterCapacityFault(inner) => {
                     Error::InsufficientClusterCapacityFault(inner)
                 }
                 crate::error::ResizeClusterErrorKind::InvalidClusterStateFault(inner) => {
                     Error::InvalidClusterStateFault(inner)
+                }
+                crate::error::ResizeClusterErrorKind::InvalidReservedNodeStateFault(inner) => {
+                    Error::InvalidReservedNodeStateFault(inner)
                 }
                 crate::error::ResizeClusterErrorKind::LimitExceededFault(inner) => {
                     Error::LimitExceededFault(inner)
@@ -2980,6 +3045,18 @@ where
                 ) => Error::NumberOfNodesPerClusterLimitExceededFault(inner),
                 crate::error::ResizeClusterErrorKind::NumberOfNodesQuotaExceededFault(inner) => {
                     Error::NumberOfNodesQuotaExceededFault(inner)
+                }
+                crate::error::ResizeClusterErrorKind::ReservedNodeAlreadyExistsFault(inner) => {
+                    Error::ReservedNodeAlreadyExistsFault(inner)
+                }
+                crate::error::ResizeClusterErrorKind::ReservedNodeAlreadyMigratedFault(inner) => {
+                    Error::ReservedNodeAlreadyMigratedFault(inner)
+                }
+                crate::error::ResizeClusterErrorKind::ReservedNodeNotFoundFault(inner) => {
+                    Error::ReservedNodeNotFoundFault(inner)
+                }
+                crate::error::ResizeClusterErrorKind::ReservedNodeOfferingNotFoundFault(inner) => {
+                    Error::ReservedNodeOfferingNotFoundFault(inner)
                 }
                 crate::error::ResizeClusterErrorKind::UnauthorizedOperation(inner) => {
                     Error::UnauthorizedOperation(inner)
@@ -3014,6 +3091,7 @@ where
                 crate::error::RestoreFromClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
                 crate::error::RestoreFromClusterSnapshotErrorKind::ClusterSubnetGroupNotFoundFault(inner) => Error::ClusterSubnetGroupNotFoundFault(inner),
                 crate::error::RestoreFromClusterSnapshotErrorKind::DependentServiceRequestThrottlingFault(inner) => Error::DependentServiceRequestThrottlingFault(inner),
+                crate::error::RestoreFromClusterSnapshotErrorKind::DependentServiceUnavailableFault(inner) => Error::DependentServiceUnavailableFault(inner),
                 crate::error::RestoreFromClusterSnapshotErrorKind::HsmClientCertificateNotFoundFault(inner) => Error::HsmClientCertificateNotFoundFault(inner),
                 crate::error::RestoreFromClusterSnapshotErrorKind::HsmConfigurationNotFoundFault(inner) => Error::HsmConfigurationNotFoundFault(inner),
                 crate::error::RestoreFromClusterSnapshotErrorKind::InsufficientClusterCapacityFault(inner) => Error::InsufficientClusterCapacityFault(inner),
@@ -3021,6 +3099,7 @@ where
                 crate::error::RestoreFromClusterSnapshotErrorKind::InvalidClusterSubnetGroupStateFault(inner) => Error::InvalidClusterSubnetGroupStateFault(inner),
                 crate::error::RestoreFromClusterSnapshotErrorKind::InvalidClusterTrackFault(inner) => Error::InvalidClusterTrackFault(inner),
                 crate::error::RestoreFromClusterSnapshotErrorKind::InvalidElasticIpFault(inner) => Error::InvalidElasticIpFault(inner),
+                crate::error::RestoreFromClusterSnapshotErrorKind::InvalidReservedNodeStateFault(inner) => Error::InvalidReservedNodeStateFault(inner),
                 crate::error::RestoreFromClusterSnapshotErrorKind::InvalidRestoreFault(inner) => Error::InvalidRestoreFault(inner),
                 crate::error::RestoreFromClusterSnapshotErrorKind::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
                 crate::error::RestoreFromClusterSnapshotErrorKind::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
@@ -3028,9 +3107,14 @@ where
                 crate::error::RestoreFromClusterSnapshotErrorKind::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
                 crate::error::RestoreFromClusterSnapshotErrorKind::NumberOfNodesPerClusterLimitExceededFault(inner) => Error::NumberOfNodesPerClusterLimitExceededFault(inner),
                 crate::error::RestoreFromClusterSnapshotErrorKind::NumberOfNodesQuotaExceededFault(inner) => Error::NumberOfNodesQuotaExceededFault(inner),
+                crate::error::RestoreFromClusterSnapshotErrorKind::ReservedNodeAlreadyExistsFault(inner) => Error::ReservedNodeAlreadyExistsFault(inner),
+                crate::error::RestoreFromClusterSnapshotErrorKind::ReservedNodeAlreadyMigratedFault(inner) => Error::ReservedNodeAlreadyMigratedFault(inner),
+                crate::error::RestoreFromClusterSnapshotErrorKind::ReservedNodeNotFoundFault(inner) => Error::ReservedNodeNotFoundFault(inner),
+                crate::error::RestoreFromClusterSnapshotErrorKind::ReservedNodeOfferingNotFoundFault(inner) => Error::ReservedNodeOfferingNotFoundFault(inner),
                 crate::error::RestoreFromClusterSnapshotErrorKind::SnapshotScheduleNotFoundFault(inner) => Error::SnapshotScheduleNotFoundFault(inner),
                 crate::error::RestoreFromClusterSnapshotErrorKind::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
                 crate::error::RestoreFromClusterSnapshotErrorKind::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+                crate::error::RestoreFromClusterSnapshotErrorKind::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
                 crate::error::RestoreFromClusterSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),

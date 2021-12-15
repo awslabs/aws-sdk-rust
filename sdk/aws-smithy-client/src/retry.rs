@@ -22,6 +22,7 @@ use std::sync::{Arc, Mutex};
 use std::time::Duration;
 
 use crate::{SdkError, SdkSuccess};
+use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_http::operation;
 use aws_smithy_http::operation::Operation;
 use aws_smithy_http::retry::ClassifyResponse;
@@ -41,7 +42,7 @@ where
     type Policy;
 
     /// Create a new policy mechanism instance.
-    fn new_request_policy(&self) -> Self::Policy;
+    fn new_request_policy(&self, sleep_impl: Option<Arc<dyn AsyncSleep>>) -> Self::Policy;
 }
 
 /// Retry Policy Configuration
@@ -65,7 +66,7 @@ impl Config {
     ///
     /// By default, `base` is a randomly generated value between 0 and 1. In tests, it can
     /// be helpful to override this:
-    /// ```rust
+    /// ```no_run
     /// use aws_smithy_client::retry::Config;
     /// let conf = Config::default().with_base(||1_f64);
     /// ```
@@ -142,11 +143,12 @@ impl Standard {
 impl NewRequestPolicy for Standard {
     type Policy = RetryHandler;
 
-    fn new_request_policy(&self) -> Self::Policy {
+    fn new_request_policy(&self, sleep_impl: Option<Arc<dyn AsyncSleep>>) -> Self::Policy {
         RetryHandler {
             local: RequestLocalRetryState::new(),
             shared: self.shared_state.clone(),
             config: self.config.clone(),
+            sleep_impl,
         }
     }
 }
@@ -236,6 +238,7 @@ pub struct RetryHandler {
     local: RequestLocalRetryState,
     shared: CrossRequestRetryState,
     config: Config,
+    sleep_impl: Option<Arc<dyn AsyncSleep>>,
 }
 
 #[cfg(test)]
@@ -283,6 +286,7 @@ impl RetryHandler {
             },
             shared: self.shared.clone(),
             config: self.config.clone(),
+            sleep_impl: self.sleep_impl.clone(),
         };
 
         Some((next, backoff))
@@ -296,7 +300,7 @@ where
     Handler: Clone,
     R: ClassifyResponse<SdkSuccess<T>, SdkError<E>>,
 {
-    type Future = Pin<Box<dyn Future<Output = Self> + Send + Sync>>;
+    type Future = Pin<Box<dyn Future<Output = Self> + Send>>;
 
     fn retry(
         &self,
@@ -305,6 +309,15 @@ where
     ) -> Option<Self::Future> {
         let policy = req.retry_policy();
         let retry = policy.classify(result);
+        let sleep = match &self.sleep_impl {
+            Some(sleep) => sleep,
+            None => {
+                if retry != RetryKind::NotRetryable {
+                    tracing::debug!("cannot retry because no sleep implementation exists");
+                }
+                return None;
+            }
+        };
         let (next, dur) = match retry {
             RetryKind::Explicit(dur) => (self.clone(), dur),
             RetryKind::NotRetryable => return None,
@@ -312,12 +325,13 @@ where
             _ => return None,
         };
 
+        let sleep_future = sleep.sleep(dur);
         let fut = async move {
-            tokio::time::sleep(dur).await;
+            sleep_future.await;
             next
         }
         .instrument(tracing::info_span!("retry", kind = &debug(retry)));
-        Some(check_send_sync(Box::pin(fut)))
+        Some(check_send(Box::pin(fut)))
     }
 
     fn clone_request(&self, req: &Operation<Handler, R>) -> Option<Operation<Handler, R>> {
@@ -325,14 +339,17 @@ where
     }
 }
 
-fn check_send_sync<T: Send + Sync>(t: T) -> T {
+fn check_send<T: Send>(t: T) -> T {
     t
 }
 
 #[cfg(test)]
 mod test {
+
     use crate::retry::{Config, NewRequestPolicy, RetryHandler, Standard};
+
     use aws_smithy_types::retry::ErrorKind;
+
     use std::time::Duration;
 
     fn test_config() -> Config {
@@ -348,7 +365,7 @@ mod test {
 
     #[test]
     fn eventual_success() {
-        let policy = Standard::new(test_config()).new_request_policy();
+        let policy = Standard::new(test_config()).new_request_policy(None);
         let (policy, dur) = policy
             .attempt_retry(Err(ErrorKind::ServerError))
             .expect("should retry");
@@ -368,7 +385,7 @@ mod test {
 
     #[test]
     fn no_more_attempts() {
-        let policy = Standard::new(test_config()).new_request_policy();
+        let policy = Standard::new(test_config()).new_request_policy(None);
         let (policy, dur) = policy
             .attempt_retry(Err(ErrorKind::ServerError))
             .expect("should retry");
@@ -390,7 +407,7 @@ mod test {
     fn no_quota() {
         let mut conf = test_config();
         conf.initial_retry_tokens = 5;
-        let policy = Standard::new(conf).new_request_policy();
+        let policy = Standard::new(conf).new_request_policy(None);
         let (policy, dur) = policy
             .attempt_retry(Err(ErrorKind::ServerError))
             .expect("should retry");
@@ -405,7 +422,7 @@ mod test {
     fn backoff_timing() {
         let mut conf = test_config();
         conf.max_attempts = 5;
-        let policy = Standard::new(conf).new_request_policy();
+        let policy = Standard::new(conf).new_request_policy(None);
         let (policy, dur) = policy
             .attempt_retry(Err(ErrorKind::ServerError))
             .expect("should retry");
@@ -440,7 +457,7 @@ mod test {
         let mut conf = test_config();
         conf.max_attempts = 5;
         conf.max_backoff = Duration::from_secs(3);
-        let policy = Standard::new(conf).new_request_policy();
+        let policy = Standard::new(conf).new_request_policy(None);
         let (policy, dur) = policy
             .attempt_retry(Err(ErrorKind::ServerError))
             .expect("should retry");

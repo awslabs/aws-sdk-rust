@@ -122,6 +122,36 @@ impl UpdateIndexOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateExperienceOutput {}
+impl std::fmt::Debug for UpdateExperienceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateExperienceOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateExperienceOutput`](crate::output::UpdateExperienceOutput)
+pub mod update_experience_output {
+    /// A builder for [`UpdateExperienceOutput`](crate::output::UpdateExperienceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateExperienceOutput`](crate::output::UpdateExperienceOutput)
+        pub fn build(self) -> crate::output::UpdateExperienceOutput {
+            crate::output::UpdateExperienceOutput {}
+        }
+    }
+}
+impl UpdateExperienceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateExperienceOutput`](crate::output::UpdateExperienceOutput)
+    pub fn builder() -> crate::output::update_experience_output::Builder {
+        crate::output::update_experience_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSourceOutput {}
 impl std::fmt::Debug for UpdateDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1081,6 +1111,269 @@ impl ListFaqsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListExperiencesOutput {
+    /// <p>An array of summary information for one or more Amazon Kendra experiences.</p>
+    pub summary_items: std::option::Option<std::vec::Vec<crate::model::ExperiencesSummary>>,
+    /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use
+    /// in a later request to retrieve the next set of Amazon Kendra experiences.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListExperiencesOutput {
+    /// <p>An array of summary information for one or more Amazon Kendra experiences.</p>
+    pub fn summary_items(&self) -> std::option::Option<&[crate::model::ExperiencesSummary]> {
+        self.summary_items.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use
+    /// in a later request to retrieve the next set of Amazon Kendra experiences.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListExperiencesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListExperiencesOutput");
+        formatter.field("summary_items", &self.summary_items);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListExperiencesOutput`](crate::output::ListExperiencesOutput)
+pub mod list_experiences_output {
+    /// A builder for [`ListExperiencesOutput`](crate::output::ListExperiencesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) summary_items:
+            std::option::Option<std::vec::Vec<crate::model::ExperiencesSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `summary_items`.
+        ///
+        /// To override the contents of this collection use [`set_summary_items`](Self::set_summary_items).
+        ///
+        /// <p>An array of summary information for one or more Amazon Kendra experiences.</p>
+        pub fn summary_items(mut self, input: impl Into<crate::model::ExperiencesSummary>) -> Self {
+            let mut v = self.summary_items.unwrap_or_default();
+            v.push(input.into());
+            self.summary_items = Some(v);
+            self
+        }
+        /// <p>An array of summary information for one or more Amazon Kendra experiences.</p>
+        pub fn set_summary_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ExperiencesSummary>>,
+        ) -> Self {
+            self.summary_items = input;
+            self
+        }
+        /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use
+        /// in a later request to retrieve the next set of Amazon Kendra experiences.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use
+        /// in a later request to retrieve the next set of Amazon Kendra experiences.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListExperiencesOutput`](crate::output::ListExperiencesOutput)
+        pub fn build(self) -> crate::output::ListExperiencesOutput {
+            crate::output::ListExperiencesOutput {
+                summary_items: self.summary_items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListExperiencesOutput {
+    /// Creates a new builder-style object to manufacture [`ListExperiencesOutput`](crate::output::ListExperiencesOutput)
+    pub fn builder() -> crate::output::list_experiences_output::Builder {
+        crate::output::list_experiences_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListExperienceEntitiesOutput {
+    /// <p>An array of summary information for one or more users or groups.</p>
+    pub summary_items: std::option::Option<std::vec::Vec<crate::model::ExperienceEntitiesSummary>>,
+    /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in
+    /// a later request to retrieve the next set of users or groups.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListExperienceEntitiesOutput {
+    /// <p>An array of summary information for one or more users or groups.</p>
+    pub fn summary_items(&self) -> std::option::Option<&[crate::model::ExperienceEntitiesSummary]> {
+        self.summary_items.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in
+    /// a later request to retrieve the next set of users or groups.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListExperienceEntitiesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListExperienceEntitiesOutput");
+        formatter.field("summary_items", &self.summary_items);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListExperienceEntitiesOutput`](crate::output::ListExperienceEntitiesOutput)
+pub mod list_experience_entities_output {
+    /// A builder for [`ListExperienceEntitiesOutput`](crate::output::ListExperienceEntitiesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) summary_items:
+            std::option::Option<std::vec::Vec<crate::model::ExperienceEntitiesSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `summary_items`.
+        ///
+        /// To override the contents of this collection use [`set_summary_items`](Self::set_summary_items).
+        ///
+        /// <p>An array of summary information for one or more users or groups.</p>
+        pub fn summary_items(
+            mut self,
+            input: impl Into<crate::model::ExperienceEntitiesSummary>,
+        ) -> Self {
+            let mut v = self.summary_items.unwrap_or_default();
+            v.push(input.into());
+            self.summary_items = Some(v);
+            self
+        }
+        /// <p>An array of summary information for one or more users or groups.</p>
+        pub fn set_summary_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ExperienceEntitiesSummary>>,
+        ) -> Self {
+            self.summary_items = input;
+            self
+        }
+        /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in
+        /// a later request to retrieve the next set of users or groups.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in
+        /// a later request to retrieve the next set of users or groups.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListExperienceEntitiesOutput`](crate::output::ListExperienceEntitiesOutput)
+        pub fn build(self) -> crate::output::ListExperienceEntitiesOutput {
+            crate::output::ListExperienceEntitiesOutput {
+                summary_items: self.summary_items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListExperienceEntitiesOutput {
+    /// Creates a new builder-style object to manufacture [`ListExperienceEntitiesOutput`](crate::output::ListExperienceEntitiesOutput)
+    pub fn builder() -> crate::output::list_experience_entities_output::Builder {
+        crate::output::list_experience_entities_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEntityPersonasOutput {
+    /// <p>An array of summary information for one or more users or groups.</p>
+    pub summary_items: std::option::Option<std::vec::Vec<crate::model::PersonasSummary>>,
+    /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in
+    /// a later request to retrieve the next set of users or groups.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEntityPersonasOutput {
+    /// <p>An array of summary information for one or more users or groups.</p>
+    pub fn summary_items(&self) -> std::option::Option<&[crate::model::PersonasSummary]> {
+        self.summary_items.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in
+    /// a later request to retrieve the next set of users or groups.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListEntityPersonasOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListEntityPersonasOutput");
+        formatter.field("summary_items", &self.summary_items);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListEntityPersonasOutput`](crate::output::ListEntityPersonasOutput)
+pub mod list_entity_personas_output {
+    /// A builder for [`ListEntityPersonasOutput`](crate::output::ListEntityPersonasOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) summary_items: std::option::Option<std::vec::Vec<crate::model::PersonasSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `summary_items`.
+        ///
+        /// To override the contents of this collection use [`set_summary_items`](Self::set_summary_items).
+        ///
+        /// <p>An array of summary information for one or more users or groups.</p>
+        pub fn summary_items(mut self, input: impl Into<crate::model::PersonasSummary>) -> Self {
+            let mut v = self.summary_items.unwrap_or_default();
+            v.push(input.into());
+            self.summary_items = Some(v);
+            self
+        }
+        /// <p>An array of summary information for one or more users or groups.</p>
+        pub fn set_summary_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PersonasSummary>>,
+        ) -> Self {
+            self.summary_items = input;
+            self
+        }
+        /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in
+        /// a later request to retrieve the next set of users or groups.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in
+        /// a later request to retrieve the next set of users or groups.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListEntityPersonasOutput`](crate::output::ListEntityPersonasOutput)
+        pub fn build(self) -> crate::output::ListEntityPersonasOutput {
+            crate::output::ListEntityPersonasOutput {
+                summary_items: self.summary_items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListEntityPersonasOutput {
+    /// Creates a new builder-style object to manufacture [`ListEntityPersonasOutput`](crate::output::ListEntityPersonasOutput)
+    pub fn builder() -> crate::output::list_entity_personas_output::Builder {
+        crate::output::list_entity_personas_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSourceSyncJobsOutput {
     /// <p>A history of synchronization jobs for the data source.</p>
     pub history: std::option::Option<std::vec::Vec<crate::model::DataSourceSyncJob>>,
@@ -1258,6 +1551,158 @@ impl ListDataSourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetSnapshotsOutput {
+    /// <p>The date-time for the beginning and end of the time window
+    /// for the search metrics data.</p>
+    pub snap_shot_time_filter: std::option::Option<crate::model::TimeRange>,
+    /// <p>The column headers for the search metrics data.</p>
+    pub snapshots_data_header: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The search metrics data. The data returned depends on the
+    /// metric type you requested.</p>
+    pub snapshots_data: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    /// <p>If the response is truncated, Amazon Kendra returns this
+    /// token, which you can use in a later request to retrieve the
+    /// next set of search metrics data.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl GetSnapshotsOutput {
+    /// <p>The date-time for the beginning and end of the time window
+    /// for the search metrics data.</p>
+    pub fn snap_shot_time_filter(&self) -> std::option::Option<&crate::model::TimeRange> {
+        self.snap_shot_time_filter.as_ref()
+    }
+    /// <p>The column headers for the search metrics data.</p>
+    pub fn snapshots_data_header(&self) -> std::option::Option<&[std::string::String]> {
+        self.snapshots_data_header.as_deref()
+    }
+    /// <p>The search metrics data. The data returned depends on the
+    /// metric type you requested.</p>
+    pub fn snapshots_data(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.snapshots_data.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Kendra returns this
+    /// token, which you can use in a later request to retrieve the
+    /// next set of search metrics data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for GetSnapshotsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetSnapshotsOutput");
+        formatter.field("snap_shot_time_filter", &self.snap_shot_time_filter);
+        formatter.field("snapshots_data_header", &self.snapshots_data_header);
+        formatter.field("snapshots_data", &self.snapshots_data);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetSnapshotsOutput`](crate::output::GetSnapshotsOutput)
+pub mod get_snapshots_output {
+    /// A builder for [`GetSnapshotsOutput`](crate::output::GetSnapshotsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) snap_shot_time_filter: std::option::Option<crate::model::TimeRange>,
+        pub(crate) snapshots_data_header: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) snapshots_data:
+            std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The date-time for the beginning and end of the time window
+        /// for the search metrics data.</p>
+        pub fn snap_shot_time_filter(mut self, input: crate::model::TimeRange) -> Self {
+            self.snap_shot_time_filter = Some(input);
+            self
+        }
+        /// <p>The date-time for the beginning and end of the time window
+        /// for the search metrics data.</p>
+        pub fn set_snap_shot_time_filter(
+            mut self,
+            input: std::option::Option<crate::model::TimeRange>,
+        ) -> Self {
+            self.snap_shot_time_filter = input;
+            self
+        }
+        /// Appends an item to `snapshots_data_header`.
+        ///
+        /// To override the contents of this collection use [`set_snapshots_data_header`](Self::set_snapshots_data_header).
+        ///
+        /// <p>The column headers for the search metrics data.</p>
+        pub fn snapshots_data_header(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.snapshots_data_header.unwrap_or_default();
+            v.push(input.into());
+            self.snapshots_data_header = Some(v);
+            self
+        }
+        /// <p>The column headers for the search metrics data.</p>
+        pub fn set_snapshots_data_header(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.snapshots_data_header = input;
+            self
+        }
+        /// Appends an item to `snapshots_data`.
+        ///
+        /// To override the contents of this collection use [`set_snapshots_data`](Self::set_snapshots_data).
+        ///
+        /// <p>The search metrics data. The data returned depends on the
+        /// metric type you requested.</p>
+        pub fn snapshots_data(
+            mut self,
+            input: impl Into<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            let mut v = self.snapshots_data.unwrap_or_default();
+            v.push(input.into());
+            self.snapshots_data = Some(v);
+            self
+        }
+        /// <p>The search metrics data. The data returned depends on the
+        /// metric type you requested.</p>
+        pub fn set_snapshots_data(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        ) -> Self {
+            self.snapshots_data = input;
+            self
+        }
+        /// <p>If the response is truncated, Amazon Kendra returns this
+        /// token, which you can use in a later request to retrieve the
+        /// next set of search metrics data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, Amazon Kendra returns this
+        /// token, which you can use in a later request to retrieve the
+        /// next set of search metrics data.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSnapshotsOutput`](crate::output::GetSnapshotsOutput)
+        pub fn build(self) -> crate::output::GetSnapshotsOutput {
+            crate::output::GetSnapshotsOutput {
+                snap_shot_time_filter: self.snap_shot_time_filter,
+                snapshots_data_header: self.snapshots_data_header,
+                snapshots_data: self.snapshots_data,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetSnapshotsOutput {
+    /// Creates a new builder-style object to manufacture [`GetSnapshotsOutput`](crate::output::GetSnapshotsOutput)
+    pub fn builder() -> crate::output::get_snapshots_output::Builder {
+        crate::output::get_snapshots_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQuerySuggestionsOutput {
     /// <p>The unique identifier for a list of query suggestions for an index.</p>
     pub query_suggestions_id: std::option::Option<std::string::String>,
@@ -1343,6 +1788,142 @@ impl GetQuerySuggestionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociatePersonasFromEntitiesOutput {
+    /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
+    /// failed to properly remove access to your Amazon Kendra experience.</p>
+    pub failed_entity_list: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
+}
+impl DisassociatePersonasFromEntitiesOutput {
+    /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
+    /// failed to properly remove access to your Amazon Kendra experience.</p>
+    pub fn failed_entity_list(&self) -> std::option::Option<&[crate::model::FailedEntity]> {
+        self.failed_entity_list.as_deref()
+    }
+}
+impl std::fmt::Debug for DisassociatePersonasFromEntitiesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociatePersonasFromEntitiesOutput");
+        formatter.field("failed_entity_list", &self.failed_entity_list);
+        formatter.finish()
+    }
+}
+/// See [`DisassociatePersonasFromEntitiesOutput`](crate::output::DisassociatePersonasFromEntitiesOutput)
+pub mod disassociate_personas_from_entities_output {
+    /// A builder for [`DisassociatePersonasFromEntitiesOutput`](crate::output::DisassociatePersonasFromEntitiesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) failed_entity_list:
+            std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
+    }
+    impl Builder {
+        /// Appends an item to `failed_entity_list`.
+        ///
+        /// To override the contents of this collection use [`set_failed_entity_list`](Self::set_failed_entity_list).
+        ///
+        /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
+        /// failed to properly remove access to your Amazon Kendra experience.</p>
+        pub fn failed_entity_list(mut self, input: impl Into<crate::model::FailedEntity>) -> Self {
+            let mut v = self.failed_entity_list.unwrap_or_default();
+            v.push(input.into());
+            self.failed_entity_list = Some(v);
+            self
+        }
+        /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
+        /// failed to properly remove access to your Amazon Kendra experience.</p>
+        pub fn set_failed_entity_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
+        ) -> Self {
+            self.failed_entity_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociatePersonasFromEntitiesOutput`](crate::output::DisassociatePersonasFromEntitiesOutput)
+        pub fn build(self) -> crate::output::DisassociatePersonasFromEntitiesOutput {
+            crate::output::DisassociatePersonasFromEntitiesOutput {
+                failed_entity_list: self.failed_entity_list,
+            }
+        }
+    }
+}
+impl DisassociatePersonasFromEntitiesOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociatePersonasFromEntitiesOutput`](crate::output::DisassociatePersonasFromEntitiesOutput)
+    pub fn builder() -> crate::output::disassociate_personas_from_entities_output::Builder {
+        crate::output::disassociate_personas_from_entities_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateEntitiesFromExperienceOutput {
+    /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
+    /// failed to properly remove access to your Amazon Kendra experience.</p>
+    pub failed_entity_list: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
+}
+impl DisassociateEntitiesFromExperienceOutput {
+    /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
+    /// failed to properly remove access to your Amazon Kendra experience.</p>
+    pub fn failed_entity_list(&self) -> std::option::Option<&[crate::model::FailedEntity]> {
+        self.failed_entity_list.as_deref()
+    }
+}
+impl std::fmt::Debug for DisassociateEntitiesFromExperienceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateEntitiesFromExperienceOutput");
+        formatter.field("failed_entity_list", &self.failed_entity_list);
+        formatter.finish()
+    }
+}
+/// See [`DisassociateEntitiesFromExperienceOutput`](crate::output::DisassociateEntitiesFromExperienceOutput)
+pub mod disassociate_entities_from_experience_output {
+    /// A builder for [`DisassociateEntitiesFromExperienceOutput`](crate::output::DisassociateEntitiesFromExperienceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) failed_entity_list:
+            std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
+    }
+    impl Builder {
+        /// Appends an item to `failed_entity_list`.
+        ///
+        /// To override the contents of this collection use [`set_failed_entity_list`](Self::set_failed_entity_list).
+        ///
+        /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
+        /// failed to properly remove access to your Amazon Kendra experience.</p>
+        pub fn failed_entity_list(mut self, input: impl Into<crate::model::FailedEntity>) -> Self {
+            let mut v = self.failed_entity_list.unwrap_or_default();
+            v.push(input.into());
+            self.failed_entity_list = Some(v);
+            self
+        }
+        /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
+        /// failed to properly remove access to your Amazon Kendra experience.</p>
+        pub fn set_failed_entity_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
+        ) -> Self {
+            self.failed_entity_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateEntitiesFromExperienceOutput`](crate::output::DisassociateEntitiesFromExperienceOutput)
+        pub fn build(self) -> crate::output::DisassociateEntitiesFromExperienceOutput {
+            crate::output::DisassociateEntitiesFromExperienceOutput {
+                failed_entity_list: self.failed_entity_list,
+            }
+        }
+    }
+}
+impl DisassociateEntitiesFromExperienceOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateEntitiesFromExperienceOutput`](crate::output::DisassociateEntitiesFromExperienceOutput)
+    pub fn builder() -> crate::output::disassociate_entities_from_experience_output::Builder {
+        crate::output::disassociate_entities_from_experience_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThesaurusOutput {
     /// <p>The identifier of the thesaurus.</p>
     pub id: std::option::Option<std::string::String>,
@@ -1370,7 +1951,7 @@ pub struct DescribeThesaurusOutput {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix datetime that the thesaurus was last updated.</p>
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions
+    /// <p>An IAM role that gives Amazon Kendra permissions
     /// to access thesaurus file specified in <code>SourceS3Path</code>.
     /// </p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -1430,7 +2011,7 @@ impl DescribeThesaurusOutput {
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions
+    /// <p>An IAM role that gives Amazon Kendra permissions
     /// to access thesaurus file specified in <code>SourceS3Path</code>.
     /// </p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
@@ -1609,14 +2190,14 @@ pub mod describe_thesaurus_output {
             self.updated_at = input;
             self
         }
-        /// <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions
+        /// <p>An IAM role that gives Amazon Kendra permissions
         /// to access thesaurus file specified in <code>SourceS3Path</code>.
         /// </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions
+        /// <p>An IAM role that gives Amazon Kendra permissions
         /// to access thesaurus file specified in <code>SourceS3Path</code>.
         /// </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -2630,7 +3211,7 @@ pub struct DescribeIndexOutput {
     /// <p>The user context policy for the Amazon Kendra index.</p>
     pub user_context_policy: std::option::Option<crate::model::UserContextPolicy>,
     /// <p>Shows whether you have enabled the configuration for fetching access
-    /// levels of groups and users from an AWS Single Sign-On identity source.</p>
+    /// levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
     pub user_group_resolution_configuration:
         std::option::Option<crate::model::UserGroupResolutionConfiguration>,
 }
@@ -2717,7 +3298,7 @@ impl DescribeIndexOutput {
         self.user_context_policy.as_ref()
     }
     /// <p>Shows whether you have enabled the configuration for fetching access
-    /// levels of groups and users from an AWS Single Sign-On identity source.</p>
+    /// levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
     pub fn user_group_resolution_configuration(
         &self,
     ) -> std::option::Option<&crate::model::UserGroupResolutionConfiguration> {
@@ -3015,7 +3596,7 @@ pub mod describe_index_output {
             self
         }
         /// <p>Shows whether you have enabled the configuration for fetching access
-        /// levels of groups and users from an AWS Single Sign-On identity source.</p>
+        /// levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
         pub fn user_group_resolution_configuration(
             mut self,
             input: crate::model::UserGroupResolutionConfiguration,
@@ -3024,7 +3605,7 @@ pub mod describe_index_output {
             self
         }
         /// <p>Shows whether you have enabled the configuration for fetching access
-        /// levels of groups and users from an AWS Single Sign-On identity source.</p>
+        /// levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
         pub fn set_user_group_resolution_configuration(
             mut self,
             input: std::option::Option<crate::model::UserGroupResolutionConfiguration>,
@@ -3375,6 +3956,314 @@ impl DescribeFaqOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeExperienceOutput {
+    /// <p>Shows the identifier of your Amazon Kendra experience.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>Shows the identifier of the index for your Amazon Kendra experience.</p>
+    pub index_id: std::option::Option<std::string::String>,
+    /// <p>Shows the name of your Amazon Kendra experience.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Shows the endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully
+    /// hosted by Amazon Web Services.</p>
+    pub endpoints: std::option::Option<std::vec::Vec<crate::model::ExperienceEndpoint>>,
+    /// <p>Shows the configuration information for your Amazon Kendra experience. This includes
+    /// <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+    /// and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+    /// user or group information to grant access to your Amazon Kendra experience.</p>
+    pub configuration: std::option::Option<crate::model::ExperienceConfiguration>,
+    /// <p>Shows the date-time your Amazon Kendra experience was created.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Shows the date-time your Amazon Kendra experience was last updated.</p>
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Shows the description for your Amazon Kendra experience.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The current processing status of your Amazon Kendra experience. When the status
+    /// is <code>ACTIVE</code>, your Amazon Kendra experience is ready to use. When the
+    /// status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains
+    /// the reason that this failed.</p>
+    pub status: std::option::Option<crate::model::ExperienceStatus>,
+    /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access
+    /// <code>Query</code> operations, <code>QuerySuggestions</code> operations,
+    /// <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores
+    /// your user and group information.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The reason your Amazon Kendra experience could not properly process.</p>
+    pub error_message: std::option::Option<std::string::String>,
+}
+impl DescribeExperienceOutput {
+    /// <p>Shows the identifier of your Amazon Kendra experience.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Shows the identifier of the index for your Amazon Kendra experience.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>Shows the name of your Amazon Kendra experience.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Shows the endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully
+    /// hosted by Amazon Web Services.</p>
+    pub fn endpoints(&self) -> std::option::Option<&[crate::model::ExperienceEndpoint]> {
+        self.endpoints.as_deref()
+    }
+    /// <p>Shows the configuration information for your Amazon Kendra experience. This includes
+    /// <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+    /// and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+    /// user or group information to grant access to your Amazon Kendra experience.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ExperienceConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>Shows the date-time your Amazon Kendra experience was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>Shows the date-time your Amazon Kendra experience was last updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.updated_at.as_ref()
+    }
+    /// <p>Shows the description for your Amazon Kendra experience.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The current processing status of your Amazon Kendra experience. When the status
+    /// is <code>ACTIVE</code>, your Amazon Kendra experience is ready to use. When the
+    /// status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains
+    /// the reason that this failed.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ExperienceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access
+    /// <code>Query</code> operations, <code>QuerySuggestions</code> operations,
+    /// <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores
+    /// your user and group information.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The reason your Amazon Kendra experience could not properly process.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeExperienceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeExperienceOutput");
+        formatter.field("id", &self.id);
+        formatter.field("index_id", &self.index_id);
+        formatter.field("name", &self.name);
+        formatter.field("endpoints", &self.endpoints);
+        formatter.field("configuration", &self.configuration);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.field("description", &self.description);
+        formatter.field("status", &self.status);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("error_message", &self.error_message);
+        formatter.finish()
+    }
+}
+/// See [`DescribeExperienceOutput`](crate::output::DescribeExperienceOutput)
+pub mod describe_experience_output {
+    /// A builder for [`DescribeExperienceOutput`](crate::output::DescribeExperienceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) index_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::ExperienceEndpoint>>,
+        pub(crate) configuration: std::option::Option<crate::model::ExperienceConfiguration>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::ExperienceStatus>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Shows the identifier of your Amazon Kendra experience.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>Shows the identifier of your Amazon Kendra experience.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>Shows the identifier of the index for your Amazon Kendra experience.</p>
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_id = Some(input.into());
+            self
+        }
+        /// <p>Shows the identifier of the index for your Amazon Kendra experience.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_id = input;
+            self
+        }
+        /// <p>Shows the name of your Amazon Kendra experience.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Shows the name of your Amazon Kendra experience.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
+        ///
+        /// <p>Shows the endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully
+        /// hosted by Amazon Web Services.</p>
+        pub fn endpoints(mut self, input: impl Into<crate::model::ExperienceEndpoint>) -> Self {
+            let mut v = self.endpoints.unwrap_or_default();
+            v.push(input.into());
+            self.endpoints = Some(v);
+            self
+        }
+        /// <p>Shows the endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully
+        /// hosted by Amazon Web Services.</p>
+        pub fn set_endpoints(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ExperienceEndpoint>>,
+        ) -> Self {
+            self.endpoints = input;
+            self
+        }
+        /// <p>Shows the configuration information for your Amazon Kendra experience. This includes
+        /// <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+        /// and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+        /// user or group information to grant access to your Amazon Kendra experience.</p>
+        pub fn configuration(mut self, input: crate::model::ExperienceConfiguration) -> Self {
+            self.configuration = Some(input);
+            self
+        }
+        /// <p>Shows the configuration information for your Amazon Kendra experience. This includes
+        /// <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+        /// and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+        /// user or group information to grant access to your Amazon Kendra experience.</p>
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ExperienceConfiguration>,
+        ) -> Self {
+            self.configuration = input;
+            self
+        }
+        /// <p>Shows the date-time your Amazon Kendra experience was created.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>Shows the date-time your Amazon Kendra experience was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>Shows the date-time your Amazon Kendra experience was last updated.</p>
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.updated_at = Some(input);
+            self
+        }
+        /// <p>Shows the date-time your Amazon Kendra experience was last updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.updated_at = input;
+            self
+        }
+        /// <p>Shows the description for your Amazon Kendra experience.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>Shows the description for your Amazon Kendra experience.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The current processing status of your Amazon Kendra experience. When the status
+        /// is <code>ACTIVE</code>, your Amazon Kendra experience is ready to use. When the
+        /// status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains
+        /// the reason that this failed.</p>
+        pub fn status(mut self, input: crate::model::ExperienceStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The current processing status of your Amazon Kendra experience. When the status
+        /// is <code>ACTIVE</code>, your Amazon Kendra experience is ready to use. When the
+        /// status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains
+        /// the reason that this failed.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ExperienceStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access
+        /// <code>Query</code> operations, <code>QuerySuggestions</code> operations,
+        /// <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores
+        /// your user and group information.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access
+        /// <code>Query</code> operations, <code>QuerySuggestions</code> operations,
+        /// <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores
+        /// your user and group information.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The reason your Amazon Kendra experience could not properly process.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p>The reason your Amazon Kendra experience could not properly process.</p>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeExperienceOutput`](crate::output::DescribeExperienceOutput)
+        pub fn build(self) -> crate::output::DescribeExperienceOutput {
+            crate::output::DescribeExperienceOutput {
+                id: self.id,
+                index_id: self.index_id,
+                name: self.name,
+                endpoints: self.endpoints,
+                configuration: self.configuration,
+                created_at: self.created_at,
+                updated_at: self.updated_at,
+                description: self.description,
+                status: self.status,
+                role_arn: self.role_arn,
+                error_message: self.error_message,
+            }
+        }
+    }
+}
+impl DescribeExperienceOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeExperienceOutput`](crate::output::DescribeExperienceOutput)
+    pub fn builder() -> crate::output::describe_experience_output::Builder {
+        crate::output::describe_experience_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSourceOutput {
     /// <p>The identifier of the data source.</p>
     pub id: std::option::Option<std::string::String>,
@@ -3414,6 +4303,14 @@ pub struct DescribeDataSourceOutput {
     /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
     /// documents in languages other than English</a>.</p>
     pub language_code: std::option::Option<std::string::String>,
+    /// <p>Configuration information for altering document metadata and content during the
+    /// document ingestion process when you describe a data source.</p>
+    /// <p>For more information on how to create, modify and delete document metadata, or make
+    /// other content alterations when you ingest documents into Amazon Kendra, see
+    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+    /// document metadata during the ingestion process</a>.</p>
+    pub custom_document_enrichment_configuration:
+        std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
 }
 impl DescribeDataSourceOutput {
     /// <p>The identifier of the data source.</p>
@@ -3480,6 +4377,17 @@ impl DescribeDataSourceOutput {
     pub fn language_code(&self) -> std::option::Option<&str> {
         self.language_code.as_deref()
     }
+    /// <p>Configuration information for altering document metadata and content during the
+    /// document ingestion process when you describe a data source.</p>
+    /// <p>For more information on how to create, modify and delete document metadata, or make
+    /// other content alterations when you ingest documents into Amazon Kendra, see
+    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+    /// document metadata during the ingestion process</a>.</p>
+    pub fn custom_document_enrichment_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomDocumentEnrichmentConfiguration> {
+        self.custom_document_enrichment_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3497,6 +4405,10 @@ impl std::fmt::Debug for DescribeDataSourceOutput {
         formatter.field("role_arn", &self.role_arn);
         formatter.field("error_message", &self.error_message);
         formatter.field("language_code", &self.language_code);
+        formatter.field(
+            "custom_document_enrichment_configuration",
+            &self.custom_document_enrichment_configuration,
+        );
         formatter.finish()
     }
 }
@@ -3519,6 +4431,8 @@ pub mod describe_data_source_output {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<std::string::String>,
+        pub(crate) custom_document_enrichment_configuration:
+            std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
     }
     impl Builder {
         /// <p>The identifier of the data source.</p>
@@ -3696,6 +4610,32 @@ pub mod describe_data_source_output {
             self.language_code = input;
             self
         }
+        /// <p>Configuration information for altering document metadata and content during the
+        /// document ingestion process when you describe a data source.</p>
+        /// <p>For more information on how to create, modify and delete document metadata, or make
+        /// other content alterations when you ingest documents into Amazon Kendra, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+        /// document metadata during the ingestion process</a>.</p>
+        pub fn custom_document_enrichment_configuration(
+            mut self,
+            input: crate::model::CustomDocumentEnrichmentConfiguration,
+        ) -> Self {
+            self.custom_document_enrichment_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration information for altering document metadata and content during the
+        /// document ingestion process when you describe a data source.</p>
+        /// <p>For more information on how to create, modify and delete document metadata, or make
+        /// other content alterations when you ingest documents into Amazon Kendra, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+        /// document metadata during the ingestion process</a>.</p>
+        pub fn set_custom_document_enrichment_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
+        ) -> Self {
+            self.custom_document_enrichment_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeDataSourceOutput`](crate::output::DescribeDataSourceOutput)
         pub fn build(self) -> crate::output::DescribeDataSourceOutput {
             crate::output::DescribeDataSourceOutput {
@@ -3712,6 +4652,8 @@ pub mod describe_data_source_output {
                 role_arn: self.role_arn,
                 error_message: self.error_message,
                 language_code: self.language_code,
+                custom_document_enrichment_configuration: self
+                    .custom_document_enrichment_configuration,
             }
         }
     }
@@ -3870,6 +4812,36 @@ impl DeleteFaqOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFaqOutput`](crate::output::DeleteFaqOutput)
     pub fn builder() -> crate::output::delete_faq_output::Builder {
         crate::output::delete_faq_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteExperienceOutput {}
+impl std::fmt::Debug for DeleteExperienceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteExperienceOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteExperienceOutput`](crate::output::DeleteExperienceOutput)
+pub mod delete_experience_output {
+    /// A builder for [`DeleteExperienceOutput`](crate::output::DeleteExperienceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteExperienceOutput`](crate::output::DeleteExperienceOutput)
+        pub fn build(self) -> crate::output::DeleteExperienceOutput {
+            crate::output::DeleteExperienceOutput {}
+        }
+    }
+}
+impl DeleteExperienceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteExperienceOutput`](crate::output::DeleteExperienceOutput)
+    pub fn builder() -> crate::output::delete_experience_output::Builder {
+        crate::output::delete_experience_output::Builder::default()
     }
 }
 
@@ -4116,6 +5088,58 @@ impl CreateFaqOutput {
     /// Creates a new builder-style object to manufacture [`CreateFaqOutput`](crate::output::CreateFaqOutput)
     pub fn builder() -> crate::output::create_faq_output::Builder {
         crate::output::create_faq_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateExperienceOutput {
+    /// <p>The identifier for your created Amazon Kendra experience.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl CreateExperienceOutput {
+    /// <p>The identifier for your created Amazon Kendra experience.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateExperienceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateExperienceOutput");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+/// See [`CreateExperienceOutput`](crate::output::CreateExperienceOutput)
+pub mod create_experience_output {
+    /// A builder for [`CreateExperienceOutput`](crate::output::CreateExperienceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier for your created Amazon Kendra experience.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for your created Amazon Kendra experience.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateExperienceOutput`](crate::output::CreateExperienceOutput)
+        pub fn build(self) -> crate::output::CreateExperienceOutput {
+            crate::output::CreateExperienceOutput { id: self.id }
+        }
+    }
+}
+impl CreateExperienceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateExperienceOutput`](crate::output::CreateExperienceOutput)
+    pub fn builder() -> crate::output::create_experience_output::Builder {
+        crate::output::create_experience_output::Builder::default()
     }
 }
 
@@ -4500,5 +5524,141 @@ impl BatchDeleteDocumentOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteDocumentOutput`](crate::output::BatchDeleteDocumentOutput)
     pub fn builder() -> crate::output::batch_delete_document_output::Builder {
         crate::output::batch_delete_document_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociatePersonasToEntitiesOutput {
+    /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
+    /// failed to properly configure with your Amazon Kendra experience.</p>
+    pub failed_entity_list: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
+}
+impl AssociatePersonasToEntitiesOutput {
+    /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
+    /// failed to properly configure with your Amazon Kendra experience.</p>
+    pub fn failed_entity_list(&self) -> std::option::Option<&[crate::model::FailedEntity]> {
+        self.failed_entity_list.as_deref()
+    }
+}
+impl std::fmt::Debug for AssociatePersonasToEntitiesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociatePersonasToEntitiesOutput");
+        formatter.field("failed_entity_list", &self.failed_entity_list);
+        formatter.finish()
+    }
+}
+/// See [`AssociatePersonasToEntitiesOutput`](crate::output::AssociatePersonasToEntitiesOutput)
+pub mod associate_personas_to_entities_output {
+    /// A builder for [`AssociatePersonasToEntitiesOutput`](crate::output::AssociatePersonasToEntitiesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) failed_entity_list:
+            std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
+    }
+    impl Builder {
+        /// Appends an item to `failed_entity_list`.
+        ///
+        /// To override the contents of this collection use [`set_failed_entity_list`](Self::set_failed_entity_list).
+        ///
+        /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
+        /// failed to properly configure with your Amazon Kendra experience.</p>
+        pub fn failed_entity_list(mut self, input: impl Into<crate::model::FailedEntity>) -> Self {
+            let mut v = self.failed_entity_list.unwrap_or_default();
+            v.push(input.into());
+            self.failed_entity_list = Some(v);
+            self
+        }
+        /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
+        /// failed to properly configure with your Amazon Kendra experience.</p>
+        pub fn set_failed_entity_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
+        ) -> Self {
+            self.failed_entity_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociatePersonasToEntitiesOutput`](crate::output::AssociatePersonasToEntitiesOutput)
+        pub fn build(self) -> crate::output::AssociatePersonasToEntitiesOutput {
+            crate::output::AssociatePersonasToEntitiesOutput {
+                failed_entity_list: self.failed_entity_list,
+            }
+        }
+    }
+}
+impl AssociatePersonasToEntitiesOutput {
+    /// Creates a new builder-style object to manufacture [`AssociatePersonasToEntitiesOutput`](crate::output::AssociatePersonasToEntitiesOutput)
+    pub fn builder() -> crate::output::associate_personas_to_entities_output::Builder {
+        crate::output::associate_personas_to_entities_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateEntitiesToExperienceOutput {
+    /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
+    /// failed to properly configure with your Amazon Kendra experience.</p>
+    pub failed_entity_list: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
+}
+impl AssociateEntitiesToExperienceOutput {
+    /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
+    /// failed to properly configure with your Amazon Kendra experience.</p>
+    pub fn failed_entity_list(&self) -> std::option::Option<&[crate::model::FailedEntity]> {
+        self.failed_entity_list.as_deref()
+    }
+}
+impl std::fmt::Debug for AssociateEntitiesToExperienceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateEntitiesToExperienceOutput");
+        formatter.field("failed_entity_list", &self.failed_entity_list);
+        formatter.finish()
+    }
+}
+/// See [`AssociateEntitiesToExperienceOutput`](crate::output::AssociateEntitiesToExperienceOutput)
+pub mod associate_entities_to_experience_output {
+    /// A builder for [`AssociateEntitiesToExperienceOutput`](crate::output::AssociateEntitiesToExperienceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) failed_entity_list:
+            std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
+    }
+    impl Builder {
+        /// Appends an item to `failed_entity_list`.
+        ///
+        /// To override the contents of this collection use [`set_failed_entity_list`](Self::set_failed_entity_list).
+        ///
+        /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
+        /// failed to properly configure with your Amazon Kendra experience.</p>
+        pub fn failed_entity_list(mut self, input: impl Into<crate::model::FailedEntity>) -> Self {
+            let mut v = self.failed_entity_list.unwrap_or_default();
+            v.push(input.into());
+            self.failed_entity_list = Some(v);
+            self
+        }
+        /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
+        /// failed to properly configure with your Amazon Kendra experience.</p>
+        pub fn set_failed_entity_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
+        ) -> Self {
+            self.failed_entity_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateEntitiesToExperienceOutput`](crate::output::AssociateEntitiesToExperienceOutput)
+        pub fn build(self) -> crate::output::AssociateEntitiesToExperienceOutput {
+            crate::output::AssociateEntitiesToExperienceOutput {
+                failed_entity_list: self.failed_entity_list,
+            }
+        }
+    }
+}
+impl AssociateEntitiesToExperienceOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateEntitiesToExperienceOutput`](crate::output::AssociateEntitiesToExperienceOutput)
+    pub fn builder() -> crate::output::associate_entities_to_experience_output::Builder {
+        crate::output::associate_entities_to_experience_output::Builder::default()
     }
 }

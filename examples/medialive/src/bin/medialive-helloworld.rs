@@ -4,7 +4,7 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
-use medialive::{Client, Error, Region, PKG_VERSION};
+use aws_sdk_medialive::{Client, Error, Region, PKG_VERSION};
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]

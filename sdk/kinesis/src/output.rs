@@ -2,6 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateStreamModeOutput {}
+impl std::fmt::Debug for UpdateStreamModeOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateStreamModeOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateStreamModeOutput`](crate::output::UpdateStreamModeOutput)
+pub mod update_stream_mode_output {
+    /// A builder for [`UpdateStreamModeOutput`](crate::output::UpdateStreamModeOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateStreamModeOutput`](crate::output::UpdateStreamModeOutput)
+        pub fn build(self) -> crate::output::UpdateStreamModeOutput {
+            crate::output::UpdateStreamModeOutput {}
+        }
+    }
+}
+impl UpdateStreamModeOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateStreamModeOutput`](crate::output::UpdateStreamModeOutput)
+    pub fn builder() -> crate::output::update_stream_mode_output::Builder {
+        crate::output::update_stream_mode_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateShardCountOutput {
     /// <p>The name of the stream.</p>
     pub stream_name: std::option::Option<std::string::String>,
@@ -277,11 +307,10 @@ pub struct PutRecordsOutput {
     /// <p>The number of unsuccessfully processed records in a <code>PutRecords</code>
     /// request.</p>
     pub failed_record_count: std::option::Option<i32>,
-    /// <p>An array of successfully and unsuccessfully processed record results, correlated
-    /// with the request by natural ordering. A record that is successfully added to a stream
-    /// includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record
-    /// that fails to be added to a stream includes <code>ErrorCode</code> and
-    /// <code>ErrorMessage</code> in the result.</p>
+    /// <p>An array of successfully and unsuccessfully processed record results. A record that is
+    /// successfully added to a stream includes <code>SequenceNumber</code> and
+    /// <code>ShardId</code> in the result. A record that fails to be added to a stream
+    /// includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
     pub records: std::option::Option<std::vec::Vec<crate::model::PutRecordsResultEntry>>,
     /// <p>The encryption type used on the records. This parameter can be one of the following
     /// values:</p>
@@ -293,7 +322,7 @@ pub struct PutRecordsOutput {
     /// <li>
     /// <p>
     /// <code>KMS</code>: Use server-side encryption on the records using a
-    /// customer-managed AWS KMS key.</p>
+    /// customer-managed Amazon Web Services KMS key.</p>
     /// </li>
     /// </ul>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
@@ -304,11 +333,10 @@ impl PutRecordsOutput {
     pub fn failed_record_count(&self) -> std::option::Option<i32> {
         self.failed_record_count
     }
-    /// <p>An array of successfully and unsuccessfully processed record results, correlated
-    /// with the request by natural ordering. A record that is successfully added to a stream
-    /// includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record
-    /// that fails to be added to a stream includes <code>ErrorCode</code> and
-    /// <code>ErrorMessage</code> in the result.</p>
+    /// <p>An array of successfully and unsuccessfully processed record results. A record that is
+    /// successfully added to a stream includes <code>SequenceNumber</code> and
+    /// <code>ShardId</code> in the result. A record that fails to be added to a stream
+    /// includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
     pub fn records(&self) -> std::option::Option<&[crate::model::PutRecordsResultEntry]> {
         self.records.as_deref()
     }
@@ -322,7 +350,7 @@ impl PutRecordsOutput {
     /// <li>
     /// <p>
     /// <code>KMS</code>: Use server-side encryption on the records using a
-    /// customer-managed AWS KMS key.</p>
+    /// customer-managed Amazon Web Services KMS key.</p>
     /// </li>
     /// </ul>
     pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
@@ -365,22 +393,20 @@ pub mod put_records_output {
         ///
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
-        /// <p>An array of successfully and unsuccessfully processed record results, correlated
-        /// with the request by natural ordering. A record that is successfully added to a stream
-        /// includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record
-        /// that fails to be added to a stream includes <code>ErrorCode</code> and
-        /// <code>ErrorMessage</code> in the result.</p>
+        /// <p>An array of successfully and unsuccessfully processed record results. A record that is
+        /// successfully added to a stream includes <code>SequenceNumber</code> and
+        /// <code>ShardId</code> in the result. A record that fails to be added to a stream
+        /// includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
         pub fn records(mut self, input: impl Into<crate::model::PutRecordsResultEntry>) -> Self {
             let mut v = self.records.unwrap_or_default();
             v.push(input.into());
             self.records = Some(v);
             self
         }
-        /// <p>An array of successfully and unsuccessfully processed record results, correlated
-        /// with the request by natural ordering. A record that is successfully added to a stream
-        /// includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record
-        /// that fails to be added to a stream includes <code>ErrorCode</code> and
-        /// <code>ErrorMessage</code> in the result.</p>
+        /// <p>An array of successfully and unsuccessfully processed record results. A record that is
+        /// successfully added to a stream includes <code>SequenceNumber</code> and
+        /// <code>ShardId</code> in the result. A record that fails to be added to a stream
+        /// includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
         pub fn set_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PutRecordsResultEntry>>,
@@ -398,7 +424,7 @@ pub mod put_records_output {
         /// <li>
         /// <p>
         /// <code>KMS</code>: Use server-side encryption on the records using a
-        /// customer-managed AWS KMS key.</p>
+        /// customer-managed Amazon Web Services KMS key.</p>
         /// </li>
         /// </ul>
         pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
@@ -415,7 +441,7 @@ pub mod put_records_output {
         /// <li>
         /// <p>
         /// <code>KMS</code>: Use server-side encryption on the records using a
-        /// customer-managed AWS KMS key.</p>
+        /// customer-managed Amazon Web Services KMS key.</p>
         /// </li>
         /// </ul>
         pub fn set_encryption_type(
@@ -448,12 +474,12 @@ impl PutRecordsOutput {
 pub struct PutRecordOutput {
     /// <p>The shard ID of the shard where the data record was placed.</p>
     pub shard_id: std::option::Option<std::string::String>,
-    /// <p>The sequence number identifier that was assigned to the put data record. The
-    /// sequence number for the record is unique across all records in the stream. A sequence
-    /// number is the identifier associated with every record put into the stream.</p>
+    /// <p>The sequence number identifier that was assigned to the put data record. The sequence
+    /// number for the record is unique across all records in the stream. A sequence number is
+    /// the identifier associated with every record put into the stream.</p>
     pub sequence_number: std::option::Option<std::string::String>,
-    /// <p>The encryption type to use on the record. This parameter can be one of the
-    /// following values:</p>
+    /// <p>The encryption type to use on the record. This parameter can be one of the following
+    /// values:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -462,7 +488,7 @@ pub struct PutRecordOutput {
     /// <li>
     /// <p>
     /// <code>KMS</code>: Use server-side encryption on the records in the stream
-    /// using a customer-managed AWS KMS key.</p>
+    /// using a customer-managed Amazon Web Services KMS key.</p>
     /// </li>
     /// </ul>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
@@ -472,14 +498,14 @@ impl PutRecordOutput {
     pub fn shard_id(&self) -> std::option::Option<&str> {
         self.shard_id.as_deref()
     }
-    /// <p>The sequence number identifier that was assigned to the put data record. The
-    /// sequence number for the record is unique across all records in the stream. A sequence
-    /// number is the identifier associated with every record put into the stream.</p>
+    /// <p>The sequence number identifier that was assigned to the put data record. The sequence
+    /// number for the record is unique across all records in the stream. A sequence number is
+    /// the identifier associated with every record put into the stream.</p>
     pub fn sequence_number(&self) -> std::option::Option<&str> {
         self.sequence_number.as_deref()
     }
-    /// <p>The encryption type to use on the record. This parameter can be one of the
-    /// following values:</p>
+    /// <p>The encryption type to use on the record. This parameter can be one of the following
+    /// values:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -488,7 +514,7 @@ impl PutRecordOutput {
     /// <li>
     /// <p>
     /// <code>KMS</code>: Use server-side encryption on the records in the stream
-    /// using a customer-managed AWS KMS key.</p>
+    /// using a customer-managed Amazon Web Services KMS key.</p>
     /// </li>
     /// </ul>
     pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
@@ -525,16 +551,16 @@ pub mod put_record_output {
             self.shard_id = input;
             self
         }
-        /// <p>The sequence number identifier that was assigned to the put data record. The
-        /// sequence number for the record is unique across all records in the stream. A sequence
-        /// number is the identifier associated with every record put into the stream.</p>
+        /// <p>The sequence number identifier that was assigned to the put data record. The sequence
+        /// number for the record is unique across all records in the stream. A sequence number is
+        /// the identifier associated with every record put into the stream.</p>
         pub fn sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.sequence_number = Some(input.into());
             self
         }
-        /// <p>The sequence number identifier that was assigned to the put data record. The
-        /// sequence number for the record is unique across all records in the stream. A sequence
-        /// number is the identifier associated with every record put into the stream.</p>
+        /// <p>The sequence number identifier that was assigned to the put data record. The sequence
+        /// number for the record is unique across all records in the stream. A sequence number is
+        /// the identifier associated with every record put into the stream.</p>
         pub fn set_sequence_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -542,8 +568,8 @@ pub mod put_record_output {
             self.sequence_number = input;
             self
         }
-        /// <p>The encryption type to use on the record. This parameter can be one of the
-        /// following values:</p>
+        /// <p>The encryption type to use on the record. This parameter can be one of the following
+        /// values:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -552,15 +578,15 @@ pub mod put_record_output {
         /// <li>
         /// <p>
         /// <code>KMS</code>: Use server-side encryption on the records in the stream
-        /// using a customer-managed AWS KMS key.</p>
+        /// using a customer-managed Amazon Web Services KMS key.</p>
         /// </li>
         /// </ul>
         pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
             self.encryption_type = Some(input);
             self
         }
-        /// <p>The encryption type to use on the record. This parameter can be one of the
-        /// following values:</p>
+        /// <p>The encryption type to use on the record. This parameter can be one of the following
+        /// values:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -569,7 +595,7 @@ pub mod put_record_output {
         /// <li>
         /// <p>
         /// <code>KMS</code>: Use server-side encryption on the records in the stream
-        /// using a customer-managed AWS KMS key.</p>
+        /// using a customer-managed Amazon Web Services KMS key.</p>
         /// </li>
         /// </ul>
         pub fn set_encryption_type(
@@ -634,8 +660,8 @@ pub struct ListTagsForStreamOutput {
     /// after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.
     /// </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>If set to <code>true</code>, more tags are available. To request additional tags,
-    /// set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
+    /// <p>If set to <code>true</code>, more tags are available. To request additional tags, set
+    /// <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
     pub has_more_tags: std::option::Option<bool>,
 }
 impl ListTagsForStreamOutput {
@@ -645,8 +671,8 @@ impl ListTagsForStreamOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>If set to <code>true</code>, more tags are available. To request additional tags,
-    /// set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
+    /// <p>If set to <code>true</code>, more tags are available. To request additional tags, set
+    /// <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
     pub fn has_more_tags(&self) -> std::option::Option<bool> {
         self.has_more_tags
     }
@@ -692,14 +718,14 @@ pub mod list_tags_for_stream_output {
             self.tags = input;
             self
         }
-        /// <p>If set to <code>true</code>, more tags are available. To request additional tags,
-        /// set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
+        /// <p>If set to <code>true</code>, more tags are available. To request additional tags, set
+        /// <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
         pub fn has_more_tags(mut self, input: bool) -> Self {
             self.has_more_tags = Some(input);
             self
         }
-        /// <p>If set to <code>true</code>, more tags are available. To request additional tags,
-        /// set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
+        /// <p>If set to <code>true</code>, more tags are available. To request additional tags, set
+        /// <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
         pub fn set_has_more_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.has_more_tags = input;
             self
@@ -724,15 +750,15 @@ impl ListTagsForStreamOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamsOutput {
-    /// <p>The names of the streams that are associated with the AWS account making the
-    /// <code>ListStreams</code> request.</p>
+    /// <p>The names of the streams that are associated with the Amazon Web Services account
+    /// making the <code>ListStreams</code> request.</p>
     pub stream_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If set to <code>true</code>, there are more streams available to list.</p>
     pub has_more_streams: std::option::Option<bool>,
 }
 impl ListStreamsOutput {
-    /// <p>The names of the streams that are associated with the AWS account making the
-    /// <code>ListStreams</code> request.</p>
+    /// <p>The names of the streams that are associated with the Amazon Web Services account
+    /// making the <code>ListStreams</code> request.</p>
     pub fn stream_names(&self) -> std::option::Option<&[std::string::String]> {
         self.stream_names.as_deref()
     }
@@ -763,16 +789,16 @@ pub mod list_streams_output {
         ///
         /// To override the contents of this collection use [`set_stream_names`](Self::set_stream_names).
         ///
-        /// <p>The names of the streams that are associated with the AWS account making the
-        /// <code>ListStreams</code> request.</p>
+        /// <p>The names of the streams that are associated with the Amazon Web Services account
+        /// making the <code>ListStreams</code> request.</p>
         pub fn stream_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stream_names.unwrap_or_default();
             v.push(input.into());
             self.stream_names = Some(v);
             self
         }
-        /// <p>The names of the streams that are associated with the AWS account making the
-        /// <code>ListStreams</code> request.</p>
+        /// <p>The names of the streams that are associated with the Amazon Web Services account
+        /// making the <code>ListStreams</code> request.</p>
         pub fn set_stream_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -953,8 +979,8 @@ pub struct ListShardsOutput {
     /// object also contains the starting and ending hash keys and the starting and ending
     /// sequence numbers for the shard.</p>
     pub shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
-    /// <p>When the number of shards in the data stream is greater than the default value for
-    /// the <code>MaxResults</code> parameter, or if you explicitly specify a value for
+    /// <p>When the number of shards in the data stream is greater than the default value for the
+    /// <code>MaxResults</code> parameter, or if you explicitly specify a value for
     /// <code>MaxResults</code> that is less than the number of shards in the data stream,
     /// the response includes a pagination token named <code>NextToken</code>. You can specify
     /// this <code>NextToken</code> value in a subsequent call to <code>ListShards</code> to
@@ -964,8 +990,7 @@ pub struct ListShardsOutput {
     /// <p>Tokens expire after 300 seconds. When you obtain a value for
     /// <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
     /// have 300 seconds to use that value. If you specify an expired token in a call to
-    /// <code>ListShards</code>, you get
-    /// <code>ExpiredNextTokenException</code>.</p>
+    /// <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
     /// </important>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -977,8 +1002,8 @@ impl ListShardsOutput {
     pub fn shards(&self) -> std::option::Option<&[crate::model::Shard]> {
         self.shards.as_deref()
     }
-    /// <p>When the number of shards in the data stream is greater than the default value for
-    /// the <code>MaxResults</code> parameter, or if you explicitly specify a value for
+    /// <p>When the number of shards in the data stream is greater than the default value for the
+    /// <code>MaxResults</code> parameter, or if you explicitly specify a value for
     /// <code>MaxResults</code> that is less than the number of shards in the data stream,
     /// the response includes a pagination token named <code>NextToken</code>. You can specify
     /// this <code>NextToken</code> value in a subsequent call to <code>ListShards</code> to
@@ -988,8 +1013,7 @@ impl ListShardsOutput {
     /// <p>Tokens expire after 300 seconds. When you obtain a value for
     /// <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
     /// have 300 seconds to use that value. If you specify an expired token in a call to
-    /// <code>ListShards</code>, you get
-    /// <code>ExpiredNextTokenException</code>.</p>
+    /// <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
     /// </important>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -1038,8 +1062,8 @@ pub mod list_shards_output {
             self.shards = input;
             self
         }
-        /// <p>When the number of shards in the data stream is greater than the default value for
-        /// the <code>MaxResults</code> parameter, or if you explicitly specify a value for
+        /// <p>When the number of shards in the data stream is greater than the default value for the
+        /// <code>MaxResults</code> parameter, or if you explicitly specify a value for
         /// <code>MaxResults</code> that is less than the number of shards in the data stream,
         /// the response includes a pagination token named <code>NextToken</code>. You can specify
         /// this <code>NextToken</code> value in a subsequent call to <code>ListShards</code> to
@@ -1049,15 +1073,14 @@ pub mod list_shards_output {
         /// <p>Tokens expire after 300 seconds. When you obtain a value for
         /// <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
         /// have 300 seconds to use that value. If you specify an expired token in a call to
-        /// <code>ListShards</code>, you get
-        /// <code>ExpiredNextTokenException</code>.</p>
+        /// <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
         /// </important>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When the number of shards in the data stream is greater than the default value for
-        /// the <code>MaxResults</code> parameter, or if you explicitly specify a value for
+        /// <p>When the number of shards in the data stream is greater than the default value for the
+        /// <code>MaxResults</code> parameter, or if you explicitly specify a value for
         /// <code>MaxResults</code> that is less than the number of shards in the data stream,
         /// the response includes a pagination token named <code>NextToken</code>. You can specify
         /// this <code>NextToken</code> value in a subsequent call to <code>ListShards</code> to
@@ -1067,8 +1090,7 @@ pub mod list_shards_output {
         /// <p>Tokens expire after 300 seconds. When you obtain a value for
         /// <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
         /// have 300 seconds to use that value. If you specify an expired token in a call to
-        /// <code>ListShards</code>, you get
-        /// <code>ExpiredNextTokenException</code>.</p>
+        /// <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
         /// </important>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -1191,16 +1213,17 @@ impl GetShardIteratorOutput {
 pub struct GetRecordsOutput {
     /// <p>The data records retrieved from the shard.</p>
     pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
-    /// <p>The next position in the shard from which to start sequentially reading data
-    /// records. If set to <code>null</code>, the shard has been closed and the requested
-    /// iterator does not return any more data. </p>
+    /// <p>The next position in the shard from which to start sequentially reading data records.
+    /// If set to <code>null</code>, the shard has been closed and the requested iterator does
+    /// not return any more data. </p>
     pub next_shard_iterator: std::option::Option<std::string::String>,
-    /// <p>The number of milliseconds the <a>GetRecords</a> response is from the
-    /// tip of the stream, indicating how far behind current time the consumer is. A value of
-    /// zero indicates that record processing is caught up, and there are no new records to
-    /// process at this moment.</p>
+    /// <p>The number of milliseconds the <a>GetRecords</a> response is from the tip
+    /// of the stream, indicating how far behind current time the consumer is. A value of zero
+    /// indicates that record processing is caught up, and there are no new records to process
+    /// at this moment.</p>
     pub millis_behind_latest: std::option::Option<i64>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The list of the current shard's child shards, returned in the <code>GetRecords</code>
+    /// API's response only when the end of the current shard is reached.</p>
     pub child_shards: std::option::Option<std::vec::Vec<crate::model::ChildShard>>,
 }
 impl GetRecordsOutput {
@@ -1208,20 +1231,21 @@ impl GetRecordsOutput {
     pub fn records(&self) -> std::option::Option<&[crate::model::Record]> {
         self.records.as_deref()
     }
-    /// <p>The next position in the shard from which to start sequentially reading data
-    /// records. If set to <code>null</code>, the shard has been closed and the requested
-    /// iterator does not return any more data. </p>
+    /// <p>The next position in the shard from which to start sequentially reading data records.
+    /// If set to <code>null</code>, the shard has been closed and the requested iterator does
+    /// not return any more data. </p>
     pub fn next_shard_iterator(&self) -> std::option::Option<&str> {
         self.next_shard_iterator.as_deref()
     }
-    /// <p>The number of milliseconds the <a>GetRecords</a> response is from the
-    /// tip of the stream, indicating how far behind current time the consumer is. A value of
-    /// zero indicates that record processing is caught up, and there are no new records to
-    /// process at this moment.</p>
+    /// <p>The number of milliseconds the <a>GetRecords</a> response is from the tip
+    /// of the stream, indicating how far behind current time the consumer is. A value of zero
+    /// indicates that record processing is caught up, and there are no new records to process
+    /// at this moment.</p>
     pub fn millis_behind_latest(&self) -> std::option::Option<i64> {
         self.millis_behind_latest
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The list of the current shard's child shards, returned in the <code>GetRecords</code>
+    /// API's response only when the end of the current shard is reached.</p>
     pub fn child_shards(&self) -> std::option::Option<&[crate::model::ChildShard]> {
         self.child_shards.as_deref()
     }
@@ -1267,16 +1291,16 @@ pub mod get_records_output {
             self.records = input;
             self
         }
-        /// <p>The next position in the shard from which to start sequentially reading data
-        /// records. If set to <code>null</code>, the shard has been closed and the requested
-        /// iterator does not return any more data. </p>
+        /// <p>The next position in the shard from which to start sequentially reading data records.
+        /// If set to <code>null</code>, the shard has been closed and the requested iterator does
+        /// not return any more data. </p>
         pub fn next_shard_iterator(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_shard_iterator = Some(input.into());
             self
         }
-        /// <p>The next position in the shard from which to start sequentially reading data
-        /// records. If set to <code>null</code>, the shard has been closed and the requested
-        /// iterator does not return any more data. </p>
+        /// <p>The next position in the shard from which to start sequentially reading data records.
+        /// If set to <code>null</code>, the shard has been closed and the requested iterator does
+        /// not return any more data. </p>
         pub fn set_next_shard_iterator(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1284,18 +1308,18 @@ pub mod get_records_output {
             self.next_shard_iterator = input;
             self
         }
-        /// <p>The number of milliseconds the <a>GetRecords</a> response is from the
-        /// tip of the stream, indicating how far behind current time the consumer is. A value of
-        /// zero indicates that record processing is caught up, and there are no new records to
-        /// process at this moment.</p>
+        /// <p>The number of milliseconds the <a>GetRecords</a> response is from the tip
+        /// of the stream, indicating how far behind current time the consumer is. A value of zero
+        /// indicates that record processing is caught up, and there are no new records to process
+        /// at this moment.</p>
         pub fn millis_behind_latest(mut self, input: i64) -> Self {
             self.millis_behind_latest = Some(input);
             self
         }
-        /// <p>The number of milliseconds the <a>GetRecords</a> response is from the
-        /// tip of the stream, indicating how far behind current time the consumer is. A value of
-        /// zero indicates that record processing is caught up, and there are no new records to
-        /// process at this moment.</p>
+        /// <p>The number of milliseconds the <a>GetRecords</a> response is from the tip
+        /// of the stream, indicating how far behind current time the consumer is. A value of zero
+        /// indicates that record processing is caught up, and there are no new records to process
+        /// at this moment.</p>
         pub fn set_millis_behind_latest(mut self, input: std::option::Option<i64>) -> Self {
             self.millis_behind_latest = input;
             self
@@ -1304,13 +1328,16 @@ pub mod get_records_output {
         ///
         /// To override the contents of this collection use [`set_child_shards`](Self::set_child_shards).
         ///
+        /// <p>The list of the current shard's child shards, returned in the <code>GetRecords</code>
+        /// API's response only when the end of the current shard is reached.</p>
         pub fn child_shards(mut self, input: impl Into<crate::model::ChildShard>) -> Self {
             let mut v = self.child_shards.unwrap_or_default();
             v.push(input.into());
             self.child_shards = Some(v);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The list of the current shard's child shards, returned in the <code>GetRecords</code>
+        /// API's response only when the end of the current shard is reached.</p>
         pub fn set_child_shards(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ChildShard>>,
@@ -1342,11 +1369,11 @@ impl GetRecordsOutput {
 pub struct EnableEnhancedMonitoringOutput {
     /// <p>The name of the Kinesis data stream.</p>
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>Represents the current state of the metrics that are in the enhanced state before
-    /// the operation.</p>
+    /// <p>Represents the current state of the metrics that are in the enhanced state before the
+    /// operation.</p>
     pub current_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
-    /// <p>Represents the list of all the metrics that would be in the enhanced state after
-    /// the operation.</p>
+    /// <p>Represents the list of all the metrics that would be in the enhanced state after the
+    /// operation.</p>
     pub desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
 }
 impl EnableEnhancedMonitoringOutput {
@@ -1354,13 +1381,13 @@ impl EnableEnhancedMonitoringOutput {
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>Represents the current state of the metrics that are in the enhanced state before
-    /// the operation.</p>
+    /// <p>Represents the current state of the metrics that are in the enhanced state before the
+    /// operation.</p>
     pub fn current_shard_level_metrics(&self) -> std::option::Option<&[crate::model::MetricsName]> {
         self.current_shard_level_metrics.as_deref()
     }
-    /// <p>Represents the list of all the metrics that would be in the enhanced state after
-    /// the operation.</p>
+    /// <p>Represents the list of all the metrics that would be in the enhanced state after the
+    /// operation.</p>
     pub fn desired_shard_level_metrics(&self) -> std::option::Option<&[crate::model::MetricsName]> {
         self.desired_shard_level_metrics.as_deref()
     }
@@ -1407,8 +1434,8 @@ pub mod enable_enhanced_monitoring_output {
         ///
         /// To override the contents of this collection use [`set_current_shard_level_metrics`](Self::set_current_shard_level_metrics).
         ///
-        /// <p>Represents the current state of the metrics that are in the enhanced state before
-        /// the operation.</p>
+        /// <p>Represents the current state of the metrics that are in the enhanced state before the
+        /// operation.</p>
         pub fn current_shard_level_metrics(
             mut self,
             input: impl Into<crate::model::MetricsName>,
@@ -1418,8 +1445,8 @@ pub mod enable_enhanced_monitoring_output {
             self.current_shard_level_metrics = Some(v);
             self
         }
-        /// <p>Represents the current state of the metrics that are in the enhanced state before
-        /// the operation.</p>
+        /// <p>Represents the current state of the metrics that are in the enhanced state before the
+        /// operation.</p>
         pub fn set_current_shard_level_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
@@ -1431,8 +1458,8 @@ pub mod enable_enhanced_monitoring_output {
         ///
         /// To override the contents of this collection use [`set_desired_shard_level_metrics`](Self::set_desired_shard_level_metrics).
         ///
-        /// <p>Represents the list of all the metrics that would be in the enhanced state after
-        /// the operation.</p>
+        /// <p>Represents the list of all the metrics that would be in the enhanced state after the
+        /// operation.</p>
         pub fn desired_shard_level_metrics(
             mut self,
             input: impl Into<crate::model::MetricsName>,
@@ -1442,8 +1469,8 @@ pub mod enable_enhanced_monitoring_output {
             self.desired_shard_level_metrics = Some(v);
             self
         }
-        /// <p>Represents the list of all the metrics that would be in the enhanced state after
-        /// the operation.</p>
+        /// <p>Represents the list of all the metrics that would be in the enhanced state after the
+        /// operation.</p>
         pub fn set_desired_shard_level_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
@@ -1474,11 +1501,11 @@ impl EnableEnhancedMonitoringOutput {
 pub struct DisableEnhancedMonitoringOutput {
     /// <p>The name of the Kinesis data stream.</p>
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>Represents the current state of the metrics that are in the enhanced state before
-    /// the operation.</p>
+    /// <p>Represents the current state of the metrics that are in the enhanced state before the
+    /// operation.</p>
     pub current_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
-    /// <p>Represents the list of all the metrics that would be in the enhanced state after
-    /// the operation.</p>
+    /// <p>Represents the list of all the metrics that would be in the enhanced state after the
+    /// operation.</p>
     pub desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
 }
 impl DisableEnhancedMonitoringOutput {
@@ -1486,13 +1513,13 @@ impl DisableEnhancedMonitoringOutput {
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>Represents the current state of the metrics that are in the enhanced state before
-    /// the operation.</p>
+    /// <p>Represents the current state of the metrics that are in the enhanced state before the
+    /// operation.</p>
     pub fn current_shard_level_metrics(&self) -> std::option::Option<&[crate::model::MetricsName]> {
         self.current_shard_level_metrics.as_deref()
     }
-    /// <p>Represents the list of all the metrics that would be in the enhanced state after
-    /// the operation.</p>
+    /// <p>Represents the list of all the metrics that would be in the enhanced state after the
+    /// operation.</p>
     pub fn desired_shard_level_metrics(&self) -> std::option::Option<&[crate::model::MetricsName]> {
         self.desired_shard_level_metrics.as_deref()
     }
@@ -1539,8 +1566,8 @@ pub mod disable_enhanced_monitoring_output {
         ///
         /// To override the contents of this collection use [`set_current_shard_level_metrics`](Self::set_current_shard_level_metrics).
         ///
-        /// <p>Represents the current state of the metrics that are in the enhanced state before
-        /// the operation.</p>
+        /// <p>Represents the current state of the metrics that are in the enhanced state before the
+        /// operation.</p>
         pub fn current_shard_level_metrics(
             mut self,
             input: impl Into<crate::model::MetricsName>,
@@ -1550,8 +1577,8 @@ pub mod disable_enhanced_monitoring_output {
             self.current_shard_level_metrics = Some(v);
             self
         }
-        /// <p>Represents the current state of the metrics that are in the enhanced state before
-        /// the operation.</p>
+        /// <p>Represents the current state of the metrics that are in the enhanced state before the
+        /// operation.</p>
         pub fn set_current_shard_level_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
@@ -1563,8 +1590,8 @@ pub mod disable_enhanced_monitoring_output {
         ///
         /// To override the contents of this collection use [`set_desired_shard_level_metrics`](Self::set_desired_shard_level_metrics).
         ///
-        /// <p>Represents the list of all the metrics that would be in the enhanced state after
-        /// the operation.</p>
+        /// <p>Represents the list of all the metrics that would be in the enhanced state after the
+        /// operation.</p>
         pub fn desired_shard_level_metrics(
             mut self,
             input: impl Into<crate::model::MetricsName>,
@@ -1574,8 +1601,8 @@ pub mod disable_enhanced_monitoring_output {
             self.desired_shard_level_metrics = Some(v);
             self
         }
-        /// <p>Represents the list of all the metrics that would be in the enhanced state after
-        /// the operation.</p>
+        /// <p>Represents the list of all the metrics that would be in the enhanced state after the
+        /// operation.</p>
         pub fn set_desired_shard_level_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
@@ -1731,14 +1758,14 @@ impl DescribeStreamConsumerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStreamOutput {
-    /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array
-    /// of shard objects that comprise the stream, and whether there are more shards
+    /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array of
+    /// shard objects that comprise the stream, and whether there are more shards
     /// available.</p>
     pub stream_description: std::option::Option<crate::model::StreamDescription>,
 }
 impl DescribeStreamOutput {
-    /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array
-    /// of shard objects that comprise the stream, and whether there are more shards
+    /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array of
+    /// shard objects that comprise the stream, and whether there are more shards
     /// available.</p>
     pub fn stream_description(&self) -> std::option::Option<&crate::model::StreamDescription> {
         self.stream_description.as_ref()
@@ -1760,15 +1787,15 @@ pub mod describe_stream_output {
         pub(crate) stream_description: std::option::Option<crate::model::StreamDescription>,
     }
     impl Builder {
-        /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array
-        /// of shard objects that comprise the stream, and whether there are more shards
+        /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array of
+        /// shard objects that comprise the stream, and whether there are more shards
         /// available.</p>
         pub fn stream_description(mut self, input: crate::model::StreamDescription) -> Self {
             self.stream_description = Some(input);
             self
         }
-        /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array
-        /// of shard objects that comprise the stream, and whether there are more shards
+        /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array of
+        /// shard objects that comprise the stream, and whether there are more shards
         /// available.</p>
         pub fn set_stream_description(
             mut self,
@@ -1800,6 +1827,10 @@ pub struct DescribeLimitsOutput {
     pub shard_limit: std::option::Option<i32>,
     /// <p>The number of open shards.</p>
     pub open_shard_count: std::option::Option<i32>,
+    /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
+    pub on_demand_stream_count: std::option::Option<i32>,
+    /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
+    pub on_demand_stream_count_limit: std::option::Option<i32>,
 }
 impl DescribeLimitsOutput {
     /// <p>The maximum number of shards.</p>
@@ -1810,12 +1841,25 @@ impl DescribeLimitsOutput {
     pub fn open_shard_count(&self) -> std::option::Option<i32> {
         self.open_shard_count
     }
+    /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
+    pub fn on_demand_stream_count(&self) -> std::option::Option<i32> {
+        self.on_demand_stream_count
+    }
+    /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
+    pub fn on_demand_stream_count_limit(&self) -> std::option::Option<i32> {
+        self.on_demand_stream_count_limit
+    }
 }
 impl std::fmt::Debug for DescribeLimitsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLimitsOutput");
         formatter.field("shard_limit", &self.shard_limit);
         formatter.field("open_shard_count", &self.open_shard_count);
+        formatter.field("on_demand_stream_count", &self.on_demand_stream_count);
+        formatter.field(
+            "on_demand_stream_count_limit",
+            &self.on_demand_stream_count_limit,
+        );
         formatter.finish()
     }
 }
@@ -1827,6 +1871,8 @@ pub mod describe_limits_output {
     pub struct Builder {
         pub(crate) shard_limit: std::option::Option<i32>,
         pub(crate) open_shard_count: std::option::Option<i32>,
+        pub(crate) on_demand_stream_count: std::option::Option<i32>,
+        pub(crate) on_demand_stream_count_limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The maximum number of shards.</p>
@@ -1849,11 +1895,33 @@ pub mod describe_limits_output {
             self.open_shard_count = input;
             self
         }
+        /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
+        pub fn on_demand_stream_count(mut self, input: i32) -> Self {
+            self.on_demand_stream_count = Some(input);
+            self
+        }
+        /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
+        pub fn set_on_demand_stream_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.on_demand_stream_count = input;
+            self
+        }
+        /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
+        pub fn on_demand_stream_count_limit(mut self, input: i32) -> Self {
+            self.on_demand_stream_count_limit = Some(input);
+            self
+        }
+        /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
+        pub fn set_on_demand_stream_count_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.on_demand_stream_count_limit = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeLimitsOutput`](crate::output::DescribeLimitsOutput)
         pub fn build(self) -> crate::output::DescribeLimitsOutput {
             crate::output::DescribeLimitsOutput {
                 shard_limit: self.shard_limit,
                 open_shard_count: self.open_shard_count,
+                on_demand_stream_count: self.on_demand_stream_count,
+                on_demand_stream_count_limit: self.on_demand_stream_count_limit,
             }
         }
     }

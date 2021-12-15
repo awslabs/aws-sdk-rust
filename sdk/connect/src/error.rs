@@ -1615,6 +1615,204 @@ impl std::error::Error for CreateContactFlowError {
     }
 }
 
+/// Error type for the `CreateContactFlowModule` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateContactFlowModuleError {
+    /// Kind of error that occurred.
+    pub kind: CreateContactFlowModuleErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateContactFlowModule` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateContactFlowModuleErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A resource with the specified name already exists.</p>
+    DuplicateResourceException(crate::error::DuplicateResourceException),
+    /// <p>An entity with the same name already exists.</p>
+    IdempotencyException(crate::error::IdempotencyException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The problems with the module. Please fix before trying again.</p>
+    InvalidContactFlowModuleException(crate::error::InvalidContactFlowModuleException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The allowed limit for the resource has been exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateContactFlowModuleError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateContactFlowModuleErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateContactFlowModuleErrorKind::DuplicateResourceException(_inner) => _inner.fmt(f),
+            CreateContactFlowModuleErrorKind::IdempotencyException(_inner) => _inner.fmt(f),
+            CreateContactFlowModuleErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            CreateContactFlowModuleErrorKind::InvalidContactFlowModuleException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateContactFlowModuleErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreateContactFlowModuleErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            CreateContactFlowModuleErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateContactFlowModuleErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateContactFlowModuleErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateContactFlowModuleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateContactFlowModuleError {
+    fn code(&self) -> Option<&str> {
+        CreateContactFlowModuleError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateContactFlowModuleError {
+    /// Creates a new `CreateContactFlowModuleError`.
+    pub fn new(kind: CreateContactFlowModuleErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateContactFlowModuleError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateContactFlowModuleErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateContactFlowModuleError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateContactFlowModuleErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateContactFlowModuleErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContactFlowModuleErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateContactFlowModuleErrorKind::DuplicateResourceException`.
+    pub fn is_duplicate_resource_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContactFlowModuleErrorKind::DuplicateResourceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateContactFlowModuleErrorKind::IdempotencyException`.
+    pub fn is_idempotency_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContactFlowModuleErrorKind::IdempotencyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateContactFlowModuleErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContactFlowModuleErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateContactFlowModuleErrorKind::InvalidContactFlowModuleException`.
+    pub fn is_invalid_contact_flow_module_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContactFlowModuleErrorKind::InvalidContactFlowModuleException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateContactFlowModuleErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContactFlowModuleErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateContactFlowModuleErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContactFlowModuleErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateContactFlowModuleErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContactFlowModuleErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateContactFlowModuleErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContactFlowModuleErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateContactFlowModuleErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContactFlowModuleErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for CreateContactFlowModuleError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateContactFlowModuleErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateContactFlowModuleErrorKind::DuplicateResourceException(_inner) => Some(_inner),
+            CreateContactFlowModuleErrorKind::IdempotencyException(_inner) => Some(_inner),
+            CreateContactFlowModuleErrorKind::InternalServiceException(_inner) => Some(_inner),
+            CreateContactFlowModuleErrorKind::InvalidContactFlowModuleException(_inner) => {
+                Some(_inner)
+            }
+            CreateContactFlowModuleErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateContactFlowModuleErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            CreateContactFlowModuleErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateContactFlowModuleErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateContactFlowModuleErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateContactFlowModuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateHoursOfOperation` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3142,6 +3340,306 @@ impl std::error::Error for CreateUserHierarchyGroupError {
     }
 }
 
+/// Error type for the `DeleteContactFlow` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteContactFlowError {
+    /// Kind of error that occurred.
+    pub kind: DeleteContactFlowErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteContactFlow` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteContactFlowErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteContactFlowError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteContactFlowErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteContactFlowErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DeleteContactFlowErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeleteContactFlowErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteContactFlowErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteContactFlowErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteContactFlowErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteContactFlowError {
+    fn code(&self) -> Option<&str> {
+        DeleteContactFlowError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteContactFlowError {
+    /// Creates a new `DeleteContactFlowError`.
+    pub fn new(kind: DeleteContactFlowErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteContactFlowError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteContactFlowErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteContactFlowError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteContactFlowErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteContactFlowErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContactFlowErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteContactFlowErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContactFlowErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteContactFlowErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContactFlowErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteContactFlowErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContactFlowErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteContactFlowErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContactFlowErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteContactFlowErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContactFlowErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteContactFlowError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteContactFlowErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteContactFlowErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DeleteContactFlowErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteContactFlowErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteContactFlowErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteContactFlowErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteContactFlowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteContactFlowModule` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteContactFlowModuleError {
+    /// Kind of error that occurred.
+    pub kind: DeleteContactFlowModuleErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteContactFlowModule` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteContactFlowModuleErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteContactFlowModuleError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteContactFlowModuleErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteContactFlowModuleErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DeleteContactFlowModuleErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeleteContactFlowModuleErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteContactFlowModuleErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteContactFlowModuleErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteContactFlowModuleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteContactFlowModuleError {
+    fn code(&self) -> Option<&str> {
+        DeleteContactFlowModuleError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteContactFlowModuleError {
+    /// Creates a new `DeleteContactFlowModuleError`.
+    pub fn new(kind: DeleteContactFlowModuleErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteContactFlowModuleError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteContactFlowModuleErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteContactFlowModuleError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteContactFlowModuleErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteContactFlowModuleErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContactFlowModuleErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteContactFlowModuleErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContactFlowModuleErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteContactFlowModuleErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContactFlowModuleErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteContactFlowModuleErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContactFlowModuleErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteContactFlowModuleErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContactFlowModuleErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteContactFlowModuleErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContactFlowModuleErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteContactFlowModuleError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteContactFlowModuleErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteContactFlowModuleErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DeleteContactFlowModuleErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteContactFlowModuleErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteContactFlowModuleErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteContactFlowModuleErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteContactFlowModuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteHoursOfOperation` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3684,7 +4182,7 @@ pub struct DeleteSecurityProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSecurityProfileErrorKind {
-    /// <p>You do not have sufficient access to perform this action.</p>
+    /// <p>You do not have sufficient permissions to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Request processing failed because of an error or failure with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -4658,6 +5156,156 @@ impl std::error::Error for DescribeContactFlowError {
             DescribeContactFlowErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeContactFlowErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeContactFlowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeContactFlowModule` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeContactFlowModuleError {
+    /// Kind of error that occurred.
+    pub kind: DescribeContactFlowModuleErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeContactFlowModule` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeContactFlowModuleErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeContactFlowModuleError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeContactFlowModuleErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeContactFlowModuleErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DescribeContactFlowModuleErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DescribeContactFlowModuleErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeContactFlowModuleErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeContactFlowModuleErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeContactFlowModuleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeContactFlowModuleError {
+    fn code(&self) -> Option<&str> {
+        DescribeContactFlowModuleError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeContactFlowModuleError {
+    /// Creates a new `DescribeContactFlowModuleError`.
+    pub fn new(kind: DescribeContactFlowModuleErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeContactFlowModuleError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeContactFlowModuleErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeContactFlowModuleError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeContactFlowModuleErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeContactFlowModuleErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeContactFlowModuleErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeContactFlowModuleErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeContactFlowModuleErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeContactFlowModuleErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeContactFlowModuleErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeContactFlowModuleErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeContactFlowModuleErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeContactFlowModuleErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeContactFlowModuleErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeContactFlowModuleErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeContactFlowModuleErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeContactFlowModuleError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeContactFlowModuleErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeContactFlowModuleErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DescribeContactFlowModuleErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DescribeContactFlowModuleErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeContactFlowModuleErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeContactFlowModuleErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeContactFlowModuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -8288,6 +8936,156 @@ impl std::error::Error for ListBotsError {
             ListBotsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListBotsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListBotsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListContactFlowModules` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListContactFlowModulesError {
+    /// Kind of error that occurred.
+    pub kind: ListContactFlowModulesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListContactFlowModules` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListContactFlowModulesErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListContactFlowModulesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListContactFlowModulesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListContactFlowModulesErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ListContactFlowModulesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListContactFlowModulesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListContactFlowModulesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListContactFlowModulesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListContactFlowModulesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListContactFlowModulesError {
+    fn code(&self) -> Option<&str> {
+        ListContactFlowModulesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListContactFlowModulesError {
+    /// Creates a new `ListContactFlowModulesError`.
+    pub fn new(kind: ListContactFlowModulesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListContactFlowModulesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListContactFlowModulesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListContactFlowModulesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListContactFlowModulesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListContactFlowModulesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContactFlowModulesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListContactFlowModulesErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContactFlowModulesErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListContactFlowModulesErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContactFlowModulesErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListContactFlowModulesErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContactFlowModulesErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListContactFlowModulesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContactFlowModulesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListContactFlowModulesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContactFlowModulesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for ListContactFlowModulesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListContactFlowModulesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListContactFlowModulesErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ListContactFlowModulesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListContactFlowModulesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListContactFlowModulesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListContactFlowModulesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListContactFlowModulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -13600,6 +14398,511 @@ impl std::error::Error for UpdateContactFlowContentError {
     }
 }
 
+/// Error type for the `UpdateContactFlowMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateContactFlowMetadataError {
+    /// Kind of error that occurred.
+    pub kind: UpdateContactFlowMetadataErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateContactFlowMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateContactFlowMetadataErrorKind {
+    /// <p>A resource with the specified name already exists.</p>
+    DuplicateResourceException(crate::error::DuplicateResourceException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateContactFlowMetadataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateContactFlowMetadataErrorKind::DuplicateResourceException(_inner) => _inner.fmt(f),
+            UpdateContactFlowMetadataErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            UpdateContactFlowMetadataErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateContactFlowMetadataErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            UpdateContactFlowMetadataErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateContactFlowMetadataErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateContactFlowMetadataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateContactFlowMetadataError {
+    fn code(&self) -> Option<&str> {
+        UpdateContactFlowMetadataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateContactFlowMetadataError {
+    /// Creates a new `UpdateContactFlowMetadataError`.
+    pub fn new(kind: UpdateContactFlowMetadataErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateContactFlowMetadataError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateContactFlowMetadataErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateContactFlowMetadataError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateContactFlowMetadataErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowMetadataErrorKind::DuplicateResourceException`.
+    pub fn is_duplicate_resource_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowMetadataErrorKind::DuplicateResourceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowMetadataErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowMetadataErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowMetadataErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowMetadataErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowMetadataErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowMetadataErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowMetadataErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowMetadataErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowMetadataErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowMetadataErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateContactFlowMetadataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateContactFlowMetadataErrorKind::DuplicateResourceException(_inner) => Some(_inner),
+            UpdateContactFlowMetadataErrorKind::InternalServiceException(_inner) => Some(_inner),
+            UpdateContactFlowMetadataErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateContactFlowMetadataErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            UpdateContactFlowMetadataErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateContactFlowMetadataErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateContactFlowMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateContactFlowModuleContent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateContactFlowModuleContentError {
+    /// Kind of error that occurred.
+    pub kind: UpdateContactFlowModuleContentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateContactFlowModuleContent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateContactFlowModuleContentErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The problems with the module. Please fix before trying again.</p>
+    InvalidContactFlowModuleException(crate::error::InvalidContactFlowModuleException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateContactFlowModuleContentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateContactFlowModuleContentErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateContactFlowModuleContentErrorKind::InternalServiceException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateContactFlowModuleContentErrorKind::InvalidContactFlowModuleException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateContactFlowModuleContentErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateContactFlowModuleContentErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateContactFlowModuleContentErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateContactFlowModuleContentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateContactFlowModuleContentError {
+    fn code(&self) -> Option<&str> {
+        UpdateContactFlowModuleContentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateContactFlowModuleContentError {
+    /// Creates a new `UpdateContactFlowModuleContentError`.
+    pub fn new(
+        kind: UpdateContactFlowModuleContentErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateContactFlowModuleContentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateContactFlowModuleContentErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateContactFlowModuleContentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateContactFlowModuleContentErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowModuleContentErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowModuleContentErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowModuleContentErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowModuleContentErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowModuleContentErrorKind::InvalidContactFlowModuleException`.
+    pub fn is_invalid_contact_flow_module_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowModuleContentErrorKind::InvalidContactFlowModuleException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowModuleContentErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowModuleContentErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowModuleContentErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowModuleContentErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowModuleContentErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowModuleContentErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateContactFlowModuleContentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateContactFlowModuleContentErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateContactFlowModuleContentErrorKind::InternalServiceException(_inner) => {
+                Some(_inner)
+            }
+            UpdateContactFlowModuleContentErrorKind::InvalidContactFlowModuleException(_inner) => {
+                Some(_inner)
+            }
+            UpdateContactFlowModuleContentErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            UpdateContactFlowModuleContentErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateContactFlowModuleContentErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateContactFlowModuleContentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateContactFlowModuleMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateContactFlowModuleMetadataError {
+    /// Kind of error that occurred.
+    pub kind: UpdateContactFlowModuleMetadataErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateContactFlowModuleMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateContactFlowModuleMetadataErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A resource with the specified name already exists.</p>
+    DuplicateResourceException(crate::error::DuplicateResourceException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateContactFlowModuleMetadataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateContactFlowModuleMetadataErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateContactFlowModuleMetadataErrorKind::DuplicateResourceException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateContactFlowModuleMetadataErrorKind::InternalServiceException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateContactFlowModuleMetadataErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateContactFlowModuleMetadataErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateContactFlowModuleMetadataErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateContactFlowModuleMetadataErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateContactFlowModuleMetadataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateContactFlowModuleMetadataError {
+    fn code(&self) -> Option<&str> {
+        UpdateContactFlowModuleMetadataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateContactFlowModuleMetadataError {
+    /// Creates a new `UpdateContactFlowModuleMetadataError`.
+    pub fn new(
+        kind: UpdateContactFlowModuleMetadataErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateContactFlowModuleMetadataError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateContactFlowModuleMetadataErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateContactFlowModuleMetadataError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateContactFlowModuleMetadataErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowModuleMetadataErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowModuleMetadataErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowModuleMetadataErrorKind::DuplicateResourceException`.
+    pub fn is_duplicate_resource_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowModuleMetadataErrorKind::DuplicateResourceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowModuleMetadataErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowModuleMetadataErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowModuleMetadataErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowModuleMetadataErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowModuleMetadataErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowModuleMetadataErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowModuleMetadataErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowModuleMetadataErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContactFlowModuleMetadataErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactFlowModuleMetadataErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateContactFlowModuleMetadataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateContactFlowModuleMetadataErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateContactFlowModuleMetadataErrorKind::DuplicateResourceException(_inner) => {
+                Some(_inner)
+            }
+            UpdateContactFlowModuleMetadataErrorKind::InternalServiceException(_inner) => {
+                Some(_inner)
+            }
+            UpdateContactFlowModuleMetadataErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            UpdateContactFlowModuleMetadataErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            UpdateContactFlowModuleMetadataErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateContactFlowModuleMetadataErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateContactFlowModuleMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `UpdateContactFlowName` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -17660,6 +18963,163 @@ impl LimitExceededException {
     }
 }
 
+/// <p>You do not have sufficient permissions to perform this action.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccessDeniedException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccessDeniedException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl AccessDeniedException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccessDeniedException")?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccessDeniedException {}
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException)
+pub mod access_denied_exception {
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException)
+        pub fn build(self) -> crate::error::AccessDeniedException {
+            crate::error::AccessDeniedException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException)
+    pub fn builder() -> crate::error::access_denied_exception::Builder {
+        crate::error::access_denied_exception::Builder::default()
+    }
+}
+
+/// <p>The problems with the module. Please fix before trying again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidContactFlowModuleException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub problems: std::option::Option<std::vec::Vec<crate::model::ProblemDetail>>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl InvalidContactFlowModuleException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn problems(&self) -> std::option::Option<&[crate::model::ProblemDetail]> {
+        self.problems.as_deref()
+    }
+}
+impl std::fmt::Debug for InvalidContactFlowModuleException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidContactFlowModuleException");
+        formatter.field("problems", &self.problems);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidContactFlowModuleException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidContactFlowModuleException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidContactFlowModuleException")?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidContactFlowModuleException {}
+/// See [`InvalidContactFlowModuleException`](crate::error::InvalidContactFlowModuleException)
+pub mod invalid_contact_flow_module_exception {
+    /// A builder for [`InvalidContactFlowModuleException`](crate::error::InvalidContactFlowModuleException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) problems: std::option::Option<std::vec::Vec<crate::model::ProblemDetail>>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `problems`.
+        ///
+        /// To override the contents of this collection use [`set_problems`](Self::set_problems).
+        ///
+        pub fn problems(mut self, input: impl Into<crate::model::ProblemDetail>) -> Self {
+            let mut v = self.problems.unwrap_or_default();
+            v.push(input.into());
+            self.problems = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_problems(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ProblemDetail>>,
+        ) -> Self {
+            self.problems = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidContactFlowModuleException`](crate::error::InvalidContactFlowModuleException)
+        pub fn build(self) -> crate::error::InvalidContactFlowModuleException {
+            crate::error::InvalidContactFlowModuleException {
+                problems: self.problems,
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidContactFlowModuleException {
+    /// Creates a new builder-style object to manufacture [`InvalidContactFlowModuleException`](crate::error::InvalidContactFlowModuleException)
+    pub fn builder() -> crate::error::invalid_contact_flow_module_exception::Builder {
+        crate::error::invalid_contact_flow_module_exception::Builder::default()
+    }
+}
+
 /// <p>The contact flow is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -17692,8 +19152,8 @@ impl InvalidContactFlowException {
 impl std::fmt::Display for InvalidContactFlowException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidContactFlowException")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -17777,8 +19237,8 @@ impl ContactNotFoundException {
 impl std::fmt::Display for ContactNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ContactNotFoundException")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -17841,8 +19301,8 @@ impl ServiceQuotaExceededException {
 impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -17905,8 +19365,8 @@ impl OutboundContactNotPermittedException {
 impl std::fmt::Display for OutboundContactNotPermittedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OutboundContactNotPermittedException")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
@@ -17969,8 +19429,8 @@ impl DestinationNotAllowedException {
 impl std::fmt::Display for DestinationNotAllowedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DestinationNotAllowedException")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
@@ -18033,8 +19493,8 @@ impl UserNotFoundException {
 impl std::fmt::Display for UserNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserNotFoundException")?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
@@ -18097,8 +19557,8 @@ impl ContactFlowNotPublishedException {
 impl std::fmt::Display for ContactFlowNotPublishedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ContactFlowNotPublishedException")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -18138,39 +19598,39 @@ impl ContactFlowNotPublishedException {
     }
 }
 
-/// <p>You do not have sufficient access to perform this action.</p>
+/// <p>An entity with the same name already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AccessDeniedException {
+pub struct IdempotencyException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AccessDeniedException {
+impl std::fmt::Debug for IdempotencyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
+        let mut formatter = f.debug_struct("IdempotencyException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl AccessDeniedException {
+impl IdempotencyException {
     /// Returns the error message.
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for AccessDeniedException {
+impl std::fmt::Display for IdempotencyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AccessDeniedException")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        write!(f, "IdempotencyException")?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for AccessDeniedException {}
-/// See [`AccessDeniedException`](crate::error::AccessDeniedException)
-pub mod access_denied_exception {
-    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
+impl std::error::Error for IdempotencyException {}
+/// See [`IdempotencyException`](crate::error::IdempotencyException)
+pub mod idempotency_exception {
+    /// A builder for [`IdempotencyException`](crate::error::IdempotencyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -18187,18 +19647,18 @@ pub mod access_denied_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException)
-        pub fn build(self) -> crate::error::AccessDeniedException {
-            crate::error::AccessDeniedException {
+        /// Consumes the builder and constructs a [`IdempotencyException`](crate::error::IdempotencyException)
+        pub fn build(self) -> crate::error::IdempotencyException {
+            crate::error::IdempotencyException {
                 message: self.message,
             }
         }
     }
 }
-impl AccessDeniedException {
-    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException)
-    pub fn builder() -> crate::error::access_denied_exception::Builder {
-        crate::error::access_denied_exception::Builder::default()
+impl IdempotencyException {
+    /// Creates a new builder-style object to manufacture [`IdempotencyException`](crate::error::IdempotencyException)
+    pub fn builder() -> crate::error::idempotency_exception::Builder {
+        crate::error::idempotency_exception::Builder::default()
     }
 }
 
@@ -18225,8 +19685,8 @@ impl ResourceConflictException {
 impl std::fmt::Display for ResourceConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceConflictException")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }

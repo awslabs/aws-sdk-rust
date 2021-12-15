@@ -203,6 +203,48 @@ pub fn deser_structure_crate_error_resource_not_found_exception_json_err(
     Ok(builder)
 }
 
+pub fn deser_operation_crate_operation_get_endpoint(
+    value: &[u8],
+    mut builder: crate::output::get_endpoint_output::Builder,
+) -> Result<crate::output::get_endpoint_output::Builder, aws_smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "endpoint" => {
+                        builder = builder.set_endpoint(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_crate_operation_get_suite_definition(
     value: &[u8],
     mut builder: crate::output::get_suite_definition_output::Builder,
@@ -954,6 +996,13 @@ where
                             "selectedTestList" => {
                                 builder = builder.set_selected_test_list(
                                     crate::json_deser::deser_list_com_amazonaws_iotdeviceadvisor_selected_test_list(tokens)?
+                                );
+                            }
+                            "parallelRun" => {
+                                builder = builder.set_parallel_run(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -48,10 +48,12 @@ pub enum Error {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight
     /// without the required pricing plan on your Amazon Web Services account. Before you can use embedding
-    /// for anonymous users, a Amazon QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You
+    /// for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You
     /// can do this on the <b>Manage Amazon QuickSight</b> page. </p>
     /// <p>After capacity pricing is added, you can use the
-    /// <a>GetDashboardEmbedUrl</a> API operation with the
+    /// <code>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+    /// </code> API operation with the
     /// <code>--identity-type ANONYMOUS</code> option.</p>
     UnsupportedPricingPlanException(crate::error::UnsupportedPricingPlanException),
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
@@ -129,6 +131,7 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateAccountCustomizationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::CreateAccountCustomizationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
                 crate::error::CreateAccountCustomizationErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
                 crate::error::CreateAccountCustomizationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::CreateAccountCustomizationErrorKind::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
@@ -718,6 +721,7 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteAccountCustomizationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::DeleteAccountCustomizationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
                 crate::error::DeleteAccountCustomizationErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
                 crate::error::DeleteAccountCustomizationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DeleteAccountCustomizationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -3079,6 +3083,7 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::UpdateAccountCustomizationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::UpdateAccountCustomizationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
                 crate::error::UpdateAccountCustomizationErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
                 crate::error::UpdateAccountCustomizationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::UpdateAccountCustomizationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),

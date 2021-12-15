@@ -50,7 +50,7 @@ pub enum Error {
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
-    /// PNG or JPEG format. Documents for asynchronous operations can also be in PDF format.</p>
+    /// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -154,6 +154,46 @@ where
                     Error::UnsupportedDocumentException(inner)
                 }
                 crate::error::AnalyzeExpenseErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AnalyzeIDError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::AnalyzeIDError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::AnalyzeIDErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::AnalyzeIDErrorKind::BadDocumentException(inner) => {
+                    Error::BadDocumentException(inner)
+                }
+                crate::error::AnalyzeIDErrorKind::DocumentTooLargeException(inner) => {
+                    Error::DocumentTooLargeException(inner)
+                }
+                crate::error::AnalyzeIDErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::AnalyzeIDErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::AnalyzeIDErrorKind::InvalidS3ObjectException(inner) => {
+                    Error::InvalidS3ObjectException(inner)
+                }
+                crate::error::AnalyzeIDErrorKind::ProvisionedThroughputExceededException(inner) => {
+                    Error::ProvisionedThroughputExceededException(inner)
+                }
+                crate::error::AnalyzeIDErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::AnalyzeIDErrorKind::UnsupportedDocumentException(inner) => {
+                    Error::UnsupportedDocumentException(inner)
+                }
+                crate::error::AnalyzeIDErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

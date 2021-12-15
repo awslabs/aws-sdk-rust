@@ -15,7 +15,7 @@
 //!
 //! # Examples
 //! Load default SDK configuration:
-//! ```rust
+//! ```no_run
 //! # mod aws_sdk_dynamodb {
 //! #   pub struct Client;
 //! #   impl Client {
@@ -29,7 +29,7 @@
 //! ```
 //!
 //! Load SDK configuration with a region override:
-//! ```rust
+//! ```no_run
 //! use aws_config::meta::region::RegionProviderChain;
 //! # mod aws_sdk_dynamodb {
 //! #   pub struct Client;
@@ -99,7 +99,7 @@ pub use aws_types::config::Config;
 /// Create an environment loader for AWS Configuration
 ///
 /// # Examples
-/// ```rust
+/// ```no_run
 /// # async fn create_config() {
 /// use aws_types::region::Region;
 /// let config = aws_config::from_env().region("us-east-1").load().await;
@@ -156,7 +156,7 @@ mod loader {
         /// Override the region used to build [`Config`](aws_types::config::Config).
         ///
         /// # Examples
-        /// ```rust
+        /// ```no_run
         /// # async fn create_config() {
         /// use aws_types::region::Region;
         /// let config = aws_config::from_env()
@@ -172,7 +172,7 @@ mod loader {
         /// Override the retry_config used to build [`Config`](aws_types::config::Config).
         ///
         /// # Examples
-        /// ```rust
+        /// ```no_run
         /// # use aws_smithy_types::retry::RetryConfig;
         /// # async fn create_config() {
         ///     let config = aws_config::from_env()
@@ -190,7 +190,7 @@ mod loader {
         /// provider chain are configured separately.
         ///
         /// # Examples
-        /// ```rust
+        /// ```no_run
         /// # use std::time::Duration;
         /// # use aws_smithy_types::timeout::TimeoutConfig;
         /// # async fn create_config() {
@@ -219,7 +219,7 @@ mod loader {
         /// # Examples
         ///
         /// Override the credentials provider but load the default value for region:
-        /// ```rust
+        /// ```no_run
         /// # use aws_types::Credentials;
         /// # fn create_my_credential_provider() -> Credentials {
         /// #     Credentials::new("example", "example", None, None, "example")

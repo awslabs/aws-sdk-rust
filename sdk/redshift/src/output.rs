@@ -2944,6 +2944,116 @@ impl GetReservedNodeExchangeOfferingsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetReservedNodeExchangeConfigurationOptionsOutput {
+    /// <p>A pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request.</p>
+    pub marker: std::option::Option<std::string::String>,
+    /// <p>the configuration options for the reserved-node
+    /// exchange. These options include information about the source reserved node and target reserved
+    /// node. Details include the node type, the price, the node count, and the offering
+    /// type.</p>
+    pub reserved_node_configuration_option_list:
+        std::option::Option<std::vec::Vec<crate::model::ReservedNodeConfigurationOption>>,
+}
+impl GetReservedNodeExchangeConfigurationOptionsOutput {
+    /// <p>A pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>the configuration options for the reserved-node
+    /// exchange. These options include information about the source reserved node and target reserved
+    /// node. Details include the node type, the price, the node count, and the offering
+    /// type.</p>
+    pub fn reserved_node_configuration_option_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservedNodeConfigurationOption]> {
+        self.reserved_node_configuration_option_list.as_deref()
+    }
+}
+impl std::fmt::Debug for GetReservedNodeExchangeConfigurationOptionsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetReservedNodeExchangeConfigurationOptionsOutput");
+        formatter.field("marker", &self.marker);
+        formatter.field(
+            "reserved_node_configuration_option_list",
+            &self.reserved_node_configuration_option_list,
+        );
+        formatter.finish()
+    }
+}
+/// See [`GetReservedNodeExchangeConfigurationOptionsOutput`](crate::output::GetReservedNodeExchangeConfigurationOptionsOutput)
+pub mod get_reserved_node_exchange_configuration_options_output {
+    /// A builder for [`GetReservedNodeExchangeConfigurationOptionsOutput`](crate::output::GetReservedNodeExchangeConfigurationOptionsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) marker: std::option::Option<std::string::String>,
+        pub(crate) reserved_node_configuration_option_list:
+            std::option::Option<std::vec::Vec<crate::model::ReservedNodeConfigurationOption>>,
+    }
+    impl Builder {
+        /// <p>A pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        /// <p>A pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// Appends an item to `reserved_node_configuration_option_list`.
+        ///
+        /// To override the contents of this collection use [`set_reserved_node_configuration_option_list`](Self::set_reserved_node_configuration_option_list).
+        ///
+        /// <p>the configuration options for the reserved-node
+        /// exchange. These options include information about the source reserved node and target reserved
+        /// node. Details include the node type, the price, the node count, and the offering
+        /// type.</p>
+        pub fn reserved_node_configuration_option_list(
+            mut self,
+            input: impl Into<crate::model::ReservedNodeConfigurationOption>,
+        ) -> Self {
+            let mut v = self
+                .reserved_node_configuration_option_list
+                .unwrap_or_default();
+            v.push(input.into());
+            self.reserved_node_configuration_option_list = Some(v);
+            self
+        }
+        /// <p>the configuration options for the reserved-node
+        /// exchange. These options include information about the source reserved node and target reserved
+        /// node. Details include the node type, the price, the node count, and the offering
+        /// type.</p>
+        pub fn set_reserved_node_configuration_option_list(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::ReservedNodeConfigurationOption>,
+            >,
+        ) -> Self {
+            self.reserved_node_configuration_option_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetReservedNodeExchangeConfigurationOptionsOutput`](crate::output::GetReservedNodeExchangeConfigurationOptionsOutput)
+        pub fn build(self) -> crate::output::GetReservedNodeExchangeConfigurationOptionsOutput {
+            crate::output::GetReservedNodeExchangeConfigurationOptionsOutput {
+                marker: self.marker,
+                reserved_node_configuration_option_list: self
+                    .reserved_node_configuration_option_list,
+            }
+        }
+    }
+}
+impl GetReservedNodeExchangeConfigurationOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`GetReservedNodeExchangeConfigurationOptionsOutput`](crate::output::GetReservedNodeExchangeConfigurationOptionsOutput)
+    pub fn builder(
+    ) -> crate::output::get_reserved_node_exchange_configuration_options_output::Builder {
+        crate::output::get_reserved_node_exchange_configuration_options_output::Builder::default()
+    }
+}
+
 /// <p>Temporary credentials with authorization to log on to an Amazon Redshift database.
 /// </p>
 #[non_exhaustive]
@@ -5059,6 +5169,104 @@ impl DescribeReservedNodeOfferingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeReservedNodeExchangeStatusOutput {
+    /// <p>The details of the reserved-node exchange request, including the status, request
+    /// time, source reserved-node identifier, and additional details.</p>
+    pub reserved_node_exchange_status_details:
+        std::option::Option<std::vec::Vec<crate::model::ReservedNodeExchangeStatus>>,
+    /// <p>A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.</p>
+    pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeReservedNodeExchangeStatusOutput {
+    /// <p>The details of the reserved-node exchange request, including the status, request
+    /// time, source reserved-node identifier, and additional details.</p>
+    pub fn reserved_node_exchange_status_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservedNodeExchangeStatus]> {
+        self.reserved_node_exchange_status_details.as_deref()
+    }
+    /// <p>A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeReservedNodeExchangeStatusOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeReservedNodeExchangeStatusOutput");
+        formatter.field(
+            "reserved_node_exchange_status_details",
+            &self.reserved_node_exchange_status_details,
+        );
+        formatter.field("marker", &self.marker);
+        formatter.finish()
+    }
+}
+/// See [`DescribeReservedNodeExchangeStatusOutput`](crate::output::DescribeReservedNodeExchangeStatusOutput)
+pub mod describe_reserved_node_exchange_status_output {
+    /// A builder for [`DescribeReservedNodeExchangeStatusOutput`](crate::output::DescribeReservedNodeExchangeStatusOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) reserved_node_exchange_status_details:
+            std::option::Option<std::vec::Vec<crate::model::ReservedNodeExchangeStatus>>,
+        pub(crate) marker: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `reserved_node_exchange_status_details`.
+        ///
+        /// To override the contents of this collection use [`set_reserved_node_exchange_status_details`](Self::set_reserved_node_exchange_status_details).
+        ///
+        /// <p>The details of the reserved-node exchange request, including the status, request
+        /// time, source reserved-node identifier, and additional details.</p>
+        pub fn reserved_node_exchange_status_details(
+            mut self,
+            input: impl Into<crate::model::ReservedNodeExchangeStatus>,
+        ) -> Self {
+            let mut v = self
+                .reserved_node_exchange_status_details
+                .unwrap_or_default();
+            v.push(input.into());
+            self.reserved_node_exchange_status_details = Some(v);
+            self
+        }
+        /// <p>The details of the reserved-node exchange request, including the status, request
+        /// time, source reserved-node identifier, and additional details.</p>
+        pub fn set_reserved_node_exchange_status_details(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ReservedNodeExchangeStatus>>,
+        ) -> Self {
+            self.reserved_node_exchange_status_details = input;
+            self
+        }
+        /// <p>A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        /// <p>A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeReservedNodeExchangeStatusOutput`](crate::output::DescribeReservedNodeExchangeStatusOutput)
+        pub fn build(self) -> crate::output::DescribeReservedNodeExchangeStatusOutput {
+            crate::output::DescribeReservedNodeExchangeStatusOutput {
+                reserved_node_exchange_status_details: self.reserved_node_exchange_status_details,
+                marker: self.marker,
+            }
+        }
+    }
+}
+impl DescribeReservedNodeExchangeStatusOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeReservedNodeExchangeStatusOutput`](crate::output::DescribeReservedNodeExchangeStatusOutput)
+    pub fn builder() -> crate::output::describe_reserved_node_exchange_status_output::Builder {
+        crate::output::describe_reserved_node_exchange_status_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePartnersOutput {
     /// <p>A list of partner integrations.</p>
     pub partner_integration_info_list:
@@ -6277,7 +6485,7 @@ pub struct DescribeDataSharesForProducerOutput {
     pub data_shares: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -6290,7 +6498,7 @@ impl DescribeDataSharesForProducerOutput {
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -6337,7 +6545,7 @@ pub mod describe_data_shares_for_producer_output {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -6347,7 +6555,7 @@ pub mod describe_data_shares_for_producer_output {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -6379,7 +6587,7 @@ pub struct DescribeDataSharesForConsumerOutput {
     pub data_shares: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -6392,7 +6600,7 @@ impl DescribeDataSharesForConsumerOutput {
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -6439,7 +6647,7 @@ pub mod describe_data_shares_for_consumer_output {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -6449,7 +6657,7 @@ pub mod describe_data_shares_for_consumer_output {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -6479,7 +6687,7 @@ impl DescribeDataSharesForConsumerOutput {
 pub struct DescribeDataSharesOutput {
     /// <p>The results returned from describing datashares.</p>
     pub data_shares: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
-    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDataSharesOutput {
@@ -6487,7 +6695,7 @@ impl DescribeDataSharesOutput {
     pub fn data_shares(&self) -> std::option::Option<&[crate::model::DataShare]> {
         self.data_shares.as_deref()
     }
-    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -6529,12 +6737,12 @@ pub mod describe_data_shares_output {
             self.data_shares = input;
             self
         }
-        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self

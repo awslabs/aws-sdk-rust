@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_braket::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -83,12 +83,26 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
+    /// Constructs a fluent builder for the `CancelJob` operation.
+    ///
+    /// See [`CancelJob`](crate::client::fluent_builders::CancelJob) for more information about the
+    /// operation and its arguments.
+    pub fn cancel_job(&self) -> fluent_builders::CancelJob<C, M, R> {
+        fluent_builders::CancelJob::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CancelQuantumTask` operation.
     ///
     /// See [`CancelQuantumTask`](crate::client::fluent_builders::CancelQuantumTask) for more information about the
     /// operation and its arguments.
     pub fn cancel_quantum_task(&self) -> fluent_builders::CancelQuantumTask<C, M, R> {
         fluent_builders::CancelQuantumTask::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateJob` operation.
+    ///
+    /// See [`CreateJob`](crate::client::fluent_builders::CreateJob) for more information about the
+    /// operation and its arguments.
+    pub fn create_job(&self) -> fluent_builders::CreateJob<C, M, R> {
+        fluent_builders::CreateJob::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `CreateQuantumTask` operation.
     ///
@@ -103,6 +117,13 @@ where
     /// operation and its arguments.
     pub fn get_device(&self) -> fluent_builders::GetDevice<C, M, R> {
         fluent_builders::GetDevice::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetJob` operation.
+    ///
+    /// See [`GetJob`](crate::client::fluent_builders::GetJob) for more information about the
+    /// operation and its arguments.
+    pub fn get_job(&self) -> fluent_builders::GetJob<C, M, R> {
+        fluent_builders::GetJob::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `GetQuantumTask` operation.
     ///
@@ -124,6 +145,13 @@ where
     /// operation and its arguments.
     pub fn search_devices(&self) -> fluent_builders::SearchDevices<C, M, R> {
         fluent_builders::SearchDevices::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `SearchJobs` operation.
+    ///
+    /// See [`SearchJobs`](crate::client::fluent_builders::SearchJobs) for more information about the
+    /// operation and its arguments.
+    pub fn search_jobs(&self) -> fluent_builders::SearchJobs<C, M, R> {
+        fluent_builders::SearchJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `SearchQuantumTasks` operation.
     ///
@@ -155,13 +183,83 @@ pub mod fluent_builders {
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
     //!
+    /// Fluent builder constructing a request to `CancelJob`.
+    ///
+    /// <p>Cancels an Amazon Braket job.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CancelJob<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::cancel_job_input::Builder,
+    }
+    impl<C, M, R> CancelJob<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CancelJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CancelJobOutput,
+            aws_smithy_http::result::SdkError<crate::error::CancelJobError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CancelJobInputOperationOutputAlias,
+                crate::output::CancelJobOutput,
+                crate::error::CancelJobError,
+                crate::input::CancelJobInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the Amazon Braket job to cancel.</p>
+        pub fn job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_arn(inp);
+            self
+        }
+        /// <p>The ARN of the Amazon Braket job to cancel.</p>
+        pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CancelQuantumTask`.
     ///
     /// <p>Cancels the specified task.</p>
     #[derive(std::fmt::Debug)]
     pub struct CancelQuantumTask<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -238,13 +336,263 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateJob`.
+    ///
+    /// <p>Creates an Amazon Braket job.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateJob<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_job_input::Builder,
+    }
+    impl<C, M, R> CreateJob<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateJobOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateJobError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateJobInputOperationOutputAlias,
+                crate::output::CreateJobOutput,
+                crate::error::CreateJobError,
+                crate::input::CreateJobInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information
+        /// about the Python scripts used for entry and training.</p>
+        pub fn algorithm_specification(
+            mut self,
+            inp: crate::model::AlgorithmSpecification,
+        ) -> Self {
+            self.inner = self.inner.algorithm_specification(inp);
+            self
+        }
+        /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information
+        /// about the Python scripts used for entry and training.</p>
+        pub fn set_algorithm_specification(
+            mut self,
+            input: std::option::Option<crate::model::AlgorithmSpecification>,
+        ) -> Self {
+            self.inner = self.inner.set_algorithm_specification(input);
+            self
+        }
+        /// Appends an item to `inputDataConfig`.
+        ///
+        /// To override the contents of this collection use [`set_input_data_config`](Self::set_input_data_config).
+        ///
+        /// <p>A list of parameters that specify the name and type of input data and where it is
+        /// located.</p>
+        pub fn input_data_config(mut self, inp: impl Into<crate::model::InputFileConfig>) -> Self {
+            self.inner = self.inner.input_data_config(inp);
+            self
+        }
+        /// <p>A list of parameters that specify the name and type of input data and where it is
+        /// located.</p>
+        pub fn set_input_data_config(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InputFileConfig>>,
+        ) -> Self {
+            self.inner = self.inner.set_input_data_config(input);
+            self
+        }
+        /// <p>The path to the S3 location where you want to store job artifacts and the
+        /// encryption key used to store them.</p>
+        pub fn output_data_config(mut self, inp: crate::model::JobOutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(inp);
+            self
+        }
+        /// <p>The path to the S3 location where you want to store job artifacts and the
+        /// encryption key used to store them.</p>
+        pub fn set_output_data_config(
+            mut self,
+            input: std::option::Option<crate::model::JobOutputDataConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_output_data_config(input);
+            self
+        }
+        /// <p>Information about the output locations for job checkpoint data.</p>
+        pub fn checkpoint_config(mut self, inp: crate::model::JobCheckpointConfig) -> Self {
+            self.inner = self.inner.checkpoint_config(inp);
+            self
+        }
+        /// <p>Information about the output locations for job checkpoint data.</p>
+        pub fn set_checkpoint_config(
+            mut self,
+            input: std::option::Option<crate::model::JobCheckpointConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_checkpoint_config(input);
+            self
+        }
+        /// <p>The name of the Amazon Braket job.</p>
+        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(inp);
+            self
+        }
+        /// <p>The name of the Amazon Braket job.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
+        /// tasks on behalf of a user. It can access user resources, run an Amazon Braket job container
+        /// on behalf of user, and output resources to the users' s3 buckets.</p>
+        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
+        /// tasks on behalf of a user. It can access user resources, run an Amazon Braket job container
+        /// on behalf of user, and output resources to the users' s3 buckets.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
+            self
+        }
+        /// <p> The user-defined criteria that specifies when a job stops running.</p>
+        pub fn stopping_condition(mut self, inp: crate::model::JobStoppingCondition) -> Self {
+            self.inner = self.inner.stopping_condition(inp);
+            self
+        }
+        /// <p> The user-defined criteria that specifies when a job stops running.</p>
+        pub fn set_stopping_condition(
+            mut self,
+            input: std::option::Option<crate::model::JobStoppingCondition>,
+        ) -> Self {
+            self.inner = self.inner.set_stopping_condition(input);
+            self
+        }
+        /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon
+        /// Braket.</p>
+        pub fn instance_config(mut self, inp: crate::model::InstanceConfig) -> Self {
+            self.inner = self.inner.instance_config(inp);
+            self
+        }
+        /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon
+        /// Braket.</p>
+        pub fn set_instance_config(
+            mut self,
+            input: std::option::Option<crate::model::InstanceConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_instance_config(input);
+            self
+        }
+        /// Adds a key-value pair to `hyperParameters`.
+        ///
+        /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
+        ///
+        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of
+        /// the training job. The values are set with a string of JSON key:value pairs, where the key is the
+        /// name of the hyperparameter and the value is the value of th hyperparameter.</p>
+        pub fn hyper_parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.hyper_parameters(k, v);
+            self
+        }
+        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of
+        /// the training job. The values are set with a string of JSON key:value pairs, where the key is the
+        /// name of the hyperparameter and the value is the value of th hyperparameter.</p>
+        pub fn set_hyper_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_hyper_parameters(input);
+            self
+        }
+        /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>
+        pub fn device_config(mut self, inp: crate::model::DeviceConfig) -> Self {
+            self.inner = self.inner.device_config(inp);
+            self
+        }
+        /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>
+        pub fn set_device_config(
+            mut self,
+            input: std::option::Option<crate::model::DeviceConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_device_config(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k, v);
+            self
+        }
+        /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateQuantumTask`.
     ///
     /// <p>Creates a quantum task.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateQuantumTask<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -399,6 +747,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
+        pub fn job_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_token(inp);
+            self
+        }
+        /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
+        pub fn set_job_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_token(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `GetDevice`.
     ///
@@ -406,7 +764,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetDevice<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -470,13 +828,83 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetJob`.
+    ///
+    /// <p>Retrieves the specified Amazon Braket job.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetJob<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_job_input::Builder,
+    }
+    impl<C, M, R> GetJob<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetJobOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetJobError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetJobInputOperationOutputAlias,
+                crate::output::GetJobOutput,
+                crate::error::GetJobError,
+                crate::input::GetJobInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the job to retrieve.</p>
+        pub fn job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_arn(inp);
+            self
+        }
+        /// <p>The ARN of the job to retrieve.</p>
+        pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetQuantumTask`.
     ///
     /// <p>Retrieves the specified quantum task.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetQuantumTask<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -549,7 +977,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -619,7 +1047,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct SearchDevices<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -710,13 +1138,112 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `SearchJobs`.
+    ///
+    /// <p>Searches for Amazon Braket jobs that match the specified filter values.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct SearchJobs<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::search_jobs_input::Builder,
+    }
+    impl<C, M, R> SearchJobs<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `SearchJobs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SearchJobsOutput,
+            aws_smithy_http::result::SdkError<crate::error::SearchJobsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::SearchJobsInputOperationOutputAlias,
+                crate::output::SearchJobsOutput,
+                crate::error::SearchJobsError,
+                crate::input::SearchJobsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A token used for pagination of results returned in the response. Use the token returned
+        /// from the previous request to continue results where the previous request ended.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>A token used for pagination of results returned in the response. Use the token returned
+        /// from the previous request to continue results where the previous request ended.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return in the response.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The filter values to use when searching for a job.</p>
+        pub fn filters(mut self, inp: impl Into<crate::model::SearchJobsFilter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        /// <p>The filter values to use when searching for a job.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SearchJobsFilter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `SearchQuantumTasks`.
     ///
     /// <p>Searches for tasks that match the specified filter values.</p>
     #[derive(std::fmt::Debug)]
     pub struct SearchQuantumTasks<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -813,7 +1340,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -906,7 +1433,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -988,17 +1515,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -1007,7 +1538,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -1023,11 +1554,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

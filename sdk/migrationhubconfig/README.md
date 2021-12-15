@@ -1,6 +1,6 @@
 # aws-sdk-migrationhubconfig
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 The AWS Migration Hub home region APIs are available specifically for working with your Migration Hub home region. You can use these APIs to determine a home region, as well as to create and work with controls that describe the home region.
@@ -22,8 +22,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-migrationhubconfig = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-migrationhubconfig = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

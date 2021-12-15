@@ -14,9 +14,13 @@ pub struct CreateChangesetError {
 pub enum CreateChangesetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request conflicts with an existing resource.</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
+    /// <p>A limit has exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
@@ -30,7 +34,9 @@ impl std::fmt::Display for CreateChangesetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CreateChangesetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateChangesetErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateChangesetErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateChangesetErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateChangesetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CreateChangesetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateChangesetErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -97,11 +103,22 @@ impl CreateChangesetError {
             CreateChangesetErrorKind::AccessDeniedException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateChangesetErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateChangesetErrorKind::ConflictException(_))
+    }
     /// Returns `true` if the error kind is `CreateChangesetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChangesetErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateChangesetErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateChangesetErrorKind::LimitExceededException(_)
         )
     }
     /// Returns `true` if the error kind is `CreateChangesetErrorKind::ResourceNotFoundException`.
@@ -124,11 +141,858 @@ impl std::error::Error for CreateChangesetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateChangesetErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateChangesetErrorKind::ConflictException(_inner) => Some(_inner),
             CreateChangesetErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateChangesetErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateChangesetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateChangesetErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateChangesetErrorKind::ValidationException(_inner) => Some(_inner),
             CreateChangesetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateDataset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateDatasetError {
+    /// Kind of error that occurred.
+    pub kind: CreateDatasetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateDataset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateDatasetErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request conflicts with an existing resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request processing has failed because of an unknown error, exception or
+    /// failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>A limit has exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateDatasetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateDatasetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateDatasetErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateDatasetErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateDatasetErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateDatasetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateDatasetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateDatasetErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateDatasetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateDatasetError {
+    fn code(&self) -> Option<&str> {
+        CreateDatasetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateDatasetError {
+    /// Creates a new `CreateDatasetError`.
+    pub fn new(kind: CreateDatasetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateDatasetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateDatasetErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateDatasetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateDatasetErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, CreateDatasetErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateDatasetErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDatasetErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDatasetErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDatasetErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, CreateDatasetErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, CreateDatasetErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for CreateDatasetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateDatasetErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateDatasetErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateDatasetErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateDatasetErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateDatasetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateDatasetErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateDatasetErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateDatasetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateDataView` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateDataViewError {
+    /// Kind of error that occurred.
+    pub kind: CreateDataViewErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateDataView` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateDataViewErrorKind {
+    /// <p>The request conflicts with an existing resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request processing has failed because of an unknown error, exception or
+    /// failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>A limit has exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateDataViewError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateDataViewErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateDataViewErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateDataViewErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateDataViewErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateDataViewErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateDataViewErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateDataViewErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateDataViewError {
+    fn code(&self) -> Option<&str> {
+        CreateDataViewError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateDataViewError {
+    /// Creates a new `CreateDataViewError`.
+    pub fn new(kind: CreateDataViewErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateDataViewError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateDataViewErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateDataViewError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateDataViewErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateDataViewErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateDataViewErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateDataViewErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDataViewErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDataViewErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDataViewErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDataViewErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDataViewErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDataViewErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, CreateDataViewErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `CreateDataViewErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, CreateDataViewErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for CreateDataViewError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateDataViewErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateDataViewErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateDataViewErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateDataViewErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateDataViewErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateDataViewErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateDataViewErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteDataset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteDatasetError {
+    /// Kind of error that occurred.
+    pub kind: DeleteDatasetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteDataset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteDatasetErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request conflicts with an existing resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request processing has failed because of an unknown error, exception or
+    /// failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>A limit has exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteDatasetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteDatasetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteDatasetErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteDatasetErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteDatasetErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteDatasetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteDatasetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteDatasetErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteDatasetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteDatasetError {
+    fn code(&self) -> Option<&str> {
+        DeleteDatasetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteDatasetError {
+    /// Creates a new `DeleteDatasetError`.
+    pub fn new(kind: DeleteDatasetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteDatasetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteDatasetErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteDatasetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteDatasetErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, DeleteDatasetErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteDatasetErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDatasetErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDatasetErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDatasetErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteDatasetErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, DeleteDatasetErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for DeleteDatasetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteDatasetErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteDatasetErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteDatasetErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteDatasetErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteDatasetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteDatasetErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteDatasetErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteDatasetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetChangeset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetChangesetError {
+    /// Kind of error that occurred.
+    pub kind: GetChangesetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetChangeset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetChangesetErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request conflicts with an existing resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request processing has failed because of an unknown error, exception or
+    /// failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetChangesetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetChangesetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetChangesetErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            GetChangesetErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetChangesetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetChangesetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetChangesetErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetChangesetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetChangesetError {
+    fn code(&self) -> Option<&str> {
+        GetChangesetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetChangesetError {
+    /// Creates a new `GetChangesetError`.
+    pub fn new(kind: GetChangesetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetChangesetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetChangesetErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetChangesetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetChangesetErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetChangesetErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetChangesetErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetChangesetErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, GetChangesetErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `GetChangesetErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetChangesetErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetChangesetErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetChangesetErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetChangesetErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetChangesetErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `GetChangesetErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, GetChangesetErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for GetChangesetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetChangesetErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetChangesetErrorKind::ConflictException(_inner) => Some(_inner),
+            GetChangesetErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetChangesetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetChangesetErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetChangesetErrorKind::ValidationException(_inner) => Some(_inner),
+            GetChangesetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetDataset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetDatasetError {
+    /// Kind of error that occurred.
+    pub kind: GetDatasetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetDataset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetDatasetErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request conflicts with an existing resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request processing has failed because of an unknown error, exception or
+    /// failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetDatasetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetDatasetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetDatasetErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            GetDatasetErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetDatasetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetDatasetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetDatasetErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetDatasetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetDatasetError {
+    fn code(&self) -> Option<&str> {
+        GetDatasetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetDatasetError {
+    /// Creates a new `GetDatasetError`.
+    pub fn new(kind: GetDatasetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetDatasetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetDatasetErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetDatasetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetDatasetErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetDatasetErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetDatasetErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetDatasetErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, GetDatasetErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `GetDatasetErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, GetDatasetErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `GetDatasetErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDatasetErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDatasetErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetDatasetErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `GetDatasetErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, GetDatasetErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for GetDatasetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetDatasetErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetDatasetErrorKind::ConflictException(_inner) => Some(_inner),
+            GetDatasetErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetDatasetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetDatasetErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetDatasetErrorKind::ValidationException(_inner) => Some(_inner),
+            GetDatasetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetDataView` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetDataViewError {
+    /// Kind of error that occurred.
+    pub kind: GetDataViewErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetDataView` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetDataViewErrorKind {
+    /// <p>The request conflicts with an existing resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request processing has failed because of an unknown error, exception or
+    /// failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetDataViewError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetDataViewErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            GetDataViewErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetDataViewErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetDataViewErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetDataViewErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetDataViewErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetDataViewError {
+    fn code(&self) -> Option<&str> {
+        GetDataViewError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetDataViewError {
+    /// Creates a new `GetDataViewError`.
+    pub fn new(kind: GetDataViewErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetDataViewError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetDataViewErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetDataViewError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetDataViewErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetDataViewErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, GetDataViewErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `GetDataViewErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, GetDataViewErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `GetDataViewErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataViewErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDataViewErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetDataViewErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `GetDataViewErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, GetDataViewErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for GetDataViewError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetDataViewErrorKind::ConflictException(_inner) => Some(_inner),
+            GetDataViewErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetDataViewErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetDataViewErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetDataViewErrorKind::ValidationException(_inner) => Some(_inner),
+            GetDataViewErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -153,6 +1017,8 @@ pub enum GetProgrammaticAccessCredentialsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -166,6 +1032,7 @@ impl std::fmt::Display for GetProgrammaticAccessCredentialsError {
                 _inner.fmt(f)
             }
             GetProgrammaticAccessCredentialsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetProgrammaticAccessCredentialsErrorKind::ValidationException(_inner) => _inner.fmt(f),
             GetProgrammaticAccessCredentialsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -246,6 +1113,13 @@ impl GetProgrammaticAccessCredentialsError {
             GetProgrammaticAccessCredentialsErrorKind::ThrottlingException(_)
         )
     }
+    /// Returns `true` if the error kind is `GetProgrammaticAccessCredentialsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetProgrammaticAccessCredentialsErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for GetProgrammaticAccessCredentialsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -257,6 +1131,7 @@ impl std::error::Error for GetProgrammaticAccessCredentialsError {
                 Some(_inner)
             }
             GetProgrammaticAccessCredentialsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetProgrammaticAccessCredentialsErrorKind::ValidationException(_inner) => Some(_inner),
             GetProgrammaticAccessCredentialsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -391,6 +1266,691 @@ impl std::error::Error for GetWorkingLocationError {
     }
 }
 
+/// Error type for the `ListChangesets` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListChangesetsError {
+    /// Kind of error that occurred.
+    pub kind: ListChangesetsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListChangesets` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListChangesetsErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request conflicts with an existing resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request processing has failed because of an unknown error, exception or
+    /// failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListChangesetsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListChangesetsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListChangesetsErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            ListChangesetsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListChangesetsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListChangesetsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListChangesetsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListChangesetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListChangesetsError {
+    fn code(&self) -> Option<&str> {
+        ListChangesetsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListChangesetsError {
+    /// Creates a new `ListChangesetsError`.
+    pub fn new(kind: ListChangesetsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListChangesetsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListChangesetsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListChangesetsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListChangesetsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListChangesetsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListChangesetsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListChangesetsErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, ListChangesetsErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `ListChangesetsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListChangesetsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListChangesetsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListChangesetsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListChangesetsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ListChangesetsErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ListChangesetsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ListChangesetsErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for ListChangesetsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListChangesetsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListChangesetsErrorKind::ConflictException(_inner) => Some(_inner),
+            ListChangesetsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListChangesetsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListChangesetsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListChangesetsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListChangesetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListDatasets` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListDatasetsError {
+    /// Kind of error that occurred.
+    pub kind: ListDatasetsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListDatasets` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListDatasetsErrorKind {
+    /// <p>The request conflicts with an existing resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request processing has failed because of an unknown error, exception or
+    /// failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListDatasetsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListDatasetsErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            ListDatasetsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListDatasetsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListDatasetsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListDatasetsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListDatasetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListDatasetsError {
+    fn code(&self) -> Option<&str> {
+        ListDatasetsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListDatasetsError {
+    /// Creates a new `ListDatasetsError`.
+    pub fn new(kind: ListDatasetsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListDatasetsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListDatasetsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListDatasetsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListDatasetsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListDatasetsErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, ListDatasetsErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `ListDatasetsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ListDatasetsErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ListDatasetsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ListDatasetsErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for ListDatasetsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListDatasetsErrorKind::ConflictException(_inner) => Some(_inner),
+            ListDatasetsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListDatasetsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListDatasetsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListDatasetsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListDatasetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListDataViews` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListDataViewsError {
+    /// Kind of error that occurred.
+    pub kind: ListDataViewsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListDataViews` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListDataViewsErrorKind {
+    /// <p>The request conflicts with an existing resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request processing has failed because of an unknown error, exception or
+    /// failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListDataViewsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListDataViewsErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            ListDataViewsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListDataViewsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListDataViewsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListDataViewsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListDataViewsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListDataViewsError {
+    fn code(&self) -> Option<&str> {
+        ListDataViewsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListDataViewsError {
+    /// Creates a new `ListDataViewsError`.
+    pub fn new(kind: ListDataViewsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListDataViewsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListDataViewsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListDataViewsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListDataViewsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListDataViewsErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, ListDataViewsErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `ListDataViewsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataViewsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDataViewsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataViewsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDataViewsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ListDataViewsErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ListDataViewsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ListDataViewsErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for ListDataViewsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListDataViewsErrorKind::ConflictException(_inner) => Some(_inner),
+            ListDataViewsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListDataViewsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListDataViewsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListDataViewsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListDataViewsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateChangeset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateChangesetError {
+    /// Kind of error that occurred.
+    pub kind: UpdateChangesetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateChangeset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateChangesetErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request conflicts with an existing resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request processing has failed because of an unknown error, exception or
+    /// failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateChangesetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateChangesetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateChangesetErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateChangesetErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateChangesetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateChangesetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateChangesetErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateChangesetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateChangesetError {
+    fn code(&self) -> Option<&str> {
+        UpdateChangesetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateChangesetError {
+    /// Creates a new `UpdateChangesetError`.
+    pub fn new(kind: UpdateChangesetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateChangesetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateChangesetErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateChangesetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateChangesetErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateChangesetErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChangesetErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateChangesetErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateChangesetErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateChangesetErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChangesetErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateChangesetErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChangesetErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateChangesetErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UpdateChangesetErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateChangesetErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, UpdateChangesetErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for UpdateChangesetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateChangesetErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateChangesetErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateChangesetErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateChangesetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateChangesetErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateChangesetErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateChangesetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateDataset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateDatasetError {
+    /// Kind of error that occurred.
+    pub kind: UpdateDatasetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateDataset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateDatasetErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request conflicts with an existing resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request processing has failed because of an unknown error, exception or
+    /// failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateDatasetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateDatasetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateDatasetErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateDatasetErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateDatasetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateDatasetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateDatasetErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateDatasetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateDatasetError {
+    fn code(&self) -> Option<&str> {
+        UpdateDatasetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateDatasetError {
+    /// Creates a new `UpdateDatasetError`.
+    pub fn new(kind: UpdateDatasetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateDatasetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateDatasetErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateDatasetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateDatasetErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateDatasetErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, UpdateDatasetErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDatasetErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateDatasetErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDatasetErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDatasetErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDatasetErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDatasetErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDatasetErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UpdateDatasetErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDatasetErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, UpdateDatasetErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for UpdateDatasetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateDatasetErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateDatasetErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateDatasetErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateDatasetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateDatasetErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateDatasetErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateDatasetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -519,6 +2079,70 @@ impl ThrottlingException {
     }
 }
 
+/// <p>One or more resources can't be found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResourceNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceNotFoundException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ResourceNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceNotFoundException")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceNotFoundException {}
+/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+pub mod resource_not_found_exception {
+    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+        pub fn build(self) -> crate::error::ResourceNotFoundException {
+            crate::error::ResourceNotFoundException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ResourceNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
+        crate::error::resource_not_found_exception::Builder::default()
+    }
+}
+
 /// <p>The request processing has failed because of an unknown error, exception or
 /// failure.</p>
 #[non_exhaustive]
@@ -543,8 +2167,8 @@ impl InternalServerException {
 impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
@@ -584,6 +2208,70 @@ impl InternalServerException {
     }
 }
 
+/// <p>The request conflicts with an existing resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConflictException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ConflictException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConflictException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ConflictException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ConflictException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ConflictException")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ConflictException {}
+/// See [`ConflictException`](crate::error::ConflictException)
+pub mod conflict_exception {
+    /// A builder for [`ConflictException`](crate::error::ConflictException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException)
+        pub fn build(self) -> crate::error::ConflictException {
+            crate::error::ConflictException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ConflictException {
+    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException)
+    pub fn builder() -> crate::error::conflict_exception::Builder {
+        crate::error::conflict_exception::Builder::default()
+    }
+}
+
 /// <p>You do not have sufficient access to perform this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -607,8 +2295,8 @@ impl AccessDeniedException {
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -648,39 +2336,39 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>One or more resources can't be found.</p>
+/// <p>A limit has exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceNotFoundException {
+pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceNotFoundException {
+impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
+        let mut formatter = f.debug_struct("LimitExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ResourceNotFoundException {
+impl LimitExceededException {
     /// Returns the error message.
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourceNotFoundException {
+impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        write!(f, "LimitExceededException")?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourceNotFoundException {}
-/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
-pub mod resource_not_found_exception {
-    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException)
+pub mod limit_exceeded_exception {
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -697,17 +2385,17 @@ pub mod resource_not_found_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
-        pub fn build(self) -> crate::error::ResourceNotFoundException {
-            crate::error::ResourceNotFoundException {
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl ResourceNotFoundException {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
-    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
-        crate::error::resource_not_found_exception::Builder::default()
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
     }
 }

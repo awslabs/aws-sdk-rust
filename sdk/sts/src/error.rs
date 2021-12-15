@@ -25,7 +25,7 @@ pub enum AssumeRoleErrorKind {
     /// tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in
     /// the <i>IAM User Guide</i>.</p>
     /// <p>You could receive this error even though you meet other defined session policy and
-    /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">IAM and STS Entity
+    /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity
     /// Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
     /// <p>STS is not activated in the requested region for the account that is being asked to
@@ -169,7 +169,7 @@ pub enum AssumeRoleWithSAMLErrorKind {
     /// tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in
     /// the <i>IAM User Guide</i>.</p>
     /// <p>You could receive this error even though you meet other defined session policy and
-    /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">IAM and STS Entity
+    /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity
     /// Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
     /// <p>STS is not activated in the requested region for the account that is being asked to
@@ -343,7 +343,7 @@ pub enum AssumeRoleWithWebIdentityErrorKind {
     /// tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in
     /// the <i>IAM User Guide</i>.</p>
     /// <p>You could receive this error even though you meet other defined session policy and
-    /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">IAM and STS Entity
+    /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity
     /// Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
     /// <p>STS is not activated in the requested region for the account that is being asked to
@@ -794,7 +794,7 @@ pub enum GetFederationTokenErrorKind {
     /// tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in
     /// the <i>IAM User Guide</i>.</p>
     /// <p>You could receive this error even though you meet other defined session policy and
-    /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">IAM and STS Entity
+    /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity
     /// Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
     /// <p>STS is not activated in the requested region for the account that is being asked to
@@ -1075,7 +1075,7 @@ impl RegionDisabledException {
 /// tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in
 /// the <i>IAM User Guide</i>.</p>
 /// <p>You could receive this error even though you meet other defined session policy and
-/// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">IAM and STS Entity
+/// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity
 /// Character Limits</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

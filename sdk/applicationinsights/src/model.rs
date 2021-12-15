@@ -166,8 +166,6 @@ pub enum Tier {
     #[allow(missing_docs)] // documentation missing in model
     Postgresql,
     #[allow(missing_docs)] // documentation missing in model
-    SapHana,
-    #[allow(missing_docs)] // documentation missing in model
     SapHanaHighAvailability,
     #[allow(missing_docs)] // documentation missing in model
     SapHanaMultiNode,
@@ -195,7 +193,6 @@ impl std::convert::From<&str> for Tier {
             "MYSQL" => Tier::Mysql,
             "ORACLE" => Tier::Oracle,
             "POSTGRESQL" => Tier::Postgresql,
-            "SAP_HANA" => Tier::SapHana,
             "SAP_HANA_HIGH_AVAILABILITY" => Tier::SapHanaHighAvailability,
             "SAP_HANA_MULTI_NODE" => Tier::SapHanaMultiNode,
             "SAP_HANA_SINGLE_NODE" => Tier::SapHanaSingleNode,
@@ -227,7 +224,6 @@ impl Tier {
             Tier::Mysql => "MYSQL",
             Tier::Oracle => "ORACLE",
             Tier::Postgresql => "POSTGRESQL",
-            Tier::SapHana => "SAP_HANA",
             Tier::SapHanaHighAvailability => "SAP_HANA_HIGH_AVAILABILITY",
             Tier::SapHanaMultiNode => "SAP_HANA_MULTI_NODE",
             Tier::SapHanaSingleNode => "SAP_HANA_SINGLE_NODE",
@@ -250,7 +246,6 @@ impl Tier {
             "MYSQL",
             "ORACLE",
             "POSTGRESQL",
-            "SAP_HANA",
             "SAP_HANA_HIGH_AVAILABILITY",
             "SAP_HANA_MULTI_NODE",
             "SAP_HANA_SINGLE_NODE",

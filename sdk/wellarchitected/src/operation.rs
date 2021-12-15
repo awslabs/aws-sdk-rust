@@ -33,6 +33,74 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateLenses {
     }
 }
 
+/// Operation shape for `CreateLensShare`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_lens_share`](crate::client::Client::create_lens_share).
+///
+/// See [`crate::client::fluent_builders::CreateLensShare`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateLensShare {
+    _private: (),
+}
+impl CreateLensShare {
+    /// Creates a new builder-style object to manufacture [`CreateLensShareInput`](crate::input::CreateLensShareInput)
+    pub fn builder() -> crate::input::create_lens_share_input::Builder {
+        crate::input::create_lens_share_input::Builder::default()
+    }
+    /// Creates a new `CreateLensShare` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateLensShare {
+    type Output = std::result::Result<
+        crate::output::CreateLensShareOutput,
+        crate::error::CreateLensShareError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_lens_share_error(response)
+        } else {
+            crate::operation_deser::parse_create_lens_share_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateLensVersion`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_lens_version`](crate::client::Client::create_lens_version).
+///
+/// See [`crate::client::fluent_builders::CreateLensVersion`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateLensVersion {
+    _private: (),
+}
+impl CreateLensVersion {
+    /// Creates a new builder-style object to manufacture [`CreateLensVersionInput`](crate::input::CreateLensVersionInput)
+    pub fn builder() -> crate::input::create_lens_version_input::Builder {
+        crate::input::create_lens_version_input::Builder::default()
+    }
+    /// Creates a new `CreateLensVersion` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateLensVersion {
+    type Output = std::result::Result<
+        crate::output::CreateLensVersionOutput,
+        crate::error::CreateLensVersionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_lens_version_error(response)
+        } else {
+            crate::operation_deser::parse_create_lens_version_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateMilestone`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -129,6 +197,72 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkloadShare {
             crate::operation_deser::parse_create_workload_share_error(response)
         } else {
             crate::operation_deser::parse_create_workload_share_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteLens`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_lens`](crate::client::Client::delete_lens).
+///
+/// See [`crate::client::fluent_builders::DeleteLens`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteLens {
+    _private: (),
+}
+impl DeleteLens {
+    /// Creates a new builder-style object to manufacture [`DeleteLensInput`](crate::input::DeleteLensInput)
+    pub fn builder() -> crate::input::delete_lens_input::Builder {
+        crate::input::delete_lens_input::Builder::default()
+    }
+    /// Creates a new `DeleteLens` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteLens {
+    type Output =
+        std::result::Result<crate::output::DeleteLensOutput, crate::error::DeleteLensError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_lens_error(response)
+        } else {
+            crate::operation_deser::parse_delete_lens_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteLensShare`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_lens_share`](crate::client::Client::delete_lens_share).
+///
+/// See [`crate::client::fluent_builders::DeleteLensShare`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteLensShare {
+    _private: (),
+}
+impl DeleteLensShare {
+    /// Creates a new builder-style object to manufacture [`DeleteLensShareInput`](crate::input::DeleteLensShareInput)
+    pub fn builder() -> crate::input::delete_lens_share_input::Builder {
+        crate::input::delete_lens_share_input::Builder::default()
+    }
+    /// Creates a new `DeleteLensShare` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteLensShare {
+    type Output = std::result::Result<
+        crate::output::DeleteLensShareOutput,
+        crate::error::DeleteLensShareError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_lens_share_error(response)
+        } else {
+            crate::operation_deser::parse_delete_lens_share_response(response)
         }
     }
 }
@@ -233,6 +367,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateLenses {
     }
 }
 
+/// Operation shape for `ExportLens`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`export_lens`](crate::client::Client::export_lens).
+///
+/// See [`crate::client::fluent_builders::ExportLens`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ExportLens {
+    _private: (),
+}
+impl ExportLens {
+    /// Creates a new builder-style object to manufacture [`ExportLensInput`](crate::input::ExportLensInput)
+    pub fn builder() -> crate::input::export_lens_input::Builder {
+        crate::input::export_lens_input::Builder::default()
+    }
+    /// Creates a new `ExportLens` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ExportLens {
+    type Output =
+        std::result::Result<crate::output::ExportLensOutput, crate::error::ExportLensError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_export_lens_error(response)
+        } else {
+            crate::operation_deser::parse_export_lens_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetAnswer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -260,6 +426,37 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAnswer {
             crate::operation_deser::parse_get_answer_error(response)
         } else {
             crate::operation_deser::parse_get_answer_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetLens`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_lens`](crate::client::Client::get_lens).
+///
+/// See [`crate::client::fluent_builders::GetLens`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetLens {
+    _private: (),
+}
+impl GetLens {
+    /// Creates a new builder-style object to manufacture [`GetLensInput`](crate::input::GetLensInput)
+    pub fn builder() -> crate::input::get_lens_input::Builder {
+        crate::input::get_lens_input::Builder::default()
+    }
+    /// Creates a new `GetLens` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetLens {
+    type Output = std::result::Result<crate::output::GetLensOutput, crate::error::GetLensError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_lens_error(response)
+        } else {
+            crate::operation_deser::parse_get_lens_response(response)
         }
     }
 }
@@ -428,6 +625,38 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkload {
     }
 }
 
+/// Operation shape for `ImportLens`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`import_lens`](crate::client::Client::import_lens).
+///
+/// See [`crate::client::fluent_builders::ImportLens`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ImportLens {
+    _private: (),
+}
+impl ImportLens {
+    /// Creates a new builder-style object to manufacture [`ImportLensInput`](crate::input::ImportLensInput)
+    pub fn builder() -> crate::input::import_lens_input::Builder {
+        crate::input::import_lens_input::Builder::default()
+    }
+    /// Creates a new `ImportLens` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ImportLens {
+    type Output =
+        std::result::Result<crate::output::ImportLensOutput, crate::error::ImportLensError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_import_lens_error(response)
+        } else {
+            crate::operation_deser::parse_import_lens_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListAnswers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -556,6 +785,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLensReviews {
             crate::operation_deser::parse_list_lens_reviews_error(response)
         } else {
             crate::operation_deser::parse_list_lens_reviews_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListLensShares`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_lens_shares`](crate::client::Client::list_lens_shares).
+///
+/// See [`crate::client::fluent_builders::ListLensShares`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListLensShares {
+    _private: (),
+}
+impl ListLensShares {
+    /// Creates a new builder-style object to manufacture [`ListLensSharesInput`](crate::input::ListLensSharesInput)
+    pub fn builder() -> crate::input::list_lens_shares_input::Builder {
+        crate::input::list_lens_shares_input::Builder::default()
+    }
+    /// Creates a new `ListLensShares` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListLensShares {
+    type Output =
+        std::result::Result<crate::output::ListLensSharesOutput, crate::error::ListLensSharesError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_lens_shares_error(response)
+        } else {
+            crate::operation_deser::parse_list_lens_shares_response(response)
         }
     }
 }

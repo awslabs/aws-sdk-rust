@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use cloudwatchlogs::Client;
+use aws_sdk_cloudwatchlogs::Client;
 
 #[tokio::main]
-async fn main() -> Result<(), cloudwatchlogs::Error> {
+async fn main() -> Result<(), aws_sdk_cloudwatchlogs::Error> {
     tracing_subscriber::fmt::init();
 
     let shared_config = aws_config::load_from_env().await;

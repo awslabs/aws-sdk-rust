@@ -129,33 +129,33 @@ impl AsRef<str> for Mode {
 }
 
 /// <p>Provides the configuration information to fetch access levels
-/// of groups and users from an AWS Single Sign-On identity
+/// of groups and users from an Amazon Web Services Single Sign On identity
 /// source. This is useful for setting up user context filtering, where
 /// Amazon Kendra filters search results for different users based on their
 /// group's access to documents. You can also map your users to their
 /// groups for user context filtering using the
-/// <a href="https://docs.aws.amazon.com/latest/dg/API_PutPrincipalMapping.html">PutPrincipalMapping
+/// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html">PutPrincipalMapping
 /// operation</a>.</p>
-/// <p>To set up an AWS SSO identity source in the console to use with
+/// <p>To set up an Amazon Web Services SSO identity source in the console to use with
 /// Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started
-/// with an AWS SSO identity source</a>. You must also grant the required
-/// permissions to use AWS SSO with Amazon Kendra. For more information, see
+/// with an Amazon Web Services SSO identity source</a>. You must also grant the required
+/// permissions to use Amazon Web Services SSO with Amazon Kendra. For more information, see
 /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-aws-sso">IAM roles for
-/// AWS Single Sign-On</a>.</p>
+/// Amazon Web Services SSO</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserGroupResolutionConfiguration {
     /// <p>The identity store provider (mode) you want to use to fetch access levels of groups and
-    /// users. AWS Single Sign-On is currently the only available mode. Your users and groups
+    /// users. Amazon Web Services Single Sign On is currently the only available mode. Your users and groups
     /// must
-    /// exist in an AWS SSO identity source in order to use this mode.</p>
+    /// exist in an Amazon Web Services SSO identity source in order to use this mode.</p>
     pub user_group_resolution_mode: std::option::Option<crate::model::UserGroupResolutionMode>,
 }
 impl UserGroupResolutionConfiguration {
     /// <p>The identity store provider (mode) you want to use to fetch access levels of groups and
-    /// users. AWS Single Sign-On is currently the only available mode. Your users and groups
+    /// users. Amazon Web Services Single Sign On is currently the only available mode. Your users and groups
     /// must
-    /// exist in an AWS SSO identity source in order to use this mode.</p>
+    /// exist in an Amazon Web Services SSO identity source in order to use this mode.</p>
     pub fn user_group_resolution_mode(
         &self,
     ) -> std::option::Option<&crate::model::UserGroupResolutionMode> {
@@ -183,9 +183,9 @@ pub mod user_group_resolution_configuration {
     }
     impl Builder {
         /// <p>The identity store provider (mode) you want to use to fetch access levels of groups and
-        /// users. AWS Single Sign-On is currently the only available mode. Your users and groups
+        /// users. Amazon Web Services Single Sign On is currently the only available mode. Your users and groups
         /// must
-        /// exist in an AWS SSO identity source in order to use this mode.</p>
+        /// exist in an Amazon Web Services SSO identity source in order to use this mode.</p>
         pub fn user_group_resolution_mode(
             mut self,
             input: crate::model::UserGroupResolutionMode,
@@ -194,9 +194,9 @@ pub mod user_group_resolution_configuration {
             self
         }
         /// <p>The identity store provider (mode) you want to use to fetch access levels of groups and
-        /// users. AWS Single Sign-On is currently the only available mode. Your users and groups
+        /// users. Amazon Web Services Single Sign On is currently the only available mode. Your users and groups
         /// must
-        /// exist in an AWS SSO identity source in order to use this mode.</p>
+        /// exist in an Amazon Web Services SSO identity source in order to use this mode.</p>
         pub fn set_user_group_resolution_mode(
             mut self,
             input: std::option::Option<crate::model::UserGroupResolutionMode>,
@@ -1554,7 +1554,1342 @@ impl AsRef<str> for DocumentAttributeValueType {
     }
 }
 
-/// <p>Configuration information for a Amazon Kendra data source.</p>
+/// <p>Specifies the configuration information for your Amazon Kendra experience. This includes
+/// the data source IDs and/or FAQ IDs, and user or group information to grant access
+/// to your Amazon Kendra experience.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExperienceConfiguration {
+    /// <p>The identifiers of your data sources and FAQs. Or, you can specify
+    /// that you want to use documents indexed via the <code>BatchPutDocument</code>
+    /// operation. This is the content you want to use for your Amazon Kendra experience.</p>
+    pub content_source_configuration: std::option::Option<crate::model::ContentSourceConfiguration>,
+    /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users,
+    /// such as their emails.</p>
+    pub user_identity_configuration: std::option::Option<crate::model::UserIdentityConfiguration>,
+}
+impl ExperienceConfiguration {
+    /// <p>The identifiers of your data sources and FAQs. Or, you can specify
+    /// that you want to use documents indexed via the <code>BatchPutDocument</code>
+    /// operation. This is the content you want to use for your Amazon Kendra experience.</p>
+    pub fn content_source_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ContentSourceConfiguration> {
+        self.content_source_configuration.as_ref()
+    }
+    /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users,
+    /// such as their emails.</p>
+    pub fn user_identity_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::UserIdentityConfiguration> {
+        self.user_identity_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for ExperienceConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExperienceConfiguration");
+        formatter.field(
+            "content_source_configuration",
+            &self.content_source_configuration,
+        );
+        formatter.field(
+            "user_identity_configuration",
+            &self.user_identity_configuration,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ExperienceConfiguration`](crate::model::ExperienceConfiguration)
+pub mod experience_configuration {
+    /// A builder for [`ExperienceConfiguration`](crate::model::ExperienceConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) content_source_configuration:
+            std::option::Option<crate::model::ContentSourceConfiguration>,
+        pub(crate) user_identity_configuration:
+            std::option::Option<crate::model::UserIdentityConfiguration>,
+    }
+    impl Builder {
+        /// <p>The identifiers of your data sources and FAQs. Or, you can specify
+        /// that you want to use documents indexed via the <code>BatchPutDocument</code>
+        /// operation. This is the content you want to use for your Amazon Kendra experience.</p>
+        pub fn content_source_configuration(
+            mut self,
+            input: crate::model::ContentSourceConfiguration,
+        ) -> Self {
+            self.content_source_configuration = Some(input);
+            self
+        }
+        /// <p>The identifiers of your data sources and FAQs. Or, you can specify
+        /// that you want to use documents indexed via the <code>BatchPutDocument</code>
+        /// operation. This is the content you want to use for your Amazon Kendra experience.</p>
+        pub fn set_content_source_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ContentSourceConfiguration>,
+        ) -> Self {
+            self.content_source_configuration = input;
+            self
+        }
+        /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users,
+        /// such as their emails.</p>
+        pub fn user_identity_configuration(
+            mut self,
+            input: crate::model::UserIdentityConfiguration,
+        ) -> Self {
+            self.user_identity_configuration = Some(input);
+            self
+        }
+        /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users,
+        /// such as their emails.</p>
+        pub fn set_user_identity_configuration(
+            mut self,
+            input: std::option::Option<crate::model::UserIdentityConfiguration>,
+        ) -> Self {
+            self.user_identity_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExperienceConfiguration`](crate::model::ExperienceConfiguration)
+        pub fn build(self) -> crate::model::ExperienceConfiguration {
+            crate::model::ExperienceConfiguration {
+                content_source_configuration: self.content_source_configuration,
+                user_identity_configuration: self.user_identity_configuration,
+            }
+        }
+    }
+}
+impl ExperienceConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExperienceConfiguration`](crate::model::ExperienceConfiguration)
+    pub fn builder() -> crate::model::experience_configuration::Builder {
+        crate::model::experience_configuration::Builder::default()
+    }
+}
+
+/// <p>Configuration information for the identifiers of your users.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UserIdentityConfiguration {
+    /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users,
+    /// such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a>
+    /// and for granting access to your Amazon Kendra experience. You must set up Amazon Web Services SSO
+    /// with Amazon Kendra. You must include your users and groups in your Access Control List when
+    /// you ingest documents into your index. For more information, see
+    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting
+    /// started with an Amazon Web Services SSO identity source</a>.</p>
+    pub identity_attribute_name: std::option::Option<std::string::String>,
+}
+impl UserIdentityConfiguration {
+    /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users,
+    /// such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a>
+    /// and for granting access to your Amazon Kendra experience. You must set up Amazon Web Services SSO
+    /// with Amazon Kendra. You must include your users and groups in your Access Control List when
+    /// you ingest documents into your index. For more information, see
+    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting
+    /// started with an Amazon Web Services SSO identity source</a>.</p>
+    pub fn identity_attribute_name(&self) -> std::option::Option<&str> {
+        self.identity_attribute_name.as_deref()
+    }
+}
+impl std::fmt::Debug for UserIdentityConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UserIdentityConfiguration");
+        formatter.field("identity_attribute_name", &self.identity_attribute_name);
+        formatter.finish()
+    }
+}
+/// See [`UserIdentityConfiguration`](crate::model::UserIdentityConfiguration)
+pub mod user_identity_configuration {
+    /// A builder for [`UserIdentityConfiguration`](crate::model::UserIdentityConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) identity_attribute_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users,
+        /// such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a>
+        /// and for granting access to your Amazon Kendra experience. You must set up Amazon Web Services SSO
+        /// with Amazon Kendra. You must include your users and groups in your Access Control List when
+        /// you ingest documents into your index. For more information, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting
+        /// started with an Amazon Web Services SSO identity source</a>.</p>
+        pub fn identity_attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identity_attribute_name = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users,
+        /// such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a>
+        /// and for granting access to your Amazon Kendra experience. You must set up Amazon Web Services SSO
+        /// with Amazon Kendra. You must include your users and groups in your Access Control List when
+        /// you ingest documents into your index. For more information, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting
+        /// started with an Amazon Web Services SSO identity source</a>.</p>
+        pub fn set_identity_attribute_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_attribute_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UserIdentityConfiguration`](crate::model::UserIdentityConfiguration)
+        pub fn build(self) -> crate::model::UserIdentityConfiguration {
+            crate::model::UserIdentityConfiguration {
+                identity_attribute_name: self.identity_attribute_name,
+            }
+        }
+    }
+}
+impl UserIdentityConfiguration {
+    /// Creates a new builder-style object to manufacture [`UserIdentityConfiguration`](crate::model::UserIdentityConfiguration)
+    pub fn builder() -> crate::model::user_identity_configuration::Builder {
+        crate::model::user_identity_configuration::Builder::default()
+    }
+}
+
+/// <p>Configuration information for your content sources, such as data sources,
+/// FAQs, and content indexed directly via <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ContentSourceConfiguration {
+    /// <p>The identifier of the data sources you want to use for your Amazon Kendra experience.</p>
+    pub data_source_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The identifier of the FAQs that you want to use for your Amazon Kendra experience.</p>
+    pub faq_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>
+    /// <code>TRUE</code> to use documents you indexed directly using the
+    /// <code>BatchPutDocument</code> operation.</p>
+    pub direct_put_content: bool,
+}
+impl ContentSourceConfiguration {
+    /// <p>The identifier of the data sources you want to use for your Amazon Kendra experience.</p>
+    pub fn data_source_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.data_source_ids.as_deref()
+    }
+    /// <p>The identifier of the FAQs that you want to use for your Amazon Kendra experience.</p>
+    pub fn faq_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.faq_ids.as_deref()
+    }
+    /// <p>
+    /// <code>TRUE</code> to use documents you indexed directly using the
+    /// <code>BatchPutDocument</code> operation.</p>
+    pub fn direct_put_content(&self) -> bool {
+        self.direct_put_content
+    }
+}
+impl std::fmt::Debug for ContentSourceConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ContentSourceConfiguration");
+        formatter.field("data_source_ids", &self.data_source_ids);
+        formatter.field("faq_ids", &self.faq_ids);
+        formatter.field("direct_put_content", &self.direct_put_content);
+        formatter.finish()
+    }
+}
+/// See [`ContentSourceConfiguration`](crate::model::ContentSourceConfiguration)
+pub mod content_source_configuration {
+    /// A builder for [`ContentSourceConfiguration`](crate::model::ContentSourceConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_source_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) faq_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) direct_put_content: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// Appends an item to `data_source_ids`.
+        ///
+        /// To override the contents of this collection use [`set_data_source_ids`](Self::set_data_source_ids).
+        ///
+        /// <p>The identifier of the data sources you want to use for your Amazon Kendra experience.</p>
+        pub fn data_source_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.data_source_ids.unwrap_or_default();
+            v.push(input.into());
+            self.data_source_ids = Some(v);
+            self
+        }
+        /// <p>The identifier of the data sources you want to use for your Amazon Kendra experience.</p>
+        pub fn set_data_source_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.data_source_ids = input;
+            self
+        }
+        /// Appends an item to `faq_ids`.
+        ///
+        /// To override the contents of this collection use [`set_faq_ids`](Self::set_faq_ids).
+        ///
+        /// <p>The identifier of the FAQs that you want to use for your Amazon Kendra experience.</p>
+        pub fn faq_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.faq_ids.unwrap_or_default();
+            v.push(input.into());
+            self.faq_ids = Some(v);
+            self
+        }
+        /// <p>The identifier of the FAQs that you want to use for your Amazon Kendra experience.</p>
+        pub fn set_faq_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.faq_ids = input;
+            self
+        }
+        /// <p>
+        /// <code>TRUE</code> to use documents you indexed directly using the
+        /// <code>BatchPutDocument</code> operation.</p>
+        pub fn direct_put_content(mut self, input: bool) -> Self {
+            self.direct_put_content = Some(input);
+            self
+        }
+        /// <p>
+        /// <code>TRUE</code> to use documents you indexed directly using the
+        /// <code>BatchPutDocument</code> operation.</p>
+        pub fn set_direct_put_content(mut self, input: std::option::Option<bool>) -> Self {
+            self.direct_put_content = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ContentSourceConfiguration`](crate::model::ContentSourceConfiguration)
+        pub fn build(self) -> crate::model::ContentSourceConfiguration {
+            crate::model::ContentSourceConfiguration {
+                data_source_ids: self.data_source_ids,
+                faq_ids: self.faq_ids,
+                direct_put_content: self.direct_put_content.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ContentSourceConfiguration {
+    /// Creates a new builder-style object to manufacture [`ContentSourceConfiguration`](crate::model::ContentSourceConfiguration)
+    pub fn builder() -> crate::model::content_source_configuration::Builder {
+        crate::model::content_source_configuration::Builder::default()
+    }
+}
+
+/// <p>Provides the configuration information for altering document metadata and content
+/// during the document ingestion process.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata
+/// during the ingestion process</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomDocumentEnrichmentConfiguration {
+    /// <p>Configuration information to alter document attributes or metadata fields and
+    /// content when ingesting documents into Amazon Kendra.</p>
+    pub inline_configurations: std::option::Option<
+        std::vec::Vec<crate::model::InlineCustomDocumentEnrichmentConfiguration>,
+    >,
+    /// <p>Configuration information for invoking a Lambda function in Lambda
+    /// on the original or raw documents before extracting their metadata and text. You can
+    /// use a Lambda function to apply advanced logic for creating, modifying, or deleting
+    /// document metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced
+    /// data manipulation</a>.</p>
+    pub pre_extraction_hook_configuration: std::option::Option<crate::model::HookConfiguration>,
+    /// <p>Configuration information for invoking a Lambda function in Lambda
+    /// on the structured documents with their metadata and text extracted. You can use a
+    /// Lambda function to apply advanced logic for creating, modifying, or deleting document
+    /// metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced
+    /// data manipulation</a>.</p>
+    pub post_extraction_hook_configuration: std::option::Option<crate::model::HookConfiguration>,
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to run
+    /// <code>PreExtractionHookConfiguration</code> and
+    /// <code>PostExtractionHookConfiguration</code> for altering document metadata
+    /// and content during the document ingestion process. For more information,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
+    /// Amazon Kendra</a>.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+}
+impl CustomDocumentEnrichmentConfiguration {
+    /// <p>Configuration information to alter document attributes or metadata fields and
+    /// content when ingesting documents into Amazon Kendra.</p>
+    pub fn inline_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::InlineCustomDocumentEnrichmentConfiguration]> {
+        self.inline_configurations.as_deref()
+    }
+    /// <p>Configuration information for invoking a Lambda function in Lambda
+    /// on the original or raw documents before extracting their metadata and text. You can
+    /// use a Lambda function to apply advanced logic for creating, modifying, or deleting
+    /// document metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced
+    /// data manipulation</a>.</p>
+    pub fn pre_extraction_hook_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::HookConfiguration> {
+        self.pre_extraction_hook_configuration.as_ref()
+    }
+    /// <p>Configuration information for invoking a Lambda function in Lambda
+    /// on the structured documents with their metadata and text extracted. You can use a
+    /// Lambda function to apply advanced logic for creating, modifying, or deleting document
+    /// metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced
+    /// data manipulation</a>.</p>
+    pub fn post_extraction_hook_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::HookConfiguration> {
+        self.post_extraction_hook_configuration.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to run
+    /// <code>PreExtractionHookConfiguration</code> and
+    /// <code>PostExtractionHookConfiguration</code> for altering document metadata
+    /// and content during the document ingestion process. For more information,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
+    /// Amazon Kendra</a>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for CustomDocumentEnrichmentConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomDocumentEnrichmentConfiguration");
+        formatter.field("inline_configurations", &self.inline_configurations);
+        formatter.field(
+            "pre_extraction_hook_configuration",
+            &self.pre_extraction_hook_configuration,
+        );
+        formatter.field(
+            "post_extraction_hook_configuration",
+            &self.post_extraction_hook_configuration,
+        );
+        formatter.field("role_arn", &self.role_arn);
+        formatter.finish()
+    }
+}
+/// See [`CustomDocumentEnrichmentConfiguration`](crate::model::CustomDocumentEnrichmentConfiguration)
+pub mod custom_document_enrichment_configuration {
+    /// A builder for [`CustomDocumentEnrichmentConfiguration`](crate::model::CustomDocumentEnrichmentConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) inline_configurations: std::option::Option<
+            std::vec::Vec<crate::model::InlineCustomDocumentEnrichmentConfiguration>,
+        >,
+        pub(crate) pre_extraction_hook_configuration:
+            std::option::Option<crate::model::HookConfiguration>,
+        pub(crate) post_extraction_hook_configuration:
+            std::option::Option<crate::model::HookConfiguration>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `inline_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_inline_configurations`](Self::set_inline_configurations).
+        ///
+        /// <p>Configuration information to alter document attributes or metadata fields and
+        /// content when ingesting documents into Amazon Kendra.</p>
+        pub fn inline_configurations(
+            mut self,
+            input: impl Into<crate::model::InlineCustomDocumentEnrichmentConfiguration>,
+        ) -> Self {
+            let mut v = self.inline_configurations.unwrap_or_default();
+            v.push(input.into());
+            self.inline_configurations = Some(v);
+            self
+        }
+        /// <p>Configuration information to alter document attributes or metadata fields and
+        /// content when ingesting documents into Amazon Kendra.</p>
+        pub fn set_inline_configurations(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::InlineCustomDocumentEnrichmentConfiguration>,
+            >,
+        ) -> Self {
+            self.inline_configurations = input;
+            self
+        }
+        /// <p>Configuration information for invoking a Lambda function in Lambda
+        /// on the original or raw documents before extracting their metadata and text. You can
+        /// use a Lambda function to apply advanced logic for creating, modifying, or deleting
+        /// document metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced
+        /// data manipulation</a>.</p>
+        pub fn pre_extraction_hook_configuration(
+            mut self,
+            input: crate::model::HookConfiguration,
+        ) -> Self {
+            self.pre_extraction_hook_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration information for invoking a Lambda function in Lambda
+        /// on the original or raw documents before extracting their metadata and text. You can
+        /// use a Lambda function to apply advanced logic for creating, modifying, or deleting
+        /// document metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced
+        /// data manipulation</a>.</p>
+        pub fn set_pre_extraction_hook_configuration(
+            mut self,
+            input: std::option::Option<crate::model::HookConfiguration>,
+        ) -> Self {
+            self.pre_extraction_hook_configuration = input;
+            self
+        }
+        /// <p>Configuration information for invoking a Lambda function in Lambda
+        /// on the structured documents with their metadata and text extracted. You can use a
+        /// Lambda function to apply advanced logic for creating, modifying, or deleting document
+        /// metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced
+        /// data manipulation</a>.</p>
+        pub fn post_extraction_hook_configuration(
+            mut self,
+            input: crate::model::HookConfiguration,
+        ) -> Self {
+            self.post_extraction_hook_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration information for invoking a Lambda function in Lambda
+        /// on the structured documents with their metadata and text extracted. You can use a
+        /// Lambda function to apply advanced logic for creating, modifying, or deleting document
+        /// metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced
+        /// data manipulation</a>.</p>
+        pub fn set_post_extraction_hook_configuration(
+            mut self,
+            input: std::option::Option<crate::model::HookConfiguration>,
+        ) -> Self {
+            self.post_extraction_hook_configuration = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to run
+        /// <code>PreExtractionHookConfiguration</code> and
+        /// <code>PostExtractionHookConfiguration</code> for altering document metadata
+        /// and content during the document ingestion process. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
+        /// Amazon Kendra</a>.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to run
+        /// <code>PreExtractionHookConfiguration</code> and
+        /// <code>PostExtractionHookConfiguration</code> for altering document metadata
+        /// and content during the document ingestion process. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
+        /// Amazon Kendra</a>.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomDocumentEnrichmentConfiguration`](crate::model::CustomDocumentEnrichmentConfiguration)
+        pub fn build(self) -> crate::model::CustomDocumentEnrichmentConfiguration {
+            crate::model::CustomDocumentEnrichmentConfiguration {
+                inline_configurations: self.inline_configurations,
+                pre_extraction_hook_configuration: self.pre_extraction_hook_configuration,
+                post_extraction_hook_configuration: self.post_extraction_hook_configuration,
+                role_arn: self.role_arn,
+            }
+        }
+    }
+}
+impl CustomDocumentEnrichmentConfiguration {
+    /// Creates a new builder-style object to manufacture [`CustomDocumentEnrichmentConfiguration`](crate::model::CustomDocumentEnrichmentConfiguration)
+    pub fn builder() -> crate::model::custom_document_enrichment_configuration::Builder {
+        crate::model::custom_document_enrichment_configuration::Builder::default()
+    }
+}
+
+/// <p>Provides the configuration information for invoking a Lambda function in
+/// Lambda to alter document metadata and content when ingesting
+/// documents into Amazon Kendra. You can configure your Lambda function using
+/// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_PreExtractionHookConfiguration.html">PreExtractionHookConfiguration</a>
+/// if you want to apply advanced alterations on the original or raw documents.
+/// If you want to apply advanced alterations on the Amazon Kendra structured documents,
+/// you must configure your Lambda function using <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_PostExtractionHookConfiguration.html">PostExtractionHookConfiguration</a>.
+/// You can only invoke one Lambda function. However, this function can invoke other
+/// functions it requires.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata
+/// during the ingestion process</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HookConfiguration {
+    /// <p>The condition used for when a Lambda function should be invoked.</p>
+    /// <p>For example, you can specify a condition that if there are empty date-time
+    /// values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
+    pub invocation_condition: std::option::Option<crate::model::DocumentAttributeCondition>,
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function
+    /// during ingestion. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    pub lambda_arn: std::option::Option<std::string::String>,
+    /// <p>Stores the original, raw documents or the structured, parsed
+    /// documents before and after altering them. For more information,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data
+    /// contracts for Lambda functions</a>.</p>
+    pub s3_bucket: std::option::Option<std::string::String>,
+}
+impl HookConfiguration {
+    /// <p>The condition used for when a Lambda function should be invoked.</p>
+    /// <p>For example, you can specify a condition that if there are empty date-time
+    /// values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
+    pub fn invocation_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::DocumentAttributeCondition> {
+        self.invocation_condition.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function
+    /// during ingestion. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+        self.lambda_arn.as_deref()
+    }
+    /// <p>Stores the original, raw documents or the structured, parsed
+    /// documents before and after altering them. For more information,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data
+    /// contracts for Lambda functions</a>.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+}
+impl std::fmt::Debug for HookConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HookConfiguration");
+        formatter.field("invocation_condition", &self.invocation_condition);
+        formatter.field("lambda_arn", &self.lambda_arn);
+        formatter.field("s3_bucket", &self.s3_bucket);
+        formatter.finish()
+    }
+}
+/// See [`HookConfiguration`](crate::model::HookConfiguration)
+pub mod hook_configuration {
+    /// A builder for [`HookConfiguration`](crate::model::HookConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) invocation_condition:
+            std::option::Option<crate::model::DocumentAttributeCondition>,
+        pub(crate) lambda_arn: std::option::Option<std::string::String>,
+        pub(crate) s3_bucket: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The condition used for when a Lambda function should be invoked.</p>
+        /// <p>For example, you can specify a condition that if there are empty date-time
+        /// values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
+        pub fn invocation_condition(
+            mut self,
+            input: crate::model::DocumentAttributeCondition,
+        ) -> Self {
+            self.invocation_condition = Some(input);
+            self
+        }
+        /// <p>The condition used for when a Lambda function should be invoked.</p>
+        /// <p>For example, you can specify a condition that if there are empty date-time
+        /// values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
+        pub fn set_invocation_condition(
+            mut self,
+            input: std::option::Option<crate::model::DocumentAttributeCondition>,
+        ) -> Self {
+            self.invocation_condition = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function
+        /// during ingestion. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        pub fn lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lambda_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function
+        /// during ingestion. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lambda_arn = input;
+            self
+        }
+        /// <p>Stores the original, raw documents or the structured, parsed
+        /// documents before and after altering them. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data
+        /// contracts for Lambda functions</a>.</p>
+        pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket = Some(input.into());
+            self
+        }
+        /// <p>Stores the original, raw documents or the structured, parsed
+        /// documents before and after altering them. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data
+        /// contracts for Lambda functions</a>.</p>
+        pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HookConfiguration`](crate::model::HookConfiguration)
+        pub fn build(self) -> crate::model::HookConfiguration {
+            crate::model::HookConfiguration {
+                invocation_condition: self.invocation_condition,
+                lambda_arn: self.lambda_arn,
+                s3_bucket: self.s3_bucket,
+            }
+        }
+    }
+}
+impl HookConfiguration {
+    /// Creates a new builder-style object to manufacture [`HookConfiguration`](crate::model::HookConfiguration)
+    pub fn builder() -> crate::model::hook_configuration::Builder {
+        crate::model::hook_configuration::Builder::default()
+    }
+}
+
+/// <p>The condition used for the target document attribute or metadata field when
+/// ingesting documents into Amazon Kendra. You use this with <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_DocumentAttributeTarget.html">DocumentAttributeTarget
+/// to apply the condition</a>.</p>
+/// <p>For example, you can create the 'Department' target field and have it prefill
+/// department names associated with the documents based on information in the
+/// 'Source_URI' field. Set the condition that if the 'Source_URI' field contains
+/// 'financial' in its URI value, then prefill the target field 'Department' with
+/// the target value 'Finance' for the document.</p>
+/// <p>Amazon Kendra cannot create a target field if it has not already been created as an
+/// index field. After you create your index field, you can create a document metadata
+/// field using <code>DocumentAttributeTarget</code>. Amazon Kendra then will map your newly
+/// created metadata field to your index field.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DocumentAttributeCondition {
+    /// <p>The identifier of the document attribute used for the condition.</p>
+    /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata
+    /// field that contains source URIs associated with the documents.</p>
+    /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute
+    /// key used for the condition.</p>
+    pub condition_document_attribute_key: std::option::Option<std::string::String>,
+    /// <p>The condition operator.</p>
+    /// <p>For example, you can use 'Contains' to partially match a string.</p>
+    pub operator: std::option::Option<crate::model::ConditionOperator>,
+    /// <p>The value used by the operator.</p>
+    /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI'
+    /// field that partially match or contain this value.</p>
+    pub condition_on_value: std::option::Option<crate::model::DocumentAttributeValue>,
+}
+impl DocumentAttributeCondition {
+    /// <p>The identifier of the document attribute used for the condition.</p>
+    /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata
+    /// field that contains source URIs associated with the documents.</p>
+    /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute
+    /// key used for the condition.</p>
+    pub fn condition_document_attribute_key(&self) -> std::option::Option<&str> {
+        self.condition_document_attribute_key.as_deref()
+    }
+    /// <p>The condition operator.</p>
+    /// <p>For example, you can use 'Contains' to partially match a string.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::ConditionOperator> {
+        self.operator.as_ref()
+    }
+    /// <p>The value used by the operator.</p>
+    /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI'
+    /// field that partially match or contain this value.</p>
+    pub fn condition_on_value(&self) -> std::option::Option<&crate::model::DocumentAttributeValue> {
+        self.condition_on_value.as_ref()
+    }
+}
+impl std::fmt::Debug for DocumentAttributeCondition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DocumentAttributeCondition");
+        formatter.field(
+            "condition_document_attribute_key",
+            &self.condition_document_attribute_key,
+        );
+        formatter.field("operator", &self.operator);
+        formatter.field("condition_on_value", &self.condition_on_value);
+        formatter.finish()
+    }
+}
+/// See [`DocumentAttributeCondition`](crate::model::DocumentAttributeCondition)
+pub mod document_attribute_condition {
+    /// A builder for [`DocumentAttributeCondition`](crate::model::DocumentAttributeCondition)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) condition_document_attribute_key: std::option::Option<std::string::String>,
+        pub(crate) operator: std::option::Option<crate::model::ConditionOperator>,
+        pub(crate) condition_on_value: std::option::Option<crate::model::DocumentAttributeValue>,
+    }
+    impl Builder {
+        /// <p>The identifier of the document attribute used for the condition.</p>
+        /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata
+        /// field that contains source URIs associated with the documents.</p>
+        /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute
+        /// key used for the condition.</p>
+        pub fn condition_document_attribute_key(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.condition_document_attribute_key = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the document attribute used for the condition.</p>
+        /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata
+        /// field that contains source URIs associated with the documents.</p>
+        /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute
+        /// key used for the condition.</p>
+        pub fn set_condition_document_attribute_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.condition_document_attribute_key = input;
+            self
+        }
+        /// <p>The condition operator.</p>
+        /// <p>For example, you can use 'Contains' to partially match a string.</p>
+        pub fn operator(mut self, input: crate::model::ConditionOperator) -> Self {
+            self.operator = Some(input);
+            self
+        }
+        /// <p>The condition operator.</p>
+        /// <p>For example, you can use 'Contains' to partially match a string.</p>
+        pub fn set_operator(
+            mut self,
+            input: std::option::Option<crate::model::ConditionOperator>,
+        ) -> Self {
+            self.operator = input;
+            self
+        }
+        /// <p>The value used by the operator.</p>
+        /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI'
+        /// field that partially match or contain this value.</p>
+        pub fn condition_on_value(mut self, input: crate::model::DocumentAttributeValue) -> Self {
+            self.condition_on_value = Some(input);
+            self
+        }
+        /// <p>The value used by the operator.</p>
+        /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI'
+        /// field that partially match or contain this value.</p>
+        pub fn set_condition_on_value(
+            mut self,
+            input: std::option::Option<crate::model::DocumentAttributeValue>,
+        ) -> Self {
+            self.condition_on_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DocumentAttributeCondition`](crate::model::DocumentAttributeCondition)
+        pub fn build(self) -> crate::model::DocumentAttributeCondition {
+            crate::model::DocumentAttributeCondition {
+                condition_document_attribute_key: self.condition_document_attribute_key,
+                operator: self.operator,
+                condition_on_value: self.condition_on_value,
+            }
+        }
+    }
+}
+impl DocumentAttributeCondition {
+    /// Creates a new builder-style object to manufacture [`DocumentAttributeCondition`](crate::model::DocumentAttributeCondition)
+    pub fn builder() -> crate::model::document_attribute_condition::Builder {
+        crate::model::document_attribute_condition::Builder::default()
+    }
+}
+
+/// <p>The value of a custom document attribute. You can only provide one
+/// value for a custom attribute.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DocumentAttributeValue {
+    /// <p>A string, such as "department".</p>
+    pub string_value: std::option::Option<std::string::String>,
+    /// <p>A list of strings. </p>
+    pub string_list_value: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A long integer value.</p>
+    pub long_value: std::option::Option<i64>,
+    /// <p>A date expressed as an ISO 8601 string.</p>
+    /// <p>It is important for the time zone to be included
+    /// in the ISO 8601 date-time format. For example,
+    /// 20120325T123010+01:00 is the ISO 8601 date-time format
+    /// for March 25th 2012 at 12:30PM (plus 10 seconds) in
+    /// Central European Time.</p>
+    pub date_value: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl DocumentAttributeValue {
+    /// <p>A string, such as "department".</p>
+    pub fn string_value(&self) -> std::option::Option<&str> {
+        self.string_value.as_deref()
+    }
+    /// <p>A list of strings. </p>
+    pub fn string_list_value(&self) -> std::option::Option<&[std::string::String]> {
+        self.string_list_value.as_deref()
+    }
+    /// <p>A long integer value.</p>
+    pub fn long_value(&self) -> std::option::Option<i64> {
+        self.long_value
+    }
+    /// <p>A date expressed as an ISO 8601 string.</p>
+    /// <p>It is important for the time zone to be included
+    /// in the ISO 8601 date-time format. For example,
+    /// 20120325T123010+01:00 is the ISO 8601 date-time format
+    /// for March 25th 2012 at 12:30PM (plus 10 seconds) in
+    /// Central European Time.</p>
+    pub fn date_value(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.date_value.as_ref()
+    }
+}
+impl std::fmt::Debug for DocumentAttributeValue {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DocumentAttributeValue");
+        formatter.field("string_value", &self.string_value);
+        formatter.field("string_list_value", &self.string_list_value);
+        formatter.field("long_value", &self.long_value);
+        formatter.field("date_value", &self.date_value);
+        formatter.finish()
+    }
+}
+/// See [`DocumentAttributeValue`](crate::model::DocumentAttributeValue)
+pub mod document_attribute_value {
+    /// A builder for [`DocumentAttributeValue`](crate::model::DocumentAttributeValue)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) string_value: std::option::Option<std::string::String>,
+        pub(crate) string_list_value: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) long_value: std::option::Option<i64>,
+        pub(crate) date_value: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>A string, such as "department".</p>
+        pub fn string_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.string_value = Some(input.into());
+            self
+        }
+        /// <p>A string, such as "department".</p>
+        pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.string_value = input;
+            self
+        }
+        /// Appends an item to `string_list_value`.
+        ///
+        /// To override the contents of this collection use [`set_string_list_value`](Self::set_string_list_value).
+        ///
+        /// <p>A list of strings. </p>
+        pub fn string_list_value(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.string_list_value.unwrap_or_default();
+            v.push(input.into());
+            self.string_list_value = Some(v);
+            self
+        }
+        /// <p>A list of strings. </p>
+        pub fn set_string_list_value(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.string_list_value = input;
+            self
+        }
+        /// <p>A long integer value.</p>
+        pub fn long_value(mut self, input: i64) -> Self {
+            self.long_value = Some(input);
+            self
+        }
+        /// <p>A long integer value.</p>
+        pub fn set_long_value(mut self, input: std::option::Option<i64>) -> Self {
+            self.long_value = input;
+            self
+        }
+        /// <p>A date expressed as an ISO 8601 string.</p>
+        /// <p>It is important for the time zone to be included
+        /// in the ISO 8601 date-time format. For example,
+        /// 20120325T123010+01:00 is the ISO 8601 date-time format
+        /// for March 25th 2012 at 12:30PM (plus 10 seconds) in
+        /// Central European Time.</p>
+        pub fn date_value(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.date_value = Some(input);
+            self
+        }
+        /// <p>A date expressed as an ISO 8601 string.</p>
+        /// <p>It is important for the time zone to be included
+        /// in the ISO 8601 date-time format. For example,
+        /// 20120325T123010+01:00 is the ISO 8601 date-time format
+        /// for March 25th 2012 at 12:30PM (plus 10 seconds) in
+        /// Central European Time.</p>
+        pub fn set_date_value(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.date_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DocumentAttributeValue`](crate::model::DocumentAttributeValue)
+        pub fn build(self) -> crate::model::DocumentAttributeValue {
+            crate::model::DocumentAttributeValue {
+                string_value: self.string_value,
+                string_list_value: self.string_list_value,
+                long_value: self.long_value,
+                date_value: self.date_value,
+            }
+        }
+    }
+}
+impl DocumentAttributeValue {
+    /// Creates a new builder-style object to manufacture [`DocumentAttributeValue`](crate::model::DocumentAttributeValue)
+    pub fn builder() -> crate::model::document_attribute_value::Builder {
+        crate::model::document_attribute_value::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ConditionOperator {
+    #[allow(missing_docs)] // documentation missing in model
+    BeginsWith,
+    #[allow(missing_docs)] // documentation missing in model
+    Contains,
+    #[allow(missing_docs)] // documentation missing in model
+    Equals,
+    #[allow(missing_docs)] // documentation missing in model
+    Exists,
+    #[allow(missing_docs)] // documentation missing in model
+    GreaterThan,
+    #[allow(missing_docs)] // documentation missing in model
+    GreaterThanOrEquals,
+    #[allow(missing_docs)] // documentation missing in model
+    LessThan,
+    #[allow(missing_docs)] // documentation missing in model
+    LessThanOrEquals,
+    #[allow(missing_docs)] // documentation missing in model
+    NotContains,
+    #[allow(missing_docs)] // documentation missing in model
+    NotEquals,
+    #[allow(missing_docs)] // documentation missing in model
+    NotExists,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ConditionOperator {
+    fn from(s: &str) -> Self {
+        match s {
+            "BeginsWith" => ConditionOperator::BeginsWith,
+            "Contains" => ConditionOperator::Contains,
+            "Equals" => ConditionOperator::Equals,
+            "Exists" => ConditionOperator::Exists,
+            "GreaterThan" => ConditionOperator::GreaterThan,
+            "GreaterThanOrEquals" => ConditionOperator::GreaterThanOrEquals,
+            "LessThan" => ConditionOperator::LessThan,
+            "LessThanOrEquals" => ConditionOperator::LessThanOrEquals,
+            "NotContains" => ConditionOperator::NotContains,
+            "NotEquals" => ConditionOperator::NotEquals,
+            "NotExists" => ConditionOperator::NotExists,
+            other => ConditionOperator::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ConditionOperator {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ConditionOperator::from(s))
+    }
+}
+impl ConditionOperator {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ConditionOperator::BeginsWith => "BeginsWith",
+            ConditionOperator::Contains => "Contains",
+            ConditionOperator::Equals => "Equals",
+            ConditionOperator::Exists => "Exists",
+            ConditionOperator::GreaterThan => "GreaterThan",
+            ConditionOperator::GreaterThanOrEquals => "GreaterThanOrEquals",
+            ConditionOperator::LessThan => "LessThan",
+            ConditionOperator::LessThanOrEquals => "LessThanOrEquals",
+            ConditionOperator::NotContains => "NotContains",
+            ConditionOperator::NotEquals => "NotEquals",
+            ConditionOperator::NotExists => "NotExists",
+            ConditionOperator::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BeginsWith",
+            "Contains",
+            "Equals",
+            "Exists",
+            "GreaterThan",
+            "GreaterThanOrEquals",
+            "LessThan",
+            "LessThanOrEquals",
+            "NotContains",
+            "NotEquals",
+            "NotExists",
+        ]
+    }
+}
+impl AsRef<str> for ConditionOperator {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Provides the configuration information for applying basic logic to alter document
+/// metadata and content when ingesting documents into Amazon Kendra. To apply advanced
+/// logic, to go beyond what you can do with basic logic, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_HookConfiguration.html">HookConfiguration</a>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata
+/// during the ingestion process</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InlineCustomDocumentEnrichmentConfiguration {
+    /// <p>Configuration of the condition used for the target document attribute or metadata
+    /// field when ingesting documents into Amazon Kendra.</p>
+    pub condition: std::option::Option<crate::model::DocumentAttributeCondition>,
+    /// <p>Configuration of the target document attribute or metadata field when ingesting
+    /// documents into Amazon Kendra. You can also include a value.</p>
+    pub target: std::option::Option<crate::model::DocumentAttributeTarget>,
+    /// <p>
+    /// <code>TRUE</code> to delete content if the condition used for the target
+    /// attribute is met.</p>
+    pub document_content_deletion: bool,
+}
+impl InlineCustomDocumentEnrichmentConfiguration {
+    /// <p>Configuration of the condition used for the target document attribute or metadata
+    /// field when ingesting documents into Amazon Kendra.</p>
+    pub fn condition(&self) -> std::option::Option<&crate::model::DocumentAttributeCondition> {
+        self.condition.as_ref()
+    }
+    /// <p>Configuration of the target document attribute or metadata field when ingesting
+    /// documents into Amazon Kendra. You can also include a value.</p>
+    pub fn target(&self) -> std::option::Option<&crate::model::DocumentAttributeTarget> {
+        self.target.as_ref()
+    }
+    /// <p>
+    /// <code>TRUE</code> to delete content if the condition used for the target
+    /// attribute is met.</p>
+    pub fn document_content_deletion(&self) -> bool {
+        self.document_content_deletion
+    }
+}
+impl std::fmt::Debug for InlineCustomDocumentEnrichmentConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InlineCustomDocumentEnrichmentConfiguration");
+        formatter.field("condition", &self.condition);
+        formatter.field("target", &self.target);
+        formatter.field("document_content_deletion", &self.document_content_deletion);
+        formatter.finish()
+    }
+}
+/// See [`InlineCustomDocumentEnrichmentConfiguration`](crate::model::InlineCustomDocumentEnrichmentConfiguration)
+pub mod inline_custom_document_enrichment_configuration {
+    /// A builder for [`InlineCustomDocumentEnrichmentConfiguration`](crate::model::InlineCustomDocumentEnrichmentConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) condition: std::option::Option<crate::model::DocumentAttributeCondition>,
+        pub(crate) target: std::option::Option<crate::model::DocumentAttributeTarget>,
+        pub(crate) document_content_deletion: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Configuration of the condition used for the target document attribute or metadata
+        /// field when ingesting documents into Amazon Kendra.</p>
+        pub fn condition(mut self, input: crate::model::DocumentAttributeCondition) -> Self {
+            self.condition = Some(input);
+            self
+        }
+        /// <p>Configuration of the condition used for the target document attribute or metadata
+        /// field when ingesting documents into Amazon Kendra.</p>
+        pub fn set_condition(
+            mut self,
+            input: std::option::Option<crate::model::DocumentAttributeCondition>,
+        ) -> Self {
+            self.condition = input;
+            self
+        }
+        /// <p>Configuration of the target document attribute or metadata field when ingesting
+        /// documents into Amazon Kendra. You can also include a value.</p>
+        pub fn target(mut self, input: crate::model::DocumentAttributeTarget) -> Self {
+            self.target = Some(input);
+            self
+        }
+        /// <p>Configuration of the target document attribute or metadata field when ingesting
+        /// documents into Amazon Kendra. You can also include a value.</p>
+        pub fn set_target(
+            mut self,
+            input: std::option::Option<crate::model::DocumentAttributeTarget>,
+        ) -> Self {
+            self.target = input;
+            self
+        }
+        /// <p>
+        /// <code>TRUE</code> to delete content if the condition used for the target
+        /// attribute is met.</p>
+        pub fn document_content_deletion(mut self, input: bool) -> Self {
+            self.document_content_deletion = Some(input);
+            self
+        }
+        /// <p>
+        /// <code>TRUE</code> to delete content if the condition used for the target
+        /// attribute is met.</p>
+        pub fn set_document_content_deletion(mut self, input: std::option::Option<bool>) -> Self {
+            self.document_content_deletion = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InlineCustomDocumentEnrichmentConfiguration`](crate::model::InlineCustomDocumentEnrichmentConfiguration)
+        pub fn build(self) -> crate::model::InlineCustomDocumentEnrichmentConfiguration {
+            crate::model::InlineCustomDocumentEnrichmentConfiguration {
+                condition: self.condition,
+                target: self.target,
+                document_content_deletion: self.document_content_deletion.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl InlineCustomDocumentEnrichmentConfiguration {
+    /// Creates a new builder-style object to manufacture [`InlineCustomDocumentEnrichmentConfiguration`](crate::model::InlineCustomDocumentEnrichmentConfiguration)
+    pub fn builder() -> crate::model::inline_custom_document_enrichment_configuration::Builder {
+        crate::model::inline_custom_document_enrichment_configuration::Builder::default()
+    }
+}
+
+/// <p>The target document attribute or metadata field you want to alter when ingesting
+/// documents into Amazon Kendra.</p>
+/// <p>For example, you can delete customer identification numbers associated with the
+/// documents, stored in the document metadata field called 'Customer_ID'. You set the
+/// target key as 'Customer_ID' and the deletion flag to <code>TRUE</code>. This
+/// removes all customer ID values in the field 'Customer_ID'. This would scrub
+/// personally identifiable information from each document's metadata.</p>
+/// <p>Amazon Kendra cannot create a target field if it has not already been created as an
+/// index field. After you create your index field, you can create a document metadata
+/// field using <code>DocumentAttributeTarget</code>. Amazon Kendra then will map your newly
+/// created metadata field to your index field.</p>
+/// <p>You can also use this with <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_DocumentAttributeCondition.html">DocumentAttributeCondition</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DocumentAttributeTarget {
+    /// <p>The identifier of the target document attribute or metadata field.</p>
+    /// <p>For example, 'Department' could be an identifier for the target attribute or
+    /// metadata field that includes the department names associated with the documents.</p>
+    pub target_document_attribute_key: std::option::Option<std::string::String>,
+    /// <p>
+    /// <code>TRUE</code> to delete the existing target value for your specified target
+    /// attribute key. You cannot create a target value and set this to <code>TRUE</code>.
+    /// To create a target value (<code>TargetDocumentAttributeValue</code>), set this to
+    /// <code>FALSE</code>.</p>
+    pub target_document_attribute_value_deletion: bool,
+    /// <p>The target value you want to create for the target attribute.</p>
+    /// <p>For example, 'Finance' could be the target value for the target attribute key
+    /// 'Department'.</p>
+    pub target_document_attribute_value: std::option::Option<crate::model::DocumentAttributeValue>,
+}
+impl DocumentAttributeTarget {
+    /// <p>The identifier of the target document attribute or metadata field.</p>
+    /// <p>For example, 'Department' could be an identifier for the target attribute or
+    /// metadata field that includes the department names associated with the documents.</p>
+    pub fn target_document_attribute_key(&self) -> std::option::Option<&str> {
+        self.target_document_attribute_key.as_deref()
+    }
+    /// <p>
+    /// <code>TRUE</code> to delete the existing target value for your specified target
+    /// attribute key. You cannot create a target value and set this to <code>TRUE</code>.
+    /// To create a target value (<code>TargetDocumentAttributeValue</code>), set this to
+    /// <code>FALSE</code>.</p>
+    pub fn target_document_attribute_value_deletion(&self) -> bool {
+        self.target_document_attribute_value_deletion
+    }
+    /// <p>The target value you want to create for the target attribute.</p>
+    /// <p>For example, 'Finance' could be the target value for the target attribute key
+    /// 'Department'.</p>
+    pub fn target_document_attribute_value(
+        &self,
+    ) -> std::option::Option<&crate::model::DocumentAttributeValue> {
+        self.target_document_attribute_value.as_ref()
+    }
+}
+impl std::fmt::Debug for DocumentAttributeTarget {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DocumentAttributeTarget");
+        formatter.field(
+            "target_document_attribute_key",
+            &self.target_document_attribute_key,
+        );
+        formatter.field(
+            "target_document_attribute_value_deletion",
+            &self.target_document_attribute_value_deletion,
+        );
+        formatter.field(
+            "target_document_attribute_value",
+            &self.target_document_attribute_value,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DocumentAttributeTarget`](crate::model::DocumentAttributeTarget)
+pub mod document_attribute_target {
+    /// A builder for [`DocumentAttributeTarget`](crate::model::DocumentAttributeTarget)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) target_document_attribute_key: std::option::Option<std::string::String>,
+        pub(crate) target_document_attribute_value_deletion: std::option::Option<bool>,
+        pub(crate) target_document_attribute_value:
+            std::option::Option<crate::model::DocumentAttributeValue>,
+    }
+    impl Builder {
+        /// <p>The identifier of the target document attribute or metadata field.</p>
+        /// <p>For example, 'Department' could be an identifier for the target attribute or
+        /// metadata field that includes the department names associated with the documents.</p>
+        pub fn target_document_attribute_key(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.target_document_attribute_key = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the target document attribute or metadata field.</p>
+        /// <p>For example, 'Department' could be an identifier for the target attribute or
+        /// metadata field that includes the department names associated with the documents.</p>
+        pub fn set_target_document_attribute_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_document_attribute_key = input;
+            self
+        }
+        /// <p>
+        /// <code>TRUE</code> to delete the existing target value for your specified target
+        /// attribute key. You cannot create a target value and set this to <code>TRUE</code>.
+        /// To create a target value (<code>TargetDocumentAttributeValue</code>), set this to
+        /// <code>FALSE</code>.</p>
+        pub fn target_document_attribute_value_deletion(mut self, input: bool) -> Self {
+            self.target_document_attribute_value_deletion = Some(input);
+            self
+        }
+        /// <p>
+        /// <code>TRUE</code> to delete the existing target value for your specified target
+        /// attribute key. You cannot create a target value and set this to <code>TRUE</code>.
+        /// To create a target value (<code>TargetDocumentAttributeValue</code>), set this to
+        /// <code>FALSE</code>.</p>
+        pub fn set_target_document_attribute_value_deletion(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.target_document_attribute_value_deletion = input;
+            self
+        }
+        /// <p>The target value you want to create for the target attribute.</p>
+        /// <p>For example, 'Finance' could be the target value for the target attribute key
+        /// 'Department'.</p>
+        pub fn target_document_attribute_value(
+            mut self,
+            input: crate::model::DocumentAttributeValue,
+        ) -> Self {
+            self.target_document_attribute_value = Some(input);
+            self
+        }
+        /// <p>The target value you want to create for the target attribute.</p>
+        /// <p>For example, 'Finance' could be the target value for the target attribute key
+        /// 'Department'.</p>
+        pub fn set_target_document_attribute_value(
+            mut self,
+            input: std::option::Option<crate::model::DocumentAttributeValue>,
+        ) -> Self {
+            self.target_document_attribute_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DocumentAttributeTarget`](crate::model::DocumentAttributeTarget)
+        pub fn build(self) -> crate::model::DocumentAttributeTarget {
+            crate::model::DocumentAttributeTarget {
+                target_document_attribute_key: self.target_document_attribute_key,
+                target_document_attribute_value_deletion: self
+                    .target_document_attribute_value_deletion
+                    .unwrap_or_default(),
+                target_document_attribute_value: self.target_document_attribute_value,
+            }
+        }
+    }
+}
+impl DocumentAttributeTarget {
+    /// Creates a new builder-style object to manufacture [`DocumentAttributeTarget`](crate::model::DocumentAttributeTarget)
+    pub fn builder() -> crate::model::document_attribute_target::Builder {
+        crate::model::document_attribute_target::Builder::default()
+    }
+}
+
+/// <p>Configuration information for an Amazon Kendra data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceConfiguration {
@@ -1583,7 +2918,7 @@ pub struct DataSourceConfiguration {
     /// Drive. </p>
     pub google_drive_configuration: std::option::Option<crate::model::GoogleDriveConfiguration>,
     /// <p>Provides the configuration information required for Amazon Kendra
-    /// web crawler.</p>
+    /// Web Crawler.</p>
     pub web_crawler_configuration: std::option::Option<crate::model::WebCrawlerConfiguration>,
     /// <p>Provides the configuration information to connect to WorkDocs
     /// as your data source.</p>
@@ -1647,7 +2982,7 @@ impl DataSourceConfiguration {
         self.google_drive_configuration.as_ref()
     }
     /// <p>Provides the configuration information required for Amazon Kendra
-    /// web crawler.</p>
+    /// Web Crawler.</p>
     pub fn web_crawler_configuration(
         &self,
     ) -> std::option::Option<&crate::model::WebCrawlerConfiguration> {
@@ -1848,7 +3183,7 @@ pub mod data_source_configuration {
             self
         }
         /// <p>Provides the configuration information required for Amazon Kendra
-        /// web crawler.</p>
+        /// Web Crawler.</p>
         pub fn web_crawler_configuration(
             mut self,
             input: crate::model::WebCrawlerConfiguration,
@@ -1857,7 +3192,7 @@ pub mod data_source_configuration {
             self
         }
         /// <p>Provides the configuration information required for Amazon Kendra
-        /// web crawler.</p>
+        /// Web Crawler.</p>
         pub fn set_web_crawler_configuration(
             mut self,
             input: std::option::Option<crate::model::WebCrawlerConfiguration>,
@@ -1917,11 +3252,11 @@ pub struct WorkDocsConfiguration {
     /// <p>The identifier of the directory corresponding to your
     /// Amazon WorkDocs site repository.</p>
     /// <p>You can find the organization ID in the
-    /// <a href="https://console.aws.amazon.com/directoryservicev2/">AWS Directory Service</a> by going to
+    /// <a href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a> by going to
     /// <b>Active Directory</b>, then
     /// <b>Directories</b>. Your Amazon WorkDocs site directory has an
     /// ID, which is the organization ID. You can also set up a new Amazon WorkDocs
-    /// directory in the AWS Directory Service console and enable a Amazon WorkDocs site
+    /// directory in the Directory Service console and enable a Amazon WorkDocs site
     /// for the directory in the Amazon WorkDocs console.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>
@@ -1967,11 +3302,11 @@ impl WorkDocsConfiguration {
     /// <p>The identifier of the directory corresponding to your
     /// Amazon WorkDocs site repository.</p>
     /// <p>You can find the organization ID in the
-    /// <a href="https://console.aws.amazon.com/directoryservicev2/">AWS Directory Service</a> by going to
+    /// <a href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a> by going to
     /// <b>Active Directory</b>, then
     /// <b>Directories</b>. Your Amazon WorkDocs site directory has an
     /// ID, which is the organization ID. You can also set up a new Amazon WorkDocs
-    /// directory in the AWS Directory Service console and enable a Amazon WorkDocs site
+    /// directory in the Directory Service console and enable a Amazon WorkDocs site
     /// for the directory in the Amazon WorkDocs console.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
@@ -2056,11 +3391,11 @@ pub mod work_docs_configuration {
         /// <p>The identifier of the directory corresponding to your
         /// Amazon WorkDocs site repository.</p>
         /// <p>You can find the organization ID in the
-        /// <a href="https://console.aws.amazon.com/directoryservicev2/">AWS Directory Service</a> by going to
+        /// <a href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a> by going to
         /// <b>Active Directory</b>, then
         /// <b>Directories</b>. Your Amazon WorkDocs site directory has an
         /// ID, which is the organization ID. You can also set up a new Amazon WorkDocs
-        /// directory in the AWS Directory Service console and enable a Amazon WorkDocs site
+        /// directory in the Directory Service console and enable a Amazon WorkDocs site
         /// for the directory in the Amazon WorkDocs console.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
@@ -2069,11 +3404,11 @@ pub mod work_docs_configuration {
         /// <p>The identifier of the directory corresponding to your
         /// Amazon WorkDocs site repository.</p>
         /// <p>You can find the organization ID in the
-        /// <a href="https://console.aws.amazon.com/directoryservicev2/">AWS Directory Service</a> by going to
+        /// <a href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a> by going to
         /// <b>Active Directory</b>, then
         /// <b>Directories</b>. Your Amazon WorkDocs site directory has an
         /// ID, which is the organization ID. You can also set up a new Amazon WorkDocs
-        /// directory in the AWS Directory Service console and enable a Amazon WorkDocs site
+        /// directory in the Directory Service console and enable a Amazon WorkDocs site
         /// for the directory in the Amazon WorkDocs console.</p>
         pub fn set_organization_id(
             mut self,
@@ -2340,7 +3675,7 @@ impl DataSourceToIndexFieldMapping {
 }
 
 /// <p>Provides the configuration information required for Amazon Kendra
-/// web crawler.</p>
+/// Web Crawler.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WebCrawlerConfiguration {
@@ -2354,8 +3689,8 @@ pub struct WebCrawlerConfiguration {
     /// <p>
     /// <i>When selecting websites to index, you must adhere to
     /// the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a>
-    /// and all other Amazon terms. Remember that you must only use the Amazon Kendra
-    /// web crawler to index your own webpages, or webpages that you have
+    /// and all other Amazon terms. Remember that you must only use Amazon Kendra
+    /// Web Crawler to index your own webpages, or webpages that you have
     /// authorization to index.</i>
     /// </p>
     pub urls: std::option::Option<crate::model::Urls>,
@@ -2396,14 +3731,14 @@ pub struct WebCrawlerConfiguration {
     /// port is 443, the standard port for HTTPS.</p>
     /// <p>Web proxy credentials are optional and you can use them to connect to a
     /// web proxy server that requires basic authentication. To store web proxy
-    /// credentials, you use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a>.</p>
+    /// credentials, you use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>.</p>
     pub proxy_configuration: std::option::Option<crate::model::ProxyConfiguration>,
     /// <p>Provides configuration information required to connect to websites using
     /// authentication.</p>
     /// <p>You can connect to websites using basic authentication of user name and password.</p>
     /// <p>You must provide the website host name and port number. For example, the host name
     /// of https://a.example.com/page1.html is "a.example.com" and the port is 443, the
-    /// standard port for HTTPS. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a> to store
+    /// standard port for HTTPS. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store
     /// your authentication credentials.</p>
     pub authentication_configuration:
         std::option::Option<crate::model::AuthenticationConfiguration>,
@@ -2419,8 +3754,8 @@ impl WebCrawlerConfiguration {
     /// <p>
     /// <i>When selecting websites to index, you must adhere to
     /// the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a>
-    /// and all other Amazon terms. Remember that you must only use the Amazon Kendra
-    /// web crawler to index your own webpages, or webpages that you have
+    /// and all other Amazon terms. Remember that you must only use Amazon Kendra
+    /// Web Crawler to index your own webpages, or webpages that you have
     /// authorization to index.</i>
     /// </p>
     pub fn urls(&self) -> std::option::Option<&crate::model::Urls> {
@@ -2475,7 +3810,7 @@ impl WebCrawlerConfiguration {
     /// port is 443, the standard port for HTTPS.</p>
     /// <p>Web proxy credentials are optional and you can use them to connect to a
     /// web proxy server that requires basic authentication. To store web proxy
-    /// credentials, you use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a>.</p>
+    /// credentials, you use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>.</p>
     pub fn proxy_configuration(&self) -> std::option::Option<&crate::model::ProxyConfiguration> {
         self.proxy_configuration.as_ref()
     }
@@ -2484,7 +3819,7 @@ impl WebCrawlerConfiguration {
     /// <p>You can connect to websites using basic authentication of user name and password.</p>
     /// <p>You must provide the website host name and port number. For example, the host name
     /// of https://a.example.com/page1.html is "a.example.com" and the port is 443, the
-    /// standard port for HTTPS. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a> to store
+    /// standard port for HTTPS. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store
     /// your authentication credentials.</p>
     pub fn authentication_configuration(
         &self,
@@ -2544,8 +3879,8 @@ pub mod web_crawler_configuration {
         /// <p>
         /// <i>When selecting websites to index, you must adhere to
         /// the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a>
-        /// and all other Amazon terms. Remember that you must only use the Amazon Kendra
-        /// web crawler to index your own webpages, or webpages that you have
+        /// and all other Amazon terms. Remember that you must only use Amazon Kendra
+        /// Web Crawler to index your own webpages, or webpages that you have
         /// authorization to index.</i>
         /// </p>
         pub fn urls(mut self, input: crate::model::Urls) -> Self {
@@ -2562,8 +3897,8 @@ pub mod web_crawler_configuration {
         /// <p>
         /// <i>When selecting websites to index, you must adhere to
         /// the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a>
-        /// and all other Amazon terms. Remember that you must only use the Amazon Kendra
-        /// web crawler to index your own webpages, or webpages that you have
+        /// and all other Amazon terms. Remember that you must only use Amazon Kendra
+        /// Web Crawler to index your own webpages, or webpages that you have
         /// authorization to index.</i>
         /// </p>
         pub fn set_urls(mut self, input: std::option::Option<crate::model::Urls>) -> Self {
@@ -2697,7 +4032,7 @@ pub mod web_crawler_configuration {
         /// port is 443, the standard port for HTTPS.</p>
         /// <p>Web proxy credentials are optional and you can use them to connect to a
         /// web proxy server that requires basic authentication. To store web proxy
-        /// credentials, you use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a>.</p>
+        /// credentials, you use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>.</p>
         pub fn proxy_configuration(mut self, input: crate::model::ProxyConfiguration) -> Self {
             self.proxy_configuration = Some(input);
             self
@@ -2709,7 +4044,7 @@ pub mod web_crawler_configuration {
         /// port is 443, the standard port for HTTPS.</p>
         /// <p>Web proxy credentials are optional and you can use them to connect to a
         /// web proxy server that requires basic authentication. To store web proxy
-        /// credentials, you use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a>.</p>
+        /// credentials, you use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>.</p>
         pub fn set_proxy_configuration(
             mut self,
             input: std::option::Option<crate::model::ProxyConfiguration>,
@@ -2722,7 +4057,7 @@ pub mod web_crawler_configuration {
         /// <p>You can connect to websites using basic authentication of user name and password.</p>
         /// <p>You must provide the website host name and port number. For example, the host name
         /// of https://a.example.com/page1.html is "a.example.com" and the port is 443, the
-        /// standard port for HTTPS. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a> to store
+        /// standard port for HTTPS. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store
         /// your authentication credentials.</p>
         pub fn authentication_configuration(
             mut self,
@@ -2736,7 +4071,7 @@ pub mod web_crawler_configuration {
         /// <p>You can connect to websites using basic authentication of user name and password.</p>
         /// <p>You must provide the website host name and port number. For example, the host name
         /// of https://a.example.com/page1.html is "a.example.com" and the port is 443, the
-        /// standard port for HTTPS. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a> to store
+        /// standard port for HTTPS. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store
         /// your authentication credentials.</p>
         pub fn set_authentication_configuration(
             mut self,
@@ -2865,7 +4200,7 @@ pub struct BasicAuthenticationConfiguration {
     /// <p>For example, the port for https://a.example.com/page1.html is 443,
     /// the standard port for HTTPS.</p>
     pub port: std::option::Option<i32>,
-    /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a>
+    /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>
     /// </p>
     /// <p>You use a secret if basic authentication credentials are required to connect
     /// to a website. The secret stores your credentials of user name and password.</p>
@@ -2886,7 +4221,7 @@ impl BasicAuthenticationConfiguration {
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
-    /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a>
+    /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>
     /// </p>
     /// <p>You use a secret if basic authentication credentials are required to connect
     /// to a website. The secret stores your credentials of user name and password.</p>
@@ -2946,7 +4281,7 @@ pub mod basic_authentication_configuration {
             self.port = input;
             self
         }
-        /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a>
+        /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>
         /// </p>
         /// <p>You use a secret if basic authentication credentials are required to connect
         /// to a website. The secret stores your credentials of user name and password.</p>
@@ -2954,7 +4289,7 @@ pub mod basic_authentication_configuration {
             self.credentials = Some(input.into());
             self
         }
-        /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a>
+        /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>
         /// </p>
         /// <p>You use a secret if basic authentication credentials are required to connect
         /// to a website. The secret stores your credentials of user name and password.</p>
@@ -2994,7 +4329,7 @@ pub struct ProxyConfiguration {
     /// <p>For example, the port for https://a.example.com/page1.html
     /// is 443, the standard port for HTTPS.</p>
     pub port: std::option::Option<i32>,
-    /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a>
+    /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>
     /// </p>
     /// <p>The credentials are optional. You use a secret if web proxy credentials
     /// are required to connect to a website host. Amazon Kendra currently support basic
@@ -3017,7 +4352,7 @@ impl ProxyConfiguration {
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
-    /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a>
+    /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>
     /// </p>
     /// <p>The credentials are optional. You use a secret if web proxy credentials
     /// are required to connect to a website host. Amazon Kendra currently support basic
@@ -3079,7 +4414,7 @@ pub mod proxy_configuration {
             self.port = input;
             self
         }
-        /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a>
+        /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>
         /// </p>
         /// <p>The credentials are optional. You use a secret if web proxy credentials
         /// are required to connect to a website host. Amazon Kendra currently support basic
@@ -3089,7 +4424,7 @@ pub mod proxy_configuration {
             self.credentials = Some(input.into());
             self
         }
-        /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a>
+        /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>
         /// </p>
         /// <p>The credentials are optional. You use a secret if web proxy credentials
         /// are required to connect to a website host. Amazon Kendra currently support basic
@@ -3123,8 +4458,8 @@ impl ProxyConfiguration {
 /// <p>
 /// <i>When selecting websites to index, you must adhere to
 /// the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a>
-/// and all other Amazon terms. Remember that you must only use the Amazon Kendra web
-/// crawler to index your own webpages, or webpages that you have authorization to
+/// and all other Amazon terms. Remember that you must only use Amazon Kendra Web  
+/// Crawler to index your own webpages, or webpages that you have authorization to
 /// index.</i>
 /// </p>
 #[non_exhaustive]
@@ -3245,8 +4580,8 @@ impl Urls {
 /// <p>
 /// <i>When selecting websites to index, you must adhere to
 /// the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a>
-/// and all other Amazon terms. Remember that you must only use the Amazon Kendra web
-/// crawler to index your own webpages, or webpages that you have authorization
+/// and all other Amazon terms. Remember that you must only use Amazon Kendra Web
+/// Crawler to index your own webpages, or webpages that you have authorization
 /// to index.</i>
 /// </p>
 #[non_exhaustive]
@@ -3323,8 +4658,8 @@ impl SiteMapsConfiguration {
 /// <p>
 /// <i>When selecting websites to index, you must adhere to
 /// the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a>
-/// and all other Amazon terms. Remember that you must only use the Amazon Kendra web
-/// crawler to index your own webpages, or webpages that you have authorization
+/// and all other Amazon terms. Remember that you must only use Amazon Kendra Web
+/// Crawler to index your own webpages, or webpages that you have authorization
 /// to index.</i>
 /// </p>
 #[non_exhaustive]
@@ -3898,7 +5233,7 @@ pub struct ConfluenceConfiguration {
     /// You can also use an IP address, for example,
     /// <code>https://192.168.1.113/</code>.</p>
     pub server_url: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret
     /// that contains the key/value pairs required to connect to your
     /// Confluence server. The secret must contain a JSON structure with the
     /// following keys:</p>
@@ -3956,7 +5291,7 @@ impl ConfluenceConfiguration {
     pub fn server_url(&self) -> std::option::Option<&str> {
         self.server_url.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret
     /// that contains the key/value pairs required to connect to your
     /// Confluence server. The secret must contain a JSON structure with the
     /// following keys:</p>
@@ -4087,7 +5422,7 @@ pub mod confluence_configuration {
             self.server_url = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret
         /// that contains the key/value pairs required to connect to your
         /// Confluence server. The secret must contain a JSON structure with the
         /// following keys:</p>
@@ -4105,7 +5440,7 @@ pub mod confluence_configuration {
             self.secret_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret
         /// that contains the key/value pairs required to connect to your
         /// Confluence server. The secret must contain a JSON structure with the
         /// following keys:</p>
@@ -5948,7 +7283,7 @@ pub struct ServiceNowConfiguration {
         std::option::Option<crate::model::ServiceNowServiceCatalogConfiguration>,
     /// <p>Determines the type of authentication used to connect to the
     /// ServiceNow instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is
-    /// authenticated using the user name and password provided in the AWS
+    /// authenticated using the user name and password provided in the
     /// Secrets Manager secret in the <code>SecretArn</code> field. When you
     /// choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the OAuth
     /// token and secret provided in the Secrets Manager secret, and the
@@ -5998,7 +7333,7 @@ impl ServiceNowConfiguration {
     }
     /// <p>Determines the type of authentication used to connect to the
     /// ServiceNow instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is
-    /// authenticated using the user name and password provided in the AWS
+    /// authenticated using the user name and password provided in the
     /// Secrets Manager secret in the <code>SecretArn</code> field. When you
     /// choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the OAuth
     /// token and secret provided in the Secrets Manager secret, and the
@@ -6138,7 +7473,7 @@ pub mod service_now_configuration {
         }
         /// <p>Determines the type of authentication used to connect to the
         /// ServiceNow instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is
-        /// authenticated using the user name and password provided in the AWS
+        /// authenticated using the user name and password provided in the
         /// Secrets Manager secret in the <code>SecretArn</code> field. When you
         /// choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the OAuth
         /// token and secret provided in the Secrets Manager secret, and the
@@ -6157,7 +7492,7 @@ pub mod service_now_configuration {
         }
         /// <p>Determines the type of authentication used to connect to the
         /// ServiceNow instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is
-        /// authenticated using the user name and password provided in the AWS
+        /// authenticated using the user name and password provided in the
         /// Secrets Manager secret in the <code>SecretArn</code> field. When you
         /// choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the OAuth
         /// token and secret provided in the Secrets Manager secret, and the
@@ -9732,7 +11067,7 @@ pub struct SharePointConfiguration {
     /// domain name as part of the credentials. For
     /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a
     /// Microsoft SharePoint Data Source</a>. For more information
-    /// about Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is
+    /// about Secrets Manager see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is
     /// Secrets Manager</a> in the <i>Secrets Manager
     /// </i> user guide.</p>
     pub secret_arn: std::option::Option<std::string::String>,
@@ -9802,7 +11137,7 @@ impl SharePointConfiguration {
     /// domain name as part of the credentials. For
     /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a
     /// Microsoft SharePoint Data Source</a>. For more information
-    /// about Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is
+    /// about Secrets Manager see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is
     /// Secrets Manager</a> in the <i>Secrets Manager
     /// </i> user guide.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
@@ -9959,7 +11294,7 @@ pub mod share_point_configuration {
         /// domain name as part of the credentials. For
         /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a
         /// Microsoft SharePoint Data Source</a>. For more information
-        /// about Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is
+        /// about Secrets Manager see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is
         /// Secrets Manager</a> in the <i>Secrets Manager
         /// </i> user guide.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9972,7 +11307,7 @@ pub mod share_point_configuration {
         /// domain name as part of the credentials. For
         /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a
         /// Microsoft SharePoint Data Source</a>. For more information
-        /// about Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is
+        /// about Secrets Manager see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is
         /// Secrets Manager</a> in the <i>Secrets Manager
         /// </i> user guide.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -11331,150 +12666,6 @@ impl DocumentAttributeValueCountPair {
     /// Creates a new builder-style object to manufacture [`DocumentAttributeValueCountPair`](crate::model::DocumentAttributeValueCountPair)
     pub fn builder() -> crate::model::document_attribute_value_count_pair::Builder {
         crate::model::document_attribute_value_count_pair::Builder::default()
-    }
-}
-
-/// <p>The value of a custom document attribute. You can only provide one
-/// value for a custom attribute.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DocumentAttributeValue {
-    /// <p>A string, such as "department".</p>
-    pub string_value: std::option::Option<std::string::String>,
-    /// <p>A list of strings. </p>
-    pub string_list_value: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A long integer value.</p>
-    pub long_value: std::option::Option<i64>,
-    /// <p>A date expressed as an ISO 8601 string.</p>
-    /// <p>It is important for the time zone to be included
-    /// in the ISO 8601 date-time format. For example,
-    /// 20120325T123010+01:00 is the ISO 8601 date-time format
-    /// for March 25th 2012 at 12:30PM (plus 10 seconds) in
-    /// Central European Time.</p>
-    pub date_value: std::option::Option<aws_smithy_types::DateTime>,
-}
-impl DocumentAttributeValue {
-    /// <p>A string, such as "department".</p>
-    pub fn string_value(&self) -> std::option::Option<&str> {
-        self.string_value.as_deref()
-    }
-    /// <p>A list of strings. </p>
-    pub fn string_list_value(&self) -> std::option::Option<&[std::string::String]> {
-        self.string_list_value.as_deref()
-    }
-    /// <p>A long integer value.</p>
-    pub fn long_value(&self) -> std::option::Option<i64> {
-        self.long_value
-    }
-    /// <p>A date expressed as an ISO 8601 string.</p>
-    /// <p>It is important for the time zone to be included
-    /// in the ISO 8601 date-time format. For example,
-    /// 20120325T123010+01:00 is the ISO 8601 date-time format
-    /// for March 25th 2012 at 12:30PM (plus 10 seconds) in
-    /// Central European Time.</p>
-    pub fn date_value(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.date_value.as_ref()
-    }
-}
-impl std::fmt::Debug for DocumentAttributeValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentAttributeValue");
-        formatter.field("string_value", &self.string_value);
-        formatter.field("string_list_value", &self.string_list_value);
-        formatter.field("long_value", &self.long_value);
-        formatter.field("date_value", &self.date_value);
-        formatter.finish()
-    }
-}
-/// See [`DocumentAttributeValue`](crate::model::DocumentAttributeValue)
-pub mod document_attribute_value {
-    /// A builder for [`DocumentAttributeValue`](crate::model::DocumentAttributeValue)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) string_value: std::option::Option<std::string::String>,
-        pub(crate) string_list_value: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) long_value: std::option::Option<i64>,
-        pub(crate) date_value: std::option::Option<aws_smithy_types::DateTime>,
-    }
-    impl Builder {
-        /// <p>A string, such as "department".</p>
-        pub fn string_value(mut self, input: impl Into<std::string::String>) -> Self {
-            self.string_value = Some(input.into());
-            self
-        }
-        /// <p>A string, such as "department".</p>
-        pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.string_value = input;
-            self
-        }
-        /// Appends an item to `string_list_value`.
-        ///
-        /// To override the contents of this collection use [`set_string_list_value`](Self::set_string_list_value).
-        ///
-        /// <p>A list of strings. </p>
-        pub fn string_list_value(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.string_list_value.unwrap_or_default();
-            v.push(input.into());
-            self.string_list_value = Some(v);
-            self
-        }
-        /// <p>A list of strings. </p>
-        pub fn set_string_list_value(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.string_list_value = input;
-            self
-        }
-        /// <p>A long integer value.</p>
-        pub fn long_value(mut self, input: i64) -> Self {
-            self.long_value = Some(input);
-            self
-        }
-        /// <p>A long integer value.</p>
-        pub fn set_long_value(mut self, input: std::option::Option<i64>) -> Self {
-            self.long_value = input;
-            self
-        }
-        /// <p>A date expressed as an ISO 8601 string.</p>
-        /// <p>It is important for the time zone to be included
-        /// in the ISO 8601 date-time format. For example,
-        /// 20120325T123010+01:00 is the ISO 8601 date-time format
-        /// for March 25th 2012 at 12:30PM (plus 10 seconds) in
-        /// Central European Time.</p>
-        pub fn date_value(mut self, input: aws_smithy_types::DateTime) -> Self {
-            self.date_value = Some(input);
-            self
-        }
-        /// <p>A date expressed as an ISO 8601 string.</p>
-        /// <p>It is important for the time zone to be included
-        /// in the ISO 8601 date-time format. For example,
-        /// 20120325T123010+01:00 is the ISO 8601 date-time format
-        /// for March 25th 2012 at 12:30PM (plus 10 seconds) in
-        /// Central European Time.</p>
-        pub fn set_date_value(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_value = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DocumentAttributeValue`](crate::model::DocumentAttributeValue)
-        pub fn build(self) -> crate::model::DocumentAttributeValue {
-            crate::model::DocumentAttributeValue {
-                string_value: self.string_value,
-                string_list_value: self.string_list_value,
-                long_value: self.long_value,
-                date_value: self.date_value,
-            }
-        }
-    }
-}
-impl DocumentAttributeValue {
-    /// Creates a new builder-style object to manufacture [`DocumentAttributeValue`](crate::model::DocumentAttributeValue)
-    pub fn builder() -> crate::model::document_attribute_value::Builder {
-        crate::model::document_attribute_value::Builder::default()
     }
 }
 
@@ -13249,7 +14440,7 @@ impl Facet {
 /// </li>
 /// <li>
 /// <p>
-/// <code> <EqualTo></code>
+/// <code> <EqualsTo></code>
 /// </p>
 /// </li>
 /// </ol>
@@ -15097,6 +16288,848 @@ impl AsRef<str> for FaqStatus {
     }
 }
 
+/// <p>Summary information for your Amazon Kendra experience. You can create an Amazon Kendra
+/// experience such as a search application. For more information on creating
+/// a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+/// a search experience with no code</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExperiencesSummary {
+    /// <p>The name of your Amazon Kendra experience.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The identifier of your Amazon Kendra experience.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The date-time your Amazon Kendra experience was created.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The processing status of your Amazon Kendra experience.</p>
+    pub status: std::option::Option<crate::model::ExperienceStatus>,
+    /// <p>The endpoint URLs for your Amazon Kendra experiences. The URLs are unique
+    /// and fully hosted by Amazon Web Services.</p>
+    pub endpoints: std::option::Option<std::vec::Vec<crate::model::ExperienceEndpoint>>,
+}
+impl ExperiencesSummary {
+    /// <p>The name of your Amazon Kendra experience.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The identifier of your Amazon Kendra experience.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The date-time your Amazon Kendra experience was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The processing status of your Amazon Kendra experience.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ExperienceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The endpoint URLs for your Amazon Kendra experiences. The URLs are unique
+    /// and fully hosted by Amazon Web Services.</p>
+    pub fn endpoints(&self) -> std::option::Option<&[crate::model::ExperienceEndpoint]> {
+        self.endpoints.as_deref()
+    }
+}
+impl std::fmt::Debug for ExperiencesSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExperiencesSummary");
+        formatter.field("name", &self.name);
+        formatter.field("id", &self.id);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("status", &self.status);
+        formatter.field("endpoints", &self.endpoints);
+        formatter.finish()
+    }
+}
+/// See [`ExperiencesSummary`](crate::model::ExperiencesSummary)
+pub mod experiences_summary {
+    /// A builder for [`ExperiencesSummary`](crate::model::ExperiencesSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) status: std::option::Option<crate::model::ExperienceStatus>,
+        pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::ExperienceEndpoint>>,
+    }
+    impl Builder {
+        /// <p>The name of your Amazon Kendra experience.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of your Amazon Kendra experience.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The identifier of your Amazon Kendra experience.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of your Amazon Kendra experience.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The date-time your Amazon Kendra experience was created.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>The date-time your Amazon Kendra experience was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>The processing status of your Amazon Kendra experience.</p>
+        pub fn status(mut self, input: crate::model::ExperienceStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The processing status of your Amazon Kendra experience.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ExperienceStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Appends an item to `endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
+        ///
+        /// <p>The endpoint URLs for your Amazon Kendra experiences. The URLs are unique
+        /// and fully hosted by Amazon Web Services.</p>
+        pub fn endpoints(mut self, input: impl Into<crate::model::ExperienceEndpoint>) -> Self {
+            let mut v = self.endpoints.unwrap_or_default();
+            v.push(input.into());
+            self.endpoints = Some(v);
+            self
+        }
+        /// <p>The endpoint URLs for your Amazon Kendra experiences. The URLs are unique
+        /// and fully hosted by Amazon Web Services.</p>
+        pub fn set_endpoints(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ExperienceEndpoint>>,
+        ) -> Self {
+            self.endpoints = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExperiencesSummary`](crate::model::ExperiencesSummary)
+        pub fn build(self) -> crate::model::ExperiencesSummary {
+            crate::model::ExperiencesSummary {
+                name: self.name,
+                id: self.id,
+                created_at: self.created_at,
+                status: self.status,
+                endpoints: self.endpoints,
+            }
+        }
+    }
+}
+impl ExperiencesSummary {
+    /// Creates a new builder-style object to manufacture [`ExperiencesSummary`](crate::model::ExperiencesSummary)
+    pub fn builder() -> crate::model::experiences_summary::Builder {
+        crate::model::experiences_summary::Builder::default()
+    }
+}
+
+/// <p>Provides the configuration information of the endpoint for your Amazon Kendra
+/// experience.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExperienceEndpoint {
+    /// <p>The type of endpoint for your Amazon Kendra experience. The type currently available
+    /// is <code>HOME</code>, which is a unique and fully hosted URL to the home page
+    /// of your Amazon Kendra experience.</p>
+    pub endpoint_type: std::option::Option<crate::model::EndpointType>,
+    /// <p>The endpoint of your Amazon Kendra experience.</p>
+    pub endpoint: std::option::Option<std::string::String>,
+}
+impl ExperienceEndpoint {
+    /// <p>The type of endpoint for your Amazon Kendra experience. The type currently available
+    /// is <code>HOME</code>, which is a unique and fully hosted URL to the home page
+    /// of your Amazon Kendra experience.</p>
+    pub fn endpoint_type(&self) -> std::option::Option<&crate::model::EndpointType> {
+        self.endpoint_type.as_ref()
+    }
+    /// <p>The endpoint of your Amazon Kendra experience.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+}
+impl std::fmt::Debug for ExperienceEndpoint {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExperienceEndpoint");
+        formatter.field("endpoint_type", &self.endpoint_type);
+        formatter.field("endpoint", &self.endpoint);
+        formatter.finish()
+    }
+}
+/// See [`ExperienceEndpoint`](crate::model::ExperienceEndpoint)
+pub mod experience_endpoint {
+    /// A builder for [`ExperienceEndpoint`](crate::model::ExperienceEndpoint)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) endpoint_type: std::option::Option<crate::model::EndpointType>,
+        pub(crate) endpoint: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The type of endpoint for your Amazon Kendra experience. The type currently available
+        /// is <code>HOME</code>, which is a unique and fully hosted URL to the home page
+        /// of your Amazon Kendra experience.</p>
+        pub fn endpoint_type(mut self, input: crate::model::EndpointType) -> Self {
+            self.endpoint_type = Some(input);
+            self
+        }
+        /// <p>The type of endpoint for your Amazon Kendra experience. The type currently available
+        /// is <code>HOME</code>, which is a unique and fully hosted URL to the home page
+        /// of your Amazon Kendra experience.</p>
+        pub fn set_endpoint_type(
+            mut self,
+            input: std::option::Option<crate::model::EndpointType>,
+        ) -> Self {
+            self.endpoint_type = input;
+            self
+        }
+        /// <p>The endpoint of your Amazon Kendra experience.</p>
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
+            self
+        }
+        /// <p>The endpoint of your Amazon Kendra experience.</p>
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExperienceEndpoint`](crate::model::ExperienceEndpoint)
+        pub fn build(self) -> crate::model::ExperienceEndpoint {
+            crate::model::ExperienceEndpoint {
+                endpoint_type: self.endpoint_type,
+                endpoint: self.endpoint,
+            }
+        }
+    }
+}
+impl ExperienceEndpoint {
+    /// Creates a new builder-style object to manufacture [`ExperienceEndpoint`](crate::model::ExperienceEndpoint)
+    pub fn builder() -> crate::model::experience_endpoint::Builder {
+        crate::model::experience_endpoint::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EndpointType {
+    #[allow(missing_docs)] // documentation missing in model
+    Home,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EndpointType {
+    fn from(s: &str) -> Self {
+        match s {
+            "HOME" => EndpointType::Home,
+            other => EndpointType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EndpointType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EndpointType::from(s))
+    }
+}
+impl EndpointType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EndpointType::Home => "HOME",
+            EndpointType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["HOME"]
+    }
+}
+impl AsRef<str> for EndpointType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ExperienceStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ExperienceStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => ExperienceStatus::Active,
+            "CREATING" => ExperienceStatus::Creating,
+            "DELETING" => ExperienceStatus::Deleting,
+            "FAILED" => ExperienceStatus::Failed,
+            other => ExperienceStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ExperienceStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExperienceStatus::from(s))
+    }
+}
+impl ExperienceStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExperienceStatus::Active => "ACTIVE",
+            ExperienceStatus::Creating => "CREATING",
+            ExperienceStatus::Deleting => "DELETING",
+            ExperienceStatus::Failed => "FAILED",
+            ExperienceStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "CREATING", "DELETING", "FAILED"]
+    }
+}
+impl AsRef<str> for ExperienceStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Summary information for users or groups in your Amazon Web Services SSO identity
+/// source with granted access to your Amazon Kendra experience. You can create an Amazon Kendra
+/// experience such as a search application. For more information on creating a
+/// search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+/// a search experience with no code</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExperienceEntitiesSummary {
+    /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source.
+    /// For example, a user ID could be an email.</p>
+    pub entity_id: std::option::Option<std::string::String>,
+    /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
+    pub entity_type: std::option::Option<crate::model::EntityType>,
+    /// <p>Information about the user entity.</p>
+    pub display_data: std::option::Option<crate::model::EntityDisplayData>,
+}
+impl ExperienceEntitiesSummary {
+    /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source.
+    /// For example, a user ID could be an email.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
+    pub fn entity_type(&self) -> std::option::Option<&crate::model::EntityType> {
+        self.entity_type.as_ref()
+    }
+    /// <p>Information about the user entity.</p>
+    pub fn display_data(&self) -> std::option::Option<&crate::model::EntityDisplayData> {
+        self.display_data.as_ref()
+    }
+}
+impl std::fmt::Debug for ExperienceEntitiesSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExperienceEntitiesSummary");
+        formatter.field("entity_id", &self.entity_id);
+        formatter.field("entity_type", &self.entity_type);
+        formatter.field("display_data", &self.display_data);
+        formatter.finish()
+    }
+}
+/// See [`ExperienceEntitiesSummary`](crate::model::ExperienceEntitiesSummary)
+pub mod experience_entities_summary {
+    /// A builder for [`ExperienceEntitiesSummary`](crate::model::ExperienceEntitiesSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entity_id: std::option::Option<std::string::String>,
+        pub(crate) entity_type: std::option::Option<crate::model::EntityType>,
+        pub(crate) display_data: std::option::Option<crate::model::EntityDisplayData>,
+    }
+    impl Builder {
+        /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source.
+        /// For example, a user ID could be an email.</p>
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entity_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source.
+        /// For example, a user ID could be an email.</p>
+        pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entity_id = input;
+            self
+        }
+        /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
+        pub fn entity_type(mut self, input: crate::model::EntityType) -> Self {
+            self.entity_type = Some(input);
+            self
+        }
+        /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
+        pub fn set_entity_type(
+            mut self,
+            input: std::option::Option<crate::model::EntityType>,
+        ) -> Self {
+            self.entity_type = input;
+            self
+        }
+        /// <p>Information about the user entity.</p>
+        pub fn display_data(mut self, input: crate::model::EntityDisplayData) -> Self {
+            self.display_data = Some(input);
+            self
+        }
+        /// <p>Information about the user entity.</p>
+        pub fn set_display_data(
+            mut self,
+            input: std::option::Option<crate::model::EntityDisplayData>,
+        ) -> Self {
+            self.display_data = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExperienceEntitiesSummary`](crate::model::ExperienceEntitiesSummary)
+        pub fn build(self) -> crate::model::ExperienceEntitiesSummary {
+            crate::model::ExperienceEntitiesSummary {
+                entity_id: self.entity_id,
+                entity_type: self.entity_type,
+                display_data: self.display_data,
+            }
+        }
+    }
+}
+impl ExperienceEntitiesSummary {
+    /// Creates a new builder-style object to manufacture [`ExperienceEntitiesSummary`](crate::model::ExperienceEntitiesSummary)
+    pub fn builder() -> crate::model::experience_entities_summary::Builder {
+        crate::model::experience_entities_summary::Builder::default()
+    }
+}
+
+/// <p>Information about the user entity.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EntityDisplayData {
+    /// <p>The name of the user.</p>
+    pub user_name: std::option::Option<std::string::String>,
+    /// <p>The name of the group.</p>
+    pub group_name: std::option::Option<std::string::String>,
+    /// <p>The user name of the user.</p>
+    pub identified_user_name: std::option::Option<std::string::String>,
+    /// <p>The first name of the user.</p>
+    pub first_name: std::option::Option<std::string::String>,
+    /// <p>The last name of the user.</p>
+    pub last_name: std::option::Option<std::string::String>,
+}
+impl EntityDisplayData {
+    /// <p>The name of the user.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The name of the group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The user name of the user.</p>
+    pub fn identified_user_name(&self) -> std::option::Option<&str> {
+        self.identified_user_name.as_deref()
+    }
+    /// <p>The first name of the user.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The last name of the user.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+}
+impl std::fmt::Debug for EntityDisplayData {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EntityDisplayData");
+        formatter.field("user_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("group_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("identified_user_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`EntityDisplayData`](crate::model::EntityDisplayData)
+pub mod entity_display_data {
+    /// A builder for [`EntityDisplayData`](crate::model::EntityDisplayData)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_name: std::option::Option<std::string::String>,
+        pub(crate) group_name: std::option::Option<std::string::String>,
+        pub(crate) identified_user_name: std::option::Option<std::string::String>,
+        pub(crate) first_name: std::option::Option<std::string::String>,
+        pub(crate) last_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the user.</p>
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the user.</p>
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
+            self
+        }
+        /// <p>The name of the group.</p>
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the group.</p>
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
+            self
+        }
+        /// <p>The user name of the user.</p>
+        pub fn identified_user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identified_user_name = Some(input.into());
+            self
+        }
+        /// <p>The user name of the user.</p>
+        pub fn set_identified_user_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identified_user_name = input;
+            self
+        }
+        /// <p>The first name of the user.</p>
+        pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.first_name = Some(input.into());
+            self
+        }
+        /// <p>The first name of the user.</p>
+        pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.first_name = input;
+            self
+        }
+        /// <p>The last name of the user.</p>
+        pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_name = Some(input.into());
+            self
+        }
+        /// <p>The last name of the user.</p>
+        pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EntityDisplayData`](crate::model::EntityDisplayData)
+        pub fn build(self) -> crate::model::EntityDisplayData {
+            crate::model::EntityDisplayData {
+                user_name: self.user_name,
+                group_name: self.group_name,
+                identified_user_name: self.identified_user_name,
+                first_name: self.first_name,
+                last_name: self.last_name,
+            }
+        }
+    }
+}
+impl EntityDisplayData {
+    /// Creates a new builder-style object to manufacture [`EntityDisplayData`](crate::model::EntityDisplayData)
+    pub fn builder() -> crate::model::entity_display_data::Builder {
+        crate::model::entity_display_data::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EntityType {
+    #[allow(missing_docs)] // documentation missing in model
+    Group,
+    #[allow(missing_docs)] // documentation missing in model
+    User,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EntityType {
+    fn from(s: &str) -> Self {
+        match s {
+            "GROUP" => EntityType::Group,
+            "USER" => EntityType::User,
+            other => EntityType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EntityType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EntityType::from(s))
+    }
+}
+impl EntityType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EntityType::Group => "GROUP",
+            EntityType::User => "USER",
+            EntityType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["GROUP", "USER"]
+    }
+}
+impl AsRef<str> for EntityType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Summary information for users or groups in your Amazon Web Services SSO identity
+/// source. This applies to users and groups with specific permissions that define
+/// their level of access to your Amazon Kendra experience. You can create an Amazon Kendra experience
+/// such as a search application. For more information on creating a search application
+/// experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a
+/// search experience with no code</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PersonasSummary {
+    /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source.
+    /// For example, a user ID could be an email.</p>
+    pub entity_id: std::option::Option<std::string::String>,
+    /// <p>The persona that defines the specific permissions of the user or group in
+    /// your Amazon Web Services SSO identity source. The available personas or access
+    /// roles are <code>Owner</code> and <code>Viewer</code>. For more information on
+    /// these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
+    /// access to your search page</a>.</p>
+    pub persona: std::option::Option<crate::model::Persona>,
+    /// <p>The date-time the summary information was created.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date-time the summary information was last updated.</p>
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl PersonasSummary {
+    /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source.
+    /// For example, a user ID could be an email.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The persona that defines the specific permissions of the user or group in
+    /// your Amazon Web Services SSO identity source. The available personas or access
+    /// roles are <code>Owner</code> and <code>Viewer</code>. For more information on
+    /// these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
+    /// access to your search page</a>.</p>
+    pub fn persona(&self) -> std::option::Option<&crate::model::Persona> {
+        self.persona.as_ref()
+    }
+    /// <p>The date-time the summary information was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The date-time the summary information was last updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.updated_at.as_ref()
+    }
+}
+impl std::fmt::Debug for PersonasSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PersonasSummary");
+        formatter.field("entity_id", &self.entity_id);
+        formatter.field("persona", &self.persona);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.finish()
+    }
+}
+/// See [`PersonasSummary`](crate::model::PersonasSummary)
+pub mod personas_summary {
+    /// A builder for [`PersonasSummary`](crate::model::PersonasSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entity_id: std::option::Option<std::string::String>,
+        pub(crate) persona: std::option::Option<crate::model::Persona>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source.
+        /// For example, a user ID could be an email.</p>
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entity_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source.
+        /// For example, a user ID could be an email.</p>
+        pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entity_id = input;
+            self
+        }
+        /// <p>The persona that defines the specific permissions of the user or group in
+        /// your Amazon Web Services SSO identity source. The available personas or access
+        /// roles are <code>Owner</code> and <code>Viewer</code>. For more information on
+        /// these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
+        /// access to your search page</a>.</p>
+        pub fn persona(mut self, input: crate::model::Persona) -> Self {
+            self.persona = Some(input);
+            self
+        }
+        /// <p>The persona that defines the specific permissions of the user or group in
+        /// your Amazon Web Services SSO identity source. The available personas or access
+        /// roles are <code>Owner</code> and <code>Viewer</code>. For more information on
+        /// these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
+        /// access to your search page</a>.</p>
+        pub fn set_persona(mut self, input: std::option::Option<crate::model::Persona>) -> Self {
+            self.persona = input;
+            self
+        }
+        /// <p>The date-time the summary information was created.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>The date-time the summary information was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>The date-time the summary information was last updated.</p>
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.updated_at = Some(input);
+            self
+        }
+        /// <p>The date-time the summary information was last updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.updated_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PersonasSummary`](crate::model::PersonasSummary)
+        pub fn build(self) -> crate::model::PersonasSummary {
+            crate::model::PersonasSummary {
+                entity_id: self.entity_id,
+                persona: self.persona,
+                created_at: self.created_at,
+                updated_at: self.updated_at,
+            }
+        }
+    }
+}
+impl PersonasSummary {
+    /// Creates a new builder-style object to manufacture [`PersonasSummary`](crate::model::PersonasSummary)
+    pub fn builder() -> crate::model::personas_summary::Builder {
+        crate::model::personas_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Persona {
+    #[allow(missing_docs)] // documentation missing in model
+    Owner,
+    #[allow(missing_docs)] // documentation missing in model
+    Viewer,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Persona {
+    fn from(s: &str) -> Self {
+        match s {
+            "OWNER" => Persona::Owner,
+            "VIEWER" => Persona::Viewer,
+            other => Persona::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Persona {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Persona::from(s))
+    }
+}
+impl Persona {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Persona::Owner => "OWNER",
+            Persona::Viewer => "VIEWER",
+            Persona::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["OWNER", "VIEWER"]
+    }
+}
+impl AsRef<str> for Persona {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Provides information about a synchronization job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -16119,6 +18152,162 @@ impl AsRef<str> for DataSourceType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MetricType {
+    #[allow(missing_docs)] // documentation missing in model
+    AggQueryDocMetrics,
+    #[allow(missing_docs)] // documentation missing in model
+    DocsByClickCount,
+    #[allow(missing_docs)] // documentation missing in model
+    QueriesByCount,
+    #[allow(missing_docs)] // documentation missing in model
+    QueriesByZeroClickRate,
+    #[allow(missing_docs)] // documentation missing in model
+    QueriesByZeroResultRate,
+    #[allow(missing_docs)] // documentation missing in model
+    TrendQueryDocMetrics,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MetricType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AGG_QUERY_DOC_METRICS" => MetricType::AggQueryDocMetrics,
+            "DOCS_BY_CLICK_COUNT" => MetricType::DocsByClickCount,
+            "QUERIES_BY_COUNT" => MetricType::QueriesByCount,
+            "QUERIES_BY_ZERO_CLICK_RATE" => MetricType::QueriesByZeroClickRate,
+            "QUERIES_BY_ZERO_RESULT_RATE" => MetricType::QueriesByZeroResultRate,
+            "TREND_QUERY_DOC_METRICS" => MetricType::TrendQueryDocMetrics,
+            other => MetricType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MetricType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MetricType::from(s))
+    }
+}
+impl MetricType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MetricType::AggQueryDocMetrics => "AGG_QUERY_DOC_METRICS",
+            MetricType::DocsByClickCount => "DOCS_BY_CLICK_COUNT",
+            MetricType::QueriesByCount => "QUERIES_BY_COUNT",
+            MetricType::QueriesByZeroClickRate => "QUERIES_BY_ZERO_CLICK_RATE",
+            MetricType::QueriesByZeroResultRate => "QUERIES_BY_ZERO_RESULT_RATE",
+            MetricType::TrendQueryDocMetrics => "TREND_QUERY_DOC_METRICS",
+            MetricType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AGG_QUERY_DOC_METRICS",
+            "DOCS_BY_CLICK_COUNT",
+            "QUERIES_BY_COUNT",
+            "QUERIES_BY_ZERO_CLICK_RATE",
+            "QUERIES_BY_ZERO_RESULT_RATE",
+            "TREND_QUERY_DOC_METRICS",
+        ]
+    }
+}
+impl AsRef<str> for MetricType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Interval {
+    #[allow(missing_docs)] // documentation missing in model
+    OneMonthAgo,
+    #[allow(missing_docs)] // documentation missing in model
+    OneWeekAgo,
+    #[allow(missing_docs)] // documentation missing in model
+    ThisMonth,
+    #[allow(missing_docs)] // documentation missing in model
+    ThisWeek,
+    #[allow(missing_docs)] // documentation missing in model
+    TwoMonthsAgo,
+    #[allow(missing_docs)] // documentation missing in model
+    TwoWeeksAgo,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Interval {
+    fn from(s: &str) -> Self {
+        match s {
+            "ONE_MONTH_AGO" => Interval::OneMonthAgo,
+            "ONE_WEEK_AGO" => Interval::OneWeekAgo,
+            "THIS_MONTH" => Interval::ThisMonth,
+            "THIS_WEEK" => Interval::ThisWeek,
+            "TWO_MONTHS_AGO" => Interval::TwoMonthsAgo,
+            "TWO_WEEKS_AGO" => Interval::TwoWeeksAgo,
+            other => Interval::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Interval {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Interval::from(s))
+    }
+}
+impl Interval {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Interval::OneMonthAgo => "ONE_MONTH_AGO",
+            Interval::OneWeekAgo => "ONE_WEEK_AGO",
+            Interval::ThisMonth => "THIS_MONTH",
+            Interval::ThisWeek => "THIS_WEEK",
+            Interval::TwoMonthsAgo => "TWO_MONTHS_AGO",
+            Interval::TwoWeeksAgo => "TWO_WEEKS_AGO",
+            Interval::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ONE_MONTH_AGO",
+            "ONE_WEEK_AGO",
+            "THIS_MONTH",
+            "THIS_WEEK",
+            "TWO_MONTHS_AGO",
+            "TWO_WEEKS_AGO",
+        ]
+    }
+}
+impl AsRef<str> for Interval {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>A single query suggestion.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -16419,6 +18608,177 @@ impl SuggestionHighlight {
     /// Creates a new builder-style object to manufacture [`SuggestionHighlight`](crate::model::SuggestionHighlight)
     pub fn builder() -> crate::model::suggestion_highlight::Builder {
         crate::model::suggestion_highlight::Builder::default()
+    }
+}
+
+/// <p>Information on the users or groups in your Amazon Web Services SSO identity
+/// source that failed to properly configure with your Amazon Kendra experience.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FailedEntity {
+    /// <p>The identifier of the user or group in your Amazon Web Services SSO identity
+    /// source. For example, a user ID could be an email.</p>
+    pub entity_id: std::option::Option<std::string::String>,
+    /// <p>The reason the user or group in your Amazon Web Services SSO identity source
+    /// failed to properly configure with your Amazon Kendra experience.</p>
+    pub error_message: std::option::Option<std::string::String>,
+}
+impl FailedEntity {
+    /// <p>The identifier of the user or group in your Amazon Web Services SSO identity
+    /// source. For example, a user ID could be an email.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The reason the user or group in your Amazon Web Services SSO identity source
+    /// failed to properly configure with your Amazon Kendra experience.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
+impl std::fmt::Debug for FailedEntity {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FailedEntity");
+        formatter.field("entity_id", &self.entity_id);
+        formatter.field("error_message", &self.error_message);
+        formatter.finish()
+    }
+}
+/// See [`FailedEntity`](crate::model::FailedEntity)
+pub mod failed_entity {
+    /// A builder for [`FailedEntity`](crate::model::FailedEntity)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entity_id: std::option::Option<std::string::String>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the user or group in your Amazon Web Services SSO identity
+        /// source. For example, a user ID could be an email.</p>
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entity_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the user or group in your Amazon Web Services SSO identity
+        /// source. For example, a user ID could be an email.</p>
+        pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entity_id = input;
+            self
+        }
+        /// <p>The reason the user or group in your Amazon Web Services SSO identity source
+        /// failed to properly configure with your Amazon Kendra experience.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p>The reason the user or group in your Amazon Web Services SSO identity source
+        /// failed to properly configure with your Amazon Kendra experience.</p>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FailedEntity`](crate::model::FailedEntity)
+        pub fn build(self) -> crate::model::FailedEntity {
+            crate::model::FailedEntity {
+                entity_id: self.entity_id,
+                error_message: self.error_message,
+            }
+        }
+    }
+}
+impl FailedEntity {
+    /// Creates a new builder-style object to manufacture [`FailedEntity`](crate::model::FailedEntity)
+    pub fn builder() -> crate::model::failed_entity::Builder {
+        crate::model::failed_entity::Builder::default()
+    }
+}
+
+/// <p>Provides the configuration information of users or groups in
+/// your Amazon Web Services SSO identity source to grant access your Amazon Kendra
+/// experience.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EntityConfiguration {
+    /// <p>The identifier of a user or group in your Amazon Web Services SSO identity
+    /// source. For example, a user ID could be an email.</p>
+    pub entity_id: std::option::Option<std::string::String>,
+    /// <p>Specifies whether you are configuring a <code>User</code> or a
+    /// <code>Group</code>.</p>
+    pub entity_type: std::option::Option<crate::model::EntityType>,
+}
+impl EntityConfiguration {
+    /// <p>The identifier of a user or group in your Amazon Web Services SSO identity
+    /// source. For example, a user ID could be an email.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>Specifies whether you are configuring a <code>User</code> or a
+    /// <code>Group</code>.</p>
+    pub fn entity_type(&self) -> std::option::Option<&crate::model::EntityType> {
+        self.entity_type.as_ref()
+    }
+}
+impl std::fmt::Debug for EntityConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EntityConfiguration");
+        formatter.field("entity_id", &self.entity_id);
+        formatter.field("entity_type", &self.entity_type);
+        formatter.finish()
+    }
+}
+/// See [`EntityConfiguration`](crate::model::EntityConfiguration)
+pub mod entity_configuration {
+    /// A builder for [`EntityConfiguration`](crate::model::EntityConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entity_id: std::option::Option<std::string::String>,
+        pub(crate) entity_type: std::option::Option<crate::model::EntityType>,
+    }
+    impl Builder {
+        /// <p>The identifier of a user or group in your Amazon Web Services SSO identity
+        /// source. For example, a user ID could be an email.</p>
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entity_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of a user or group in your Amazon Web Services SSO identity
+        /// source. For example, a user ID could be an email.</p>
+        pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entity_id = input;
+            self
+        }
+        /// <p>Specifies whether you are configuring a <code>User</code> or a
+        /// <code>Group</code>.</p>
+        pub fn entity_type(mut self, input: crate::model::EntityType) -> Self {
+            self.entity_type = Some(input);
+            self
+        }
+        /// <p>Specifies whether you are configuring a <code>User</code> or a
+        /// <code>Group</code>.</p>
+        pub fn set_entity_type(
+            mut self,
+            input: std::option::Option<crate::model::EntityType>,
+        ) -> Self {
+            self.entity_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EntityConfiguration`](crate::model::EntityConfiguration)
+        pub fn build(self) -> crate::model::EntityConfiguration {
+            crate::model::EntityConfiguration {
+                entity_id: self.entity_id,
+                entity_type: self.entity_type,
+            }
+        }
+    }
+}
+impl EntityConfiguration {
+    /// Creates a new builder-style object to manufacture [`EntityConfiguration`](crate::model::EntityConfiguration)
+    pub fn builder() -> crate::model::entity_configuration::Builder {
+        crate::model::entity_configuration::Builder::default()
     }
 }
 
@@ -18516,5 +20876,101 @@ impl DataSourceSyncJobMetricTarget {
     /// Creates a new builder-style object to manufacture [`DataSourceSyncJobMetricTarget`](crate::model::DataSourceSyncJobMetricTarget)
     pub fn builder() -> crate::model::data_source_sync_job_metric_target::Builder {
         crate::model::data_source_sync_job_metric_target::Builder::default()
+    }
+}
+
+/// <p>Provides the configuration information of users or groups in your
+/// Amazon Web Services SSO identity source for access to your Amazon Kendra experience.
+/// Specific permissions are defined for each user or group once they are
+/// granted access to your Amazon Kendra experience.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EntityPersonaConfiguration {
+    /// <p>The identifier of a user or group in your Amazon Web Services SSO identity
+    /// source. For example, a user ID could be an email.</p>
+    pub entity_id: std::option::Option<std::string::String>,
+    /// <p>The persona that defines the specific permissions of the user or group
+    /// in your Amazon Web Services SSO identity source. The available personas or
+    /// access roles are <code>Owner</code> and <code>Viewer</code>. For more
+    /// information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
+    /// access to your search page</a>.</p>
+    pub persona: std::option::Option<crate::model::Persona>,
+}
+impl EntityPersonaConfiguration {
+    /// <p>The identifier of a user or group in your Amazon Web Services SSO identity
+    /// source. For example, a user ID could be an email.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The persona that defines the specific permissions of the user or group
+    /// in your Amazon Web Services SSO identity source. The available personas or
+    /// access roles are <code>Owner</code> and <code>Viewer</code>. For more
+    /// information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
+    /// access to your search page</a>.</p>
+    pub fn persona(&self) -> std::option::Option<&crate::model::Persona> {
+        self.persona.as_ref()
+    }
+}
+impl std::fmt::Debug for EntityPersonaConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EntityPersonaConfiguration");
+        formatter.field("entity_id", &self.entity_id);
+        formatter.field("persona", &self.persona);
+        formatter.finish()
+    }
+}
+/// See [`EntityPersonaConfiguration`](crate::model::EntityPersonaConfiguration)
+pub mod entity_persona_configuration {
+    /// A builder for [`EntityPersonaConfiguration`](crate::model::EntityPersonaConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entity_id: std::option::Option<std::string::String>,
+        pub(crate) persona: std::option::Option<crate::model::Persona>,
+    }
+    impl Builder {
+        /// <p>The identifier of a user or group in your Amazon Web Services SSO identity
+        /// source. For example, a user ID could be an email.</p>
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entity_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of a user or group in your Amazon Web Services SSO identity
+        /// source. For example, a user ID could be an email.</p>
+        pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entity_id = input;
+            self
+        }
+        /// <p>The persona that defines the specific permissions of the user or group
+        /// in your Amazon Web Services SSO identity source. The available personas or
+        /// access roles are <code>Owner</code> and <code>Viewer</code>. For more
+        /// information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
+        /// access to your search page</a>.</p>
+        pub fn persona(mut self, input: crate::model::Persona) -> Self {
+            self.persona = Some(input);
+            self
+        }
+        /// <p>The persona that defines the specific permissions of the user or group
+        /// in your Amazon Web Services SSO identity source. The available personas or
+        /// access roles are <code>Owner</code> and <code>Viewer</code>. For more
+        /// information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
+        /// access to your search page</a>.</p>
+        pub fn set_persona(mut self, input: std::option::Option<crate::model::Persona>) -> Self {
+            self.persona = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EntityPersonaConfiguration`](crate::model::EntityPersonaConfiguration)
+        pub fn build(self) -> crate::model::EntityPersonaConfiguration {
+            crate::model::EntityPersonaConfiguration {
+                entity_id: self.entity_id,
+                persona: self.persona,
+            }
+        }
+    }
+}
+impl EntityPersonaConfiguration {
+    /// Creates a new builder-style object to manufacture [`EntityPersonaConfiguration`](crate::model::EntityPersonaConfiguration)
+    pub fn builder() -> crate::model::entity_persona_configuration::Builder {
+        crate::model::entity_persona_configuration::Builder::default()
     }
 }

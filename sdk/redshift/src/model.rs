@@ -341,6 +341,11 @@ pub struct Cluster {
     pub total_storage_capacity_in_mega_bytes: std::option::Option<i64>,
     /// <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
     pub aqua_configuration: std::option::Option<crate::model::AquaConfiguration>,
+    /// <p>The Amazon Resource Name (ARN) for the IAM role set as default for the cluster.</p>
+    pub default_iam_role_arn: std::option::Option<std::string::String>,
+    /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
+    pub reserved_node_exchange_status:
+        std::option::Option<crate::model::ReservedNodeExchangeStatus>,
 }
 impl Cluster {
     /// <p>The unique identifier of the cluster.</p>
@@ -732,6 +737,16 @@ impl Cluster {
     pub fn aqua_configuration(&self) -> std::option::Option<&crate::model::AquaConfiguration> {
         self.aqua_configuration.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) for the IAM role set as default for the cluster.</p>
+    pub fn default_iam_role_arn(&self) -> std::option::Option<&str> {
+        self.default_iam_role_arn.as_deref()
+    }
+    /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
+    pub fn reserved_node_exchange_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ReservedNodeExchangeStatus> {
+        self.reserved_node_exchange_status.as_ref()
+    }
 }
 impl std::fmt::Debug for Cluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -825,6 +840,11 @@ impl std::fmt::Debug for Cluster {
             &self.total_storage_capacity_in_mega_bytes,
         );
         formatter.field("aqua_configuration", &self.aqua_configuration);
+        formatter.field("default_iam_role_arn", &self.default_iam_role_arn);
+        formatter.field(
+            "reserved_node_exchange_status",
+            &self.reserved_node_exchange_status,
+        );
         formatter.finish()
     }
 }
@@ -893,6 +913,9 @@ pub mod cluster {
         pub(crate) cluster_namespace_arn: std::option::Option<std::string::String>,
         pub(crate) total_storage_capacity_in_mega_bytes: std::option::Option<i64>,
         pub(crate) aqua_configuration: std::option::Option<crate::model::AquaConfiguration>,
+        pub(crate) default_iam_role_arn: std::option::Option<std::string::String>,
+        pub(crate) reserved_node_exchange_status:
+            std::option::Option<crate::model::ReservedNodeExchangeStatus>,
     }
     impl Builder {
         /// <p>The unique identifier of the cluster.</p>
@@ -1947,6 +1970,35 @@ pub mod cluster {
             self.aqua_configuration = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the IAM role set as default for the cluster.</p>
+        pub fn default_iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_iam_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the IAM role set as default for the cluster.</p>
+        pub fn set_default_iam_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.default_iam_role_arn = input;
+            self
+        }
+        /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
+        pub fn reserved_node_exchange_status(
+            mut self,
+            input: crate::model::ReservedNodeExchangeStatus,
+        ) -> Self {
+            self.reserved_node_exchange_status = Some(input);
+            self
+        }
+        /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
+        pub fn set_reserved_node_exchange_status(
+            mut self,
+            input: std::option::Option<crate::model::ReservedNodeExchangeStatus>,
+        ) -> Self {
+            self.reserved_node_exchange_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Cluster`](crate::model::Cluster)
         pub fn build(self) -> crate::model::Cluster {
             crate::model::Cluster {
@@ -2005,6 +2057,8 @@ pub mod cluster {
                 cluster_namespace_arn: self.cluster_namespace_arn,
                 total_storage_capacity_in_mega_bytes: self.total_storage_capacity_in_mega_bytes,
                 aqua_configuration: self.aqua_configuration,
+                default_iam_role_arn: self.default_iam_role_arn,
+                reserved_node_exchange_status: self.reserved_node_exchange_status,
             }
         }
     }
@@ -2013,6 +2067,331 @@ impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster)
     pub fn builder() -> crate::model::cluster::Builder {
         crate::model::cluster::Builder::default()
+    }
+}
+
+/// <p>Reserved-node status details, such as the source reserved-node
+/// identifier, the target reserved-node identifier, the node type, the node count, and
+/// other details.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReservedNodeExchangeStatus {
+    /// <p>The identifier of the reserved-node exchange request.</p>
+    pub reserved_node_exchange_request_id: std::option::Option<std::string::String>,
+    /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
+    pub status: std::option::Option<crate::model::ReservedNodeExchangeStatusType>,
+    /// <p>A date and time that indicate when the reserved-node exchange was requested.</p>
+    pub request_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The identifier of the source reserved node.</p>
+    pub source_reserved_node_id: std::option::Option<std::string::String>,
+    /// <p>The source reserved-node type, for example ds2.xlarge.</p>
+    pub source_reserved_node_type: std::option::Option<std::string::String>,
+    /// <p>The source reserved-node count in the cluster.</p>
+    pub source_reserved_node_count: i32,
+    /// <p>The identifier of the target reserved node offering.</p>
+    pub target_reserved_node_offering_id: std::option::Option<std::string::String>,
+    /// <p>The node type of the target reserved node, for example ra3.4xlarge.</p>
+    pub target_reserved_node_type: std::option::Option<std::string::String>,
+    /// <p>The count of target reserved nodes in the cluster.</p>
+    pub target_reserved_node_count: i32,
+}
+impl ReservedNodeExchangeStatus {
+    /// <p>The identifier of the reserved-node exchange request.</p>
+    pub fn reserved_node_exchange_request_id(&self) -> std::option::Option<&str> {
+        self.reserved_node_exchange_request_id.as_deref()
+    }
+    /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ReservedNodeExchangeStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>A date and time that indicate when the reserved-node exchange was requested.</p>
+    pub fn request_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.request_time.as_ref()
+    }
+    /// <p>The identifier of the source reserved node.</p>
+    pub fn source_reserved_node_id(&self) -> std::option::Option<&str> {
+        self.source_reserved_node_id.as_deref()
+    }
+    /// <p>The source reserved-node type, for example ds2.xlarge.</p>
+    pub fn source_reserved_node_type(&self) -> std::option::Option<&str> {
+        self.source_reserved_node_type.as_deref()
+    }
+    /// <p>The source reserved-node count in the cluster.</p>
+    pub fn source_reserved_node_count(&self) -> i32 {
+        self.source_reserved_node_count
+    }
+    /// <p>The identifier of the target reserved node offering.</p>
+    pub fn target_reserved_node_offering_id(&self) -> std::option::Option<&str> {
+        self.target_reserved_node_offering_id.as_deref()
+    }
+    /// <p>The node type of the target reserved node, for example ra3.4xlarge.</p>
+    pub fn target_reserved_node_type(&self) -> std::option::Option<&str> {
+        self.target_reserved_node_type.as_deref()
+    }
+    /// <p>The count of target reserved nodes in the cluster.</p>
+    pub fn target_reserved_node_count(&self) -> i32 {
+        self.target_reserved_node_count
+    }
+}
+impl std::fmt::Debug for ReservedNodeExchangeStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReservedNodeExchangeStatus");
+        formatter.field(
+            "reserved_node_exchange_request_id",
+            &self.reserved_node_exchange_request_id,
+        );
+        formatter.field("status", &self.status);
+        formatter.field("request_time", &self.request_time);
+        formatter.field("source_reserved_node_id", &self.source_reserved_node_id);
+        formatter.field("source_reserved_node_type", &self.source_reserved_node_type);
+        formatter.field(
+            "source_reserved_node_count",
+            &self.source_reserved_node_count,
+        );
+        formatter.field(
+            "target_reserved_node_offering_id",
+            &self.target_reserved_node_offering_id,
+        );
+        formatter.field("target_reserved_node_type", &self.target_reserved_node_type);
+        formatter.field(
+            "target_reserved_node_count",
+            &self.target_reserved_node_count,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ReservedNodeExchangeStatus`](crate::model::ReservedNodeExchangeStatus)
+pub mod reserved_node_exchange_status {
+    /// A builder for [`ReservedNodeExchangeStatus`](crate::model::ReservedNodeExchangeStatus)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) reserved_node_exchange_request_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::ReservedNodeExchangeStatusType>,
+        pub(crate) request_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) source_reserved_node_id: std::option::Option<std::string::String>,
+        pub(crate) source_reserved_node_type: std::option::Option<std::string::String>,
+        pub(crate) source_reserved_node_count: std::option::Option<i32>,
+        pub(crate) target_reserved_node_offering_id: std::option::Option<std::string::String>,
+        pub(crate) target_reserved_node_type: std::option::Option<std::string::String>,
+        pub(crate) target_reserved_node_count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The identifier of the reserved-node exchange request.</p>
+        pub fn reserved_node_exchange_request_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.reserved_node_exchange_request_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the reserved-node exchange request.</p>
+        pub fn set_reserved_node_exchange_request_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reserved_node_exchange_request_id = input;
+            self
+        }
+        /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
+        pub fn status(mut self, input: crate::model::ReservedNodeExchangeStatusType) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ReservedNodeExchangeStatusType>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>A date and time that indicate when the reserved-node exchange was requested.</p>
+        pub fn request_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.request_time = Some(input);
+            self
+        }
+        /// <p>A date and time that indicate when the reserved-node exchange was requested.</p>
+        pub fn set_request_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.request_time = input;
+            self
+        }
+        /// <p>The identifier of the source reserved node.</p>
+        pub fn source_reserved_node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_reserved_node_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the source reserved node.</p>
+        pub fn set_source_reserved_node_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_reserved_node_id = input;
+            self
+        }
+        /// <p>The source reserved-node type, for example ds2.xlarge.</p>
+        pub fn source_reserved_node_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_reserved_node_type = Some(input.into());
+            self
+        }
+        /// <p>The source reserved-node type, for example ds2.xlarge.</p>
+        pub fn set_source_reserved_node_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_reserved_node_type = input;
+            self
+        }
+        /// <p>The source reserved-node count in the cluster.</p>
+        pub fn source_reserved_node_count(mut self, input: i32) -> Self {
+            self.source_reserved_node_count = Some(input);
+            self
+        }
+        /// <p>The source reserved-node count in the cluster.</p>
+        pub fn set_source_reserved_node_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.source_reserved_node_count = input;
+            self
+        }
+        /// <p>The identifier of the target reserved node offering.</p>
+        pub fn target_reserved_node_offering_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.target_reserved_node_offering_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the target reserved node offering.</p>
+        pub fn set_target_reserved_node_offering_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_reserved_node_offering_id = input;
+            self
+        }
+        /// <p>The node type of the target reserved node, for example ra3.4xlarge.</p>
+        pub fn target_reserved_node_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_reserved_node_type = Some(input.into());
+            self
+        }
+        /// <p>The node type of the target reserved node, for example ra3.4xlarge.</p>
+        pub fn set_target_reserved_node_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_reserved_node_type = input;
+            self
+        }
+        /// <p>The count of target reserved nodes in the cluster.</p>
+        pub fn target_reserved_node_count(mut self, input: i32) -> Self {
+            self.target_reserved_node_count = Some(input);
+            self
+        }
+        /// <p>The count of target reserved nodes in the cluster.</p>
+        pub fn set_target_reserved_node_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.target_reserved_node_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReservedNodeExchangeStatus`](crate::model::ReservedNodeExchangeStatus)
+        pub fn build(self) -> crate::model::ReservedNodeExchangeStatus {
+            crate::model::ReservedNodeExchangeStatus {
+                reserved_node_exchange_request_id: self.reserved_node_exchange_request_id,
+                status: self.status,
+                request_time: self.request_time,
+                source_reserved_node_id: self.source_reserved_node_id,
+                source_reserved_node_type: self.source_reserved_node_type,
+                source_reserved_node_count: self.source_reserved_node_count.unwrap_or_default(),
+                target_reserved_node_offering_id: self.target_reserved_node_offering_id,
+                target_reserved_node_type: self.target_reserved_node_type,
+                target_reserved_node_count: self.target_reserved_node_count.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ReservedNodeExchangeStatus {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeExchangeStatus`](crate::model::ReservedNodeExchangeStatus)
+    pub fn builder() -> crate::model::reserved_node_exchange_status::Builder {
+        crate::model::reserved_node_exchange_status::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ReservedNodeExchangeStatusType {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Requested,
+    #[allow(missing_docs)] // documentation missing in model
+    Retrying,
+    #[allow(missing_docs)] // documentation missing in model
+    Succeeded,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ReservedNodeExchangeStatusType {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => ReservedNodeExchangeStatusType::Failed,
+            "IN_PROGRESS" => ReservedNodeExchangeStatusType::InProgress,
+            "PENDING" => ReservedNodeExchangeStatusType::Pending,
+            "REQUESTED" => ReservedNodeExchangeStatusType::Requested,
+            "RETRYING" => ReservedNodeExchangeStatusType::Retrying,
+            "SUCCEEDED" => ReservedNodeExchangeStatusType::Succeeded,
+            other => ReservedNodeExchangeStatusType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ReservedNodeExchangeStatusType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ReservedNodeExchangeStatusType::from(s))
+    }
+}
+impl ReservedNodeExchangeStatusType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ReservedNodeExchangeStatusType::Failed => "FAILED",
+            ReservedNodeExchangeStatusType::InProgress => "IN_PROGRESS",
+            ReservedNodeExchangeStatusType::Pending => "PENDING",
+            ReservedNodeExchangeStatusType::Requested => "REQUESTED",
+            ReservedNodeExchangeStatusType::Retrying => "RETRYING",
+            ReservedNodeExchangeStatusType::Succeeded => "SUCCEEDED",
+            ReservedNodeExchangeStatusType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FAILED",
+            "IN_PROGRESS",
+            "PENDING",
+            "REQUESTED",
+            "RETRYING",
+            "SUCCEEDED",
+        ]
+    }
+}
+impl AsRef<str> for ReservedNodeExchangeStatusType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -8408,6 +8787,10 @@ pub struct ResizeClusterMessage {
     /// process. If you don't provide this parameter or set the value to
     /// <code>false</code>, the resize type is elastic. </p>
     pub classic: std::option::Option<bool>,
+    /// <p>The identifier of the reserved node.</p>
+    pub reserved_node_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the target reserved node offering.</p>
+    pub target_reserved_node_offering_id: std::option::Option<std::string::String>,
 }
 impl ResizeClusterMessage {
     /// <p>The unique identifier for the cluster to resize.</p>
@@ -8432,6 +8815,14 @@ impl ResizeClusterMessage {
     pub fn classic(&self) -> std::option::Option<bool> {
         self.classic
     }
+    /// <p>The identifier of the reserved node.</p>
+    pub fn reserved_node_id(&self) -> std::option::Option<&str> {
+        self.reserved_node_id.as_deref()
+    }
+    /// <p>The identifier of the target reserved node offering.</p>
+    pub fn target_reserved_node_offering_id(&self) -> std::option::Option<&str> {
+        self.target_reserved_node_offering_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ResizeClusterMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8441,6 +8832,11 @@ impl std::fmt::Debug for ResizeClusterMessage {
         formatter.field("node_type", &self.node_type);
         formatter.field("number_of_nodes", &self.number_of_nodes);
         formatter.field("classic", &self.classic);
+        formatter.field("reserved_node_id", &self.reserved_node_id);
+        formatter.field(
+            "target_reserved_node_offering_id",
+            &self.target_reserved_node_offering_id,
+        );
         formatter.finish()
     }
 }
@@ -8455,6 +8851,8 @@ pub mod resize_cluster_message {
         pub(crate) node_type: std::option::Option<std::string::String>,
         pub(crate) number_of_nodes: std::option::Option<i32>,
         pub(crate) classic: std::option::Option<bool>,
+        pub(crate) reserved_node_id: std::option::Option<std::string::String>,
+        pub(crate) target_reserved_node_offering_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier for the cluster to resize.</p>
@@ -8514,6 +8912,35 @@ pub mod resize_cluster_message {
             self.classic = input;
             self
         }
+        /// <p>The identifier of the reserved node.</p>
+        pub fn reserved_node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reserved_node_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the reserved node.</p>
+        pub fn set_reserved_node_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reserved_node_id = input;
+            self
+        }
+        /// <p>The identifier of the target reserved node offering.</p>
+        pub fn target_reserved_node_offering_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.target_reserved_node_offering_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the target reserved node offering.</p>
+        pub fn set_target_reserved_node_offering_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_reserved_node_offering_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResizeClusterMessage`](crate::model::ResizeClusterMessage)
         pub fn build(self) -> crate::model::ResizeClusterMessage {
             crate::model::ResizeClusterMessage {
@@ -8522,6 +8949,8 @@ pub mod resize_cluster_message {
                 node_type: self.node_type,
                 number_of_nodes: self.number_of_nodes,
                 classic: self.classic,
+                reserved_node_id: self.reserved_node_id,
+                target_reserved_node_offering_id: self.target_reserved_node_offering_id,
             }
         }
     }
@@ -9584,6 +10013,176 @@ impl ReservedNodeOffering {
     /// Creates a new builder-style object to manufacture [`ReservedNodeOffering`](crate::model::ReservedNodeOffering)
     pub fn builder() -> crate::model::reserved_node_offering::Builder {
         crate::model::reserved_node_offering::Builder::default()
+    }
+}
+
+/// <p>Details for a reserved-node exchange. Examples include the node type for a
+/// reserved node, the price for a node, the node's state, and other details.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReservedNodeConfigurationOption {
+    /// <p>Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node
+    /// offerings. </p>
+    pub source_reserved_node: std::option::Option<crate::model::ReservedNode>,
+    /// <p>The target reserved-node count.</p>
+    pub target_reserved_node_count: i32,
+    /// <p>Describes a reserved node offering.</p>
+    pub target_reserved_node_offering: std::option::Option<crate::model::ReservedNodeOffering>,
+}
+impl ReservedNodeConfigurationOption {
+    /// <p>Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node
+    /// offerings. </p>
+    pub fn source_reserved_node(&self) -> std::option::Option<&crate::model::ReservedNode> {
+        self.source_reserved_node.as_ref()
+    }
+    /// <p>The target reserved-node count.</p>
+    pub fn target_reserved_node_count(&self) -> i32 {
+        self.target_reserved_node_count
+    }
+    /// <p>Describes a reserved node offering.</p>
+    pub fn target_reserved_node_offering(
+        &self,
+    ) -> std::option::Option<&crate::model::ReservedNodeOffering> {
+        self.target_reserved_node_offering.as_ref()
+    }
+}
+impl std::fmt::Debug for ReservedNodeConfigurationOption {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReservedNodeConfigurationOption");
+        formatter.field("source_reserved_node", &self.source_reserved_node);
+        formatter.field(
+            "target_reserved_node_count",
+            &self.target_reserved_node_count,
+        );
+        formatter.field(
+            "target_reserved_node_offering",
+            &self.target_reserved_node_offering,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ReservedNodeConfigurationOption`](crate::model::ReservedNodeConfigurationOption)
+pub mod reserved_node_configuration_option {
+    /// A builder for [`ReservedNodeConfigurationOption`](crate::model::ReservedNodeConfigurationOption)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_reserved_node: std::option::Option<crate::model::ReservedNode>,
+        pub(crate) target_reserved_node_count: std::option::Option<i32>,
+        pub(crate) target_reserved_node_offering:
+            std::option::Option<crate::model::ReservedNodeOffering>,
+    }
+    impl Builder {
+        /// <p>Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node
+        /// offerings. </p>
+        pub fn source_reserved_node(mut self, input: crate::model::ReservedNode) -> Self {
+            self.source_reserved_node = Some(input);
+            self
+        }
+        /// <p>Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node
+        /// offerings. </p>
+        pub fn set_source_reserved_node(
+            mut self,
+            input: std::option::Option<crate::model::ReservedNode>,
+        ) -> Self {
+            self.source_reserved_node = input;
+            self
+        }
+        /// <p>The target reserved-node count.</p>
+        pub fn target_reserved_node_count(mut self, input: i32) -> Self {
+            self.target_reserved_node_count = Some(input);
+            self
+        }
+        /// <p>The target reserved-node count.</p>
+        pub fn set_target_reserved_node_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.target_reserved_node_count = input;
+            self
+        }
+        /// <p>Describes a reserved node offering.</p>
+        pub fn target_reserved_node_offering(
+            mut self,
+            input: crate::model::ReservedNodeOffering,
+        ) -> Self {
+            self.target_reserved_node_offering = Some(input);
+            self
+        }
+        /// <p>Describes a reserved node offering.</p>
+        pub fn set_target_reserved_node_offering(
+            mut self,
+            input: std::option::Option<crate::model::ReservedNodeOffering>,
+        ) -> Self {
+            self.target_reserved_node_offering = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReservedNodeConfigurationOption`](crate::model::ReservedNodeConfigurationOption)
+        pub fn build(self) -> crate::model::ReservedNodeConfigurationOption {
+            crate::model::ReservedNodeConfigurationOption {
+                source_reserved_node: self.source_reserved_node,
+                target_reserved_node_count: self.target_reserved_node_count.unwrap_or_default(),
+                target_reserved_node_offering: self.target_reserved_node_offering,
+            }
+        }
+    }
+}
+impl ReservedNodeConfigurationOption {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeConfigurationOption`](crate::model::ReservedNodeConfigurationOption)
+    pub fn builder() -> crate::model::reserved_node_configuration_option::Builder {
+        crate::model::reserved_node_configuration_option::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ReservedNodeExchangeActionType {
+    #[allow(missing_docs)] // documentation missing in model
+    ResizeCluster,
+    #[allow(missing_docs)] // documentation missing in model
+    RestoreCluster,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ReservedNodeExchangeActionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "resize-cluster" => ReservedNodeExchangeActionType::ResizeCluster,
+            "restore-cluster" => ReservedNodeExchangeActionType::RestoreCluster,
+            other => ReservedNodeExchangeActionType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ReservedNodeExchangeActionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ReservedNodeExchangeActionType::from(s))
+    }
+}
+impl ReservedNodeExchangeActionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ReservedNodeExchangeActionType::ResizeCluster => "resize-cluster",
+            ReservedNodeExchangeActionType::RestoreCluster => "restore-cluster",
+            ReservedNodeExchangeActionType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["resize-cluster", "restore-cluster"]
+    }
+}
+impl AsRef<str> for ReservedNodeExchangeActionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

@@ -907,14 +907,14 @@ pub mod create_load_balancer_input {
         }
         /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values
         /// are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-        /// addresses). Internal load balancers must use <code>ipv4</code>.</p>
+        /// addresses). </p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.ip_address_type = Some(input);
             self
         }
         /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values
         /// are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-        /// addresses). Internal load balancers must use <code>ipv4</code>.</p>
+        /// addresses). </p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -6324,17 +6324,17 @@ pub mod set_ip_address_type_input {
             self
         }
         /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and
-        /// <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
-        /// <code>ipv4</code>. You can’t specify <code>dualstack</code> for a load balancer with a UDP
-        /// or TCP_UDP listener.</p>
+        /// <code>dualstack</code> (for IPv4 and IPv6 addresses).
+        /// You can’t specify
+        /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.ip_address_type = Some(input);
             self
         }
         /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and
-        /// <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
-        /// <code>ipv4</code>. You can’t specify <code>dualstack</code> for a load balancer with a UDP
-        /// or TCP_UDP listener.</p>
+        /// <code>dualstack</code> (for IPv4 and IPv6 addresses).
+        /// You can’t specify
+        /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -6909,8 +6909,8 @@ pub mod set_subnets_input {
         /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load
         /// balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and
         /// <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify
-        /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. Internal load
-        /// balancers must use <code>ipv4</code>.</p>
+        /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.
+        /// .</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.ip_address_type = Some(input);
             self
@@ -6918,8 +6918,8 @@ pub mod set_subnets_input {
         /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load
         /// balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and
         /// <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify
-        /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. Internal load
-        /// balancers must use <code>ipv4</code>.</p>
+        /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.
+        /// .</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -7091,8 +7091,8 @@ pub struct SetSubnetsInput {
     /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load
     /// balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and
     /// <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify
-    /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. Internal load
-    /// balancers must use <code>ipv4</code>.</p>
+    /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.
+    /// .</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
 }
 impl SetSubnetsInput {
@@ -7130,8 +7130,8 @@ impl SetSubnetsInput {
     /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load
     /// balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and
     /// <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify
-    /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. Internal load
-    /// balancers must use <code>ipv4</code>.</p>
+    /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.
+    /// .</p>
     pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
         self.ip_address_type.as_ref()
     }
@@ -7203,9 +7203,9 @@ pub struct SetIpAddressTypeInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub load_balancer_arn: std::option::Option<std::string::String>,
     /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and
-    /// <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
-    /// <code>ipv4</code>. You can’t specify <code>dualstack</code> for a load balancer with a UDP
-    /// or TCP_UDP listener.</p>
+    /// <code>dualstack</code> (for IPv4 and IPv6 addresses).
+    /// You can’t specify
+    /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
 }
 impl SetIpAddressTypeInput {
@@ -7214,9 +7214,9 @@ impl SetIpAddressTypeInput {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and
-    /// <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
-    /// <code>ipv4</code>. You can’t specify <code>dualstack</code> for a load balancer with a UDP
-    /// or TCP_UDP listener.</p>
+    /// <code>dualstack</code> (for IPv4 and IPv6 addresses).
+    /// You can’t specify
+    /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
     pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
         self.ip_address_type.as_ref()
     }
@@ -8558,7 +8558,7 @@ pub struct CreateLoadBalancerInput {
     pub r#type: std::option::Option<crate::model::LoadBalancerTypeEnum>,
     /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values
     /// are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-    /// addresses). Internal load balancers must use <code>ipv4</code>.</p>
+    /// addresses). </p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
     /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP
     /// pool).</p>
@@ -8630,7 +8630,7 @@ impl CreateLoadBalancerInput {
     }
     /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values
     /// are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-    /// addresses). Internal load balancers must use <code>ipv4</code>.</p>
+    /// addresses). </p>
     pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
         self.ip_address_type.as_ref()
     }

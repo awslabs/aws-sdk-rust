@@ -100,23 +100,15 @@ pub fn serialize_structure_crate_input_create_function_input(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.function_code {
-        let mut inner_writer = scope
-            .start_el("FunctionCode")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("FunctionCode").finish();
         inner_writer.data(aws_smithy_types::base64::encode(var_1.as_ref()).as_ref());
     }
     if let Some(var_2) = &input.function_config {
-        let inner_writer = scope
-            .start_el("FunctionConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("FunctionConfig");
         crate::xml_ser::serialize_structure_crate_model_function_config(var_2, inner_writer)?
     }
     if let Some(var_3) = &input.name {
-        let mut inner_writer = scope
-            .start_el("Name")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Name").finish();
         inner_writer.data(var_3.as_ref());
     }
     scope.finish();
@@ -205,15 +197,10 @@ pub fn serialize_structure_crate_input_create_realtime_log_config_input(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_4) = &input.end_points {
-        let mut inner_writer = scope
-            .start_el("EndPoints")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("EndPoints").finish();
         for list_item_5 in var_4 {
             {
-                let inner_writer = inner_writer
-                    .start_el("member")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+                let inner_writer = inner_writer.start_el("member");
                 crate::xml_ser::serialize_structure_crate_model_end_point(
                     list_item_5,
                     inner_writer,
@@ -222,32 +209,20 @@ pub fn serialize_structure_crate_input_create_realtime_log_config_input(
         }
     }
     if let Some(var_6) = &input.fields {
-        let mut inner_writer = scope
-            .start_el("Fields")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Fields").finish();
         for list_item_7 in var_6 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("Field")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("Field").finish();
                 inner_writer.data(list_item_7.as_ref());
             }
         }
     }
     if let Some(var_8) = &input.name {
-        let mut inner_writer = scope
-            .start_el("Name")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Name").finish();
         inner_writer.data(var_8.as_ref());
     }
     if let Some(var_9) = &input.sampling_rate {
-        let mut inner_writer = scope
-            .start_el("SamplingRate")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("SamplingRate").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_9).encode());
     }
     scope.finish();
@@ -308,17 +283,11 @@ pub fn serialize_structure_crate_input_delete_realtime_log_config_input(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_10) = &input.arn {
-        let mut inner_writer = scope
-            .start_el("ARN")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ARN").finish();
         inner_writer.data(var_10.as_ref());
     }
     if let Some(var_11) = &input.name {
-        let mut inner_writer = scope
-            .start_el("Name")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Name").finish();
         inner_writer.data(var_11.as_ref());
     }
     scope.finish();
@@ -332,17 +301,11 @@ pub fn serialize_structure_crate_input_get_realtime_log_config_input(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_12) = &input.arn {
-        let mut inner_writer = scope
-            .start_el("ARN")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ARN").finish();
         inner_writer.data(var_12.as_ref());
     }
     if let Some(var_13) = &input.name {
-        let mut inner_writer = scope
-            .start_el("Name")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Name").finish();
         inner_writer.data(var_13.as_ref());
     }
     scope.finish();
@@ -356,31 +319,19 @@ pub fn serialize_structure_crate_input_list_distributions_by_realtime_log_config
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_14) = &input.marker {
-        let mut inner_writer = scope
-            .start_el("Marker")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Marker").finish();
         inner_writer.data(var_14.as_ref());
     }
     if let Some(var_15) = &input.max_items {
-        let mut inner_writer = scope
-            .start_el("MaxItems")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("MaxItems").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_15).encode());
     }
     if let Some(var_16) = &input.realtime_log_config_arn {
-        let mut inner_writer = scope
-            .start_el("RealtimeLogConfigArn")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("RealtimeLogConfigArn").finish();
         inner_writer.data(var_16.as_ref());
     }
     if let Some(var_17) = &input.realtime_log_config_name {
-        let mut inner_writer = scope
-            .start_el("RealtimeLogConfigName")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("RealtimeLogConfigName").finish();
         inner_writer.data(var_17.as_ref());
     }
     scope.finish();
@@ -409,17 +360,11 @@ pub fn serialize_structure_crate_input_test_function_input(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_18) = &input.event_object {
-        let mut inner_writer = scope
-            .start_el("EventObject")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("EventObject").finish();
         inner_writer.data(aws_smithy_types::base64::encode(var_18.as_ref()).as_ref());
     }
     if let Some(var_19) = &input.stage {
-        let mut inner_writer = scope
-            .start_el("Stage")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Stage").finish();
         inner_writer.data(var_19.as_str());
     }
     scope.finish();
@@ -527,16 +472,11 @@ pub fn serialize_structure_crate_input_update_function_input(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_20) = &input.function_code {
-        let mut inner_writer = scope
-            .start_el("FunctionCode")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("FunctionCode").finish();
         inner_writer.data(aws_smithy_types::base64::encode(var_20.as_ref()).as_ref());
     }
     if let Some(var_21) = &input.function_config {
-        let inner_writer = scope
-            .start_el("FunctionConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("FunctionConfig");
         crate::xml_ser::serialize_structure_crate_model_function_config(var_21, inner_writer)?
     }
     scope.finish();
@@ -595,22 +535,14 @@ pub fn serialize_structure_crate_input_update_realtime_log_config_input(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_22) = &input.arn {
-        let mut inner_writer = scope
-            .start_el("ARN")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ARN").finish();
         inner_writer.data(var_22.as_ref());
     }
     if let Some(var_23) = &input.end_points {
-        let mut inner_writer = scope
-            .start_el("EndPoints")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("EndPoints").finish();
         for list_item_24 in var_23 {
             {
-                let inner_writer = inner_writer
-                    .start_el("member")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+                let inner_writer = inner_writer.start_el("member");
                 crate::xml_ser::serialize_structure_crate_model_end_point(
                     list_item_24,
                     inner_writer,
@@ -619,32 +551,20 @@ pub fn serialize_structure_crate_input_update_realtime_log_config_input(
         }
     }
     if let Some(var_25) = &input.fields {
-        let mut inner_writer = scope
-            .start_el("Fields")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Fields").finish();
         for list_item_26 in var_25 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("Field")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("Field").finish();
                 inner_writer.data(list_item_26.as_ref());
             }
         }
     }
     if let Some(var_27) = &input.name {
-        let mut inner_writer = scope
-            .start_el("Name")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Name").finish();
         inner_writer.data(var_27.as_ref());
     }
     if let Some(var_28) = &input.sampling_rate {
-        let mut inner_writer = scope
-            .start_el("SamplingRate")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("SamplingRate").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_28).encode());
     }
     scope.finish();
@@ -688,44 +608,27 @@ pub fn serialize_structure_crate_model_cache_policy_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_29) = &input.comment {
-        let mut inner_writer = scope
-            .start_el("Comment")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Comment").finish();
         inner_writer.data(var_29.as_ref());
     }
     if let Some(var_30) = &input.name {
-        let mut inner_writer = scope
-            .start_el("Name")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Name").finish();
         inner_writer.data(var_30.as_ref());
     }
     if let Some(var_31) = &input.default_ttl {
-        let mut inner_writer = scope
-            .start_el("DefaultTTL")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("DefaultTTL").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_31).encode());
     }
     if let Some(var_32) = &input.max_ttl {
-        let mut inner_writer = scope
-            .start_el("MaxTTL")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("MaxTTL").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_32).encode());
     }
     if let Some(var_33) = &input.min_ttl {
-        let mut inner_writer = scope
-            .start_el("MinTTL")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("MinTTL").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_33).encode());
     }
     if let Some(var_34) = &input.parameters_in_cache_key_and_forwarded_to_origin {
-        let inner_writer = scope
-            .start_el("ParametersInCacheKeyAndForwardedToOrigin")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("ParametersInCacheKeyAndForwardedToOrigin");
         crate::xml_ser::serialize_structure_crate_model_parameters_in_cache_key_and_forwarded_to_origin(var_34, inner_writer)?
     }
     scope.finish();
@@ -739,17 +642,11 @@ pub fn serialize_structure_crate_model_cloud_front_origin_access_identity_config
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_35) = &input.caller_reference {
-        let mut inner_writer = scope
-            .start_el("CallerReference")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("CallerReference").finish();
         inner_writer.data(var_35.as_ref());
     }
     if let Some(var_36) = &input.comment {
-        let mut inner_writer = scope
-            .start_el("Comment")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Comment").finish();
         inner_writer.data(var_36.as_ref());
     }
     scope.finish();
@@ -763,119 +660,77 @@ pub fn serialize_structure_crate_model_distribution_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_37) = &input.caller_reference {
-        let mut inner_writer = scope
-            .start_el("CallerReference")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("CallerReference").finish();
         inner_writer.data(var_37.as_ref());
     }
     if let Some(var_38) = &input.aliases {
-        let inner_writer = scope
-            .start_el("Aliases")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("Aliases");
         crate::xml_ser::serialize_structure_crate_model_aliases(var_38, inner_writer)?
     }
     if let Some(var_39) = &input.default_root_object {
-        let mut inner_writer = scope
-            .start_el("DefaultRootObject")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("DefaultRootObject").finish();
         inner_writer.data(var_39.as_ref());
     }
     if let Some(var_40) = &input.origins {
-        let inner_writer = scope
-            .start_el("Origins")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("Origins");
         crate::xml_ser::serialize_structure_crate_model_origins(var_40, inner_writer)?
     }
     if let Some(var_41) = &input.origin_groups {
-        let inner_writer = scope
-            .start_el("OriginGroups")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("OriginGroups");
         crate::xml_ser::serialize_structure_crate_model_origin_groups(var_41, inner_writer)?
     }
     if let Some(var_42) = &input.default_cache_behavior {
-        let inner_writer = scope
-            .start_el("DefaultCacheBehavior")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("DefaultCacheBehavior");
         crate::xml_ser::serialize_structure_crate_model_default_cache_behavior(
             var_42,
             inner_writer,
         )?
     }
     if let Some(var_43) = &input.cache_behaviors {
-        let inner_writer = scope
-            .start_el("CacheBehaviors")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("CacheBehaviors");
         crate::xml_ser::serialize_structure_crate_model_cache_behaviors(var_43, inner_writer)?
     }
     if let Some(var_44) = &input.custom_error_responses {
-        let inner_writer = scope
-            .start_el("CustomErrorResponses")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("CustomErrorResponses");
         crate::xml_ser::serialize_structure_crate_model_custom_error_responses(
             var_44,
             inner_writer,
         )?
     }
     if let Some(var_45) = &input.comment {
-        let mut inner_writer = scope
-            .start_el("Comment")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Comment").finish();
         inner_writer.data(var_45.as_ref());
     }
     if let Some(var_46) = &input.logging {
-        let inner_writer = scope
-            .start_el("Logging")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("Logging");
         crate::xml_ser::serialize_structure_crate_model_logging_config(var_46, inner_writer)?
     }
     if let Some(var_47) = &input.price_class {
-        let mut inner_writer = scope
-            .start_el("PriceClass")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("PriceClass").finish();
         inner_writer.data(var_47.as_str());
     }
     if let Some(var_48) = &input.enabled {
-        let mut inner_writer = scope
-            .start_el("Enabled")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Enabled").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_48).encode());
     }
     if let Some(var_49) = &input.viewer_certificate {
-        let inner_writer = scope
-            .start_el("ViewerCertificate")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("ViewerCertificate");
         crate::xml_ser::serialize_structure_crate_model_viewer_certificate(var_49, inner_writer)?
     }
     if let Some(var_50) = &input.restrictions {
-        let inner_writer = scope
-            .start_el("Restrictions")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("Restrictions");
         crate::xml_ser::serialize_structure_crate_model_restrictions(var_50, inner_writer)?
     }
     if let Some(var_51) = &input.web_acl_id {
-        let mut inner_writer = scope
-            .start_el("WebACLId")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("WebACLId").finish();
         inner_writer.data(var_51.as_ref());
     }
     if let Some(var_52) = &input.http_version {
-        let mut inner_writer = scope
-            .start_el("HttpVersion")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("HttpVersion").finish();
         inner_writer.data(var_52.as_str());
     }
     if let Some(var_53) = &input.is_ipv6_enabled {
-        let mut inner_writer = scope
-            .start_el("IsIPV6Enabled")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("IsIPV6Enabled").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_53).encode());
     }
     scope.finish();
@@ -889,15 +744,11 @@ pub fn serialize_structure_crate_model_distribution_config_with_tags(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_54) = &input.distribution_config {
-        let inner_writer = scope
-            .start_el("DistributionConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("DistributionConfig");
         crate::xml_ser::serialize_structure_crate_model_distribution_config(var_54, inner_writer)?
     }
     if let Some(var_55) = &input.tags {
-        let inner_writer = scope
-            .start_el("Tags")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("Tags");
         crate::xml_ser::serialize_structure_crate_model_tags(var_55, inner_writer)?
     }
     scope.finish();
@@ -911,32 +762,22 @@ pub fn serialize_structure_crate_model_field_level_encryption_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_56) = &input.caller_reference {
-        let mut inner_writer = scope
-            .start_el("CallerReference")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("CallerReference").finish();
         inner_writer.data(var_56.as_ref());
     }
     if let Some(var_57) = &input.comment {
-        let mut inner_writer = scope
-            .start_el("Comment")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Comment").finish();
         inner_writer.data(var_57.as_ref());
     }
     if let Some(var_58) = &input.query_arg_profile_config {
-        let inner_writer = scope
-            .start_el("QueryArgProfileConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("QueryArgProfileConfig");
         crate::xml_ser::serialize_structure_crate_model_query_arg_profile_config(
             var_58,
             inner_writer,
         )?
     }
     if let Some(var_59) = &input.content_type_profile_config {
-        let inner_writer = scope
-            .start_el("ContentTypeProfileConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("ContentTypeProfileConfig");
         crate::xml_ser::serialize_structure_crate_model_content_type_profile_config(
             var_59,
             inner_writer,
@@ -953,30 +794,19 @@ pub fn serialize_structure_crate_model_field_level_encryption_profile_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_60) = &input.name {
-        let mut inner_writer = scope
-            .start_el("Name")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Name").finish();
         inner_writer.data(var_60.as_ref());
     }
     if let Some(var_61) = &input.caller_reference {
-        let mut inner_writer = scope
-            .start_el("CallerReference")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("CallerReference").finish();
         inner_writer.data(var_61.as_ref());
     }
     if let Some(var_62) = &input.comment {
-        let mut inner_writer = scope
-            .start_el("Comment")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Comment").finish();
         inner_writer.data(var_62.as_ref());
     }
     if let Some(var_63) = &input.encryption_entities {
-        let inner_writer = scope
-            .start_el("EncryptionEntities")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("EncryptionEntities");
         crate::xml_ser::serialize_structure_crate_model_encryption_entities(var_63, inner_writer)?
     }
     scope.finish();
@@ -990,17 +820,11 @@ pub fn serialize_structure_crate_model_function_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_64) = &input.comment {
-        let mut inner_writer = scope
-            .start_el("Comment")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Comment").finish();
         inner_writer.data(var_64.as_ref());
     }
     if let Some(var_65) = &input.runtime {
-        let mut inner_writer = scope
-            .start_el("Runtime")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Runtime").finish();
         inner_writer.data(var_65.as_str());
     }
     scope.finish();
@@ -1014,16 +838,11 @@ pub fn serialize_structure_crate_model_invalidation_batch(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_66) = &input.paths {
-        let inner_writer = scope
-            .start_el("Paths")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("Paths");
         crate::xml_ser::serialize_structure_crate_model_paths(var_66, inner_writer)?
     }
     if let Some(var_67) = &input.caller_reference {
-        let mut inner_writer = scope
-            .start_el("CallerReference")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("CallerReference").finish();
         inner_writer.data(var_67.as_ref());
     }
     scope.finish();
@@ -1037,32 +856,20 @@ pub fn serialize_structure_crate_model_key_group_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_68) = &input.name {
-        let mut inner_writer = scope
-            .start_el("Name")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Name").finish();
         inner_writer.data(var_68.as_ref());
     }
     if let Some(var_69) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_70 in var_69 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("PublicKey")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("PublicKey").finish();
                 inner_writer.data(list_item_70.as_ref());
             }
         }
     }
     if let Some(var_71) = &input.comment {
-        let mut inner_writer = scope
-            .start_el("Comment")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Comment").finish();
         inner_writer.data(var_71.as_ref());
     }
     scope.finish();
@@ -1076,9 +883,7 @@ pub fn serialize_structure_crate_model_monitoring_subscription(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_72) = &input.realtime_metrics_subscription_config {
-        let inner_writer = scope
-            .start_el("RealtimeMetricsSubscriptionConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("RealtimeMetricsSubscriptionConfig");
         crate::xml_ser::serialize_structure_crate_model_realtime_metrics_subscription_config(
             var_72,
             inner_writer,
@@ -1095,41 +900,29 @@ pub fn serialize_structure_crate_model_origin_request_policy_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_73) = &input.comment {
-        let mut inner_writer = scope
-            .start_el("Comment")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Comment").finish();
         inner_writer.data(var_73.as_ref());
     }
     if let Some(var_74) = &input.name {
-        let mut inner_writer = scope
-            .start_el("Name")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Name").finish();
         inner_writer.data(var_74.as_ref());
     }
     if let Some(var_75) = &input.headers_config {
-        let inner_writer = scope
-            .start_el("HeadersConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("HeadersConfig");
         crate::xml_ser::serialize_structure_crate_model_origin_request_policy_headers_config(
             var_75,
             inner_writer,
         )?
     }
     if let Some(var_76) = &input.cookies_config {
-        let inner_writer = scope
-            .start_el("CookiesConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("CookiesConfig");
         crate::xml_ser::serialize_structure_crate_model_origin_request_policy_cookies_config(
             var_76,
             inner_writer,
         )?
     }
     if let Some(var_77) = &input.query_strings_config {
-        let inner_writer = scope
-            .start_el("QueryStringsConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("QueryStringsConfig");
         crate::xml_ser::serialize_structure_crate_model_origin_request_policy_query_strings_config(
             var_77,
             inner_writer,
@@ -1146,31 +939,19 @@ pub fn serialize_structure_crate_model_public_key_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_78) = &input.caller_reference {
-        let mut inner_writer = scope
-            .start_el("CallerReference")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("CallerReference").finish();
         inner_writer.data(var_78.as_ref());
     }
     if let Some(var_79) = &input.name {
-        let mut inner_writer = scope
-            .start_el("Name")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Name").finish();
         inner_writer.data(var_79.as_ref());
     }
     if let Some(var_80) = &input.encoded_key {
-        let mut inner_writer = scope
-            .start_el("EncodedKey")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("EncodedKey").finish();
         inner_writer.data(var_80.as_ref());
     }
     if let Some(var_81) = &input.comment {
-        let mut inner_writer = scope
-            .start_el("Comment")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Comment").finish();
         inner_writer.data(var_81.as_ref());
     }
     scope.finish();
@@ -1184,16 +965,11 @@ pub fn serialize_structure_crate_model_end_point(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_82) = &input.stream_type {
-        let mut inner_writer = scope
-            .start_el("StreamType")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("StreamType").finish();
         inner_writer.data(var_82.as_ref());
     }
     if let Some(var_83) = &input.kinesis_stream_config {
-        let inner_writer = scope
-            .start_el("KinesisStreamConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("KinesisStreamConfig");
         crate::xml_ser::serialize_structure_crate_model_kinesis_stream_config(var_83, inner_writer)?
     }
     scope.finish();
@@ -1207,38 +983,26 @@ pub fn serialize_structure_crate_model_response_headers_policy_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_84) = &input.comment {
-        let mut inner_writer = scope
-            .start_el("Comment")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Comment").finish();
         inner_writer.data(var_84.as_ref());
     }
     if let Some(var_85) = &input.name {
-        let mut inner_writer = scope
-            .start_el("Name")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Name").finish();
         inner_writer.data(var_85.as_ref());
     }
     if let Some(var_86) = &input.cors_config {
-        let inner_writer = scope
-            .start_el("CorsConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("CorsConfig");
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_cors_config(
             var_86,
             inner_writer,
         )?
     }
     if let Some(var_87) = &input.security_headers_config {
-        let inner_writer = scope
-            .start_el("SecurityHeadersConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("SecurityHeadersConfig");
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_security_headers_config(var_87, inner_writer)?
     }
     if let Some(var_88) = &input.custom_headers_config {
-        let inner_writer = scope
-            .start_el("CustomHeadersConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("CustomHeadersConfig");
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_custom_headers_config(var_88, inner_writer)?
     }
     scope.finish();
@@ -1252,58 +1016,38 @@ pub fn serialize_structure_crate_model_streaming_distribution_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_89) = &input.caller_reference {
-        let mut inner_writer = scope
-            .start_el("CallerReference")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("CallerReference").finish();
         inner_writer.data(var_89.as_ref());
     }
     if let Some(var_90) = &input.s3_origin {
-        let inner_writer = scope
-            .start_el("S3Origin")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("S3Origin");
         crate::xml_ser::serialize_structure_crate_model_s3_origin(var_90, inner_writer)?
     }
     if let Some(var_91) = &input.aliases {
-        let inner_writer = scope
-            .start_el("Aliases")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("Aliases");
         crate::xml_ser::serialize_structure_crate_model_aliases(var_91, inner_writer)?
     }
     if let Some(var_92) = &input.comment {
-        let mut inner_writer = scope
-            .start_el("Comment")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Comment").finish();
         inner_writer.data(var_92.as_ref());
     }
     if let Some(var_93) = &input.logging {
-        let inner_writer = scope
-            .start_el("Logging")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("Logging");
         crate::xml_ser::serialize_structure_crate_model_streaming_logging_config(
             var_93,
             inner_writer,
         )?
     }
     if let Some(var_94) = &input.trusted_signers {
-        let inner_writer = scope
-            .start_el("TrustedSigners")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("TrustedSigners");
         crate::xml_ser::serialize_structure_crate_model_trusted_signers(var_94, inner_writer)?
     }
     if let Some(var_95) = &input.price_class {
-        let mut inner_writer = scope
-            .start_el("PriceClass")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("PriceClass").finish();
         inner_writer.data(var_95.as_str());
     }
     if let Some(var_96) = &input.enabled {
-        let mut inner_writer = scope
-            .start_el("Enabled")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Enabled").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_96).encode());
     }
     scope.finish();
@@ -1317,18 +1061,14 @@ pub fn serialize_structure_crate_model_streaming_distribution_config_with_tags(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_97) = &input.streaming_distribution_config {
-        let inner_writer = scope
-            .start_el("StreamingDistributionConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("StreamingDistributionConfig");
         crate::xml_ser::serialize_structure_crate_model_streaming_distribution_config(
             var_97,
             inner_writer,
         )?
     }
     if let Some(var_98) = &input.tags {
-        let inner_writer = scope
-            .start_el("Tags")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("Tags");
         crate::xml_ser::serialize_structure_crate_model_tags(var_98, inner_writer)?
     }
     scope.finish();
@@ -1342,15 +1082,10 @@ pub fn serialize_structure_crate_model_tags(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_99) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_100 in var_99 {
             {
-                let inner_writer = inner_writer
-                    .start_el("Tag")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+                let inner_writer = inner_writer.start_el("Tag");
                 crate::xml_ser::serialize_structure_crate_model_tag(list_item_100, inner_writer)?
             }
         }
@@ -1366,16 +1101,10 @@ pub fn serialize_structure_crate_model_tag_keys(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_101) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_102 in var_101 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("Key")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("Key").finish();
                 inner_writer.data(list_item_102.as_ref());
             }
         }
@@ -1391,41 +1120,29 @@ pub fn serialize_structure_crate_model_parameters_in_cache_key_and_forwarded_to_
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_103) = &input.enable_accept_encoding_gzip {
-        let mut inner_writer = scope
-            .start_el("EnableAcceptEncodingGzip")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("EnableAcceptEncodingGzip").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_103).encode());
     }
     if let Some(var_104) = &input.enable_accept_encoding_brotli {
-        let mut inner_writer = scope
-            .start_el("EnableAcceptEncodingBrotli")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("EnableAcceptEncodingBrotli").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_104).encode());
     }
     if let Some(var_105) = &input.headers_config {
-        let inner_writer = scope
-            .start_el("HeadersConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("HeadersConfig");
         crate::xml_ser::serialize_structure_crate_model_cache_policy_headers_config(
             var_105,
             inner_writer,
         )?
     }
     if let Some(var_106) = &input.cookies_config {
-        let inner_writer = scope
-            .start_el("CookiesConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("CookiesConfig");
         crate::xml_ser::serialize_structure_crate_model_cache_policy_cookies_config(
             var_106,
             inner_writer,
         )?
     }
     if let Some(var_107) = &input.query_strings_config {
-        let inner_writer = scope
-            .start_el("QueryStringsConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("QueryStringsConfig");
         crate::xml_ser::serialize_structure_crate_model_cache_policy_query_strings_config(
             var_107,
             inner_writer,
@@ -1442,23 +1159,14 @@ pub fn serialize_structure_crate_model_aliases(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_108) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_108).encode());
     }
     if let Some(var_109) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_110 in var_109 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("CNAME")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("CNAME").finish();
                 inner_writer.data(list_item_110.as_ref());
             }
         }
@@ -1474,22 +1182,14 @@ pub fn serialize_structure_crate_model_origins(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_111) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_111).encode());
     }
     if let Some(var_112) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_113 in var_112 {
             {
-                let inner_writer = inner_writer
-                    .start_el("Origin")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+                let inner_writer = inner_writer.start_el("Origin");
                 crate::xml_ser::serialize_structure_crate_model_origin(list_item_113, inner_writer)?
             }
         }
@@ -1505,22 +1205,14 @@ pub fn serialize_structure_crate_model_origin_groups(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_114) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_114).encode());
     }
     if let Some(var_115) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_116 in var_115 {
             {
-                let inner_writer = inner_writer
-                    .start_el("OriginGroup")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+                let inner_writer = inner_writer.start_el("OriginGroup");
                 crate::xml_ser::serialize_structure_crate_model_origin_group(
                     list_item_116,
                     inner_writer,
@@ -1539,129 +1231,81 @@ pub fn serialize_structure_crate_model_default_cache_behavior(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_117) = &input.target_origin_id {
-        let mut inner_writer = scope
-            .start_el("TargetOriginId")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("TargetOriginId").finish();
         inner_writer.data(var_117.as_ref());
     }
     if let Some(var_118) = &input.trusted_signers {
-        let inner_writer = scope
-            .start_el("TrustedSigners")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("TrustedSigners");
         crate::xml_ser::serialize_structure_crate_model_trusted_signers(var_118, inner_writer)?
     }
     if let Some(var_119) = &input.trusted_key_groups {
-        let inner_writer = scope
-            .start_el("TrustedKeyGroups")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("TrustedKeyGroups");
         crate::xml_ser::serialize_structure_crate_model_trusted_key_groups(var_119, inner_writer)?
     }
     if let Some(var_120) = &input.viewer_protocol_policy {
-        let mut inner_writer = scope
-            .start_el("ViewerProtocolPolicy")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ViewerProtocolPolicy").finish();
         inner_writer.data(var_120.as_str());
     }
     if let Some(var_121) = &input.allowed_methods {
-        let inner_writer = scope
-            .start_el("AllowedMethods")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("AllowedMethods");
         crate::xml_ser::serialize_structure_crate_model_allowed_methods(var_121, inner_writer)?
     }
     if let Some(var_122) = &input.smooth_streaming {
-        let mut inner_writer = scope
-            .start_el("SmoothStreaming")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("SmoothStreaming").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_122).encode());
     }
     if let Some(var_123) = &input.compress {
-        let mut inner_writer = scope
-            .start_el("Compress")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Compress").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_123).encode());
     }
     if let Some(var_124) = &input.lambda_function_associations {
-        let inner_writer = scope
-            .start_el("LambdaFunctionAssociations")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("LambdaFunctionAssociations");
         crate::xml_ser::serialize_structure_crate_model_lambda_function_associations(
             var_124,
             inner_writer,
         )?
     }
     if let Some(var_125) = &input.function_associations {
-        let inner_writer = scope
-            .start_el("FunctionAssociations")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("FunctionAssociations");
         crate::xml_ser::serialize_structure_crate_model_function_associations(
             var_125,
             inner_writer,
         )?
     }
     if let Some(var_126) = &input.field_level_encryption_id {
-        let mut inner_writer = scope
-            .start_el("FieldLevelEncryptionId")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("FieldLevelEncryptionId").finish();
         inner_writer.data(var_126.as_ref());
     }
     if let Some(var_127) = &input.realtime_log_config_arn {
-        let mut inner_writer = scope
-            .start_el("RealtimeLogConfigArn")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("RealtimeLogConfigArn").finish();
         inner_writer.data(var_127.as_ref());
     }
     if let Some(var_128) = &input.cache_policy_id {
-        let mut inner_writer = scope
-            .start_el("CachePolicyId")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("CachePolicyId").finish();
         inner_writer.data(var_128.as_ref());
     }
     if let Some(var_129) = &input.origin_request_policy_id {
-        let mut inner_writer = scope
-            .start_el("OriginRequestPolicyId")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("OriginRequestPolicyId").finish();
         inner_writer.data(var_129.as_ref());
     }
     if let Some(var_130) = &input.response_headers_policy_id {
-        let mut inner_writer = scope
-            .start_el("ResponseHeadersPolicyId")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ResponseHeadersPolicyId").finish();
         inner_writer.data(var_130.as_ref());
     }
     if let Some(var_131) = &input.forwarded_values {
-        let inner_writer = scope
-            .start_el("ForwardedValues")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("ForwardedValues");
         crate::xml_ser::serialize_structure_crate_model_forwarded_values(var_131, inner_writer)?
     }
     if let Some(var_132) = &input.min_ttl {
-        let mut inner_writer = scope
-            .start_el("MinTTL")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("MinTTL").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_132).encode());
     }
     if let Some(var_133) = &input.default_ttl {
-        let mut inner_writer = scope
-            .start_el("DefaultTTL")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("DefaultTTL").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_133).encode());
     }
     if let Some(var_134) = &input.max_ttl {
-        let mut inner_writer = scope
-            .start_el("MaxTTL")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("MaxTTL").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_134).encode());
     }
     scope.finish();
@@ -1675,22 +1319,14 @@ pub fn serialize_structure_crate_model_cache_behaviors(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_135) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_135).encode());
     }
     if let Some(var_136) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_137 in var_136 {
             {
-                let inner_writer = inner_writer
-                    .start_el("CacheBehavior")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+                let inner_writer = inner_writer.start_el("CacheBehavior");
                 crate::xml_ser::serialize_structure_crate_model_cache_behavior(
                     list_item_137,
                     inner_writer,
@@ -1709,22 +1345,14 @@ pub fn serialize_structure_crate_model_custom_error_responses(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_138) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_138).encode());
     }
     if let Some(var_139) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_140 in var_139 {
             {
-                let inner_writer = inner_writer
-                    .start_el("CustomErrorResponse")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+                let inner_writer = inner_writer.start_el("CustomErrorResponse");
                 crate::xml_ser::serialize_structure_crate_model_custom_error_response(
                     list_item_140,
                     inner_writer,
@@ -1743,31 +1371,19 @@ pub fn serialize_structure_crate_model_logging_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_141) = &input.enabled {
-        let mut inner_writer = scope
-            .start_el("Enabled")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Enabled").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_141).encode());
     }
     if let Some(var_142) = &input.include_cookies {
-        let mut inner_writer = scope
-            .start_el("IncludeCookies")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("IncludeCookies").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_142).encode());
     }
     if let Some(var_143) = &input.bucket {
-        let mut inner_writer = scope
-            .start_el("Bucket")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Bucket").finish();
         inner_writer.data(var_143.as_ref());
     }
     if let Some(var_144) = &input.prefix {
-        let mut inner_writer = scope
-            .start_el("Prefix")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Prefix").finish();
         inner_writer.data(var_144.as_ref());
     }
     scope.finish();
@@ -1781,52 +1397,31 @@ pub fn serialize_structure_crate_model_viewer_certificate(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_145) = &input.cloud_front_default_certificate {
-        let mut inner_writer = scope
-            .start_el("CloudFrontDefaultCertificate")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("CloudFrontDefaultCertificate").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_145).encode());
     }
     if let Some(var_146) = &input.iam_certificate_id {
-        let mut inner_writer = scope
-            .start_el("IAMCertificateId")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("IAMCertificateId").finish();
         inner_writer.data(var_146.as_ref());
     }
     if let Some(var_147) = &input.acm_certificate_arn {
-        let mut inner_writer = scope
-            .start_el("ACMCertificateArn")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ACMCertificateArn").finish();
         inner_writer.data(var_147.as_ref());
     }
     if let Some(var_148) = &input.ssl_support_method {
-        let mut inner_writer = scope
-            .start_el("SSLSupportMethod")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("SSLSupportMethod").finish();
         inner_writer.data(var_148.as_str());
     }
     if let Some(var_149) = &input.minimum_protocol_version {
-        let mut inner_writer = scope
-            .start_el("MinimumProtocolVersion")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("MinimumProtocolVersion").finish();
         inner_writer.data(var_149.as_str());
     }
     if let Some(var_150) = &input.certificate {
-        let mut inner_writer = scope
-            .start_el("Certificate")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Certificate").finish();
         inner_writer.data(var_150.as_ref());
     }
     if let Some(var_151) = &input.certificate_source {
-        let mut inner_writer = scope
-            .start_el("CertificateSource")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("CertificateSource").finish();
         inner_writer.data(var_151.as_str());
     }
     scope.finish();
@@ -1840,9 +1435,7 @@ pub fn serialize_structure_crate_model_restrictions(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_152) = &input.geo_restriction {
-        let inner_writer = scope
-            .start_el("GeoRestriction")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("GeoRestriction");
         crate::xml_ser::serialize_structure_crate_model_geo_restriction(var_152, inner_writer)?
     }
     scope.finish();
@@ -1858,14 +1451,11 @@ pub fn serialize_structure_crate_model_query_arg_profile_config(
     if let Some(var_153) = &input.forward_when_query_arg_profile_is_unknown {
         let mut inner_writer = scope
             .start_el("ForwardWhenQueryArgProfileIsUnknown")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_153).encode());
     }
     if let Some(var_154) = &input.query_arg_profiles {
-        let inner_writer = scope
-            .start_el("QueryArgProfiles")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("QueryArgProfiles");
         crate::xml_ser::serialize_structure_crate_model_query_arg_profiles(var_154, inner_writer)?
     }
     scope.finish();
@@ -1879,16 +1469,11 @@ pub fn serialize_structure_crate_model_content_type_profile_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_155) = &input.forward_when_content_type_is_unknown {
-        let mut inner_writer = scope
-            .start_el("ForwardWhenContentTypeIsUnknown")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ForwardWhenContentTypeIsUnknown").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_155).encode());
     }
     if let Some(var_156) = &input.content_type_profiles {
-        let inner_writer = scope
-            .start_el("ContentTypeProfiles")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("ContentTypeProfiles");
         crate::xml_ser::serialize_structure_crate_model_content_type_profiles(
             var_156,
             inner_writer,
@@ -1905,22 +1490,14 @@ pub fn serialize_structure_crate_model_encryption_entities(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_157) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_157).encode());
     }
     if let Some(var_158) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_159 in var_158 {
             {
-                let inner_writer = inner_writer
-                    .start_el("EncryptionEntity")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+                let inner_writer = inner_writer.start_el("EncryptionEntity");
                 crate::xml_ser::serialize_structure_crate_model_encryption_entity(
                     list_item_159,
                     inner_writer,
@@ -1939,23 +1516,14 @@ pub fn serialize_structure_crate_model_paths(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_160) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_160).encode());
     }
     if let Some(var_161) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_162 in var_161 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("Path")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("Path").finish();
                 inner_writer.data(list_item_162.as_ref());
             }
         }
@@ -1971,10 +1539,7 @@ pub fn serialize_structure_crate_model_realtime_metrics_subscription_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_163) = &input.realtime_metrics_subscription_status {
-        let mut inner_writer = scope
-            .start_el("RealtimeMetricsSubscriptionStatus")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("RealtimeMetricsSubscriptionStatus").finish();
         inner_writer.data(var_163.as_str());
     }
     scope.finish();
@@ -1988,16 +1553,11 @@ pub fn serialize_structure_crate_model_origin_request_policy_headers_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_164) = &input.header_behavior {
-        let mut inner_writer = scope
-            .start_el("HeaderBehavior")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("HeaderBehavior").finish();
         inner_writer.data(var_164.as_str());
     }
     if let Some(var_165) = &input.headers {
-        let inner_writer = scope
-            .start_el("Headers")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("Headers");
         crate::xml_ser::serialize_structure_crate_model_headers(var_165, inner_writer)?
     }
     scope.finish();
@@ -2011,16 +1571,11 @@ pub fn serialize_structure_crate_model_origin_request_policy_cookies_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_166) = &input.cookie_behavior {
-        let mut inner_writer = scope
-            .start_el("CookieBehavior")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("CookieBehavior").finish();
         inner_writer.data(var_166.as_str());
     }
     if let Some(var_167) = &input.cookies {
-        let inner_writer = scope
-            .start_el("Cookies")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("Cookies");
         crate::xml_ser::serialize_structure_crate_model_cookie_names(var_167, inner_writer)?
     }
     scope.finish();
@@ -2034,16 +1589,11 @@ pub fn serialize_structure_crate_model_origin_request_policy_query_strings_confi
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_168) = &input.query_string_behavior {
-        let mut inner_writer = scope
-            .start_el("QueryStringBehavior")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("QueryStringBehavior").finish();
         inner_writer.data(var_168.as_str());
     }
     if let Some(var_169) = &input.query_strings {
-        let inner_writer = scope
-            .start_el("QueryStrings")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("QueryStrings");
         crate::xml_ser::serialize_structure_crate_model_query_string_names(var_169, inner_writer)?
     }
     scope.finish();
@@ -2057,17 +1607,11 @@ pub fn serialize_structure_crate_model_kinesis_stream_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_170) = &input.role_arn {
-        let mut inner_writer = scope
-            .start_el("RoleARN")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("RoleARN").finish();
         inner_writer.data(var_170.as_ref());
     }
     if let Some(var_171) = &input.stream_arn {
-        let mut inner_writer = scope
-            .start_el("StreamARN")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("StreamARN").finish();
         inner_writer.data(var_171.as_ref());
     }
     scope.finish();
@@ -2081,48 +1625,31 @@ pub fn serialize_structure_crate_model_response_headers_policy_cors_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_172) = &input.access_control_allow_origins {
-        let inner_writer = scope
-            .start_el("AccessControlAllowOrigins")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("AccessControlAllowOrigins");
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_allow_origins(var_172, inner_writer)?
     }
     if let Some(var_173) = &input.access_control_allow_headers {
-        let inner_writer = scope
-            .start_el("AccessControlAllowHeaders")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("AccessControlAllowHeaders");
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_allow_headers(var_173, inner_writer)?
     }
     if let Some(var_174) = &input.access_control_allow_methods {
-        let inner_writer = scope
-            .start_el("AccessControlAllowMethods")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("AccessControlAllowMethods");
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_allow_methods(var_174, inner_writer)?
     }
     if let Some(var_175) = &input.access_control_allow_credentials {
-        let mut inner_writer = scope
-            .start_el("AccessControlAllowCredentials")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("AccessControlAllowCredentials").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_175).encode());
     }
     if let Some(var_176) = &input.access_control_expose_headers {
-        let inner_writer = scope
-            .start_el("AccessControlExposeHeaders")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("AccessControlExposeHeaders");
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_access_control_expose_headers(var_176, inner_writer)?
     }
     if let Some(var_177) = &input.access_control_max_age_sec {
-        let mut inner_writer = scope
-            .start_el("AccessControlMaxAgeSec")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("AccessControlMaxAgeSec").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_177).encode());
     }
     if let Some(var_178) = &input.origin_override {
-        let mut inner_writer = scope
-            .start_el("OriginOverride")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("OriginOverride").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_178).encode());
     }
     scope.finish();
@@ -2136,48 +1663,36 @@ pub fn serialize_structure_crate_model_response_headers_policy_security_headers_
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_179) = &input.xss_protection {
-        let inner_writer = scope
-            .start_el("XSSProtection")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("XSSProtection");
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_xss_protection(
             var_179,
             inner_writer,
         )?
     }
     if let Some(var_180) = &input.frame_options {
-        let inner_writer = scope
-            .start_el("FrameOptions")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("FrameOptions");
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_frame_options(
             var_180,
             inner_writer,
         )?
     }
     if let Some(var_181) = &input.referrer_policy {
-        let inner_writer = scope
-            .start_el("ReferrerPolicy")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("ReferrerPolicy");
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_referrer_policy(
             var_181,
             inner_writer,
         )?
     }
     if let Some(var_182) = &input.content_security_policy {
-        let inner_writer = scope
-            .start_el("ContentSecurityPolicy")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("ContentSecurityPolicy");
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_content_security_policy(var_182, inner_writer)?
     }
     if let Some(var_183) = &input.content_type_options {
-        let inner_writer = scope
-            .start_el("ContentTypeOptions")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("ContentTypeOptions");
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_content_type_options(var_183, inner_writer)?
     }
     if let Some(var_184) = &input.strict_transport_security {
-        let inner_writer = scope
-            .start_el("StrictTransportSecurity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("StrictTransportSecurity");
         crate::xml_ser::serialize_structure_crate_model_response_headers_policy_strict_transport_security(var_184, inner_writer)?
     }
     scope.finish();
@@ -2191,22 +1706,14 @@ pub fn serialize_structure_crate_model_response_headers_policy_custom_headers_co
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_185) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_185).encode());
     }
     if let Some(var_186) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_187 in var_186 {
             {
-                let inner_writer = inner_writer
-                    .start_el("ResponseHeadersPolicyCustomHeader")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+                let inner_writer = inner_writer.start_el("ResponseHeadersPolicyCustomHeader");
                 crate::xml_ser::serialize_structure_crate_model_response_headers_policy_custom_header(list_item_187, inner_writer)?
             }
         }
@@ -2222,17 +1729,11 @@ pub fn serialize_structure_crate_model_s3_origin(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_188) = &input.domain_name {
-        let mut inner_writer = scope
-            .start_el("DomainName")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("DomainName").finish();
         inner_writer.data(var_188.as_ref());
     }
     if let Some(var_189) = &input.origin_access_identity {
-        let mut inner_writer = scope
-            .start_el("OriginAccessIdentity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("OriginAccessIdentity").finish();
         inner_writer.data(var_189.as_ref());
     }
     scope.finish();
@@ -2246,24 +1747,15 @@ pub fn serialize_structure_crate_model_streaming_logging_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_190) = &input.enabled {
-        let mut inner_writer = scope
-            .start_el("Enabled")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Enabled").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_190).encode());
     }
     if let Some(var_191) = &input.bucket {
-        let mut inner_writer = scope
-            .start_el("Bucket")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Bucket").finish();
         inner_writer.data(var_191.as_ref());
     }
     if let Some(var_192) = &input.prefix {
-        let mut inner_writer = scope
-            .start_el("Prefix")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Prefix").finish();
         inner_writer.data(var_192.as_ref());
     }
     scope.finish();
@@ -2277,30 +1769,18 @@ pub fn serialize_structure_crate_model_trusted_signers(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_193) = &input.enabled {
-        let mut inner_writer = scope
-            .start_el("Enabled")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Enabled").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_193).encode());
     }
     if let Some(var_194) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_194).encode());
     }
     if let Some(var_195) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_196 in var_195 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("AwsAccountNumber")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("AwsAccountNumber").finish();
                 inner_writer.data(list_item_196.as_ref());
             }
         }
@@ -2316,17 +1796,11 @@ pub fn serialize_structure_crate_model_tag(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_197) = &input.key {
-        let mut inner_writer = scope
-            .start_el("Key")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Key").finish();
         inner_writer.data(var_197.as_ref());
     }
     if let Some(var_198) = &input.value {
-        let mut inner_writer = scope
-            .start_el("Value")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Value").finish();
         inner_writer.data(var_198.as_ref());
     }
     scope.finish();
@@ -2340,16 +1814,11 @@ pub fn serialize_structure_crate_model_cache_policy_headers_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_199) = &input.header_behavior {
-        let mut inner_writer = scope
-            .start_el("HeaderBehavior")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("HeaderBehavior").finish();
         inner_writer.data(var_199.as_str());
     }
     if let Some(var_200) = &input.headers {
-        let inner_writer = scope
-            .start_el("Headers")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("Headers");
         crate::xml_ser::serialize_structure_crate_model_headers(var_200, inner_writer)?
     }
     scope.finish();
@@ -2363,16 +1832,11 @@ pub fn serialize_structure_crate_model_cache_policy_cookies_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_201) = &input.cookie_behavior {
-        let mut inner_writer = scope
-            .start_el("CookieBehavior")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("CookieBehavior").finish();
         inner_writer.data(var_201.as_str());
     }
     if let Some(var_202) = &input.cookies {
-        let inner_writer = scope
-            .start_el("Cookies")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("Cookies");
         crate::xml_ser::serialize_structure_crate_model_cookie_names(var_202, inner_writer)?
     }
     scope.finish();
@@ -2386,16 +1850,11 @@ pub fn serialize_structure_crate_model_cache_policy_query_strings_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_203) = &input.query_string_behavior {
-        let mut inner_writer = scope
-            .start_el("QueryStringBehavior")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("QueryStringBehavior").finish();
         inner_writer.data(var_203.as_str());
     }
     if let Some(var_204) = &input.query_strings {
-        let inner_writer = scope
-            .start_el("QueryStrings")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("QueryStrings");
         crate::xml_ser::serialize_structure_crate_model_query_string_names(var_204, inner_writer)?
     }
     scope.finish();
@@ -2409,62 +1868,39 @@ pub fn serialize_structure_crate_model_origin(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_205) = &input.id {
-        let mut inner_writer = scope
-            .start_el("Id")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Id").finish();
         inner_writer.data(var_205.as_ref());
     }
     if let Some(var_206) = &input.domain_name {
-        let mut inner_writer = scope
-            .start_el("DomainName")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("DomainName").finish();
         inner_writer.data(var_206.as_ref());
     }
     if let Some(var_207) = &input.origin_path {
-        let mut inner_writer = scope
-            .start_el("OriginPath")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("OriginPath").finish();
         inner_writer.data(var_207.as_ref());
     }
     if let Some(var_208) = &input.custom_headers {
-        let inner_writer = scope
-            .start_el("CustomHeaders")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("CustomHeaders");
         crate::xml_ser::serialize_structure_crate_model_custom_headers(var_208, inner_writer)?
     }
     if let Some(var_209) = &input.s3_origin_config {
-        let inner_writer = scope
-            .start_el("S3OriginConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("S3OriginConfig");
         crate::xml_ser::serialize_structure_crate_model_s3_origin_config(var_209, inner_writer)?
     }
     if let Some(var_210) = &input.custom_origin_config {
-        let inner_writer = scope
-            .start_el("CustomOriginConfig")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("CustomOriginConfig");
         crate::xml_ser::serialize_structure_crate_model_custom_origin_config(var_210, inner_writer)?
     }
     if let Some(var_211) = &input.connection_attempts {
-        let mut inner_writer = scope
-            .start_el("ConnectionAttempts")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ConnectionAttempts").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_211).encode());
     }
     if let Some(var_212) = &input.connection_timeout {
-        let mut inner_writer = scope
-            .start_el("ConnectionTimeout")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ConnectionTimeout").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_212).encode());
     }
     if let Some(var_213) = &input.origin_shield {
-        let inner_writer = scope
-            .start_el("OriginShield")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("OriginShield");
         crate::xml_ser::serialize_structure_crate_model_origin_shield(var_213, inner_writer)?
     }
     scope.finish();
@@ -2478,25 +1914,18 @@ pub fn serialize_structure_crate_model_origin_group(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_214) = &input.id {
-        let mut inner_writer = scope
-            .start_el("Id")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Id").finish();
         inner_writer.data(var_214.as_ref());
     }
     if let Some(var_215) = &input.failover_criteria {
-        let inner_writer = scope
-            .start_el("FailoverCriteria")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("FailoverCriteria");
         crate::xml_ser::serialize_structure_crate_model_origin_group_failover_criteria(
             var_215,
             inner_writer,
         )?
     }
     if let Some(var_216) = &input.members {
-        let inner_writer = scope
-            .start_el("Members")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("Members");
         crate::xml_ser::serialize_structure_crate_model_origin_group_members(var_216, inner_writer)?
     }
     scope.finish();
@@ -2510,30 +1939,18 @@ pub fn serialize_structure_crate_model_trusted_key_groups(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_217) = &input.enabled {
-        let mut inner_writer = scope
-            .start_el("Enabled")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Enabled").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_217).encode());
     }
     if let Some(var_218) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_218).encode());
     }
     if let Some(var_219) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_220 in var_219 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("KeyGroup")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("KeyGroup").finish();
                 inner_writer.data(list_item_220.as_ref());
             }
         }
@@ -2549,31 +1966,20 @@ pub fn serialize_structure_crate_model_allowed_methods(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_221) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_221).encode());
     }
     if let Some(var_222) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_223 in var_222 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("Method")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("Method").finish();
                 inner_writer.data(list_item_223.as_str());
             }
         }
     }
     if let Some(var_224) = &input.cached_methods {
-        let inner_writer = scope
-            .start_el("CachedMethods")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("CachedMethods");
         crate::xml_ser::serialize_structure_crate_model_cached_methods(var_224, inner_writer)?
     }
     scope.finish();
@@ -2587,22 +1993,14 @@ pub fn serialize_structure_crate_model_lambda_function_associations(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_225) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_225).encode());
     }
     if let Some(var_226) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_227 in var_226 {
             {
-                let inner_writer = inner_writer
-                    .start_el("LambdaFunctionAssociation")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+                let inner_writer = inner_writer.start_el("LambdaFunctionAssociation");
                 crate::xml_ser::serialize_structure_crate_model_lambda_function_association(
                     list_item_227,
                     inner_writer,
@@ -2621,22 +2019,14 @@ pub fn serialize_structure_crate_model_function_associations(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_228) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_228).encode());
     }
     if let Some(var_229) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_230 in var_229 {
             {
-                let inner_writer = inner_writer
-                    .start_el("FunctionAssociation")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+                let inner_writer = inner_writer.start_el("FunctionAssociation");
                 crate::xml_ser::serialize_structure_crate_model_function_association(
                     list_item_230,
                     inner_writer,
@@ -2655,28 +2045,19 @@ pub fn serialize_structure_crate_model_forwarded_values(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_231) = &input.query_string {
-        let mut inner_writer = scope
-            .start_el("QueryString")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("QueryString").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_231).encode());
     }
     if let Some(var_232) = &input.cookies {
-        let inner_writer = scope
-            .start_el("Cookies")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("Cookies");
         crate::xml_ser::serialize_structure_crate_model_cookie_preference(var_232, inner_writer)?
     }
     if let Some(var_233) = &input.headers {
-        let inner_writer = scope
-            .start_el("Headers")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("Headers");
         crate::xml_ser::serialize_structure_crate_model_headers(var_233, inner_writer)?
     }
     if let Some(var_234) = &input.query_string_cache_keys {
-        let inner_writer = scope
-            .start_el("QueryStringCacheKeys")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("QueryStringCacheKeys");
         crate::xml_ser::serialize_structure_crate_model_query_string_cache_keys(
             var_234,
             inner_writer,
@@ -2693,136 +2074,85 @@ pub fn serialize_structure_crate_model_cache_behavior(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_235) = &input.path_pattern {
-        let mut inner_writer = scope
-            .start_el("PathPattern")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("PathPattern").finish();
         inner_writer.data(var_235.as_ref());
     }
     if let Some(var_236) = &input.target_origin_id {
-        let mut inner_writer = scope
-            .start_el("TargetOriginId")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("TargetOriginId").finish();
         inner_writer.data(var_236.as_ref());
     }
     if let Some(var_237) = &input.trusted_signers {
-        let inner_writer = scope
-            .start_el("TrustedSigners")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("TrustedSigners");
         crate::xml_ser::serialize_structure_crate_model_trusted_signers(var_237, inner_writer)?
     }
     if let Some(var_238) = &input.trusted_key_groups {
-        let inner_writer = scope
-            .start_el("TrustedKeyGroups")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("TrustedKeyGroups");
         crate::xml_ser::serialize_structure_crate_model_trusted_key_groups(var_238, inner_writer)?
     }
     if let Some(var_239) = &input.viewer_protocol_policy {
-        let mut inner_writer = scope
-            .start_el("ViewerProtocolPolicy")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ViewerProtocolPolicy").finish();
         inner_writer.data(var_239.as_str());
     }
     if let Some(var_240) = &input.allowed_methods {
-        let inner_writer = scope
-            .start_el("AllowedMethods")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("AllowedMethods");
         crate::xml_ser::serialize_structure_crate_model_allowed_methods(var_240, inner_writer)?
     }
     if let Some(var_241) = &input.smooth_streaming {
-        let mut inner_writer = scope
-            .start_el("SmoothStreaming")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("SmoothStreaming").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_241).encode());
     }
     if let Some(var_242) = &input.compress {
-        let mut inner_writer = scope
-            .start_el("Compress")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Compress").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_242).encode());
     }
     if let Some(var_243) = &input.lambda_function_associations {
-        let inner_writer = scope
-            .start_el("LambdaFunctionAssociations")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("LambdaFunctionAssociations");
         crate::xml_ser::serialize_structure_crate_model_lambda_function_associations(
             var_243,
             inner_writer,
         )?
     }
     if let Some(var_244) = &input.function_associations {
-        let inner_writer = scope
-            .start_el("FunctionAssociations")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("FunctionAssociations");
         crate::xml_ser::serialize_structure_crate_model_function_associations(
             var_244,
             inner_writer,
         )?
     }
     if let Some(var_245) = &input.field_level_encryption_id {
-        let mut inner_writer = scope
-            .start_el("FieldLevelEncryptionId")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("FieldLevelEncryptionId").finish();
         inner_writer.data(var_245.as_ref());
     }
     if let Some(var_246) = &input.realtime_log_config_arn {
-        let mut inner_writer = scope
-            .start_el("RealtimeLogConfigArn")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("RealtimeLogConfigArn").finish();
         inner_writer.data(var_246.as_ref());
     }
     if let Some(var_247) = &input.cache_policy_id {
-        let mut inner_writer = scope
-            .start_el("CachePolicyId")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("CachePolicyId").finish();
         inner_writer.data(var_247.as_ref());
     }
     if let Some(var_248) = &input.origin_request_policy_id {
-        let mut inner_writer = scope
-            .start_el("OriginRequestPolicyId")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("OriginRequestPolicyId").finish();
         inner_writer.data(var_248.as_ref());
     }
     if let Some(var_249) = &input.response_headers_policy_id {
-        let mut inner_writer = scope
-            .start_el("ResponseHeadersPolicyId")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ResponseHeadersPolicyId").finish();
         inner_writer.data(var_249.as_ref());
     }
     if let Some(var_250) = &input.forwarded_values {
-        let inner_writer = scope
-            .start_el("ForwardedValues")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("ForwardedValues");
         crate::xml_ser::serialize_structure_crate_model_forwarded_values(var_250, inner_writer)?
     }
     if let Some(var_251) = &input.min_ttl {
-        let mut inner_writer = scope
-            .start_el("MinTTL")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("MinTTL").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_251).encode());
     }
     if let Some(var_252) = &input.default_ttl {
-        let mut inner_writer = scope
-            .start_el("DefaultTTL")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("DefaultTTL").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_252).encode());
     }
     if let Some(var_253) = &input.max_ttl {
-        let mut inner_writer = scope
-            .start_el("MaxTTL")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("MaxTTL").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_253).encode());
     }
     scope.finish();
@@ -2836,31 +2166,19 @@ pub fn serialize_structure_crate_model_custom_error_response(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_254) = &input.error_code {
-        let mut inner_writer = scope
-            .start_el("ErrorCode")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ErrorCode").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_254).encode());
     }
     if let Some(var_255) = &input.response_page_path {
-        let mut inner_writer = scope
-            .start_el("ResponsePagePath")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ResponsePagePath").finish();
         inner_writer.data(var_255.as_ref());
     }
     if let Some(var_256) = &input.response_code {
-        let mut inner_writer = scope
-            .start_el("ResponseCode")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ResponseCode").finish();
         inner_writer.data(var_256.as_ref());
     }
     if let Some(var_257) = &input.error_caching_min_ttl {
-        let mut inner_writer = scope
-            .start_el("ErrorCachingMinTTL")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ErrorCachingMinTTL").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_257).encode());
     }
     scope.finish();
@@ -2874,30 +2192,18 @@ pub fn serialize_structure_crate_model_geo_restriction(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_258) = &input.restriction_type {
-        let mut inner_writer = scope
-            .start_el("RestrictionType")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("RestrictionType").finish();
         inner_writer.data(var_258.as_str());
     }
     if let Some(var_259) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_259).encode());
     }
     if let Some(var_260) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_261 in var_260 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("Location")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("Location").finish();
                 inner_writer.data(list_item_261.as_ref());
             }
         }
@@ -2913,22 +2219,14 @@ pub fn serialize_structure_crate_model_query_arg_profiles(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_262) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_262).encode());
     }
     if let Some(var_263) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_264 in var_263 {
             {
-                let inner_writer = inner_writer
-                    .start_el("QueryArgProfile")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+                let inner_writer = inner_writer.start_el("QueryArgProfile");
                 crate::xml_ser::serialize_structure_crate_model_query_arg_profile(
                     list_item_264,
                     inner_writer,
@@ -2947,22 +2245,14 @@ pub fn serialize_structure_crate_model_content_type_profiles(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_265) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_265).encode());
     }
     if let Some(var_266) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_267 in var_266 {
             {
-                let inner_writer = inner_writer
-                    .start_el("ContentTypeProfile")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+                let inner_writer = inner_writer.start_el("ContentTypeProfile");
                 crate::xml_ser::serialize_structure_crate_model_content_type_profile(
                     list_item_267,
                     inner_writer,
@@ -2981,23 +2271,15 @@ pub fn serialize_structure_crate_model_encryption_entity(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_268) = &input.public_key_id {
-        let mut inner_writer = scope
-            .start_el("PublicKeyId")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("PublicKeyId").finish();
         inner_writer.data(var_268.as_ref());
     }
     if let Some(var_269) = &input.provider_id {
-        let mut inner_writer = scope
-            .start_el("ProviderId")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ProviderId").finish();
         inner_writer.data(var_269.as_ref());
     }
     if let Some(var_270) = &input.field_patterns {
-        let inner_writer = scope
-            .start_el("FieldPatterns")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("FieldPatterns");
         crate::xml_ser::serialize_structure_crate_model_field_patterns(var_270, inner_writer)?
     }
     scope.finish();
@@ -3011,23 +2293,14 @@ pub fn serialize_structure_crate_model_headers(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_271) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_271).encode());
     }
     if let Some(var_272) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_273 in var_272 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("Name")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("Name").finish();
                 inner_writer.data(list_item_273.as_ref());
             }
         }
@@ -3043,23 +2316,14 @@ pub fn serialize_structure_crate_model_cookie_names(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_274) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_274).encode());
     }
     if let Some(var_275) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_276 in var_275 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("Name")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("Name").finish();
                 inner_writer.data(list_item_276.as_ref());
             }
         }
@@ -3075,23 +2339,14 @@ pub fn serialize_structure_crate_model_query_string_names(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_277) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_277).encode());
     }
     if let Some(var_278) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_279 in var_278 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("Name")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("Name").finish();
                 inner_writer.data(list_item_279.as_ref());
             }
         }
@@ -3107,23 +2362,14 @@ pub fn serialize_structure_crate_model_response_headers_policy_access_control_al
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_280) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_280).encode());
     }
     if let Some(var_281) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_282 in var_281 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("Origin")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("Origin").finish();
                 inner_writer.data(list_item_282.as_ref());
             }
         }
@@ -3139,23 +2385,14 @@ pub fn serialize_structure_crate_model_response_headers_policy_access_control_al
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_283) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_283).encode());
     }
     if let Some(var_284) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_285 in var_284 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("Header")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("Header").finish();
                 inner_writer.data(list_item_285.as_ref());
             }
         }
@@ -3171,23 +2408,14 @@ pub fn serialize_structure_crate_model_response_headers_policy_access_control_al
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_286) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_286).encode());
     }
     if let Some(var_287) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_288 in var_287 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("Method")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("Method").finish();
                 inner_writer.data(list_item_288.as_str());
             }
         }
@@ -3203,23 +2431,14 @@ pub fn serialize_structure_crate_model_response_headers_policy_access_control_ex
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_289) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_289).encode());
     }
     if let Some(var_290) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_291 in var_290 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("Header")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("Header").finish();
                 inner_writer.data(list_item_291.as_ref());
             }
         }
@@ -3235,31 +2454,19 @@ pub fn serialize_structure_crate_model_response_headers_policy_xss_protection(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_292) = &input.r#override {
-        let mut inner_writer = scope
-            .start_el("Override")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Override").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_292).encode());
     }
     if let Some(var_293) = &input.protection {
-        let mut inner_writer = scope
-            .start_el("Protection")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Protection").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_293).encode());
     }
     if let Some(var_294) = &input.mode_block {
-        let mut inner_writer = scope
-            .start_el("ModeBlock")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ModeBlock").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_294).encode());
     }
     if let Some(var_295) = &input.report_uri {
-        let mut inner_writer = scope
-            .start_el("ReportUri")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ReportUri").finish();
         inner_writer.data(var_295.as_ref());
     }
     scope.finish();
@@ -3273,17 +2480,11 @@ pub fn serialize_structure_crate_model_response_headers_policy_frame_options(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_296) = &input.r#override {
-        let mut inner_writer = scope
-            .start_el("Override")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Override").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_296).encode());
     }
     if let Some(var_297) = &input.frame_option {
-        let mut inner_writer = scope
-            .start_el("FrameOption")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("FrameOption").finish();
         inner_writer.data(var_297.as_str());
     }
     scope.finish();
@@ -3297,17 +2498,11 @@ pub fn serialize_structure_crate_model_response_headers_policy_referrer_policy(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_298) = &input.r#override {
-        let mut inner_writer = scope
-            .start_el("Override")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Override").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_298).encode());
     }
     if let Some(var_299) = &input.referrer_policy {
-        let mut inner_writer = scope
-            .start_el("ReferrerPolicy")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ReferrerPolicy").finish();
         inner_writer.data(var_299.as_str());
     }
     scope.finish();
@@ -3321,17 +2516,11 @@ pub fn serialize_structure_crate_model_response_headers_policy_content_security_
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_300) = &input.r#override {
-        let mut inner_writer = scope
-            .start_el("Override")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Override").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_300).encode());
     }
     if let Some(var_301) = &input.content_security_policy {
-        let mut inner_writer = scope
-            .start_el("ContentSecurityPolicy")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ContentSecurityPolicy").finish();
         inner_writer.data(var_301.as_ref());
     }
     scope.finish();
@@ -3345,10 +2534,7 @@ pub fn serialize_structure_crate_model_response_headers_policy_content_type_opti
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_302) = &input.r#override {
-        let mut inner_writer = scope
-            .start_el("Override")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Override").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_302).encode());
     }
     scope.finish();
@@ -3362,31 +2548,19 @@ pub fn serialize_structure_crate_model_response_headers_policy_strict_transport_
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_303) = &input.r#override {
-        let mut inner_writer = scope
-            .start_el("Override")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Override").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_303).encode());
     }
     if let Some(var_304) = &input.include_subdomains {
-        let mut inner_writer = scope
-            .start_el("IncludeSubdomains")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("IncludeSubdomains").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_304).encode());
     }
     if let Some(var_305) = &input.preload {
-        let mut inner_writer = scope
-            .start_el("Preload")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Preload").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_305).encode());
     }
     if let Some(var_306) = &input.access_control_max_age_sec {
-        let mut inner_writer = scope
-            .start_el("AccessControlMaxAgeSec")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("AccessControlMaxAgeSec").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_306).encode());
     }
     scope.finish();
@@ -3400,24 +2574,15 @@ pub fn serialize_structure_crate_model_response_headers_policy_custom_header(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_307) = &input.header {
-        let mut inner_writer = scope
-            .start_el("Header")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Header").finish();
         inner_writer.data(var_307.as_ref());
     }
     if let Some(var_308) = &input.value {
-        let mut inner_writer = scope
-            .start_el("Value")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Value").finish();
         inner_writer.data(var_308.as_ref());
     }
     if let Some(var_309) = &input.r#override {
-        let mut inner_writer = scope
-            .start_el("Override")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Override").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_309).encode());
     }
     scope.finish();
@@ -3431,22 +2596,14 @@ pub fn serialize_structure_crate_model_custom_headers(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_310) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_310).encode());
     }
     if let Some(var_311) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_312 in var_311 {
             {
-                let inner_writer = inner_writer
-                    .start_el("OriginCustomHeader")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+                let inner_writer = inner_writer.start_el("OriginCustomHeader");
                 crate::xml_ser::serialize_structure_crate_model_origin_custom_header(
                     list_item_312,
                     inner_writer,
@@ -3465,10 +2622,7 @@ pub fn serialize_structure_crate_model_s3_origin_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_313) = &input.origin_access_identity {
-        let mut inner_writer = scope
-            .start_el("OriginAccessIdentity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("OriginAccessIdentity").finish();
         inner_writer.data(var_313.as_ref());
     }
     scope.finish();
@@ -3482,44 +2636,27 @@ pub fn serialize_structure_crate_model_custom_origin_config(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_314) = &input.http_port {
-        let mut inner_writer = scope
-            .start_el("HTTPPort")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("HTTPPort").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_314).encode());
     }
     if let Some(var_315) = &input.https_port {
-        let mut inner_writer = scope
-            .start_el("HTTPSPort")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("HTTPSPort").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_315).encode());
     }
     if let Some(var_316) = &input.origin_protocol_policy {
-        let mut inner_writer = scope
-            .start_el("OriginProtocolPolicy")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("OriginProtocolPolicy").finish();
         inner_writer.data(var_316.as_str());
     }
     if let Some(var_317) = &input.origin_ssl_protocols {
-        let inner_writer = scope
-            .start_el("OriginSslProtocols")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("OriginSslProtocols");
         crate::xml_ser::serialize_structure_crate_model_origin_ssl_protocols(var_317, inner_writer)?
     }
     if let Some(var_318) = &input.origin_read_timeout {
-        let mut inner_writer = scope
-            .start_el("OriginReadTimeout")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("OriginReadTimeout").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_318).encode());
     }
     if let Some(var_319) = &input.origin_keepalive_timeout {
-        let mut inner_writer = scope
-            .start_el("OriginKeepaliveTimeout")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("OriginKeepaliveTimeout").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_319).encode());
     }
     scope.finish();
@@ -3533,17 +2670,11 @@ pub fn serialize_structure_crate_model_origin_shield(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_320) = &input.enabled {
-        let mut inner_writer = scope
-            .start_el("Enabled")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Enabled").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_320).encode());
     }
     if let Some(var_321) = &input.origin_shield_region {
-        let mut inner_writer = scope
-            .start_el("OriginShieldRegion")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("OriginShieldRegion").finish();
         inner_writer.data(var_321.as_ref());
     }
     scope.finish();
@@ -3557,9 +2688,7 @@ pub fn serialize_structure_crate_model_origin_group_failover_criteria(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_322) = &input.status_codes {
-        let inner_writer = scope
-            .start_el("StatusCodes")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("StatusCodes");
         crate::xml_ser::serialize_structure_crate_model_status_codes(var_322, inner_writer)?
     }
     scope.finish();
@@ -3573,22 +2702,14 @@ pub fn serialize_structure_crate_model_origin_group_members(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_323) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_323).encode());
     }
     if let Some(var_324) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_325 in var_324 {
             {
-                let inner_writer = inner_writer
-                    .start_el("OriginGroupMember")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+                let inner_writer = inner_writer.start_el("OriginGroupMember");
                 crate::xml_ser::serialize_structure_crate_model_origin_group_member(
                     list_item_325,
                     inner_writer,
@@ -3607,23 +2728,14 @@ pub fn serialize_structure_crate_model_cached_methods(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_326) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_326).encode());
     }
     if let Some(var_327) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_328 in var_327 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("Method")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("Method").finish();
                 inner_writer.data(list_item_328.as_str());
             }
         }
@@ -3639,24 +2751,15 @@ pub fn serialize_structure_crate_model_lambda_function_association(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_329) = &input.lambda_function_arn {
-        let mut inner_writer = scope
-            .start_el("LambdaFunctionARN")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("LambdaFunctionARN").finish();
         inner_writer.data(var_329.as_ref());
     }
     if let Some(var_330) = &input.event_type {
-        let mut inner_writer = scope
-            .start_el("EventType")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("EventType").finish();
         inner_writer.data(var_330.as_str());
     }
     if let Some(var_331) = &input.include_body {
-        let mut inner_writer = scope
-            .start_el("IncludeBody")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("IncludeBody").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_331).encode());
     }
     scope.finish();
@@ -3670,17 +2773,11 @@ pub fn serialize_structure_crate_model_function_association(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_332) = &input.function_arn {
-        let mut inner_writer = scope
-            .start_el("FunctionARN")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("FunctionARN").finish();
         inner_writer.data(var_332.as_ref());
     }
     if let Some(var_333) = &input.event_type {
-        let mut inner_writer = scope
-            .start_el("EventType")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("EventType").finish();
         inner_writer.data(var_333.as_str());
     }
     scope.finish();
@@ -3694,16 +2791,11 @@ pub fn serialize_structure_crate_model_cookie_preference(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_334) = &input.forward {
-        let mut inner_writer = scope
-            .start_el("Forward")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Forward").finish();
         inner_writer.data(var_334.as_str());
     }
     if let Some(var_335) = &input.whitelisted_names {
-        let inner_writer = scope
-            .start_el("WhitelistedNames")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let inner_writer = scope.start_el("WhitelistedNames");
         crate::xml_ser::serialize_structure_crate_model_cookie_names(var_335, inner_writer)?
     }
     scope.finish();
@@ -3717,23 +2809,14 @@ pub fn serialize_structure_crate_model_query_string_cache_keys(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_336) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_336).encode());
     }
     if let Some(var_337) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_338 in var_337 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("Name")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("Name").finish();
                 inner_writer.data(list_item_338.as_ref());
             }
         }
@@ -3749,17 +2832,11 @@ pub fn serialize_structure_crate_model_query_arg_profile(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_339) = &input.query_arg {
-        let mut inner_writer = scope
-            .start_el("QueryArg")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("QueryArg").finish();
         inner_writer.data(var_339.as_ref());
     }
     if let Some(var_340) = &input.profile_id {
-        let mut inner_writer = scope
-            .start_el("ProfileId")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ProfileId").finish();
         inner_writer.data(var_340.as_ref());
     }
     scope.finish();
@@ -3773,24 +2850,15 @@ pub fn serialize_structure_crate_model_content_type_profile(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_341) = &input.format {
-        let mut inner_writer = scope
-            .start_el("Format")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Format").finish();
         inner_writer.data(var_341.as_str());
     }
     if let Some(var_342) = &input.profile_id {
-        let mut inner_writer = scope
-            .start_el("ProfileId")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ProfileId").finish();
         inner_writer.data(var_342.as_ref());
     }
     if let Some(var_343) = &input.content_type {
-        let mut inner_writer = scope
-            .start_el("ContentType")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("ContentType").finish();
         inner_writer.data(var_343.as_ref());
     }
     scope.finish();
@@ -3804,23 +2872,14 @@ pub fn serialize_structure_crate_model_field_patterns(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_344) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_344).encode());
     }
     if let Some(var_345) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_346 in var_345 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("FieldPattern")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("FieldPattern").finish();
                 inner_writer.data(list_item_346.as_ref());
             }
         }
@@ -3836,17 +2895,11 @@ pub fn serialize_structure_crate_model_origin_custom_header(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_347) = &input.header_name {
-        let mut inner_writer = scope
-            .start_el("HeaderName")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("HeaderName").finish();
         inner_writer.data(var_347.as_ref());
     }
     if let Some(var_348) = &input.header_value {
-        let mut inner_writer = scope
-            .start_el("HeaderValue")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("HeaderValue").finish();
         inner_writer.data(var_348.as_ref());
     }
     scope.finish();
@@ -3860,23 +2913,14 @@ pub fn serialize_structure_crate_model_origin_ssl_protocols(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_349) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_349).encode());
     }
     if let Some(var_350) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_351 in var_350 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("SslProtocol")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("SslProtocol").finish();
                 inner_writer.data(list_item_351.as_str());
             }
         }
@@ -3892,23 +2936,14 @@ pub fn serialize_structure_crate_model_status_codes(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_352) = &input.quantity {
-        let mut inner_writer = scope
-            .start_el("Quantity")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Quantity").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_352).encode());
     }
     if let Some(var_353) = &input.items {
-        let mut inner_writer = scope
-            .start_el("Items")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("Items").finish();
         for list_item_354 in var_353 {
             {
-                let mut inner_writer = inner_writer
-                    .start_el("StatusCode")
-                    .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-                    .finish();
+                let mut inner_writer = inner_writer.start_el("StatusCode").finish();
                 inner_writer
                     .data(aws_smithy_types::primitive::Encoder::from(*list_item_354).encode());
             }
@@ -3925,10 +2960,7 @@ pub fn serialize_structure_crate_model_origin_group_member(
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_355) = &input.origin_id {
-        let mut inner_writer = scope
-            .start_el("OriginId")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
-            .finish();
+        let mut inner_writer = scope.start_el("OriginId").finish();
         inner_writer.data(var_355.as_ref());
     }
     scope.finish();

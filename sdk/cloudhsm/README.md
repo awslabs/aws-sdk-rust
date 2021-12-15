@@ -1,6 +1,6 @@
 # aws-sdk-cloudhsm
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 This is documentation for __AWS CloudHSM Classic__. For more information, see [AWS CloudHSM Classic FAQs](http://aws.amazon.com/cloudhsm/faqs-classic/), the [AWS CloudHSM Classic User Guide](https://docs.aws.amazon.com/cloudhsm/classic/userguide/), and the [AWS CloudHSM Classic API Reference](https://docs.aws.amazon.com/cloudhsm/classic/APIReference/).
@@ -18,8 +18,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-cloudhsm = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-cloudhsm = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

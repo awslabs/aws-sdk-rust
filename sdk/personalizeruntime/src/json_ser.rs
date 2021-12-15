@@ -79,8 +79,11 @@ pub fn serialize_structure_crate_input_get_recommendations_input(
             aws_smithy_types::Number::NegInt((input.num_results).into()),
         );
     }
-    if let Some(var_26) = &input.user_id {
-        object.key("userId").string(var_26);
+    if let Some(var_26) = &input.recommender_arn {
+        object.key("recommenderArn").string(var_26);
+    }
+    if let Some(var_27) = &input.user_id {
+        object.key("userId").string(var_27);
     }
     Ok(())
 }

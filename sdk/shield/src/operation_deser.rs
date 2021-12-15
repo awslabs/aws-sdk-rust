@@ -358,6 +358,23 @@ pub fn parse_associate_health_check_error(
                 tmp
             }),
         },
+        "InvalidResourceException" => crate::error::AssociateHealthCheckError {
+            meta: generic,
+            kind: crate::error::AssociateHealthCheckErrorKind::InvalidResourceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_resource_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateHealthCheckError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "LimitsExceededException" => crate::error::AssociateHealthCheckError {
             meta: generic,
             kind: crate::error::AssociateHealthCheckErrorKind::LimitsExceededException({
@@ -1699,6 +1716,116 @@ pub fn parse_describe_subscription_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_disable_application_layer_automatic_response_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisableApplicationLayerAutomaticResponseOutput,
+    crate::error::DisableApplicationLayerAutomaticResponseError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DisableApplicationLayerAutomaticResponseError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::DisableApplicationLayerAutomaticResponseError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalErrorException" => crate::error::DisableApplicationLayerAutomaticResponseError { meta: generic, kind: crate::error::DisableApplicationLayerAutomaticResponseErrorKind::InternalErrorException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableApplicationLayerAutomaticResponseError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOperationException" => crate::error::DisableApplicationLayerAutomaticResponseError { meta: generic, kind: crate::error::DisableApplicationLayerAutomaticResponseErrorKind::InvalidOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableApplicationLayerAutomaticResponseError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterException" => crate::error::DisableApplicationLayerAutomaticResponseError { meta: generic, kind: crate::error::DisableApplicationLayerAutomaticResponseErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableApplicationLayerAutomaticResponseError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OptimisticLockException" => crate::error::DisableApplicationLayerAutomaticResponseError { meta: generic, kind: crate::error::DisableApplicationLayerAutomaticResponseErrorKind::OptimisticLockException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::optimistic_lock_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_optimistic_lock_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableApplicationLayerAutomaticResponseError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::DisableApplicationLayerAutomaticResponseError { meta: generic, kind: crate::error::DisableApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableApplicationLayerAutomaticResponseError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DisableApplicationLayerAutomaticResponseError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_disable_application_layer_automatic_response_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisableApplicationLayerAutomaticResponseOutput,
+    crate::error::DisableApplicationLayerAutomaticResponseError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::disable_application_layer_automatic_response_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_proactive_engagement_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2122,6 +2249,23 @@ pub fn parse_disassociate_health_check_error(
                 tmp
             }),
         },
+        "InvalidResourceException" => crate::error::DisassociateHealthCheckError {
+            meta: generic,
+            kind: crate::error::DisassociateHealthCheckErrorKind::InvalidResourceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_resource_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateHealthCheckError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "OptimisticLockException" => crate::error::DisassociateHealthCheckError {
             meta: generic,
             kind: crate::error::DisassociateHealthCheckErrorKind::OptimisticLockException({
@@ -2170,6 +2314,130 @@ pub fn parse_disassociate_health_check_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::disassociate_health_check_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_enable_application_layer_automatic_response_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::EnableApplicationLayerAutomaticResponseOutput,
+    crate::error::EnableApplicationLayerAutomaticResponseError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::EnableApplicationLayerAutomaticResponseError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::EnableApplicationLayerAutomaticResponseError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalErrorException" => crate::error::EnableApplicationLayerAutomaticResponseError { meta: generic, kind: crate::error::EnableApplicationLayerAutomaticResponseErrorKind::InternalErrorException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableApplicationLayerAutomaticResponseError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOperationException" => crate::error::EnableApplicationLayerAutomaticResponseError { meta: generic, kind: crate::error::EnableApplicationLayerAutomaticResponseErrorKind::InvalidOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableApplicationLayerAutomaticResponseError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterException" => crate::error::EnableApplicationLayerAutomaticResponseError { meta: generic, kind: crate::error::EnableApplicationLayerAutomaticResponseErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableApplicationLayerAutomaticResponseError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "LimitsExceededException" => crate::error::EnableApplicationLayerAutomaticResponseError { meta: generic, kind: crate::error::EnableApplicationLayerAutomaticResponseErrorKind::LimitsExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::limits_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableApplicationLayerAutomaticResponseError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OptimisticLockException" => crate::error::EnableApplicationLayerAutomaticResponseError { meta: generic, kind: crate::error::EnableApplicationLayerAutomaticResponseErrorKind::OptimisticLockException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::optimistic_lock_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_optimistic_lock_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableApplicationLayerAutomaticResponseError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::EnableApplicationLayerAutomaticResponseError { meta: generic, kind: crate::error::EnableApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableApplicationLayerAutomaticResponseError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::EnableApplicationLayerAutomaticResponseError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_enable_application_layer_automatic_response_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::EnableApplicationLayerAutomaticResponseOutput,
+    crate::error::EnableApplicationLayerAutomaticResponseError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::enable_application_layer_automatic_response_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -2983,6 +3251,116 @@ pub fn parse_untag_resource_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_application_layer_automatic_response_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateApplicationLayerAutomaticResponseOutput,
+    crate::error::UpdateApplicationLayerAutomaticResponseError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateApplicationLayerAutomaticResponseError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::UpdateApplicationLayerAutomaticResponseError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalErrorException" => crate::error::UpdateApplicationLayerAutomaticResponseError { meta: generic, kind: crate::error::UpdateApplicationLayerAutomaticResponseErrorKind::InternalErrorException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationLayerAutomaticResponseError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOperationException" => crate::error::UpdateApplicationLayerAutomaticResponseError { meta: generic, kind: crate::error::UpdateApplicationLayerAutomaticResponseErrorKind::InvalidOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationLayerAutomaticResponseError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterException" => crate::error::UpdateApplicationLayerAutomaticResponseError { meta: generic, kind: crate::error::UpdateApplicationLayerAutomaticResponseErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationLayerAutomaticResponseError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OptimisticLockException" => crate::error::UpdateApplicationLayerAutomaticResponseError { meta: generic, kind: crate::error::UpdateApplicationLayerAutomaticResponseErrorKind::OptimisticLockException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::optimistic_lock_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_optimistic_lock_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationLayerAutomaticResponseError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::UpdateApplicationLayerAutomaticResponseError { meta: generic, kind: crate::error::UpdateApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationLayerAutomaticResponseError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::UpdateApplicationLayerAutomaticResponseError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_application_layer_automatic_response_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateApplicationLayerAutomaticResponseOutput,
+    crate::error::UpdateApplicationLayerAutomaticResponseError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::update_application_layer_automatic_response_output::Builder::default();
         let _ = response;
         output.build()
     })

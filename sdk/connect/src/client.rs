@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_connect::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -159,6 +159,13 @@ where
     pub fn create_contact_flow(&self) -> fluent_builders::CreateContactFlow<C, M, R> {
         fluent_builders::CreateContactFlow::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CreateContactFlowModule` operation.
+    ///
+    /// See [`CreateContactFlowModule`](crate::client::fluent_builders::CreateContactFlowModule) for more information about the
+    /// operation and its arguments.
+    pub fn create_contact_flow_module(&self) -> fluent_builders::CreateContactFlowModule<C, M, R> {
+        fluent_builders::CreateContactFlowModule::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CreateHoursOfOperation` operation.
     ///
     /// See [`CreateHoursOfOperation`](crate::client::fluent_builders::CreateHoursOfOperation) for more information about the
@@ -232,6 +239,20 @@ where
         &self,
     ) -> fluent_builders::CreateUserHierarchyGroup<C, M, R> {
         fluent_builders::CreateUserHierarchyGroup::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteContactFlow` operation.
+    ///
+    /// See [`DeleteContactFlow`](crate::client::fluent_builders::DeleteContactFlow) for more information about the
+    /// operation and its arguments.
+    pub fn delete_contact_flow(&self) -> fluent_builders::DeleteContactFlow<C, M, R> {
+        fluent_builders::DeleteContactFlow::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteContactFlowModule` operation.
+    ///
+    /// See [`DeleteContactFlowModule`](crate::client::fluent_builders::DeleteContactFlowModule) for more information about the
+    /// operation and its arguments.
+    pub fn delete_contact_flow_module(&self) -> fluent_builders::DeleteContactFlowModule<C, M, R> {
+        fluent_builders::DeleteContactFlowModule::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DeleteHoursOfOperation` operation.
     ///
@@ -313,6 +334,15 @@ where
     /// operation and its arguments.
     pub fn describe_contact_flow(&self) -> fluent_builders::DescribeContactFlow<C, M, R> {
         fluent_builders::DescribeContactFlow::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeContactFlowModule` operation.
+    ///
+    /// See [`DescribeContactFlowModule`](crate::client::fluent_builders::DescribeContactFlowModule) for more information about the
+    /// operation and its arguments.
+    pub fn describe_contact_flow_module(
+        &self,
+    ) -> fluent_builders::DescribeContactFlowModule<C, M, R> {
+        fluent_builders::DescribeContactFlowModule::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DescribeHoursOfOperation` operation.
     ///
@@ -515,6 +545,13 @@ where
     /// operation and its arguments.
     pub fn list_bots(&self) -> fluent_builders::ListBots<C, M, R> {
         fluent_builders::ListBots::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListContactFlowModules` operation.
+    ///
+    /// See [`ListContactFlowModules`](crate::client::fluent_builders::ListContactFlowModules) for more information about the
+    /// operation and its arguments.
+    pub fn list_contact_flow_modules(&self) -> fluent_builders::ListContactFlowModules<C, M, R> {
+        fluent_builders::ListContactFlowModules::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListContactFlows` operation.
     ///
@@ -801,6 +838,33 @@ where
     ) -> fluent_builders::UpdateContactFlowContent<C, M, R> {
         fluent_builders::UpdateContactFlowContent::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateContactFlowMetadata` operation.
+    ///
+    /// See [`UpdateContactFlowMetadata`](crate::client::fluent_builders::UpdateContactFlowMetadata) for more information about the
+    /// operation and its arguments.
+    pub fn update_contact_flow_metadata(
+        &self,
+    ) -> fluent_builders::UpdateContactFlowMetadata<C, M, R> {
+        fluent_builders::UpdateContactFlowMetadata::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateContactFlowModuleContent` operation.
+    ///
+    /// See [`UpdateContactFlowModuleContent`](crate::client::fluent_builders::UpdateContactFlowModuleContent) for more information about the
+    /// operation and its arguments.
+    pub fn update_contact_flow_module_content(
+        &self,
+    ) -> fluent_builders::UpdateContactFlowModuleContent<C, M, R> {
+        fluent_builders::UpdateContactFlowModuleContent::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateContactFlowModuleMetadata` operation.
+    ///
+    /// See [`UpdateContactFlowModuleMetadata`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata) for more information about the
+    /// operation and its arguments.
+    pub fn update_contact_flow_module_metadata(
+        &self,
+    ) -> fluent_builders::UpdateContactFlowModuleMetadata<C, M, R> {
+        fluent_builders::UpdateContactFlowModuleMetadata::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `UpdateContactFlowName` operation.
     ///
     /// See [`UpdateContactFlowName`](crate::client::fluent_builders::UpdateContactFlowName) for more information about the
@@ -1009,7 +1073,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateApprovedOrigin<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1090,7 +1154,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateBot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1189,7 +1253,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateInstanceStorageConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1286,7 +1350,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateLambdaFunction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1369,7 +1433,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateLexBot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1450,7 +1514,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateQueueQuickConnects<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1547,7 +1611,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateRoutingProfileQueues<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1651,7 +1715,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateSecurityKey<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1732,7 +1796,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateAgentStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1842,7 +1906,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1851,7 +1915,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1870,7 +1934,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateContactFlow<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2002,13 +2066,149 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateContactFlowModule`.
+    ///
+    /// <p>Creates a contact flow module for the specified Amazon Connect instance. </p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateContactFlowModule<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_contact_flow_module_input::Builder,
+    }
+    impl<C, M, R> CreateContactFlowModule<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateContactFlowModule`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateContactFlowModuleOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateContactFlowModuleError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateContactFlowModuleInputOperationOutputAlias,
+                crate::output::CreateContactFlowModuleOutput,
+                crate::error::CreateContactFlowModuleError,
+                crate::input::CreateContactFlowModuleInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The name of the contact flow module.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the contact flow module.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the contact flow module. </p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the contact flow module. </p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The content of the contact flow module.</p>
+        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(inp);
+            self
+        }
+        /// <p>The content of the contact flow module.</p>
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_content(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k, v);
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateHoursOfOperation`.
     ///
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Creates hours of operation. </p>
     #[derive(std::fmt::Debug)]
     pub struct CreateHoursOfOperation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2122,7 +2322,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2131,7 +2331,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2154,7 +2354,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateInstance<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2280,7 +2480,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateIntegrationAssociation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2412,7 +2612,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2421,7 +2621,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2439,7 +2639,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateQueue<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2579,7 +2779,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2588,7 +2788,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2605,7 +2805,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateQuickConnect<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2705,7 +2905,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2714,7 +2914,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2731,7 +2931,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateRoutingProfile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2902,7 +3102,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateSecurityProfile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3009,7 +3209,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3018,7 +3218,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3035,7 +3235,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateUseCase<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3130,7 +3330,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3139,7 +3339,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3158,7 +3358,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3371,7 +3571,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateUserHierarchyGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3460,13 +3660,180 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteContactFlow`.
+    ///
+    /// <p>Deletes a contact flow for the specified Amazon Connect instance.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteContactFlow<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_contact_flow_input::Builder,
+    }
+    impl<C, M, R> DeleteContactFlow<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteContactFlow`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteContactFlowOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteContactFlowError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteContactFlowInputOperationOutputAlias,
+                crate::output::DeleteContactFlowOutput,
+                crate::error::DeleteContactFlowError,
+                crate::input::DeleteContactFlowInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the contact flow.</p>
+        pub fn contact_flow_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(inp);
+            self
+        }
+        /// <p>The identifier of the contact flow.</p>
+        pub fn set_contact_flow_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_flow_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteContactFlowModule`.
+    ///
+    /// <p>Deletes the specified contact flow module.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteContactFlowModule<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_contact_flow_module_input::Builder,
+    }
+    impl<C, M, R> DeleteContactFlowModule<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteContactFlowModule`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteContactFlowModuleOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteContactFlowModuleError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteContactFlowModuleInputOperationOutputAlias,
+                crate::output::DeleteContactFlowModuleOutput,
+                crate::error::DeleteContactFlowModuleError,
+                crate::input::DeleteContactFlowModuleInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the contact flow module.</p>
+        pub fn contact_flow_module_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_module_id(inp);
+            self
+        }
+        /// <p>The identifier of the contact flow module.</p>
+        pub fn set_contact_flow_module_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_flow_module_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteHoursOfOperation`.
     ///
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Deletes an hours of operation.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteHoursOfOperation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3553,7 +3920,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteInstance<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3624,7 +3991,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteIntegrationAssociation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3707,7 +4074,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteQuickConnect<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3791,7 +4158,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteSecurityProfile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3874,7 +4241,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteUseCase<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3970,7 +4337,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4051,7 +4418,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteUserHierarchyGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4135,7 +4502,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAgentStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4217,12 +4584,13 @@ pub mod fluent_builders {
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Describes the specified contact. </p>
     /// <important>
-    /// <p>Contact information is available in Amazon Connect for 24 months, and then it is deleted.</p>
+    /// <p>Contact information remains available in Amazon Connect for 24 months, and then it is
+    /// deleted.</p>
     /// </important>
     #[derive(std::fmt::Debug)]
     pub struct DescribeContact<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4285,12 +4653,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier of the initial contact.</p>
+        /// <p>The identifier of the contact.</p>
         pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_id(inp);
             self
         }
-        /// <p>The identifier of the initial contact.</p>
+        /// <p>The identifier of the contact.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_contact_id(input);
             self
@@ -4304,7 +4672,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeContactFlow<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4381,13 +4749,97 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeContactFlowModule`.
+    ///
+    /// <p>Describes the specified contact flow module.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeContactFlowModule<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_contact_flow_module_input::Builder,
+    }
+    impl<C, M, R> DescribeContactFlowModule<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeContactFlowModule`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeContactFlowModuleOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeContactFlowModuleError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeContactFlowModuleInputOperationOutputAlias,
+                crate::output::DescribeContactFlowModuleOutput,
+                crate::error::DescribeContactFlowModuleError,
+                crate::input::DescribeContactFlowModuleInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the contact flow module.</p>
+        pub fn contact_flow_module_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_module_id(inp);
+            self
+        }
+        /// <p>The identifier of the contact flow module.</p>
+        pub fn set_contact_flow_module_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_flow_module_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeHoursOfOperation`.
     ///
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Describes the hours of operation.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeHoursOfOperation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4475,7 +4927,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeInstance<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4546,7 +4998,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeInstanceAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4631,7 +5083,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeInstanceStorageConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4728,7 +5180,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeQueue<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4808,7 +5260,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeQuickConnect<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4891,7 +5343,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeRoutingProfile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4975,7 +5427,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSecurityProfile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5060,7 +5512,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeUser<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5140,7 +5592,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeUserHierarchyGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5223,7 +5675,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeUserHierarchyStructure<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5294,7 +5746,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateApprovedOrigin<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5376,7 +5828,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateBot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5471,7 +5923,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateInstanceStorageConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5569,7 +6021,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateLambdaFunction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5650,7 +6102,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateLexBot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5741,7 +6193,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateQueueQuickConnects<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5838,7 +6290,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateRoutingProfileQueues<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5942,7 +6394,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateSecurityKey<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6025,7 +6477,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetContactAttributes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6110,7 +6562,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetCurrentMetricData<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6290,8 +6742,8 @@ pub mod fluent_builders {
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>
-        /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in
-        /// MILLISECONDS. For example, if you get a response like this:</p>
+        /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
+        /// example, if you get a response like this:</p>
         /// <p>
         /// <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
         /// </code>}</p>
@@ -6389,8 +6841,8 @@ pub mod fluent_builders {
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>
-        /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in
-        /// MILLISECONDS. For example, if you get a response like this:</p>
+        /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
+        /// example, if you get a response like this:</p>
         /// <p>
         /// <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
         /// </code>}</p>
@@ -6460,7 +6912,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetFederationToken<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6533,7 +6985,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetMetricData<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7009,7 +7461,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListAgentStatuses<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7119,7 +7571,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListApprovedOrigins<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7208,12 +7660,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBots`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>For the specified version of Amazon Lex, returns a paginated list of all the Amazon Lex bots currently
-    /// associated with the instance. </p>
+    /// <p>For the specified version of Amazon Lex, returns a paginated list of all the Amazon Lex bots currently associated with the
+    /// instance. </p>
     #[derive(std::fmt::Debug)]
     pub struct ListBots<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7312,6 +7764,114 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListContactFlowModules`.
+    ///
+    /// <p>Provides information about the contact flow modules for the specified Amazon Connect instance.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListContactFlowModules<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_contact_flow_modules_input::Builder,
+    }
+    impl<C, M, R> ListContactFlowModules<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListContactFlowModules`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListContactFlowModulesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListContactFlowModulesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListContactFlowModulesInputOperationOutputAlias,
+                crate::output::ListContactFlowModulesOutput,
+                crate::error::ListContactFlowModulesError,
+                crate::input::ListContactFlowModulesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous
+        /// response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous
+        /// response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The state of the contact flow module.</p>
+        pub fn contact_flow_module_state(
+            mut self,
+            inp: crate::model::ContactFlowModuleState,
+        ) -> Self {
+            self.inner = self.inner.contact_flow_module_state(inp);
+            self
+        }
+        /// <p>The state of the contact flow module.</p>
+        pub fn set_contact_flow_module_state(
+            mut self,
+            input: std::option::Option<crate::model::ContactFlowModuleState>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_flow_module_state(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListContactFlows`.
     ///
     /// <p>Provides information about the contact flows for the specified Amazon Connect instance.</p>
@@ -7322,7 +7882,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListContactFlows<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7433,7 +7993,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListContactReferences<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7526,8 +8086,8 @@ pub mod fluent_builders {
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
         /// <important>
-        /// <p>This is not expected to be set since the value returned in the previous response is always
-        /// null.</p>
+        /// <p>This is not expected to be set, because the value returned in the previous response is
+        /// always null.</p>
         /// </important>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
@@ -7536,8 +8096,8 @@ pub mod fluent_builders {
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
         /// <important>
-        /// <p>This is not expected to be set since the value returned in the previous response is always
-        /// null.</p>
+        /// <p>This is not expected to be set, because the value returned in the previous response is
+        /// always null.</p>
         /// </important>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
@@ -7552,7 +8112,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListHoursOfOperations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7645,7 +8205,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListInstanceAttributes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7740,7 +8300,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7825,7 +8385,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListInstanceStorageConfigs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7931,7 +8491,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListIntegrationAssociations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7994,12 +8554,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p></p>
+        /// <p>The integration type.</p>
         pub fn integration_type(mut self, inp: crate::model::IntegrationType) -> Self {
             self.inner = self.inner.integration_type(inp);
             self
         }
-        /// <p></p>
+        /// <p>The integration type.</p>
         pub fn set_integration_type(
             mut self,
             input: std::option::Option<crate::model::IntegrationType>,
@@ -8038,7 +8598,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListLambdaFunctions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8132,7 +8692,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListLexBots<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8207,14 +8767,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per page. If no value is specified, the default is 10.
-        /// </p>
+        /// <p>The maximum number of results to return per page. If no value is specified, the default is 10. </p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>The maximum number of results to return per page. If no value is specified, the default is 10.
-        /// </p>
+        /// <p>The maximum number of results to return per page. If no value is specified, the default is 10. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -8228,7 +8786,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListPhoneNumbers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8357,7 +8915,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListPrompts<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8450,7 +9008,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListQueueQuickConnects<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8558,7 +9116,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListQueues<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8667,7 +9225,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListQuickConnects<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8781,7 +9339,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListRoutingProfileQueues<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8889,7 +9447,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListRoutingProfiles<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8982,7 +9540,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListSecurityKeys<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9075,7 +9633,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListSecurityProfilePermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9183,7 +9741,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListSecurityProfiles<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9277,7 +9835,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9347,7 +9905,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListUseCases<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9455,7 +10013,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListUserHierarchyGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9547,7 +10105,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListUsers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9642,7 +10200,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ResumeContactRecording<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9757,7 +10315,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartChatContact<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9926,7 +10484,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartContactRecording<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10039,7 +10597,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartContactStreaming<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10161,14 +10719,13 @@ pub mod fluent_builders {
     /// </note>
     /// <note>
     /// <p>Campaign calls are not allowed by default. Before you can make a call with
-    /// <code>TrafficType</code> = <code>CAMPAIGN</code>, you must submit a service quota increase
-    /// request. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service Quotas</a>
-    /// in the <i>Amazon Connect Administrator Guide</i>. </p>
+    /// <code>TrafficType</code> = <code>CAMPAIGN</code>, you must submit a service quota increase request. For more information, see
+    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
     /// </note>
     #[derive(std::fmt::Debug)]
     pub struct StartOutboundVoiceContact<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10395,12 +10952,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartTaskContact`.
     ///
-    /// <p>Initiates a contact flow to start a new task immediately or at a future date and
-    /// time.</p>
+    /// <p>Initiates a contact flow to start a new task.</p>
     #[derive(std::fmt::Debug)]
     pub struct StartTaskContact<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10607,7 +11163,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StopContact<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10693,7 +11249,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StopContactRecording<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10790,7 +11346,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StopContactStreaming<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10887,7 +11443,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct SuspendContactRecording<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10979,14 +11535,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds the specified tags to the specified resource.</p>
-    /// <p>The supported resource types are users, routing profiles, queues, quick connects, contact
-    /// flows, agent status, and hours of operation.</p>
+    /// <p>The supported resource types are users, routing profiles, queues, quick connects,
+    /// contact flows, agent status, and hours of operation.</p>
     /// <p>For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon Connect Identity-Based
     /// Policy Examples</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11079,7 +11635,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11167,7 +11723,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateAgentStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11300,7 +11856,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContact`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Adds or updates user defined contact information associated with the specified contact. At
+    /// <p>Adds or updates user-defined contact information associated with the specified contact. At
     /// least one field to be updated must be present in the request.</p>
     /// <important>
     /// <p>You can add or update user-defined contact information for both ongoing and completed
@@ -11309,7 +11865,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateContact<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11453,7 +12009,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateContactAttributes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11569,7 +12125,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateContactFlowContent<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11660,6 +12216,331 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateContactFlowMetadata`.
+    ///
+    /// <p>Updates metadata about specified contact flow.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateContactFlowMetadata<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_contact_flow_metadata_input::Builder,
+    }
+    impl<C, M, R> UpdateContactFlowMetadata<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateContactFlowMetadata`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateContactFlowMetadataOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateContactFlowMetadataError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateContactFlowMetadataInputOperationOutputAlias,
+                crate::output::UpdateContactFlowMetadataOutput,
+                crate::error::UpdateContactFlowMetadataError,
+                crate::input::UpdateContactFlowMetadataInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the contact flow.</p>
+        pub fn contact_flow_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(inp);
+            self
+        }
+        /// <p>The identifier of the contact flow.</p>
+        pub fn set_contact_flow_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_flow_id(input);
+            self
+        }
+        /// <p>TThe name of the contact flow.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>TThe name of the contact flow.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the contact flow.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the contact flow.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The state of contact flow.</p>
+        pub fn contact_flow_state(mut self, inp: crate::model::ContactFlowState) -> Self {
+            self.inner = self.inner.contact_flow_state(inp);
+            self
+        }
+        /// <p>The state of contact flow.</p>
+        pub fn set_contact_flow_state(
+            mut self,
+            input: std::option::Option<crate::model::ContactFlowState>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_flow_state(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateContactFlowModuleContent`.
+    ///
+    /// <p>Updates specified contact flow module for the specified Amazon Connect instance. </p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateContactFlowModuleContent<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_contact_flow_module_content_input::Builder,
+    }
+    impl<C, M, R> UpdateContactFlowModuleContent<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateContactFlowModuleContent`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateContactFlowModuleContentOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateContactFlowModuleContentError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateContactFlowModuleContentInputOperationOutputAlias,
+                crate::output::UpdateContactFlowModuleContentOutput,
+                crate::error::UpdateContactFlowModuleContentError,
+                crate::input::UpdateContactFlowModuleContentInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the contact flow module.</p>
+        pub fn contact_flow_module_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_module_id(inp);
+            self
+        }
+        /// <p>The identifier of the contact flow module.</p>
+        pub fn set_contact_flow_module_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_flow_module_id(input);
+            self
+        }
+        /// <p>The content of the contact flow module.</p>
+        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(inp);
+            self
+        }
+        /// <p>The content of the contact flow module.</p>
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_content(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateContactFlowModuleMetadata`.
+    ///
+    /// <p>Updates metadata about specified contact flow module.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateContactFlowModuleMetadata<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_contact_flow_module_metadata_input::Builder,
+    }
+    impl<C, M, R> UpdateContactFlowModuleMetadata<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateContactFlowModuleMetadata`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateContactFlowModuleMetadataOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateContactFlowModuleMetadataError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateContactFlowModuleMetadataInputOperationOutputAlias,
+                crate::output::UpdateContactFlowModuleMetadataOutput,
+                crate::error::UpdateContactFlowModuleMetadataError,
+                crate::input::UpdateContactFlowModuleMetadataInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the contact flow module.</p>
+        pub fn contact_flow_module_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_module_id(inp);
+            self
+        }
+        /// <p>The identifier of the contact flow module.</p>
+        pub fn set_contact_flow_module_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_flow_module_id(input);
+            self
+        }
+        /// <p>The name of the contact flow module.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the contact flow module.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the contact flow module.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the contact flow module.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The state of contact flow module.</p>
+        pub fn state(mut self, inp: crate::model::ContactFlowModuleState) -> Self {
+            self.inner = self.inner.state(inp);
+            self
+        }
+        /// <p>The state of contact flow module.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::ContactFlowModuleState>,
+        ) -> Self {
+            self.inner = self.inner.set_state(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateContactFlowName`.
     ///
     /// <p>The name of the contact flow.</p>
@@ -11668,7 +12549,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateContactFlowName<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11771,7 +12652,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateContactSchedule<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11860,11 +12741,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateHoursOfOperation`.
     ///
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates the hours of operation.</p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateHoursOfOperation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11995,7 +12877,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateInstanceAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12060,8 +12942,7 @@ pub mod fluent_builders {
         }
         /// <p>The type of attribute.</p>
         /// <note>
-        /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature,
-        /// contact AWS Support for allowlisting.</p>
+        /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact AWS Support for allowlisting.</p>
         /// </note>
         pub fn attribute_type(mut self, inp: crate::model::InstanceAttributeType) -> Self {
             self.inner = self.inner.attribute_type(inp);
@@ -12069,8 +12950,7 @@ pub mod fluent_builders {
         }
         /// <p>The type of attribute.</p>
         /// <note>
-        /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature,
-        /// contact AWS Support for allowlisting.</p>
+        /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact AWS Support for allowlisting.</p>
         /// </note>
         pub fn set_attribute_type(
             mut self,
@@ -12097,7 +12977,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateInstanceStorageConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12207,7 +13087,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateQueueHoursOfOperation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12302,7 +13182,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateQueueMaxContacts<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12393,7 +13273,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateQueueName<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12495,7 +13375,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateQueueOutboundCallerConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12589,7 +13469,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateQueueStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12679,7 +13559,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateQuickConnectConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12775,7 +13655,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateQuickConnectName<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12879,7 +13759,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateRoutingProfileConcurrency<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12982,7 +13862,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateRoutingProfileDefaultOutboundQueue<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13081,7 +13961,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateRoutingProfileName<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13184,7 +14064,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateRoutingProfileQueues<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13292,7 +14172,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateSecurityProfile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13402,7 +14282,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateUserHierarchy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13495,7 +14375,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateUserHierarchyGroupName<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13588,7 +14468,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateUserHierarchyStructure<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13679,7 +14559,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateUserIdentityInfo<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13772,7 +14652,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateUserPhoneConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13865,7 +14745,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateUserRoutingProfile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13958,7 +14838,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateUserSecurityProfiles<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14050,17 +14930,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -14069,7 +14953,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -14085,11 +14969,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

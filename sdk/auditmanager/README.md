@@ -1,6 +1,6 @@
 # aws-sdk-auditmanager
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 Welcome to the Audit Manager API reference. This guide is for developers who need detailed information about the Audit Manager API operations, data types, and errors.
@@ -28,8 +28,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-auditmanager = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-auditmanager = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

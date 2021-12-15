@@ -4,8 +4,8 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSessionTokenOutput {
-    /// <p>The temporary security credentials, which include an access key ID, a secret access
-    /// key, and a security (or session) token.</p>
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key,
+    /// and a security (or session) token.</p>
     ///
     /// <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We
@@ -14,8 +14,8 @@ pub struct GetSessionTokenOutput {
     pub credentials: std::option::Option<crate::model::Credentials>,
 }
 impl GetSessionTokenOutput {
-    /// <p>The temporary security credentials, which include an access key ID, a secret access
-    /// key, and a security (or session) token.</p>
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key,
+    /// and a security (or session) token.</p>
     ///
     /// <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We
@@ -41,8 +41,8 @@ pub mod get_session_token_output {
         pub(crate) credentials: std::option::Option<crate::model::Credentials>,
     }
     impl Builder {
-        /// <p>The temporary security credentials, which include an access key ID, a secret access
-        /// key, and a security (or session) token.</p>
+        /// <p>The temporary security credentials, which include an access key ID, a secret access key,
+        /// and a security (or session) token.</p>
         ///
         /// <note>
         /// <p>The size of the security token that STS API operations return is not fixed. We
@@ -52,8 +52,8 @@ pub mod get_session_token_output {
             self.credentials = Some(input);
             self
         }
-        /// <p>The temporary security credentials, which include an access key ID, a secret access
-        /// key, and a security (or session) token.</p>
+        /// <p>The temporary security credentials, which include an access key ID, a secret access key,
+        /// and a security (or session) token.</p>
         ///
         /// <note>
         /// <p>The size of the security token that STS API operations return is not fixed. We
@@ -88,6 +88,7 @@ impl GetSessionTokenOutput {
 pub struct GetFederationTokenOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key,
     /// and a security (or session) token.</p>
+    ///
     /// <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We
     /// strongly recommend that you make no assumptions about the maximum size.</p>
@@ -106,6 +107,7 @@ pub struct GetFederationTokenOutput {
 impl GetFederationTokenOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key,
     /// and a security (or session) token.</p>
+    ///
     /// <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We
     /// strongly recommend that you make no assumptions about the maximum size.</p>
@@ -149,6 +151,7 @@ pub mod get_federation_token_output {
     impl Builder {
         /// <p>The temporary security credentials, which include an access key ID, a secret access key,
         /// and a security (or session) token.</p>
+        ///
         /// <note>
         /// <p>The size of the security token that STS API operations return is not fixed. We
         /// strongly recommend that you make no assumptions about the maximum size.</p>
@@ -159,6 +162,7 @@ pub mod get_federation_token_output {
         }
         /// <p>The temporary security credentials, which include an access key ID, a secret access key,
         /// and a security (or session) token.</p>
+        ///
         /// <note>
         /// <p>The size of the security token that STS API operations return is not fixed. We
         /// strongly recommend that you make no assumptions about the maximum size.</p>
@@ -388,11 +392,11 @@ impl GetAccessKeyInfoOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecodeAuthorizationMessageOutput {
-    /// <p>An XML document that contains the decoded message.</p>
+    /// <p>The API returns a response with the decoded message.</p>
     pub decoded_message: std::option::Option<std::string::String>,
 }
 impl DecodeAuthorizationMessageOutput {
-    /// <p>An XML document that contains the decoded message.</p>
+    /// <p>The API returns a response with the decoded message.</p>
     pub fn decoded_message(&self) -> std::option::Option<&str> {
         self.decoded_message.as_deref()
     }
@@ -413,12 +417,12 @@ pub mod decode_authorization_message_output {
         pub(crate) decoded_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An XML document that contains the decoded message.</p>
+        /// <p>The API returns a response with the decoded message.</p>
         pub fn decoded_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.decoded_message = Some(input.into());
             self
         }
-        /// <p>An XML document that contains the decoded message.</p>
+        /// <p>The API returns a response with the decoded message.</p>
         pub fn set_decoded_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -448,6 +452,7 @@ impl DecodeAuthorizationMessageOutput {
 pub struct AssumeRoleWithWebIdentityOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key,
     /// and a security token.</p>
+    ///
     /// <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We
     /// strongly recommend that you make no assumptions about the maximum size.</p>
@@ -501,6 +506,7 @@ pub struct AssumeRoleWithWebIdentityOutput {
 impl AssumeRoleWithWebIdentityOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key,
     /// and a security token.</p>
+    ///
     /// <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We
     /// strongly recommend that you make no assumptions about the maximum size.</p>
@@ -598,6 +604,7 @@ pub mod assume_role_with_web_identity_output {
     impl Builder {
         /// <p>The temporary security credentials, which include an access key ID, a secret access key,
         /// and a security token.</p>
+        ///
         /// <note>
         /// <p>The size of the security token that STS API operations return is not fixed. We
         /// strongly recommend that you make no assumptions about the maximum size.</p>
@@ -608,6 +615,7 @@ pub mod assume_role_with_web_identity_output {
         }
         /// <p>The temporary security credentials, which include an access key ID, a secret access key,
         /// and a security token.</p>
+        ///
         /// <note>
         /// <p>The size of the security token that STS API operations return is not fixed. We
         /// strongly recommend that you make no assumptions about the maximum size.</p>
@@ -783,6 +791,7 @@ impl AssumeRoleWithWebIdentityOutput {
 pub struct AssumeRoleWithSamlOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key,
     /// and a security (or session) token.</p>
+    ///
     /// <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We
     /// strongly recommend that you make no assumptions about the maximum size.</p>
@@ -851,6 +860,7 @@ pub struct AssumeRoleWithSamlOutput {
 impl AssumeRoleWithSamlOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key,
     /// and a security (or session) token.</p>
+    ///
     /// <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We
     /// strongly recommend that you make no assumptions about the maximum size.</p>
@@ -968,6 +978,7 @@ pub mod assume_role_with_saml_output {
     impl Builder {
         /// <p>The temporary security credentials, which include an access key ID, a secret access key,
         /// and a security (or session) token.</p>
+        ///
         /// <note>
         /// <p>The size of the security token that STS API operations return is not fixed. We
         /// strongly recommend that you make no assumptions about the maximum size.</p>
@@ -978,6 +989,7 @@ pub mod assume_role_with_saml_output {
         }
         /// <p>The temporary security credentials, which include an access key ID, a secret access key,
         /// and a security (or session) token.</p>
+        ///
         /// <note>
         /// <p>The size of the security token that STS API operations return is not fixed. We
         /// strongly recommend that you make no assumptions about the maximum size.</p>
@@ -1194,6 +1206,7 @@ impl AssumeRoleWithSamlOutput {
 pub struct AssumeRoleOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key,
     /// and a security (or session) token.</p>
+    ///
     /// <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We
     /// strongly recommend that you make no assumptions about the maximum size.</p>
@@ -1227,6 +1240,7 @@ pub struct AssumeRoleOutput {
 impl AssumeRoleOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key,
     /// and a security (or session) token.</p>
+    ///
     /// <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We
     /// strongly recommend that you make no assumptions about the maximum size.</p>
@@ -1289,6 +1303,7 @@ pub mod assume_role_output {
     impl Builder {
         /// <p>The temporary security credentials, which include an access key ID, a secret access key,
         /// and a security (or session) token.</p>
+        ///
         /// <note>
         /// <p>The size of the security token that STS API operations return is not fixed. We
         /// strongly recommend that you make no assumptions about the maximum size.</p>
@@ -1299,6 +1314,7 @@ pub mod assume_role_output {
         }
         /// <p>The temporary security credentials, which include an access key ID, a secret access key,
         /// and a security (or session) token.</p>
+        ///
         /// <note>
         /// <p>The size of the security token that STS API operations return is not fixed. We
         /// strongly recommend that you make no assumptions about the maximum size.</p>

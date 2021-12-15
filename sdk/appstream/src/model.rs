@@ -1516,6 +1516,12 @@ pub struct Fleet {
     ///
     /// <p>The default value is <code>APP</code>.</p>
     pub stream_view: std::option::Option<crate::model::StreamView>,
+    /// <p>The platform of the fleet.</p>
+    pub platform: std::option::Option<crate::model::PlatformType>,
+    /// <p>The maximum number of concurrent sessions for the fleet.</p>
+    pub max_concurrent_sessions: std::option::Option<i32>,
+    /// <p>The USB device filter strings associated with the fleet.</p>
+    pub usb_device_filter_strings: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Fleet {
     /// <p>The Amazon Resource Name (ARN) for the fleet.</p>
@@ -1734,6 +1740,18 @@ impl Fleet {
     pub fn stream_view(&self) -> std::option::Option<&crate::model::StreamView> {
         self.stream_view.as_ref()
     }
+    /// <p>The platform of the fleet.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::PlatformType> {
+        self.platform.as_ref()
+    }
+    /// <p>The maximum number of concurrent sessions for the fleet.</p>
+    pub fn max_concurrent_sessions(&self) -> std::option::Option<i32> {
+        self.max_concurrent_sessions
+    }
+    /// <p>The USB device filter strings associated with the fleet.</p>
+    pub fn usb_device_filter_strings(&self) -> std::option::Option<&[std::string::String]> {
+        self.usb_device_filter_strings.as_deref()
+    }
 }
 impl std::fmt::Debug for Fleet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1770,6 +1788,9 @@ impl std::fmt::Debug for Fleet {
         );
         formatter.field("iam_role_arn", &self.iam_role_arn);
         formatter.field("stream_view", &self.stream_view);
+        formatter.field("platform", &self.platform);
+        formatter.field("max_concurrent_sessions", &self.max_concurrent_sessions);
+        formatter.field("usb_device_filter_strings", &self.usb_device_filter_strings);
         formatter.finish()
     }
 }
@@ -1800,6 +1821,10 @@ pub mod fleet {
         pub(crate) idle_disconnect_timeout_in_seconds: std::option::Option<i32>,
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
         pub(crate) stream_view: std::option::Option<crate::model::StreamView>,
+        pub(crate) platform: std::option::Option<crate::model::PlatformType>,
+        pub(crate) max_concurrent_sessions: std::option::Option<i32>,
+        pub(crate) usb_device_filter_strings:
+            std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the fleet.</p>
@@ -2312,6 +2337,48 @@ pub mod fleet {
             self.stream_view = input;
             self
         }
+        /// <p>The platform of the fleet.</p>
+        pub fn platform(mut self, input: crate::model::PlatformType) -> Self {
+            self.platform = Some(input);
+            self
+        }
+        /// <p>The platform of the fleet.</p>
+        pub fn set_platform(
+            mut self,
+            input: std::option::Option<crate::model::PlatformType>,
+        ) -> Self {
+            self.platform = input;
+            self
+        }
+        /// <p>The maximum number of concurrent sessions for the fleet.</p>
+        pub fn max_concurrent_sessions(mut self, input: i32) -> Self {
+            self.max_concurrent_sessions = Some(input);
+            self
+        }
+        /// <p>The maximum number of concurrent sessions for the fleet.</p>
+        pub fn set_max_concurrent_sessions(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_concurrent_sessions = input;
+            self
+        }
+        /// Appends an item to `usb_device_filter_strings`.
+        ///
+        /// To override the contents of this collection use [`set_usb_device_filter_strings`](Self::set_usb_device_filter_strings).
+        ///
+        /// <p>The USB device filter strings associated with the fleet.</p>
+        pub fn usb_device_filter_strings(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.usb_device_filter_strings.unwrap_or_default();
+            v.push(input.into());
+            self.usb_device_filter_strings = Some(v);
+            self
+        }
+        /// <p>The USB device filter strings associated with the fleet.</p>
+        pub fn set_usb_device_filter_strings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.usb_device_filter_strings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Fleet`](crate::model::Fleet)
         pub fn build(self) -> crate::model::Fleet {
             crate::model::Fleet {
@@ -2335,6 +2402,9 @@ pub mod fleet {
                 idle_disconnect_timeout_in_seconds: self.idle_disconnect_timeout_in_seconds,
                 iam_role_arn: self.iam_role_arn,
                 stream_view: self.stream_view,
+                platform: self.platform,
+                max_concurrent_sessions: self.max_concurrent_sessions,
+                usb_device_filter_strings: self.usb_device_filter_strings,
             }
         }
     }
@@ -2343,6 +2413,74 @@ impl Fleet {
     /// Creates a new builder-style object to manufacture [`Fleet`](crate::model::Fleet)
     pub fn builder() -> crate::model::fleet::Builder {
         crate::model::fleet::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PlatformType {
+    #[allow(missing_docs)] // documentation missing in model
+    AmazonLinux2,
+    #[allow(missing_docs)] // documentation missing in model
+    Windows,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsServer2016,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsServer2019,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PlatformType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AMAZON_LINUX2" => PlatformType::AmazonLinux2,
+            "WINDOWS" => PlatformType::Windows,
+            "WINDOWS_SERVER_2016" => PlatformType::WindowsServer2016,
+            "WINDOWS_SERVER_2019" => PlatformType::WindowsServer2019,
+            other => PlatformType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PlatformType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PlatformType::from(s))
+    }
+}
+impl PlatformType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PlatformType::AmazonLinux2 => "AMAZON_LINUX2",
+            PlatformType::Windows => "WINDOWS",
+            PlatformType::WindowsServer2016 => "WINDOWS_SERVER_2016",
+            PlatformType::WindowsServer2019 => "WINDOWS_SERVER_2019",
+            PlatformType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AMAZON_LINUX2",
+            "WINDOWS",
+            "WINDOWS_SERVER_2016",
+            "WINDOWS_SERVER_2019",
+        ]
+    }
+}
+impl AsRef<str> for PlatformType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3091,6 +3229,8 @@ pub enum FleetType {
     #[allow(missing_docs)] // documentation missing in model
     AlwaysOn,
     #[allow(missing_docs)] // documentation missing in model
+    Elastic,
+    #[allow(missing_docs)] // documentation missing in model
     OnDemand,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3099,6 +3239,7 @@ impl std::convert::From<&str> for FleetType {
     fn from(s: &str) -> Self {
         match s {
             "ALWAYS_ON" => FleetType::AlwaysOn,
+            "ELASTIC" => FleetType::Elastic,
             "ON_DEMAND" => FleetType::OnDemand,
             other => FleetType::Unknown(other.to_owned()),
         }
@@ -3116,13 +3257,14 @@ impl FleetType {
     pub fn as_str(&self) -> &str {
         match self {
             FleetType::AlwaysOn => "ALWAYS_ON",
+            FleetType::Elastic => "ELASTIC",
             FleetType::OnDemand => "ON_DEMAND",
             FleetType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["ALWAYS_ON", "ON_DEMAND"]
+        &["ALWAYS_ON", "ELASTIC", "ON_DEMAND"]
     }
 }
 impl AsRef<str> for FleetType {
@@ -3148,6 +3290,8 @@ pub enum FleetAttribute {
     #[allow(missing_docs)] // documentation missing in model
     IamRoleArn,
     #[allow(missing_docs)] // documentation missing in model
+    UsbDeviceFilterStrings,
+    #[allow(missing_docs)] // documentation missing in model
     VpcConfiguration,
     #[allow(missing_docs)] // documentation missing in model
     VpcConfigurationSecurityGroupIds,
@@ -3159,6 +3303,7 @@ impl std::convert::From<&str> for FleetAttribute {
         match s {
             "DOMAIN_JOIN_INFO" => FleetAttribute::DomainJoinInfo,
             "IAM_ROLE_ARN" => FleetAttribute::IamRoleArn,
+            "USB_DEVICE_FILTER_STRINGS" => FleetAttribute::UsbDeviceFilterStrings,
             "VPC_CONFIGURATION" => FleetAttribute::VpcConfiguration,
             "VPC_CONFIGURATION_SECURITY_GROUP_IDS" => {
                 FleetAttribute::VpcConfigurationSecurityGroupIds
@@ -3180,6 +3325,7 @@ impl FleetAttribute {
         match self {
             FleetAttribute::DomainJoinInfo => "DOMAIN_JOIN_INFO",
             FleetAttribute::IamRoleArn => "IAM_ROLE_ARN",
+            FleetAttribute::UsbDeviceFilterStrings => "USB_DEVICE_FILTER_STRINGS",
             FleetAttribute::VpcConfiguration => "VPC_CONFIGURATION",
             FleetAttribute::VpcConfigurationSecurityGroupIds => {
                 "VPC_CONFIGURATION_SECURITY_GROUP_IDS"
@@ -3192,6 +3338,7 @@ impl FleetAttribute {
         &[
             "DOMAIN_JOIN_INFO",
             "IAM_ROLE_ARN",
+            "USB_DEVICE_FILTER_STRINGS",
             "VPC_CONFIGURATION",
             "VPC_CONFIGURATION_SECURITY_GROUP_IDS",
         ]
@@ -3489,6 +3636,508 @@ impl ServiceAccountCredentials {
     /// Creates a new builder-style object to manufacture [`ServiceAccountCredentials`](crate::model::ServiceAccountCredentials)
     pub fn builder() -> crate::model::service_account_credentials::Builder {
         crate::model::service_account_credentials::Builder::default()
+    }
+}
+
+/// <p>Describes an application in the application catalog.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Application {
+    /// <p>The name of the application.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The application name to display.</p>
+    pub display_name: std::option::Option<std::string::String>,
+    /// <p>The URL for the application icon. This URL might be time-limited.</p>
+    pub icon_url: std::option::Option<std::string::String>,
+    /// <p>The path to the application executable in the instance.</p>
+    pub launch_path: std::option::Option<std::string::String>,
+    /// <p>The arguments that are passed to the application at launch.</p>
+    pub launch_parameters: std::option::Option<std::string::String>,
+    /// <p>If there is a problem, the application can be disabled after image creation.</p>
+    pub enabled: bool,
+    /// <p>Additional attributes that describe the application.</p>
+    pub metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The working directory for the application.</p>
+    pub working_directory: std::option::Option<std::string::String>,
+    /// <p>The description of the application.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The ARN of the application.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The app block ARN of the application.</p>
+    pub app_block_arn: std::option::Option<std::string::String>,
+    /// <p>The S3 location of the application icon.</p>
+    pub icon_s3_location: std::option::Option<crate::model::S3Location>,
+    /// <p>The platforms on which the application can run.</p>
+    pub platforms: std::option::Option<std::vec::Vec<crate::model::PlatformType>>,
+    /// <p>The instance families for the application.</p>
+    pub instance_families: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The time at which the application was created within the app block.</p>
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl Application {
+    /// <p>The name of the application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The application name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The URL for the application icon. This URL might be time-limited.</p>
+    pub fn icon_url(&self) -> std::option::Option<&str> {
+        self.icon_url.as_deref()
+    }
+    /// <p>The path to the application executable in the instance.</p>
+    pub fn launch_path(&self) -> std::option::Option<&str> {
+        self.launch_path.as_deref()
+    }
+    /// <p>The arguments that are passed to the application at launch.</p>
+    pub fn launch_parameters(&self) -> std::option::Option<&str> {
+        self.launch_parameters.as_deref()
+    }
+    /// <p>If there is a problem, the application can be disabled after image creation.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>Additional attributes that describe the application.</p>
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.metadata.as_ref()
+    }
+    /// <p>The working directory for the application.</p>
+    pub fn working_directory(&self) -> std::option::Option<&str> {
+        self.working_directory.as_deref()
+    }
+    /// <p>The description of the application.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the application.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The app block ARN of the application.</p>
+    pub fn app_block_arn(&self) -> std::option::Option<&str> {
+        self.app_block_arn.as_deref()
+    }
+    /// <p>The S3 location of the application icon.</p>
+    pub fn icon_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.icon_s3_location.as_ref()
+    }
+    /// <p>The platforms on which the application can run.</p>
+    pub fn platforms(&self) -> std::option::Option<&[crate::model::PlatformType]> {
+        self.platforms.as_deref()
+    }
+    /// <p>The instance families for the application.</p>
+    pub fn instance_families(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_families.as_deref()
+    }
+    /// <p>The time at which the application was created within the app block.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_time.as_ref()
+    }
+}
+impl std::fmt::Debug for Application {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Application");
+        formatter.field("name", &self.name);
+        formatter.field("display_name", &self.display_name);
+        formatter.field("icon_url", &self.icon_url);
+        formatter.field("launch_path", &self.launch_path);
+        formatter.field("launch_parameters", &self.launch_parameters);
+        formatter.field("enabled", &self.enabled);
+        formatter.field("metadata", &self.metadata);
+        formatter.field("working_directory", &self.working_directory);
+        formatter.field("description", &self.description);
+        formatter.field("arn", &self.arn);
+        formatter.field("app_block_arn", &self.app_block_arn);
+        formatter.field("icon_s3_location", &self.icon_s3_location);
+        formatter.field("platforms", &self.platforms);
+        formatter.field("instance_families", &self.instance_families);
+        formatter.field("created_time", &self.created_time);
+        formatter.finish()
+    }
+}
+/// See [`Application`](crate::model::Application)
+pub mod application {
+    /// A builder for [`Application`](crate::model::Application)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) display_name: std::option::Option<std::string::String>,
+        pub(crate) icon_url: std::option::Option<std::string::String>,
+        pub(crate) launch_path: std::option::Option<std::string::String>,
+        pub(crate) launch_parameters: std::option::Option<std::string::String>,
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) metadata: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) working_directory: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) app_block_arn: std::option::Option<std::string::String>,
+        pub(crate) icon_s3_location: std::option::Option<crate::model::S3Location>,
+        pub(crate) platforms: std::option::Option<std::vec::Vec<crate::model::PlatformType>>,
+        pub(crate) instance_families: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The name of the application.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the application.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The application name to display.</p>
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.display_name = Some(input.into());
+            self
+        }
+        /// <p>The application name to display.</p>
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.display_name = input;
+            self
+        }
+        /// <p>The URL for the application icon. This URL might be time-limited.</p>
+        pub fn icon_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.icon_url = Some(input.into());
+            self
+        }
+        /// <p>The URL for the application icon. This URL might be time-limited.</p>
+        pub fn set_icon_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.icon_url = input;
+            self
+        }
+        /// <p>The path to the application executable in the instance.</p>
+        pub fn launch_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.launch_path = Some(input.into());
+            self
+        }
+        /// <p>The path to the application executable in the instance.</p>
+        pub fn set_launch_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.launch_path = input;
+            self
+        }
+        /// <p>The arguments that are passed to the application at launch.</p>
+        pub fn launch_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.launch_parameters = Some(input.into());
+            self
+        }
+        /// <p>The arguments that are passed to the application at launch.</p>
+        pub fn set_launch_parameters(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.launch_parameters = input;
+            self
+        }
+        /// <p>If there is a problem, the application can be disabled after image creation.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        /// <p>If there is a problem, the application can be disabled after image creation.</p>
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// Adds a key-value pair to `metadata`.
+        ///
+        /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+        ///
+        /// <p>Additional attributes that describe the application.</p>
+        pub fn metadata(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.metadata.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.metadata = Some(hash_map);
+            self
+        }
+        /// <p>Additional attributes that describe the application.</p>
+        pub fn set_metadata(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.metadata = input;
+            self
+        }
+        /// <p>The working directory for the application.</p>
+        pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.working_directory = Some(input.into());
+            self
+        }
+        /// <p>The working directory for the application.</p>
+        pub fn set_working_directory(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.working_directory = input;
+            self
+        }
+        /// <p>The description of the application.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the application.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The ARN of the application.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the application.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The app block ARN of the application.</p>
+        pub fn app_block_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_block_arn = Some(input.into());
+            self
+        }
+        /// <p>The app block ARN of the application.</p>
+        pub fn set_app_block_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.app_block_arn = input;
+            self
+        }
+        /// <p>The S3 location of the application icon.</p>
+        pub fn icon_s3_location(mut self, input: crate::model::S3Location) -> Self {
+            self.icon_s3_location = Some(input);
+            self
+        }
+        /// <p>The S3 location of the application icon.</p>
+        pub fn set_icon_s3_location(
+            mut self,
+            input: std::option::Option<crate::model::S3Location>,
+        ) -> Self {
+            self.icon_s3_location = input;
+            self
+        }
+        /// Appends an item to `platforms`.
+        ///
+        /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
+        ///
+        /// <p>The platforms on which the application can run.</p>
+        pub fn platforms(mut self, input: impl Into<crate::model::PlatformType>) -> Self {
+            let mut v = self.platforms.unwrap_or_default();
+            v.push(input.into());
+            self.platforms = Some(v);
+            self
+        }
+        /// <p>The platforms on which the application can run.</p>
+        pub fn set_platforms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PlatformType>>,
+        ) -> Self {
+            self.platforms = input;
+            self
+        }
+        /// Appends an item to `instance_families`.
+        ///
+        /// To override the contents of this collection use [`set_instance_families`](Self::set_instance_families).
+        ///
+        /// <p>The instance families for the application.</p>
+        pub fn instance_families(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.instance_families.unwrap_or_default();
+            v.push(input.into());
+            self.instance_families = Some(v);
+            self
+        }
+        /// <p>The instance families for the application.</p>
+        pub fn set_instance_families(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.instance_families = input;
+            self
+        }
+        /// <p>The time at which the application was created within the app block.</p>
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_time = Some(input);
+            self
+        }
+        /// <p>The time at which the application was created within the app block.</p>
+        pub fn set_created_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Application`](crate::model::Application)
+        pub fn build(self) -> crate::model::Application {
+            crate::model::Application {
+                name: self.name,
+                display_name: self.display_name,
+                icon_url: self.icon_url,
+                launch_path: self.launch_path,
+                launch_parameters: self.launch_parameters,
+                enabled: self.enabled.unwrap_or_default(),
+                metadata: self.metadata,
+                working_directory: self.working_directory,
+                description: self.description,
+                arn: self.arn,
+                app_block_arn: self.app_block_arn,
+                icon_s3_location: self.icon_s3_location,
+                platforms: self.platforms,
+                instance_families: self.instance_families,
+                created_time: self.created_time,
+            }
+        }
+    }
+}
+impl Application {
+    /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application)
+    pub fn builder() -> crate::model::application::Builder {
+        crate::model::application::Builder::default()
+    }
+}
+
+/// <p>Describes the S3 location.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3Location {
+    /// <p>The S3 bucket of the S3 object.</p>
+    pub s3_bucket: std::option::Option<std::string::String>,
+    /// <p>The S3 key of the S3 object.</p>
+    pub s3_key: std::option::Option<std::string::String>,
+}
+impl S3Location {
+    /// <p>The S3 bucket of the S3 object.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The S3 key of the S3 object.</p>
+    pub fn s3_key(&self) -> std::option::Option<&str> {
+        self.s3_key.as_deref()
+    }
+}
+impl std::fmt::Debug for S3Location {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3Location");
+        formatter.field("s3_bucket", &self.s3_bucket);
+        formatter.field("s3_key", &self.s3_key);
+        formatter.finish()
+    }
+}
+/// See [`S3Location`](crate::model::S3Location)
+pub mod s3_location {
+    /// A builder for [`S3Location`](crate::model::S3Location)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_bucket: std::option::Option<std::string::String>,
+        pub(crate) s3_key: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The S3 bucket of the S3 object.</p>
+        pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket = Some(input.into());
+            self
+        }
+        /// <p>The S3 bucket of the S3 object.</p>
+        pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket = input;
+            self
+        }
+        /// <p>The S3 key of the S3 object.</p>
+        pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_key = Some(input.into());
+            self
+        }
+        /// <p>The S3 key of the S3 object.</p>
+        pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_key = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location)
+        pub fn build(self) -> crate::model::S3Location {
+            crate::model::S3Location {
+                s3_bucket: self.s3_bucket,
+                s3_key: self.s3_key,
+            }
+        }
+    }
+}
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location)
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ApplicationAttribute {
+    #[allow(missing_docs)] // documentation missing in model
+    LaunchParameters,
+    #[allow(missing_docs)] // documentation missing in model
+    WorkingDirectory,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ApplicationAttribute {
+    fn from(s: &str) -> Self {
+        match s {
+            "LAUNCH_PARAMETERS" => ApplicationAttribute::LaunchParameters,
+            "WORKING_DIRECTORY" => ApplicationAttribute::WorkingDirectory,
+            other => ApplicationAttribute::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ApplicationAttribute {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ApplicationAttribute::from(s))
+    }
+}
+impl ApplicationAttribute {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ApplicationAttribute::LaunchParameters => "LAUNCH_PARAMETERS",
+            ApplicationAttribute::WorkingDirectory => "WORKING_DIRECTORY",
+            ApplicationAttribute::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["LAUNCH_PARAMETERS", "WORKING_DIRECTORY"]
+    }
+}
+impl AsRef<str> for ApplicationAttribute {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4758,74 +5407,6 @@ impl ImageBuilderState {
     }
 }
 impl AsRef<str> for ImageBuilderState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum PlatformType {
-    #[allow(missing_docs)] // documentation missing in model
-    AmazonLinux2,
-    #[allow(missing_docs)] // documentation missing in model
-    Windows,
-    #[allow(missing_docs)] // documentation missing in model
-    WindowsServer2016,
-    #[allow(missing_docs)] // documentation missing in model
-    WindowsServer2019,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for PlatformType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AMAZON_LINUX2" => PlatformType::AmazonLinux2,
-            "WINDOWS" => PlatformType::Windows,
-            "WINDOWS_SERVER_2016" => PlatformType::WindowsServer2016,
-            "WINDOWS_SERVER_2019" => PlatformType::WindowsServer2019,
-            other => PlatformType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for PlatformType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PlatformType::from(s))
-    }
-}
-impl PlatformType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PlatformType::AmazonLinux2 => "AMAZON_LINUX2",
-            PlatformType::Windows => "WINDOWS",
-            PlatformType::WindowsServer2016 => "WINDOWS_SERVER_2016",
-            PlatformType::WindowsServer2019 => "WINDOWS_SERVER_2019",
-            PlatformType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "AMAZON_LINUX2",
-            "WINDOWS",
-            "WINDOWS_SERVER_2016",
-            "WINDOWS_SERVER_2019",
-        ]
-    }
-}
-impl AsRef<str> for PlatformType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -6443,198 +7024,6 @@ impl Image {
     }
 }
 
-/// <p>Describes an application in the application catalog.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Application {
-    /// <p>The name of the application.</p>
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The application name to display.</p>
-    pub display_name: std::option::Option<std::string::String>,
-    /// <p>The URL for the application icon. This URL might be time-limited.</p>
-    pub icon_url: std::option::Option<std::string::String>,
-    /// <p>The path to the application executable in the instance.</p>
-    pub launch_path: std::option::Option<std::string::String>,
-    /// <p>The arguments that are passed to the application at launch.</p>
-    pub launch_parameters: std::option::Option<std::string::String>,
-    /// <p>If there is a problem, the application can be disabled after image creation.</p>
-    pub enabled: bool,
-    /// <p>Additional attributes that describe the application.</p>
-    pub metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-}
-impl Application {
-    /// <p>The name of the application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>The application name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
-        self.display_name.as_deref()
-    }
-    /// <p>The URL for the application icon. This URL might be time-limited.</p>
-    pub fn icon_url(&self) -> std::option::Option<&str> {
-        self.icon_url.as_deref()
-    }
-    /// <p>The path to the application executable in the instance.</p>
-    pub fn launch_path(&self) -> std::option::Option<&str> {
-        self.launch_path.as_deref()
-    }
-    /// <p>The arguments that are passed to the application at launch.</p>
-    pub fn launch_parameters(&self) -> std::option::Option<&str> {
-        self.launch_parameters.as_deref()
-    }
-    /// <p>If there is a problem, the application can be disabled after image creation.</p>
-    pub fn enabled(&self) -> bool {
-        self.enabled
-    }
-    /// <p>Additional attributes that describe the application.</p>
-    pub fn metadata(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for Application {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Application");
-        formatter.field("name", &self.name);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("icon_url", &self.icon_url);
-        formatter.field("launch_path", &self.launch_path);
-        formatter.field("launch_parameters", &self.launch_parameters);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("metadata", &self.metadata);
-        formatter.finish()
-    }
-}
-/// See [`Application`](crate::model::Application)
-pub mod application {
-    /// A builder for [`Application`](crate::model::Application)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) display_name: std::option::Option<std::string::String>,
-        pub(crate) icon_url: std::option::Option<std::string::String>,
-        pub(crate) launch_path: std::option::Option<std::string::String>,
-        pub(crate) launch_parameters: std::option::Option<std::string::String>,
-        pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) metadata: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    }
-    impl Builder {
-        /// <p>The name of the application.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>The name of the application.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// <p>The application name to display.</p>
-        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.display_name = Some(input.into());
-            self
-        }
-        /// <p>The application name to display.</p>
-        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
-        }
-        /// <p>The URL for the application icon. This URL might be time-limited.</p>
-        pub fn icon_url(mut self, input: impl Into<std::string::String>) -> Self {
-            self.icon_url = Some(input.into());
-            self
-        }
-        /// <p>The URL for the application icon. This URL might be time-limited.</p>
-        pub fn set_icon_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.icon_url = input;
-            self
-        }
-        /// <p>The path to the application executable in the instance.</p>
-        pub fn launch_path(mut self, input: impl Into<std::string::String>) -> Self {
-            self.launch_path = Some(input.into());
-            self
-        }
-        /// <p>The path to the application executable in the instance.</p>
-        pub fn set_launch_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.launch_path = input;
-            self
-        }
-        /// <p>The arguments that are passed to the application at launch.</p>
-        pub fn launch_parameters(mut self, input: impl Into<std::string::String>) -> Self {
-            self.launch_parameters = Some(input.into());
-            self
-        }
-        /// <p>The arguments that are passed to the application at launch.</p>
-        pub fn set_launch_parameters(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.launch_parameters = input;
-            self
-        }
-        /// <p>If there is a problem, the application can be disabled after image creation.</p>
-        pub fn enabled(mut self, input: bool) -> Self {
-            self.enabled = Some(input);
-            self
-        }
-        /// <p>If there is a problem, the application can be disabled after image creation.</p>
-        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
-        }
-        /// Adds a key-value pair to `metadata`.
-        ///
-        /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
-        ///
-        /// <p>Additional attributes that describe the application.</p>
-        pub fn metadata(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.metadata.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.metadata = Some(hash_map);
-            self
-        }
-        /// <p>Additional attributes that describe the application.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.metadata = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Application`](crate::model::Application)
-        pub fn build(self) -> crate::model::Application {
-            crate::model::Application {
-                name: self.name,
-                display_name: self.display_name,
-                icon_url: self.icon_url,
-                launch_path: self.launch_path,
-                launch_parameters: self.launch_parameters,
-                enabled: self.enabled.unwrap_or_default(),
-                metadata: self.metadata,
-            }
-        }
-    }
-}
-impl Application {
-    /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application)
-    pub fn builder() -> crate::model::application::Builder {
-        crate::model::application::Builder::default()
-    }
-}
-
 /// <p>Describes the reason why the last image state change occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6992,6 +7381,385 @@ impl SharedImagePermissions {
     /// Creates a new builder-style object to manufacture [`SharedImagePermissions`](crate::model::SharedImagePermissions)
     pub fn builder() -> crate::model::shared_image_permissions::Builder {
         crate::model::shared_image_permissions::Builder::default()
+    }
+}
+
+/// <p>Describes the application fleet association.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ApplicationFleetAssociation {
+    /// <p>The name of the fleet associated with the application.</p>
+    pub fleet_name: std::option::Option<std::string::String>,
+    /// <p>The ARN of the application associated with the fleet.</p>
+    pub application_arn: std::option::Option<std::string::String>,
+}
+impl ApplicationFleetAssociation {
+    /// <p>The name of the fleet associated with the application.</p>
+    pub fn fleet_name(&self) -> std::option::Option<&str> {
+        self.fleet_name.as_deref()
+    }
+    /// <p>The ARN of the application associated with the fleet.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for ApplicationFleetAssociation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ApplicationFleetAssociation");
+        formatter.field("fleet_name", &self.fleet_name);
+        formatter.field("application_arn", &self.application_arn);
+        formatter.finish()
+    }
+}
+/// See [`ApplicationFleetAssociation`](crate::model::ApplicationFleetAssociation)
+pub mod application_fleet_association {
+    /// A builder for [`ApplicationFleetAssociation`](crate::model::ApplicationFleetAssociation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) fleet_name: std::option::Option<std::string::String>,
+        pub(crate) application_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the fleet associated with the application.</p>
+        pub fn fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fleet_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the fleet associated with the application.</p>
+        pub fn set_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fleet_name = input;
+            self
+        }
+        /// <p>The ARN of the application associated with the fleet.</p>
+        pub fn application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the application associated with the fleet.</p>
+        pub fn set_application_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ApplicationFleetAssociation`](crate::model::ApplicationFleetAssociation)
+        pub fn build(self) -> crate::model::ApplicationFleetAssociation {
+            crate::model::ApplicationFleetAssociation {
+                fleet_name: self.fleet_name,
+                application_arn: self.application_arn,
+            }
+        }
+    }
+}
+impl ApplicationFleetAssociation {
+    /// Creates a new builder-style object to manufacture [`ApplicationFleetAssociation`](crate::model::ApplicationFleetAssociation)
+    pub fn builder() -> crate::model::application_fleet_association::Builder {
+        crate::model::application_fleet_association::Builder::default()
+    }
+}
+
+/// <p>Describes an app block.</p>
+/// <p>App blocks are an Amazon AppStream 2.0 resource that stores the details about the
+/// virtual hard disk in an S3 bucket. It also stores the setup script with details about
+/// how to mount the virtual hard disk. The virtual hard disk includes the application
+/// binaries and other files necessary to launch your applications. Multiple applications
+/// can be assigned to a single app block.</p>
+/// <p>This is only supported for Elastic fleets.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AppBlock {
+    /// <p>The name of the app block.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The ARN of the app block.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The description of the app block.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The display name of the app block.</p>
+    pub display_name: std::option::Option<std::string::String>,
+    /// <p>The source S3 location of the app block.</p>
+    pub source_s3_location: std::option::Option<crate::model::S3Location>,
+    /// <p>The setup script details of the app block.</p>
+    pub setup_script_details: std::option::Option<crate::model::ScriptDetails>,
+    /// <p>The created time of the app block.</p>
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl AppBlock {
+    /// <p>The name of the app block.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the app block.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The description of the app block.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The display name of the app block.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The source S3 location of the app block.</p>
+    pub fn source_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.source_s3_location.as_ref()
+    }
+    /// <p>The setup script details of the app block.</p>
+    pub fn setup_script_details(&self) -> std::option::Option<&crate::model::ScriptDetails> {
+        self.setup_script_details.as_ref()
+    }
+    /// <p>The created time of the app block.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_time.as_ref()
+    }
+}
+impl std::fmt::Debug for AppBlock {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AppBlock");
+        formatter.field("name", &self.name);
+        formatter.field("arn", &self.arn);
+        formatter.field("description", &self.description);
+        formatter.field("display_name", &self.display_name);
+        formatter.field("source_s3_location", &self.source_s3_location);
+        formatter.field("setup_script_details", &self.setup_script_details);
+        formatter.field("created_time", &self.created_time);
+        formatter.finish()
+    }
+}
+/// See [`AppBlock`](crate::model::AppBlock)
+pub mod app_block {
+    /// A builder for [`AppBlock`](crate::model::AppBlock)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) display_name: std::option::Option<std::string::String>,
+        pub(crate) source_s3_location: std::option::Option<crate::model::S3Location>,
+        pub(crate) setup_script_details: std::option::Option<crate::model::ScriptDetails>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The name of the app block.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the app block.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The ARN of the app block.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the app block.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The description of the app block.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the app block.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The display name of the app block.</p>
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.display_name = Some(input.into());
+            self
+        }
+        /// <p>The display name of the app block.</p>
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.display_name = input;
+            self
+        }
+        /// <p>The source S3 location of the app block.</p>
+        pub fn source_s3_location(mut self, input: crate::model::S3Location) -> Self {
+            self.source_s3_location = Some(input);
+            self
+        }
+        /// <p>The source S3 location of the app block.</p>
+        pub fn set_source_s3_location(
+            mut self,
+            input: std::option::Option<crate::model::S3Location>,
+        ) -> Self {
+            self.source_s3_location = input;
+            self
+        }
+        /// <p>The setup script details of the app block.</p>
+        pub fn setup_script_details(mut self, input: crate::model::ScriptDetails) -> Self {
+            self.setup_script_details = Some(input);
+            self
+        }
+        /// <p>The setup script details of the app block.</p>
+        pub fn set_setup_script_details(
+            mut self,
+            input: std::option::Option<crate::model::ScriptDetails>,
+        ) -> Self {
+            self.setup_script_details = input;
+            self
+        }
+        /// <p>The created time of the app block.</p>
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_time = Some(input);
+            self
+        }
+        /// <p>The created time of the app block.</p>
+        pub fn set_created_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AppBlock`](crate::model::AppBlock)
+        pub fn build(self) -> crate::model::AppBlock {
+            crate::model::AppBlock {
+                name: self.name,
+                arn: self.arn,
+                description: self.description,
+                display_name: self.display_name,
+                source_s3_location: self.source_s3_location,
+                setup_script_details: self.setup_script_details,
+                created_time: self.created_time,
+            }
+        }
+    }
+}
+impl AppBlock {
+    /// Creates a new builder-style object to manufacture [`AppBlock`](crate::model::AppBlock)
+    pub fn builder() -> crate::model::app_block::Builder {
+        crate::model::app_block::Builder::default()
+    }
+}
+
+/// <p>Describes the details of the script.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ScriptDetails {
+    /// <p>The S3 object location for the script.</p>
+    pub script_s3_location: std::option::Option<crate::model::S3Location>,
+    /// <p>The run path for the script.</p>
+    pub executable_path: std::option::Option<std::string::String>,
+    /// <p>The runtime parameters passed to the run path for the script.</p>
+    pub executable_parameters: std::option::Option<std::string::String>,
+    /// <p>The run timeout, in seconds, for the script.</p>
+    pub timeout_in_seconds: std::option::Option<i32>,
+}
+impl ScriptDetails {
+    /// <p>The S3 object location for the script.</p>
+    pub fn script_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.script_s3_location.as_ref()
+    }
+    /// <p>The run path for the script.</p>
+    pub fn executable_path(&self) -> std::option::Option<&str> {
+        self.executable_path.as_deref()
+    }
+    /// <p>The runtime parameters passed to the run path for the script.</p>
+    pub fn executable_parameters(&self) -> std::option::Option<&str> {
+        self.executable_parameters.as_deref()
+    }
+    /// <p>The run timeout, in seconds, for the script.</p>
+    pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.timeout_in_seconds
+    }
+}
+impl std::fmt::Debug for ScriptDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScriptDetails");
+        formatter.field("script_s3_location", &self.script_s3_location);
+        formatter.field("executable_path", &self.executable_path);
+        formatter.field("executable_parameters", &self.executable_parameters);
+        formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
+        formatter.finish()
+    }
+}
+/// See [`ScriptDetails`](crate::model::ScriptDetails)
+pub mod script_details {
+    /// A builder for [`ScriptDetails`](crate::model::ScriptDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) script_s3_location: std::option::Option<crate::model::S3Location>,
+        pub(crate) executable_path: std::option::Option<std::string::String>,
+        pub(crate) executable_parameters: std::option::Option<std::string::String>,
+        pub(crate) timeout_in_seconds: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The S3 object location for the script.</p>
+        pub fn script_s3_location(mut self, input: crate::model::S3Location) -> Self {
+            self.script_s3_location = Some(input);
+            self
+        }
+        /// <p>The S3 object location for the script.</p>
+        pub fn set_script_s3_location(
+            mut self,
+            input: std::option::Option<crate::model::S3Location>,
+        ) -> Self {
+            self.script_s3_location = input;
+            self
+        }
+        /// <p>The run path for the script.</p>
+        pub fn executable_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.executable_path = Some(input.into());
+            self
+        }
+        /// <p>The run path for the script.</p>
+        pub fn set_executable_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.executable_path = input;
+            self
+        }
+        /// <p>The runtime parameters passed to the run path for the script.</p>
+        pub fn executable_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.executable_parameters = Some(input.into());
+            self
+        }
+        /// <p>The runtime parameters passed to the run path for the script.</p>
+        pub fn set_executable_parameters(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.executable_parameters = input;
+            self
+        }
+        /// <p>The run timeout, in seconds, for the script.</p>
+        pub fn timeout_in_seconds(mut self, input: i32) -> Self {
+            self.timeout_in_seconds = Some(input);
+            self
+        }
+        /// <p>The run timeout, in seconds, for the script.</p>
+        pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout_in_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScriptDetails`](crate::model::ScriptDetails)
+        pub fn build(self) -> crate::model::ScriptDetails {
+            crate::model::ScriptDetails {
+                script_s3_location: self.script_s3_location,
+                executable_path: self.executable_path,
+                executable_parameters: self.executable_parameters,
+                timeout_in_seconds: self.timeout_in_seconds,
+            }
+        }
+    }
+}
+impl ScriptDetails {
+    /// Creates a new builder-style object to manufacture [`ScriptDetails`](crate::model::ScriptDetails)
+    pub fn builder() -> crate::model::script_details::Builder {
+        crate::model::script_details::Builder::default()
     }
 }
 

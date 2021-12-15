@@ -134,6 +134,9 @@ pub fn serialize_structure_crate_model_suite_run_configuration(
         }
         array_30.finish();
     }
+    if input.parallel_run {
+        object.key("parallelRun").boolean(input.parallel_run);
+    }
     Ok(())
 }
 

@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_computeoptimizer::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -83,6 +83,15 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
+    /// Constructs a fluent builder for the `DeleteRecommendationPreferences` operation.
+    ///
+    /// See [`DeleteRecommendationPreferences`](crate::client::fluent_builders::DeleteRecommendationPreferences) for more information about the
+    /// operation and its arguments.
+    pub fn delete_recommendation_preferences(
+        &self,
+    ) -> fluent_builders::DeleteRecommendationPreferences<C, M, R> {
+        fluent_builders::DeleteRecommendationPreferences::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DescribeRecommendationExportJobs` operation.
     ///
     /// See [`DescribeRecommendationExportJobs`](crate::client::fluent_builders::DescribeRecommendationExportJobs) for more information about the
@@ -164,6 +173,15 @@ where
     ) -> fluent_builders::GetEC2RecommendationProjectedMetrics<C, M, R> {
         fluent_builders::GetEC2RecommendationProjectedMetrics::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `GetEffectiveRecommendationPreferences` operation.
+    ///
+    /// See [`GetEffectiveRecommendationPreferences`](crate::client::fluent_builders::GetEffectiveRecommendationPreferences) for more information about the
+    /// operation and its arguments.
+    pub fn get_effective_recommendation_preferences(
+        &self,
+    ) -> fluent_builders::GetEffectiveRecommendationPreferences<C, M, R> {
+        fluent_builders::GetEffectiveRecommendationPreferences::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetEnrollmentStatus` operation.
     ///
     /// See [`GetEnrollmentStatus`](crate::client::fluent_builders::GetEnrollmentStatus) for more information about the
@@ -189,6 +207,15 @@ where
     ) -> fluent_builders::GetLambdaFunctionRecommendations<C, M, R> {
         fluent_builders::GetLambdaFunctionRecommendations::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `GetRecommendationPreferences` operation.
+    ///
+    /// See [`GetRecommendationPreferences`](crate::client::fluent_builders::GetRecommendationPreferences) for more information about the
+    /// operation and its arguments.
+    pub fn get_recommendation_preferences(
+        &self,
+    ) -> fluent_builders::GetRecommendationPreferences<C, M, R> {
+        fluent_builders::GetRecommendationPreferences::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetRecommendationSummaries` operation.
     ///
     /// See [`GetRecommendationSummaries`](crate::client::fluent_builders::GetRecommendationSummaries) for more information about the
@@ -197,6 +224,15 @@ where
         &self,
     ) -> fluent_builders::GetRecommendationSummaries<C, M, R> {
         fluent_builders::GetRecommendationSummaries::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `PutRecommendationPreferences` operation.
+    ///
+    /// See [`PutRecommendationPreferences`](crate::client::fluent_builders::PutRecommendationPreferences) for more information about the
+    /// operation and its arguments.
+    pub fn put_recommendation_preferences(
+        &self,
+    ) -> fluent_builders::PutRecommendationPreferences<C, M, R> {
+        fluent_builders::PutRecommendationPreferences::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `UpdateEnrollmentStatus` operation.
     ///
@@ -214,17 +250,144 @@ pub mod fluent_builders {
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
     //!
+    /// Fluent builder constructing a request to `DeleteRecommendationPreferences`.
+    ///
+    /// <p>Deletes a recommendation preference, such as enhanced infrastructure metrics.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+    /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+    /// Guide</i>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteRecommendationPreferences<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_recommendation_preferences_input::Builder,
+    }
+    impl<C, M, R> DeleteRecommendationPreferences<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteRecommendationPreferences`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteRecommendationPreferencesOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteRecommendationPreferencesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteRecommendationPreferencesInputOperationOutputAlias,
+                crate::output::DeleteRecommendationPreferencesOutput,
+                crate::error::DeleteRecommendationPreferencesError,
+                crate::input::DeleteRecommendationPreferencesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The target resource type of the recommendation preference to delete.</p>
+        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances
+        /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option
+        /// encompasses only instances that are part of an Auto Scaling group.</p>
+        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(inp);
+            self
+        }
+        /// <p>The target resource type of the recommendation preference to delete.</p>
+        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances
+        /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option
+        /// encompasses only instances that are part of an Auto Scaling group.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::ResourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+        /// <p>An object that describes the scope of the recommendation preference to delete.</p>
+        /// <p>You can delete recommendation preferences that are created at the organization level
+        /// (for management accounts of an organization only), account level, and resource level.
+        /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+        /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+        /// Guide</i>.</p>
+        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(inp);
+            self
+        }
+        /// <p>An object that describes the scope of the recommendation preference to delete.</p>
+        /// <p>You can delete recommendation preferences that are created at the organization level
+        /// (for management accounts of an organization only), account level, and resource level.
+        /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+        /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+        /// Guide</i>.</p>
+        pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
+            self.inner = self.inner.set_scope(input);
+            self
+        }
+        /// Appends an item to `recommendationPreferenceNames`.
+        ///
+        /// To override the contents of this collection use [`set_recommendation_preference_names`](Self::set_recommendation_preference_names).
+        ///
+        /// <p>The name of the recommendation preference to delete.</p>
+        /// <p>Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the
+        /// only feature that can be activated through preferences. Therefore, it is also the only
+        /// recommendation preference that can be deleted.</p>
+        pub fn recommendation_preference_names(
+            mut self,
+            inp: impl Into<crate::model::RecommendationPreferenceName>,
+        ) -> Self {
+            self.inner = self.inner.recommendation_preference_names(inp);
+            self
+        }
+        /// <p>The name of the recommendation preference to delete.</p>
+        /// <p>Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the
+        /// only feature that can be activated through preferences. Therefore, it is also the only
+        /// recommendation preference that can be deleted.</p>
+        pub fn set_recommendation_preference_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RecommendationPreferenceName>>,
+        ) -> Self {
+            self.inner = self.inner.set_recommendation_preference_names(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeRecommendationExportJobs`.
     ///
     /// <p>Describes recommendation export jobs created in the last seven days.</p>
-    ///
     /// <p>Use the <a>ExportAutoScalingGroupRecommendations</a> or <a>ExportEC2InstanceRecommendations</a> actions to request an export of your
     /// recommendations. Then use the <a>DescribeRecommendationExportJobs</a> action
     /// to view your export jobs.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeRecommendationExportJobs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -282,9 +445,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_job_ids`](Self::set_job_ids).
         ///
         /// <p>The identification numbers of the export jobs to return.</p>
-        ///
         /// <p>An export job ID is returned when you create an export using the <a>ExportAutoScalingGroupRecommendations</a> or <a>ExportEC2InstanceRecommendations</a> actions.</p>
-        ///
         /// <p>All export jobs created in the last seven days are returned if this parameter is
         /// omitted.</p>
         pub fn job_ids(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -292,9 +453,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identification numbers of the export jobs to return.</p>
-        ///
         /// <p>An export job ID is returned when you create an export using the <a>ExportAutoScalingGroupRecommendations</a> or <a>ExportEC2InstanceRecommendations</a> actions.</p>
-        ///
         /// <p>All export jobs created in the last seven days are returned if this parameter is
         /// omitted.</p>
         pub fn set_job_ids(
@@ -334,7 +493,6 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of export jobs to return with a single request.</p>
-        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
@@ -342,7 +500,6 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of export jobs to return with a single request.</p>
-        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
@@ -353,17 +510,15 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExportAutoScalingGroupRecommendations`.
     ///
     /// <p>Exports optimization recommendations for Auto Scaling groups.</p>
-    ///
     /// <p>Recommendations are exported in a comma-separated values (.csv) file, and its metadata
     /// in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
     /// Recommendations</a> in the <i>Compute Optimizer User
     /// Guide</i>.</p>
-    ///
     /// <p>You can have only one Auto Scaling group export job in progress per Amazon Web Services Region.</p>
     #[derive(std::fmt::Debug)]
     pub struct ExportAutoScalingGroupRecommendations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -424,16 +579,12 @@ pub mod fluent_builders {
         ///
         /// <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling group
         /// recommendations.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to export recommendations.</p>
-        ///
         /// <p>This parameter cannot be specified together with the include member accounts
         /// parameter. The parameters are mutually exclusive.</p>
-        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the include member accounts parameter, is omitted.</p>
-        ///
         /// <p>You can specify multiple account IDs per request.</p>
         pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(inp);
@@ -441,16 +592,12 @@ pub mod fluent_builders {
         }
         /// <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling group
         /// recommendations.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to export recommendations.</p>
-        ///
         /// <p>This parameter cannot be specified together with the include member accounts
         /// parameter. The parameters are mutually exclusive.</p>
-        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the include member accounts parameter, is omitted.</p>
-        ///
         /// <p>You can specify multiple account IDs per request.</p>
         pub fn set_account_ids(
             mut self,
@@ -504,13 +651,12 @@ pub mod fluent_builders {
         }
         /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket
         /// name and key prefix for the export job.</p>
-        ///
         /// <p>You must create the destination Amazon S3 bucket for your recommendations
         /// export before you create the export job. Compute Optimizer does not create the S3 bucket
         /// for you. After you create the S3 bucket, ensure that it has the required permissions
-        /// policy  to allow Compute Optimizer to write the export file to it. If you plan to
-        /// specify an object prefix when you create the export job, you must include the object
-        /// prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
+        /// policy to allow Compute Optimizer to write the export file to it. If you plan to specify
+        /// an object prefix when you create the export job, you must include the object prefix in
+        /// the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
         pub fn s3_destination_config(mut self, inp: crate::model::S3DestinationConfig) -> Self {
             self.inner = self.inner.s3_destination_config(inp);
@@ -518,13 +664,12 @@ pub mod fluent_builders {
         }
         /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket
         /// name and key prefix for the export job.</p>
-        ///
         /// <p>You must create the destination Amazon S3 bucket for your recommendations
         /// export before you create the export job. Compute Optimizer does not create the S3 bucket
         /// for you. After you create the S3 bucket, ensure that it has the required permissions
-        /// policy  to allow Compute Optimizer to write the export file to it. If you plan to
-        /// specify an object prefix when you create the export job, you must include the object
-        /// prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
+        /// policy to allow Compute Optimizer to write the export file to it. If you plan to specify
+        /// an object prefix when you create the export job, you must include the object prefix in
+        /// the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
         pub fn set_s3_destination_config(
             mut self,
@@ -534,14 +679,12 @@ pub mod fluent_builders {
             self
         }
         /// <p>The format of the export file.</p>
-        ///
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
         pub fn file_format(mut self, inp: crate::model::FileFormat) -> Self {
             self.inner = self.inner.file_format(inp);
             self
         }
         /// <p>The format of the export file.</p>
-        ///
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
         pub fn set_file_format(
             mut self,
@@ -552,18 +695,14 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
         /// the organization if your account is the management account of an organization.</p>
-        ///
         /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
         /// Compute Optimizer must be enabled in the organization account. For more information,
         /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
-        ///
         /// <p>Recommendations for member accounts of the organization are not included in the export
         /// file if this parameter is omitted.</p>
-        ///
         /// <p>This parameter cannot be specified together with the account IDs parameter. The
         /// parameters are mutually exclusive.</p>
-        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
         pub fn include_member_accounts(mut self, inp: bool) -> Self {
@@ -572,18 +711,14 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
         /// the organization if your account is the management account of an organization.</p>
-        ///
         /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
         /// Compute Optimizer must be enabled in the organization account. For more information,
         /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
-        ///
         /// <p>Recommendations for member accounts of the organization are not included in the export
         /// file if this parameter is omitted.</p>
-        ///
         /// <p>This parameter cannot be specified together with the account IDs parameter. The
         /// parameters are mutually exclusive.</p>
-        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
         pub fn set_include_member_accounts(mut self, input: std::option::Option<bool>) -> Self {
@@ -612,18 +747,15 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExportEBSVolumeRecommendations`.
     ///
     /// <p>Exports optimization recommendations for Amazon EBS volumes.</p>
-    ///
     /// <p>Recommendations are exported in a comma-separated values (.csv) file, and its metadata
-    /// in a JavaScript Object Notation (JSON)   (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see
-    /// <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+    /// in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
     /// Recommendations</a> in the <i>Compute Optimizer User
     /// Guide</i>.</p>
-    ///
     /// <p>You can have only one Amazon EBS volume export job in progress per Amazon Web Services Region.</p>
     #[derive(std::fmt::Debug)]
     pub struct ExportEBSVolumeRecommendations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -682,16 +814,12 @@ pub mod fluent_builders {
         ///
         /// <p>The IDs of the Amazon Web Services accounts for which to export Amazon EBS
         /// volume recommendations.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to export recommendations.</p>
-        ///
         /// <p>This parameter cannot be specified together with the include member accounts
         /// parameter. The parameters are mutually exclusive.</p>
-        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the include member accounts parameter, is omitted.</p>
-        ///
         /// <p>You can specify multiple account IDs per request.</p>
         pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(inp);
@@ -699,16 +827,12 @@ pub mod fluent_builders {
         }
         /// <p>The IDs of the Amazon Web Services accounts for which to export Amazon EBS
         /// volume recommendations.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to export recommendations.</p>
-        ///
         /// <p>This parameter cannot be specified together with the include member accounts
         /// parameter. The parameters are mutually exclusive.</p>
-        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the include member accounts parameter, is omitted.</p>
-        ///
         /// <p>You can specify multiple account IDs per request.</p>
         pub fn set_account_ids(
             mut self,
@@ -760,7 +884,6 @@ pub mod fluent_builders {
         }
         /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
         /// key prefix for a recommendations export job.</p>
-        ///
         /// <p>You must create the destination Amazon S3 bucket for your recommendations
         /// export before you create the export job. Compute Optimizer does not create the S3 bucket
         /// for you. After you create the S3 bucket, ensure that it has the required permission
@@ -774,7 +897,6 @@ pub mod fluent_builders {
         }
         /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
         /// key prefix for a recommendations export job.</p>
-        ///
         /// <p>You must create the destination Amazon S3 bucket for your recommendations
         /// export before you create the export job. Compute Optimizer does not create the S3 bucket
         /// for you. After you create the S3 bucket, ensure that it has the required permission
@@ -790,14 +912,12 @@ pub mod fluent_builders {
             self
         }
         /// <p>The format of the export file.</p>
-        ///
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
         pub fn file_format(mut self, inp: crate::model::FileFormat) -> Self {
             self.inner = self.inner.file_format(inp);
             self
         }
         /// <p>The format of the export file.</p>
-        ///
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
         pub fn set_file_format(
             mut self,
@@ -808,18 +928,14 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
         /// the organization if your account is the management account of an organization.</p>
-        ///
         /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
         /// Compute Optimizer must be enabled in the organization account. For more information,
         /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
-        ///
         /// <p>Recommendations for member accounts of the organization are not included in the export
         /// file if this parameter is omitted.</p>
-        ///
         /// <p>This parameter cannot be specified together with the account IDs parameter. The
         /// parameters are mutually exclusive.</p>
-        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
         pub fn include_member_accounts(mut self, inp: bool) -> Self {
@@ -828,18 +944,14 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
         /// the organization if your account is the management account of an organization.</p>
-        ///
         /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
         /// Compute Optimizer must be enabled in the organization account. For more information,
         /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
-        ///
         /// <p>Recommendations for member accounts of the organization are not included in the export
         /// file if this parameter is omitted.</p>
-        ///
         /// <p>This parameter cannot be specified together with the account IDs parameter. The
         /// parameters are mutually exclusive.</p>
-        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
         pub fn set_include_member_accounts(mut self, input: std::option::Option<bool>) -> Self {
@@ -850,18 +962,15 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExportEC2InstanceRecommendations`.
     ///
     /// <p>Exports optimization recommendations for Amazon EC2 instances.</p>
-    ///
     /// <p>Recommendations are exported in a comma-separated values (.csv) file, and its metadata
-    /// in a JavaScript Object Notation (JSON)   (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see
-    /// <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+    /// in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
     /// Recommendations</a> in the <i>Compute Optimizer User
     /// Guide</i>.</p>
-    ///
     /// <p>You can have only one Amazon EC2 instance export job in progress per Amazon Web Services Region.</p>
     #[derive(std::fmt::Debug)]
     pub struct ExportEC2InstanceRecommendations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -920,16 +1029,12 @@ pub mod fluent_builders {
         ///
         /// <p>The IDs of the Amazon Web Services accounts for which to export instance
         /// recommendations.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to export recommendations.</p>
-        ///
         /// <p>This parameter cannot be specified together with the include member accounts
         /// parameter. The parameters are mutually exclusive.</p>
-        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the include member accounts parameter, is omitted.</p>
-        ///
         /// <p>You can specify multiple account IDs per request.</p>
         pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(inp);
@@ -937,16 +1042,12 @@ pub mod fluent_builders {
         }
         /// <p>The IDs of the Amazon Web Services accounts for which to export instance
         /// recommendations.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to export recommendations.</p>
-        ///
         /// <p>This parameter cannot be specified together with the include member accounts
         /// parameter. The parameters are mutually exclusive.</p>
-        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the include member accounts parameter, is omitted.</p>
-        ///
         /// <p>You can specify multiple account IDs per request.</p>
         pub fn set_account_ids(
             mut self,
@@ -1000,13 +1101,13 @@ pub mod fluent_builders {
         }
         /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket
         /// name and key prefix for the export job.</p>
-        ///
         /// <p>You must create the destination Amazon S3 bucket for your recommendations
         /// export before you create the export job. Compute Optimizer does not create the S3 bucket
         /// for you. After you create the S3 bucket, ensure that it has the required permissions
-        /// policy policy to allow Compute Optimizer to write the export file to it. If you plan to
+        /// policy to allow Compute Optimizer to write the export file to it.
+        /// If you plan to
         /// specify an object prefix when you create the export job, you must include the object
-        /// prefix in the  that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
+        /// prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
         pub fn s3_destination_config(mut self, inp: crate::model::S3DestinationConfig) -> Self {
             self.inner = self.inner.s3_destination_config(inp);
@@ -1014,13 +1115,13 @@ pub mod fluent_builders {
         }
         /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket
         /// name and key prefix for the export job.</p>
-        ///
         /// <p>You must create the destination Amazon S3 bucket for your recommendations
         /// export before you create the export job. Compute Optimizer does not create the S3 bucket
         /// for you. After you create the S3 bucket, ensure that it has the required permissions
-        /// policy policy to allow Compute Optimizer to write the export file to it. If you plan to
+        /// policy to allow Compute Optimizer to write the export file to it.
+        /// If you plan to
         /// specify an object prefix when you create the export job, you must include the object
-        /// prefix in the  that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
+        /// prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
         pub fn set_s3_destination_config(
             mut self,
@@ -1030,14 +1131,12 @@ pub mod fluent_builders {
             self
         }
         /// <p>The format of the export file.</p>
-        ///
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
         pub fn file_format(mut self, inp: crate::model::FileFormat) -> Self {
             self.inner = self.inner.file_format(inp);
             self
         }
         /// <p>The format of the export file.</p>
-        ///
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
         pub fn set_file_format(
             mut self,
@@ -1048,15 +1147,12 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
         /// the organization if your account is the management account of an organization.</p>
-        ///
         /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
         /// Compute Optimizer must be enabled in the organization account. For more information,
         /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
-        ///
         /// <p>Recommendations for member accounts of the organization are not included in the export
         /// file if this parameter is omitted.</p>
-        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
         pub fn include_member_accounts(mut self, inp: bool) -> Self {
@@ -1065,15 +1161,12 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
         /// the organization if your account is the management account of an organization.</p>
-        ///
         /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
         /// Compute Optimizer must be enabled in the organization account. For more information,
         /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
-        ///
         /// <p>Recommendations for member accounts of the organization are not included in the export
         /// file if this parameter is omitted.</p>
-        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
         pub fn set_include_member_accounts(mut self, input: std::option::Option<bool>) -> Self {
@@ -1102,18 +1195,15 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExportLambdaFunctionRecommendations`.
     ///
     /// <p>Exports optimization recommendations for Lambda functions.</p>
-    ///
     /// <p>Recommendations are exported in a comma-separated values (.csv) file, and its metadata
-    /// in a JavaScript Object Notation (JSON)   (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see
-    /// <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+    /// in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
     /// Recommendations</a> in the <i>Compute Optimizer User
     /// Guide</i>.</p>
-    ///
     /// <p>You can have only one Lambda function export job in progress per Amazon Web Services Region.</p>
     #[derive(std::fmt::Debug)]
     pub struct ExportLambdaFunctionRecommendations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1174,16 +1264,12 @@ pub mod fluent_builders {
         ///
         /// <p>The IDs of the Amazon Web Services accounts for which to export Lambda
         /// function recommendations.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to export recommendations.</p>
-        ///
         /// <p>This parameter cannot be specified together with the include member accounts
         /// parameter. The parameters are mutually exclusive.</p>
-        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the include member accounts parameter, is omitted.</p>
-        ///
         /// <p>You can specify multiple account IDs per request.</p>
         pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(inp);
@@ -1191,16 +1277,12 @@ pub mod fluent_builders {
         }
         /// <p>The IDs of the Amazon Web Services accounts for which to export Lambda
         /// function recommendations.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to export recommendations.</p>
-        ///
         /// <p>This parameter cannot be specified together with the include member accounts
         /// parameter. The parameters are mutually exclusive.</p>
-        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the include member accounts parameter, is omitted.</p>
-        ///
         /// <p>You can specify multiple account IDs per request.</p>
         pub fn set_account_ids(
             mut self,
@@ -1257,7 +1339,6 @@ pub mod fluent_builders {
         }
         /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
         /// key prefix for a recommendations export job.</p>
-        ///
         /// <p>You must create the destination Amazon S3 bucket for your recommendations
         /// export before you create the export job. Compute Optimizer does not create the S3 bucket
         /// for you. After you create the S3 bucket, ensure that it has the required permission
@@ -1271,7 +1352,6 @@ pub mod fluent_builders {
         }
         /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
         /// key prefix for a recommendations export job.</p>
-        ///
         /// <p>You must create the destination Amazon S3 bucket for your recommendations
         /// export before you create the export job. Compute Optimizer does not create the S3 bucket
         /// for you. After you create the S3 bucket, ensure that it has the required permission
@@ -1287,14 +1367,12 @@ pub mod fluent_builders {
             self
         }
         /// <p>The format of the export file.</p>
-        ///
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
         pub fn file_format(mut self, inp: crate::model::FileFormat) -> Self {
             self.inner = self.inner.file_format(inp);
             self
         }
         /// <p>The format of the export file.</p>
-        ///
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
         pub fn set_file_format(
             mut self,
@@ -1305,18 +1383,14 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
         /// the organization if your account is the management account of an organization.</p>
-        ///
         /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
         /// Compute Optimizer must be enabled in the organization account. For more information,
         /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
-        ///
         /// <p>Recommendations for member accounts of the organization are not included in the export
         /// file if this parameter is omitted.</p>
-        ///
         /// <p>This parameter cannot be specified together with the account IDs parameter. The
         /// parameters are mutually exclusive.</p>
-        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
         pub fn include_member_accounts(mut self, inp: bool) -> Self {
@@ -1325,18 +1399,14 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
         /// the organization if your account is the management account of an organization.</p>
-        ///
         /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
         /// Compute Optimizer must be enabled in the organization account. For more information,
         /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
-        ///
         /// <p>Recommendations for member accounts of the organization are not included in the export
         /// file if this parameter is omitted.</p>
-        ///
         /// <p>This parameter cannot be specified together with the account IDs parameter. The
         /// parameters are mutually exclusive.</p>
-        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
         pub fn set_include_member_accounts(mut self, input: std::option::Option<bool>) -> Self {
@@ -1347,7 +1417,6 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAutoScalingGroupRecommendations`.
     ///
     /// <p>Returns Auto Scaling group recommendations.</p>
-    ///
     /// <p>Compute Optimizer generates recommendations for Amazon EC2 Auto Scaling groups that
     /// meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
     /// resources and requirements</a> in the <i>Compute Optimizer User
@@ -1355,7 +1424,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetAutoScalingGroupRecommendations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1416,11 +1485,9 @@ pub mod fluent_builders {
         ///
         /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group
         /// recommendations.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to return Auto Scaling group
         /// recommendations.</p>
-        ///
         /// <p>Only one account ID can be specified per request.</p>
         pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(inp);
@@ -1428,11 +1495,9 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group
         /// recommendations.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to return Auto Scaling group
         /// recommendations.</p>
-        ///
         /// <p>Only one account ID can be specified per request.</p>
         pub fn set_account_ids(
             mut self,
@@ -1474,7 +1539,6 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of Auto Scaling group recommendations to return with a single
         /// request.</p>
-        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
@@ -1483,7 +1547,6 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of Auto Scaling group recommendations to return with a single
         /// request.</p>
-        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
@@ -1529,7 +1592,6 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEBSVolumeRecommendations`.
     ///
     /// <p>Returns Amazon Elastic Block Store (Amazon EBS) volume recommendations.</p>
-    ///
     /// <p>Compute Optimizer generates recommendations for Amazon EBS volumes that
     /// meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
     /// resources and requirements</a> in the <i>Compute Optimizer User
@@ -1537,7 +1599,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetEBSVolumeRecommendations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1620,7 +1682,6 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of volume recommendations to return with a single request.</p>
-        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
@@ -1628,7 +1689,6 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of volume recommendations to return with a single request.</p>
-        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
@@ -1660,10 +1720,8 @@ pub mod fluent_builders {
         ///
         /// <p>The ID of the Amazon Web Services account for which to return volume
         /// recommendations.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to return volume recommendations.</p>
-        ///
         /// <p>Only one account ID can be specified per request.</p>
         pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(inp);
@@ -1671,10 +1729,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account for which to return volume
         /// recommendations.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to return volume recommendations.</p>
-        ///
         /// <p>Only one account ID can be specified per request.</p>
         pub fn set_account_ids(
             mut self,
@@ -1687,7 +1743,6 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEC2InstanceRecommendations`.
     ///
     /// <p>Returns Amazon EC2 instance recommendations.</p>
-    ///
     /// <p>Compute Optimizer generates recommendations for Amazon Elastic Compute Cloud (Amazon EC2) instances that meet a specific set of requirements. For more
     /// information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and
     /// requirements</a> in the <i>Compute Optimizer User
@@ -1695,7 +1750,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetEC2InstanceRecommendations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1778,7 +1833,6 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of instance recommendations to return with a single request.</p>
-        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
@@ -1786,7 +1840,6 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of instance recommendations to return with a single request.</p>
-        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
@@ -1818,10 +1871,8 @@ pub mod fluent_builders {
         ///
         /// <p>The ID of the Amazon Web Services account for which to return instance
         /// recommendations.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to return instance recommendations.</p>
-        ///
         /// <p>Only one account ID can be specified per request.</p>
         pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(inp);
@@ -1829,10 +1880,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account for which to return instance
         /// recommendations.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to return instance recommendations.</p>
-        ///
         /// <p>Only one account ID can be specified per request.</p>
         pub fn set_account_ids(
             mut self,
@@ -1864,7 +1913,6 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the projected utilization metrics of Amazon EC2 instance
     /// recommendations.</p>
-    ///
     /// <note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected
     /// utilization metrics returned when you run this action. Additionally, the
@@ -1874,7 +1922,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetEC2RecommendationProjectedMetrics<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2009,18 +2057,98 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetEffectiveRecommendationPreferences`.
+    ///
+    /// <p>Returns the recommendation preferences that are in effect for a given resource, such
+    /// as enhanced infrastructure metrics. Considers all applicable preferences that you might
+    /// have set at the resource, account, and organization level.</p>
+    /// <p>When you create a recommendation preference, you can set its status to
+    /// <code>Active</code> or <code>Inactive</code>. Use this action to view the
+    /// recommendation preferences that are in effect, or <code>Active</code>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetEffectiveRecommendationPreferences<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_effective_recommendation_preferences_input::Builder,
+    }
+    impl<C, M, R> GetEffectiveRecommendationPreferences<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetEffectiveRecommendationPreferences`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetEffectiveRecommendationPreferencesOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetEffectiveRecommendationPreferencesError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetEffectiveRecommendationPreferencesInputOperationOutputAlias,
+                crate::output::GetEffectiveRecommendationPreferencesOutput,
+                crate::error::GetEffectiveRecommendationPreferencesError,
+                crate::input::GetEffectiveRecommendationPreferencesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the resource for which to confirm effective
+        /// recommendation preferences. Only EC2 instance and Auto Scaling group ARNs are
+        /// currently supported.</p>
+        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the resource for which to confirm effective
+        /// recommendation preferences. Only EC2 instance and Auto Scaling group ARNs are
+        /// currently supported.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetEnrollmentStatus`.
     ///
     /// <p>Returns the enrollment (opt in) status of an account to the Compute Optimizer
     /// service.</p>
-    ///
     /// <p>If the account is the management account of an organization, this action also confirms
     /// the enrollment status of member accounts of the organization. Use the <a>GetEnrollmentStatusesForOrganization</a> action to get detailed information
     /// about the enrollment status of member accounts of an organization.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetEnrollmentStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2078,12 +2206,11 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the Compute Optimizer enrollment (opt-in) status of organization member
     /// accounts, if your account is an organization management account.</p>
-    ///
     /// <p>To get the enrollment status of standalone accounts, use the <a>GetEnrollmentStatus</a> action.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetEnrollmentStatusesForOrganization<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2169,7 +2296,6 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of account enrollment statuses to return with a single request. You
         /// can specify up to 100 statuses to return with each request.</p>
-        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
@@ -2178,7 +2304,6 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of account enrollment statuses to return with a single request. You
         /// can specify up to 100 statuses to return with each request.</p>
-        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
@@ -2189,7 +2314,6 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLambdaFunctionRecommendations`.
     ///
     /// <p>Returns Lambda function recommendations.</p>
-    ///
     /// <p>Compute Optimizer generates recommendations for functions that meet a specific set
     /// of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and
     /// requirements</a> in the <i>Compute Optimizer User
@@ -2197,7 +2321,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetLambdaFunctionRecommendations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2256,7 +2380,6 @@ pub mod fluent_builders {
         ///
         /// <p>The Amazon Resource Name (ARN) of the functions for which to return
         /// recommendations.</p>
-        ///
         /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN
         /// without a function version suffix, Compute Optimizer will return recommendations for the
         /// latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN
@@ -2270,7 +2393,6 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the functions for which to return
         /// recommendations.</p>
-        ///
         /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN
         /// without a function version suffix, Compute Optimizer will return recommendations for the
         /// latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN
@@ -2291,10 +2413,8 @@ pub mod fluent_builders {
         ///
         /// <p>The ID of the Amazon Web Services account for which to return function
         /// recommendations.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to return function recommendations.</p>
-        ///
         /// <p>Only one account ID can be specified per request.</p>
         pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(inp);
@@ -2302,10 +2422,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account for which to return function
         /// recommendations.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to return function recommendations.</p>
-        ///
         /// <p>Only one account ID can be specified per request.</p>
         pub fn set_account_ids(
             mut self,
@@ -2349,7 +2467,6 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of function recommendations to return with a single request.</p>
-        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
@@ -2357,7 +2474,140 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of function recommendations to return with a single request.</p>
+        /// <p>To retrieve the remaining results, make another request with the returned
+        /// <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetRecommendationPreferences`.
+    ///
+    /// <p>Returns existing recommendation preferences, such as enhanced infrastructure
+    /// metrics.</p>
+    /// <p>Use the <code>scope</code> parameter to specify which preferences to return. You can
+    /// specify to return preferences for an organization, a specific account ID, or a specific
+    /// EC2 instance or Auto Scaling group Amazon Resource Name (ARN).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+    /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+    /// Guide</i>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetRecommendationPreferences<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_recommendation_preferences_input::Builder,
+    }
+    impl<C, M, R> GetRecommendationPreferences<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetRecommendationPreferences`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
         ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetRecommendationPreferencesOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetRecommendationPreferencesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetRecommendationPreferencesInputOperationOutputAlias,
+                crate::output::GetRecommendationPreferencesOutput,
+                crate::error::GetRecommendationPreferencesError,
+                crate::input::GetRecommendationPreferencesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The target resource type of the recommendation preference for which to return
+        /// preferences.</p>
+        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances
+        /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option
+        /// encompasses only instances that are part of an Auto Scaling group.</p>
+        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(inp);
+            self
+        }
+        /// <p>The target resource type of the recommendation preference for which to return
+        /// preferences.</p>
+        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances
+        /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option
+        /// encompasses only instances that are part of an Auto Scaling group.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::ResourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+        /// <p>An object that describes the scope of the recommendation preference to return.</p>
+        /// <p>You can return recommendation preferences that are created at the organization level
+        /// (for management accounts of an organization only), account level, and resource level.
+        /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+        /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+        /// Guide</i>.</p>
+        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(inp);
+            self
+        }
+        /// <p>An object that describes the scope of the recommendation preference to return.</p>
+        /// <p>You can return recommendation preferences that are created at the organization level
+        /// (for management accounts of an organization only), account level, and resource level.
+        /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+        /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+        /// Guide</i>.</p>
+        pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
+            self.inner = self.inner.set_scope(input);
+            self
+        }
+        /// <p>The token to advance to the next page of recommendation preferences.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token to advance to the next page of recommendation preferences.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of recommendation preferences to return with a single
+        /// request.</p>
+        /// <p>To retrieve the remaining results, make another request with the returned
+        /// <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of recommendation preferences to return with a single
+        /// request.</p>
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
@@ -2368,9 +2618,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRecommendationSummaries`.
     ///
     /// <p>Returns the optimization findings for an account.</p>
-    ///
     /// <p>It returns the number of:</p>
-    ///
     /// <ul>
     /// <li>
     /// <p>Amazon EC2 instances in an account that are
@@ -2393,7 +2641,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetRecommendationSummaries<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2452,10 +2700,8 @@ pub mod fluent_builders {
         ///
         /// <p>The ID of the Amazon Web Services account for which to return recommendation
         /// summaries.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to return recommendation summaries.</p>
-        ///
         /// <p>Only one account ID can be specified per request.</p>
         pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(inp);
@@ -2463,10 +2709,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account for which to return recommendation
         /// summaries.</p>
-        ///
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to return recommendation summaries.</p>
-        ///
         /// <p>Only one account ID can be specified per request.</p>
         pub fn set_account_ids(
             mut self,
@@ -2486,7 +2730,6 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of recommendation summaries to return with a single request.</p>
-        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
@@ -2494,7 +2737,6 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of recommendation summaries to return with a single request.</p>
-        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
@@ -2502,23 +2744,163 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `PutRecommendationPreferences`.
+    ///
+    /// <p>Creates a new recommendation preference or updates an existing recommendation
+    /// preference, such as enhanced infrastructure metrics.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+    /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+    /// Guide</i>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct PutRecommendationPreferences<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::put_recommendation_preferences_input::Builder,
+    }
+    impl<C, M, R> PutRecommendationPreferences<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `PutRecommendationPreferences`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutRecommendationPreferencesOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutRecommendationPreferencesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::PutRecommendationPreferencesInputOperationOutputAlias,
+                crate::output::PutRecommendationPreferencesOutput,
+                crate::error::PutRecommendationPreferencesError,
+                crate::input::PutRecommendationPreferencesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The target resource type of the recommendation preference to create.</p>
+        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances
+        /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option
+        /// encompasses only instances that are part of an Auto Scaling group.</p>
+        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(inp);
+            self
+        }
+        /// <p>The target resource type of the recommendation preference to create.</p>
+        /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances
+        /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option
+        /// encompasses only instances that are part of an Auto Scaling group.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::ResourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+        /// <p>An object that describes the scope of the recommendation preference to create.</p>
+        /// <p>You can create recommendation preferences at the organization level (for management
+        /// accounts of an organization only), account level, and resource level. For more
+        /// information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+        /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+        /// Guide</i>.</p>
+        /// <note>
+        /// <p>You cannot create recommendation preferences for Auto Scaling groups at the
+        /// organization and account levels. You can create recommendation preferences for
+        /// Auto Scaling groups only at the resource level by specifying a scope name
+        /// of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon
+        /// Resource Name (ARN). This will configure the preference for all instances that are
+        /// part of the specified the Auto Scaling group.</p>
+        /// </note>
+        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(inp);
+            self
+        }
+        /// <p>An object that describes the scope of the recommendation preference to create.</p>
+        /// <p>You can create recommendation preferences at the organization level (for management
+        /// accounts of an organization only), account level, and resource level. For more
+        /// information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+        /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+        /// Guide</i>.</p>
+        /// <note>
+        /// <p>You cannot create recommendation preferences for Auto Scaling groups at the
+        /// organization and account levels. You can create recommendation preferences for
+        /// Auto Scaling groups only at the resource level by specifying a scope name
+        /// of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon
+        /// Resource Name (ARN). This will configure the preference for all instances that are
+        /// part of the specified the Auto Scaling group.</p>
+        /// </note>
+        pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
+            self.inner = self.inner.set_scope(input);
+            self
+        }
+        /// <p>The status of the enhanced infrastructure metrics recommendation preference to create
+        /// or update.</p>
+        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest
+        /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet
+        /// applied.</p>
+        pub fn enhanced_infrastructure_metrics(
+            mut self,
+            inp: crate::model::EnhancedInfrastructureMetrics,
+        ) -> Self {
+            self.inner = self.inner.enhanced_infrastructure_metrics(inp);
+            self
+        }
+        /// <p>The status of the enhanced infrastructure metrics recommendation preference to create
+        /// or update.</p>
+        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest
+        /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet
+        /// applied.</p>
+        pub fn set_enhanced_infrastructure_metrics(
+            mut self,
+            input: std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
+        ) -> Self {
+            self.inner = self.inner.set_enhanced_infrastructure_metrics(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateEnrollmentStatus`.
     ///
     /// <p>Updates the enrollment (opt in and opt out) status of an account to the Compute Optimizer service.</p>
-    ///
     /// <p>If the account is a management account of an organization, this action can also be
     /// used to enroll member accounts of the organization.</p>
-    ///
     /// <p>You must have the appropriate permissions to opt in to Compute Optimizer, to view its
     /// recommendations, and to opt out. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html">Controlling access with Amazon Web Services Identity and Access Management</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    ///
     /// <p>When you opt in, Compute Optimizer automatically creates a service-linked role in your
     /// account to access its data. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/using-service-linked-roles.html">Using
     /// Service-Linked Roles for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateEnrollmentStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2572,9 +2954,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The new enrollment status of the account.</p>
-        ///
         /// <p>The following status options are available:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -2590,7 +2970,6 @@ pub mod fluent_builders {
         /// from Compute Optimizer after you opt out.</p>
         /// </li>
         /// </ul>
-        ///
         /// <note>
         /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update
         /// the enrollment status of an account. They are returned in the response of a request
@@ -2601,9 +2980,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new enrollment status of the account.</p>
-        ///
         /// <p>The following status options are available:</p>
-        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -2619,7 +2996,6 @@ pub mod fluent_builders {
         /// from Compute Optimizer after you opt out.</p>
         /// </li>
         /// </ul>
-        ///
         /// <note>
         /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update
         /// the enrollment status of an account. They are returned in the response of a request
@@ -2643,17 +3019,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -2662,7 +3042,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -2678,11 +3058,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

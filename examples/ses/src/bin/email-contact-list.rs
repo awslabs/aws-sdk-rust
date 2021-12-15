@@ -4,8 +4,8 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
-use ses::model::{Body, Content, Destination, EmailContent, Message};
-use ses::{Client, Error, Region};
+use aws_sdk_sesv2::model::{Body, Content, Destination, EmailContent, Message};
+use aws_sdk_sesv2::{Client, Error, Region};
 
 use structopt::StructOpt;
 
@@ -63,7 +63,7 @@ async fn main() -> Result<(), Error> {
     let shared_config = aws_config::from_env().region(region_provider).load().await;
 
     if verbose {
-        println!("SES client version: {}", ses::PKG_VERSION);
+        println!("SES client version: {}", aws_sdk_sesv2::PKG_VERSION);
         println!("Region:             {:?}", shared_config.region().unwrap());
         println!("From address:       {}", &from_address);
         println!("Contact list:       {}", &contact_list);

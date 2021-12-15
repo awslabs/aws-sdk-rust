@@ -153,6 +153,8 @@ pub struct TranslateTextOutput {
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate for the
     /// translated text response.</p>
     pub applied_terminologies: std::option::Option<std::vec::Vec<crate::model::AppliedTerminology>>,
+    /// <p>Settings that configure the translation output.</p>
+    pub applied_settings: std::option::Option<crate::model::TranslationSettings>,
 }
 impl TranslateTextOutput {
     /// <p>The translated text.</p>
@@ -174,6 +176,10 @@ impl TranslateTextOutput {
     ) -> std::option::Option<&[crate::model::AppliedTerminology]> {
         self.applied_terminologies.as_deref()
     }
+    /// <p>Settings that configure the translation output.</p>
+    pub fn applied_settings(&self) -> std::option::Option<&crate::model::TranslationSettings> {
+        self.applied_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for TranslateTextOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -182,6 +188,7 @@ impl std::fmt::Debug for TranslateTextOutput {
         formatter.field("source_language_code", &self.source_language_code);
         formatter.field("target_language_code", &self.target_language_code);
         formatter.field("applied_terminologies", &self.applied_terminologies);
+        formatter.field("applied_settings", &self.applied_settings);
         formatter.finish()
     }
 }
@@ -196,6 +203,7 @@ pub mod translate_text_output {
         pub(crate) target_language_code: std::option::Option<std::string::String>,
         pub(crate) applied_terminologies:
             std::option::Option<std::vec::Vec<crate::model::AppliedTerminology>>,
+        pub(crate) applied_settings: std::option::Option<crate::model::TranslationSettings>,
     }
     impl Builder {
         /// <p>The translated text.</p>
@@ -261,6 +269,19 @@ pub mod translate_text_output {
             self.applied_terminologies = input;
             self
         }
+        /// <p>Settings that configure the translation output.</p>
+        pub fn applied_settings(mut self, input: crate::model::TranslationSettings) -> Self {
+            self.applied_settings = Some(input);
+            self
+        }
+        /// <p>Settings that configure the translation output.</p>
+        pub fn set_applied_settings(
+            mut self,
+            input: std::option::Option<crate::model::TranslationSettings>,
+        ) -> Self {
+            self.applied_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TranslateTextOutput`](crate::output::TranslateTextOutput)
         pub fn build(self) -> crate::output::TranslateTextOutput {
             crate::output::TranslateTextOutput {
@@ -268,6 +289,7 @@ pub mod translate_text_output {
                 source_language_code: self.source_language_code,
                 target_language_code: self.target_language_code,
                 applied_terminologies: self.applied_terminologies,
+                applied_settings: self.applied_settings,
             }
         }
     }
@@ -973,8 +995,19 @@ impl ImportTerminologyOutput {
 pub struct GetTerminologyOutput {
     /// <p>The properties of the custom terminology being retrieved.</p>
     pub terminology_properties: std::option::Option<crate::model::TerminologyProperties>,
-    /// <p>The data location of the custom terminology being retrieved. The custom terminology file
-    /// is returned in a presigned url that has a 30 minute expiration.</p>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was
+    /// successfully imported into Amazon Translate. The location is returned as a presigned URL that
+    /// has a 30 minute expiration.</p>
+    ///
+    /// <important>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
+    /// attacks. </p>
+    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
+    /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
+    /// file is opened in a spreadsheet program, the program might interpret the record as a formula
+    /// and run the code within it.</p>
+    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+    /// </important>
     pub terminology_data_location: std::option::Option<crate::model::TerminologyDataLocation>,
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced
     /// by your input file. This file was created when Amazon Translate attempted to create a
@@ -989,8 +1022,19 @@ impl GetTerminologyOutput {
     ) -> std::option::Option<&crate::model::TerminologyProperties> {
         self.terminology_properties.as_ref()
     }
-    /// <p>The data location of the custom terminology being retrieved. The custom terminology file
-    /// is returned in a presigned url that has a 30 minute expiration.</p>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was
+    /// successfully imported into Amazon Translate. The location is returned as a presigned URL that
+    /// has a 30 minute expiration.</p>
+    ///
+    /// <important>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
+    /// attacks. </p>
+    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
+    /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
+    /// file is opened in a spreadsheet program, the program might interpret the record as a formula
+    /// and run the code within it.</p>
+    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+    /// </important>
     pub fn terminology_data_location(
         &self,
     ) -> std::option::Option<&crate::model::TerminologyDataLocation> {
@@ -1044,8 +1088,19 @@ pub mod get_terminology_output {
             self.terminology_properties = input;
             self
         }
-        /// <p>The data location of the custom terminology being retrieved. The custom terminology file
-        /// is returned in a presigned url that has a 30 minute expiration.</p>
+        /// <p>The Amazon S3 location of the most recent custom terminology input file that was
+        /// successfully imported into Amazon Translate. The location is returned as a presigned URL that
+        /// has a 30 minute expiration.</p>
+        ///
+        /// <important>
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
+        /// attacks. </p>
+        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
+        /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
+        /// file is opened in a spreadsheet program, the program might interpret the record as a formula
+        /// and run the code within it.</p>
+        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+        /// </important>
         pub fn terminology_data_location(
             mut self,
             input: crate::model::TerminologyDataLocation,
@@ -1053,8 +1108,19 @@ pub mod get_terminology_output {
             self.terminology_data_location = Some(input);
             self
         }
-        /// <p>The data location of the custom terminology being retrieved. The custom terminology file
-        /// is returned in a presigned url that has a 30 minute expiration.</p>
+        /// <p>The Amazon S3 location of the most recent custom terminology input file that was
+        /// successfully imported into Amazon Translate. The location is returned as a presigned URL that
+        /// has a 30 minute expiration.</p>
+        ///
+        /// <important>
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
+        /// attacks. </p>
+        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
+        /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
+        /// file is opened in a spreadsheet program, the program might interpret the record as a formula
+        /// and run the code within it.</p>
+        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+        /// </important>
         pub fn set_terminology_data_location(
             mut self,
             input: std::option::Option<crate::model::TerminologyDataLocation>,
@@ -1112,13 +1178,13 @@ pub struct GetParallelDataOutput {
     /// minute expiration.</p>
     ///
     /// <important>
-    /// <p>Amazon Translate doesn't scan parallel data input files for the risk of CSV injection
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
     /// attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
     /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
     /// file is opened in a spreadsheet program, the program might interpret the record as a formula
     /// and run the code within it.</p>
-    /// <p>Before you download a parallel data input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
     pub data_location: std::option::Option<crate::model::ParallelDataDataLocation>,
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced
@@ -1145,13 +1211,13 @@ impl GetParallelDataOutput {
     /// minute expiration.</p>
     ///
     /// <important>
-    /// <p>Amazon Translate doesn't scan parallel data input files for the risk of CSV injection
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
     /// attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
     /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
     /// file is opened in a spreadsheet program, the program might interpret the record as a formula
     /// and run the code within it.</p>
-    /// <p>Before you download a parallel data input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
     pub fn data_location(&self) -> std::option::Option<&crate::model::ParallelDataDataLocation> {
         self.data_location.as_ref()
@@ -1224,13 +1290,13 @@ pub mod get_parallel_data_output {
         /// minute expiration.</p>
         ///
         /// <important>
-        /// <p>Amazon Translate doesn't scan parallel data input files for the risk of CSV injection
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
         /// attacks. </p>
         /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
         /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
         /// file is opened in a spreadsheet program, the program might interpret the record as a formula
         /// and run the code within it.</p>
-        /// <p>Before you download a parallel data input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
         /// </important>
         pub fn data_location(mut self, input: crate::model::ParallelDataDataLocation) -> Self {
             self.data_location = Some(input);
@@ -1241,13 +1307,13 @@ pub mod get_parallel_data_output {
         /// minute expiration.</p>
         ///
         /// <important>
-        /// <p>Amazon Translate doesn't scan parallel data input files for the risk of CSV injection
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
         /// attacks. </p>
         /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
         /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
         /// file is opened in a spreadsheet program, the program might interpret the record as a formula
         /// and run the code within it.</p>
-        /// <p>Before you download a parallel data input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
         /// </important>
         pub fn set_data_location(
             mut self,

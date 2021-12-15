@@ -6936,6 +6936,23 @@ pub fn parse_update_recovery_point_lifecycle_error(
                     },
                 ),
         },
+        "InvalidRequestException" => crate::error::UpdateRecoveryPointLifecycleError {
+            meta: generic,
+            kind: crate::error::UpdateRecoveryPointLifecycleErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRecoveryPointLifecycleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "MissingParameterValueException" => crate::error::UpdateRecoveryPointLifecycleError {
             meta: generic,
             kind:

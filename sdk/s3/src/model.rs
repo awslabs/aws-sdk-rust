@@ -16,6 +16,8 @@ pub enum StorageClass {
     #[allow(missing_docs)] // documentation missing in model
     Glacier,
     #[allow(missing_docs)] // documentation missing in model
+    GlacierIr,
+    #[allow(missing_docs)] // documentation missing in model
     IntelligentTiering,
     #[allow(missing_docs)] // documentation missing in model
     OnezoneIa,
@@ -35,6 +37,7 @@ impl std::convert::From<&str> for StorageClass {
         match s {
             "DEEP_ARCHIVE" => StorageClass::DeepArchive,
             "GLACIER" => StorageClass::Glacier,
+            "GLACIER_IR" => StorageClass::GlacierIr,
             "INTELLIGENT_TIERING" => StorageClass::IntelligentTiering,
             "ONEZONE_IA" => StorageClass::OnezoneIa,
             "OUTPOSTS" => StorageClass::Outposts,
@@ -58,6 +61,7 @@ impl StorageClass {
         match self {
             StorageClass::DeepArchive => "DEEP_ARCHIVE",
             StorageClass::Glacier => "GLACIER",
+            StorageClass::GlacierIr => "GLACIER_IR",
             StorageClass::IntelligentTiering => "INTELLIGENT_TIERING",
             StorageClass::OnezoneIa => "ONEZONE_IA",
             StorageClass::Outposts => "OUTPOSTS",
@@ -72,6 +76,7 @@ impl StorageClass {
         &[
             "DEEP_ARCHIVE",
             "GLACIER",
+            "GLACIER_IR",
             "INTELLIGENT_TIERING",
             "ONEZONE_IA",
             "OUTPOSTS",
@@ -8210,6 +8215,11 @@ pub struct OwnershipControlsRule {
     /// ACL.</p>
     /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
     /// the <code>bucket-owner-full-control</code> canned ACL.</p>
+    /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions.
+    /// The bucket owner automatically owns and has full control over every object in the bucket. The bucket only
+    /// accepts PUT requests that don't specify an ACL or bucket owner full control
+    /// ACLs, such as the <code>bucket-owner-full-control</code> canned
+    /// ACL or an equivalent form of this ACL expressed in the XML format.</p>
     pub object_ownership: std::option::Option<crate::model::ObjectOwnership>,
 }
 impl OwnershipControlsRule {
@@ -8219,6 +8229,11 @@ impl OwnershipControlsRule {
     /// ACL.</p>
     /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
     /// the <code>bucket-owner-full-control</code> canned ACL.</p>
+    /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions.
+    /// The bucket owner automatically owns and has full control over every object in the bucket. The bucket only
+    /// accepts PUT requests that don't specify an ACL or bucket owner full control
+    /// ACLs, such as the <code>bucket-owner-full-control</code> canned
+    /// ACL or an equivalent form of this ACL expressed in the XML format.</p>
     pub fn object_ownership(&self) -> std::option::Option<&crate::model::ObjectOwnership> {
         self.object_ownership.as_ref()
     }
@@ -8245,6 +8260,11 @@ pub mod ownership_controls_rule {
         /// ACL.</p>
         /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
         /// the <code>bucket-owner-full-control</code> canned ACL.</p>
+        /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions.
+        /// The bucket owner automatically owns and has full control over every object in the bucket. The bucket only
+        /// accepts PUT requests that don't specify an ACL or bucket owner full control
+        /// ACLs, such as the <code>bucket-owner-full-control</code> canned
+        /// ACL or an equivalent form of this ACL expressed in the XML format.</p>
         pub fn object_ownership(mut self, input: crate::model::ObjectOwnership) -> Self {
             self.object_ownership = Some(input);
             self
@@ -8255,6 +8275,11 @@ pub mod ownership_controls_rule {
         /// ACL.</p>
         /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
         /// the <code>bucket-owner-full-control</code> canned ACL.</p>
+        /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions.
+        /// The bucket owner automatically owns and has full control over every object in the bucket. The bucket only
+        /// accepts PUT requests that don't specify an ACL or bucket owner full control
+        /// ACLs, such as the <code>bucket-owner-full-control</code> canned
+        /// ACL or an equivalent form of this ACL expressed in the XML format.</p>
         pub fn set_object_ownership(
             mut self,
             input: std::option::Option<crate::model::ObjectOwnership>,
@@ -8283,6 +8308,11 @@ impl OwnershipControlsRule {
 /// ACL.</p>
 /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
 /// the <code>bucket-owner-full-control</code> canned ACL.</p>
+/// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions.
+/// The bucket owner automatically owns and has full control over every object in the bucket. The bucket only
+/// accepts PUT requests that don't specify an ACL or bucket owner full control
+/// ACLs, such as the <code>bucket-owner-full-control</code> canned
+/// ACL or an equivalent form of this ACL expressed in the XML format.</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8295,6 +8325,8 @@ impl OwnershipControlsRule {
 )]
 pub enum ObjectOwnership {
     #[allow(missing_docs)] // documentation missing in model
+    BucketOwnerEnforced,
+    #[allow(missing_docs)] // documentation missing in model
     BucketOwnerPreferred,
     #[allow(missing_docs)] // documentation missing in model
     ObjectWriter,
@@ -8304,6 +8336,7 @@ pub enum ObjectOwnership {
 impl std::convert::From<&str> for ObjectOwnership {
     fn from(s: &str) -> Self {
         match s {
+            "BucketOwnerEnforced" => ObjectOwnership::BucketOwnerEnforced,
             "BucketOwnerPreferred" => ObjectOwnership::BucketOwnerPreferred,
             "ObjectWriter" => ObjectOwnership::ObjectWriter,
             other => ObjectOwnership::Unknown(other.to_owned()),
@@ -8321,6 +8354,7 @@ impl ObjectOwnership {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ObjectOwnership::BucketOwnerEnforced => "BucketOwnerEnforced",
             ObjectOwnership::BucketOwnerPreferred => "BucketOwnerPreferred",
             ObjectOwnership::ObjectWriter => "ObjectWriter",
             ObjectOwnership::Unknown(s) => s.as_ref(),
@@ -8328,7 +8362,11 @@ impl ObjectOwnership {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["BucketOwnerPreferred", "ObjectWriter"]
+        &[
+            "BucketOwnerEnforced",
+            "BucketOwnerPreferred",
+            "ObjectWriter",
+        ]
     }
 }
 impl AsRef<str> for ObjectOwnership {
@@ -8352,6 +8390,8 @@ pub struct NotificationConfiguration {
     /// them.</p>
     pub lambda_function_configurations:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionConfiguration>>,
+    /// <p>Enables delivery of events to Amazon EventBridge.</p>
+    pub event_bridge_configuration: std::option::Option<crate::model::EventBridgeConfiguration>,
 }
 impl NotificationConfiguration {
     /// <p>The topic to which notifications are sent and the events for which notifications are
@@ -8371,6 +8411,12 @@ impl NotificationConfiguration {
     ) -> std::option::Option<&[crate::model::LambdaFunctionConfiguration]> {
         self.lambda_function_configurations.as_deref()
     }
+    /// <p>Enables delivery of events to Amazon EventBridge.</p>
+    pub fn event_bridge_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EventBridgeConfiguration> {
+        self.event_bridge_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for NotificationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8380,6 +8426,10 @@ impl std::fmt::Debug for NotificationConfiguration {
         formatter.field(
             "lambda_function_configurations",
             &self.lambda_function_configurations,
+        );
+        formatter.field(
+            "event_bridge_configuration",
+            &self.event_bridge_configuration,
         );
         formatter.finish()
     }
@@ -8396,6 +8446,8 @@ pub mod notification_configuration {
             std::option::Option<std::vec::Vec<crate::model::QueueConfiguration>>,
         pub(crate) lambda_function_configurations:
             std::option::Option<std::vec::Vec<crate::model::LambdaFunctionConfiguration>>,
+        pub(crate) event_bridge_configuration:
+            std::option::Option<crate::model::EventBridgeConfiguration>,
     }
     impl Builder {
         /// Appends an item to `topic_configurations`.
@@ -8470,12 +8522,29 @@ pub mod notification_configuration {
             self.lambda_function_configurations = input;
             self
         }
+        /// <p>Enables delivery of events to Amazon EventBridge.</p>
+        pub fn event_bridge_configuration(
+            mut self,
+            input: crate::model::EventBridgeConfiguration,
+        ) -> Self {
+            self.event_bridge_configuration = Some(input);
+            self
+        }
+        /// <p>Enables delivery of events to Amazon EventBridge.</p>
+        pub fn set_event_bridge_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EventBridgeConfiguration>,
+        ) -> Self {
+            self.event_bridge_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::model::NotificationConfiguration)
         pub fn build(self) -> crate::model::NotificationConfiguration {
             crate::model::NotificationConfiguration {
                 topic_configurations: self.topic_configurations,
                 queue_configurations: self.queue_configurations,
                 lambda_function_configurations: self.lambda_function_configurations,
+                event_bridge_configuration: self.event_bridge_configuration,
             }
         }
     }
@@ -8484,6 +8553,36 @@ impl NotificationConfiguration {
     /// Creates a new builder-style object to manufacture [`NotificationConfiguration`](crate::model::NotificationConfiguration)
     pub fn builder() -> crate::model::notification_configuration::Builder {
         crate::model::notification_configuration::Builder::default()
+    }
+}
+
+/// <p>A container for specifying the configuration for Amazon EventBridge.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EventBridgeConfiguration {}
+impl std::fmt::Debug for EventBridgeConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EventBridgeConfiguration");
+        formatter.finish()
+    }
+}
+/// See [`EventBridgeConfiguration`](crate::model::EventBridgeConfiguration)
+pub mod event_bridge_configuration {
+    /// A builder for [`EventBridgeConfiguration`](crate::model::EventBridgeConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`EventBridgeConfiguration`](crate::model::EventBridgeConfiguration)
+        pub fn build(self) -> crate::model::EventBridgeConfiguration {
+            crate::model::EventBridgeConfiguration {}
+        }
+    }
+}
+impl EventBridgeConfiguration {
+    /// Creates a new builder-style object to manufacture [`EventBridgeConfiguration`](crate::model::EventBridgeConfiguration)
+    pub fn builder() -> crate::model::event_bridge_configuration::Builder {
+        crate::model::event_bridge_configuration::Builder::default()
     }
 }
 
@@ -8922,6 +9021,12 @@ impl Event {
     /// Returns all the `&str` representations of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
+            "s3:IntelligentTiering",
+            "s3:LifecycleExpiration:*",
+            "s3:LifecycleExpiration:Delete",
+            "s3:LifecycleExpiration:DeleteMarkerCreated",
+            "s3:LifecycleTransition",
+            "s3:ObjectAcl:Put",
             "s3:ObjectCreated:*",
             "s3:ObjectCreated:CompleteMultipartUpload",
             "s3:ObjectCreated:Copy",
@@ -8932,7 +9037,11 @@ impl Event {
             "s3:ObjectRemoved:DeleteMarkerCreated",
             "s3:ObjectRestore:*",
             "s3:ObjectRestore:Completed",
+            "s3:ObjectRestore:Delete",
             "s3:ObjectRestore:Post",
+            "s3:ObjectTagging:*",
+            "s3:ObjectTagging:Delete",
+            "s3:ObjectTagging:Put",
             "s3:ReducedRedundancyLostObject",
             "s3:Replication:*",
             "s3:Replication:OperationFailedReplication",
@@ -9596,6 +9705,9 @@ pub struct LoggingEnabled {
     /// so that the delivered log files can be distinguished by key.</p>
     pub target_bucket: std::option::Option<std::string::String>,
     /// <p>Container for granting information.</p>
+    /// <p>Buckets that use the bucket owner enforced setting for Object
+    /// Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the
+    /// <i>Amazon S3 User Guide</i>.</p>
     pub target_grants: std::option::Option<std::vec::Vec<crate::model::TargetGrant>>,
     /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a
     /// single bucket, you can use a prefix to distinguish which log files came from which
@@ -9612,6 +9724,9 @@ impl LoggingEnabled {
         self.target_bucket.as_deref()
     }
     /// <p>Container for granting information.</p>
+    /// <p>Buckets that use the bucket owner enforced setting for Object
+    /// Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the
+    /// <i>Amazon S3 User Guide</i>.</p>
     pub fn target_grants(&self) -> std::option::Option<&[crate::model::TargetGrant]> {
         self.target_grants.as_deref()
     }
@@ -9668,6 +9783,9 @@ pub mod logging_enabled {
         /// To override the contents of this collection use [`set_target_grants`](Self::set_target_grants).
         ///
         /// <p>Container for granting information.</p>
+        /// <p>Buckets that use the bucket owner enforced setting for Object
+        /// Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the
+        /// <i>Amazon S3 User Guide</i>.</p>
         pub fn target_grants(mut self, input: impl Into<crate::model::TargetGrant>) -> Self {
             let mut v = self.target_grants.unwrap_or_default();
             v.push(input.into());
@@ -9675,6 +9793,9 @@ pub mod logging_enabled {
             self
         }
         /// <p>Container for granting information.</p>
+        /// <p>Buckets that use the bucket owner enforced setting for Object
+        /// Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the
+        /// <i>Amazon S3 User Guide</i>.</p>
         pub fn set_target_grants(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetGrant>>,
@@ -9717,6 +9838,9 @@ impl LoggingEnabled {
 }
 
 /// <p>Container for granting information.</p>
+/// <p>Buckets that use the bucket owner enforced setting for Object
+/// Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions server access log delivery</a> in the
+/// <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetGrant {
@@ -10339,6 +10463,11 @@ pub struct NoncurrentVersionExpiration {
     /// associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
     /// Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub noncurrent_days: i32,
+    /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent
+    /// noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent
+    /// versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a>
+    /// in the <i>Amazon S3 User Guide</i>.</p>
+    pub newer_noncurrent_versions: i32,
 }
 impl NoncurrentVersionExpiration {
     /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the
@@ -10347,11 +10476,19 @@ impl NoncurrentVersionExpiration {
     pub fn noncurrent_days(&self) -> i32 {
         self.noncurrent_days
     }
+    /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent
+    /// noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent
+    /// versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a>
+    /// in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn newer_noncurrent_versions(&self) -> i32 {
+        self.newer_noncurrent_versions
+    }
 }
 impl std::fmt::Debug for NoncurrentVersionExpiration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NoncurrentVersionExpiration");
         formatter.field("noncurrent_days", &self.noncurrent_days);
+        formatter.field("newer_noncurrent_versions", &self.newer_noncurrent_versions);
         formatter.finish()
     }
 }
@@ -10362,6 +10499,7 @@ pub mod noncurrent_version_expiration {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) noncurrent_days: std::option::Option<i32>,
+        pub(crate) newer_noncurrent_versions: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the
@@ -10378,10 +10516,27 @@ pub mod noncurrent_version_expiration {
             self.noncurrent_days = input;
             self
         }
+        /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent
+        /// noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent
+        /// versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a>
+        /// in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn newer_noncurrent_versions(mut self, input: i32) -> Self {
+            self.newer_noncurrent_versions = Some(input);
+            self
+        }
+        /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent
+        /// noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent
+        /// versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a>
+        /// in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_newer_noncurrent_versions(mut self, input: std::option::Option<i32>) -> Self {
+            self.newer_noncurrent_versions = input;
+            self
+        }
         /// Consumes the builder and constructs a [`NoncurrentVersionExpiration`](crate::model::NoncurrentVersionExpiration)
         pub fn build(self) -> crate::model::NoncurrentVersionExpiration {
             crate::model::NoncurrentVersionExpiration {
                 noncurrent_days: self.noncurrent_days.unwrap_or_default(),
+                newer_noncurrent_versions: self.newer_noncurrent_versions.unwrap_or_default(),
             }
         }
     }
@@ -10395,10 +10550,10 @@ impl NoncurrentVersionExpiration {
 
 /// <p>Container for the transition rule that describes when noncurrent objects transition to
 /// the <code>STANDARD_IA</code>, <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>,
-/// <code>GLACIER</code>, or <code>DEEP_ARCHIVE</code> storage class. If your bucket is
+/// <code>GLACIER_IR</code>, <code>GLACIER</code>, or <code>DEEP_ARCHIVE</code> storage class. If your bucket is
 /// versioning-enabled (or versioning is suspended), you can set this action to request that
 /// Amazon S3 transition noncurrent object versions to the <code>STANDARD_IA</code>,
-/// <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER</code>, or
+/// <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER_IR</code>, <code>GLACIER</code>, or
 /// <code>DEEP_ARCHIVE</code> storage class at a specific period in the object's
 /// lifetime.</p>
 #[non_exhaustive]
@@ -10411,6 +10566,11 @@ pub struct NoncurrentVersionTransition {
     pub noncurrent_days: i32,
     /// <p>The class of storage used to store the object.</p>
     pub storage_class: std::option::Option<crate::model::TransitionStorageClass>,
+    /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent
+    /// noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent
+    /// versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a>
+    /// in the <i>Amazon S3 User Guide</i>.</p>
+    pub newer_noncurrent_versions: i32,
 }
 impl NoncurrentVersionTransition {
     /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the
@@ -10424,12 +10584,20 @@ impl NoncurrentVersionTransition {
     pub fn storage_class(&self) -> std::option::Option<&crate::model::TransitionStorageClass> {
         self.storage_class.as_ref()
     }
+    /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent
+    /// noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent
+    /// versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a>
+    /// in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn newer_noncurrent_versions(&self) -> i32 {
+        self.newer_noncurrent_versions
+    }
 }
 impl std::fmt::Debug for NoncurrentVersionTransition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NoncurrentVersionTransition");
         formatter.field("noncurrent_days", &self.noncurrent_days);
         formatter.field("storage_class", &self.storage_class);
+        formatter.field("newer_noncurrent_versions", &self.newer_noncurrent_versions);
         formatter.finish()
     }
 }
@@ -10441,6 +10609,7 @@ pub mod noncurrent_version_transition {
     pub struct Builder {
         pub(crate) noncurrent_days: std::option::Option<i32>,
         pub(crate) storage_class: std::option::Option<crate::model::TransitionStorageClass>,
+        pub(crate) newer_noncurrent_versions: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the
@@ -10472,11 +10641,28 @@ pub mod noncurrent_version_transition {
             self.storage_class = input;
             self
         }
+        /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent
+        /// noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent
+        /// versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a>
+        /// in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn newer_noncurrent_versions(mut self, input: i32) -> Self {
+            self.newer_noncurrent_versions = Some(input);
+            self
+        }
+        /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent
+        /// noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent
+        /// versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a>
+        /// in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_newer_noncurrent_versions(mut self, input: std::option::Option<i32>) -> Self {
+            self.newer_noncurrent_versions = input;
+            self
+        }
         /// Consumes the builder and constructs a [`NoncurrentVersionTransition`](crate::model::NoncurrentVersionTransition)
         pub fn build(self) -> crate::model::NoncurrentVersionTransition {
             crate::model::NoncurrentVersionTransition {
                 noncurrent_days: self.noncurrent_days.unwrap_or_default(),
                 storage_class: self.storage_class,
+                newer_noncurrent_versions: self.newer_noncurrent_versions.unwrap_or_default(),
             }
         }
     }
@@ -10505,6 +10691,8 @@ pub enum TransitionStorageClass {
     #[allow(missing_docs)] // documentation missing in model
     Glacier,
     #[allow(missing_docs)] // documentation missing in model
+    GlacierIr,
+    #[allow(missing_docs)] // documentation missing in model
     IntelligentTiering,
     #[allow(missing_docs)] // documentation missing in model
     OnezoneIa,
@@ -10518,6 +10706,7 @@ impl std::convert::From<&str> for TransitionStorageClass {
         match s {
             "DEEP_ARCHIVE" => TransitionStorageClass::DeepArchive,
             "GLACIER" => TransitionStorageClass::Glacier,
+            "GLACIER_IR" => TransitionStorageClass::GlacierIr,
             "INTELLIGENT_TIERING" => TransitionStorageClass::IntelligentTiering,
             "ONEZONE_IA" => TransitionStorageClass::OnezoneIa,
             "STANDARD_IA" => TransitionStorageClass::StandardIa,
@@ -10538,6 +10727,7 @@ impl TransitionStorageClass {
         match self {
             TransitionStorageClass::DeepArchive => "DEEP_ARCHIVE",
             TransitionStorageClass::Glacier => "GLACIER",
+            TransitionStorageClass::GlacierIr => "GLACIER_IR",
             TransitionStorageClass::IntelligentTiering => "INTELLIGENT_TIERING",
             TransitionStorageClass::OnezoneIa => "ONEZONE_IA",
             TransitionStorageClass::StandardIa => "STANDARD_IA",
@@ -10549,6 +10739,7 @@ impl TransitionStorageClass {
         &[
             "DEEP_ARCHIVE",
             "GLACIER",
+            "GLACIER_IR",
             "INTELLIGENT_TIERING",
             "ONEZONE_IA",
             "STANDARD_IA",
@@ -10731,6 +10922,10 @@ pub enum LifecycleRuleFilter {
     /// predicates. The Lifecycle Rule will apply to any object matching all of the predicates
     /// configured inside the And operator.</p>
     And(crate::model::LifecycleRuleAndOperator),
+    /// <p>Minimum object size to which the rule applies.</p>
+    ObjectSizeGreaterThan(i64),
+    /// <p>Maximum object size to which the rule applies.</p>
+    ObjectSizeLessThan(i64),
     /// <p>Prefix identifying one or more objects to which the rule applies.</p>
     /// <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
@@ -10763,6 +10958,32 @@ impl LifecycleRuleFilter {
     /// Returns true if this is a [`And`](crate::model::LifecycleRuleFilter::And).
     pub fn is_and(&self) -> bool {
         self.as_and().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ObjectSizeGreaterThan`](crate::model::LifecycleRuleFilter::ObjectSizeGreaterThan), extracting the inner [`i64`](i64).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_object_size_greater_than(&self) -> std::result::Result<&i64, &Self> {
+        if let LifecycleRuleFilter::ObjectSizeGreaterThan(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`ObjectSizeGreaterThan`](crate::model::LifecycleRuleFilter::ObjectSizeGreaterThan).
+    pub fn is_object_size_greater_than(&self) -> bool {
+        self.as_object_size_greater_than().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ObjectSizeLessThan`](crate::model::LifecycleRuleFilter::ObjectSizeLessThan), extracting the inner [`i64`](i64).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_object_size_less_than(&self) -> std::result::Result<&i64, &Self> {
+        if let LifecycleRuleFilter::ObjectSizeLessThan(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`ObjectSizeLessThan`](crate::model::LifecycleRuleFilter::ObjectSizeLessThan).
+    pub fn is_object_size_less_than(&self) -> bool {
+        self.as_object_size_less_than().is_ok()
     }
     /// Tries to convert the enum instance into [`Prefix`](crate::model::LifecycleRuleFilter::Prefix), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -10807,6 +11028,10 @@ pub struct LifecycleRuleAndOperator {
     /// <p>All of these tags must exist in the object's tag set in order for the rule to
     /// apply.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Minimum object size to which the rule applies.</p>
+    pub object_size_greater_than: i64,
+    /// <p>Maximum object size to which the rule applies.</p>
+    pub object_size_less_than: i64,
 }
 impl LifecycleRuleAndOperator {
     /// <p>Prefix identifying one or more objects to which the rule applies.</p>
@@ -10818,12 +11043,22 @@ impl LifecycleRuleAndOperator {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Minimum object size to which the rule applies.</p>
+    pub fn object_size_greater_than(&self) -> i64 {
+        self.object_size_greater_than
+    }
+    /// <p>Maximum object size to which the rule applies.</p>
+    pub fn object_size_less_than(&self) -> i64 {
+        self.object_size_less_than
+    }
 }
 impl std::fmt::Debug for LifecycleRuleAndOperator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LifecycleRuleAndOperator");
         formatter.field("prefix", &self.prefix);
         formatter.field("tags", &self.tags);
+        formatter.field("object_size_greater_than", &self.object_size_greater_than);
+        formatter.field("object_size_less_than", &self.object_size_less_than);
         formatter.finish()
     }
 }
@@ -10835,6 +11070,8 @@ pub mod lifecycle_rule_and_operator {
     pub struct Builder {
         pub(crate) prefix: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) object_size_greater_than: std::option::Option<i64>,
+        pub(crate) object_size_less_than: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>Prefix identifying one or more objects to which the rule applies.</p>
@@ -10868,11 +11105,33 @@ pub mod lifecycle_rule_and_operator {
             self.tags = input;
             self
         }
+        /// <p>Minimum object size to which the rule applies.</p>
+        pub fn object_size_greater_than(mut self, input: i64) -> Self {
+            self.object_size_greater_than = Some(input);
+            self
+        }
+        /// <p>Minimum object size to which the rule applies.</p>
+        pub fn set_object_size_greater_than(mut self, input: std::option::Option<i64>) -> Self {
+            self.object_size_greater_than = input;
+            self
+        }
+        /// <p>Maximum object size to which the rule applies.</p>
+        pub fn object_size_less_than(mut self, input: i64) -> Self {
+            self.object_size_less_than = Some(input);
+            self
+        }
+        /// <p>Maximum object size to which the rule applies.</p>
+        pub fn set_object_size_less_than(mut self, input: std::option::Option<i64>) -> Self {
+            self.object_size_less_than = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LifecycleRuleAndOperator`](crate::model::LifecycleRuleAndOperator)
         pub fn build(self) -> crate::model::LifecycleRuleAndOperator {
             crate::model::LifecycleRuleAndOperator {
                 prefix: self.prefix,
                 tags: self.tags,
+                object_size_greater_than: self.object_size_greater_than.unwrap_or_default(),
+                object_size_less_than: self.object_size_less_than.unwrap_or_default(),
             }
         }
     }
@@ -15042,6 +15301,8 @@ pub enum ObjectStorageClass {
     #[allow(missing_docs)] // documentation missing in model
     Glacier,
     #[allow(missing_docs)] // documentation missing in model
+    GlacierIr,
+    #[allow(missing_docs)] // documentation missing in model
     IntelligentTiering,
     #[allow(missing_docs)] // documentation missing in model
     OnezoneIa,
@@ -15061,6 +15322,7 @@ impl std::convert::From<&str> for ObjectStorageClass {
         match s {
             "DEEP_ARCHIVE" => ObjectStorageClass::DeepArchive,
             "GLACIER" => ObjectStorageClass::Glacier,
+            "GLACIER_IR" => ObjectStorageClass::GlacierIr,
             "INTELLIGENT_TIERING" => ObjectStorageClass::IntelligentTiering,
             "ONEZONE_IA" => ObjectStorageClass::OnezoneIa,
             "OUTPOSTS" => ObjectStorageClass::Outposts,
@@ -15084,6 +15346,7 @@ impl ObjectStorageClass {
         match self {
             ObjectStorageClass::DeepArchive => "DEEP_ARCHIVE",
             ObjectStorageClass::Glacier => "GLACIER",
+            ObjectStorageClass::GlacierIr => "GLACIER_IR",
             ObjectStorageClass::IntelligentTiering => "INTELLIGENT_TIERING",
             ObjectStorageClass::OnezoneIa => "ONEZONE_IA",
             ObjectStorageClass::Outposts => "OUTPOSTS",
@@ -15098,6 +15361,7 @@ impl ObjectStorageClass {
         &[
             "DEEP_ARCHIVE",
             "GLACIER",
+            "GLACIER_IR",
             "INTELLIGENT_TIERING",
             "ONEZONE_IA",
             "OUTPOSTS",
@@ -23834,10 +24098,14 @@ impl AsRef<str> for MetadataDirective {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompletedMultipartUpload {
     /// <p>Array of CompletedPart data types.</p>
+    /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP
+    /// 400 response.</p>
     pub parts: std::option::Option<std::vec::Vec<crate::model::CompletedPart>>,
 }
 impl CompletedMultipartUpload {
     /// <p>Array of CompletedPart data types.</p>
+    /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP
+    /// 400 response.</p>
     pub fn parts(&self) -> std::option::Option<&[crate::model::CompletedPart]> {
         self.parts.as_deref()
     }
@@ -23863,6 +24131,8 @@ pub mod completed_multipart_upload {
         /// To override the contents of this collection use [`set_parts`](Self::set_parts).
         ///
         /// <p>Array of CompletedPart data types.</p>
+        /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP
+        /// 400 response.</p>
         pub fn parts(mut self, input: impl Into<crate::model::CompletedPart>) -> Self {
             let mut v = self.parts.unwrap_or_default();
             v.push(input.into());
@@ -23870,6 +24140,8 @@ pub mod completed_multipart_upload {
             self
         }
         /// <p>Array of CompletedPart data types.</p>
+        /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP
+        /// 400 response.</p>
         pub fn set_parts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CompletedPart>>,

@@ -14045,6 +14045,135 @@ impl std::error::Error for DescribeJobTemplateError {
     }
 }
 
+/// Error type for the `DescribeManagedJobTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeManagedJobTemplateError {
+    /// Kind of error that occurred.
+    pub kind: DescribeManagedJobTemplateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeManagedJobTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeManagedJobTemplateErrorKind {
+    /// <p>Internal error from the service that indicates an unexpected error or that the service
+    /// is unavailable.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The rate exceeds the limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeManagedJobTemplateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeManagedJobTemplateErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DescribeManagedJobTemplateErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeManagedJobTemplateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeManagedJobTemplateErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeManagedJobTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeManagedJobTemplateError {
+    fn code(&self) -> Option<&str> {
+        DescribeManagedJobTemplateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeManagedJobTemplateError {
+    /// Creates a new `DescribeManagedJobTemplateError`.
+    pub fn new(kind: DescribeManagedJobTemplateErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeManagedJobTemplateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeManagedJobTemplateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeManagedJobTemplateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeManagedJobTemplateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeManagedJobTemplateErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeManagedJobTemplateErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeManagedJobTemplateErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeManagedJobTemplateErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeManagedJobTemplateErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeManagedJobTemplateErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeManagedJobTemplateErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeManagedJobTemplateErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeManagedJobTemplateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeManagedJobTemplateErrorKind::InternalServerException(_inner) => Some(_inner),
+            DescribeManagedJobTemplateErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeManagedJobTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeManagedJobTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeManagedJobTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeMitigationAction` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -21759,6 +21888,135 @@ impl std::error::Error for ListJobTemplatesError {
             ListJobTemplatesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListJobTemplatesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListJobTemplatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListManagedJobTemplates` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListManagedJobTemplatesError {
+    /// Kind of error that occurred.
+    pub kind: ListManagedJobTemplatesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListManagedJobTemplates` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListManagedJobTemplatesErrorKind {
+    /// <p>Internal error from the service that indicates an unexpected error or that the service
+    /// is unavailable.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The rate exceeds the limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListManagedJobTemplatesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListManagedJobTemplatesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListManagedJobTemplatesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListManagedJobTemplatesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListManagedJobTemplatesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListManagedJobTemplatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListManagedJobTemplatesError {
+    fn code(&self) -> Option<&str> {
+        ListManagedJobTemplatesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListManagedJobTemplatesError {
+    /// Creates a new `ListManagedJobTemplatesError`.
+    pub fn new(kind: ListManagedJobTemplatesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListManagedJobTemplatesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListManagedJobTemplatesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListManagedJobTemplatesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListManagedJobTemplatesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListManagedJobTemplatesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListManagedJobTemplatesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListManagedJobTemplatesErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListManagedJobTemplatesErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListManagedJobTemplatesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListManagedJobTemplatesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListManagedJobTemplatesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListManagedJobTemplatesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for ListManagedJobTemplatesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListManagedJobTemplatesErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListManagedJobTemplatesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListManagedJobTemplatesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListManagedJobTemplatesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListManagedJobTemplatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -34851,6 +35109,71 @@ impl RegistrationCodeValidationException {
     }
 }
 
+/// <p>Internal error from the service that indicates an unexpected error or that the service
+/// is unavailable.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InternalServerException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InternalServerException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InternalServerException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InternalServerException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InternalServerException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InternalServerException")?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InternalServerException {}
+/// See [`InternalServerException`](crate::error::InternalServerException)
+pub mod internal_server_exception {
+    /// A builder for [`InternalServerException`](crate::error::InternalServerException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InternalServerException`](crate::error::InternalServerException)
+        pub fn build(self) -> crate::error::InternalServerException {
+            crate::error::InternalServerException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InternalServerException {
+    /// Creates a new builder-style object to manufacture [`InternalServerException`](crate::error::InternalServerException)
+    pub fn builder() -> crate::error::internal_server_exception::Builder {
+        crate::error::internal_server_exception::Builder::default()
+    }
+}
+
 /// <p>You can't delete the resource because it is attached to one or more
 /// resources.</p>
 #[non_exhaustive]
@@ -34875,8 +35198,8 @@ impl DeleteConflictException {
 impl std::fmt::Display for DeleteConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeleteConflictException")?;
-        if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
@@ -34941,8 +35264,8 @@ impl InvalidStateTransitionException {
 impl std::fmt::Display for InvalidStateTransitionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidStateTransitionException")?;
-        if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+        if let Some(inner_28) = &self.message {
+            write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }
@@ -35005,8 +35328,8 @@ impl VersionsLimitExceededException {
 impl std::fmt::Display for VersionsLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "VersionsLimitExceededException")?;
-        if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+        if let Some(inner_29) = &self.message {
+            write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }
@@ -35069,8 +35392,8 @@ impl MalformedPolicyException {
 impl std::fmt::Display for MalformedPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MalformedPolicyException")?;
-        if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
+        if let Some(inner_30) = &self.message {
+            write!(f, ": {}", inner_30)?;
         }
         Ok(())
     }
@@ -35133,8 +35456,8 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_30) = &self.message {
-            write!(f, ": {}", inner_30)?;
+        if let Some(inner_31) = &self.message {
+            write!(f, ": {}", inner_31)?;
         }
         Ok(())
     }

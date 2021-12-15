@@ -348,17 +348,40 @@ impl AsRef<str> for PartyType {
 pub struct MatchingResponse {
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
     pub enabled: std::option::Option<bool>,
+    /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
+    pub job_schedule: std::option::Option<crate::model::JobSchedule>,
+    /// <p>Configuration information about the auto-merging process.</p>
+    pub auto_merging: std::option::Option<crate::model::AutoMerging>,
+    /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3
+    /// bucket.</p>
+    pub exporting_config: std::option::Option<crate::model::ExportingConfig>,
 }
 impl MatchingResponse {
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
+    /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
+    pub fn job_schedule(&self) -> std::option::Option<&crate::model::JobSchedule> {
+        self.job_schedule.as_ref()
+    }
+    /// <p>Configuration information about the auto-merging process.</p>
+    pub fn auto_merging(&self) -> std::option::Option<&crate::model::AutoMerging> {
+        self.auto_merging.as_ref()
+    }
+    /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3
+    /// bucket.</p>
+    pub fn exporting_config(&self) -> std::option::Option<&crate::model::ExportingConfig> {
+        self.exporting_config.as_ref()
+    }
 }
 impl std::fmt::Debug for MatchingResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MatchingResponse");
         formatter.field("enabled", &self.enabled);
+        formatter.field("job_schedule", &self.job_schedule);
+        formatter.field("auto_merging", &self.auto_merging);
+        formatter.field("exporting_config", &self.exporting_config);
         formatter.finish()
     }
 }
@@ -369,6 +392,9 @@ pub mod matching_response {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) job_schedule: std::option::Option<crate::model::JobSchedule>,
+        pub(crate) auto_merging: std::option::Option<crate::model::AutoMerging>,
+        pub(crate) exporting_config: std::option::Option<crate::model::ExportingConfig>,
     }
     impl Builder {
         /// <p>The flag that enables the matching process of duplicate profiles.</p>
@@ -381,10 +407,54 @@ pub mod matching_response {
             self.enabled = input;
             self
         }
+        /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
+        pub fn job_schedule(mut self, input: crate::model::JobSchedule) -> Self {
+            self.job_schedule = Some(input);
+            self
+        }
+        /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
+        pub fn set_job_schedule(
+            mut self,
+            input: std::option::Option<crate::model::JobSchedule>,
+        ) -> Self {
+            self.job_schedule = input;
+            self
+        }
+        /// <p>Configuration information about the auto-merging process.</p>
+        pub fn auto_merging(mut self, input: crate::model::AutoMerging) -> Self {
+            self.auto_merging = Some(input);
+            self
+        }
+        /// <p>Configuration information about the auto-merging process.</p>
+        pub fn set_auto_merging(
+            mut self,
+            input: std::option::Option<crate::model::AutoMerging>,
+        ) -> Self {
+            self.auto_merging = input;
+            self
+        }
+        /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3
+        /// bucket.</p>
+        pub fn exporting_config(mut self, input: crate::model::ExportingConfig) -> Self {
+            self.exporting_config = Some(input);
+            self
+        }
+        /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3
+        /// bucket.</p>
+        pub fn set_exporting_config(
+            mut self,
+            input: std::option::Option<crate::model::ExportingConfig>,
+        ) -> Self {
+            self.exporting_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MatchingResponse`](crate::model::MatchingResponse)
         pub fn build(self) -> crate::model::MatchingResponse {
             crate::model::MatchingResponse {
                 enabled: self.enabled,
+                job_schedule: self.job_schedule,
+                auto_merging: self.auto_merging,
+                exporting_config: self.exporting_config,
             }
         }
     }
@@ -396,23 +466,721 @@ impl MatchingResponse {
     }
 }
 
+/// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files. </p>
+/// <note>
+/// <p>You need to give Customer Profiles service principal write permission to your S3 bucket.
+/// Otherwise, you'll get an exception in the API response. For an example policy, see
+/// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>.
+/// </p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExportingConfig {
+    /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
+    pub s3_exporting: std::option::Option<crate::model::S3ExportingConfig>,
+}
+impl ExportingConfig {
+    /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
+    pub fn s3_exporting(&self) -> std::option::Option<&crate::model::S3ExportingConfig> {
+        self.s3_exporting.as_ref()
+    }
+}
+impl std::fmt::Debug for ExportingConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExportingConfig");
+        formatter.field("s3_exporting", &self.s3_exporting);
+        formatter.finish()
+    }
+}
+/// See [`ExportingConfig`](crate::model::ExportingConfig)
+pub mod exporting_config {
+    /// A builder for [`ExportingConfig`](crate::model::ExportingConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_exporting: std::option::Option<crate::model::S3ExportingConfig>,
+    }
+    impl Builder {
+        /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
+        pub fn s3_exporting(mut self, input: crate::model::S3ExportingConfig) -> Self {
+            self.s3_exporting = Some(input);
+            self
+        }
+        /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
+        pub fn set_s3_exporting(
+            mut self,
+            input: std::option::Option<crate::model::S3ExportingConfig>,
+        ) -> Self {
+            self.s3_exporting = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExportingConfig`](crate::model::ExportingConfig)
+        pub fn build(self) -> crate::model::ExportingConfig {
+            crate::model::ExportingConfig {
+                s3_exporting: self.s3_exporting,
+            }
+        }
+    }
+}
+impl ExportingConfig {
+    /// Creates a new builder-style object to manufacture [`ExportingConfig`](crate::model::ExportingConfig)
+    pub fn builder() -> crate::model::exporting_config::Builder {
+        crate::model::exporting_config::Builder::default()
+    }
+}
+
+/// <p>Configuration information about the S3 bucket where Identity Resolution Jobs write result files.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3ExportingConfig {
+    /// <p>The name of the S3 bucket where Identity Resolution Jobs write result files.</p>
+    pub s3_bucket_name: std::option::Option<std::string::String>,
+    /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
+    pub s3_key_name: std::option::Option<std::string::String>,
+}
+impl S3ExportingConfig {
+    /// <p>The name of the S3 bucket where Identity Resolution Jobs write result files.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
+    pub fn s3_key_name(&self) -> std::option::Option<&str> {
+        self.s3_key_name.as_deref()
+    }
+}
+impl std::fmt::Debug for S3ExportingConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3ExportingConfig");
+        formatter.field("s3_bucket_name", &self.s3_bucket_name);
+        formatter.field("s3_key_name", &self.s3_key_name);
+        formatter.finish()
+    }
+}
+/// See [`S3ExportingConfig`](crate::model::S3ExportingConfig)
+pub mod s3_exporting_config {
+    /// A builder for [`S3ExportingConfig`](crate::model::S3ExportingConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
+        pub(crate) s3_key_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the S3 bucket where Identity Resolution Jobs write result files.</p>
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the S3 bucket where Identity Resolution Jobs write result files.</p>
+        pub fn set_s3_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_bucket_name = input;
+            self
+        }
+        /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
+        pub fn s3_key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_key_name = Some(input.into());
+            self
+        }
+        /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
+        pub fn set_s3_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_key_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3ExportingConfig`](crate::model::S3ExportingConfig)
+        pub fn build(self) -> crate::model::S3ExportingConfig {
+            crate::model::S3ExportingConfig {
+                s3_bucket_name: self.s3_bucket_name,
+                s3_key_name: self.s3_key_name,
+            }
+        }
+    }
+}
+impl S3ExportingConfig {
+    /// Creates a new builder-style object to manufacture [`S3ExportingConfig`](crate::model::S3ExportingConfig)
+    pub fn builder() -> crate::model::s3_exporting_config::Builder {
+        crate::model::s3_exporting_config::Builder::default()
+    }
+}
+
+/// <p>Configuration settings for how to perform the auto-merging of profiles.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AutoMerging {
+    /// <p>The flag that enables the auto-merging of duplicate profiles.</p>
+    pub enabled: std::option::Option<bool>,
+    /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at
+    /// least one of the requirements in the matching attributes list, they will be merged.</p>
+    pub consolidation: std::option::Option<crate::model::Consolidation>,
+    /// <p>How the auto-merging process should resolve conflicts between different profiles. For
+    /// example, if Profile A and Profile B have the same <code>FirstName</code> and
+    /// <code>LastName</code> (and that is the matching criteria), which
+    /// <code>EmailAddress</code> should be used? </p>
+    pub conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
+}
+impl AutoMerging {
+    /// <p>The flag that enables the auto-merging of duplicate profiles.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at
+    /// least one of the requirements in the matching attributes list, they will be merged.</p>
+    pub fn consolidation(&self) -> std::option::Option<&crate::model::Consolidation> {
+        self.consolidation.as_ref()
+    }
+    /// <p>How the auto-merging process should resolve conflicts between different profiles. For
+    /// example, if Profile A and Profile B have the same <code>FirstName</code> and
+    /// <code>LastName</code> (and that is the matching criteria), which
+    /// <code>EmailAddress</code> should be used? </p>
+    pub fn conflict_resolution(&self) -> std::option::Option<&crate::model::ConflictResolution> {
+        self.conflict_resolution.as_ref()
+    }
+}
+impl std::fmt::Debug for AutoMerging {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AutoMerging");
+        formatter.field("enabled", &self.enabled);
+        formatter.field("consolidation", &self.consolidation);
+        formatter.field("conflict_resolution", &self.conflict_resolution);
+        formatter.finish()
+    }
+}
+/// See [`AutoMerging`](crate::model::AutoMerging)
+pub mod auto_merging {
+    /// A builder for [`AutoMerging`](crate::model::AutoMerging)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) consolidation: std::option::Option<crate::model::Consolidation>,
+        pub(crate) conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
+    }
+    impl Builder {
+        /// <p>The flag that enables the auto-merging of duplicate profiles.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        /// <p>The flag that enables the auto-merging of duplicate profiles.</p>
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at
+        /// least one of the requirements in the matching attributes list, they will be merged.</p>
+        pub fn consolidation(mut self, input: crate::model::Consolidation) -> Self {
+            self.consolidation = Some(input);
+            self
+        }
+        /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at
+        /// least one of the requirements in the matching attributes list, they will be merged.</p>
+        pub fn set_consolidation(
+            mut self,
+            input: std::option::Option<crate::model::Consolidation>,
+        ) -> Self {
+            self.consolidation = input;
+            self
+        }
+        /// <p>How the auto-merging process should resolve conflicts between different profiles. For
+        /// example, if Profile A and Profile B have the same <code>FirstName</code> and
+        /// <code>LastName</code> (and that is the matching criteria), which
+        /// <code>EmailAddress</code> should be used? </p>
+        pub fn conflict_resolution(mut self, input: crate::model::ConflictResolution) -> Self {
+            self.conflict_resolution = Some(input);
+            self
+        }
+        /// <p>How the auto-merging process should resolve conflicts between different profiles. For
+        /// example, if Profile A and Profile B have the same <code>FirstName</code> and
+        /// <code>LastName</code> (and that is the matching criteria), which
+        /// <code>EmailAddress</code> should be used? </p>
+        pub fn set_conflict_resolution(
+            mut self,
+            input: std::option::Option<crate::model::ConflictResolution>,
+        ) -> Self {
+            self.conflict_resolution = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AutoMerging`](crate::model::AutoMerging)
+        pub fn build(self) -> crate::model::AutoMerging {
+            crate::model::AutoMerging {
+                enabled: self.enabled,
+                consolidation: self.consolidation,
+                conflict_resolution: self.conflict_resolution,
+            }
+        }
+    }
+}
+impl AutoMerging {
+    /// Creates a new builder-style object to manufacture [`AutoMerging`](crate::model::AutoMerging)
+    pub fn builder() -> crate::model::auto_merging::Builder {
+        crate::model::auto_merging::Builder::default()
+    }
+}
+
+/// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConflictResolution {
+    /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>RECENCY</code>: Uses the data that was most recently updated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SOURCE</code>: Uses the data from a specific source. For example, if a
+    /// company has been aquired or two departments have merged, data from the specified
+    /// source is used. If two duplicate profiles are from the same source, then
+    /// <code>RECENCY</code> is used again.</p>
+    /// </li>
+    /// </ul>
+    pub conflict_resolving_model: std::option::Option<crate::model::ConflictResolvingModel>,
+    /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when
+    /// choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
+    pub source_name: std::option::Option<std::string::String>,
+}
+impl ConflictResolution {
+    /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>RECENCY</code>: Uses the data that was most recently updated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SOURCE</code>: Uses the data from a specific source. For example, if a
+    /// company has been aquired or two departments have merged, data from the specified
+    /// source is used. If two duplicate profiles are from the same source, then
+    /// <code>RECENCY</code> is used again.</p>
+    /// </li>
+    /// </ul>
+    pub fn conflict_resolving_model(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictResolvingModel> {
+        self.conflict_resolving_model.as_ref()
+    }
+    /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when
+    /// choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
+    pub fn source_name(&self) -> std::option::Option<&str> {
+        self.source_name.as_deref()
+    }
+}
+impl std::fmt::Debug for ConflictResolution {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConflictResolution");
+        formatter.field("conflict_resolving_model", &self.conflict_resolving_model);
+        formatter.field("source_name", &self.source_name);
+        formatter.finish()
+    }
+}
+/// See [`ConflictResolution`](crate::model::ConflictResolution)
+pub mod conflict_resolution {
+    /// A builder for [`ConflictResolution`](crate::model::ConflictResolution)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) conflict_resolving_model:
+            std::option::Option<crate::model::ConflictResolvingModel>,
+        pub(crate) source_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>RECENCY</code>: Uses the data that was most recently updated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SOURCE</code>: Uses the data from a specific source. For example, if a
+        /// company has been aquired or two departments have merged, data from the specified
+        /// source is used. If two duplicate profiles are from the same source, then
+        /// <code>RECENCY</code> is used again.</p>
+        /// </li>
+        /// </ul>
+        pub fn conflict_resolving_model(
+            mut self,
+            input: crate::model::ConflictResolvingModel,
+        ) -> Self {
+            self.conflict_resolving_model = Some(input);
+            self
+        }
+        /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>RECENCY</code>: Uses the data that was most recently updated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SOURCE</code>: Uses the data from a specific source. For example, if a
+        /// company has been aquired or two departments have merged, data from the specified
+        /// source is used. If two duplicate profiles are from the same source, then
+        /// <code>RECENCY</code> is used again.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_conflict_resolving_model(
+            mut self,
+            input: std::option::Option<crate::model::ConflictResolvingModel>,
+        ) -> Self {
+            self.conflict_resolving_model = input;
+            self
+        }
+        /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when
+        /// choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
+        pub fn source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_name = Some(input.into());
+            self
+        }
+        /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when
+        /// choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
+        pub fn set_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConflictResolution`](crate::model::ConflictResolution)
+        pub fn build(self) -> crate::model::ConflictResolution {
+            crate::model::ConflictResolution {
+                conflict_resolving_model: self.conflict_resolving_model,
+                source_name: self.source_name,
+            }
+        }
+    }
+}
+impl ConflictResolution {
+    /// Creates a new builder-style object to manufacture [`ConflictResolution`](crate::model::ConflictResolution)
+    pub fn builder() -> crate::model::conflict_resolution::Builder {
+        crate::model::conflict_resolution::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ConflictResolvingModel {
+    #[allow(missing_docs)] // documentation missing in model
+    Recency,
+    #[allow(missing_docs)] // documentation missing in model
+    Source,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ConflictResolvingModel {
+    fn from(s: &str) -> Self {
+        match s {
+            "RECENCY" => ConflictResolvingModel::Recency,
+            "SOURCE" => ConflictResolvingModel::Source,
+            other => ConflictResolvingModel::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ConflictResolvingModel {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ConflictResolvingModel::from(s))
+    }
+}
+impl ConflictResolvingModel {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ConflictResolvingModel::Recency => "RECENCY",
+            ConflictResolvingModel::Source => "SOURCE",
+            ConflictResolvingModel::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["RECENCY", "SOURCE"]
+    }
+}
+impl AsRef<str> for ConflictResolvingModel {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The matching criteria to be used during the auto-merging process. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Consolidation {
+    /// <p>A list of matching criteria.</p>
+    pub matching_attributes_list:
+        std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+}
+impl Consolidation {
+    /// <p>A list of matching criteria.</p>
+    pub fn matching_attributes_list(
+        &self,
+    ) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.matching_attributes_list.as_deref()
+    }
+}
+impl std::fmt::Debug for Consolidation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Consolidation");
+        formatter.field("matching_attributes_list", &self.matching_attributes_list);
+        formatter.finish()
+    }
+}
+/// See [`Consolidation`](crate::model::Consolidation)
+pub mod consolidation {
+    /// A builder for [`Consolidation`](crate::model::Consolidation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) matching_attributes_list:
+            std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    }
+    impl Builder {
+        /// Appends an item to `matching_attributes_list`.
+        ///
+        /// To override the contents of this collection use [`set_matching_attributes_list`](Self::set_matching_attributes_list).
+        ///
+        /// <p>A list of matching criteria.</p>
+        pub fn matching_attributes_list(
+            mut self,
+            input: impl Into<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            let mut v = self.matching_attributes_list.unwrap_or_default();
+            v.push(input.into());
+            self.matching_attributes_list = Some(v);
+            self
+        }
+        /// <p>A list of matching criteria.</p>
+        pub fn set_matching_attributes_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        ) -> Self {
+            self.matching_attributes_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Consolidation`](crate::model::Consolidation)
+        pub fn build(self) -> crate::model::Consolidation {
+            crate::model::Consolidation {
+                matching_attributes_list: self.matching_attributes_list,
+            }
+        }
+    }
+}
+impl Consolidation {
+    /// Creates a new builder-style object to manufacture [`Consolidation`](crate::model::Consolidation)
+    pub fn builder() -> crate::model::consolidation::Builder {
+        crate::model::consolidation::Builder::default()
+    }
+}
+
+/// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JobSchedule {
+    /// <p>The day when the Identity Resolution Job should run every week.</p>
+    pub day_of_the_week: std::option::Option<crate::model::JobScheduleDayOfTheWeek>,
+    /// <p>The time when the Identity Resolution Job should run every week.</p>
+    pub time: std::option::Option<std::string::String>,
+}
+impl JobSchedule {
+    /// <p>The day when the Identity Resolution Job should run every week.</p>
+    pub fn day_of_the_week(&self) -> std::option::Option<&crate::model::JobScheduleDayOfTheWeek> {
+        self.day_of_the_week.as_ref()
+    }
+    /// <p>The time when the Identity Resolution Job should run every week.</p>
+    pub fn time(&self) -> std::option::Option<&str> {
+        self.time.as_deref()
+    }
+}
+impl std::fmt::Debug for JobSchedule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JobSchedule");
+        formatter.field("day_of_the_week", &self.day_of_the_week);
+        formatter.field("time", &self.time);
+        formatter.finish()
+    }
+}
+/// See [`JobSchedule`](crate::model::JobSchedule)
+pub mod job_schedule {
+    /// A builder for [`JobSchedule`](crate::model::JobSchedule)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) day_of_the_week: std::option::Option<crate::model::JobScheduleDayOfTheWeek>,
+        pub(crate) time: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The day when the Identity Resolution Job should run every week.</p>
+        pub fn day_of_the_week(mut self, input: crate::model::JobScheduleDayOfTheWeek) -> Self {
+            self.day_of_the_week = Some(input);
+            self
+        }
+        /// <p>The day when the Identity Resolution Job should run every week.</p>
+        pub fn set_day_of_the_week(
+            mut self,
+            input: std::option::Option<crate::model::JobScheduleDayOfTheWeek>,
+        ) -> Self {
+            self.day_of_the_week = input;
+            self
+        }
+        /// <p>The time when the Identity Resolution Job should run every week.</p>
+        pub fn time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.time = Some(input.into());
+            self
+        }
+        /// <p>The time when the Identity Resolution Job should run every week.</p>
+        pub fn set_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JobSchedule`](crate::model::JobSchedule)
+        pub fn build(self) -> crate::model::JobSchedule {
+            crate::model::JobSchedule {
+                day_of_the_week: self.day_of_the_week,
+                time: self.time,
+            }
+        }
+    }
+}
+impl JobSchedule {
+    /// Creates a new builder-style object to manufacture [`JobSchedule`](crate::model::JobSchedule)
+    pub fn builder() -> crate::model::job_schedule::Builder {
+        crate::model::job_schedule::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum JobScheduleDayOfTheWeek {
+    #[allow(missing_docs)] // documentation missing in model
+    Friday,
+    #[allow(missing_docs)] // documentation missing in model
+    Monday,
+    #[allow(missing_docs)] // documentation missing in model
+    Saturday,
+    #[allow(missing_docs)] // documentation missing in model
+    Sunday,
+    #[allow(missing_docs)] // documentation missing in model
+    Thursday,
+    #[allow(missing_docs)] // documentation missing in model
+    Tuesday,
+    #[allow(missing_docs)] // documentation missing in model
+    Wednesday,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for JobScheduleDayOfTheWeek {
+    fn from(s: &str) -> Self {
+        match s {
+            "FRIDAY" => JobScheduleDayOfTheWeek::Friday,
+            "MONDAY" => JobScheduleDayOfTheWeek::Monday,
+            "SATURDAY" => JobScheduleDayOfTheWeek::Saturday,
+            "SUNDAY" => JobScheduleDayOfTheWeek::Sunday,
+            "THURSDAY" => JobScheduleDayOfTheWeek::Thursday,
+            "TUESDAY" => JobScheduleDayOfTheWeek::Tuesday,
+            "WEDNESDAY" => JobScheduleDayOfTheWeek::Wednesday,
+            other => JobScheduleDayOfTheWeek::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for JobScheduleDayOfTheWeek {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(JobScheduleDayOfTheWeek::from(s))
+    }
+}
+impl JobScheduleDayOfTheWeek {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            JobScheduleDayOfTheWeek::Friday => "FRIDAY",
+            JobScheduleDayOfTheWeek::Monday => "MONDAY",
+            JobScheduleDayOfTheWeek::Saturday => "SATURDAY",
+            JobScheduleDayOfTheWeek::Sunday => "SUNDAY",
+            JobScheduleDayOfTheWeek::Thursday => "THURSDAY",
+            JobScheduleDayOfTheWeek::Tuesday => "TUESDAY",
+            JobScheduleDayOfTheWeek::Wednesday => "WEDNESDAY",
+            JobScheduleDayOfTheWeek::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FRIDAY",
+            "MONDAY",
+            "SATURDAY",
+            "SUNDAY",
+            "THURSDAY",
+            "TUESDAY",
+            "WEDNESDAY",
+        ]
+    }
+}
+impl AsRef<str> for JobScheduleDayOfTheWeek {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The flag that enables the matching process of duplicate profiles.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MatchingRequest {
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
     pub enabled: std::option::Option<bool>,
+    /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
+    pub job_schedule: std::option::Option<crate::model::JobSchedule>,
+    /// <p>Configuration information about the auto-merging process.</p>
+    pub auto_merging: std::option::Option<crate::model::AutoMerging>,
+    /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3
+    /// bucket.</p>
+    pub exporting_config: std::option::Option<crate::model::ExportingConfig>,
 }
 impl MatchingRequest {
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
+    /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
+    pub fn job_schedule(&self) -> std::option::Option<&crate::model::JobSchedule> {
+        self.job_schedule.as_ref()
+    }
+    /// <p>Configuration information about the auto-merging process.</p>
+    pub fn auto_merging(&self) -> std::option::Option<&crate::model::AutoMerging> {
+        self.auto_merging.as_ref()
+    }
+    /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3
+    /// bucket.</p>
+    pub fn exporting_config(&self) -> std::option::Option<&crate::model::ExportingConfig> {
+        self.exporting_config.as_ref()
+    }
 }
 impl std::fmt::Debug for MatchingRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MatchingRequest");
         formatter.field("enabled", &self.enabled);
+        formatter.field("job_schedule", &self.job_schedule);
+        formatter.field("auto_merging", &self.auto_merging);
+        formatter.field("exporting_config", &self.exporting_config);
         formatter.finish()
     }
 }
@@ -423,6 +1191,9 @@ pub mod matching_request {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) job_schedule: std::option::Option<crate::model::JobSchedule>,
+        pub(crate) auto_merging: std::option::Option<crate::model::AutoMerging>,
+        pub(crate) exporting_config: std::option::Option<crate::model::ExportingConfig>,
     }
     impl Builder {
         /// <p>The flag that enables the matching process of duplicate profiles.</p>
@@ -435,10 +1206,54 @@ pub mod matching_request {
             self.enabled = input;
             self
         }
+        /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
+        pub fn job_schedule(mut self, input: crate::model::JobSchedule) -> Self {
+            self.job_schedule = Some(input);
+            self
+        }
+        /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
+        pub fn set_job_schedule(
+            mut self,
+            input: std::option::Option<crate::model::JobSchedule>,
+        ) -> Self {
+            self.job_schedule = input;
+            self
+        }
+        /// <p>Configuration information about the auto-merging process.</p>
+        pub fn auto_merging(mut self, input: crate::model::AutoMerging) -> Self {
+            self.auto_merging = Some(input);
+            self
+        }
+        /// <p>Configuration information about the auto-merging process.</p>
+        pub fn set_auto_merging(
+            mut self,
+            input: std::option::Option<crate::model::AutoMerging>,
+        ) -> Self {
+            self.auto_merging = input;
+            self
+        }
+        /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3
+        /// bucket.</p>
+        pub fn exporting_config(mut self, input: crate::model::ExportingConfig) -> Self {
+            self.exporting_config = Some(input);
+            self
+        }
+        /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3
+        /// bucket.</p>
+        pub fn set_exporting_config(
+            mut self,
+            input: std::option::Option<crate::model::ExportingConfig>,
+        ) -> Self {
+            self.exporting_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MatchingRequest`](crate::model::MatchingRequest)
         pub fn build(self) -> crate::model::MatchingRequest {
             crate::model::MatchingRequest {
                 enabled: self.enabled,
+                job_schedule: self.job_schedule,
+                auto_merging: self.auto_merging,
+                exporting_config: self.exporting_config,
             }
         }
     }
@@ -1207,26 +2022,26 @@ impl Address {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectTypeKey {
     /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1
-    /// UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be used to tie an
-    /// object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be used to uniquely identify an object.
-    /// If a key a is marked as SECONDARY, it will be used to search for profiles after all other
-    /// PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is
-    /// not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the
-    /// profile does not already exist before the object is ingested, otherwise it is only used for
-    /// matching objects to profiles.</p>
+    /// UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be
+    /// used to tie an object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be
+    /// used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to
+    /// search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is
+    /// only used to match a profile but is not persisted to be used for searching of the profile.
+    /// A NEW_ONLY key is only used if the profile does not already exist before the object is
+    /// ingested, otherwise it is only used for matching objects to profiles.</p>
     pub standard_identifiers: std::option::Option<std::vec::Vec<crate::model::StandardIdentifier>>,
     /// <p>The reference for the key name of the fields map.</p>
     pub field_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ObjectTypeKey {
     /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1
-    /// UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be used to tie an
-    /// object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be used to uniquely identify an object.
-    /// If a key a is marked as SECONDARY, it will be used to search for profiles after all other
-    /// PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is
-    /// not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the
-    /// profile does not already exist before the object is ingested, otherwise it is only used for
-    /// matching objects to profiles.</p>
+    /// UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be
+    /// used to tie an object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be
+    /// used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to
+    /// search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is
+    /// only used to match a profile but is not persisted to be used for searching of the profile.
+    /// A NEW_ONLY key is only used if the profile does not already exist before the object is
+    /// ingested, otherwise it is only used for matching objects to profiles.</p>
     pub fn standard_identifiers(&self) -> std::option::Option<&[crate::model::StandardIdentifier]> {
         self.standard_identifiers.as_deref()
     }
@@ -1259,13 +2074,13 @@ pub mod object_type_key {
         /// To override the contents of this collection use [`set_standard_identifiers`](Self::set_standard_identifiers).
         ///
         /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1
-        /// UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be used to tie an
-        /// object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be used to uniquely identify an object.
-        /// If a key a is marked as SECONDARY, it will be used to search for profiles after all other
-        /// PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is
-        /// not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the
-        /// profile does not already exist before the object is ingested, otherwise it is only used for
-        /// matching objects to profiles.</p>
+        /// UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be
+        /// used to tie an object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be
+        /// used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to
+        /// search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is
+        /// only used to match a profile but is not persisted to be used for searching of the profile.
+        /// A NEW_ONLY key is only used if the profile does not already exist before the object is
+        /// ingested, otherwise it is only used for matching objects to profiles.</p>
         pub fn standard_identifiers(
             mut self,
             input: impl Into<crate::model::StandardIdentifier>,
@@ -1276,13 +2091,13 @@ pub mod object_type_key {
             self
         }
         /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1
-        /// UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be used to tie an
-        /// object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be used to uniquely identify an object.
-        /// If a key a is marked as SECONDARY, it will be used to search for profiles after all other
-        /// PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is
-        /// not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the
-        /// profile does not already exist before the object is ingested, otherwise it is only used for
-        /// matching objects to profiles.</p>
+        /// UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be
+        /// used to tie an object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be
+        /// used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to
+        /// search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is
+        /// only used to match a profile but is not persisted to be used for searching of the profile.
+        /// A NEW_ONLY key is only used if the profile does not already exist before the object is
+        /// ingested, otherwise it is only used for matching objects to profiles.</p>
         pub fn set_standard_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StandardIdentifier>>,
@@ -5057,20 +5872,23 @@ impl ListProfileObjectsItem {
     }
 }
 
-/// <p>The filter applied to ListProfileObjects response to include profile objects with the specified index values.
-/// This filter is only supported for ObjectTypeName _asset and _case.</p>
+/// <p>The filter applied to ListProfileObjects response to include profile objects with the
+/// specified index values. This filter is only supported for ObjectTypeName _asset and
+/// _case.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectFilter {
-    /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to search for _asset include: _assetId, _assetName, _serialNumber.
-    /// The predefined keys you can use to search for _case include: _caseId.</p>
+    /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to
+    /// search for _asset include: _assetId, _assetName, _serialNumber. The predefined keys you can
+    /// use to search for _case include: _caseId.</p>
     pub key_name: std::option::Option<std::string::String>,
     /// <p>A list of key values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ObjectFilter {
-    /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to search for _asset include: _assetId, _assetName, _serialNumber.
-    /// The predefined keys you can use to search for _case include: _caseId.</p>
+    /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to
+    /// search for _asset include: _assetId, _assetName, _serialNumber. The predefined keys you can
+    /// use to search for _case include: _caseId.</p>
     pub fn key_name(&self) -> std::option::Option<&str> {
         self.key_name.as_deref()
     }
@@ -5097,14 +5915,16 @@ pub mod object_filter {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to search for _asset include: _assetId, _assetName, _serialNumber.
-        /// The predefined keys you can use to search for _case include: _caseId.</p>
+        /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to
+        /// search for _asset include: _assetId, _assetName, _serialNumber. The predefined keys you can
+        /// use to search for _case include: _caseId.</p>
         pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_name = Some(input.into());
             self
         }
-        /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to search for _asset include: _assetId, _assetName, _serialNumber.
-        /// The predefined keys you can use to search for _case include: _caseId.</p>
+        /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to
+        /// search for _asset include: _assetId, _assetName, _serialNumber. The predefined keys you can
+        /// use to search for _case include: _caseId.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_name = input;
             self
@@ -5323,6 +6143,656 @@ impl ListIntegrationItem {
     }
 }
 
+/// <p>Information about the Identity Resolution Job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IdentityResolutionJob {
+    /// <p>The unique name of the domain.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>The unique identifier of the Identity Resolution Job.</p>
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>The status of the Identity Resolution Job.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn
+    /// off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are
+    /// deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to
+    /// identify profiles that belong to the same matching group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is
+    /// merged. The Identity Resolution Job writes a message indicating the source of the problem.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message
+    /// indicating the source of the problem.</p>
+    /// </li>
+    /// </ul>
+    pub status: std::option::Option<crate::model::IdentityResolutionJobStatus>,
+    /// <p>The timestamp of when the job was started or will be started.</p>
+    pub job_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp of when the job was completed.</p>
+    pub job_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Statistics about an Identity Resolution Job.</p>
+    pub job_stats: std::option::Option<crate::model::JobStats>,
+    /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
+    pub exporting_location: std::option::Option<crate::model::ExportingLocation>,
+    /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl IdentityResolutionJob {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The unique identifier of the Identity Resolution Job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The status of the Identity Resolution Job.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn
+    /// off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are
+    /// deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to
+    /// identify profiles that belong to the same matching group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is
+    /// merged. The Identity Resolution Job writes a message indicating the source of the problem.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message
+    /// indicating the source of the problem.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::IdentityResolutionJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The timestamp of when the job was started or will be started.</p>
+    pub fn job_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.job_start_time.as_ref()
+    }
+    /// <p>The timestamp of when the job was completed.</p>
+    pub fn job_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.job_end_time.as_ref()
+    }
+    /// <p>Statistics about an Identity Resolution Job.</p>
+    pub fn job_stats(&self) -> std::option::Option<&crate::model::JobStats> {
+        self.job_stats.as_ref()
+    }
+    /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
+    pub fn exporting_location(&self) -> std::option::Option<&crate::model::ExportingLocation> {
+        self.exporting_location.as_ref()
+    }
+    /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for IdentityResolutionJob {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IdentityResolutionJob");
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("job_id", &self.job_id);
+        formatter.field("status", &self.status);
+        formatter.field("job_start_time", &self.job_start_time);
+        formatter.field("job_end_time", &self.job_end_time);
+        formatter.field("job_stats", &self.job_stats);
+        formatter.field("exporting_location", &self.exporting_location);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`IdentityResolutionJob`](crate::model::IdentityResolutionJob)
+pub mod identity_resolution_job {
+    /// A builder for [`IdentityResolutionJob`](crate::model::IdentityResolutionJob)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::IdentityResolutionJobStatus>,
+        pub(crate) job_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) job_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) job_stats: std::option::Option<crate::model::JobStats>,
+        pub(crate) exporting_location: std::option::Option<crate::model::ExportingLocation>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>The unique identifier of the Identity Resolution Job.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the Identity Resolution Job.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// <p>The status of the Identity Resolution Job.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn
+        /// off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are
+        /// deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to
+        /// identify profiles that belong to the same matching group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is
+        /// merged. The Identity Resolution Job writes a message indicating the source of the problem.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message
+        /// indicating the source of the problem.</p>
+        /// </li>
+        /// </ul>
+        pub fn status(mut self, input: crate::model::IdentityResolutionJobStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the Identity Resolution Job.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn
+        /// off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are
+        /// deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to
+        /// identify profiles that belong to the same matching group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is
+        /// merged. The Identity Resolution Job writes a message indicating the source of the problem.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message
+        /// indicating the source of the problem.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::IdentityResolutionJobStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The timestamp of when the job was started or will be started.</p>
+        pub fn job_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.job_start_time = Some(input);
+            self
+        }
+        /// <p>The timestamp of when the job was started or will be started.</p>
+        pub fn set_job_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.job_start_time = input;
+            self
+        }
+        /// <p>The timestamp of when the job was completed.</p>
+        pub fn job_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.job_end_time = Some(input);
+            self
+        }
+        /// <p>The timestamp of when the job was completed.</p>
+        pub fn set_job_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.job_end_time = input;
+            self
+        }
+        /// <p>Statistics about an Identity Resolution Job.</p>
+        pub fn job_stats(mut self, input: crate::model::JobStats) -> Self {
+            self.job_stats = Some(input);
+            self
+        }
+        /// <p>Statistics about an Identity Resolution Job.</p>
+        pub fn set_job_stats(mut self, input: std::option::Option<crate::model::JobStats>) -> Self {
+            self.job_stats = input;
+            self
+        }
+        /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
+        pub fn exporting_location(mut self, input: crate::model::ExportingLocation) -> Self {
+            self.exporting_location = Some(input);
+            self
+        }
+        /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
+        pub fn set_exporting_location(
+            mut self,
+            input: std::option::Option<crate::model::ExportingLocation>,
+        ) -> Self {
+            self.exporting_location = input;
+            self
+        }
+        /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IdentityResolutionJob`](crate::model::IdentityResolutionJob)
+        pub fn build(self) -> crate::model::IdentityResolutionJob {
+            crate::model::IdentityResolutionJob {
+                domain_name: self.domain_name,
+                job_id: self.job_id,
+                status: self.status,
+                job_start_time: self.job_start_time,
+                job_end_time: self.job_end_time,
+                job_stats: self.job_stats,
+                exporting_location: self.exporting_location,
+                message: self.message,
+            }
+        }
+    }
+}
+impl IdentityResolutionJob {
+    /// Creates a new builder-style object to manufacture [`IdentityResolutionJob`](crate::model::IdentityResolutionJob)
+    pub fn builder() -> crate::model::identity_resolution_job::Builder {
+        crate::model::identity_resolution_job::Builder::default()
+    }
+}
+
+/// <p>The S3 location where Identity Resolution Jobs write result files.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExportingLocation {
+    /// <p>Information about the S3 location where Identity Resolution Jobs write result files.</p>
+    pub s3_exporting: std::option::Option<crate::model::S3ExportingLocation>,
+}
+impl ExportingLocation {
+    /// <p>Information about the S3 location where Identity Resolution Jobs write result files.</p>
+    pub fn s3_exporting(&self) -> std::option::Option<&crate::model::S3ExportingLocation> {
+        self.s3_exporting.as_ref()
+    }
+}
+impl std::fmt::Debug for ExportingLocation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExportingLocation");
+        formatter.field("s3_exporting", &self.s3_exporting);
+        formatter.finish()
+    }
+}
+/// See [`ExportingLocation`](crate::model::ExportingLocation)
+pub mod exporting_location {
+    /// A builder for [`ExportingLocation`](crate::model::ExportingLocation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_exporting: std::option::Option<crate::model::S3ExportingLocation>,
+    }
+    impl Builder {
+        /// <p>Information about the S3 location where Identity Resolution Jobs write result files.</p>
+        pub fn s3_exporting(mut self, input: crate::model::S3ExportingLocation) -> Self {
+            self.s3_exporting = Some(input);
+            self
+        }
+        /// <p>Information about the S3 location where Identity Resolution Jobs write result files.</p>
+        pub fn set_s3_exporting(
+            mut self,
+            input: std::option::Option<crate::model::S3ExportingLocation>,
+        ) -> Self {
+            self.s3_exporting = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExportingLocation`](crate::model::ExportingLocation)
+        pub fn build(self) -> crate::model::ExportingLocation {
+            crate::model::ExportingLocation {
+                s3_exporting: self.s3_exporting,
+            }
+        }
+    }
+}
+impl ExportingLocation {
+    /// Creates a new builder-style object to manufacture [`ExportingLocation`](crate::model::ExportingLocation)
+    pub fn builder() -> crate::model::exporting_location::Builder {
+        crate::model::exporting_location::Builder::default()
+    }
+}
+
+/// <p>The S3 location where Identity Resolution Jobs write result files.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3ExportingLocation {
+    /// <p>The name of the S3 bucket name where Identity Resolution Jobs write result files.</p>
+    pub s3_bucket_name: std::option::Option<std::string::String>,
+    /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
+    pub s3_key_name: std::option::Option<std::string::String>,
+}
+impl S3ExportingLocation {
+    /// <p>The name of the S3 bucket name where Identity Resolution Jobs write result files.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
+    pub fn s3_key_name(&self) -> std::option::Option<&str> {
+        self.s3_key_name.as_deref()
+    }
+}
+impl std::fmt::Debug for S3ExportingLocation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3ExportingLocation");
+        formatter.field("s3_bucket_name", &self.s3_bucket_name);
+        formatter.field("s3_key_name", &self.s3_key_name);
+        formatter.finish()
+    }
+}
+/// See [`S3ExportingLocation`](crate::model::S3ExportingLocation)
+pub mod s3_exporting_location {
+    /// A builder for [`S3ExportingLocation`](crate::model::S3ExportingLocation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
+        pub(crate) s3_key_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the S3 bucket name where Identity Resolution Jobs write result files.</p>
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the S3 bucket name where Identity Resolution Jobs write result files.</p>
+        pub fn set_s3_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_bucket_name = input;
+            self
+        }
+        /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
+        pub fn s3_key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_key_name = Some(input.into());
+            self
+        }
+        /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
+        pub fn set_s3_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_key_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3ExportingLocation`](crate::model::S3ExportingLocation)
+        pub fn build(self) -> crate::model::S3ExportingLocation {
+            crate::model::S3ExportingLocation {
+                s3_bucket_name: self.s3_bucket_name,
+                s3_key_name: self.s3_key_name,
+            }
+        }
+    }
+}
+impl S3ExportingLocation {
+    /// Creates a new builder-style object to manufacture [`S3ExportingLocation`](crate::model::S3ExportingLocation)
+    pub fn builder() -> crate::model::s3_exporting_location::Builder {
+        crate::model::s3_exporting_location::Builder::default()
+    }
+}
+
+/// <p>Statistics about the Identity Resolution Job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JobStats {
+    /// <p>The number of profiles reviewed.</p>
+    pub number_of_profiles_reviewed: i64,
+    /// <p>The number of matches found.</p>
+    pub number_of_matches_found: i64,
+    /// <p>The number of merges completed.</p>
+    pub number_of_merges_done: i64,
+}
+impl JobStats {
+    /// <p>The number of profiles reviewed.</p>
+    pub fn number_of_profiles_reviewed(&self) -> i64 {
+        self.number_of_profiles_reviewed
+    }
+    /// <p>The number of matches found.</p>
+    pub fn number_of_matches_found(&self) -> i64 {
+        self.number_of_matches_found
+    }
+    /// <p>The number of merges completed.</p>
+    pub fn number_of_merges_done(&self) -> i64 {
+        self.number_of_merges_done
+    }
+}
+impl std::fmt::Debug for JobStats {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JobStats");
+        formatter.field(
+            "number_of_profiles_reviewed",
+            &self.number_of_profiles_reviewed,
+        );
+        formatter.field("number_of_matches_found", &self.number_of_matches_found);
+        formatter.field("number_of_merges_done", &self.number_of_merges_done);
+        formatter.finish()
+    }
+}
+/// See [`JobStats`](crate::model::JobStats)
+pub mod job_stats {
+    /// A builder for [`JobStats`](crate::model::JobStats)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) number_of_profiles_reviewed: std::option::Option<i64>,
+        pub(crate) number_of_matches_found: std::option::Option<i64>,
+        pub(crate) number_of_merges_done: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The number of profiles reviewed.</p>
+        pub fn number_of_profiles_reviewed(mut self, input: i64) -> Self {
+            self.number_of_profiles_reviewed = Some(input);
+            self
+        }
+        /// <p>The number of profiles reviewed.</p>
+        pub fn set_number_of_profiles_reviewed(mut self, input: std::option::Option<i64>) -> Self {
+            self.number_of_profiles_reviewed = input;
+            self
+        }
+        /// <p>The number of matches found.</p>
+        pub fn number_of_matches_found(mut self, input: i64) -> Self {
+            self.number_of_matches_found = Some(input);
+            self
+        }
+        /// <p>The number of matches found.</p>
+        pub fn set_number_of_matches_found(mut self, input: std::option::Option<i64>) -> Self {
+            self.number_of_matches_found = input;
+            self
+        }
+        /// <p>The number of merges completed.</p>
+        pub fn number_of_merges_done(mut self, input: i64) -> Self {
+            self.number_of_merges_done = Some(input);
+            self
+        }
+        /// <p>The number of merges completed.</p>
+        pub fn set_number_of_merges_done(mut self, input: std::option::Option<i64>) -> Self {
+            self.number_of_merges_done = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JobStats`](crate::model::JobStats)
+        pub fn build(self) -> crate::model::JobStats {
+            crate::model::JobStats {
+                number_of_profiles_reviewed: self.number_of_profiles_reviewed.unwrap_or_default(),
+                number_of_matches_found: self.number_of_matches_found.unwrap_or_default(),
+                number_of_merges_done: self.number_of_merges_done.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl JobStats {
+    /// Creates a new builder-style object to manufacture [`JobStats`](crate::model::JobStats)
+    pub fn builder() -> crate::model::job_stats::Builder {
+        crate::model::job_stats::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum IdentityResolutionJobStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    FindMatching,
+    #[allow(missing_docs)] // documentation missing in model
+    Merging,
+    #[allow(missing_docs)] // documentation missing in model
+    PartialSuccess,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Preprocessing,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for IdentityResolutionJobStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPLETED" => IdentityResolutionJobStatus::Completed,
+            "FAILED" => IdentityResolutionJobStatus::Failed,
+            "FIND_MATCHING" => IdentityResolutionJobStatus::FindMatching,
+            "MERGING" => IdentityResolutionJobStatus::Merging,
+            "PARTIAL_SUCCESS" => IdentityResolutionJobStatus::PartialSuccess,
+            "PENDING" => IdentityResolutionJobStatus::Pending,
+            "PREPROCESSING" => IdentityResolutionJobStatus::Preprocessing,
+            other => IdentityResolutionJobStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for IdentityResolutionJobStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(IdentityResolutionJobStatus::from(s))
+    }
+}
+impl IdentityResolutionJobStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            IdentityResolutionJobStatus::Completed => "COMPLETED",
+            IdentityResolutionJobStatus::Failed => "FAILED",
+            IdentityResolutionJobStatus::FindMatching => "FIND_MATCHING",
+            IdentityResolutionJobStatus::Merging => "MERGING",
+            IdentityResolutionJobStatus::PartialSuccess => "PARTIAL_SUCCESS",
+            IdentityResolutionJobStatus::Pending => "PENDING",
+            IdentityResolutionJobStatus::Preprocessing => "PREPROCESSING",
+            IdentityResolutionJobStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "COMPLETED",
+            "FAILED",
+            "FIND_MATCHING",
+            "MERGING",
+            "PARTIAL_SUCCESS",
+            "PENDING",
+            "PREPROCESSING",
+        ]
+    }
+}
+impl AsRef<str> for IdentityResolutionJobStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>An object in a list that represents a domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5469,6 +6939,9 @@ pub struct MatchItem {
     pub match_id: std::option::Option<std::string::String>,
     /// <p>A list of identifiers for profiles that match.</p>
     pub profile_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A number between 0 and 1 that represents the confidence level of assigning profiles to a
+    /// matching group. A score of 1 likely indicates an exact match.</p>
+    pub confidence_score: std::option::Option<f64>,
 }
 impl MatchItem {
     /// <p>The unique identifiers for this group of profiles that match.</p>
@@ -5479,12 +6952,18 @@ impl MatchItem {
     pub fn profile_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.profile_ids.as_deref()
     }
+    /// <p>A number between 0 and 1 that represents the confidence level of assigning profiles to a
+    /// matching group. A score of 1 likely indicates an exact match.</p>
+    pub fn confidence_score(&self) -> std::option::Option<f64> {
+        self.confidence_score
+    }
 }
 impl std::fmt::Debug for MatchItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MatchItem");
         formatter.field("match_id", &self.match_id);
         formatter.field("profile_ids", &self.profile_ids);
+        formatter.field("confidence_score", &self.confidence_score);
         formatter.finish()
     }
 }
@@ -5496,6 +6975,7 @@ pub mod match_item {
     pub struct Builder {
         pub(crate) match_id: std::option::Option<std::string::String>,
         pub(crate) profile_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) confidence_score: std::option::Option<f64>,
     }
     impl Builder {
         /// <p>The unique identifiers for this group of profiles that match.</p>
@@ -5527,11 +7007,24 @@ pub mod match_item {
             self.profile_ids = input;
             self
         }
+        /// <p>A number between 0 and 1 that represents the confidence level of assigning profiles to a
+        /// matching group. A score of 1 likely indicates an exact match.</p>
+        pub fn confidence_score(mut self, input: f64) -> Self {
+            self.confidence_score = Some(input);
+            self
+        }
+        /// <p>A number between 0 and 1 that represents the confidence level of assigning profiles to a
+        /// matching group. A score of 1 likely indicates an exact match.</p>
+        pub fn set_confidence_score(mut self, input: std::option::Option<f64>) -> Self {
+            self.confidence_score = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MatchItem`](crate::model::MatchItem)
         pub fn build(self) -> crate::model::MatchItem {
             crate::model::MatchItem {
                 match_id: self.match_id,
                 profile_ids: self.profile_ids,
+                confidence_score: self.confidence_score,
             }
         }
     }

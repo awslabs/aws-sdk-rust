@@ -33,6 +33,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateAssets {
     }
 }
 
+/// Operation shape for `AssociateTimeSeriesToAssetProperty`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`associate_time_series_to_asset_property`](crate::client::Client::associate_time_series_to_asset_property).
+///
+/// See [`crate::client::fluent_builders::AssociateTimeSeriesToAssetProperty`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AssociateTimeSeriesToAssetProperty {
+    _private: (),
+}
+impl AssociateTimeSeriesToAssetProperty {
+    /// Creates a new builder-style object to manufacture [`AssociateTimeSeriesToAssetPropertyInput`](crate::input::AssociateTimeSeriesToAssetPropertyInput)
+    pub fn builder() -> crate::input::associate_time_series_to_asset_property_input::Builder {
+        crate::input::associate_time_series_to_asset_property_input::Builder::default()
+    }
+    /// Creates a new `AssociateTimeSeriesToAssetProperty` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AssociateTimeSeriesToAssetProperty {
+    type Output = std::result::Result<
+        crate::output::AssociateTimeSeriesToAssetPropertyOutput,
+        crate::error::AssociateTimeSeriesToAssetPropertyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_associate_time_series_to_asset_property_error(response)
+        } else {
+            crate::operation_deser::parse_associate_time_series_to_asset_property_response(response)
+        }
+    }
+}
+
 /// Operation shape for `BatchAssociateProjectAssets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -595,6 +629,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProject {
     }
 }
 
+/// Operation shape for `DeleteTimeSeries`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_time_series`](crate::client::Client::delete_time_series).
+///
+/// See [`crate::client::fluent_builders::DeleteTimeSeries`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteTimeSeries {
+    _private: (),
+}
+impl DeleteTimeSeries {
+    /// Creates a new builder-style object to manufacture [`DeleteTimeSeriesInput`](crate::input::DeleteTimeSeriesInput)
+    pub fn builder() -> crate::input::delete_time_series_input::Builder {
+        crate::input::delete_time_series_input::Builder::default()
+    }
+    /// Creates a new `DeleteTimeSeries` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteTimeSeries {
+    type Output = std::result::Result<
+        crate::output::DeleteTimeSeriesOutput,
+        crate::error::DeleteTimeSeriesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_time_series_error(response)
+        } else {
+            crate::operation_deser::parse_delete_time_series_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeAccessPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1003,6 +1071,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStorageConfigura
     }
 }
 
+/// Operation shape for `DescribeTimeSeries`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_time_series`](crate::client::Client::describe_time_series).
+///
+/// See [`crate::client::fluent_builders::DescribeTimeSeries`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeTimeSeries {
+    _private: (),
+}
+impl DescribeTimeSeries {
+    /// Creates a new builder-style object to manufacture [`DescribeTimeSeriesInput`](crate::input::DescribeTimeSeriesInput)
+    pub fn builder() -> crate::input::describe_time_series_input::Builder {
+        crate::input::describe_time_series_input::Builder::default()
+    }
+    /// Creates a new `DescribeTimeSeries` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeTimeSeries {
+    type Output = std::result::Result<
+        crate::output::DescribeTimeSeriesOutput,
+        crate::error::DescribeTimeSeriesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_time_series_error(response)
+        } else {
+            crate::operation_deser::parse_describe_time_series_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DisassociateAssets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1033,6 +1135,44 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateAssets {
             crate::operation_deser::parse_disassociate_assets_error(response)
         } else {
             crate::operation_deser::parse_disassociate_assets_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DisassociateTimeSeriesFromAssetProperty`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`disassociate_time_series_from_asset_property`](crate::client::Client::disassociate_time_series_from_asset_property).
+///
+/// See [`crate::client::fluent_builders::DisassociateTimeSeriesFromAssetProperty`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DisassociateTimeSeriesFromAssetProperty {
+    _private: (),
+}
+impl DisassociateTimeSeriesFromAssetProperty {
+    /// Creates a new builder-style object to manufacture [`DisassociateTimeSeriesFromAssetPropertyInput`](crate::input::DisassociateTimeSeriesFromAssetPropertyInput)
+    pub fn builder() -> crate::input::disassociate_time_series_from_asset_property_input::Builder {
+        crate::input::disassociate_time_series_from_asset_property_input::Builder::default()
+    }
+    /// Creates a new `DisassociateTimeSeriesFromAssetProperty` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DisassociateTimeSeriesFromAssetProperty {
+    type Output = std::result::Result<
+        crate::output::DisassociateTimeSeriesFromAssetPropertyOutput,
+        crate::error::DisassociateTimeSeriesFromAssetPropertyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disassociate_time_series_from_asset_property_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_disassociate_time_series_from_asset_property_response(
+                response,
+            )
         }
     }
 }
@@ -1533,6 +1673,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
             crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListTimeSeries`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_time_series`](crate::client::Client::list_time_series).
+///
+/// See [`crate::client::fluent_builders::ListTimeSeries`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListTimeSeries {
+    _private: (),
+}
+impl ListTimeSeries {
+    /// Creates a new builder-style object to manufacture [`ListTimeSeriesInput`](crate::input::ListTimeSeriesInput)
+    pub fn builder() -> crate::input::list_time_series_input::Builder {
+        crate::input::list_time_series_input::Builder::default()
+    }
+    /// Creates a new `ListTimeSeries` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListTimeSeries {
+    type Output =
+        std::result::Result<crate::output::ListTimeSeriesOutput, crate::error::ListTimeSeriesError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_time_series_error(response)
+        } else {
+            crate::operation_deser::parse_list_time_series_response(response)
         }
     }
 }

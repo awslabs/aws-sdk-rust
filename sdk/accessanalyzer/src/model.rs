@@ -1702,6 +1702,82 @@ impl AsRef<str> for ValidatePolicyFindingType {
     std::fmt::Debug,
     std::hash::Hash,
 )]
+pub enum ValidatePolicyResourceType {
+    #[allow(missing_docs)] // documentation missing in model
+    S3AccessPoint,
+    #[allow(missing_docs)] // documentation missing in model
+    S3Bucket,
+    #[allow(missing_docs)] // documentation missing in model
+    S3MultiRegionAccessPoint,
+    #[allow(missing_docs)] // documentation missing in model
+    S3ObjectLambdaAccessPoint,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ValidatePolicyResourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS::S3::AccessPoint" => ValidatePolicyResourceType::S3AccessPoint,
+            "AWS::S3::Bucket" => ValidatePolicyResourceType::S3Bucket,
+            "AWS::S3::MultiRegionAccessPoint" => {
+                ValidatePolicyResourceType::S3MultiRegionAccessPoint
+            }
+            "AWS::S3ObjectLambda::AccessPoint" => {
+                ValidatePolicyResourceType::S3ObjectLambdaAccessPoint
+            }
+            other => ValidatePolicyResourceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ValidatePolicyResourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ValidatePolicyResourceType::from(s))
+    }
+}
+impl ValidatePolicyResourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ValidatePolicyResourceType::S3AccessPoint => "AWS::S3::AccessPoint",
+            ValidatePolicyResourceType::S3Bucket => "AWS::S3::Bucket",
+            ValidatePolicyResourceType::S3MultiRegionAccessPoint => {
+                "AWS::S3::MultiRegionAccessPoint"
+            }
+            ValidatePolicyResourceType::S3ObjectLambdaAccessPoint => {
+                "AWS::S3ObjectLambda::AccessPoint"
+            }
+            ValidatePolicyResourceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AWS::S3::AccessPoint",
+            "AWS::S3::Bucket",
+            "AWS::S3::MultiRegionAccessPoint",
+            "AWS::S3ObjectLambda::AccessPoint",
+        ]
+    }
+}
+impl AsRef<str> for ValidatePolicyResourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum PolicyType {
     #[allow(missing_docs)] // documentation missing in model
     IdentityPolicy,
@@ -7041,20 +7117,20 @@ impl AsRef<str> for AclPermission {
 /// specify the policy, the access preview assumes a secret without a policy. To propose
 /// deletion of an existing policy, you can specify an empty string. If the proposed
 /// configuration is for a new secret and you do not specify the KMS key ID, the access
-/// preview uses the default CMK of the Amazon Web Services account. If you specify an empty string for the
-/// KMS key ID, the access preview uses the default CMK of the Amazon Web Services account. For more
-/// information about secret policy limits, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html">Quotas for
+/// preview uses the Amazon Web Services managed key <code>aws/secretsmanager</code>. If you specify an empty
+/// string for the KMS key ID, the access preview uses the Amazon Web Services managed key of the Amazon Web Services
+/// account. For more information about secret policy limits, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html">Quotas for
 /// Secrets Manager.</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecretsManagerSecretConfiguration {
-    /// <p>The proposed ARN, key ID, or alias of the KMS customer master key (CMK).</p>
+    /// <p>The proposed ARN, key ID, or alias of the KMS key.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The proposed resource policy defining who can access or manage the secret.</p>
     pub secret_policy: std::option::Option<std::string::String>,
 }
 impl SecretsManagerSecretConfiguration {
-    /// <p>The proposed ARN, key ID, or alias of the KMS customer master key (CMK).</p>
+    /// <p>The proposed ARN, key ID, or alias of the KMS key.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -7081,12 +7157,12 @@ pub mod secrets_manager_secret_configuration {
         pub(crate) secret_policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The proposed ARN, key ID, or alias of the KMS customer master key (CMK).</p>
+        /// <p>The proposed ARN, key ID, or alias of the KMS key.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The proposed ARN, key ID, or alias of the KMS customer master key (CMK).</p>
+        /// <p>The proposed ARN, key ID, or alias of the KMS key.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self

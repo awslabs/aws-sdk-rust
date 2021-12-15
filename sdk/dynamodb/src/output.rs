@@ -2816,17 +2816,26 @@ impl ExportTableToPointInTimeOutput {
 pub struct ExecuteTransactionOutput {
     /// <p>The response to a PartiQL transaction.</p>
     pub responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
+    /// <p>The capacity units consumed by the entire operation. The values of the list are
+    /// ordered according to the ordering of the statements.</p>
+    pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
 }
 impl ExecuteTransactionOutput {
     /// <p>The response to a PartiQL transaction.</p>
     pub fn responses(&self) -> std::option::Option<&[crate::model::ItemResponse]> {
         self.responses.as_deref()
     }
+    /// <p>The capacity units consumed by the entire operation. The values of the list are
+    /// ordered according to the ordering of the statements.</p>
+    pub fn consumed_capacity(&self) -> std::option::Option<&[crate::model::ConsumedCapacity]> {
+        self.consumed_capacity.as_deref()
+    }
 }
 impl std::fmt::Debug for ExecuteTransactionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecuteTransactionOutput");
         formatter.field("responses", &self.responses);
+        formatter.field("consumed_capacity", &self.consumed_capacity);
         formatter.finish()
     }
 }
@@ -2837,6 +2846,8 @@ pub mod execute_transaction_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
+        pub(crate) consumed_capacity:
+            std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
     }
     impl Builder {
         /// Appends an item to `responses`.
@@ -2858,10 +2869,35 @@ pub mod execute_transaction_output {
             self.responses = input;
             self
         }
+        /// Appends an item to `consumed_capacity`.
+        ///
+        /// To override the contents of this collection use [`set_consumed_capacity`](Self::set_consumed_capacity).
+        ///
+        /// <p>The capacity units consumed by the entire operation. The values of the list are
+        /// ordered according to the ordering of the statements.</p>
+        pub fn consumed_capacity(
+            mut self,
+            input: impl Into<crate::model::ConsumedCapacity>,
+        ) -> Self {
+            let mut v = self.consumed_capacity.unwrap_or_default();
+            v.push(input.into());
+            self.consumed_capacity = Some(v);
+            self
+        }
+        /// <p>The capacity units consumed by the entire operation. The values of the list are
+        /// ordered according to the ordering of the statements.</p>
+        pub fn set_consumed_capacity(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+        ) -> Self {
+            self.consumed_capacity = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExecuteTransactionOutput`](crate::output::ExecuteTransactionOutput)
         pub fn build(self) -> crate::output::ExecuteTransactionOutput {
             crate::output::ExecuteTransactionOutput {
                 responses: self.responses,
+                consumed_capacity: self.consumed_capacity,
             }
         }
     }
@@ -2887,6 +2923,12 @@ pub struct ExecuteStatementOutput {
     /// this value in the response. If set, you can use that this value in the subsequent
     /// request to get the remaining results.</p>
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>The capacity units consumed by an operation. The data returned includes the total
+    /// provisioned throughput consumed, along with statistics for the table and any indexes
+    /// involved in the operation. <code>ConsumedCapacity</code> is only returned if the request
+    /// asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
+    pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
 }
 impl ExecuteStatementOutput {
     /// <p>If a read operation was used, this property will contain the result of the read
@@ -2905,12 +2947,21 @@ impl ExecuteStatementOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The capacity units consumed by an operation. The data returned includes the total
+    /// provisioned throughput consumed, along with statistics for the table and any indexes
+    /// involved in the operation. <code>ConsumedCapacity</code> is only returned if the request
+    /// asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
+    pub fn consumed_capacity(&self) -> std::option::Option<&crate::model::ConsumedCapacity> {
+        self.consumed_capacity.as_ref()
+    }
 }
 impl std::fmt::Debug for ExecuteStatementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecuteStatementOutput");
         formatter.field("items", &self.items);
         formatter.field("next_token", &self.next_token);
+        formatter.field("consumed_capacity", &self.consumed_capacity);
         formatter.finish()
     }
 }
@@ -2926,6 +2977,7 @@ pub mod execute_statement_output {
             >,
         >,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -2974,11 +3026,33 @@ pub mod execute_statement_output {
             self.next_token = input;
             self
         }
+        /// <p>The capacity units consumed by an operation. The data returned includes the total
+        /// provisioned throughput consumed, along with statistics for the table and any indexes
+        /// involved in the operation. <code>ConsumedCapacity</code> is only returned if the request
+        /// asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
+        pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
+            self.consumed_capacity = Some(input);
+            self
+        }
+        /// <p>The capacity units consumed by an operation. The data returned includes the total
+        /// provisioned throughput consumed, along with statistics for the table and any indexes
+        /// involved in the operation. <code>ConsumedCapacity</code> is only returned if the request
+        /// asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
+        pub fn set_consumed_capacity(
+            mut self,
+            input: std::option::Option<crate::model::ConsumedCapacity>,
+        ) -> Self {
+            self.consumed_capacity = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput)
         pub fn build(self) -> crate::output::ExecuteStatementOutput {
             crate::output::ExecuteStatementOutput {
                 items: self.items,
                 next_token: self.next_token,
+                consumed_capacity: self.consumed_capacity,
             }
         }
     }
@@ -5657,17 +5731,26 @@ impl BatchGetItemOutput {
 pub struct BatchExecuteStatementOutput {
     /// <p>The response to each PartiQL statement in the batch.</p>
     pub responses: std::option::Option<std::vec::Vec<crate::model::BatchStatementResponse>>,
+    /// <p>The capacity units consumed by the entire operation. The values of the list are
+    /// ordered according to the ordering of the statements.</p>
+    pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
 }
 impl BatchExecuteStatementOutput {
     /// <p>The response to each PartiQL statement in the batch.</p>
     pub fn responses(&self) -> std::option::Option<&[crate::model::BatchStatementResponse]> {
         self.responses.as_deref()
     }
+    /// <p>The capacity units consumed by the entire operation. The values of the list are
+    /// ordered according to the ordering of the statements.</p>
+    pub fn consumed_capacity(&self) -> std::option::Option<&[crate::model::ConsumedCapacity]> {
+        self.consumed_capacity.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchExecuteStatementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchExecuteStatementOutput");
         formatter.field("responses", &self.responses);
+        formatter.field("consumed_capacity", &self.consumed_capacity);
         formatter.finish()
     }
 }
@@ -5679,6 +5762,8 @@ pub mod batch_execute_statement_output {
     pub struct Builder {
         pub(crate) responses:
             std::option::Option<std::vec::Vec<crate::model::BatchStatementResponse>>,
+        pub(crate) consumed_capacity:
+            std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
     }
     impl Builder {
         /// Appends an item to `responses`.
@@ -5700,10 +5785,35 @@ pub mod batch_execute_statement_output {
             self.responses = input;
             self
         }
+        /// Appends an item to `consumed_capacity`.
+        ///
+        /// To override the contents of this collection use [`set_consumed_capacity`](Self::set_consumed_capacity).
+        ///
+        /// <p>The capacity units consumed by the entire operation. The values of the list are
+        /// ordered according to the ordering of the statements.</p>
+        pub fn consumed_capacity(
+            mut self,
+            input: impl Into<crate::model::ConsumedCapacity>,
+        ) -> Self {
+            let mut v = self.consumed_capacity.unwrap_or_default();
+            v.push(input.into());
+            self.consumed_capacity = Some(v);
+            self
+        }
+        /// <p>The capacity units consumed by the entire operation. The values of the list are
+        /// ordered according to the ordering of the statements.</p>
+        pub fn set_consumed_capacity(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+        ) -> Self {
+            self.consumed_capacity = input;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput)
         pub fn build(self) -> crate::output::BatchExecuteStatementOutput {
             crate::output::BatchExecuteStatementOutput {
                 responses: self.responses,
+                consumed_capacity: self.consumed_capacity,
             }
         }
     }

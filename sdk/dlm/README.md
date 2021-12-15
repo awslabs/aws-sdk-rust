@@ -1,6 +1,6 @@
 # aws-sdk-dlm
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 With Amazon Data Lifecycle Manager, you can manage the lifecycle of your Amazon Web Services resources. You create lifecycle policies, which are used to automate operations on the specified resources.
@@ -18,8 +18,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-dlm = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-dlm = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

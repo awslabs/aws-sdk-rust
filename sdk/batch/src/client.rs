@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_batch::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -273,7 +273,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -360,9 +360,8 @@ pub mod fluent_builders {
     /// within the environment. This is based on the compute resource specification that you define or the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch template</a> that you
     /// specify when you create the compute environment. Either, you can choose to use EC2 On-Demand Instances and EC2 Spot
     /// Instances. Or, you can use Fargate and Fargate Spot capacity in your managed compute environment. You can
-    /// optionally set a maximum price so that Spot Instances only launch
-    /// when
-    /// the Spot Instance price is less than a specified percentage of the On-Demand price.</p>
+    /// optionally set a maximum price so that Spot Instances only launch when the Spot Instance price is less than a
+    /// specified percentage of the On-Demand price.</p>
     /// <note>
     /// <p>Multi-node parallel jobs aren't supported on Spot Instances.</p>
     /// </note>
@@ -396,7 +395,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateComputeEnvironment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -449,14 +448,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-        /// underscores are allowed.</p>
+        /// <p>The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and
+        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn compute_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.compute_environment_name(inp);
             self
         }
-        /// <p>The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-        /// underscores are allowed.</p>
+        /// <p>The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and
+        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_compute_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -504,11 +503,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_state(input);
             self
         }
-        /// <p>The maximum number of vCPUs for an
-        /// unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new
-        /// share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
-        /// reserved.</p>
-        ///
+        /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share
+        /// scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job
+        /// queue, no vCPU capacity is reserved.</p>
         /// <note>
         /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/</p>
         /// </note>
@@ -516,11 +513,9 @@ pub mod fluent_builders {
             self.inner = self.inner.unmanagedv_cpus(inp);
             self
         }
-        /// <p>The maximum number of vCPUs for an
-        /// unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new
-        /// share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
-        /// reserved.</p>
-        ///
+        /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share
+        /// scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job
+        /// queue, no vCPU capacity is reserved.</p>
         /// <note>
         /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/</p>
         /// </note>
@@ -632,7 +627,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateJobQueue<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -685,14 +680,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the job queue. Up to 128 letters (uppercase and lowercase), numbers, and underscores are
-        /// allowed.</p>
+        /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters,
+        /// numbers, hyphens (-), and underscores (_).</p>
         pub fn job_queue_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_queue_name(inp);
             self
         }
-        /// <p>The name of the job queue. Up to 128 letters (uppercase and lowercase), numbers, and underscores are
-        /// allowed.</p>
+        /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters,
+        /// numbers, hyphens (-), and underscores (_).</p>
         pub fn set_job_queue_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -714,25 +709,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_state(input);
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the fair share scheduling
-        /// policy. If this parameter is specified, the job queue will use a fair share scheduling policy. If this parameter is
-        /// not specified, the job queue will use a first in, first out (FIFO) scheduling policy. Once a job queue is created,
-        /// the fair share scheduling policy can be replaced but not removed. The format is
+        /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair
+        /// share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO)
+        /// scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy.
+        /// The format is
         /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
         /// </code>.
-        /// For example,
+        /// An example is
         /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
         pub fn scheduling_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.scheduling_policy_arn(inp);
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the fair share scheduling
-        /// policy. If this parameter is specified, the job queue will use a fair share scheduling policy. If this parameter is
-        /// not specified, the job queue will use a first in, first out (FIFO) scheduling policy. Once a job queue is created,
-        /// the fair share scheduling policy can be replaced but not removed. The format is
+        /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair
+        /// share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO)
+        /// scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy.
+        /// The format is
         /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
         /// </code>.
-        /// For example,
+        /// An example is
         /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
         pub fn set_scheduling_policy_arn(
             mut self,
@@ -827,12 +822,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSchedulingPolicy`.
     ///
-    /// <p>Creates an Batch scheduling
-    /// policy.</p>
+    /// <p>Creates an Batch scheduling policy.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateSchedulingPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -885,26 +879,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the scheduling
-        /// policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
+        /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase
+        /// letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(inp);
             self
         }
-        /// <p>The name of the scheduling
-        /// policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
+        /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase
+        /// letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The fair share policy of the scheduling
-        /// policy.</p>
+        /// <p>The fair share policy of the scheduling policy.</p>
         pub fn fairshare_policy(mut self, inp: crate::model::FairsharePolicy) -> Self {
             self.inner = self.inner.fairshare_policy(inp);
             self
         }
-        /// <p>The fair share policy of the scheduling
-        /// policy.</p>
+        /// <p>The fair share policy of the scheduling policy.</p>
         pub fn set_fairshare_policy(
             mut self,
             input: std::option::Option<crate::model::FairsharePolicy>,
@@ -951,7 +943,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteComputeEnvironment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1027,7 +1019,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteJobQueue<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1093,13 +1085,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSchedulingPolicy`.
     ///
-    /// <p>Deletes the specified scheduling
-    /// policy.</p>
-    /// <p>You can't delete a scheduling policy that is used in any job queues.</p>
+    /// <p>Deletes the specified scheduling policy.</p>
+    /// <p>You can't delete a scheduling policy that's used in any job queues.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteSchedulingPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1152,14 +1143,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the scheduling policy to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy to delete.</p>
         pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the scheduling policy to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy to delete.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -1171,7 +1160,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeregisterJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1247,7 +1236,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeComputeEnvironments<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1371,7 +1360,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeJobDefinitions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1428,16 +1417,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_job_definitions`](Self::set_job_definitions).
         ///
-        /// <p>A list of up to 100 job definitions. Each
-        /// entry in the list can either be an ARN of the form
+        /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
         /// <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version
         /// using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
         pub fn job_definitions(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_definitions(inp);
             self
         }
-        /// <p>A list of up to 100 job definitions. Each
-        /// entry in the list can either be an ARN of the form
+        /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
         /// <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version
         /// using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
         pub fn set_job_definitions(
@@ -1523,7 +1510,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeJobQueues<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1644,7 +1631,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeJobs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1717,12 +1704,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSchedulingPolicies`.
     ///
-    /// <p>Describes one or more of your scheduling
-    /// policies.</p>
+    /// <p>Describes one or more of your scheduling policies.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeSchedulingPolicies<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1779,14 +1765,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_arns`](Self::set_arns).
         ///
-        /// <p>A list of up to 100 scheduling policy
-        /// Amazon Resource Name (ARN) entries.</p>
+        /// <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
         pub fn arns(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arns(inp);
             self
         }
-        /// <p>A list of up to 100 scheduling policy
-        /// Amazon Resource Name (ARN) entries.</p>
+        /// <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
         pub fn set_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1815,7 +1799,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListJobs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1998,14 +1982,14 @@ pub mod fluent_builders {
         /// <dt>BEFORE_CREATED_AT</dt>
         /// <dd>
         /// <p>The value for the filter is the time that's before the job was created. This corresponds to the
-        /// <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-        /// (midnight) on January 1, 1970.</p>
+        /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+        /// UTC (midnight) on January 1, 1970.</p>
         /// </dd>
         /// <dt>AFTER_CREATED_AT</dt>
         /// <dd>
         /// <p>The value for the filter is the time that's after the job was created. This corresponds to the
-        /// <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-        /// (midnight) on January 1, 1970.</p>
+        /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+        /// UTC (midnight) on January 1, 1970.</p>
         /// </dd>
         /// </dl>
         pub fn filters(mut self, inp: impl Into<crate::model::KeyValuesPair>) -> Self {
@@ -2040,14 +2024,14 @@ pub mod fluent_builders {
         /// <dt>BEFORE_CREATED_AT</dt>
         /// <dd>
         /// <p>The value for the filter is the time that's before the job was created. This corresponds to the
-        /// <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-        /// (midnight) on January 1, 1970.</p>
+        /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+        /// UTC (midnight) on January 1, 1970.</p>
         /// </dd>
         /// <dt>AFTER_CREATED_AT</dt>
         /// <dd>
         /// <p>The value for the filter is the time that's after the job was created. This corresponds to the
-        /// <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-        /// (midnight) on January 1, 1970.</p>
+        /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+        /// UTC (midnight) on January 1, 1970.</p>
         /// </dd>
         /// </dl>
         pub fn set_filters(
@@ -2060,12 +2044,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSchedulingPolicies`.
     ///
-    /// <p>Returns a list of Batch scheduling
-    /// policies.</p>
+    /// <p>Returns a list of Batch scheduling policies.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListSchedulingPolicies<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2118,32 +2101,33 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When this
-        /// parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page
-        /// and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be
-        /// between 1 and 100. If this parameter isn't used, then
+        /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When
+        /// this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single
+        /// page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by
+        /// sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This
+        /// value can be between 1 and 100. If this parameter isn't used,
         /// <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value
         /// if applicable.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When this
-        /// parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page
-        /// and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be
-        /// between 1 and 100. If this parameter isn't used, then
+        /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When
+        /// this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single
+        /// page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by
+        /// sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This
+        /// value can be between 1 and 100. If this parameter isn't used,
         /// <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value
         /// if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code> request
-        /// where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-        /// from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code>
+        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+        /// continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
+        /// <code>null</code> when there are no more results to
+        /// return.</p>
         /// <note>
         /// <p>This token should be treated as an opaque identifier that's only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -2152,10 +2136,11 @@ pub mod fluent_builders {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code> request
-        /// where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-        /// from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code>
+        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+        /// continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
+        /// <code>null</code> when there are no more results to
+        /// return.</p>
         /// <note>
         /// <p>This token should be treated as an opaque identifier that's only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -2172,7 +2157,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2244,7 +2229,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RegisterJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2297,14 +2282,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-        /// underscores are allowed.</p>
+        /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
+        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn job_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_definition_name(inp);
             self
         }
-        /// <p>The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-        /// underscores are allowed.</p>
+        /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
+        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_job_definition_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2360,19 +2345,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parameters(input);
             self
         }
-        /// <p>The scheduling priority for jobs that are
-        /// submitted with this job definition. This will only affect jobs in job queues with a fair share policy. Jobs with a
-        /// higher scheduling priority will be scheduled before jobs with a lower scheduling priority.</p>
-        ///
+        /// <p>The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job
+        /// queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower
+        /// scheduling priority.</p>
         /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
         pub fn scheduling_priority(mut self, inp: i32) -> Self {
             self.inner = self.inner.scheduling_priority(inp);
             self
         }
-        /// <p>The scheduling priority for jobs that are
-        /// submitted with this job definition. This will only affect jobs in job queues with a fair share policy. Jobs with a
-        /// higher scheduling priority will be scheduled before jobs with a lower scheduling priority.</p>
-        ///
+        /// <p>The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job
+        /// queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower
+        /// scheduling priority.</p>
         /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
         pub fn set_scheduling_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_scheduling_priority(input);
@@ -2537,11 +2520,9 @@ pub mod fluent_builders {
     /// using the <code>memory</code> and <code>vcpus</code> parameters. Rather, you must specify updates to job definition
     /// parameters in a <code>ResourceRequirements</code> object that's included in the <code>containerOverrides</code>
     /// parameter.</p>
-    ///
     /// <note>
     /// <p>Job queues with a scheduling policy are limited to 500 active fair share identifiers at a time. </p>
     /// </note>
-    ///
     /// <important>
     /// <p>Jobs that run on Fargate resources can't be guaranteed to run for more than 14 days. This is because, after 14
     /// days, Fargate resources might become unavailable and job might be terminated.</p>
@@ -2549,7 +2530,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct SubmitJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2602,14 +2583,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the job. The first character must be alphanumeric, and up to 128 letters (uppercase and lowercase),
-        /// numbers, hyphens, and underscores are allowed.</p>
+        /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain
+        /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_name(inp);
             self
         }
-        /// <p>The name of the job. The first character must be alphanumeric, and up to 128 letters (uppercase and lowercase),
-        /// numbers, hyphens, and underscores are allowed.</p>
+        /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain
+        /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_name(input);
             self
@@ -2624,14 +2605,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_queue(input);
             self
         }
-        /// <p>The share identifier for the
-        /// job.</p>
+        /// <p>The share identifier for the job.</p>
         pub fn share_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.share_identifier(inp);
             self
         }
-        /// <p>The share identifier for the
-        /// job.</p>
+        /// <p>The share identifier for the job.</p>
         pub fn set_share_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2639,21 +2618,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_share_identifier(input);
             self
         }
-        /// <p>The scheduling priority for the job. This
-        /// will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be
-        /// scheduled before jobs with a lower scheduling priority. This will override any scheduling priority in the job
-        /// definition.</p>
-        ///
+        /// <p>The scheduling priority for the job. This will only affect jobs in job queues with a fair share policy. Jobs
+        /// with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority. This will override
+        /// any scheduling priority in the job definition.</p>
         /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
         pub fn scheduling_priority_override(mut self, inp: i32) -> Self {
             self.inner = self.inner.scheduling_priority_override(inp);
             self
         }
-        /// <p>The scheduling priority for the job. This
-        /// will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be
-        /// scheduled before jobs with a lower scheduling priority. This will override any scheduling priority in the job
-        /// definition.</p>
-        ///
+        /// <p>The scheduling priority for the job. This will only affect jobs in job queues with a fair share policy. Jobs
+        /// with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority. This will override
+        /// any scheduling priority in the job definition.</p>
         /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
         pub fn set_scheduling_priority_override(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_scheduling_priority_override(input);
@@ -2879,7 +2854,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2980,7 +2955,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TerminateJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3064,7 +3039,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3153,7 +3128,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateComputeEnvironment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3245,20 +3220,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_state(input);
             self
         }
-        /// <p>The maximum number of vCPUs expected to
-        /// be used for an unmanaged compute environment. This parameter should not be specified for a managed compute
-        /// environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share
-        /// identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
-        /// reserved.</p>
+        /// <p>The maximum number of vCPUs expected to be used for an unmanaged compute environment. This parameter should not
+        /// be specified for a managed compute environment. This parameter is only used for fair share scheduling to reserve vCPU
+        /// capacity for new share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity
+        /// will be reserved.</p>
         pub fn unmanagedv_cpus(mut self, inp: i32) -> Self {
             self.inner = self.inner.unmanagedv_cpus(inp);
             self
         }
-        /// <p>The maximum number of vCPUs expected to
-        /// be used for an unmanaged compute environment. This parameter should not be specified for a managed compute
-        /// environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share
-        /// identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
-        /// reserved.</p>
+        /// <p>The maximum number of vCPUs expected to be used for an unmanaged compute environment. This parameter should not
+        /// be specified for a managed compute environment. This parameter is only used for fair share scheduling to reserve vCPU
+        /// capacity for new share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity
+        /// will be reserved.</p>
         pub fn set_unmanagedv_cpus(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_unmanagedv_cpus(input);
             self
@@ -3327,7 +3300,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateJobQueue<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3486,12 +3459,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSchedulingPolicy`.
     ///
-    /// <p>Updates a scheduling
-    /// policy.</p>
+    /// <p>Updates a scheduling policy.</p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateSchedulingPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3554,14 +3526,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>The fair share
-        /// policy.</p>
+        /// <p>The fair share policy.</p>
         pub fn fairshare_policy(mut self, inp: crate::model::FairsharePolicy) -> Self {
             self.inner = self.inner.fairshare_policy(inp);
             self
         }
-        /// <p>The fair share
-        /// policy.</p>
+        /// <p>The fair share policy.</p>
         pub fn set_fairshare_policy(
             mut self,
             input: std::option::Option<crate::model::FairsharePolicy>,
@@ -3571,17 +3541,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -3590,7 +3564,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -3606,11 +3580,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

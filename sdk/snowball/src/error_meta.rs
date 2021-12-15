@@ -7,7 +7,8 @@ pub enum Error {
     /// five nodes for your cluster and you have more nodes to create for this cluster, try again and
     /// create jobs until your cluster has exactly five nodes.</p>
     ClusterLimitExceededException(crate::error::ClusterLimitExceededException),
-    /// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once when other requests are not completed.</p>
+    /// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once
+    /// when other requests are not completed.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
     /// action.</p>
@@ -15,8 +16,7 @@ pub enum Error {
     /// <p>The address provided was invalid. Check the address with your region's carrier, and try
     /// again.</p>
     InvalidAddressException(crate::error::InvalidAddressException),
-    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the
-    /// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
     InvalidInputCombinationException(crate::error::InvalidInputCombinationException),
     /// <p>The action can't be performed because the job's current state doesn't allow that action
     /// to be performed.</p>
@@ -28,18 +28,18 @@ pub enum Error {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided AWS Key Management Service key lacks the permissions to perform the
-    /// specified <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
+    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
-    /// <p>You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid return
-    /// shipping label already exists. In this case, use
-    /// <code>DescribeReturnShippingLabel</code> to get the url.</p>
+    /// <p>You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid
+    /// return shipping label already exists. In this case, use
+    /// <code>DescribeReturnShippingLabel</code> to get the URL.</p>
     ReturnShippingLabelAlreadyExistsException(
         crate::error::ReturnShippingLabelAlreadyExistsException,
     ),
     /// <p>The address is either outside the serviceable area for your region, or an error
     /// occurred. Check the address with your region's carrier and try again. If the issue persists,
-    /// contact AWS Support.</p>
+    /// contact Amazon Web Services Support.</p>
     UnsupportedAddressException(crate::error::UnsupportedAddressException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

@@ -8,10 +8,10 @@ edition = "2018"
 
 [dependencies]
 aws-config = { path = "../../sdk/aws-config" }
-aws-http = { path = "../../sdk/aws-http"}
-aws-hyper = { path = "../../sdk/aws-hyper"}
+aws-http = { path = "../../sdk/aws-http" }
 aws-sdk-dynamodb = { path = "../../sdk/dynamodb" }
 aws-smithy-http = { path = "../../sdk/aws-smithy-http" }
+aws-smithy-client = { path = "../../sdk/aws-smithy-client" }
 aws-smithy-types = { path = "../../sdk/aws-smithy-types" }
 aws-types = { path = "../../sdk/aws-types" }
 rand = "0.8.3"

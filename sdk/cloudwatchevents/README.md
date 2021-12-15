@@ -1,6 +1,6 @@
 # aws-sdk-cloudwatchevents
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 Amazon EventBridge helps you to respond to state changes in your Amazon Web Services resources. When your resources change state, they automatically send events to an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a predetermined schedule. For example, you can configure rules to:
@@ -21,8 +21,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-cloudwatchevents = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-cloudwatchevents = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

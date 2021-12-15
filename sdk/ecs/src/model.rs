@@ -15446,16 +15446,21 @@ impl AsRef<str> for Compatibility {
 }
 
 /// <p>Information about the platform for the Amazon ECS service or task.</p>
+/// <p>For more informataion about <code>RuntimePlatform</code>, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#runtime-platform">RuntimePlatform</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuntimePlatform {
     /// <p>The CPU architecture.</p>
+    /// <p>You can run your Linux tasks on an ARM-based platform by setting the value  to <code>ARM64</code>. This option is avaiable
+    /// for tasks that run on Linuc Amazon EC2 instance or Linux containers on Fargate.</p>
     pub cpu_architecture: std::option::Option<crate::model::CpuArchitecture>,
     /// <p>The operating system.</p>
     pub operating_system_family: std::option::Option<crate::model::OsFamily>,
 }
 impl RuntimePlatform {
     /// <p>The CPU architecture.</p>
+    /// <p>You can run your Linux tasks on an ARM-based platform by setting the value  to <code>ARM64</code>. This option is avaiable
+    /// for tasks that run on Linuc Amazon EC2 instance or Linux containers on Fargate.</p>
     pub fn cpu_architecture(&self) -> std::option::Option<&crate::model::CpuArchitecture> {
         self.cpu_architecture.as_ref()
     }
@@ -15483,11 +15488,15 @@ pub mod runtime_platform {
     }
     impl Builder {
         /// <p>The CPU architecture.</p>
+        /// <p>You can run your Linux tasks on an ARM-based platform by setting the value  to <code>ARM64</code>. This option is avaiable
+        /// for tasks that run on Linuc Amazon EC2 instance or Linux containers on Fargate.</p>
         pub fn cpu_architecture(mut self, input: crate::model::CpuArchitecture) -> Self {
             self.cpu_architecture = Some(input);
             self
         }
         /// <p>The CPU architecture.</p>
+        /// <p>You can run your Linux tasks on an ARM-based platform by setting the value  to <code>ARM64</code>. This option is avaiable
+        /// for tasks that run on Linuc Amazon EC2 instance or Linux containers on Fargate.</p>
         pub fn set_cpu_architecture(
             mut self,
             input: std::option::Option<crate::model::CpuArchitecture>,
@@ -17337,8 +17346,12 @@ pub struct ContainerDefinition {
     /// <code>memoryReservation</code>, then that value is subtracted from the available
     /// memory resources for the container instance where the container is placed. Otherwise,
     /// the value of <code>memory</code> is used.</p>
-    /// <p>The Docker daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
-    /// recommend that you specify fewer than 4 MiB of memory for your containers.</p>
+    /// <p>The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of
+    /// memory for a container, so you should not specify fewer than 6 MiB of
+    /// memory for your containers.</p>
+    /// <p>The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB
+    /// of memory for a container, so you should not specify fewer than 4 MiB of
+    /// memory for your containers.</p>
     pub memory: std::option::Option<i32>,
     /// <p>The soft limit (in MiB) of memory to reserve for the container. When system memory is
     /// under heavy contention, Docker attempts to keep the container memory to this soft limit.
@@ -17903,8 +17916,12 @@ impl ContainerDefinition {
     /// <code>memoryReservation</code>, then that value is subtracted from the available
     /// memory resources for the container instance where the container is placed. Otherwise,
     /// the value of <code>memory</code> is used.</p>
-    /// <p>The Docker daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
-    /// recommend that you specify fewer than 4 MiB of memory for your containers.</p>
+    /// <p>The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of
+    /// memory for a container, so you should not specify fewer than 6 MiB of
+    /// memory for your containers.</p>
+    /// <p>The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB
+    /// of memory for a container, so you should not specify fewer than 4 MiB of
+    /// memory for your containers.</p>
     pub fn memory(&self) -> std::option::Option<i32> {
         self.memory
     }
@@ -18756,8 +18773,12 @@ pub mod container_definition {
         /// <code>memoryReservation</code>, then that value is subtracted from the available
         /// memory resources for the container instance where the container is placed. Otherwise,
         /// the value of <code>memory</code> is used.</p>
-        /// <p>The Docker daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
-        /// recommend that you specify fewer than 4 MiB of memory for your containers.</p>
+        /// <p>The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of
+        /// memory for a container, so you should not specify fewer than 6 MiB of
+        /// memory for your containers.</p>
+        /// <p>The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB
+        /// of memory for a container, so you should not specify fewer than 4 MiB of
+        /// memory for your containers.</p>
         pub fn memory(mut self, input: i32) -> Self {
             self.memory = Some(input);
             self
@@ -18776,8 +18797,12 @@ pub mod container_definition {
         /// <code>memoryReservation</code>, then that value is subtracted from the available
         /// memory resources for the container instance where the container is placed. Otherwise,
         /// the value of <code>memory</code> is used.</p>
-        /// <p>The Docker daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
-        /// recommend that you specify fewer than 4 MiB of memory for your containers.</p>
+        /// <p>The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of
+        /// memory for a container, so you should not specify fewer than 6 MiB of
+        /// memory for your containers.</p>
+        /// <p>The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB
+        /// of memory for a container, so you should not specify fewer than 4 MiB of
+        /// memory for your containers.</p>
         pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
             self.memory = input;
             self

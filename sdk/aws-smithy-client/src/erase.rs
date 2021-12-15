@@ -36,7 +36,7 @@ where
     ///
     /// In practice, you'll use this method once you've constructed a client to your liking:
     ///
-    /// ```rust
+    /// ```no_run
     /// # #[cfg(feature = "https")]
     /// # fn not_main() {
     /// use aws_smithy_client::{Builder, Client};
@@ -75,7 +75,7 @@ where
     ///
     /// In practice, you'll use this method once you've constructed a client to your liking:
     ///
-    /// ```rust
+    /// ```no_run
     /// # #[cfg(feature = "https")]
     /// # fn not_main() {
     /// # type MyMiddleware = aws_smithy_client::DynMiddleware<aws_smithy_client::DynConnector>;
@@ -111,7 +111,7 @@ where
     ///
     /// In practice, you'll use this method once you've constructed a client to your liking:
     ///
-    /// ```rust
+    /// ```no_run
     /// # #[cfg(feature = "https")]
     /// # fn not_main() {
     /// use aws_smithy_client::{Builder, Client};

@@ -1518,6 +1518,21 @@ pub struct DialogAction {
     pub r#type: std::option::Option<crate::model::DialogActionType>,
     /// <p>The name of the slot that should be elicited from the user.</p>
     pub slot_to_elicit: std::option::Option<std::string::String>,
+    /// <p>Configures the slot to use spell-by-letter or spell-by-word style.
+    /// When you use a style on a slot, users can spell out their input to make
+    /// it clear to your bot.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Spell by letter - "b" "o" "b"</p>
+    /// </li>
+    /// <li>
+    /// <p>Spell by word - "b as in boy" "o as in oscar" "b as in
+    /// boy"</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html">
+    /// Using spelling to enter slot values </a>.</p>
+    pub slot_elicitation_style: std::option::Option<crate::model::StyleType>,
 }
 impl DialogAction {
     /// <p>The next action that the bot should take in its interaction with the
@@ -1553,12 +1568,30 @@ impl DialogAction {
     pub fn slot_to_elicit(&self) -> std::option::Option<&str> {
         self.slot_to_elicit.as_deref()
     }
+    /// <p>Configures the slot to use spell-by-letter or spell-by-word style.
+    /// When you use a style on a slot, users can spell out their input to make
+    /// it clear to your bot.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Spell by letter - "b" "o" "b"</p>
+    /// </li>
+    /// <li>
+    /// <p>Spell by word - "b as in boy" "o as in oscar" "b as in
+    /// boy"</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html">
+    /// Using spelling to enter slot values </a>.</p>
+    pub fn slot_elicitation_style(&self) -> std::option::Option<&crate::model::StyleType> {
+        self.slot_elicitation_style.as_ref()
+    }
 }
 impl std::fmt::Debug for DialogAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DialogAction");
         formatter.field("r#type", &self.r#type);
         formatter.field("slot_to_elicit", &self.slot_to_elicit);
+        formatter.field("slot_elicitation_style", &self.slot_elicitation_style);
         formatter.finish()
     }
 }
@@ -1570,6 +1603,7 @@ pub mod dialog_action {
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::DialogActionType>,
         pub(crate) slot_to_elicit: std::option::Option<std::string::String>,
+        pub(crate) slot_elicitation_style: std::option::Option<crate::model::StyleType>,
     }
     impl Builder {
         /// <p>The next action that the bot should take in its interaction with the
@@ -1648,11 +1682,51 @@ pub mod dialog_action {
             self.slot_to_elicit = input;
             self
         }
+        /// <p>Configures the slot to use spell-by-letter or spell-by-word style.
+        /// When you use a style on a slot, users can spell out their input to make
+        /// it clear to your bot.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Spell by letter - "b" "o" "b"</p>
+        /// </li>
+        /// <li>
+        /// <p>Spell by word - "b as in boy" "o as in oscar" "b as in
+        /// boy"</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html">
+        /// Using spelling to enter slot values </a>.</p>
+        pub fn slot_elicitation_style(mut self, input: crate::model::StyleType) -> Self {
+            self.slot_elicitation_style = Some(input);
+            self
+        }
+        /// <p>Configures the slot to use spell-by-letter or spell-by-word style.
+        /// When you use a style on a slot, users can spell out their input to make
+        /// it clear to your bot.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Spell by letter - "b" "o" "b"</p>
+        /// </li>
+        /// <li>
+        /// <p>Spell by word - "b as in boy" "o as in oscar" "b as in
+        /// boy"</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html">
+        /// Using spelling to enter slot values </a>.</p>
+        pub fn set_slot_elicitation_style(
+            mut self,
+            input: std::option::Option<crate::model::StyleType>,
+        ) -> Self {
+            self.slot_elicitation_style = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DialogAction`](crate::model::DialogAction)
         pub fn build(self) -> crate::model::DialogAction {
             crate::model::DialogAction {
                 r#type: self.r#type,
                 slot_to_elicit: self.slot_to_elicit,
+                slot_elicitation_style: self.slot_elicitation_style,
             }
         }
     }
@@ -1661,6 +1735,65 @@ impl DialogAction {
     /// Creates a new builder-style object to manufacture [`DialogAction`](crate::model::DialogAction)
     pub fn builder() -> crate::model::dialog_action::Builder {
         crate::model::dialog_action::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum StyleType {
+    #[allow(missing_docs)] // documentation missing in model
+    Default,
+    #[allow(missing_docs)] // documentation missing in model
+    SpellByLetter,
+    #[allow(missing_docs)] // documentation missing in model
+    SpellByWord,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for StyleType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Default" => StyleType::Default,
+            "SpellByLetter" => StyleType::SpellByLetter,
+            "SpellByWord" => StyleType::SpellByWord,
+            other => StyleType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for StyleType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StyleType::from(s))
+    }
+}
+impl StyleType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            StyleType::Default => "Default",
+            StyleType::SpellByLetter => "SpellByLetter",
+            StyleType::SpellByWord => "SpellByWord",
+            StyleType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Default", "SpellByLetter", "SpellByWord"]
+    }
+}
+impl AsRef<str> for StyleType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

@@ -9,6 +9,7 @@ use aws_sdk_s3::model::{
 };
 use aws_sdk_s3::{Client, Config, Credentials, Region};
 use aws_smithy_client::dvr::{Event, ReplayingConnection};
+use aws_smithy_protocol_test::{assert_ok, validate_body, MediaType};
 use std::error::Error as StdError;
 
 #[tokio::test]
@@ -82,14 +83,14 @@ async fn test_success() {
 
     // Validate the requests
     replayer
-        .validate(&["content-type", "content-length"], validate_body)
+        .validate(&["content-type", "content-length"], body_validator)
         .await
         .unwrap();
 }
 
-fn validate_body(expected_body: &[u8], actual_body: &[u8]) -> Result<(), Box<dyn StdError>> {
+fn body_validator(expected_body: &[u8], actual_body: &[u8]) -> Result<(), Box<dyn StdError>> {
     let expected = std::str::from_utf8(expected_body).unwrap();
     let actual = std::str::from_utf8(actual_body).unwrap();
-    assert_eq!(expected, actual);
+    assert_ok(validate_body(actual, expected, MediaType::Xml));
     Ok(())
 }

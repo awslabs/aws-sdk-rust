@@ -130,6 +130,132 @@ pub fn parse_create_batch_inference_job_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_batch_segment_job_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateBatchSegmentJobOutput,
+    crate::error::CreateBatchSegmentJobError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateBatchSegmentJobError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateBatchSegmentJobError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::CreateBatchSegmentJobError {
+            meta: generic,
+            kind: crate::error::CreateBatchSegmentJobErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBatchSegmentJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::CreateBatchSegmentJobError {
+            meta: generic,
+            kind: crate::error::CreateBatchSegmentJobErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBatchSegmentJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceAlreadyExistsException" => crate::error::CreateBatchSegmentJobError {
+            meta: generic,
+            kind: crate::error::CreateBatchSegmentJobErrorKind::ResourceAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBatchSegmentJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceInUseException" => crate::error::CreateBatchSegmentJobError {
+            meta: generic,
+            kind: crate::error::CreateBatchSegmentJobErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBatchSegmentJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::CreateBatchSegmentJobError {
+            meta: generic,
+            kind: crate::error::CreateBatchSegmentJobErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBatchSegmentJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateBatchSegmentJobError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_batch_segment_job_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateBatchSegmentJobOutput,
+    crate::error::CreateBatchSegmentJobError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_batch_segment_job_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_batch_segment_job(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateBatchSegmentJobError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_campaign_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateCampaignOutput, crate::error::CreateCampaignError> {
@@ -951,6 +1077,111 @@ pub fn parse_create_filter_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_recommender_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateRecommenderOutput, crate::error::CreateRecommenderError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateRecommenderError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateRecommenderError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::CreateRecommenderError {
+            meta: generic,
+            kind: crate::error::CreateRecommenderErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRecommenderError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::CreateRecommenderError {
+            meta: generic,
+            kind: crate::error::CreateRecommenderErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRecommenderError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceAlreadyExistsException" => crate::error::CreateRecommenderError {
+            meta: generic,
+            kind: crate::error::CreateRecommenderErrorKind::ResourceAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRecommenderError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::CreateRecommenderError {
+            meta: generic,
+            kind: crate::error::CreateRecommenderErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRecommenderError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateRecommenderError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_recommender_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateRecommenderOutput, crate::error::CreateRecommenderError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_recommender_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_recommender(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateRecommenderError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_schema_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateSchemaOutput, crate::error::CreateSchemaError> {
@@ -1677,6 +1908,88 @@ pub fn parse_delete_filter_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_recommender_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteRecommenderOutput, crate::error::DeleteRecommenderError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteRecommenderError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteRecommenderError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::DeleteRecommenderError {
+            meta: generic,
+            kind: crate::error::DeleteRecommenderErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecommenderError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceInUseException" => crate::error::DeleteRecommenderError {
+            meta: generic,
+            kind: crate::error::DeleteRecommenderErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecommenderError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DeleteRecommenderError {
+            meta: generic,
+            kind: crate::error::DeleteRecommenderErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecommenderError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteRecommenderError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_recommender_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteRecommenderOutput, crate::error::DeleteRecommenderError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_recommender_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_schema_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteSchemaOutput, crate::error::DeleteSchemaError> {
@@ -1980,6 +2293,84 @@ pub fn parse_describe_batch_inference_job_response(
             output,
         )
         .map_err(crate::error::DescribeBatchInferenceJobError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_batch_segment_job_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeBatchSegmentJobOutput,
+    crate::error::DescribeBatchSegmentJobError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeBatchSegmentJobError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeBatchSegmentJobError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::DescribeBatchSegmentJobError {
+            meta: generic,
+            kind: crate::error::DescribeBatchSegmentJobErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBatchSegmentJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DescribeBatchSegmentJobError {
+            meta: generic,
+            kind: crate::error::DescribeBatchSegmentJobErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBatchSegmentJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeBatchSegmentJobError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_batch_segment_job_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeBatchSegmentJobOutput,
+    crate::error::DescribeBatchSegmentJobError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_batch_segment_job_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_batch_segment_job(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeBatchSegmentJobError::unhandled)?;
         output.build()
     })
 }
@@ -2645,6 +3036,80 @@ pub fn parse_describe_recipe_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_recommender_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeRecommenderOutput,
+    crate::error::DescribeRecommenderError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeRecommenderError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeRecommenderError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::DescribeRecommenderError {
+            meta: generic,
+            kind: crate::error::DescribeRecommenderErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommenderError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DescribeRecommenderError {
+            meta: generic,
+            kind: crate::error::DescribeRecommenderErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommenderError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeRecommenderError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_recommender_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeRecommenderOutput,
+    crate::error::DescribeRecommenderError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_recommender_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_recommender(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeRecommenderError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_schema_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeSchemaOutput, crate::error::DescribeSchemaError> {
@@ -3025,6 +3490,80 @@ pub fn parse_list_batch_inference_jobs_response(
             output,
         )
         .map_err(crate::error::ListBatchInferenceJobsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_batch_segment_jobs_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListBatchSegmentJobsOutput,
+    crate::error::ListBatchSegmentJobsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListBatchSegmentJobsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListBatchSegmentJobsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::ListBatchSegmentJobsError {
+            meta: generic,
+            kind: crate::error::ListBatchSegmentJobsErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBatchSegmentJobsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidNextTokenException" => crate::error::ListBatchSegmentJobsError {
+            meta: generic,
+            kind: crate::error::ListBatchSegmentJobsErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBatchSegmentJobsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListBatchSegmentJobsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_batch_segment_jobs_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListBatchSegmentJobsOutput,
+    crate::error::ListBatchSegmentJobsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_batch_segment_jobs_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_batch_segment_jobs(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListBatchSegmentJobsError::unhandled)?;
         output.build()
     })
 }
@@ -3517,6 +4056,23 @@ pub fn parse_list_recipes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidInputException" => crate::error::ListRecipesError {
+            meta: generic,
+            kind: crate::error::ListRecipesErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecipesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidNextTokenException" => crate::error::ListRecipesError {
             meta: generic,
             kind: crate::error::ListRecipesErrorKind::InvalidNextTokenException({
@@ -3551,6 +4107,76 @@ pub fn parse_list_recipes_response(
             output,
         )
         .map_err(crate::error::ListRecipesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_recommenders_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListRecommendersOutput, crate::error::ListRecommendersError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListRecommendersError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListRecommendersError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::ListRecommendersError {
+            meta: generic,
+            kind: crate::error::ListRecommendersErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecommendersError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidNextTokenException" => crate::error::ListRecommendersError {
+            meta: generic,
+            kind: crate::error::ListRecommendersErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecommendersError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListRecommendersError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_recommenders_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListRecommendersOutput, crate::error::ListRecommendersError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_recommenders_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_recommenders(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListRecommendersError::unhandled)?;
         output.build()
     })
 }
@@ -3936,6 +4562,93 @@ pub fn parse_update_campaign_response(
             output,
         )
         .map_err(crate::error::UpdateCampaignError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_recommender_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateRecommenderOutput, crate::error::UpdateRecommenderError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateRecommenderError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateRecommenderError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::UpdateRecommenderError {
+            meta: generic,
+            kind: crate::error::UpdateRecommenderErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRecommenderError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceInUseException" => crate::error::UpdateRecommenderError {
+            meta: generic,
+            kind: crate::error::UpdateRecommenderErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRecommenderError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::UpdateRecommenderError {
+            meta: generic,
+            kind: crate::error::UpdateRecommenderErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRecommenderError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateRecommenderError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_recommender_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateRecommenderOutput, crate::error::UpdateRecommenderError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_recommender_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_recommender(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateRecommenderError::unhandled)?;
         output.build()
     })
 }

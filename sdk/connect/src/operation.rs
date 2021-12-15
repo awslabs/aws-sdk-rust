@@ -337,6 +337,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateContactFlow {
     }
 }
 
+/// Operation shape for `CreateContactFlowModule`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_contact_flow_module`](crate::client::Client::create_contact_flow_module).
+///
+/// See [`crate::client::fluent_builders::CreateContactFlowModule`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateContactFlowModule {
+    _private: (),
+}
+impl CreateContactFlowModule {
+    /// Creates a new builder-style object to manufacture [`CreateContactFlowModuleInput`](crate::input::CreateContactFlowModuleInput)
+    pub fn builder() -> crate::input::create_contact_flow_module_input::Builder {
+        crate::input::create_contact_flow_module_input::Builder::default()
+    }
+    /// Creates a new `CreateContactFlowModule` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateContactFlowModule {
+    type Output = std::result::Result<
+        crate::output::CreateContactFlowModuleOutput,
+        crate::error::CreateContactFlowModuleError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_contact_flow_module_error(response)
+        } else {
+            crate::operation_deser::parse_create_contact_flow_module_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateHoursOfOperation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -665,6 +699,74 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUserHierarchyGroup
             crate::operation_deser::parse_create_user_hierarchy_group_error(response)
         } else {
             crate::operation_deser::parse_create_user_hierarchy_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteContactFlow`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_contact_flow`](crate::client::Client::delete_contact_flow).
+///
+/// See [`crate::client::fluent_builders::DeleteContactFlow`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteContactFlow {
+    _private: (),
+}
+impl DeleteContactFlow {
+    /// Creates a new builder-style object to manufacture [`DeleteContactFlowInput`](crate::input::DeleteContactFlowInput)
+    pub fn builder() -> crate::input::delete_contact_flow_input::Builder {
+        crate::input::delete_contact_flow_input::Builder::default()
+    }
+    /// Creates a new `DeleteContactFlow` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteContactFlow {
+    type Output = std::result::Result<
+        crate::output::DeleteContactFlowOutput,
+        crate::error::DeleteContactFlowError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_contact_flow_error(response)
+        } else {
+            crate::operation_deser::parse_delete_contact_flow_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteContactFlowModule`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_contact_flow_module`](crate::client::Client::delete_contact_flow_module).
+///
+/// See [`crate::client::fluent_builders::DeleteContactFlowModule`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteContactFlowModule {
+    _private: (),
+}
+impl DeleteContactFlowModule {
+    /// Creates a new builder-style object to manufacture [`DeleteContactFlowModuleInput`](crate::input::DeleteContactFlowModuleInput)
+    pub fn builder() -> crate::input::delete_contact_flow_module_input::Builder {
+        crate::input::delete_contact_flow_module_input::Builder::default()
+    }
+    /// Creates a new `DeleteContactFlowModule` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteContactFlowModule {
+    type Output = std::result::Result<
+        crate::output::DeleteContactFlowModuleOutput,
+        crate::error::DeleteContactFlowModuleError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_contact_flow_module_error(response)
+        } else {
+            crate::operation_deser::parse_delete_contact_flow_module_response(response)
         }
     }
 }
@@ -1033,6 +1135,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeContactFlow {
             crate::operation_deser::parse_describe_contact_flow_error(response)
         } else {
             crate::operation_deser::parse_describe_contact_flow_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeContactFlowModule`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_contact_flow_module`](crate::client::Client::describe_contact_flow_module).
+///
+/// See [`crate::client::fluent_builders::DescribeContactFlowModule`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeContactFlowModule {
+    _private: (),
+}
+impl DescribeContactFlowModule {
+    /// Creates a new builder-style object to manufacture [`DescribeContactFlowModuleInput`](crate::input::DescribeContactFlowModuleInput)
+    pub fn builder() -> crate::input::describe_contact_flow_module_input::Builder {
+        crate::input::describe_contact_flow_module_input::Builder::default()
+    }
+    /// Creates a new `DescribeContactFlowModule` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeContactFlowModule {
+    type Output = std::result::Result<
+        crate::output::DescribeContactFlowModuleOutput,
+        crate::error::DescribeContactFlowModuleError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_contact_flow_module_error(response)
+        } else {
+            crate::operation_deser::parse_describe_contact_flow_module_response(response)
         }
     }
 }
@@ -1908,6 +2044,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBots {
             crate::operation_deser::parse_list_bots_error(response)
         } else {
             crate::operation_deser::parse_list_bots_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListContactFlowModules`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_contact_flow_modules`](crate::client::Client::list_contact_flow_modules).
+///
+/// See [`crate::client::fluent_builders::ListContactFlowModules`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListContactFlowModules {
+    _private: (),
+}
+impl ListContactFlowModules {
+    /// Creates a new builder-style object to manufacture [`ListContactFlowModulesInput`](crate::input::ListContactFlowModulesInput)
+    pub fn builder() -> crate::input::list_contact_flow_modules_input::Builder {
+        crate::input::list_contact_flow_modules_input::Builder::default()
+    }
+    /// Creates a new `ListContactFlowModules` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListContactFlowModules {
+    type Output = std::result::Result<
+        crate::output::ListContactFlowModulesOutput,
+        crate::error::ListContactFlowModulesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_contact_flow_modules_error(response)
+        } else {
+            crate::operation_deser::parse_list_contact_flow_modules_response(response)
         }
     }
 }
@@ -3213,6 +3383,108 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContactFlowContent
             crate::operation_deser::parse_update_contact_flow_content_error(response)
         } else {
             crate::operation_deser::parse_update_contact_flow_content_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateContactFlowMetadata`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_contact_flow_metadata`](crate::client::Client::update_contact_flow_metadata).
+///
+/// See [`crate::client::fluent_builders::UpdateContactFlowMetadata`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateContactFlowMetadata {
+    _private: (),
+}
+impl UpdateContactFlowMetadata {
+    /// Creates a new builder-style object to manufacture [`UpdateContactFlowMetadataInput`](crate::input::UpdateContactFlowMetadataInput)
+    pub fn builder() -> crate::input::update_contact_flow_metadata_input::Builder {
+        crate::input::update_contact_flow_metadata_input::Builder::default()
+    }
+    /// Creates a new `UpdateContactFlowMetadata` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateContactFlowMetadata {
+    type Output = std::result::Result<
+        crate::output::UpdateContactFlowMetadataOutput,
+        crate::error::UpdateContactFlowMetadataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_contact_flow_metadata_error(response)
+        } else {
+            crate::operation_deser::parse_update_contact_flow_metadata_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateContactFlowModuleContent`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_contact_flow_module_content`](crate::client::Client::update_contact_flow_module_content).
+///
+/// See [`crate::client::fluent_builders::UpdateContactFlowModuleContent`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateContactFlowModuleContent {
+    _private: (),
+}
+impl UpdateContactFlowModuleContent {
+    /// Creates a new builder-style object to manufacture [`UpdateContactFlowModuleContentInput`](crate::input::UpdateContactFlowModuleContentInput)
+    pub fn builder() -> crate::input::update_contact_flow_module_content_input::Builder {
+        crate::input::update_contact_flow_module_content_input::Builder::default()
+    }
+    /// Creates a new `UpdateContactFlowModuleContent` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateContactFlowModuleContent {
+    type Output = std::result::Result<
+        crate::output::UpdateContactFlowModuleContentOutput,
+        crate::error::UpdateContactFlowModuleContentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_contact_flow_module_content_error(response)
+        } else {
+            crate::operation_deser::parse_update_contact_flow_module_content_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateContactFlowModuleMetadata`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_contact_flow_module_metadata`](crate::client::Client::update_contact_flow_module_metadata).
+///
+/// See [`crate::client::fluent_builders::UpdateContactFlowModuleMetadata`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateContactFlowModuleMetadata {
+    _private: (),
+}
+impl UpdateContactFlowModuleMetadata {
+    /// Creates a new builder-style object to manufacture [`UpdateContactFlowModuleMetadataInput`](crate::input::UpdateContactFlowModuleMetadataInput)
+    pub fn builder() -> crate::input::update_contact_flow_module_metadata_input::Builder {
+        crate::input::update_contact_flow_module_metadata_input::Builder::default()
+    }
+    /// Creates a new `UpdateContactFlowModuleMetadata` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateContactFlowModuleMetadata {
+    type Output = std::result::Result<
+        crate::output::UpdateContactFlowModuleMetadataOutput,
+        crate::error::UpdateContactFlowModuleMetadataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_contact_flow_module_metadata_error(response)
+        } else {
+            crate::operation_deser::parse_update_contact_flow_module_metadata_response(response)
         }
     }
 }

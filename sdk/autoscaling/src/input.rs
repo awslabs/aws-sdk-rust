@@ -1354,7 +1354,7 @@ pub mod create_auto_scaling_group_input {
         ///
         ///
         ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with multiple
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
         /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
         /// Guide</i>.</p>
         pub fn mixed_instances_policy(mut self, input: crate::model::MixedInstancesPolicy) -> Self {
@@ -1365,7 +1365,7 @@ pub mod create_auto_scaling_group_input {
         ///
         ///
         ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with multiple
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
         /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
         /// Guide</i>.</p>
         pub fn set_mixed_instances_policy(
@@ -1558,9 +1558,8 @@ pub mod create_auto_scaling_group_input {
             self
         }
         /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
-        /// of an EC2 instance that has come into service. During this time, any health check
-        /// failures for the instance are ignored. The default value is <code>0</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+        /// of an EC2 instance that has come into service and marking it unhealthy due to a failed
+        /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
         /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
         pub fn health_check_grace_period(mut self, input: i32) -> Self {
@@ -1568,9 +1567,8 @@ pub mod create_auto_scaling_group_input {
             self
         }
         /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
-        /// of an EC2 instance that has come into service. During this time, any health check
-        /// failures for the instance are ignored. The default value is <code>0</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+        /// of an EC2 instance that has come into service and marking it unhealthy due to a failed
+        /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
         /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
         pub fn set_health_check_grace_period(mut self, input: std::option::Option<i32>) -> Self {
@@ -1650,7 +1648,8 @@ pub mod create_auto_scaling_group_input {
         }
         /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
         /// when scaling in. For more information about preventing instances from terminating on
-        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance scale-in protection</a> in the
+        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+        /// instance scale-in protection</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn new_instances_protected_from_scale_in(mut self, input: bool) -> Self {
             self.new_instances_protected_from_scale_in = Some(input);
@@ -1658,7 +1657,8 @@ pub mod create_auto_scaling_group_input {
         }
         /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
         /// when scaling in. For more information about preventing instances from terminating on
-        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance scale-in protection</a> in the
+        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+        /// instance scale-in protection</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_new_instances_protected_from_scale_in(
             mut self,
@@ -1671,8 +1671,8 @@ pub mod create_auto_scaling_group_input {
         /// disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot
         /// Instance whenever Amazon EC2 notifies that a Spot Instance is at an elevated risk of
         /// interruption. After launching a new instance, it then terminates an old instance. For
-        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling Capacity
-        /// Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
+        /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn capacity_rebalance(mut self, input: bool) -> Self {
             self.capacity_rebalance = Some(input);
             self
@@ -1681,8 +1681,8 @@ pub mod create_auto_scaling_group_input {
         /// disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot
         /// Instance whenever Amazon EC2 notifies that a Spot Instance is at an elevated risk of
         /// interruption. After launching a new instance, it then terminates an old instance. For
-        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling Capacity
-        /// Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
+        /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_capacity_rebalance(mut self, input: std::option::Option<bool>) -> Self {
             self.capacity_rebalance = input;
             self
@@ -3255,14 +3255,12 @@ pub mod delete_notification_configuration_input {
             self.auto_scaling_group_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)
-        /// topic.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
         pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.topic_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)
-        /// topic.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -9784,9 +9782,8 @@ pub mod put_lifecycle_hook_input {
         /// is in the transition state for the lifecycle hook. This target can be either an SQS
         /// queue or an SNS topic.</p>
         /// <p>If you specify an empty string, this overrides the current ARN.</p>
-        /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue,
-        /// and an email key-value pair format when sending notifications to an Amazon SNS
-        /// topic.</p>
+        /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue, and
+        /// an email key-value pair format when sending notifications to an Amazon SNS topic.</p>
         /// <p>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test
         /// messages contain the following additional key-value pair: <code>"Event":
         /// "autoscaling:TEST_NOTIFICATION"</code>.</p>
@@ -9798,9 +9795,8 @@ pub mod put_lifecycle_hook_input {
         /// is in the transition state for the lifecycle hook. This target can be either an SQS
         /// queue or an SNS topic.</p>
         /// <p>If you specify an empty string, this overrides the current ARN.</p>
-        /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue,
-        /// and an email key-value pair format when sending notifications to an Amazon SNS
-        /// topic.</p>
+        /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue, and
+        /// an email key-value pair format when sending notifications to an Amazon SNS topic.</p>
         /// <p>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test
         /// messages contain the following additional key-value pair: <code>"Event":
         /// "autoscaling:TEST_NOTIFICATION"</code>.</p>
@@ -10024,14 +10020,12 @@ pub mod put_notification_configuration_input {
             self.auto_scaling_group_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)
-        /// topic.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
         pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.topic_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)
-        /// topic.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -10462,7 +10456,7 @@ pub mod put_scaling_policy_input {
             self.estimated_instance_warmup = input;
             self
         }
-        /// <p>A target tracking scaling policy. Provides support for predefined or customized
+        /// <p>A target tracking scaling policy. Provides support for predefined or custom
         /// metrics.</p>
         /// <p>The following predefined metrics are available:</p>
         /// <ul>
@@ -10500,7 +10494,7 @@ pub mod put_scaling_policy_input {
             self.target_tracking_configuration = Some(input);
             self
         }
-        /// <p>A target tracking scaling policy. Provides support for predefined or customized
+        /// <p>A target tracking scaling policy. Provides support for predefined or custom
         /// metrics.</p>
         /// <p>The following predefined metrics are available:</p>
         /// <ul>
@@ -10554,9 +10548,10 @@ pub mod put_scaling_policy_input {
             self.enabled = input;
             self
         }
-        /// <p>A predictive scaling policy. Provides support for only predefined metrics.</p>
-        /// <p>Predictive scaling works with CPU utilization, network in/out, and the Application
-        /// Load Balancer request count.</p>
+        /// <p>A predictive scaling policy. Provides support for predefined and custom
+        /// metrics.</p>
+        /// <p>Predefined metrics include CPU utilization, network in/out, and the Application Load
+        /// Balancer request count.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API
         /// Reference</i>.</p>
         /// <p>Required if the policy type is <code>PredictiveScaling</code>.</p>
@@ -10567,9 +10562,10 @@ pub mod put_scaling_policy_input {
             self.predictive_scaling_configuration = Some(input);
             self
         }
-        /// <p>A predictive scaling policy. Provides support for only predefined metrics.</p>
-        /// <p>Predictive scaling works with CPU utilization, network in/out, and the Application
-        /// Load Balancer request count.</p>
+        /// <p>A predictive scaling policy. Provides support for predefined and custom
+        /// metrics.</p>
+        /// <p>Predefined metrics include CPU utilization, network in/out, and the Application Load
+        /// Balancer request count.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API
         /// Reference</i>.</p>
         /// <p>Required if the policy type is <code>PredictiveScaling</code>.</p>
@@ -13043,7 +13039,7 @@ pub mod update_auto_scaling_group_input {
             self
         }
         /// <p>An embedded object that specifies a mixed instances policy. For more information, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with multiple
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
         /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
         /// Guide</i>.</p>
         pub fn mixed_instances_policy(mut self, input: crate::model::MixedInstancesPolicy) -> Self {
@@ -13051,7 +13047,7 @@ pub mod update_auto_scaling_group_input {
             self
         }
         /// <p>An embedded object that specifies a mixed instances policy. For more information, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with multiple
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
         /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
         /// Guide</i>.</p>
         pub fn set_mixed_instances_policy(
@@ -13168,8 +13164,8 @@ pub mod update_auto_scaling_group_input {
             self
         }
         /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
-        /// of an EC2 instance that has come into service. The default value is <code>0</code>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+        /// of an EC2 instance that has come into service and marking it unhealthy due to a failed
+        /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
         /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
         pub fn health_check_grace_period(mut self, input: i32) -> Self {
@@ -13177,8 +13173,8 @@ pub mod update_auto_scaling_group_input {
             self
         }
         /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
-        /// of an EC2 instance that has come into service. The default value is <code>0</code>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+        /// of an EC2 instance that has come into service and marking it unhealthy due to a failed
+        /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
         /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
         pub fn set_health_check_grace_period(mut self, input: std::option::Option<i32>) -> Self {
@@ -13248,7 +13244,8 @@ pub mod update_auto_scaling_group_input {
         }
         /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
         /// when scaling in. For more information about preventing instances from terminating on
-        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance scale-in protection</a> in the
+        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+        /// instance scale-in protection</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn new_instances_protected_from_scale_in(mut self, input: bool) -> Self {
             self.new_instances_protected_from_scale_in = Some(input);
@@ -13256,7 +13253,8 @@ pub mod update_auto_scaling_group_input {
         }
         /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
         /// when scaling in. For more information about preventing instances from terminating on
-        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance scale-in protection</a> in the
+        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+        /// instance scale-in protection</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_new_instances_protected_from_scale_in(
             mut self,
@@ -13302,14 +13300,14 @@ pub mod update_auto_scaling_group_input {
             self.max_instance_lifetime = input;
             self
         }
-        /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling Capacity Rebalancing</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
+        /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn capacity_rebalance(mut self, input: bool) -> Self {
             self.capacity_rebalance = Some(input);
             self
         }
-        /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling Capacity Rebalancing</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
+        /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_capacity_rebalance(mut self, input: std::option::Option<bool>) -> Self {
             self.capacity_rebalance = input;
             self
@@ -13519,7 +13517,7 @@ pub struct UpdateAutoScalingGroupInput {
     /// <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
     pub launch_template: std::option::Option<crate::model::LaunchTemplateSpecification>,
     /// <p>An embedded object that specifies a mixed instances policy. For more information, see
-    /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with multiple
+    /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
     /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
     /// Guide</i>.</p>
     pub mixed_instances_policy: std::option::Option<crate::model::MixedInstancesPolicy>,
@@ -13553,8 +13551,8 @@ pub struct UpdateAutoScalingGroupInput {
     /// the load balancer health checks.</p>
     pub health_check_type: std::option::Option<std::string::String>,
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
-    /// of an EC2 instance that has come into service. The default value is <code>0</code>. For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+    /// of an EC2 instance that has come into service and marking it unhealthy due to a failed
+    /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
     /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
     pub health_check_grace_period: std::option::Option<i32>,
@@ -13574,7 +13572,8 @@ pub struct UpdateAutoScalingGroupInput {
     pub termination_policies: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
     /// when scaling in. For more information about preventing instances from terminating on
-    /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance scale-in protection</a> in the
+    /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+    /// instance scale-in protection</a> in the
     /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub new_instances_protected_from_scale_in: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to
@@ -13588,8 +13587,8 @@ pub struct UpdateAutoScalingGroupInput {
     /// instances based on maximum instance lifetime</a> in the
     /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub max_instance_lifetime: std::option::Option<i32>,
-    /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling Capacity Rebalancing</a> in the
-    /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
+    /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub capacity_rebalance: std::option::Option<bool>,
     /// <p>Reserved.</p>
     pub context: std::option::Option<std::string::String>,
@@ -13624,7 +13623,7 @@ impl UpdateAutoScalingGroupInput {
         self.launch_template.as_ref()
     }
     /// <p>An embedded object that specifies a mixed instances policy. For more information, see
-    /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with multiple
+    /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
     /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
     /// Guide</i>.</p>
     pub fn mixed_instances_policy(
@@ -13674,8 +13673,8 @@ impl UpdateAutoScalingGroupInput {
         self.health_check_type.as_deref()
     }
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
-    /// of an EC2 instance that has come into service. The default value is <code>0</code>. For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+    /// of an EC2 instance that has come into service and marking it unhealthy due to a failed
+    /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
     /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
     pub fn health_check_grace_period(&self) -> std::option::Option<i32> {
@@ -13703,7 +13702,8 @@ impl UpdateAutoScalingGroupInput {
     }
     /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
     /// when scaling in. For more information about preventing instances from terminating on
-    /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance scale-in protection</a> in the
+    /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+    /// instance scale-in protection</a> in the
     /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn new_instances_protected_from_scale_in(&self) -> std::option::Option<bool> {
         self.new_instances_protected_from_scale_in
@@ -13723,8 +13723,8 @@ impl UpdateAutoScalingGroupInput {
     pub fn max_instance_lifetime(&self) -> std::option::Option<i32> {
         self.max_instance_lifetime
     }
-    /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling Capacity Rebalancing</a> in the
-    /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
+    /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn capacity_rebalance(&self) -> std::option::Option<bool> {
         self.capacity_rebalance
     }
@@ -14606,7 +14606,7 @@ pub struct PutScalingPolicyInput {
     /// <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or
     /// <code>StepScaling</code>.</p>
     pub estimated_instance_warmup: std::option::Option<i32>,
-    /// <p>A target tracking scaling policy. Provides support for predefined or customized
+    /// <p>A target tracking scaling policy. Provides support for predefined or custom
     /// metrics.</p>
     /// <p>The following predefined metrics are available:</p>
     /// <ul>
@@ -14644,9 +14644,10 @@ pub struct PutScalingPolicyInput {
     /// scaling policy for an Auto Scaling group</a> in the
     /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>A predictive scaling policy. Provides support for only predefined metrics.</p>
-    /// <p>Predictive scaling works with CPU utilization, network in/out, and the Application
-    /// Load Balancer request count.</p>
+    /// <p>A predictive scaling policy. Provides support for predefined and custom
+    /// metrics.</p>
+    /// <p>Predefined metrics include CPU utilization, network in/out, and the Application Load
+    /// Balancer request count.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API
     /// Reference</i>.</p>
     /// <p>Required if the policy type is <code>PredictiveScaling</code>.</p>
@@ -14757,7 +14758,7 @@ impl PutScalingPolicyInput {
     pub fn estimated_instance_warmup(&self) -> std::option::Option<i32> {
         self.estimated_instance_warmup
     }
-    /// <p>A target tracking scaling policy. Provides support for predefined or customized
+    /// <p>A target tracking scaling policy. Provides support for predefined or custom
     /// metrics.</p>
     /// <p>The following predefined metrics are available:</p>
     /// <ul>
@@ -14800,9 +14801,10 @@ impl PutScalingPolicyInput {
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
-    /// <p>A predictive scaling policy. Provides support for only predefined metrics.</p>
-    /// <p>Predictive scaling works with CPU utilization, network in/out, and the Application
-    /// Load Balancer request count.</p>
+    /// <p>A predictive scaling policy. Provides support for predefined and custom
+    /// metrics.</p>
+    /// <p>Predefined metrics include CPU utilization, network in/out, and the Application Load
+    /// Balancer request count.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API
     /// Reference</i>.</p>
     /// <p>Required if the policy type is <code>PredictiveScaling</code>.</p>
@@ -14845,8 +14847,7 @@ impl std::fmt::Debug for PutScalingPolicyInput {
 pub struct PutNotificationConfigurationInput {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)
-    /// topic.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>The type of event that causes the notification to be sent. To query the notification
     /// types supported by Amazon EC2 Auto Scaling, call the <a>DescribeAutoScalingNotificationTypes</a> API.</p>
@@ -14857,8 +14858,7 @@ impl PutNotificationConfigurationInput {
     pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)
-    /// topic.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
     pub fn topic_arn(&self) -> std::option::Option<&str> {
         self.topic_arn.as_deref()
     }
@@ -14906,9 +14906,8 @@ pub struct PutLifecycleHookInput {
     /// is in the transition state for the lifecycle hook. This target can be either an SQS
     /// queue or an SNS topic.</p>
     /// <p>If you specify an empty string, this overrides the current ARN.</p>
-    /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue,
-    /// and an email key-value pair format when sending notifications to an Amazon SNS
-    /// topic.</p>
+    /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue, and
+    /// an email key-value pair format when sending notifications to an Amazon SNS topic.</p>
     /// <p>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test
     /// messages contain the following additional key-value pair: <code>"Event":
     /// "autoscaling:TEST_NOTIFICATION"</code>.</p>
@@ -14961,9 +14960,8 @@ impl PutLifecycleHookInput {
     /// is in the transition state for the lifecycle hook. This target can be either an SQS
     /// queue or an SNS topic.</p>
     /// <p>If you specify an empty string, this overrides the current ARN.</p>
-    /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue,
-    /// and an email key-value pair format when sending notifications to an Amazon SNS
-    /// topic.</p>
+    /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue, and
+    /// an email key-value pair format when sending notifications to an Amazon SNS topic.</p>
     /// <p>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test
     /// messages contain the following additional key-value pair: <code>"Event":
     /// "autoscaling:TEST_NOTIFICATION"</code>.</p>
@@ -16594,8 +16592,7 @@ impl std::fmt::Debug for DeletePolicyInput {
 pub struct DeleteNotificationConfigurationInput {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)
-    /// topic.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl DeleteNotificationConfigurationInput {
@@ -16603,8 +16600,7 @@ impl DeleteNotificationConfigurationInput {
     pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)
-    /// topic.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
     pub fn topic_arn(&self) -> std::option::Option<&str> {
         self.topic_arn.as_deref()
     }
@@ -17085,7 +17081,7 @@ pub struct CreateAutoScalingGroupInput {
     ///
     ///
     ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with multiple
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
     /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
     /// Guide</i>.</p>
     pub mixed_instances_policy: std::option::Option<crate::model::MixedInstancesPolicy>,
@@ -17139,9 +17135,8 @@ pub struct CreateAutoScalingGroupInput {
     /// for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub health_check_type: std::option::Option<std::string::String>,
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
-    /// of an EC2 instance that has come into service. During this time, any health check
-    /// failures for the instance are ignored. The default value is <code>0</code>. For more
-    /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+    /// of an EC2 instance that has come into service and marking it unhealthy due to a failed
+    /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
     /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
     pub health_check_grace_period: std::option::Option<i32>,
@@ -17166,15 +17161,16 @@ pub struct CreateAutoScalingGroupInput {
     pub termination_policies: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
     /// when scaling in. For more information about preventing instances from terminating on
-    /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance scale-in protection</a> in the
+    /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+    /// instance scale-in protection</a> in the
     /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub new_instances_protected_from_scale_in: std::option::Option<bool>,
     /// <p>Indicates whether Capacity Rebalancing is enabled. Otherwise, Capacity Rebalancing is
     /// disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot
     /// Instance whenever Amazon EC2 notifies that a Spot Instance is at an elevated risk of
     /// interruption. After launching a new instance, it then terminates an old instance. For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling Capacity
-    /// Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
+    /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub capacity_rebalance: std::option::Option<bool>,
     /// <p>One or more lifecycle hooks for the group, which specify actions to perform when
     /// Amazon EC2 Auto Scaling launches or terminates instances.</p>
@@ -17244,7 +17240,7 @@ impl CreateAutoScalingGroupInput {
     ///
     ///
     ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with multiple
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
     /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
     /// Guide</i>.</p>
     pub fn mixed_instances_policy(
@@ -17320,9 +17316,8 @@ impl CreateAutoScalingGroupInput {
         self.health_check_type.as_deref()
     }
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
-    /// of an EC2 instance that has come into service. During this time, any health check
-    /// failures for the instance are ignored. The default value is <code>0</code>. For more
-    /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+    /// of an EC2 instance that has come into service and marking it unhealthy due to a failed
+    /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
     /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
     pub fn health_check_grace_period(&self) -> std::option::Option<i32> {
@@ -17355,7 +17350,8 @@ impl CreateAutoScalingGroupInput {
     }
     /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
     /// when scaling in. For more information about preventing instances from terminating on
-    /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance scale-in protection</a> in the
+    /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+    /// instance scale-in protection</a> in the
     /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn new_instances_protected_from_scale_in(&self) -> std::option::Option<bool> {
         self.new_instances_protected_from_scale_in
@@ -17364,8 +17360,8 @@ impl CreateAutoScalingGroupInput {
     /// disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot
     /// Instance whenever Amazon EC2 notifies that a Spot Instance is at an elevated risk of
     /// interruption. After launching a new instance, it then terminates an old instance. For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling Capacity
-    /// Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
+    /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn capacity_rebalance(&self) -> std::option::Option<bool> {
         self.capacity_rebalance
     }

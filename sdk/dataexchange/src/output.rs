@@ -600,7 +600,7 @@ pub struct UpdateAssetOutput {
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the asset.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this asset.</p>
     pub revision_id: std::option::Option<std::string::String>,
@@ -634,7 +634,7 @@ impl UpdateAssetOutput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -754,12 +754,12 @@ pub mod update_asset_output {
             self.id = input;
             self
         }
-        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -908,6 +908,100 @@ impl StartJobOutput {
     /// Creates a new builder-style object to manufacture [`StartJobOutput`](crate::output::StartJobOutput)
     pub fn builder() -> crate::output::start_job_output::Builder {
         crate::output::start_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SendApiAssetOutput {
+    /// <p>The response body from the underlying API tracked by the API asset.</p>
+    pub body: std::option::Option<std::string::String>,
+    /// <p>The response headers from the underlying API tracked by the API asset.</p>
+    pub response_headers:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl SendApiAssetOutput {
+    /// <p>The response body from the underlying API tracked by the API asset.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The response headers from the underlying API tracked by the API asset.</p>
+    pub fn response_headers(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_headers.as_ref()
+    }
+}
+impl std::fmt::Debug for SendApiAssetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SendApiAssetOutput");
+        formatter.field("body", &self.body);
+        formatter.field("response_headers", &self.response_headers);
+        formatter.finish()
+    }
+}
+/// See [`SendApiAssetOutput`](crate::output::SendApiAssetOutput)
+pub mod send_api_asset_output {
+    /// A builder for [`SendApiAssetOutput`](crate::output::SendApiAssetOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) body: std::option::Option<std::string::String>,
+        pub(crate) response_headers: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The response body from the underlying API tracked by the API asset.</p>
+        pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.body = Some(input.into());
+            self
+        }
+        /// <p>The response body from the underlying API tracked by the API asset.</p>
+        pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.body = input;
+            self
+        }
+        /// Adds a key-value pair to `response_headers`.
+        ///
+        /// To override the contents of this collection use [`set_response_headers`](Self::set_response_headers).
+        ///
+        /// <p>The response headers from the underlying API tracked by the API asset.</p>
+        pub fn response_headers(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.response_headers.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.response_headers = Some(hash_map);
+            self
+        }
+        /// <p>The response headers from the underlying API tracked by the API asset.</p>
+        pub fn set_response_headers(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.response_headers = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SendApiAssetOutput`](crate::output::SendApiAssetOutput)
+        pub fn build(self) -> crate::output::SendApiAssetOutput {
+            crate::output::SendApiAssetOutput {
+                body: self.body,
+                response_headers: self.response_headers,
+            }
+        }
+    }
+}
+impl SendApiAssetOutput {
+    /// Creates a new builder-style object to manufacture [`SendApiAssetOutput`](crate::output::SendApiAssetOutput)
+    pub fn builder() -> crate::output::send_api_asset_output::Builder {
+        crate::output::send_api_asset_output::Builder::default()
     }
 }
 
@@ -2281,7 +2375,7 @@ pub struct GetAssetOutput {
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the asset.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this asset.</p>
     pub revision_id: std::option::Option<std::string::String>,
@@ -2315,7 +2409,7 @@ impl GetAssetOutput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -2435,12 +2529,12 @@ pub mod get_asset_output {
             self.id = input;
             self
         }
-        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self

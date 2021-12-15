@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_redshiftdata::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -170,19 +170,19 @@ pub mod fluent_builders {
     /// method, use one of the following combinations of request parameters: </p>
     /// <ul>
     /// <li>
-    /// <p>Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the
-    /// cluster identifier that matches the cluster in the secret. </p>
+    /// <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret.
+    /// When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p>
     /// </li>
     /// <li>
-    /// <p>Temporary credentials - specify the cluster identifier, the database name, and the
-    /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
-    /// operation is required to use this method. </p>
+    /// <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name.
+    /// Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required.
+    /// When connecting to a serverless endpoint, specify the database name. </p>
     /// </li>
     /// </ul>
     #[derive(std::fmt::Debug)]
     pub struct BatchExecuteStatement<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -252,12 +252,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sqls(input);
             self
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_identifier(inp);
             self
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -275,12 +275,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secret_arn(input);
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.db_user(inp);
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_db_user(input);
             self
@@ -325,7 +325,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelStatement<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -399,7 +399,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeStatement<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -478,19 +478,19 @@ pub mod fluent_builders {
     /// following combinations of request parameters: </p>
     /// <ul>
     /// <li>
-    /// <p>Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the
-    /// cluster identifier that matches the cluster in the secret. </p>
+    /// <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret.
+    /// When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p>
     /// </li>
     /// <li>
-    /// <p>Temporary credentials - specify the cluster identifier, the database name, and the database
-    /// user name. Permission to call the <code>redshift:GetClusterCredentials</code> operation is
-    /// required to use this method. </p>
+    /// <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name.
+    /// Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required.
+    /// When connecting to a serverless endpoint, specify the database name. </p>
     /// </li>
     /// </ul>
     #[derive(std::fmt::Debug)]
     pub struct DescribeTable<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -543,12 +543,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_identifier(inp);
             self
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -566,12 +566,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secret_arn(input);
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.db_user(inp);
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_db_user(input);
             self
@@ -654,19 +654,19 @@ pub mod fluent_builders {
     /// method, use one of the following combinations of request parameters: </p>
     /// <ul>
     /// <li>
-    /// <p>Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the
-    /// cluster identifier that matches the cluster in the secret. </p>
+    /// <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret.
+    /// When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p>
     /// </li>
     /// <li>
-    /// <p>Temporary credentials - specify the cluster identifier, the database name, and the
-    /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
-    /// operation is required to use this method. </p>
+    /// <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name.
+    /// Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required.
+    /// When connecting to a serverless endpoint, specify the database name. </p>
     /// </li>
     /// </ul>
     #[derive(std::fmt::Debug)]
     pub struct ExecuteStatement<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -729,12 +729,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sql(input);
             self
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_identifier(inp);
             self
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -752,12 +752,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secret_arn(input);
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.db_user(inp);
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_db_user(input);
             self
@@ -820,7 +820,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetStatementResult<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -908,19 +908,19 @@ pub mod fluent_builders {
     /// following combinations of request parameters: </p>
     /// <ul>
     /// <li>
-    /// <p>Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the
-    /// cluster identifier that matches the cluster in the secret. </p>
+    /// <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret.
+    /// When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p>
     /// </li>
     /// <li>
-    /// <p>Temporary credentials - specify the cluster identifier, the database name, and the
-    /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
-    /// operation is required to use this method. </p>
+    /// <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name.
+    /// Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required.
+    /// When connecting to a serverless endpoint, specify the database name. </p>
     /// </li>
     /// </ul>
     #[derive(std::fmt::Debug)]
     pub struct ListDatabases<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -973,12 +973,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_identifier(inp);
             self
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1006,12 +1006,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secret_arn(input);
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.db_user(inp);
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_db_user(input);
             self
@@ -1047,19 +1047,19 @@ pub mod fluent_builders {
     /// following combinations of request parameters: </p>
     /// <ul>
     /// <li>
-    /// <p>Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the
-    /// cluster identifier that matches the cluster in the secret. </p>
+    /// <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret.
+    /// When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p>
     /// </li>
     /// <li>
-    /// <p>Temporary credentials - specify the cluster identifier, the database name, and the
-    /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
-    /// operation is required to use this method. </p>
+    /// <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name.
+    /// Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required.
+    /// When connecting to a serverless endpoint, specify the database name. </p>
     /// </li>
     /// </ul>
     #[derive(std::fmt::Debug)]
     pub struct ListSchemas<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1112,12 +1112,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_identifier(inp);
             self
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1135,12 +1135,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secret_arn(input);
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.db_user(inp);
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_db_user(input);
             self
@@ -1217,7 +1217,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListStatements<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1392,19 +1392,19 @@ pub mod fluent_builders {
     /// following combinations of request parameters: </p>
     /// <ul>
     /// <li>
-    /// <p>Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database name, and the
-    /// cluster identifier that matches the cluster in the secret. </p>
+    /// <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret.
+    /// When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p>
     /// </li>
     /// <li>
-    /// <p>Temporary credentials - specify the cluster identifier, the database name, and the
-    /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
-    /// operation is required to use this method. </p>
+    /// <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name.
+    /// Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required.
+    /// When connecting to a serverless endpoint, specify the database name. </p>
     /// </li>
     /// </ul>
     #[derive(std::fmt::Debug)]
     pub struct ListTables<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1457,12 +1457,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_identifier(inp);
             self
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1480,12 +1480,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secret_arn(input);
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.db_user(inp);
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_db_user(input);
             self
@@ -1581,17 +1581,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -1600,7 +1604,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -1616,11 +1620,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

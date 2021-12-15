@@ -537,6 +537,205 @@ impl SidewalkUpdateAccount {
     }
 }
 
+/// <p>Trace Content for resources.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TraceContent {
+    /// <p>WirelessDevice FrameInfo for trace content.</p>
+    pub wireless_device_frame_info: std::option::Option<crate::model::WirelessDeviceFrameInfo>,
+    /// <p>The log level for a log message.</p>
+    pub log_level: std::option::Option<crate::model::LogLevel>,
+}
+impl TraceContent {
+    /// <p>WirelessDevice FrameInfo for trace content.</p>
+    pub fn wireless_device_frame_info(
+        &self,
+    ) -> std::option::Option<&crate::model::WirelessDeviceFrameInfo> {
+        self.wireless_device_frame_info.as_ref()
+    }
+    /// <p>The log level for a log message.</p>
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
+}
+impl std::fmt::Debug for TraceContent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TraceContent");
+        formatter.field(
+            "wireless_device_frame_info",
+            &self.wireless_device_frame_info,
+        );
+        formatter.field("log_level", &self.log_level);
+        formatter.finish()
+    }
+}
+/// See [`TraceContent`](crate::model::TraceContent)
+pub mod trace_content {
+    /// A builder for [`TraceContent`](crate::model::TraceContent)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) wireless_device_frame_info:
+            std::option::Option<crate::model::WirelessDeviceFrameInfo>,
+        pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
+    }
+    impl Builder {
+        /// <p>WirelessDevice FrameInfo for trace content.</p>
+        pub fn wireless_device_frame_info(
+            mut self,
+            input: crate::model::WirelessDeviceFrameInfo,
+        ) -> Self {
+            self.wireless_device_frame_info = Some(input);
+            self
+        }
+        /// <p>WirelessDevice FrameInfo for trace content.</p>
+        pub fn set_wireless_device_frame_info(
+            mut self,
+            input: std::option::Option<crate::model::WirelessDeviceFrameInfo>,
+        ) -> Self {
+            self.wireless_device_frame_info = input;
+            self
+        }
+        /// <p>The log level for a log message.</p>
+        pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
+            self.log_level = Some(input);
+            self
+        }
+        /// <p>The log level for a log message.</p>
+        pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
+            self.log_level = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TraceContent`](crate::model::TraceContent)
+        pub fn build(self) -> crate::model::TraceContent {
+            crate::model::TraceContent {
+                wireless_device_frame_info: self.wireless_device_frame_info,
+                log_level: self.log_level,
+            }
+        }
+    }
+}
+impl TraceContent {
+    /// Creates a new builder-style object to manufacture [`TraceContent`](crate::model::TraceContent)
+    pub fn builder() -> crate::model::trace_content::Builder {
+        crate::model::trace_content::Builder::default()
+    }
+}
+
+/// <p>The log level for a log message.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LogLevel {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
+    Info,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LogLevel {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => LogLevel::Disabled,
+            "ERROR" => LogLevel::Error,
+            "INFO" => LogLevel::Info,
+            other => LogLevel::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LogLevel {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LogLevel::from(s))
+    }
+}
+impl LogLevel {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LogLevel::Disabled => "DISABLED",
+            LogLevel::Error => "ERROR",
+            LogLevel::Info => "INFO",
+            LogLevel::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ERROR", "INFO"]
+    }
+}
+impl AsRef<str> for LogLevel {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>WirelessDevice FrameInfo for trace content.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum WirelessDeviceFrameInfo {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for WirelessDeviceFrameInfo {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => WirelessDeviceFrameInfo::Disabled,
+            "ENABLED" => WirelessDeviceFrameInfo::Enabled,
+            other => WirelessDeviceFrameInfo::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for WirelessDeviceFrameInfo {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(WirelessDeviceFrameInfo::from(s))
+    }
+}
+impl WirelessDeviceFrameInfo {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            WirelessDeviceFrameInfo::Disabled => "DISABLED",
+            WirelessDeviceFrameInfo::Enabled => "ENABLED",
+            WirelessDeviceFrameInfo::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for WirelessDeviceFrameInfo {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -913,65 +1112,6 @@ impl WirelessGatewayEventLogOption {
     /// Creates a new builder-style object to manufacture [`WirelessGatewayEventLogOption`](crate::model::WirelessGatewayEventLogOption)
     pub fn builder() -> crate::model::wireless_gateway_event_log_option::Builder {
         crate::model::wireless_gateway_event_log_option::Builder::default()
-    }
-}
-
-/// <p>The log level for a log message.</p>
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum LogLevel {
-    #[allow(missing_docs)] // documentation missing in model
-    Disabled,
-    #[allow(missing_docs)] // documentation missing in model
-    Error,
-    #[allow(missing_docs)] // documentation missing in model
-    Info,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for LogLevel {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISABLED" => LogLevel::Disabled,
-            "ERROR" => LogLevel::Error,
-            "INFO" => LogLevel::Info,
-            other => LogLevel::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for LogLevel {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LogLevel::from(s))
-    }
-}
-impl LogLevel {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LogLevel::Disabled => "DISABLED",
-            LogLevel::Error => "ERROR",
-            LogLevel::Info => "INFO",
-            LogLevel::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["DISABLED", "ERROR", "INFO"]
-    }
-}
-impl AsRef<str> for LogLevel {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 

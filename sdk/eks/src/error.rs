@@ -3735,8 +3735,12 @@ pub enum RegisterClusterErrorKind {
     /// <p>The specified parameter is invalid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>You have encountered a service limit on the specified resource.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
+    /// <p>Required resources (such as Service Linked Roles) were created and are still propagating. Retry later.</p>
+    ResourcePropagationDelayException(crate::error::ResourcePropagationDelayException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
     /// <p>The service is unavailable. Back off and retry the operation.</p>
@@ -3750,7 +3754,9 @@ impl std::fmt::Display for RegisterClusterError {
             RegisterClusterErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             RegisterClusterErrorKind::ClientException(_inner) => _inner.fmt(f),
             RegisterClusterErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            RegisterClusterErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             RegisterClusterErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
+            RegisterClusterErrorKind::ResourcePropagationDelayException(_inner) => _inner.fmt(f),
             RegisterClusterErrorKind::ServerException(_inner) => _inner.fmt(f),
             RegisterClusterErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
             RegisterClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -3827,11 +3833,25 @@ impl RegisterClusterError {
             RegisterClusterErrorKind::InvalidParameterException(_)
         )
     }
+    /// Returns `true` if the error kind is `RegisterClusterErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterClusterErrorKind::ResourceInUseException(_)
+        )
+    }
     /// Returns `true` if the error kind is `RegisterClusterErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterClusterErrorKind::ResourceLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RegisterClusterErrorKind::ResourcePropagationDelayException`.
+    pub fn is_resource_propagation_delay_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterClusterErrorKind::ResourcePropagationDelayException(_)
         )
     }
     /// Returns `true` if the error kind is `RegisterClusterErrorKind::ServerException`.
@@ -3852,7 +3872,9 @@ impl std::error::Error for RegisterClusterError {
             RegisterClusterErrorKind::AccessDeniedException(_inner) => Some(_inner),
             RegisterClusterErrorKind::ClientException(_inner) => Some(_inner),
             RegisterClusterErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            RegisterClusterErrorKind::ResourceInUseException(_inner) => Some(_inner),
             RegisterClusterErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
+            RegisterClusterErrorKind::ResourcePropagationDelayException(_inner) => Some(_inner),
             RegisterClusterErrorKind::ServerException(_inner) => Some(_inner),
             RegisterClusterErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             RegisterClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -5832,6 +5854,70 @@ impl ServiceUnavailableException {
     }
 }
 
+/// <p>Required resources (such as Service Linked Roles) were created and are still propagating. Retry later.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourcePropagationDelayException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResourcePropagationDelayException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourcePropagationDelayException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ResourcePropagationDelayException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourcePropagationDelayException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourcePropagationDelayException")?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourcePropagationDelayException {}
+/// See [`ResourcePropagationDelayException`](crate::error::ResourcePropagationDelayException)
+pub mod resource_propagation_delay_exception {
+    /// A builder for [`ResourcePropagationDelayException`](crate::error::ResourcePropagationDelayException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourcePropagationDelayException`](crate::error::ResourcePropagationDelayException)
+        pub fn build(self) -> crate::error::ResourcePropagationDelayException {
+            crate::error::ResourcePropagationDelayException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ResourcePropagationDelayException {
+    /// Creates a new builder-style object to manufacture [`ResourcePropagationDelayException`](crate::error::ResourcePropagationDelayException)
+    pub fn builder() -> crate::error::resource_propagation_delay_exception::Builder {
+        crate::error::resource_propagation_delay_exception::Builder::default()
+    }
+}
+
 /// <p>You have encountered a service limit on the specified resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5871,8 +5957,8 @@ impl ResourceLimitExceededException {
 impl std::fmt::Display for ResourceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceLimitExceededException")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -5965,8 +6051,8 @@ impl AccessDeniedException {
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -6056,8 +6142,8 @@ impl UnsupportedAvailabilityZoneException {
 impl std::fmt::Display for UnsupportedAvailabilityZoneException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedAvailabilityZoneException")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }

@@ -646,6 +646,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     }
 }
 
+/// Operation shape for `SendApiAsset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`send_api_asset`](crate::client::Client::send_api_asset).
+///
+/// See [`crate::client::fluent_builders::SendApiAsset`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SendApiAsset {
+    _private: (),
+}
+impl SendApiAsset {
+    /// Creates a new builder-style object to manufacture [`SendApiAssetInput`](crate::input::SendApiAssetInput)
+    pub fn builder() -> crate::input::send_api_asset_input::Builder {
+        crate::input::send_api_asset_input::Builder::default()
+    }
+    /// Creates a new `SendApiAsset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SendApiAsset {
+    type Output =
+        std::result::Result<crate::output::SendApiAssetOutput, crate::error::SendApiAssetError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_send_api_asset_error(response)
+        } else {
+            crate::operation_deser::parse_send_api_asset_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StartJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

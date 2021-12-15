@@ -549,6 +549,8 @@ pub struct StorageLensDataExport {
     /// <p>This bucket must be located in the same Region as the storage lens configuration. </p>
     /// </note>
     pub s3_bucket_destination: std::option::Option<crate::model::S3BucketDestination>,
+    /// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
+    pub cloud_watch_metrics: std::option::Option<crate::model::CloudWatchMetrics>,
 }
 impl StorageLensDataExport {
     /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p>
@@ -558,11 +560,16 @@ impl StorageLensDataExport {
     pub fn s3_bucket_destination(&self) -> std::option::Option<&crate::model::S3BucketDestination> {
         self.s3_bucket_destination.as_ref()
     }
+    /// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
+    pub fn cloud_watch_metrics(&self) -> std::option::Option<&crate::model::CloudWatchMetrics> {
+        self.cloud_watch_metrics.as_ref()
+    }
 }
 impl std::fmt::Debug for StorageLensDataExport {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StorageLensDataExport");
         formatter.field("s3_bucket_destination", &self.s3_bucket_destination);
+        formatter.field("cloud_watch_metrics", &self.cloud_watch_metrics);
         formatter.finish()
     }
 }
@@ -573,6 +580,7 @@ pub mod storage_lens_data_export {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket_destination: std::option::Option<crate::model::S3BucketDestination>,
+        pub(crate) cloud_watch_metrics: std::option::Option<crate::model::CloudWatchMetrics>,
     }
     impl Builder {
         /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p>
@@ -594,10 +602,24 @@ pub mod storage_lens_data_export {
             self.s3_bucket_destination = input;
             self
         }
+        /// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
+        pub fn cloud_watch_metrics(mut self, input: crate::model::CloudWatchMetrics) -> Self {
+            self.cloud_watch_metrics = Some(input);
+            self
+        }
+        /// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
+        pub fn set_cloud_watch_metrics(
+            mut self,
+            input: std::option::Option<crate::model::CloudWatchMetrics>,
+        ) -> Self {
+            self.cloud_watch_metrics = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StorageLensDataExport`](crate::model::StorageLensDataExport)
         pub fn build(self) -> crate::model::StorageLensDataExport {
             crate::model::StorageLensDataExport {
                 s3_bucket_destination: self.s3_bucket_destination,
+                cloud_watch_metrics: self.cloud_watch_metrics,
             }
         }
     }
@@ -606,6 +628,61 @@ impl StorageLensDataExport {
     /// Creates a new builder-style object to manufacture [`StorageLensDataExport`](crate::model::StorageLensDataExport)
     pub fn builder() -> crate::model::storage_lens_data_export::Builder {
         crate::model::storage_lens_data_export::Builder::default()
+    }
+}
+
+/// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
+/// <p>For more information about publishing S3 Storage Lens metrics to CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_view_metrics_cloudwatch.html">Monitor S3 Storage Lens metrics in CloudWatch</a> in the <i>Amazon S3 User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CloudWatchMetrics {
+    /// <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens metrics is enabled. A value of <code>true</code> indicates that CloudWatch publishing for S3 Storage Lens metrics is enabled.</p>
+    pub is_enabled: bool,
+}
+impl CloudWatchMetrics {
+    /// <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens metrics is enabled. A value of <code>true</code> indicates that CloudWatch publishing for S3 Storage Lens metrics is enabled.</p>
+    pub fn is_enabled(&self) -> bool {
+        self.is_enabled
+    }
+}
+impl std::fmt::Debug for CloudWatchMetrics {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CloudWatchMetrics");
+        formatter.field("is_enabled", &self.is_enabled);
+        formatter.finish()
+    }
+}
+/// See [`CloudWatchMetrics`](crate::model::CloudWatchMetrics)
+pub mod cloud_watch_metrics {
+    /// A builder for [`CloudWatchMetrics`](crate::model::CloudWatchMetrics)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) is_enabled: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens metrics is enabled. A value of <code>true</code> indicates that CloudWatch publishing for S3 Storage Lens metrics is enabled.</p>
+        pub fn is_enabled(mut self, input: bool) -> Self {
+            self.is_enabled = Some(input);
+            self
+        }
+        /// <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens metrics is enabled. A value of <code>true</code> indicates that CloudWatch publishing for S3 Storage Lens metrics is enabled.</p>
+        pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_enabled = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CloudWatchMetrics`](crate::model::CloudWatchMetrics)
+        pub fn build(self) -> crate::model::CloudWatchMetrics {
+            crate::model::CloudWatchMetrics {
+                is_enabled: self.is_enabled.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl CloudWatchMetrics {
+    /// Creates a new builder-style object to manufacture [`CloudWatchMetrics`](crate::model::CloudWatchMetrics)
+    pub fn builder() -> crate::model::cloud_watch_metrics::Builder {
+        crate::model::cloud_watch_metrics::Builder::default()
     }
 }
 

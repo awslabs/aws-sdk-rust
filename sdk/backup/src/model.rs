@@ -546,9 +546,10 @@ impl FrameworkControl {
 }
 
 /// <p>A framework consists of one or more controls. Each control has its own control scope.
-/// The control scope defines what the control will evaluate. Three examples of control scopes
-/// are: a specific backup plan, all backup plans with a specific tag, or all backup
-/// plans.</p>
+/// The control scope can include one or more resource types, a combination of a tag key and
+/// value, or a combination of one resource type and one resource ID. If no scope is specified,
+/// evaluations for the rule are triggered when any resource in your recording group changes in
+/// configuration.</p>
 /// <note>
 /// <p>To set a control scope that includes all of a particular resource, leave the
 /// <code>ControlScope</code> empty or do not pass it when calling
@@ -563,8 +564,10 @@ pub struct ControlScope {
     /// <p>Describes whether the control scope includes one or more types of resources, such as
     /// <code>EFS</code> or <code>RDS</code>.</p>
     pub compliance_resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Describes whether the control scope includes resources with one or more tags. Each tag
-    /// is a key-value pair.</p>
+    /// <p>The tag key-value pair applied to those Amazon Web Services resources that you want to
+    /// trigger an evaluation for a rule. A maximum of one key-value pair can be provided. The tag
+    /// value is optional, but it cannot be an empty string. The structure to assign a tag is:
+    /// <code>[{"Key":"string","Value":"string"}]</code>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -579,8 +582,10 @@ impl ControlScope {
     pub fn compliance_resource_types(&self) -> std::option::Option<&[std::string::String]> {
         self.compliance_resource_types.as_deref()
     }
-    /// <p>Describes whether the control scope includes resources with one or more tags. Each tag
-    /// is a key-value pair.</p>
+    /// <p>The tag key-value pair applied to those Amazon Web Services resources that you want to
+    /// trigger an evaluation for a rule. A maximum of one key-value pair can be provided. The tag
+    /// value is optional, but it cannot be an empty string. The structure to assign a tag is:
+    /// <code>[{"Key":"string","Value":"string"}]</code>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -657,8 +662,10 @@ pub mod control_scope {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Describes whether the control scope includes resources with one or more tags. Each tag
-        /// is a key-value pair.</p>
+        /// <p>The tag key-value pair applied to those Amazon Web Services resources that you want to
+        /// trigger an evaluation for a rule. A maximum of one key-value pair can be provided. The tag
+        /// value is optional, but it cannot be an empty string. The structure to assign a tag is:
+        /// <code>[{"Key":"string","Value":"string"}]</code>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -669,8 +676,10 @@ pub mod control_scope {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Describes whether the control scope includes resources with one or more tags. Each tag
-        /// is a key-value pair.</p>
+        /// <p>The tag key-value pair applied to those Amazon Web Services resources that you want to
+        /// trigger an evaluation for a rule. A maximum of one key-value pair can be provided. The tag
+        /// value is optional, but it cannot be an empty string. The structure to assign a tag is:
+        /// <code>[{"Key":"string","Value":"string"}]</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -938,7 +947,8 @@ impl AdvancedBackupSetting {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupPlanInput {
-    /// <p>The optional display name of a backup plan.</p>
+    /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
+    /// characters.</p>
     pub backup_plan_name: std::option::Option<std::string::String>,
     /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task
     /// that is used to back up a selection of resources.</p>
@@ -949,7 +959,8 @@ pub struct BackupPlanInput {
         std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
 }
 impl BackupPlanInput {
-    /// <p>The optional display name of a backup plan.</p>
+    /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
+    /// characters.</p>
     pub fn backup_plan_name(&self) -> std::option::Option<&str> {
         self.backup_plan_name.as_deref()
     }
@@ -987,12 +998,14 @@ pub mod backup_plan_input {
             std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
     }
     impl Builder {
-        /// <p>The optional display name of a backup plan.</p>
+        /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
+        /// characters.</p>
         pub fn backup_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_plan_name = Some(input.into());
             self
         }
-        /// <p>The optional display name of a backup plan.</p>
+        /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
+        /// characters.</p>
         pub fn set_backup_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1066,7 +1079,8 @@ impl BackupPlanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupRuleInput {
-    /// <p>An optional display name for a backup rule.</p>
+    /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+    /// characters.</p>
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified
     /// by names that are unique to the account used to create them and the Amazon Web Services
@@ -1103,7 +1117,8 @@ pub struct BackupRuleInput {
     pub enable_continuous_backup: std::option::Option<bool>,
 }
 impl BackupRuleInput {
-    /// <p>An optional display name for a backup rule.</p>
+    /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+    /// characters.</p>
     pub fn rule_name(&self) -> std::option::Option<&str> {
         self.rule_name.as_deref()
     }
@@ -1193,12 +1208,14 @@ pub mod backup_rule_input {
         pub(crate) enable_continuous_backup: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>An optional display name for a backup rule.</p>
+        /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+        /// characters.</p>
         pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_name = Some(input.into());
             self
         }
-        /// <p>An optional display name for a backup rule.</p>
+        /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+        /// characters.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_name = input;
             self
@@ -4552,7 +4569,8 @@ pub struct BackupVaultListMember {
     /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried
-    /// without the risk of running the operation twice.</p>
+    /// without the risk of running the operation twice. This parameter is optional.</p>
+    /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>The number of recovery points that are stored in a backup vault.</p>
     pub number_of_recovery_points: i64,
@@ -4616,7 +4634,8 @@ impl BackupVaultListMember {
         self.encryption_key_arn.as_deref()
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried
-    /// without the risk of running the operation twice.</p>
+    /// without the risk of running the operation twice. This parameter is optional.</p>
+    /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(&self) -> std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
@@ -4769,13 +4788,15 @@ pub mod backup_vault_list_member {
             self
         }
         /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice.</p>
+        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.creator_request_id = Some(input.into());
             self
         }
         /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice.</p>
+        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4926,7 +4947,8 @@ pub struct BackupSelectionsListMember {
     /// AM.</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried
-    /// without the risk of running the operation twice.</p>
+    /// without the risk of running the operation twice. This parameter is optional.</p>
+    /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>Specifies the IAM role Amazon Resource Name (ARN) to create the target recovery point;
     /// for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
@@ -4953,7 +4975,8 @@ impl BackupSelectionsListMember {
         self.creation_date.as_ref()
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried
-    /// without the risk of running the operation twice.</p>
+    /// without the risk of running the operation twice. This parameter is optional.</p>
+    /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(&self) -> std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
@@ -5045,13 +5068,15 @@ pub mod backup_selections_list_member {
             self
         }
         /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice.</p>
+        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.creator_request_id = Some(input.into());
             self
         }
         /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice.</p>
+        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5116,7 +5141,8 @@ pub struct BackupPlansListMember {
     /// <p>The display name of a saved backup plan.</p>
     pub backup_plan_name: std::option::Option<std::string::String>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried
-    /// without the risk of running the operation twice.</p>
+    /// without the risk of running the operation twice. This parameter is optional.</p>
+    /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>The last time a job to back up resources was run with this rule. A date and time, in
     /// Unix format and Coordinated Universal Time (UTC). The value of
@@ -5161,7 +5187,8 @@ impl BackupPlansListMember {
         self.backup_plan_name.as_deref()
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried
-    /// without the risk of running the operation twice.</p>
+    /// without the risk of running the operation twice. This parameter is optional.</p>
+    /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(&self) -> std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
@@ -5304,13 +5331,15 @@ pub mod backup_plans_list_member {
             self
         }
         /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice.</p>
+        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.creator_request_id = Some(input.into());
             self
         }
         /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice.</p>
+        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6157,26 +6186,66 @@ impl AsRef<str> for BackupJobState {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupSelection {
-    /// <p>The display name of a resource selection document.</p>
+    /// <p>The display name of a resource selection document. Must contain 1 to 50 alphanumeric or
+    /// '-_.' characters.</p>
     pub selection_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that Backup uses to authenticate when backing up the
     /// target resource; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>An array of strings that contain Amazon Resource Names (ARNs)
-    ///
-    /// of resources to assign to a backup plan.</p>
+    /// <p>A list of Amazon Resource Names (ARNs) to assign to a backup plan. The maximum number of
+    /// ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
+    /// <p>If you need to assign many resources to a backup plan, consider a different resource
+    /// selection strategy, such as assigning all resources of a resource type or refining your
+    /// resource selection using tags.</p>
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An array of conditions used to specify a set of resources to assign to a backup plan;
-    /// for example, <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
-    /// Assigns the backup plan to every resource with at least one matching tag.</p>
+    /// <p>A list of conditions that you define to assign resources to your backup plans using
+    /// tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition
+    /// operators are case sensitive.</p>
+    /// <p>
+    /// <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When you specify more than one condition, you assign all resources that match AT
+    /// LEAST ONE condition (using OR logic).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ListOfTags</code> only supports <code>StringEquals</code>.
+    /// <code>Conditions</code> supports <code>StringEquals</code>,
+    /// <code>StringLike</code>, <code>StringNotEquals</code>, and
+    /// <code>StringNotLike</code>. </p>
+    /// </li>
+    /// </ul>
     pub list_of_tags: std::option::Option<std::vec::Vec<crate::model::Condition>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of Amazon Resource Names (ARNs) to exclude from a backup plan. The maximum number
+    /// of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
+    /// <p>If you need to exclude many resources from a backup plan, consider a different resource
+    /// selection strategy, such as assigning only one or a few resource types or refining your
+    /// resource selection using tags.</p>
     pub not_resources: std::option::Option<std::vec::Vec<std::string::String>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of conditions that you define to assign resources to your backup plans using
+    /// tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition
+    /// operators are case sensitive.</p>
+    /// <p>
+    /// <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When you specify more than one condition, you only assign the resources that match
+    /// ALL conditions (using AND logic).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Conditions</code> supports <code>StringEquals</code>,
+    /// <code>StringLike</code>, <code>StringNotEquals</code>, and
+    /// <code>StringNotLike</code>. <code>ListOfTags</code> only supports
+    /// <code>StringEquals</code>.</p>
+    /// </li>
+    /// </ul>
     pub conditions: std::option::Option<crate::model::Conditions>,
 }
 impl BackupSelection {
-    /// <p>The display name of a resource selection document.</p>
+    /// <p>The display name of a resource selection document. Must contain 1 to 50 alphanumeric or
+    /// '-_.' characters.</p>
     pub fn selection_name(&self) -> std::option::Option<&str> {
         self.selection_name.as_deref()
     }
@@ -6185,23 +6254,61 @@ impl BackupSelection {
     pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
-    /// <p>An array of strings that contain Amazon Resource Names (ARNs)
-    ///
-    /// of resources to assign to a backup plan.</p>
+    /// <p>A list of Amazon Resource Names (ARNs) to assign to a backup plan. The maximum number of
+    /// ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
+    /// <p>If you need to assign many resources to a backup plan, consider a different resource
+    /// selection strategy, such as assigning all resources of a resource type or refining your
+    /// resource selection using tags.</p>
     pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
         self.resources.as_deref()
     }
-    /// <p>An array of conditions used to specify a set of resources to assign to a backup plan;
-    /// for example, <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
-    /// Assigns the backup plan to every resource with at least one matching tag.</p>
+    /// <p>A list of conditions that you define to assign resources to your backup plans using
+    /// tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition
+    /// operators are case sensitive.</p>
+    /// <p>
+    /// <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When you specify more than one condition, you assign all resources that match AT
+    /// LEAST ONE condition (using OR logic).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ListOfTags</code> only supports <code>StringEquals</code>.
+    /// <code>Conditions</code> supports <code>StringEquals</code>,
+    /// <code>StringLike</code>, <code>StringNotEquals</code>, and
+    /// <code>StringNotLike</code>. </p>
+    /// </li>
+    /// </ul>
     pub fn list_of_tags(&self) -> std::option::Option<&[crate::model::Condition]> {
         self.list_of_tags.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of Amazon Resource Names (ARNs) to exclude from a backup plan. The maximum number
+    /// of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
+    /// <p>If you need to exclude many resources from a backup plan, consider a different resource
+    /// selection strategy, such as assigning only one or a few resource types or refining your
+    /// resource selection using tags.</p>
     pub fn not_resources(&self) -> std::option::Option<&[std::string::String]> {
         self.not_resources.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of conditions that you define to assign resources to your backup plans using
+    /// tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition
+    /// operators are case sensitive.</p>
+    /// <p>
+    /// <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When you specify more than one condition, you only assign the resources that match
+    /// ALL conditions (using AND logic).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Conditions</code> supports <code>StringEquals</code>,
+    /// <code>StringLike</code>, <code>StringNotEquals</code>, and
+    /// <code>StringNotLike</code>. <code>ListOfTags</code> only supports
+    /// <code>StringEquals</code>.</p>
+    /// </li>
+    /// </ul>
     pub fn conditions(&self) -> std::option::Option<&crate::model::Conditions> {
         self.conditions.as_ref()
     }
@@ -6232,12 +6339,14 @@ pub mod backup_selection {
         pub(crate) conditions: std::option::Option<crate::model::Conditions>,
     }
     impl Builder {
-        /// <p>The display name of a resource selection document.</p>
+        /// <p>The display name of a resource selection document. Must contain 1 to 50 alphanumeric or
+        /// '-_.' characters.</p>
         pub fn selection_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.selection_name = Some(input.into());
             self
         }
-        /// <p>The display name of a resource selection document.</p>
+        /// <p>The display name of a resource selection document. Must contain 1 to 50 alphanumeric or
+        /// '-_.' characters.</p>
         pub fn set_selection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6261,18 +6370,22 @@ pub mod backup_selection {
         ///
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
-        /// <p>An array of strings that contain Amazon Resource Names (ARNs)
-        ///
-        /// of resources to assign to a backup plan.</p>
+        /// <p>A list of Amazon Resource Names (ARNs) to assign to a backup plan. The maximum number of
+        /// ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
+        /// <p>If you need to assign many resources to a backup plan, consider a different resource
+        /// selection strategy, such as assigning all resources of a resource type or refining your
+        /// resource selection using tags.</p>
         pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resources.unwrap_or_default();
             v.push(input.into());
             self.resources = Some(v);
             self
         }
-        /// <p>An array of strings that contain Amazon Resource Names (ARNs)
-        ///
-        /// of resources to assign to a backup plan.</p>
+        /// <p>A list of Amazon Resource Names (ARNs) to assign to a backup plan. The maximum number of
+        /// ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
+        /// <p>If you need to assign many resources to a backup plan, consider a different resource
+        /// selection strategy, such as assigning all resources of a resource type or refining your
+        /// resource selection using tags.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6284,18 +6397,48 @@ pub mod backup_selection {
         ///
         /// To override the contents of this collection use [`set_list_of_tags`](Self::set_list_of_tags).
         ///
-        /// <p>An array of conditions used to specify a set of resources to assign to a backup plan;
-        /// for example, <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
-        /// Assigns the backup plan to every resource with at least one matching tag.</p>
+        /// <p>A list of conditions that you define to assign resources to your backup plans using
+        /// tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition
+        /// operators are case sensitive.</p>
+        /// <p>
+        /// <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>When you specify more than one condition, you assign all resources that match AT
+        /// LEAST ONE condition (using OR logic).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ListOfTags</code> only supports <code>StringEquals</code>.
+        /// <code>Conditions</code> supports <code>StringEquals</code>,
+        /// <code>StringLike</code>, <code>StringNotEquals</code>, and
+        /// <code>StringNotLike</code>. </p>
+        /// </li>
+        /// </ul>
         pub fn list_of_tags(mut self, input: impl Into<crate::model::Condition>) -> Self {
             let mut v = self.list_of_tags.unwrap_or_default();
             v.push(input.into());
             self.list_of_tags = Some(v);
             self
         }
-        /// <p>An array of conditions used to specify a set of resources to assign to a backup plan;
-        /// for example, <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
-        /// Assigns the backup plan to every resource with at least one matching tag.</p>
+        /// <p>A list of conditions that you define to assign resources to your backup plans using
+        /// tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition
+        /// operators are case sensitive.</p>
+        /// <p>
+        /// <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>When you specify more than one condition, you assign all resources that match AT
+        /// LEAST ONE condition (using OR logic).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ListOfTags</code> only supports <code>StringEquals</code>.
+        /// <code>Conditions</code> supports <code>StringEquals</code>,
+        /// <code>StringLike</code>, <code>StringNotEquals</code>, and
+        /// <code>StringNotLike</code>. </p>
+        /// </li>
+        /// </ul>
         pub fn set_list_of_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Condition>>,
@@ -6307,13 +6450,22 @@ pub mod backup_selection {
         ///
         /// To override the contents of this collection use [`set_not_resources`](Self::set_not_resources).
         ///
+        /// <p>A list of Amazon Resource Names (ARNs) to exclude from a backup plan. The maximum number
+        /// of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
+        /// <p>If you need to exclude many resources from a backup plan, consider a different resource
+        /// selection strategy, such as assigning only one or a few resource types or refining your
+        /// resource selection using tags.</p>
         pub fn not_resources(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_resources.unwrap_or_default();
             v.push(input.into());
             self.not_resources = Some(v);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A list of Amazon Resource Names (ARNs) to exclude from a backup plan. The maximum number
+        /// of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
+        /// <p>If you need to exclude many resources from a backup plan, consider a different resource
+        /// selection strategy, such as assigning only one or a few resource types or refining your
+        /// resource selection using tags.</p>
         pub fn set_not_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6321,12 +6473,46 @@ pub mod backup_selection {
             self.not_resources = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A list of conditions that you define to assign resources to your backup plans using
+        /// tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition
+        /// operators are case sensitive.</p>
+        /// <p>
+        /// <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>When you specify more than one condition, you only assign the resources that match
+        /// ALL conditions (using AND logic).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Conditions</code> supports <code>StringEquals</code>,
+        /// <code>StringLike</code>, <code>StringNotEquals</code>, and
+        /// <code>StringNotLike</code>. <code>ListOfTags</code> only supports
+        /// <code>StringEquals</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn conditions(mut self, input: crate::model::Conditions) -> Self {
             self.conditions = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A list of conditions that you define to assign resources to your backup plans using
+        /// tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition
+        /// operators are case sensitive.</p>
+        /// <p>
+        /// <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>When you specify more than one condition, you only assign the resources that match
+        /// ALL conditions (using AND logic).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Conditions</code> supports <code>StringEquals</code>,
+        /// <code>StringLike</code>, <code>StringNotEquals</code>, and
+        /// <code>StringNotLike</code>. <code>ListOfTags</code> only supports
+        /// <code>StringEquals</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_conditions(
             mut self,
             input: std::option::Option<crate::model::Conditions>,
@@ -6354,33 +6540,44 @@ impl BackupSelection {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>Contains information about which resources to include or exclude from a backup plan
+/// using their tags. Conditions are case sensitive.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Conditions {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Filters the values of your tagged resources for only those resources that you tagged
+    /// with the same value. Also called "exact matching."</p>
     pub string_equals: std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Filters the values of your tagged resources for only those resources that you tagged
+    /// that do not have the same value. Also called "negated matching."</p>
     pub string_not_equals: std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Filters the values of your tagged resources for matching tag values with the use of a
+    /// wildcard character (*) anywhere in the string. For example, "prod*" or "*rod*" matches the
+    /// tag value "production".</p>
     pub string_like: std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Filters the values of your tagged resources for non-matching tag values with the use of
+    /// a wildcard character (*) anywhere in the string.</p>
     pub string_not_like: std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
 }
 impl Conditions {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Filters the values of your tagged resources for only those resources that you tagged
+    /// with the same value. Also called "exact matching."</p>
     pub fn string_equals(&self) -> std::option::Option<&[crate::model::ConditionParameter]> {
         self.string_equals.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Filters the values of your tagged resources for only those resources that you tagged
+    /// that do not have the same value. Also called "negated matching."</p>
     pub fn string_not_equals(&self) -> std::option::Option<&[crate::model::ConditionParameter]> {
         self.string_not_equals.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Filters the values of your tagged resources for matching tag values with the use of a
+    /// wildcard character (*) anywhere in the string. For example, "prod*" or "*rod*" matches the
+    /// tag value "production".</p>
     pub fn string_like(&self) -> std::option::Option<&[crate::model::ConditionParameter]> {
         self.string_like.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Filters the values of your tagged resources for non-matching tag values with the use of
+    /// a wildcard character (*) anywhere in the string.</p>
     pub fn string_not_like(&self) -> std::option::Option<&[crate::model::ConditionParameter]> {
         self.string_not_like.as_deref()
     }
@@ -6415,13 +6612,16 @@ pub mod conditions {
         ///
         /// To override the contents of this collection use [`set_string_equals`](Self::set_string_equals).
         ///
+        /// <p>Filters the values of your tagged resources for only those resources that you tagged
+        /// with the same value. Also called "exact matching."</p>
         pub fn string_equals(mut self, input: impl Into<crate::model::ConditionParameter>) -> Self {
             let mut v = self.string_equals.unwrap_or_default();
             v.push(input.into());
             self.string_equals = Some(v);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Filters the values of your tagged resources for only those resources that you tagged
+        /// with the same value. Also called "exact matching."</p>
         pub fn set_string_equals(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
@@ -6433,6 +6633,8 @@ pub mod conditions {
         ///
         /// To override the contents of this collection use [`set_string_not_equals`](Self::set_string_not_equals).
         ///
+        /// <p>Filters the values of your tagged resources for only those resources that you tagged
+        /// that do not have the same value. Also called "negated matching."</p>
         pub fn string_not_equals(
             mut self,
             input: impl Into<crate::model::ConditionParameter>,
@@ -6442,7 +6644,8 @@ pub mod conditions {
             self.string_not_equals = Some(v);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Filters the values of your tagged resources for only those resources that you tagged
+        /// that do not have the same value. Also called "negated matching."</p>
         pub fn set_string_not_equals(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
@@ -6454,13 +6657,18 @@ pub mod conditions {
         ///
         /// To override the contents of this collection use [`set_string_like`](Self::set_string_like).
         ///
+        /// <p>Filters the values of your tagged resources for matching tag values with the use of a
+        /// wildcard character (*) anywhere in the string. For example, "prod*" or "*rod*" matches the
+        /// tag value "production".</p>
         pub fn string_like(mut self, input: impl Into<crate::model::ConditionParameter>) -> Self {
             let mut v = self.string_like.unwrap_or_default();
             v.push(input.into());
             self.string_like = Some(v);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Filters the values of your tagged resources for matching tag values with the use of a
+        /// wildcard character (*) anywhere in the string. For example, "prod*" or "*rod*" matches the
+        /// tag value "production".</p>
         pub fn set_string_like(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
@@ -6472,6 +6680,8 @@ pub mod conditions {
         ///
         /// To override the contents of this collection use [`set_string_not_like`](Self::set_string_not_like).
         ///
+        /// <p>Filters the values of your tagged resources for non-matching tag values with the use of
+        /// a wildcard character (*) anywhere in the string.</p>
         pub fn string_not_like(
             mut self,
             input: impl Into<crate::model::ConditionParameter>,
@@ -6481,7 +6691,8 @@ pub mod conditions {
             self.string_not_like = Some(v);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Filters the values of your tagged resources for non-matching tag values with the use of
+        /// a wildcard character (*) anywhere in the string.</p>
         pub fn set_string_not_like(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConditionParameter>>,
@@ -6507,21 +6718,26 @@ impl Conditions {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>Includes information about tags you define to assign tagged resources to a backup
+/// plan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConditionParameter {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The key in a key-value pair. For example, in the tag <code>Department:
+    /// Accounting</code>, <code>Department</code> is the key.</p>
     pub condition_key: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The value in a key-value pair. For example, in the tag <code>Department:
+    /// Accounting</code>, <code>Accounting</code> is the value.</p>
     pub condition_value: std::option::Option<std::string::String>,
 }
 impl ConditionParameter {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The key in a key-value pair. For example, in the tag <code>Department:
+    /// Accounting</code>, <code>Department</code> is the key.</p>
     pub fn condition_key(&self) -> std::option::Option<&str> {
         self.condition_key.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The value in a key-value pair. For example, in the tag <code>Department:
+    /// Accounting</code>, <code>Accounting</code> is the value.</p>
     pub fn condition_value(&self) -> std::option::Option<&str> {
         self.condition_value.as_deref()
     }
@@ -6544,12 +6760,14 @@ pub mod condition_parameter {
         pub(crate) condition_value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The key in a key-value pair. For example, in the tag <code>Department:
+        /// Accounting</code>, <code>Department</code> is the key.</p>
         pub fn condition_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.condition_key = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The key in a key-value pair. For example, in the tag <code>Department:
+        /// Accounting</code>, <code>Department</code> is the key.</p>
         pub fn set_condition_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6557,12 +6775,14 @@ pub mod condition_parameter {
             self.condition_key = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The value in a key-value pair. For example, in the tag <code>Department:
+        /// Accounting</code>, <code>Accounting</code> is the value.</p>
         pub fn condition_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.condition_value = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The value in a key-value pair. For example, in the tag <code>Department:
+        /// Accounting</code>, <code>Accounting</code> is the value.</p>
         pub fn set_condition_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6587,34 +6807,42 @@ impl ConditionParameter {
 }
 
 /// <p>Contains an array of triplets made up of a condition type (such as
-/// <code>StringEquals</code>), a key, and a value. Conditions are used to filter resources
-/// in a selection that is assigned to a backup plan.</p>
+/// <code>StringEquals</code>), a key, and a value. Used to filter resources using their
+/// tags and assign them to a backup plan. Case sensitive.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Condition {
-    /// <p>An operation, such as <code>StringEquals</code>, that is applied to a key-value pair
-    /// used to filter resources in a selection.</p>
+    /// <p>An operation applied to a key-value pair used to assign resources to your backup plan.
+    /// Condition only supports <code>StringEquals</code>. For more flexible assignment options,
+    /// incluidng <code>StringLike</code> and the ability to exclude resources from your backup
+    /// plan, use <code>Conditions</code> (with an "s" on the end) for your <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BackupSelection.html">
+    /// <code>BackupSelection</code>
+    /// </a>.</p>
     pub condition_type: std::option::Option<crate::model::ConditionType>,
-    /// <p>The key in a key-value pair. For example, in <code>"ec2:ResourceTag/Department":
-    /// "accounting"</code>, <code>"ec2:ResourceTag/Department"</code> is the key.</p>
+    /// <p>The key in a key-value pair. For example, in the tag <code>Department:
+    /// Accounting</code>, <code>Department</code> is the key.</p>
     pub condition_key: std::option::Option<std::string::String>,
-    /// <p>The value in a key-value pair. For example, in <code>"ec2:ResourceTag/Department":
-    /// "accounting"</code>, <code>"accounting"</code> is the value.</p>
+    /// <p>The value in a key-value pair. For example, in the tag <code>Department:
+    /// Accounting</code>, <code>Accounting</code> is the value.</p>
     pub condition_value: std::option::Option<std::string::String>,
 }
 impl Condition {
-    /// <p>An operation, such as <code>StringEquals</code>, that is applied to a key-value pair
-    /// used to filter resources in a selection.</p>
+    /// <p>An operation applied to a key-value pair used to assign resources to your backup plan.
+    /// Condition only supports <code>StringEquals</code>. For more flexible assignment options,
+    /// incluidng <code>StringLike</code> and the ability to exclude resources from your backup
+    /// plan, use <code>Conditions</code> (with an "s" on the end) for your <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BackupSelection.html">
+    /// <code>BackupSelection</code>
+    /// </a>.</p>
     pub fn condition_type(&self) -> std::option::Option<&crate::model::ConditionType> {
         self.condition_type.as_ref()
     }
-    /// <p>The key in a key-value pair. For example, in <code>"ec2:ResourceTag/Department":
-    /// "accounting"</code>, <code>"ec2:ResourceTag/Department"</code> is the key.</p>
+    /// <p>The key in a key-value pair. For example, in the tag <code>Department:
+    /// Accounting</code>, <code>Department</code> is the key.</p>
     pub fn condition_key(&self) -> std::option::Option<&str> {
         self.condition_key.as_deref()
     }
-    /// <p>The value in a key-value pair. For example, in <code>"ec2:ResourceTag/Department":
-    /// "accounting"</code>, <code>"accounting"</code> is the value.</p>
+    /// <p>The value in a key-value pair. For example, in the tag <code>Department:
+    /// Accounting</code>, <code>Accounting</code> is the value.</p>
     pub fn condition_value(&self) -> std::option::Option<&str> {
         self.condition_value.as_deref()
     }
@@ -6639,14 +6867,22 @@ pub mod condition {
         pub(crate) condition_value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An operation, such as <code>StringEquals</code>, that is applied to a key-value pair
-        /// used to filter resources in a selection.</p>
+        /// <p>An operation applied to a key-value pair used to assign resources to your backup plan.
+        /// Condition only supports <code>StringEquals</code>. For more flexible assignment options,
+        /// incluidng <code>StringLike</code> and the ability to exclude resources from your backup
+        /// plan, use <code>Conditions</code> (with an "s" on the end) for your <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BackupSelection.html">
+        /// <code>BackupSelection</code>
+        /// </a>.</p>
         pub fn condition_type(mut self, input: crate::model::ConditionType) -> Self {
             self.condition_type = Some(input);
             self
         }
-        /// <p>An operation, such as <code>StringEquals</code>, that is applied to a key-value pair
-        /// used to filter resources in a selection.</p>
+        /// <p>An operation applied to a key-value pair used to assign resources to your backup plan.
+        /// Condition only supports <code>StringEquals</code>. For more flexible assignment options,
+        /// incluidng <code>StringLike</code> and the ability to exclude resources from your backup
+        /// plan, use <code>Conditions</code> (with an "s" on the end) for your <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BackupSelection.html">
+        /// <code>BackupSelection</code>
+        /// </a>.</p>
         pub fn set_condition_type(
             mut self,
             input: std::option::Option<crate::model::ConditionType>,
@@ -6654,14 +6890,14 @@ pub mod condition {
             self.condition_type = input;
             self
         }
-        /// <p>The key in a key-value pair. For example, in <code>"ec2:ResourceTag/Department":
-        /// "accounting"</code>, <code>"ec2:ResourceTag/Department"</code> is the key.</p>
+        /// <p>The key in a key-value pair. For example, in the tag <code>Department:
+        /// Accounting</code>, <code>Department</code> is the key.</p>
         pub fn condition_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.condition_key = Some(input.into());
             self
         }
-        /// <p>The key in a key-value pair. For example, in <code>"ec2:ResourceTag/Department":
-        /// "accounting"</code>, <code>"ec2:ResourceTag/Department"</code> is the key.</p>
+        /// <p>The key in a key-value pair. For example, in the tag <code>Department:
+        /// Accounting</code>, <code>Department</code> is the key.</p>
         pub fn set_condition_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6669,14 +6905,14 @@ pub mod condition {
             self.condition_key = input;
             self
         }
-        /// <p>The value in a key-value pair. For example, in <code>"ec2:ResourceTag/Department":
-        /// "accounting"</code>, <code>"accounting"</code> is the value.</p>
+        /// <p>The value in a key-value pair. For example, in the tag <code>Department:
+        /// Accounting</code>, <code>Accounting</code> is the value.</p>
         pub fn condition_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.condition_value = Some(input.into());
             self
         }
-        /// <p>The value in a key-value pair. For example, in <code>"ec2:ResourceTag/Department":
-        /// "accounting"</code>, <code>"accounting"</code> is the value.</p>
+        /// <p>The value in a key-value pair. For example, in the tag <code>Department:
+        /// Accounting</code>, <code>Accounting</code> is the value.</p>
         pub fn set_condition_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6759,7 +6995,8 @@ impl AsRef<str> for ConditionType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupPlan {
-    /// <p>The display name of a backup plan.</p>
+    /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
+    /// characters.</p>
     pub backup_plan_name: std::option::Option<std::string::String>,
     /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task
     /// that is used to back up a selection of resources. </p>
@@ -6769,7 +7006,8 @@ pub struct BackupPlan {
         std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
 }
 impl BackupPlan {
-    /// <p>The display name of a backup plan.</p>
+    /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
+    /// characters.</p>
     pub fn backup_plan_name(&self) -> std::option::Option<&str> {
         self.backup_plan_name.as_deref()
     }
@@ -6806,12 +7044,14 @@ pub mod backup_plan {
             std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
     }
     impl Builder {
-        /// <p>The display name of a backup plan.</p>
+        /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
+        /// characters.</p>
         pub fn backup_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_plan_name = Some(input.into());
             self
         }
-        /// <p>The display name of a backup plan.</p>
+        /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
+        /// characters.</p>
         pub fn set_backup_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6883,7 +7123,8 @@ impl BackupPlan {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupRule {
-    /// <p>An optional display name for a backup rule.</p>
+    /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+    /// characters.</p>
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified
     /// by names that are unique to the account used to create them and the Amazon Web Services
@@ -6891,10 +7132,11 @@ pub struct BackupRule {
     /// hyphens.</p>
     pub target_backup_vault_name: std::option::Option<std::string::String>,
     /// <p>A cron expression in UTC specifying when Backup initiates a backup job. For
-    /// more information about cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User
-    /// Guide.</i>. Prior to specifying a value for this parameter, we recommend testing
-    /// your cron expression using one of the many available cron generator and testing
-    /// tools.</p>
+    /// more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User
+    /// Guide.</i>. Two examples of Amazon Web Services cron expressions are <code> 15 * ?
+    /// * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ?
+    /// *</code> (take a backup every day at 12 noon UTC). For a table of examples, click the
+    /// preceding link and scroll down the page.</p>
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it
     /// doesn't start successfully. This value is optional.</p>
@@ -6926,7 +7168,8 @@ pub struct BackupRule {
     pub enable_continuous_backup: std::option::Option<bool>,
 }
 impl BackupRule {
-    /// <p>An optional display name for a backup rule.</p>
+    /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+    /// characters.</p>
     pub fn rule_name(&self) -> std::option::Option<&str> {
         self.rule_name.as_deref()
     }
@@ -6938,10 +7181,11 @@ impl BackupRule {
         self.target_backup_vault_name.as_deref()
     }
     /// <p>A cron expression in UTC specifying when Backup initiates a backup job. For
-    /// more information about cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User
-    /// Guide.</i>. Prior to specifying a value for this parameter, we recommend testing
-    /// your cron expression using one of the many available cron generator and testing
-    /// tools.</p>
+    /// more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User
+    /// Guide.</i>. Two examples of Amazon Web Services cron expressions are <code> 15 * ?
+    /// * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ?
+    /// *</code> (take a backup every day at 12 noon UTC). For a table of examples, click the
+    /// preceding link and scroll down the page.</p>
     pub fn schedule_expression(&self) -> std::option::Option<&str> {
         self.schedule_expression.as_deref()
     }
@@ -7026,12 +7270,14 @@ pub mod backup_rule {
         pub(crate) enable_continuous_backup: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>An optional display name for a backup rule.</p>
+        /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+        /// characters.</p>
         pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_name = Some(input.into());
             self
         }
-        /// <p>An optional display name for a backup rule.</p>
+        /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+        /// characters.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_name = input;
             self
@@ -7056,19 +7302,21 @@ pub mod backup_rule {
             self
         }
         /// <p>A cron expression in UTC specifying when Backup initiates a backup job. For
-        /// more information about cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User
-        /// Guide.</i>. Prior to specifying a value for this parameter, we recommend testing
-        /// your cron expression using one of the many available cron generator and testing
-        /// tools.</p>
+        /// more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User
+        /// Guide.</i>. Two examples of Amazon Web Services cron expressions are <code> 15 * ?
+        /// * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ?
+        /// *</code> (take a backup every day at 12 noon UTC). For a table of examples, click the
+        /// preceding link and scroll down the page.</p>
         pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule_expression = Some(input.into());
             self
         }
         /// <p>A cron expression in UTC specifying when Backup initiates a backup job. For
-        /// more information about cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User
-        /// Guide.</i>. Prior to specifying a value for this parameter, we recommend testing
-        /// your cron expression using one of the many available cron generator and testing
-        /// tools.</p>
+        /// more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User
+        /// Guide.</i>. Two examples of Amazon Web Services cron expressions are <code> 15 * ?
+        /// * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ?
+        /// *</code> (take a backup every day at 12 noon UTC). For a table of examples, click the
+        /// preceding link and scroll down the page.</p>
         pub fn set_schedule_expression(
             mut self,
             input: std::option::Option<std::string::String>,

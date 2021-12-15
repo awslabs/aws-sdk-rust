@@ -128,7 +128,7 @@ mod builder {
     ///
     /// # Examples
     ///
-    /// ```
+    /// ```no_run
     /// use aws_types::Credentials;
     /// use aws_config::meta::credentials::provide_credentials_fn;
     /// use aws_config::meta::credentials::LazyCachingCredentialsProvider;
@@ -225,8 +225,8 @@ mod builder {
                 }),
                 self.load.expect("load implementation is required"),
                 self.load_timeout.unwrap_or(DEFAULT_LOAD_TIMEOUT),
-                self.buffer_time.unwrap_or(DEFAULT_BUFFER_TIME),
                 default_credential_expiration,
+                self.buffer_time.unwrap_or(DEFAULT_BUFFER_TIME),
             )
         }
     }

@@ -2496,13 +2496,13 @@ impl S3Destination {
     }
 }
 
-/// <p>Provides information about the delegated Amazon Macie administrator account for an Amazon Web Services organization.</p>
+/// <p>Provides information about the delegated Amazon Macie administrator account for an organization in Organizations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminAccount {
     /// <p>The Amazon Web Services account ID for the account.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The current status of the account as the delegated administrator of Amazon Macie for the organization.</p>
+    /// <p>The current status of the account as the delegated Amazon Macie administrator account for the organization.</p>
     pub status: std::option::Option<crate::model::AdminStatus>,
 }
 impl AdminAccount {
@@ -2510,7 +2510,7 @@ impl AdminAccount {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The current status of the account as the delegated administrator of Amazon Macie for the organization.</p>
+    /// <p>The current status of the account as the delegated Amazon Macie administrator account for the organization.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::AdminStatus> {
         self.status.as_ref()
     }
@@ -2543,12 +2543,12 @@ pub mod admin_account {
             self.account_id = input;
             self
         }
-        /// <p>The current status of the account as the delegated administrator of Amazon Macie for the organization.</p>
+        /// <p>The current status of the account as the delegated Amazon Macie administrator account for the organization.</p>
         pub fn status(mut self, input: crate::model::AdminStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The current status of the account as the delegated administrator of Amazon Macie for the organization.</p>
+        /// <p>The current status of the account as the delegated Amazon Macie administrator account for the organization.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::AdminStatus>) -> Self {
             self.status = input;
             self
@@ -2569,7 +2569,7 @@ impl AdminAccount {
     }
 }
 
-/// <p>The current status of an account as the delegated Amazon Macie administrator account for an Amazon Web Services organization. Possible values are:</p>
+/// <p>The current status of an account as the delegated Amazon Macie administrator account for an organization in Organizations. Possible values are:</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2636,7 +2636,7 @@ pub struct Member {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The email address for the account.</p>
     pub email: std::option::Option<std::string::String>,
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
     pub invited_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
     pub master_account_id: std::option::Option<std::string::String>,
@@ -2665,7 +2665,7 @@ impl Member {
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
     pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.invited_at.as_ref()
     }
@@ -2766,12 +2766,12 @@ pub mod member {
             self.email = input;
             self
         }
-        /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
         pub fn invited_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.invited_at = Some(input);
             self
         }
-        /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
         pub fn set_invited_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2866,7 +2866,7 @@ impl Member {
     }
 }
 
-/// <p>The current status of the relationship between an account and an associated Amazon Macie administrator account (<i>inviter account</i>). Possible values are:</p>
+/// <p>The current status of the relationship between an account and an associated Amazon Macie administrator account. Possible values are:</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3108,17 +3108,17 @@ impl AsRef<str> for SensitiveDataItemCategory {
     }
 }
 
-/// <p>Provides information about an Amazon Macie membership invitation that was received by an account.</p>
+/// <p>Provides information about an Amazon Macie membership invitation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Invitation {
     /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the invitation. Amazon Macie uses this identifier to validate the inviter account with the invitee account.</p>
+    /// <p>The unique identifier for the invitation.</p>
     pub invitation_id: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the invitation was sent.</p>
     pub invited_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the relationship between the account that sent the invitation (<i>inviter account</i>) and the account that received the invitation (<i>invitee account</i>).</p>
+    /// <p>The status of the relationship between the account that sent the invitation and the account that received the invitation.</p>
     pub relationship_status: std::option::Option<crate::model::RelationshipStatus>,
 }
 impl Invitation {
@@ -3126,7 +3126,7 @@ impl Invitation {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The unique identifier for the invitation. Amazon Macie uses this identifier to validate the inviter account with the invitee account.</p>
+    /// <p>The unique identifier for the invitation.</p>
     pub fn invitation_id(&self) -> std::option::Option<&str> {
         self.invitation_id.as_deref()
     }
@@ -3134,7 +3134,7 @@ impl Invitation {
     pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.invited_at.as_ref()
     }
-    /// <p>The status of the relationship between the account that sent the invitation (<i>inviter account</i>) and the account that received the invitation (<i>invitee account</i>).</p>
+    /// <p>The status of the relationship between the account that sent the invitation and the account that received the invitation.</p>
     pub fn relationship_status(&self) -> std::option::Option<&crate::model::RelationshipStatus> {
         self.relationship_status.as_ref()
     }
@@ -3171,12 +3171,12 @@ pub mod invitation {
             self.account_id = input;
             self
         }
-        /// <p>The unique identifier for the invitation. Amazon Macie uses this identifier to validate the inviter account with the invitee account.</p>
+        /// <p>The unique identifier for the invitation.</p>
         pub fn invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.invitation_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the invitation. Amazon Macie uses this identifier to validate the inviter account with the invitee account.</p>
+        /// <p>The unique identifier for the invitation.</p>
         pub fn set_invitation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3197,12 +3197,12 @@ pub mod invitation {
             self.invited_at = input;
             self
         }
-        /// <p>The status of the relationship between the account that sent the invitation (<i>inviter account</i>) and the account that received the invitation (<i>invitee account</i>).</p>
+        /// <p>The status of the relationship between the account that sent the invitation and the account that received the invitation.</p>
         pub fn relationship_status(mut self, input: crate::model::RelationshipStatus) -> Self {
             self.relationship_status = Some(input);
             self
         }
-        /// <p>The status of the relationship between the account that sent the invitation (<i>inviter account</i>) and the account that received the invitation (<i>invitee account</i>).</p>
+        /// <p>The status of the relationship between the account that sent the invitation and the account that received the invitation.</p>
         pub fn set_relationship_status(
             mut self,
             input: std::option::Option<crate::model::RelationshipStatus>,
@@ -12294,7 +12294,7 @@ impl AsRef<str> for FindingCategory {
 pub struct SeverityLevel {
     /// <p>The minimum number of occurrences of text that must match the custom data identifier's detection criteria in order to produce a finding with the specified severity (severity).</p>
     pub occurrences_threshold: i64,
-    /// <p>The severity to assign to a finding if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold) and, if applicable, is less than the threshold for the next consecutive severity level for the custom data identifier.</p>
+    /// <p>The severity to assign to a finding: if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold); and, if applicable, the number of occurrences is less than the threshold for the next consecutive severity level for the custom data identifier, moving from LOW to HIGH.</p>
     pub severity: std::option::Option<crate::model::DataIdentifierSeverity>,
 }
 impl SeverityLevel {
@@ -12302,7 +12302,7 @@ impl SeverityLevel {
     pub fn occurrences_threshold(&self) -> i64 {
         self.occurrences_threshold
     }
-    /// <p>The severity to assign to a finding if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold) and, if applicable, is less than the threshold for the next consecutive severity level for the custom data identifier.</p>
+    /// <p>The severity to assign to a finding: if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold); and, if applicable, the number of occurrences is less than the threshold for the next consecutive severity level for the custom data identifier, moving from LOW to HIGH.</p>
     pub fn severity(&self) -> std::option::Option<&crate::model::DataIdentifierSeverity> {
         self.severity.as_ref()
     }
@@ -12335,12 +12335,12 @@ pub mod severity_level {
             self.occurrences_threshold = input;
             self
         }
-        /// <p>The severity to assign to a finding if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold) and, if applicable, is less than the threshold for the next consecutive severity level for the custom data identifier.</p>
+        /// <p>The severity to assign to a finding: if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold); and, if applicable, the number of occurrences is less than the threshold for the next consecutive severity level for the custom data identifier, moving from LOW to HIGH.</p>
         pub fn severity(mut self, input: crate::model::DataIdentifierSeverity) -> Self {
             self.severity = Some(input);
             self
         }
-        /// <p>The severity to assign to a finding if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold) and, if applicable, is less than the threshold for the next consecutive severity level for the custom data identifier.</p>
+        /// <p>The severity to assign to a finding: if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold); and, if applicable, the number of occurrences is less than the threshold for the next consecutive severity level for the custom data identifier, moving from LOW to HIGH.</p>
         pub fn set_severity(
             mut self,
             input: std::option::Option<crate::model::DataIdentifierSeverity>,

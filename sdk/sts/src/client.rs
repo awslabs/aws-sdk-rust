@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -16,7 +16,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -130,20 +130,19 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssumeRole`.
     ///
     /// <p>Returns a set of temporary security credentials that you can use to access Amazon Web Services
-    /// resources that you might not normally have access to. These temporary credentials
-    /// consist of an access key ID, a secret access key, and a security token. Typically, you
-    /// use <code>AssumeRole</code> within your account or for cross-account access. For a
+    /// resources that you might not normally have access to. These temporary credentials consist
+    /// of an access key ID, a secret access key, and a security token. Typically, you use
+    /// <code>AssumeRole</code> within your account or for cross-account access. For a
     /// comparison of <code>AssumeRole</code> with other API operations that produce temporary
     /// credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting Temporary Security
-    /// Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-    /// the STS API operations</a> in the
-    /// <i>IAM User Guide</i>.</p>
+    /// Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing the
+    /// Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.</p>
     /// <p>
     /// <b>Permissions</b>
     /// </p>
     /// <p>The temporary security credentials created by <code>AssumeRole</code> can be used to
     /// make API calls to any Amazon Web Services service with the following exception: You cannot call the
-    /// STS <code>GetFederationToken</code> or <code>GetSessionToken</code> API
+    /// Amazon Web Services STS <code>GetFederationToken</code> or <code>GetSessionToken</code> API
     /// operations.</p>
     /// <p>(Optional) You can pass inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session policies</a> to
     /// this operation. You can pass a single JSON policy document to use as an inline session
@@ -157,28 +156,35 @@ pub mod fluent_builders {
     /// by the identity-based policy of the role that is being assumed. For more information, see
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
     /// Policies</a> in the <i>IAM User Guide</i>.</p>
-    /// <p>To assume a role from a different account, your account must be trusted by the
+    /// <p>When you create a role, you create two policies: A role trust policy that specifies
+    /// <i>who</i> can assume the role and a permissions policy that specifies
+    /// <i>what</i> can be done with the role. You specify the trusted principal
+    /// who is allowed to assume the role in the role trust policy.</p>
+    /// <p>To assume a role from a different account, your Amazon Web Services account must be trusted by the
     /// role. The trust relationship is defined in the role's trust policy when the role is
     /// created. That trust policy states which accounts are allowed to delegate that access to
     /// users in the account. </p>
     /// <p>A user who wants to access a role in a different account must also have permissions that
     /// are delegated from the user account administrator. The administrator must attach a policy
     /// that allows the user to call <code>AssumeRole</code> for the ARN of the role in the other
-    /// account. If the user is in the same account as the role, then you can do either of the
+    /// account.</p>
+    /// <p>To allow a user to assume a role in the same account, you can do either of the
     /// following:</p>
     /// <ul>
     /// <li>
-    /// <p>Attach a policy to the user (identical to the previous user in a different
-    /// account).</p>
+    /// <p>Attach a policy to the user that allows the user to call
+    /// <code>AssumeRole</code> (as long as the role's trust policy trusts the account).</p>
     /// </li>
     /// <li>
     /// <p>Add the user as a principal directly in the role's trust policy.</p>
     /// </li>
     /// </ul>
-    /// <p>In this case, the trust policy acts as an IAM resource-based policy. Users in the same
-    /// account as the role do not need explicit permission to assume the role. For more
-    /// information about trust policies and resource-based policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a> in
-    /// the <i>IAM User Guide</i>.</p>
+    /// <p>You can do either because the role’s trust policy acts as an IAM resource-based
+    /// policy. When a resource-based policy grants access to a principal in the same account, no
+    /// additional identity-based policy is required. For more information about trust policies and
+    /// resource-based policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    ///
     /// <p>
     /// <b>Tags</b>
     /// </p>
@@ -216,7 +222,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssumeRole<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -320,6 +326,7 @@ pub mod fluent_builders {
         /// plaintext that you use for both inline and managed session policies can't exceed 2,048
         /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
         /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -347,6 +354,7 @@ pub mod fluent_builders {
         /// plaintext that you use for both inline and managed session policies can't exceed 2,048
         /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
         /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -385,6 +393,7 @@ pub mod fluent_builders {
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -411,6 +420,7 @@ pub mod fluent_builders {
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -423,13 +433,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy(input);
             self
         }
-        /// <p>The duration, in seconds, of the role session. The value specified can can range from
-        /// 900 seconds (15 minutes) up to the maximum session duration that is set for the role. The
-        /// maximum session duration setting can have a value from 1 hour to 12 hours. If you specify a
-        /// value higher than this setting or the administrator setting (whichever is lower), the
-        /// operation fails. For example, if you specify a session duration of 12 hours, but your
-        /// administrator set the maximum session duration to 6 hours, your operation fails. To learn
-        /// how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View the
+        /// <p>The duration, in seconds, of the role session. The value specified can range from 900
+        /// seconds (15 minutes) up to the maximum session duration set for the role. The maximum
+        /// session duration setting can have a value from 1 hour to 12 hours. If you specify a value
+        /// higher than this setting or the administrator setting (whichever is lower), the operation
+        /// fails. For example, if you specify a session duration of 12 hours, but your administrator
+        /// set the maximum session duration to 6 hours, your operation fails. </p>
+        /// <p>Role chaining limits your Amazon Web Services CLI or Amazon Web Services API role session to a maximum of one hour.
+        /// When you use the <code>AssumeRole</code> API operation to assume a role, you can specify
+        /// the duration of your role session with the <code>DurationSeconds</code> parameter. You can
+        /// specify a parameter value of up to 43200 seconds (12 hours), depending on the maximum
+        /// session duration setting for your role. However, if you assume a role using role chaining
+        /// and provide a <code>DurationSeconds</code> parameter value greater than one hour, the
+        /// operation fails. To learn how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View the
         /// Maximum Session Duration Setting for a Role</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// <p>By default, the value is set to <code>3600</code> seconds. </p>
@@ -439,20 +455,26 @@ pub mod fluent_builders {
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more
         /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-        /// that Enables Federated Users to Access the Management Console</a> in the
+        /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn duration_seconds(mut self, inp: i32) -> Self {
             self.inner = self.inner.duration_seconds(inp);
             self
         }
-        /// <p>The duration, in seconds, of the role session. The value specified can can range from
-        /// 900 seconds (15 minutes) up to the maximum session duration that is set for the role. The
-        /// maximum session duration setting can have a value from 1 hour to 12 hours. If you specify a
-        /// value higher than this setting or the administrator setting (whichever is lower), the
-        /// operation fails. For example, if you specify a session duration of 12 hours, but your
-        /// administrator set the maximum session duration to 6 hours, your operation fails. To learn
-        /// how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View the
+        /// <p>The duration, in seconds, of the role session. The value specified can range from 900
+        /// seconds (15 minutes) up to the maximum session duration set for the role. The maximum
+        /// session duration setting can have a value from 1 hour to 12 hours. If you specify a value
+        /// higher than this setting or the administrator setting (whichever is lower), the operation
+        /// fails. For example, if you specify a session duration of 12 hours, but your administrator
+        /// set the maximum session duration to 6 hours, your operation fails. </p>
+        /// <p>Role chaining limits your Amazon Web Services CLI or Amazon Web Services API role session to a maximum of one hour.
+        /// When you use the <code>AssumeRole</code> API operation to assume a role, you can specify
+        /// the duration of your role session with the <code>DurationSeconds</code> parameter. You can
+        /// specify a parameter value of up to 43200 seconds (12 hours), depending on the maximum
+        /// session duration setting for your role. However, if you assume a role using role chaining
+        /// and provide a <code>DurationSeconds</code> parameter value greater than one hour, the
+        /// operation fails. To learn how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View the
         /// Maximum Session Duration Setting for a Role</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// <p>By default, the value is set to <code>3600</code> seconds. </p>
@@ -462,7 +484,7 @@ pub mod fluent_builders {
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more
         /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-        /// that Enables Federated Users to Access the Management Console</a> in the
+        /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
@@ -474,7 +496,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of session tags that you want to pass. Each session tag consists of a key name
-        /// and an associated value. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging STS
+        /// and an associated value. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging Amazon Web Services STS
         /// Sessions</a> in the <i>IAM User Guide</i>.</p>
         /// <p>This parameter is optional. You can pass up to 50 session tags. The plaintext session
         /// tag keys can’t exceed 128 characters, and the values can’t exceed 256 characters. For these
@@ -489,8 +511,9 @@ pub mod fluent_builders {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        /// <p>You can pass a session tag with the same key as a tag that is already
-        /// attached to the role. When you do, session tags override a role tag with the same key. </p>
+        ///
+        /// <p>You can pass a session tag with the same key as a tag that is already attached to the
+        /// role. When you do, session tags override a role tag with the same key. </p>
         /// <p>Tag key–value pairs are not case sensitive, but case is preserved. This means that you
         /// cannot have separate <code>Department</code> and <code>department</code> tag keys. Assume
         /// that the role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
@@ -507,7 +530,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of session tags that you want to pass. Each session tag consists of a key name
-        /// and an associated value. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging STS
+        /// and an associated value. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging Amazon Web Services STS
         /// Sessions</a> in the <i>IAM User Guide</i>.</p>
         /// <p>This parameter is optional. You can pass up to 50 session tags. The plaintext session
         /// tag keys can’t exceed 128 characters, and the values can’t exceed 256 characters. For these
@@ -522,8 +545,9 @@ pub mod fluent_builders {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        /// <p>You can pass a session tag with the same key as a tag that is already
-        /// attached to the role. When you do, session tags override a role tag with the same key. </p>
+        ///
+        /// <p>You can pass a session tag with the same key as a tag that is already attached to the
+        /// role. When you do, session tags override a role tag with the same key. </p>
         /// <p>Tag key–value pairs are not case sensitive, but case is preserved. This means that you
         /// cannot have separate <code>Department</code> and <code>department</code> tag keys. Assume
         /// that the role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
@@ -669,8 +693,7 @@ pub mod fluent_builders {
         /// <p>The regex used to validate this parameter is a string of characters consisting of upper-
         /// and lower-case alphanumeric characters with no spaces. You can also include underscores or
         /// any of the following characters: =,.@-. You cannot use a value that begins with the text
-        /// <code>aws:</code>. This prefix is reserved for Amazon Web Services internal
-        /// use.</p>
+        /// <code>aws:</code>. This prefix is reserved for Amazon Web Services internal use.</p>
         pub fn source_identity(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_identity(inp);
             self
@@ -688,8 +711,7 @@ pub mod fluent_builders {
         /// <p>The regex used to validate this parameter is a string of characters consisting of upper-
         /// and lower-case alphanumeric characters with no spaces. You can also include underscores or
         /// any of the following characters: =,.@-. You cannot use a value that begins with the text
-        /// <code>aws:</code>. This prefix is reserved for Amazon Web Services internal
-        /// use.</p>
+        /// <code>aws:</code>. This prefix is reserved for Amazon Web Services internal use.</p>
         pub fn set_source_identity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -706,7 +728,7 @@ pub mod fluent_builders {
     /// credentials or configuration. For a comparison of <code>AssumeRoleWithSAML</code> with the
     /// other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting Temporary Security
     /// Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing the
-    /// STS API operations</a> in the <i>IAM User Guide</i>.</p>
+    /// Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.</p>
     /// <p>The temporary security credentials returned by this operation consist of an access key
     /// ID, a secret access key, and a security token. Applications can use these temporary
     /// security credentials to sign calls to Amazon Web Services services.</p>
@@ -729,14 +751,14 @@ pub mod fluent_builders {
     /// <i>IAM User Guide</i>.</p>
     /// <note>
     /// <p>
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-role-chaining">Role chaining</a> limits your CLI or Amazon Web Services API
-    /// role session to a maximum of one hour. When you use the <code>AssumeRole</code> API
-    /// operation to assume a role, you can specify the duration of your role session with
-    /// the <code>DurationSeconds</code> parameter. You can specify a parameter value of up
-    /// to 43200 seconds (12 hours), depending on the maximum session duration setting for
-    /// your role. However, if you assume a role using role chaining and provide a
-    /// <code>DurationSeconds</code> parameter value greater than one hour, the
-    /// operation fails.</p>
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-role-chaining">Role chaining</a> limits your CLI or Amazon Web Services API role
+    /// session to a maximum of one hour. When you use the <code>AssumeRole</code> API operation
+    /// to assume a role, you can specify the duration of your role session with the
+    /// <code>DurationSeconds</code> parameter. You can specify a parameter value of up to
+    /// 43200 seconds (12 hours), depending on the maximum session duration setting for your
+    /// role. However, if you assume a role using role chaining and provide a
+    /// <code>DurationSeconds</code> parameter value greater than one hour, the operation
+    /// fails.</p>
     /// </note>
     /// <p>
     /// <b>Permissions</b>
@@ -788,9 +810,9 @@ pub mod fluent_builders {
     /// request are to the upper size limit.
     /// </p>
     /// </note>
-    /// <p>You can pass a session tag with the same key as a tag that is
-    /// attached to the role. When you do, session tags override the role's tags with the same
-    /// key.</p>
+    ///
+    /// <p>You can pass a session tag with the same key as a tag that is attached to the role. When
+    /// you do, session tags override the role's tags with the same key.</p>
     /// <p>An administrator must grant you the permissions necessary to pass session tags. The
     /// administrator can also create granular permissions to allow you to pass only specific
     /// session tags. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial: Using Tags
@@ -835,7 +857,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssumeRoleWithSAML<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -940,6 +962,7 @@ pub mod fluent_builders {
         /// plaintext that you use for both inline and managed session policies can't exceed 2,048
         /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
         /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -967,6 +990,7 @@ pub mod fluent_builders {
         /// plaintext that you use for both inline and managed session policies can't exceed 2,048
         /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
         /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -1005,6 +1029,7 @@ pub mod fluent_builders {
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -1031,6 +1056,7 @@ pub mod fluent_builders {
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -1061,7 +1087,7 @@ pub mod fluent_builders {
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more
         /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-        /// that Enables Federated Users to Access the Management Console</a> in the
+        /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn duration_seconds(mut self, inp: i32) -> Self {
@@ -1086,7 +1112,7 @@ pub mod fluent_builders {
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more
         /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-        /// that Enables Federated Users to Access the Management Console</a> in the
+        /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
@@ -1118,7 +1144,7 @@ pub mod fluent_builders {
     /// <code>AssumeRoleWithWebIdentity</code> with the other API operations that produce
     /// temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting Temporary Security
     /// Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing the
-    /// STS API operations</a> in the <i>IAM User Guide</i>.</p>
+    /// Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.</p>
     /// <p>The temporary security credentials returned by this API consist of an access key ID, a
     /// secret access key, and a security token. Applications can use these temporary security
     /// credentials to sign calls to Amazon Web Services service API operations.</p>
@@ -1176,9 +1202,9 @@ pub mod fluent_builders {
     /// request are to the upper size limit.
     /// </p>
     /// </note>
-    /// <p>You can pass a session tag with the same key as a tag that is
-    /// attached to the role. When you do, the session tag overrides the role tag with the same
-    /// key.</p>
+    ///
+    /// <p>You can pass a session tag with the same key as a tag that is attached to the role. When
+    /// you do, the session tag overrides the role tag with the same key.</p>
     /// <p>An administrator must grant you the permissions necessary to pass session tags. The
     /// administrator can also create granular permissions to allow you to pass only specific
     /// session tags. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial: Using Tags
@@ -1235,7 +1261,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssumeRoleWithWebIdentity<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1374,6 +1400,7 @@ pub mod fluent_builders {
         /// plaintext that you use for both inline and managed session policies can't exceed 2,048
         /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
         /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -1401,6 +1428,7 @@ pub mod fluent_builders {
         /// plaintext that you use for both inline and managed session policies can't exceed 2,048
         /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
         /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -1439,6 +1467,7 @@ pub mod fluent_builders {
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -1465,6 +1494,7 @@ pub mod fluent_builders {
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -1492,7 +1522,7 @@ pub mod fluent_builders {
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more
         /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-        /// that Enables Federated Users to Access the Management Console</a> in the
+        /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn duration_seconds(mut self, inp: i32) -> Self {
@@ -1514,7 +1544,7 @@ pub mod fluent_builders {
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more
         /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-        /// that Enables Federated Users to Access the Management Console</a> in the
+        /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
@@ -1535,9 +1565,9 @@ pub mod fluent_builders {
     /// documentation for an individual operation indicates whether that operation returns an
     /// encoded message in addition to returning an HTTP code.</p>
     /// </note>
-    /// <p>The message is encoded because the details of the authorization status can constitute
+    /// <p>The message is encoded because the details of the authorization status can contain
     /// privileged information that the user who requested the operation should not see. To decode
-    /// an authorization status message, a user must be granted permissions via an IAM policy to
+    /// an authorization status message, a user must be granted permissions through an IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">policy</a> to
     /// request the <code>DecodeAuthorizationMessage</code>
     /// (<code>sts:DecodeAuthorizationMessage</code>) action. </p>
     /// <p>The decoded message includes the following type of information:</p>
@@ -1563,7 +1593,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DecodeAuthorizationMessage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1638,14 +1668,14 @@ pub mod fluent_builders {
     /// <code>wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</code>). For more information about
     /// access keys, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html">Managing Access Keys for IAM
     /// Users</a> in the <i>IAM User Guide</i>.</p>
-    /// <p>When you pass an access key ID to this operation, it returns the ID of the Amazon Web Services
-    /// account to which the keys belong. Access key IDs beginning with <code>AKIA</code> are
-    /// long-term credentials for an IAM user or the Amazon Web Services account root user. Access key IDs
-    /// beginning with <code>ASIA</code> are temporary credentials that are created using STS
-    /// operations. If the account in the response belongs to you, you can sign in as the root
-    /// user and review your root user access keys. Then, you can pull a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">credentials report</a> to learn which IAM user owns the keys. To learn who
-    /// requested the temporary credentials for an <code>ASIA</code> access key, view the STS
-    /// events in your <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">CloudTrail logs</a> in the
+    /// <p>When you pass an access key ID to this operation, it returns the ID of the Amazon Web Services account
+    /// to which the keys belong. Access key IDs beginning with <code>AKIA</code> are long-term
+    /// credentials for an IAM user or the Amazon Web Services account root user. Access key IDs beginning with
+    /// <code>ASIA</code> are temporary credentials that are created using STS operations. If
+    /// the account in the response belongs to you, you can sign in as the root user and review
+    /// your root user access keys. Then, you can pull a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">credentials report</a> to
+    /// learn which IAM user owns the keys. To learn who requested the temporary credentials for
+    /// an <code>ASIA</code> access key, view the STS events in your <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">CloudTrail logs</a> in the
     /// <i>IAM User Guide</i>.</p>
     /// <p>This operation does not indicate the state of the access key. The key might be active,
     /// inactive, or deleted. Active keys might not have permissions to perform an operation.
@@ -1653,7 +1683,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetAccessKeyInfo<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1732,14 +1762,14 @@ pub mod fluent_builders {
     /// <p>No permissions are required to perform this operation. If an administrator adds a
     /// policy to your IAM user or role that explicitly denies access to the
     /// <code>sts:GetCallerIdentity</code> action, you can still perform this operation.
-    /// Permissions are not required because the same information is returned when an IAM
-    /// user or role is denied access. To view an example response, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa">I Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a> in the
+    /// Permissions are not required because the same information is returned when an IAM user
+    /// or role is denied access. To view an example response, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa">I Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a> in the
     /// <i>IAM User Guide</i>.</p>
     /// </note>
     #[derive(std::fmt::Debug)]
     pub struct GetCallerIdentity<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1804,7 +1834,7 @@ pub mod fluent_builders {
     /// server-based application. For a comparison of <code>GetFederationToken</code> with the
     /// other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting Temporary Security
     /// Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing the
-    /// STS API operations</a> in the <i>IAM User Guide</i>.</p>
+    /// Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.</p>
     /// <note>
     /// <p>You can create a mobile-based or browser-based app that can authenticate users using
     /// a web identity provider like Login with Amazon, Facebook, Google, or an OpenID
@@ -1823,8 +1853,8 @@ pub mod fluent_builders {
     /// </p>
     /// <p>The temporary credentials are valid for the specified duration, from 900 seconds (15
     /// minutes) up to a maximum of 129,600 seconds (36 hours). The default session duration is
-    /// 43,200 seconds (12 hours). Temporary credentials that are obtained by using Amazon Web Services account
-    /// root user credentials have a maximum duration of 3,600 seconds (1 hour).</p>
+    /// 43,200 seconds (12 hours). Temporary credentials obtained by using the Amazon Web Services account root
+    /// user credentials have a maximum duration of 3,600 seconds (1 hour).</p>
     /// <p>
     /// <b>Permissions</b>
     /// </p>
@@ -1863,81 +1893,28 @@ pub mod fluent_builders {
     /// tags. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the
     /// <i>IAM User Guide</i>.</p>
     /// <note>
-    /// <p>You can create a mobile-based or browser-based app that can authenticate users
-    /// using a web identity provider like Login with Amazon, Facebook, Google, or an OpenID
+    /// <p>You can create a mobile-based or browser-based app that can authenticate users using
+    /// a web identity provider like Login with Amazon, Facebook, Google, or an OpenID
     /// Connect-compatible identity provider. In this case, we recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon Cognito</a> or
     /// <code>AssumeRoleWithWebIdentity</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation Through a Web-based Identity Provider</a> in the
     /// <i>IAM User Guide</i>.</p>
     /// </note>
-    /// <p>You can also call <code>GetFederationToken</code> using the security credentials of an
-    /// Amazon Web Services account root user, but we do not recommend it. Instead, we recommend that you
-    /// create an IAM user for the purpose of the proxy application. Then attach a policy to
-    /// the IAM user that limits federated users to only the actions and resources that they
-    /// need to access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM Best Practices</a> in the
-    /// <i>IAM User Guide</i>. </p>
-    /// <p>
-    /// <b>Session duration</b>
-    /// </p>
-    /// <p>The temporary credentials are valid for the specified duration, from 900 seconds (15
-    /// minutes) up to a maximum of 129,600 seconds (36 hours). The default session duration is
-    /// 43,200 seconds (12 hours). Temporary credentials that are obtained by using Amazon Web Services
-    /// account root user credentials have a maximum duration of 3,600 seconds (1 hour).</p>
-    /// <p>
-    /// <b>Permissions</b>
-    /// </p>
-    /// <p>You can use the temporary credentials created by <code>GetFederationToken</code> in
-    /// any Amazon Web Services service except the following:</p>
-    /// <ul>
-    /// <li>
-    /// <p>You cannot call any IAM operations using the CLI or the Amazon Web Services API.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot call any STS operations except
-    /// <code>GetCallerIdentity</code>.</p>
-    /// </li>
-    /// </ul>
-    /// <p>You must pass an inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session policy</a> to
-    /// this operation. You can pass a single JSON policy document to use as an inline session
-    /// policy. You can also specify up to 10 managed policies to use as managed session
-    /// policies. The plain text that you use for both inline and managed session policies can't
-    /// exceed 2,048 characters.</p>
-    /// <p>Though the session policy parameters are optional, if you do not pass a policy, then
-    /// the resulting federated user session has no permissions. When you pass session policies,
-    /// the session permissions are the intersection of the IAM user policies and the session
-    /// policies that you pass. This gives you a way to further restrict the permissions for a
-    /// federated user. You cannot use session policies to grant more permissions than those
-    /// that are defined in the permissions policy of the IAM user. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session Policies</a>
-    /// in the <i>IAM User Guide</i>. For information about using
-    /// <code>GetFederationToken</code> to create temporary security credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation Through a Custom Identity Broker</a>. </p>
-    /// <p>You can use the credentials to access a resource that has a resource-based policy. If
-    /// that policy specifically references the federated user session in the
-    /// <code>Principal</code> element of the policy, the session has the permissions
-    /// allowed by the policy. These permissions are granted in addition to the permissions
-    /// granted by the session policies.</p>
-    /// <p>
-    /// <b>Tags</b>
-    /// </p>
-    /// <p>(Optional) You can pass tag key-value pairs to your session. These are called session
-    /// tags. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in
-    /// the <i>IAM User Guide</i>.</p>
     /// <p>An administrator must grant you the permissions necessary to pass session tags. The
     /// administrator can also create granular permissions to allow you to pass only specific
-    /// session tags. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial: Using
-    /// Tags for Attribute-Based Access Control</a> in the
+    /// session tags. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial: Using Tags
+    /// for Attribute-Based Access Control</a> in the
     /// <i>IAM User Guide</i>.</p>
     /// <p>Tag key–value pairs are not case sensitive, but case is preserved. This means that you
-    /// cannot have separate <code>Department</code> and <code>department</code> tag keys.
-    /// Assume that the user that you are federating has the
+    /// cannot have separate <code>Department</code> and <code>department</code> tag keys. Assume
+    /// that the user that you are federating has the
     /// <code>Department</code>=<code>Marketing</code> tag and you pass the
-    /// <code>department</code>=<code>engineering</code> session tag.
-    /// <code>Department</code> and <code>department</code> are not saved as separate tags,
-    /// and the session tag passed in the request takes precedence over the user tag.</p>
+    /// <code>department</code>=<code>engineering</code> session tag. <code>Department</code>
+    /// and <code>department</code> are not saved as separate tags, and the session tag passed in
+    /// the request takes precedence over the user tag.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetFederationToken<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2033,6 +2010,7 @@ pub mod fluent_builders {
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -2068,6 +2046,7 @@ pub mod fluent_builders {
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -2093,7 +2072,8 @@ pub mod fluent_builders {
         /// The plaintext that you use for both inline and managed session policies can't exceed 2,048
         /// characters. You can provide up to 10 managed policy ARNs. For more information about ARNs,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+        /// Amazon Web Services General Reference.</p>
         /// <p>This parameter is optional. However, if you do not pass any session policies, then the
         /// resulting federated user session has no permissions.</p>
         /// <p>When you pass session policies, the session permissions are the intersection of the
@@ -2107,6 +2087,7 @@ pub mod fluent_builders {
         /// <code>Principal</code> element of the policy, the session has the permissions allowed by
         /// the policy. These permissions are granted in addition to the permissions that are granted
         /// by the session policies.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -2128,7 +2109,8 @@ pub mod fluent_builders {
         /// The plaintext that you use for both inline and managed session policies can't exceed 2,048
         /// characters. You can provide up to 10 managed policy ARNs. For more information about ARNs,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+        /// Amazon Web Services General Reference.</p>
         /// <p>This parameter is optional. However, if you do not pass any session policies, then the
         /// resulting federated user session has no permissions.</p>
         /// <p>When you pass session policies, the session permissions are the intersection of the
@@ -2142,6 +2124,7 @@ pub mod fluent_builders {
         /// <code>Principal</code> element of the policy, the session has the permissions allowed by
         /// the policy. These permissions are granted in addition to the permissions that are granted
         /// by the session policies.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -2197,9 +2180,9 @@ pub mod fluent_builders {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        /// <p>You can pass a session tag with the same key as a tag that is already
-        /// attached to the user you are federating. When you do, session tags override a user tag with
-        /// the same key. </p>
+        ///
+        /// <p>You can pass a session tag with the same key as a tag that is already attached to the
+        /// user you are federating. When you do, session tags override a user tag with the same key. </p>
         /// <p>Tag key–value pairs are not case sensitive, but case is preserved. This means that you
         /// cannot have separate <code>Department</code> and <code>department</code> tag keys. Assume
         /// that the role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
@@ -2226,9 +2209,9 @@ pub mod fluent_builders {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        /// <p>You can pass a session tag with the same key as a tag that is already
-        /// attached to the user you are federating. When you do, session tags override a user tag with
-        /// the same key. </p>
+        ///
+        /// <p>You can pass a session tag with the same key as a tag that is already attached to the
+        /// user you are federating. When you do, session tags override a user tag with the same key. </p>
         /// <p>Tag key–value pairs are not case sensitive, but case is preserved. This means that you
         /// cannot have separate <code>Department</code> and <code>department</code> tag keys. Assume
         /// that the role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
@@ -2256,7 +2239,7 @@ pub mod fluent_builders {
     /// the API returns an access denied error. For a comparison of <code>GetSessionToken</code>
     /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
     /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing the
-    /// STS API operations</a> in the <i>IAM User Guide</i>.</p>
+    /// Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.</p>
     /// <p>
     /// <b>Session Duration</b>
     /// </p>
@@ -2300,7 +2283,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetSessionToken<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2353,31 +2336,31 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable
-        /// durations for IAM user sessions range from 900 seconds (15 minutes) to 129,600 seconds
-        /// (36 hours), with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account
-        /// owners are restricted to a maximum of 3,600 seconds (one hour). If the duration is
-        /// longer than one hour, the session for Amazon Web Services account owners defaults to one hour.</p>
+        /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable durations
+        /// for IAM user sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours),
+        /// with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account owners are
+        /// restricted to a maximum of 3,600 seconds (one hour). If the duration is longer than one
+        /// hour, the session for Amazon Web Services account owners defaults to one hour.</p>
         pub fn duration_seconds(mut self, inp: i32) -> Self {
             self.inner = self.inner.duration_seconds(inp);
             self
         }
-        /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable
-        /// durations for IAM user sessions range from 900 seconds (15 minutes) to 129,600 seconds
-        /// (36 hours), with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account
-        /// owners are restricted to a maximum of 3,600 seconds (one hour). If the duration is
-        /// longer than one hour, the session for Amazon Web Services account owners defaults to one hour.</p>
+        /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable durations
+        /// for IAM user sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours),
+        /// with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account owners are
+        /// restricted to a maximum of 3,600 seconds (one hour). If the duration is longer than one
+        /// hour, the session for Amazon Web Services account owners defaults to one hour.</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_duration_seconds(input);
             self
         }
         /// <p>The identification number of the MFA device that is associated with the IAM user who
-        /// is making the <code>GetSessionToken</code> call. Specify this value if the IAM user
-        /// has a policy that requires MFA authentication. The value is either the serial number for
-        /// a hardware device (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN)
-        /// for a virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>). You can
-        /// find the device for an IAM user by going to the Management Console and viewing the user's
-        /// security credentials. </p>
+        /// is making the <code>GetSessionToken</code> call. Specify this value if the IAM user has a
+        /// policy that requires MFA authentication. The value is either the serial number for a
+        /// hardware device (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a
+        /// virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the
+        /// device for an IAM user by going to the Amazon Web Services Management Console and viewing the user's security
+        /// credentials. </p>
         /// <p>The regex used to validate this parameter is a string of
         /// characters consisting of upper- and lower-case alphanumeric characters with no spaces.
         /// You can also include underscores or any of the following characters: =,.@:/-</p>
@@ -2386,12 +2369,12 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identification number of the MFA device that is associated with the IAM user who
-        /// is making the <code>GetSessionToken</code> call. Specify this value if the IAM user
-        /// has a policy that requires MFA authentication. The value is either the serial number for
-        /// a hardware device (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN)
-        /// for a virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>). You can
-        /// find the device for an IAM user by going to the Management Console and viewing the user's
-        /// security credentials. </p>
+        /// is making the <code>GetSessionToken</code> call. Specify this value if the IAM user has a
+        /// policy that requires MFA authentication. The value is either the serial number for a
+        /// hardware device (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a
+        /// virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the
+        /// device for an IAM user by going to the Amazon Web Services Management Console and viewing the user's security
+        /// credentials. </p>
         /// <p>The regex used to validate this parameter is a string of
         /// characters consisting of upper- and lower-case alphanumeric characters with no spaces.
         /// You can also include underscores or any of the following characters: =,.@:/-</p>
@@ -2426,17 +2409,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -2445,7 +2432,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -2461,11 +2448,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

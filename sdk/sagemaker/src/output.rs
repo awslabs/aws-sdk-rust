@@ -1531,6 +1531,36 @@ impl StopLabelingJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopInferenceRecommendationsJobOutput {}
+impl std::fmt::Debug for StopInferenceRecommendationsJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopInferenceRecommendationsJobOutput");
+        formatter.finish()
+    }
+}
+/// See [`StopInferenceRecommendationsJobOutput`](crate::output::StopInferenceRecommendationsJobOutput)
+pub mod stop_inference_recommendations_job_output {
+    /// A builder for [`StopInferenceRecommendationsJobOutput`](crate::output::StopInferenceRecommendationsJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`StopInferenceRecommendationsJobOutput`](crate::output::StopInferenceRecommendationsJobOutput)
+        pub fn build(self) -> crate::output::StopInferenceRecommendationsJobOutput {
+            crate::output::StopInferenceRecommendationsJobOutput {}
+        }
+    }
+}
+impl StopInferenceRecommendationsJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopInferenceRecommendationsJobOutput`](crate::output::StopInferenceRecommendationsJobOutput)
+    pub fn builder() -> crate::output::stop_inference_recommendations_job_output::Builder {
+        crate::output::stop_inference_recommendations_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopHyperParameterTuningJobOutput {}
 impl std::fmt::Debug for StopHyperParameterTuningJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2142,6 +2172,116 @@ impl RegisterDevicesOutput {
     /// Creates a new builder-style object to manufacture [`RegisterDevicesOutput`](crate::output::RegisterDevicesOutput)
     pub fn builder() -> crate::output::register_devices_output::Builder {
         crate::output::register_devices_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueryLineageOutput {
+    /// <p>A list of vertices connected to the start entity(ies) in the lineage graph.</p>
+    pub vertices: std::option::Option<std::vec::Vec<crate::model::Vertex>>,
+    /// <p>A list of edges that connect vertices in the response.</p>
+    pub edges: std::option::Option<std::vec::Vec<crate::model::Edge>>,
+    /// <p>Limits the number of vertices in the response. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl QueryLineageOutput {
+    /// <p>A list of vertices connected to the start entity(ies) in the lineage graph.</p>
+    pub fn vertices(&self) -> std::option::Option<&[crate::model::Vertex]> {
+        self.vertices.as_deref()
+    }
+    /// <p>A list of edges that connect vertices in the response.</p>
+    pub fn edges(&self) -> std::option::Option<&[crate::model::Edge]> {
+        self.edges.as_deref()
+    }
+    /// <p>Limits the number of vertices in the response. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for QueryLineageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("QueryLineageOutput");
+        formatter.field("vertices", &self.vertices);
+        formatter.field("edges", &self.edges);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`QueryLineageOutput`](crate::output::QueryLineageOutput)
+pub mod query_lineage_output {
+    /// A builder for [`QueryLineageOutput`](crate::output::QueryLineageOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vertices: std::option::Option<std::vec::Vec<crate::model::Vertex>>,
+        pub(crate) edges: std::option::Option<std::vec::Vec<crate::model::Edge>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `vertices`.
+        ///
+        /// To override the contents of this collection use [`set_vertices`](Self::set_vertices).
+        ///
+        /// <p>A list of vertices connected to the start entity(ies) in the lineage graph.</p>
+        pub fn vertices(mut self, input: impl Into<crate::model::Vertex>) -> Self {
+            let mut v = self.vertices.unwrap_or_default();
+            v.push(input.into());
+            self.vertices = Some(v);
+            self
+        }
+        /// <p>A list of vertices connected to the start entity(ies) in the lineage graph.</p>
+        pub fn set_vertices(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Vertex>>,
+        ) -> Self {
+            self.vertices = input;
+            self
+        }
+        /// Appends an item to `edges`.
+        ///
+        /// To override the contents of this collection use [`set_edges`](Self::set_edges).
+        ///
+        /// <p>A list of edges that connect vertices in the response.</p>
+        pub fn edges(mut self, input: impl Into<crate::model::Edge>) -> Self {
+            let mut v = self.edges.unwrap_or_default();
+            v.push(input.into());
+            self.edges = Some(v);
+            self
+        }
+        /// <p>A list of edges that connect vertices in the response.</p>
+        pub fn set_edges(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Edge>>,
+        ) -> Self {
+            self.edges = input;
+            self
+        }
+        /// <p>Limits the number of vertices in the response. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Limits the number of vertices in the response. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QueryLineageOutput`](crate::output::QueryLineageOutput)
+        pub fn build(self) -> crate::output::QueryLineageOutput {
+            crate::output::QueryLineageOutput {
+                vertices: self.vertices,
+                edges: self.edges,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl QueryLineageOutput {
+    /// Creates a new builder-style object to manufacture [`QueryLineageOutput`](crate::output::QueryLineageOutput)
+    pub fn builder() -> crate::output::query_lineage_output::Builder {
+        crate::output::query_lineage_output::Builder::default()
     }
 }
 
@@ -4569,6 +4709,95 @@ impl ListModelPackageGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListModelMetadataOutput {
+    /// <p>A structure that holds model metadata.</p>
+    pub model_metadata_summaries:
+        std::option::Option<std::vec::Vec<crate::model::ModelMetadataSummary>>,
+    /// <p>A token for getting the next set of recommendations, if there are any.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListModelMetadataOutput {
+    /// <p>A structure that holds model metadata.</p>
+    pub fn model_metadata_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ModelMetadataSummary]> {
+        self.model_metadata_summaries.as_deref()
+    }
+    /// <p>A token for getting the next set of recommendations, if there are any.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListModelMetadataOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListModelMetadataOutput");
+        formatter.field("model_metadata_summaries", &self.model_metadata_summaries);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListModelMetadataOutput`](crate::output::ListModelMetadataOutput)
+pub mod list_model_metadata_output {
+    /// A builder for [`ListModelMetadataOutput`](crate::output::ListModelMetadataOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_metadata_summaries:
+            std::option::Option<std::vec::Vec<crate::model::ModelMetadataSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `model_metadata_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_model_metadata_summaries`](Self::set_model_metadata_summaries).
+        ///
+        /// <p>A structure that holds model metadata.</p>
+        pub fn model_metadata_summaries(
+            mut self,
+            input: impl Into<crate::model::ModelMetadataSummary>,
+        ) -> Self {
+            let mut v = self.model_metadata_summaries.unwrap_or_default();
+            v.push(input.into());
+            self.model_metadata_summaries = Some(v);
+            self
+        }
+        /// <p>A structure that holds model metadata.</p>
+        pub fn set_model_metadata_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ModelMetadataSummary>>,
+        ) -> Self {
+            self.model_metadata_summaries = input;
+            self
+        }
+        /// <p>A token for getting the next set of recommendations, if there are any.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token for getting the next set of recommendations, if there are any.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListModelMetadataOutput`](crate::output::ListModelMetadataOutput)
+        pub fn build(self) -> crate::output::ListModelMetadataOutput {
+            crate::output::ListModelMetadataOutput {
+                model_metadata_summaries: self.model_metadata_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListModelMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`ListModelMetadataOutput`](crate::output::ListModelMetadataOutput)
+    pub fn builder() -> crate::output::list_model_metadata_output::Builder {
+        crate::output::list_model_metadata_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListModelExplainabilityJobDefinitionsOutput {
     /// <p>A JSON array in which each element is a summary for a explainability bias jobs.</p>
     pub job_definition_summaries:
@@ -4749,6 +4978,99 @@ impl ListModelBiasJobDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListModelBiasJobDefinitionsOutput`](crate::output::ListModelBiasJobDefinitionsOutput)
     pub fn builder() -> crate::output::list_model_bias_job_definitions_output::Builder {
         crate::output::list_model_bias_job_definitions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListLineageGroupsOutput {
+    /// <p>A list of lineage groups and their properties.</p>
+    pub lineage_group_summaries:
+        std::option::Option<std::vec::Vec<crate::model::LineageGroupSummary>>,
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of
+    /// algorithms, use it in the subsequent request.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLineageGroupsOutput {
+    /// <p>A list of lineage groups and their properties.</p>
+    pub fn lineage_group_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::LineageGroupSummary]> {
+        self.lineage_group_summaries.as_deref()
+    }
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of
+    /// algorithms, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListLineageGroupsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListLineageGroupsOutput");
+        formatter.field("lineage_group_summaries", &self.lineage_group_summaries);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListLineageGroupsOutput`](crate::output::ListLineageGroupsOutput)
+pub mod list_lineage_groups_output {
+    /// A builder for [`ListLineageGroupsOutput`](crate::output::ListLineageGroupsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lineage_group_summaries:
+            std::option::Option<std::vec::Vec<crate::model::LineageGroupSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `lineage_group_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_lineage_group_summaries`](Self::set_lineage_group_summaries).
+        ///
+        /// <p>A list of lineage groups and their properties.</p>
+        pub fn lineage_group_summaries(
+            mut self,
+            input: impl Into<crate::model::LineageGroupSummary>,
+        ) -> Self {
+            let mut v = self.lineage_group_summaries.unwrap_or_default();
+            v.push(input.into());
+            self.lineage_group_summaries = Some(v);
+            self
+        }
+        /// <p>A list of lineage groups and their properties.</p>
+        pub fn set_lineage_group_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LineageGroupSummary>>,
+        ) -> Self {
+            self.lineage_group_summaries = input;
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of
+        /// algorithms, use it in the subsequent request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of
+        /// algorithms, use it in the subsequent request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListLineageGroupsOutput`](crate::output::ListLineageGroupsOutput)
+        pub fn build(self) -> crate::output::ListLineageGroupsOutput {
+            crate::output::ListLineageGroupsOutput {
+                lineage_group_summaries: self.lineage_group_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListLineageGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListLineageGroupsOutput`](crate::output::ListLineageGroupsOutput)
+    pub fn builder() -> crate::output::list_lineage_groups_output::Builder {
+        crate::output::list_lineage_groups_output::Builder::default()
     }
 }
 
@@ -4943,6 +5265,98 @@ impl ListLabelingJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListLabelingJobsOutput`](crate::output::ListLabelingJobsOutput)
     pub fn builder() -> crate::output::list_labeling_jobs_output::Builder {
         crate::output::list_labeling_jobs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListInferenceRecommendationsJobsOutput {
+    /// <p>The recommendations created from the Amazon SageMaker Inference Recommender job.</p>
+    pub inference_recommendations_jobs:
+        std::option::Option<std::vec::Vec<crate::model::InferenceRecommendationsJob>>,
+    /// <p>A token for getting the next set of recommendations, if there are any.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInferenceRecommendationsJobsOutput {
+    /// <p>The recommendations created from the Amazon SageMaker Inference Recommender job.</p>
+    pub fn inference_recommendations_jobs(
+        &self,
+    ) -> std::option::Option<&[crate::model::InferenceRecommendationsJob]> {
+        self.inference_recommendations_jobs.as_deref()
+    }
+    /// <p>A token for getting the next set of recommendations, if there are any.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListInferenceRecommendationsJobsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListInferenceRecommendationsJobsOutput");
+        formatter.field(
+            "inference_recommendations_jobs",
+            &self.inference_recommendations_jobs,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListInferenceRecommendationsJobsOutput`](crate::output::ListInferenceRecommendationsJobsOutput)
+pub mod list_inference_recommendations_jobs_output {
+    /// A builder for [`ListInferenceRecommendationsJobsOutput`](crate::output::ListInferenceRecommendationsJobsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) inference_recommendations_jobs:
+            std::option::Option<std::vec::Vec<crate::model::InferenceRecommendationsJob>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `inference_recommendations_jobs`.
+        ///
+        /// To override the contents of this collection use [`set_inference_recommendations_jobs`](Self::set_inference_recommendations_jobs).
+        ///
+        /// <p>The recommendations created from the Amazon SageMaker Inference Recommender job.</p>
+        pub fn inference_recommendations_jobs(
+            mut self,
+            input: impl Into<crate::model::InferenceRecommendationsJob>,
+        ) -> Self {
+            let mut v = self.inference_recommendations_jobs.unwrap_or_default();
+            v.push(input.into());
+            self.inference_recommendations_jobs = Some(v);
+            self
+        }
+        /// <p>The recommendations created from the Amazon SageMaker Inference Recommender job.</p>
+        pub fn set_inference_recommendations_jobs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InferenceRecommendationsJob>>,
+        ) -> Self {
+            self.inference_recommendations_jobs = input;
+            self
+        }
+        /// <p>A token for getting the next set of recommendations, if there are any.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token for getting the next set of recommendations, if there are any.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListInferenceRecommendationsJobsOutput`](crate::output::ListInferenceRecommendationsJobsOutput)
+        pub fn build(self) -> crate::output::ListInferenceRecommendationsJobsOutput {
+            crate::output::ListInferenceRecommendationsJobsOutput {
+                inference_recommendations_jobs: self.inference_recommendations_jobs,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListInferenceRecommendationsJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListInferenceRecommendationsJobsOutput`](crate::output::ListInferenceRecommendationsJobsOutput)
+    pub fn builder() -> crate::output::list_inference_recommendations_jobs_output::Builder {
+        crate::output::list_inference_recommendations_jobs_output::Builder::default()
     }
 }
 
@@ -7451,6 +7865,85 @@ impl GetModelPackageGroupPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetLineageGroupPolicyOutput {
+    /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+    pub lineage_group_arn: std::option::Option<std::string::String>,
+    /// <p>The resource policy that gives access to the lineage group in another account.</p>
+    pub resource_policy: std::option::Option<std::string::String>,
+}
+impl GetLineageGroupPolicyOutput {
+    /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+    pub fn lineage_group_arn(&self) -> std::option::Option<&str> {
+        self.lineage_group_arn.as_deref()
+    }
+    /// <p>The resource policy that gives access to the lineage group in another account.</p>
+    pub fn resource_policy(&self) -> std::option::Option<&str> {
+        self.resource_policy.as_deref()
+    }
+}
+impl std::fmt::Debug for GetLineageGroupPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetLineageGroupPolicyOutput");
+        formatter.field("lineage_group_arn", &self.lineage_group_arn);
+        formatter.field("resource_policy", &self.resource_policy);
+        formatter.finish()
+    }
+}
+/// See [`GetLineageGroupPolicyOutput`](crate::output::GetLineageGroupPolicyOutput)
+pub mod get_lineage_group_policy_output {
+    /// A builder for [`GetLineageGroupPolicyOutput`](crate::output::GetLineageGroupPolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lineage_group_arn: std::option::Option<std::string::String>,
+        pub(crate) resource_policy: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+        pub fn lineage_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lineage_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+        pub fn set_lineage_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.lineage_group_arn = input;
+            self
+        }
+        /// <p>The resource policy that gives access to the lineage group in another account.</p>
+        pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_policy = Some(input.into());
+            self
+        }
+        /// <p>The resource policy that gives access to the lineage group in another account.</p>
+        pub fn set_resource_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetLineageGroupPolicyOutput`](crate::output::GetLineageGroupPolicyOutput)
+        pub fn build(self) -> crate::output::GetLineageGroupPolicyOutput {
+            crate::output::GetLineageGroupPolicyOutput {
+                lineage_group_arn: self.lineage_group_arn,
+                resource_policy: self.resource_policy,
+            }
+        }
+    }
+}
+impl GetLineageGroupPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetLineageGroupPolicyOutput`](crate::output::GetLineageGroupPolicyOutput)
+    pub fn builder() -> crate::output::get_lineage_group_policy_output::Builder {
+        crate::output::get_lineage_group_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceFleetReportOutput {
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
     pub device_fleet_arn: std::option::Option<std::string::String>,
@@ -8265,6 +8758,8 @@ pub struct DescribeTrialComponentOutput {
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
     /// <p>The metrics for the component.</p>
     pub metrics: std::option::Option<std::vec::Vec<crate::model::TrialComponentMetricSummary>>,
+    /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+    pub lineage_group_arn: std::option::Option<std::string::String>,
 }
 impl DescribeTrialComponentOutput {
     /// <p>The name of the trial component.</p>
@@ -8355,6 +8850,10 @@ impl DescribeTrialComponentOutput {
     pub fn metrics(&self) -> std::option::Option<&[crate::model::TrialComponentMetricSummary]> {
         self.metrics.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+    pub fn lineage_group_arn(&self) -> std::option::Option<&str> {
+        self.lineage_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTrialComponentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8375,6 +8874,7 @@ impl std::fmt::Debug for DescribeTrialComponentOutput {
         formatter.field("output_artifacts", &self.output_artifacts);
         formatter.field("metadata_properties", &self.metadata_properties);
         formatter.field("metrics", &self.metrics);
+        formatter.field("lineage_group_arn", &self.lineage_group_arn);
         formatter.finish()
     }
 }
@@ -8410,6 +8910,7 @@ pub mod describe_trial_component_output {
         pub(crate) metadata_properties: std::option::Option<crate::model::MetadataProperties>,
         pub(crate) metrics:
             std::option::Option<std::vec::Vec<crate::model::TrialComponentMetricSummary>>,
+        pub(crate) lineage_group_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the trial component.</p>
@@ -8695,6 +9196,19 @@ pub mod describe_trial_component_output {
             self.metrics = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+        pub fn lineage_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lineage_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+        pub fn set_lineage_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.lineage_group_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeTrialComponentOutput`](crate::output::DescribeTrialComponentOutput)
         pub fn build(self) -> crate::output::DescribeTrialComponentOutput {
             crate::output::DescribeTrialComponentOutput {
@@ -8714,6 +9228,7 @@ pub mod describe_trial_component_output {
                 output_artifacts: self.output_artifacts,
                 metadata_properties: self.metadata_properties,
                 metrics: self.metrics,
+                lineage_group_arn: self.lineage_group_arn,
             }
         }
     }
@@ -11837,14 +12352,14 @@ pub struct DescribeProjectOutput {
     /// <p>The status of the project.</p>
     pub project_status: std::option::Option<crate::model::ProjectStatus>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>The time when the project was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when project was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
 }
 impl DescribeProjectOutput {
@@ -11882,7 +12397,7 @@ impl DescribeProjectOutput {
         self.project_status.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
@@ -11895,7 +12410,7 @@ impl DescribeProjectOutput {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -12035,13 +12550,13 @@ pub mod describe_project_output {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -12076,13 +12591,13 @@ pub mod describe_project_output {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -12694,10 +13209,10 @@ pub struct DescribePipelineExecutionOutput {
     /// <p>The time when the pipeline execution was modified last.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
 }
 impl DescribePipelineExecutionOutput {
@@ -12742,12 +13257,12 @@ impl DescribePipelineExecutionOutput {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -12926,13 +13441,13 @@ pub mod describe_pipeline_execution_output {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -12941,13 +13456,13 @@ pub mod describe_pipeline_execution_output {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -13084,10 +13599,10 @@ pub struct DescribePipelineOutput {
     /// <p>The time when the pipeline was last run.</p>
     pub last_run_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
 }
 impl DescribePipelineOutput {
@@ -13132,12 +13647,12 @@ impl DescribePipelineOutput {
         self.last_run_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -13305,13 +13820,13 @@ pub mod describe_pipeline_output {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -13320,13 +13835,13 @@ pub mod describe_pipeline_output {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -14929,7 +15444,7 @@ pub struct DescribeModelPackageGroupOutput {
     /// <p>The time that the model group was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>The status of the model group.</p>
     pub model_package_group_status: std::option::Option<crate::model::ModelPackageGroupStatus>,
@@ -14952,7 +15467,7 @@ impl DescribeModelPackageGroupOutput {
         self.creation_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
@@ -15052,13 +15567,13 @@ pub mod describe_model_package_group_output {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -15138,7 +15653,7 @@ pub struct DescribeModelPackageOutput {
     /// <p>The approval status of the model package.</p>
     pub model_approval_status: std::option::Option<crate::model::ModelApprovalStatus>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
@@ -15147,13 +15662,32 @@ pub struct DescribeModelPackageOutput {
     /// <p>The last time the model package was modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>A description provided for the model approval.</p>
     pub approval_description: std::option::Option<std::string::String>,
     /// <p>The metadata properties associated with the model package versions.</p>
     pub customer_metadata_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.
+    /// For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.
+    /// </p>
+    pub drift_check_baselines: std::option::Option<crate::model::DriftCheckBaselines>,
+    /// <p>The machine learning domain of the model package you specified. Common machine
+    /// learning domains include computer vision and natural language processing.</p>
+    pub domain: std::option::Option<std::string::String>,
+    /// <p>The machine learning task you specified that your model package accomplishes.
+    /// Common machine learning tasks include object detection and image classification.</p>
+    pub task: std::option::Option<std::string::String>,
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path points to a single
+    /// gzip compressed tar archive (.tar.gz suffix).</p>
+    pub sample_payload_url: std::option::Option<std::string::String>,
+    /// <p>An array of additional Inference Specification objects. Each additional
+    /// Inference Specification specifies artifacts based on this model package that can
+    /// be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
+    pub additional_inference_specifications: std::option::Option<
+        std::vec::Vec<crate::model::AdditionalInferenceSpecificationDefinition>,
+    >,
 }
 impl DescribeModelPackageOutput {
     /// <p>The name of the model package being described.</p>
@@ -15220,7 +15754,7 @@ impl DescribeModelPackageOutput {
         self.model_approval_status.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
@@ -15237,7 +15771,7 @@ impl DescribeModelPackageOutput {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -15251,6 +15785,35 @@ impl DescribeModelPackageOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.customer_metadata_properties.as_ref()
+    }
+    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.
+    /// For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.
+    /// </p>
+    pub fn drift_check_baselines(&self) -> std::option::Option<&crate::model::DriftCheckBaselines> {
+        self.drift_check_baselines.as_ref()
+    }
+    /// <p>The machine learning domain of the model package you specified. Common machine
+    /// learning domains include computer vision and natural language processing.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The machine learning task you specified that your model package accomplishes.
+    /// Common machine learning tasks include object detection and image classification.</p>
+    pub fn task(&self) -> std::option::Option<&str> {
+        self.task.as_deref()
+    }
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path points to a single
+    /// gzip compressed tar archive (.tar.gz suffix).</p>
+    pub fn sample_payload_url(&self) -> std::option::Option<&str> {
+        self.sample_payload_url.as_deref()
+    }
+    /// <p>An array of additional Inference Specification objects. Each additional
+    /// Inference Specification specifies artifacts based on this model package that can
+    /// be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
+    pub fn additional_inference_specifications(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdditionalInferenceSpecificationDefinition]> {
+        self.additional_inference_specifications.as_deref()
     }
 }
 impl std::fmt::Debug for DescribeModelPackageOutput {
@@ -15284,6 +15847,14 @@ impl std::fmt::Debug for DescribeModelPackageOutput {
         formatter.field(
             "customer_metadata_properties",
             &self.customer_metadata_properties,
+        );
+        formatter.field("drift_check_baselines", &self.drift_check_baselines);
+        formatter.field("domain", &self.domain);
+        formatter.field("task", &self.task);
+        formatter.field("sample_payload_url", &self.sample_payload_url);
+        formatter.field(
+            "additional_inference_specifications",
+            &self.additional_inference_specifications,
         );
         formatter.finish()
     }
@@ -15319,6 +15890,13 @@ pub mod describe_model_package_output {
         pub(crate) approval_description: std::option::Option<std::string::String>,
         pub(crate) customer_metadata_properties: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) drift_check_baselines: std::option::Option<crate::model::DriftCheckBaselines>,
+        pub(crate) domain: std::option::Option<std::string::String>,
+        pub(crate) task: std::option::Option<std::string::String>,
+        pub(crate) sample_payload_url: std::option::Option<std::string::String>,
+        pub(crate) additional_inference_specifications: std::option::Option<
+            std::vec::Vec<crate::model::AdditionalInferenceSpecificationDefinition>,
         >,
     }
     impl Builder {
@@ -15504,13 +16082,13 @@ pub mod describe_model_package_output {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -15558,13 +16136,13 @@ pub mod describe_model_package_output {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -15610,6 +16188,90 @@ pub mod describe_model_package_output {
             self.customer_metadata_properties = input;
             self
         }
+        /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.
+        /// For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.
+        /// </p>
+        pub fn drift_check_baselines(mut self, input: crate::model::DriftCheckBaselines) -> Self {
+            self.drift_check_baselines = Some(input);
+            self
+        }
+        /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.
+        /// For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.
+        /// </p>
+        pub fn set_drift_check_baselines(
+            mut self,
+            input: std::option::Option<crate::model::DriftCheckBaselines>,
+        ) -> Self {
+            self.drift_check_baselines = input;
+            self
+        }
+        /// <p>The machine learning domain of the model package you specified. Common machine
+        /// learning domains include computer vision and natural language processing.</p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
+            self
+        }
+        /// <p>The machine learning domain of the model package you specified. Common machine
+        /// learning domains include computer vision and natural language processing.</p>
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
+            self
+        }
+        /// <p>The machine learning task you specified that your model package accomplishes.
+        /// Common machine learning tasks include object detection and image classification.</p>
+        pub fn task(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task = Some(input.into());
+            self
+        }
+        /// <p>The machine learning task you specified that your model package accomplishes.
+        /// Common machine learning tasks include object detection and image classification.</p>
+        pub fn set_task(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task = input;
+            self
+        }
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path points to a single
+        /// gzip compressed tar archive (.tar.gz suffix).</p>
+        pub fn sample_payload_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sample_payload_url = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path points to a single
+        /// gzip compressed tar archive (.tar.gz suffix).</p>
+        pub fn set_sample_payload_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sample_payload_url = input;
+            self
+        }
+        /// Appends an item to `additional_inference_specifications`.
+        ///
+        /// To override the contents of this collection use [`set_additional_inference_specifications`](Self::set_additional_inference_specifications).
+        ///
+        /// <p>An array of additional Inference Specification objects. Each additional
+        /// Inference Specification specifies artifacts based on this model package that can
+        /// be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
+        pub fn additional_inference_specifications(
+            mut self,
+            input: impl Into<crate::model::AdditionalInferenceSpecificationDefinition>,
+        ) -> Self {
+            let mut v = self.additional_inference_specifications.unwrap_or_default();
+            v.push(input.into());
+            self.additional_inference_specifications = Some(v);
+            self
+        }
+        /// <p>An array of additional Inference Specification objects. Each additional
+        /// Inference Specification specifies artifacts based on this model package that can
+        /// be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
+        pub fn set_additional_inference_specifications(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AdditionalInferenceSpecificationDefinition>,
+            >,
+        ) -> Self {
+            self.additional_inference_specifications = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeModelPackageOutput`](crate::output::DescribeModelPackageOutput)
         pub fn build(self) -> crate::output::DescribeModelPackageOutput {
             crate::output::DescribeModelPackageOutput {
@@ -15633,6 +16295,11 @@ pub mod describe_model_package_output {
                 last_modified_by: self.last_modified_by,
                 approval_description: self.approval_description,
                 customer_metadata_properties: self.customer_metadata_properties,
+                drift_check_baselines: self.drift_check_baselines,
+                domain: self.domain,
+                task: self.task,
+                sample_payload_url: self.sample_payload_url,
+                additional_inference_specifications: self.additional_inference_specifications,
             }
         }
     }
@@ -16571,6 +17238,219 @@ impl DescribeModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLineageGroupOutput {
+    /// <p>The name of the lineage group.</p>
+    pub lineage_group_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+    pub lineage_group_arn: std::option::Option<std::string::String>,
+    /// <p>The display name of the lineage group.</p>
+    pub display_name: std::option::Option<std::string::String>,
+    /// <p>The description of the lineage group.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The creation time of lineage group.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, lineage group, or project.</p>
+    pub created_by: std::option::Option<crate::model::UserContext>,
+    /// <p>The last modified time of the lineage group.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, lineage group, or project.</p>
+    pub last_modified_by: std::option::Option<crate::model::UserContext>,
+}
+impl DescribeLineageGroupOutput {
+    /// <p>The name of the lineage group.</p>
+    pub fn lineage_group_name(&self) -> std::option::Option<&str> {
+        self.lineage_group_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+    pub fn lineage_group_arn(&self) -> std::option::Option<&str> {
+        self.lineage_group_arn.as_deref()
+    }
+    /// <p>The display name of the lineage group.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The description of the lineage group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The creation time of lineage group.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, lineage group, or project.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.created_by.as_ref()
+    }
+    /// <p>The last modified time of the lineage group.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, lineage group, or project.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.last_modified_by.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeLineageGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeLineageGroupOutput");
+        formatter.field("lineage_group_name", &self.lineage_group_name);
+        formatter.field("lineage_group_arn", &self.lineage_group_arn);
+        formatter.field("display_name", &self.display_name);
+        formatter.field("description", &self.description);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("created_by", &self.created_by);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_by", &self.last_modified_by);
+        formatter.finish()
+    }
+}
+/// See [`DescribeLineageGroupOutput`](crate::output::DescribeLineageGroupOutput)
+pub mod describe_lineage_group_output {
+    /// A builder for [`DescribeLineageGroupOutput`](crate::output::DescribeLineageGroupOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lineage_group_name: std::option::Option<std::string::String>,
+        pub(crate) lineage_group_arn: std::option::Option<std::string::String>,
+        pub(crate) display_name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_by: std::option::Option<crate::model::UserContext>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_by: std::option::Option<crate::model::UserContext>,
+    }
+    impl Builder {
+        /// <p>The name of the lineage group.</p>
+        pub fn lineage_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lineage_group_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the lineage group.</p>
+        pub fn set_lineage_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.lineage_group_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+        pub fn lineage_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lineage_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+        pub fn set_lineage_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.lineage_group_arn = input;
+            self
+        }
+        /// <p>The display name of the lineage group.</p>
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.display_name = Some(input.into());
+            self
+        }
+        /// <p>The display name of the lineage group.</p>
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.display_name = input;
+            self
+        }
+        /// <p>The description of the lineage group.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the lineage group.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The creation time of lineage group.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The creation time of lineage group.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, lineage group, or project.</p>
+        pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
+            self.created_by = Some(input);
+            self
+        }
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, lineage group, or project.</p>
+        pub fn set_created_by(
+            mut self,
+            input: std::option::Option<crate::model::UserContext>,
+        ) -> Self {
+            self.created_by = input;
+            self
+        }
+        /// <p>The last modified time of the lineage group.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The last modified time of the lineage group.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, lineage group, or project.</p>
+        pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
+            self.last_modified_by = Some(input);
+            self
+        }
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, lineage group, or project.</p>
+        pub fn set_last_modified_by(
+            mut self,
+            input: std::option::Option<crate::model::UserContext>,
+        ) -> Self {
+            self.last_modified_by = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeLineageGroupOutput`](crate::output::DescribeLineageGroupOutput)
+        pub fn build(self) -> crate::output::DescribeLineageGroupOutput {
+            crate::output::DescribeLineageGroupOutput {
+                lineage_group_name: self.lineage_group_name,
+                lineage_group_arn: self.lineage_group_arn,
+                display_name: self.display_name,
+                description: self.description,
+                creation_time: self.creation_time,
+                created_by: self.created_by,
+                last_modified_time: self.last_modified_time,
+                last_modified_by: self.last_modified_by,
+            }
+        }
+    }
+}
+impl DescribeLineageGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLineageGroupOutput`](crate::output::DescribeLineageGroupOutput)
+    pub fn builder() -> crate::output::describe_lineage_group_output::Builder {
+        crate::output::describe_lineage_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLabelingJobOutput {
     /// <p>The processing status of the labeling job. </p>
     pub labeling_job_status: std::option::Option<crate::model::LabelingJobStatus>,
@@ -17285,6 +18165,349 @@ impl DescribeLabelingJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLabelingJobOutput`](crate::output::DescribeLabelingJobOutput)
     pub fn builder() -> crate::output::describe_labeling_job_output::Builder {
         crate::output::describe_labeling_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeInferenceRecommendationsJobOutput {
+    /// <p>The name of the job. The name must be unique within an
+    /// Amazon Web Services Region in the Amazon Web Services account.</p>
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>The job description that you provided when you initiated the job.</p>
+    pub job_description: std::option::Option<std::string::String>,
+    /// <p>The job type that you provided when you initiated the job.</p>
+    pub job_type: std::option::Option<crate::model::RecommendationJobType>,
+    /// <p>The Amazon Resource Name (ARN) of the job.</p>
+    pub job_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services
+    /// Identity and Access Management (IAM) role you provided when you initiated the job.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The status of the job.</p>
+    pub status: std::option::Option<crate::model::RecommendationJobStatus>,
+    /// <p>A timestamp that shows when the job was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A timestamp that shows when the job completed.</p>
+    pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A timestamp that shows when the job was last modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>If the job fails, provides information why the job failed.</p>
+    pub failure_reason: std::option::Option<std::string::String>,
+    /// <p>Returns information about the versioned model package Amazon Resource Name (ARN),
+    /// the traffic pattern, and endpoint configurations you provided when you initiated the job.</p>
+    pub input_config: std::option::Option<crate::model::RecommendationJobInputConfig>,
+    /// <p>The stopping conditions that you provided when you initiated the job.</p>
+    pub stopping_conditions: std::option::Option<crate::model::RecommendationJobStoppingConditions>,
+    /// <p>The recommendations made by Inference Recommender.</p>
+    pub inference_recommendations:
+        std::option::Option<std::vec::Vec<crate::model::InferenceRecommendation>>,
+}
+impl DescribeInferenceRecommendationsJobOutput {
+    /// <p>The name of the job. The name must be unique within an
+    /// Amazon Web Services Region in the Amazon Web Services account.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The job description that you provided when you initiated the job.</p>
+    pub fn job_description(&self) -> std::option::Option<&str> {
+        self.job_description.as_deref()
+    }
+    /// <p>The job type that you provided when you initiated the job.</p>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::RecommendationJobType> {
+        self.job_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the job.</p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services
+    /// Identity and Access Management (IAM) role you provided when you initiated the job.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The status of the job.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RecommendationJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A timestamp that shows when the job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the job completed.</p>
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.completion_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the job was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>If the job fails, provides information why the job failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>Returns information about the versioned model package Amazon Resource Name (ARN),
+    /// the traffic pattern, and endpoint configurations you provided when you initiated the job.</p>
+    pub fn input_config(&self) -> std::option::Option<&crate::model::RecommendationJobInputConfig> {
+        self.input_config.as_ref()
+    }
+    /// <p>The stopping conditions that you provided when you initiated the job.</p>
+    pub fn stopping_conditions(
+        &self,
+    ) -> std::option::Option<&crate::model::RecommendationJobStoppingConditions> {
+        self.stopping_conditions.as_ref()
+    }
+    /// <p>The recommendations made by Inference Recommender.</p>
+    pub fn inference_recommendations(
+        &self,
+    ) -> std::option::Option<&[crate::model::InferenceRecommendation]> {
+        self.inference_recommendations.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeInferenceRecommendationsJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeInferenceRecommendationsJobOutput");
+        formatter.field("job_name", &self.job_name);
+        formatter.field("job_description", &self.job_description);
+        formatter.field("job_type", &self.job_type);
+        formatter.field("job_arn", &self.job_arn);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("status", &self.status);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("completion_time", &self.completion_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("failure_reason", &self.failure_reason);
+        formatter.field("input_config", &self.input_config);
+        formatter.field("stopping_conditions", &self.stopping_conditions);
+        formatter.field("inference_recommendations", &self.inference_recommendations);
+        formatter.finish()
+    }
+}
+/// See [`DescribeInferenceRecommendationsJobOutput`](crate::output::DescribeInferenceRecommendationsJobOutput)
+pub mod describe_inference_recommendations_job_output {
+    /// A builder for [`DescribeInferenceRecommendationsJobOutput`](crate::output::DescribeInferenceRecommendationsJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) job_description: std::option::Option<std::string::String>,
+        pub(crate) job_type: std::option::Option<crate::model::RecommendationJobType>,
+        pub(crate) job_arn: std::option::Option<std::string::String>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::RecommendationJobStatus>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+        pub(crate) input_config: std::option::Option<crate::model::RecommendationJobInputConfig>,
+        pub(crate) stopping_conditions:
+            std::option::Option<crate::model::RecommendationJobStoppingConditions>,
+        pub(crate) inference_recommendations:
+            std::option::Option<std::vec::Vec<crate::model::InferenceRecommendation>>,
+    }
+    impl Builder {
+        /// <p>The name of the job. The name must be unique within an
+        /// Amazon Web Services Region in the Amazon Web Services account.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the job. The name must be unique within an
+        /// Amazon Web Services Region in the Amazon Web Services account.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>The job description that you provided when you initiated the job.</p>
+        pub fn job_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_description = Some(input.into());
+            self
+        }
+        /// <p>The job description that you provided when you initiated the job.</p>
+        pub fn set_job_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.job_description = input;
+            self
+        }
+        /// <p>The job type that you provided when you initiated the job.</p>
+        pub fn job_type(mut self, input: crate::model::RecommendationJobType) -> Self {
+            self.job_type = Some(input);
+            self
+        }
+        /// <p>The job type that you provided when you initiated the job.</p>
+        pub fn set_job_type(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationJobType>,
+        ) -> Self {
+            self.job_type = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the job.</p>
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the job.</p>
+        pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services
+        /// Identity and Access Management (IAM) role you provided when you initiated the job.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services
+        /// Identity and Access Management (IAM) role you provided when you initiated the job.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The status of the job.</p>
+        pub fn status(mut self, input: crate::model::RecommendationJobStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the job.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationJobStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>A timestamp that shows when the job was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>A timestamp that shows when the job was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>A timestamp that shows when the job completed.</p>
+        pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.completion_time = Some(input);
+            self
+        }
+        /// <p>A timestamp that shows when the job completed.</p>
+        pub fn set_completion_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.completion_time = input;
+            self
+        }
+        /// <p>A timestamp that shows when the job was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>A timestamp that shows when the job was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>If the job fails, provides information why the job failed.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>If the job fails, provides information why the job failed.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// <p>Returns information about the versioned model package Amazon Resource Name (ARN),
+        /// the traffic pattern, and endpoint configurations you provided when you initiated the job.</p>
+        pub fn input_config(mut self, input: crate::model::RecommendationJobInputConfig) -> Self {
+            self.input_config = Some(input);
+            self
+        }
+        /// <p>Returns information about the versioned model package Amazon Resource Name (ARN),
+        /// the traffic pattern, and endpoint configurations you provided when you initiated the job.</p>
+        pub fn set_input_config(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationJobInputConfig>,
+        ) -> Self {
+            self.input_config = input;
+            self
+        }
+        /// <p>The stopping conditions that you provided when you initiated the job.</p>
+        pub fn stopping_conditions(
+            mut self,
+            input: crate::model::RecommendationJobStoppingConditions,
+        ) -> Self {
+            self.stopping_conditions = Some(input);
+            self
+        }
+        /// <p>The stopping conditions that you provided when you initiated the job.</p>
+        pub fn set_stopping_conditions(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationJobStoppingConditions>,
+        ) -> Self {
+            self.stopping_conditions = input;
+            self
+        }
+        /// Appends an item to `inference_recommendations`.
+        ///
+        /// To override the contents of this collection use [`set_inference_recommendations`](Self::set_inference_recommendations).
+        ///
+        /// <p>The recommendations made by Inference Recommender.</p>
+        pub fn inference_recommendations(
+            mut self,
+            input: impl Into<crate::model::InferenceRecommendation>,
+        ) -> Self {
+            let mut v = self.inference_recommendations.unwrap_or_default();
+            v.push(input.into());
+            self.inference_recommendations = Some(v);
+            self
+        }
+        /// <p>The recommendations made by Inference Recommender.</p>
+        pub fn set_inference_recommendations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InferenceRecommendation>>,
+        ) -> Self {
+            self.inference_recommendations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeInferenceRecommendationsJobOutput`](crate::output::DescribeInferenceRecommendationsJobOutput)
+        pub fn build(self) -> crate::output::DescribeInferenceRecommendationsJobOutput {
+            crate::output::DescribeInferenceRecommendationsJobOutput {
+                job_name: self.job_name,
+                job_description: self.job_description,
+                job_type: self.job_type,
+                job_arn: self.job_arn,
+                role_arn: self.role_arn,
+                status: self.status,
+                creation_time: self.creation_time,
+                completion_time: self.completion_time,
+                last_modified_time: self.last_modified_time,
+                failure_reason: self.failure_reason,
+                input_config: self.input_config,
+                stopping_conditions: self.stopping_conditions,
+                inference_recommendations: self.inference_recommendations,
+            }
+        }
+    }
+}
+impl DescribeInferenceRecommendationsJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeInferenceRecommendationsJobOutput`](crate::output::DescribeInferenceRecommendationsJobOutput)
+    pub fn builder() -> crate::output::describe_inference_recommendations_job_output::Builder {
+        crate::output::describe_inference_recommendations_job_output::Builder::default()
     }
 }
 
@@ -21859,13 +23082,15 @@ pub struct DescribeContextOutput {
     /// <p>When the context was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>When the context was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
+    /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+    pub lineage_group_arn: std::option::Option<std::string::String>,
 }
 impl DescribeContextOutput {
     /// <p>The name of the context.</p>
@@ -21900,7 +23125,7 @@ impl DescribeContextOutput {
         self.creation_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
@@ -21909,9 +23134,13 @@ impl DescribeContextOutput {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+    pub fn lineage_group_arn(&self) -> std::option::Option<&str> {
+        self.lineage_group_arn.as_deref()
     }
 }
 impl std::fmt::Debug for DescribeContextOutput {
@@ -21927,6 +23156,7 @@ impl std::fmt::Debug for DescribeContextOutput {
         formatter.field("created_by", &self.created_by);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("last_modified_by", &self.last_modified_by);
+        formatter.field("lineage_group_arn", &self.lineage_group_arn);
         formatter.finish()
     }
 }
@@ -21948,6 +23178,7 @@ pub mod describe_context_output {
         pub(crate) created_by: std::option::Option<crate::model::UserContext>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_by: std::option::Option<crate::model::UserContext>,
+        pub(crate) lineage_group_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the context.</p>
@@ -22042,13 +23273,13 @@ pub mod describe_context_output {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -22070,18 +23301,31 @@ pub mod describe_context_output {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
         ) -> Self {
             self.last_modified_by = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+        pub fn lineage_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lineage_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+        pub fn set_lineage_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.lineage_group_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeContextOutput`](crate::output::DescribeContextOutput)
@@ -22097,6 +23341,7 @@ pub mod describe_context_output {
                 created_by: self.created_by,
                 last_modified_time: self.last_modified_time,
                 last_modified_by: self.last_modified_by,
+                lineage_group_arn: self.lineage_group_arn,
             }
         }
     }
@@ -22135,6 +23380,9 @@ pub struct DescribeCompilationJobOutput {
     /// <p>The inference image to use when compiling a model.
     /// Specify an image only if the target device is a cloud instance.</p>
     pub inference_image: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the versioned model package that was
+    /// provided to SageMaker Neo when you initiated a compilation job.</p>
+    pub model_package_version_arn: std::option::Option<std::string::String>,
     /// <p>The time that the model compilation job was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the status
@@ -22204,6 +23452,11 @@ impl DescribeCompilationJobOutput {
     pub fn inference_image(&self) -> std::option::Option<&str> {
         self.inference_image.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the versioned model package that was
+    /// provided to SageMaker Neo when you initiated a compilation job.</p>
+    pub fn model_package_version_arn(&self) -> std::option::Option<&str> {
+        self.model_package_version_arn.as_deref()
+    }
     /// <p>The time that the model compilation job was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
@@ -22261,6 +23514,7 @@ impl std::fmt::Debug for DescribeCompilationJobOutput {
         formatter.field("compilation_end_time", &self.compilation_end_time);
         formatter.field("stopping_condition", &self.stopping_condition);
         formatter.field("inference_image", &self.inference_image);
+        formatter.field("model_package_version_arn", &self.model_package_version_arn);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("failure_reason", &self.failure_reason);
@@ -22286,6 +23540,7 @@ pub mod describe_compilation_job_output {
         pub(crate) compilation_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) stopping_condition: std::option::Option<crate::model::StoppingCondition>,
         pub(crate) inference_image: std::option::Option<std::string::String>,
+        pub(crate) model_package_version_arn: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
@@ -22404,6 +23659,21 @@ pub mod describe_compilation_job_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inference_image = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the versioned model package that was
+        /// provided to SageMaker Neo when you initiated a compilation job.</p>
+        pub fn model_package_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_package_version_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the versioned model package that was
+        /// provided to SageMaker Neo when you initiated a compilation job.</p>
+        pub fn set_model_package_version_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_package_version_arn = input;
             self
         }
         /// <p>The time that the model compilation job was created.</p>
@@ -22550,6 +23820,7 @@ pub mod describe_compilation_job_output {
                 compilation_end_time: self.compilation_end_time,
                 stopping_condition: self.stopping_condition,
                 inference_image: self.inference_image,
+                model_package_version_arn: self.model_package_version_arn,
                 creation_time: self.creation_time,
                 last_modified_time: self.last_modified_time,
                 failure_reason: self.failure_reason,
@@ -23297,15 +24568,17 @@ pub struct DescribeArtifactOutput {
     /// <p>When the artifact was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>When the artifact was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
+    /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+    pub lineage_group_arn: std::option::Option<std::string::String>,
 }
 impl DescribeArtifactOutput {
     /// <p>The name of the artifact.</p>
@@ -23336,7 +24609,7 @@ impl DescribeArtifactOutput {
         self.creation_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
@@ -23345,13 +24618,17 @@ impl DescribeArtifactOutput {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn metadata_properties(&self) -> std::option::Option<&crate::model::MetadataProperties> {
         self.metadata_properties.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+    pub fn lineage_group_arn(&self) -> std::option::Option<&str> {
+        self.lineage_group_arn.as_deref()
     }
 }
 impl std::fmt::Debug for DescribeArtifactOutput {
@@ -23367,6 +24644,7 @@ impl std::fmt::Debug for DescribeArtifactOutput {
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("last_modified_by", &self.last_modified_by);
         formatter.field("metadata_properties", &self.metadata_properties);
+        formatter.field("lineage_group_arn", &self.lineage_group_arn);
         formatter.finish()
     }
 }
@@ -23388,6 +24666,7 @@ pub mod describe_artifact_output {
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_by: std::option::Option<crate::model::UserContext>,
         pub(crate) metadata_properties: std::option::Option<crate::model::MetadataProperties>,
+        pub(crate) lineage_group_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the artifact.</p>
@@ -23478,13 +24757,13 @@ pub mod describe_artifact_output {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -23506,13 +24785,13 @@ pub mod describe_artifact_output {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -23533,6 +24812,19 @@ pub mod describe_artifact_output {
             self.metadata_properties = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+        pub fn lineage_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lineage_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+        pub fn set_lineage_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.lineage_group_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeArtifactOutput`](crate::output::DescribeArtifactOutput)
         pub fn build(self) -> crate::output::DescribeArtifactOutput {
             crate::output::DescribeArtifactOutput {
@@ -23546,6 +24838,7 @@ pub mod describe_artifact_output {
                 last_modified_time: self.last_modified_time,
                 last_modified_by: self.last_modified_by,
                 metadata_properties: self.metadata_properties,
+                lineage_group_arn: self.lineage_group_arn,
             }
         }
     }
@@ -24300,15 +25593,17 @@ pub struct DescribeActionOutput {
     /// <p>When the action was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>When the action was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
+    /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+    pub lineage_group_arn: std::option::Option<std::string::String>,
 }
 impl DescribeActionOutput {
     /// <p>The name of the action.</p>
@@ -24347,7 +25642,7 @@ impl DescribeActionOutput {
         self.creation_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
@@ -24356,13 +25651,17 @@ impl DescribeActionOutput {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn metadata_properties(&self) -> std::option::Option<&crate::model::MetadataProperties> {
         self.metadata_properties.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+    pub fn lineage_group_arn(&self) -> std::option::Option<&str> {
+        self.lineage_group_arn.as_deref()
     }
 }
 impl std::fmt::Debug for DescribeActionOutput {
@@ -24380,6 +25679,7 @@ impl std::fmt::Debug for DescribeActionOutput {
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("last_modified_by", &self.last_modified_by);
         formatter.field("metadata_properties", &self.metadata_properties);
+        formatter.field("lineage_group_arn", &self.lineage_group_arn);
         formatter.finish()
     }
 }
@@ -24403,6 +25703,7 @@ pub mod describe_action_output {
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_by: std::option::Option<crate::model::UserContext>,
         pub(crate) metadata_properties: std::option::Option<crate::model::MetadataProperties>,
+        pub(crate) lineage_group_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the action.</p>
@@ -24510,13 +25811,13 @@ pub mod describe_action_output {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -24538,13 +25839,13 @@ pub mod describe_action_output {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -24565,6 +25866,19 @@ pub mod describe_action_output {
             self.metadata_properties = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+        pub fn lineage_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lineage_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+        pub fn set_lineage_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.lineage_group_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeActionOutput`](crate::output::DescribeActionOutput)
         pub fn build(self) -> crate::output::DescribeActionOutput {
             crate::output::DescribeActionOutput {
@@ -24580,6 +25894,7 @@ pub mod describe_action_output {
                 last_modified_time: self.last_modified_time,
                 last_modified_by: self.last_modified_by,
                 metadata_properties: self.metadata_properties,
+                lineage_group_arn: self.lineage_group_arn,
             }
         }
     }
@@ -27341,6 +28656,60 @@ impl CreateLabelingJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateLabelingJobOutput`](crate::output::CreateLabelingJobOutput)
     pub fn builder() -> crate::output::create_labeling_job_output::Builder {
         crate::output::create_labeling_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateInferenceRecommendationsJobOutput {
+    /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
+    pub job_arn: std::option::Option<std::string::String>,
+}
+impl CreateInferenceRecommendationsJobOutput {
+    /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateInferenceRecommendationsJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateInferenceRecommendationsJobOutput");
+        formatter.field("job_arn", &self.job_arn);
+        formatter.finish()
+    }
+}
+/// See [`CreateInferenceRecommendationsJobOutput`](crate::output::CreateInferenceRecommendationsJobOutput)
+pub mod create_inference_recommendations_job_output {
+    /// A builder for [`CreateInferenceRecommendationsJobOutput`](crate::output::CreateInferenceRecommendationsJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
+        pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateInferenceRecommendationsJobOutput`](crate::output::CreateInferenceRecommendationsJobOutput)
+        pub fn build(self) -> crate::output::CreateInferenceRecommendationsJobOutput {
+            crate::output::CreateInferenceRecommendationsJobOutput {
+                job_arn: self.job_arn,
+            }
+        }
+    }
+}
+impl CreateInferenceRecommendationsJobOutput {
+    /// Creates a new builder-style object to manufacture [`CreateInferenceRecommendationsJobOutput`](crate::output::CreateInferenceRecommendationsJobOutput)
+    pub fn builder() -> crate::output::create_inference_recommendations_job_output::Builder {
+        crate::output::create_inference_recommendations_job_output::Builder::default()
     }
 }
 

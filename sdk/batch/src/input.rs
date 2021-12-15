@@ -177,14 +177,14 @@ pub mod create_compute_environment_input {
         >,
     }
     impl Builder {
-        /// <p>The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-        /// underscores are allowed.</p>
+        /// <p>The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and
+        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn compute_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.compute_environment_name = Some(input.into());
             self
         }
-        /// <p>The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-        /// underscores are allowed.</p>
+        /// <p>The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and
+        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_compute_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -232,11 +232,9 @@ pub mod create_compute_environment_input {
             self.state = input;
             self
         }
-        /// <p>The maximum number of vCPUs for an
-        /// unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new
-        /// share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
-        /// reserved.</p>
-        ///
+        /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share
+        /// scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job
+        /// queue, no vCPU capacity is reserved.</p>
         /// <note>
         /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/</p>
         /// </note>
@@ -244,11 +242,9 @@ pub mod create_compute_environment_input {
             self.unmanagedv_cpus = Some(input);
             self
         }
-        /// <p>The maximum number of vCPUs for an
-        /// unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new
-        /// share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
-        /// reserved.</p>
-        ///
+        /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share
+        /// scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job
+        /// queue, no vCPU capacity is reserved.</p>
         /// <note>
         /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/</p>
         /// </note>
@@ -506,14 +502,14 @@ pub mod create_job_queue_input {
         >,
     }
     impl Builder {
-        /// <p>The name of the job queue. Up to 128 letters (uppercase and lowercase), numbers, and underscores are
-        /// allowed.</p>
+        /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters,
+        /// numbers, hyphens (-), and underscores (_).</p>
         pub fn job_queue_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_queue_name = Some(input.into());
             self
         }
-        /// <p>The name of the job queue. Up to 128 letters (uppercase and lowercase), numbers, and underscores are
-        /// allowed.</p>
+        /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters,
+        /// numbers, hyphens (-), and underscores (_).</p>
         pub fn set_job_queue_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -535,25 +531,25 @@ pub mod create_job_queue_input {
             self.state = input;
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the fair share scheduling
-        /// policy. If this parameter is specified, the job queue will use a fair share scheduling policy. If this parameter is
-        /// not specified, the job queue will use a first in, first out (FIFO) scheduling policy. Once a job queue is created,
-        /// the fair share scheduling policy can be replaced but not removed. The format is
+        /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair
+        /// share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO)
+        /// scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy.
+        /// The format is
         /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
         /// </code>.
-        /// For example,
+        /// An example is
         /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
         pub fn scheduling_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.scheduling_policy_arn = Some(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the fair share scheduling
-        /// policy. If this parameter is specified, the job queue will use a fair share scheduling policy. If this parameter is
-        /// not specified, the job queue will use a first in, first out (FIFO) scheduling policy. Once a job queue is created,
-        /// the fair share scheduling policy can be replaced but not removed. The format is
+        /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair
+        /// share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO)
+        /// scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy.
+        /// The format is
         /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
         /// </code>.
-        /// For example,
+        /// An example is
         /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
         pub fn set_scheduling_policy_arn(
             mut self,
@@ -797,26 +793,24 @@ pub mod create_scheduling_policy_input {
         >,
     }
     impl Builder {
-        /// <p>The name of the scheduling
-        /// policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
+        /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase
+        /// letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the scheduling
-        /// policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
+        /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase
+        /// letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The fair share policy of the scheduling
-        /// policy.</p>
+        /// <p>The fair share policy of the scheduling policy.</p>
         pub fn fairshare_policy(mut self, input: crate::model::FairsharePolicy) -> Self {
             self.fairshare_policy = Some(input);
             self
         }
-        /// <p>The fair share policy of the scheduling
-        /// policy.</p>
+        /// <p>The fair share policy of the scheduling policy.</p>
         pub fn set_fairshare_policy(
             mut self,
             input: std::option::Option<crate::model::FairsharePolicy>,
@@ -1302,14 +1296,12 @@ pub mod delete_scheduling_policy_input {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the scheduling policy to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy to delete.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the scheduling policy to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy to delete.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1826,8 +1818,7 @@ pub mod describe_job_definitions_input {
         ///
         /// To override the contents of this collection use [`set_job_definitions`](Self::set_job_definitions).
         ///
-        /// <p>A list of up to 100 job definitions. Each
-        /// entry in the list can either be an ARN of the form
+        /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
         /// <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version
         /// using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
         pub fn job_definitions(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1836,8 +1827,7 @@ pub mod describe_job_definitions_input {
             self.job_definitions = Some(v);
             self
         }
-        /// <p>A list of up to 100 job definitions. Each
-        /// entry in the list can either be an ARN of the form
+        /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
         /// <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version
         /// using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
         pub fn set_job_definitions(
@@ -2426,16 +2416,14 @@ pub mod describe_scheduling_policies_input {
         ///
         /// To override the contents of this collection use [`set_arns`](Self::set_arns).
         ///
-        /// <p>A list of up to 100 scheduling policy
-        /// Amazon Resource Name (ARN) entries.</p>
+        /// <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
         pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.arns.unwrap_or_default();
             v.push(input.into());
             self.arns = Some(v);
             self
         }
-        /// <p>A list of up to 100 scheduling policy
-        /// Amazon Resource Name (ARN) entries.</p>
+        /// <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
         pub fn set_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2719,14 +2707,14 @@ pub mod list_jobs_input {
         /// <dt>BEFORE_CREATED_AT</dt>
         /// <dd>
         /// <p>The value for the filter is the time that's before the job was created. This corresponds to the
-        /// <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-        /// (midnight) on January 1, 1970.</p>
+        /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+        /// UTC (midnight) on January 1, 1970.</p>
         /// </dd>
         /// <dt>AFTER_CREATED_AT</dt>
         /// <dd>
         /// <p>The value for the filter is the time that's after the job was created. This corresponds to the
-        /// <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-        /// (midnight) on January 1, 1970.</p>
+        /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+        /// UTC (midnight) on January 1, 1970.</p>
         /// </dd>
         /// </dl>
         pub fn filters(mut self, input: impl Into<crate::model::KeyValuesPair>) -> Self {
@@ -2763,14 +2751,14 @@ pub mod list_jobs_input {
         /// <dt>BEFORE_CREATED_AT</dt>
         /// <dd>
         /// <p>The value for the filter is the time that's before the job was created. This corresponds to the
-        /// <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-        /// (midnight) on January 1, 1970.</p>
+        /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+        /// UTC (midnight) on January 1, 1970.</p>
         /// </dd>
         /// <dt>AFTER_CREATED_AT</dt>
         /// <dd>
         /// <p>The value for the filter is the time that's after the job was created. This corresponds to the
-        /// <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-        /// (midnight) on January 1, 1970.</p>
+        /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+        /// UTC (midnight) on January 1, 1970.</p>
         /// </dd>
         /// </dl>
         pub fn set_filters(
@@ -2920,32 +2908,33 @@ pub mod list_scheduling_policies_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When this
-        /// parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page
-        /// and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be
-        /// between 1 and 100. If this parameter isn't used, then
+        /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When
+        /// this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single
+        /// page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by
+        /// sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This
+        /// value can be between 1 and 100. If this parameter isn't used,
         /// <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value
         /// if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When this
-        /// parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page
-        /// and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be
-        /// between 1 and 100. If this parameter isn't used, then
+        /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When
+        /// this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single
+        /// page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by
+        /// sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This
+        /// value can be between 1 and 100. If this parameter isn't used,
         /// <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value
         /// if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code> request
-        /// where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-        /// from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code>
+        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+        /// continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
+        /// <code>null</code> when there are no more results to
+        /// return.</p>
         /// <note>
         /// <p>This token should be treated as an opaque identifier that's only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -2954,10 +2943,11 @@ pub mod list_scheduling_policies_input {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code> request
-        /// where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-        /// from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code>
+        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+        /// continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
+        /// <code>null</code> when there are no more results to
+        /// return.</p>
         /// <note>
         /// <p>This token should be treated as an opaque identifier that's only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -3276,14 +3266,14 @@ pub mod register_job_definition_input {
             std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
     }
     impl Builder {
-        /// <p>The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-        /// underscores are allowed.</p>
+        /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
+        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_definition_name = Some(input.into());
             self
         }
-        /// <p>The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-        /// underscores are allowed.</p>
+        /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
+        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_job_definition_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3341,19 +3331,17 @@ pub mod register_job_definition_input {
             self.parameters = input;
             self
         }
-        /// <p>The scheduling priority for jobs that are
-        /// submitted with this job definition. This will only affect jobs in job queues with a fair share policy. Jobs with a
-        /// higher scheduling priority will be scheduled before jobs with a lower scheduling priority.</p>
-        ///
+        /// <p>The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job
+        /// queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower
+        /// scheduling priority.</p>
         /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
         pub fn scheduling_priority(mut self, input: i32) -> Self {
             self.scheduling_priority = Some(input);
             self
         }
-        /// <p>The scheduling priority for jobs that are
-        /// submitted with this job definition. This will only affect jobs in job queues with a fair share policy. Jobs with a
-        /// higher scheduling priority will be scheduled before jobs with a lower scheduling priority.</p>
-        ///
+        /// <p>The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job
+        /// queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower
+        /// scheduling priority.</p>
         /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
         pub fn set_scheduling_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.scheduling_priority = input;
@@ -3681,14 +3669,14 @@ pub mod submit_job_input {
         >,
     }
     impl Builder {
-        /// <p>The name of the job. The first character must be alphanumeric, and up to 128 letters (uppercase and lowercase),
-        /// numbers, hyphens, and underscores are allowed.</p>
+        /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain
+        /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_name = Some(input.into());
             self
         }
-        /// <p>The name of the job. The first character must be alphanumeric, and up to 128 letters (uppercase and lowercase),
-        /// numbers, hyphens, and underscores are allowed.</p>
+        /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain
+        /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -3703,14 +3691,12 @@ pub mod submit_job_input {
             self.job_queue = input;
             self
         }
-        /// <p>The share identifier for the
-        /// job.</p>
+        /// <p>The share identifier for the job.</p>
         pub fn share_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.share_identifier = Some(input.into());
             self
         }
-        /// <p>The share identifier for the
-        /// job.</p>
+        /// <p>The share identifier for the job.</p>
         pub fn set_share_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3718,21 +3704,17 @@ pub mod submit_job_input {
             self.share_identifier = input;
             self
         }
-        /// <p>The scheduling priority for the job. This
-        /// will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be
-        /// scheduled before jobs with a lower scheduling priority. This will override any scheduling priority in the job
-        /// definition.</p>
-        ///
+        /// <p>The scheduling priority for the job. This will only affect jobs in job queues with a fair share policy. Jobs
+        /// with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority. This will override
+        /// any scheduling priority in the job definition.</p>
         /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
         pub fn scheduling_priority_override(mut self, input: i32) -> Self {
             self.scheduling_priority_override = Some(input);
             self
         }
-        /// <p>The scheduling priority for the job. This
-        /// will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be
-        /// scheduled before jobs with a lower scheduling priority. This will override any scheduling priority in the job
-        /// definition.</p>
-        ///
+        /// <p>The scheduling priority for the job. This will only affect jobs in job queues with a fair share policy. Jobs
+        /// with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority. This will override
+        /// any scheduling priority in the job definition.</p>
         /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
         pub fn set_scheduling_priority_override(mut self, input: std::option::Option<i32>) -> Self {
             self.scheduling_priority_override = input;
@@ -4694,20 +4676,18 @@ pub mod update_compute_environment_input {
             self.state = input;
             self
         }
-        /// <p>The maximum number of vCPUs expected to
-        /// be used for an unmanaged compute environment. This parameter should not be specified for a managed compute
-        /// environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share
-        /// identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
-        /// reserved.</p>
+        /// <p>The maximum number of vCPUs expected to be used for an unmanaged compute environment. This parameter should not
+        /// be specified for a managed compute environment. This parameter is only used for fair share scheduling to reserve vCPU
+        /// capacity for new share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity
+        /// will be reserved.</p>
         pub fn unmanagedv_cpus(mut self, input: i32) -> Self {
             self.unmanagedv_cpus = Some(input);
             self
         }
-        /// <p>The maximum number of vCPUs expected to
-        /// be used for an unmanaged compute environment. This parameter should not be specified for a managed compute
-        /// environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share
-        /// identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
-        /// reserved.</p>
+        /// <p>The maximum number of vCPUs expected to be used for an unmanaged compute environment. This parameter should not
+        /// be specified for a managed compute environment. This parameter is only used for fair share scheduling to reserve vCPU
+        /// capacity for new share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity
+        /// will be reserved.</p>
         pub fn set_unmanagedv_cpus(mut self, input: std::option::Option<i32>) -> Self {
             self.unmanagedv_cpus = input;
             self
@@ -5179,14 +5159,12 @@ pub mod update_scheduling_policy_input {
             self.arn = input;
             self
         }
-        /// <p>The fair share
-        /// policy.</p>
+        /// <p>The fair share policy.</p>
         pub fn fairshare_policy(mut self, input: crate::model::FairsharePolicy) -> Self {
             self.fairshare_policy = Some(input);
             self
         }
-        /// <p>The fair share
-        /// policy.</p>
+        /// <p>The fair share policy.</p>
         pub fn set_fairshare_policy(
             mut self,
             input: std::option::Option<crate::model::FairsharePolicy>,
@@ -5333,8 +5311,7 @@ impl UpdateSchedulingPolicyInput {
 pub struct UpdateSchedulingPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The fair share
-    /// policy.</p>
+    /// <p>The fair share policy.</p>
     pub fairshare_policy: std::option::Option<crate::model::FairsharePolicy>,
 }
 impl UpdateSchedulingPolicyInput {
@@ -5342,8 +5319,7 @@ impl UpdateSchedulingPolicyInput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The fair share
-    /// policy.</p>
+    /// <p>The fair share policy.</p>
     pub fn fairshare_policy(&self) -> std::option::Option<&crate::model::FairsharePolicy> {
         self.fairshare_policy.as_ref()
     }
@@ -5465,11 +5441,10 @@ pub struct UpdateComputeEnvironmentInput {
     /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
     /// <code>minvCpus</code> value after instances become idle.</p>
     pub state: std::option::Option<crate::model::CeState>,
-    /// <p>The maximum number of vCPUs expected to
-    /// be used for an unmanaged compute environment. This parameter should not be specified for a managed compute
-    /// environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share
-    /// identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
-    /// reserved.</p>
+    /// <p>The maximum number of vCPUs expected to be used for an unmanaged compute environment. This parameter should not
+    /// be specified for a managed compute environment. This parameter is only used for fair share scheduling to reserve vCPU
+    /// capacity for new share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity
+    /// will be reserved.</p>
     pub unmanagedv_cpus: i32,
     /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment.
     /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
@@ -5510,11 +5485,10 @@ impl UpdateComputeEnvironmentInput {
     pub fn state(&self) -> std::option::Option<&crate::model::CeState> {
         self.state.as_ref()
     }
-    /// <p>The maximum number of vCPUs expected to
-    /// be used for an unmanaged compute environment. This parameter should not be specified for a managed compute
-    /// environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share
-    /// identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
-    /// reserved.</p>
+    /// <p>The maximum number of vCPUs expected to be used for an unmanaged compute environment. This parameter should not
+    /// be specified for a managed compute environment. This parameter is only used for fair share scheduling to reserve vCPU
+    /// capacity for new share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity
+    /// will be reserved.</p>
     pub fn unmanagedv_cpus(&self) -> i32 {
         self.unmanagedv_cpus
     }
@@ -5660,19 +5634,16 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubmitJobInput {
-    /// <p>The name of the job. The first character must be alphanumeric, and up to 128 letters (uppercase and lowercase),
-    /// numbers, hyphens, and underscores are allowed.</p>
+    /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain
+    /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The job queue where the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.</p>
     pub job_queue: std::option::Option<std::string::String>,
-    /// <p>The share identifier for the
-    /// job.</p>
+    /// <p>The share identifier for the job.</p>
     pub share_identifier: std::option::Option<std::string::String>,
-    /// <p>The scheduling priority for the job. This
-    /// will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be
-    /// scheduled before jobs with a lower scheduling priority. This will override any scheduling priority in the job
-    /// definition.</p>
-    ///
+    /// <p>The scheduling priority for the job. This will only affect jobs in job queues with a fair share policy. Jobs
+    /// with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority. This will override
+    /// any scheduling priority in the job definition.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub scheduling_priority_override: i32,
     /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and
@@ -5730,8 +5701,8 @@ pub struct SubmitJobInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl SubmitJobInput {
-    /// <p>The name of the job. The first character must be alphanumeric, and up to 128 letters (uppercase and lowercase),
-    /// numbers, hyphens, and underscores are allowed.</p>
+    /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain
+    /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
@@ -5739,16 +5710,13 @@ impl SubmitJobInput {
     pub fn job_queue(&self) -> std::option::Option<&str> {
         self.job_queue.as_deref()
     }
-    /// <p>The share identifier for the
-    /// job.</p>
+    /// <p>The share identifier for the job.</p>
     pub fn share_identifier(&self) -> std::option::Option<&str> {
         self.share_identifier.as_deref()
     }
-    /// <p>The scheduling priority for the job. This
-    /// will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be
-    /// scheduled before jobs with a lower scheduling priority. This will override any scheduling priority in the job
-    /// definition.</p>
-    ///
+    /// <p>The scheduling priority for the job. This will only affect jobs in job queues with a fair share policy. Jobs
+    /// with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority. This will override
+    /// any scheduling priority in the job definition.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn scheduling_priority_override(&self) -> i32 {
         self.scheduling_priority_override
@@ -5859,8 +5827,8 @@ impl std::fmt::Debug for SubmitJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterJobDefinitionInput {
-    /// <p>The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-    /// underscores are allowed.</p>
+    /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
+    /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub job_definition_name: std::option::Option<std::string::String>,
     /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the
     /// <i>Batch User Guide</i>.</p>
@@ -5873,10 +5841,9 @@ pub struct RegisterJobDefinitionInput {
     /// from the job definition.</p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The scheduling priority for jobs that are
-    /// submitted with this job definition. This will only affect jobs in job queues with a fair share policy. Jobs with a
-    /// higher scheduling priority will be scheduled before jobs with a lower scheduling priority.</p>
-    ///
+    /// <p>The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job
+    /// queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower
+    /// scheduling priority.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub scheduling_priority: i32,
     /// <p>An object with various properties specific to single-node container-based jobs. If the job definition's
@@ -5920,8 +5887,8 @@ pub struct RegisterJobDefinitionInput {
     pub platform_capabilities: std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
 }
 impl RegisterJobDefinitionInput {
-    /// <p>The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-    /// underscores are allowed.</p>
+    /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
+    /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn job_definition_name(&self) -> std::option::Option<&str> {
         self.job_definition_name.as_deref()
     }
@@ -5942,10 +5909,9 @@ impl RegisterJobDefinitionInput {
     {
         self.parameters.as_ref()
     }
-    /// <p>The scheduling priority for jobs that are
-    /// submitted with this job definition. This will only affect jobs in job queues with a fair share policy. Jobs with a
-    /// higher scheduling priority will be scheduled before jobs with a lower scheduling priority.</p>
-    ///
+    /// <p>The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job
+    /// queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower
+    /// scheduling priority.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn scheduling_priority(&self) -> i32 {
         self.scheduling_priority
@@ -6053,18 +6019,19 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchedulingPoliciesInput {
-    /// <p>The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When this
-    /// parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page
-    /// and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be
-    /// between 1 and 100. If this parameter isn't used, then
+    /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When
+    /// this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single
+    /// page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by
+    /// sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This
+    /// value can be between 1 and 100. If this parameter isn't used,
     /// <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value
     /// if applicable.</p>
     pub max_results: i32,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code> request
-    /// where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-    /// from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code>
+    /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+    /// continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
+    /// <code>null</code> when there are no more results to
+    /// return.</p>
     /// <note>
     /// <p>This token should be treated as an opaque identifier that's only used to
     /// retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -6072,20 +6039,21 @@ pub struct ListSchedulingPoliciesInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSchedulingPoliciesInput {
-    /// <p>The maximum number of results returned by <code>ListSchedulingPolicies</code> in paginated output. When this
-    /// parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page
-    /// and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be
-    /// between 1 and 100. If this parameter isn't used, then
+    /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When
+    /// this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single
+    /// page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by
+    /// sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This
+    /// value can be between 1 and 100. If this parameter isn't used,
     /// <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value
     /// if applicable.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListSchedulingPolicies</code> request
-    /// where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-    /// from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code>
+    /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+    /// continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
+    /// <code>null</code> when there are no more results to
+    /// return.</p>
     /// <note>
     /// <p>This token should be treated as an opaque identifier that's only used to
     /// retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -6163,14 +6131,14 @@ pub struct ListJobsInput {
     /// <dt>BEFORE_CREATED_AT</dt>
     /// <dd>
     /// <p>The value for the filter is the time that's before the job was created. This corresponds to the
-    /// <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-    /// (midnight) on January 1, 1970.</p>
+    /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+    /// UTC (midnight) on January 1, 1970.</p>
     /// </dd>
     /// <dt>AFTER_CREATED_AT</dt>
     /// <dd>
     /// <p>The value for the filter is the time that's after the job was created. This corresponds to the
-    /// <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-    /// (midnight) on January 1, 1970.</p>
+    /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+    /// UTC (midnight) on January 1, 1970.</p>
     /// </dd>
     /// </dl>
     pub filters: std::option::Option<std::vec::Vec<crate::model::KeyValuesPair>>,
@@ -6244,14 +6212,14 @@ impl ListJobsInput {
     /// <dt>BEFORE_CREATED_AT</dt>
     /// <dd>
     /// <p>The value for the filter is the time that's before the job was created. This corresponds to the
-    /// <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-    /// (midnight) on January 1, 1970.</p>
+    /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+    /// UTC (midnight) on January 1, 1970.</p>
     /// </dd>
     /// <dt>AFTER_CREATED_AT</dt>
     /// <dd>
     /// <p>The value for the filter is the time that's after the job was created. This corresponds to the
-    /// <code>createdAt</code> value. The value is a string representation of the number of seconds since 00:00:00 UTC
-    /// (midnight) on January 1, 1970.</p>
+    /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
+    /// UTC (midnight) on January 1, 1970.</p>
     /// </dd>
     /// </dl>
     pub fn filters(&self) -> std::option::Option<&[crate::model::KeyValuesPair]> {
@@ -6276,13 +6244,11 @@ impl std::fmt::Debug for ListJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSchedulingPoliciesInput {
-    /// <p>A list of up to 100 scheduling policy
-    /// Amazon Resource Name (ARN) entries.</p>
+    /// <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeSchedulingPoliciesInput {
-    /// <p>A list of up to 100 scheduling policy
-    /// Amazon Resource Name (ARN) entries.</p>
+    /// <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
     pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
         self.arns.as_deref()
     }
@@ -6379,8 +6345,7 @@ impl std::fmt::Debug for DescribeJobQueuesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobDefinitionsInput {
-    /// <p>A list of up to 100 job definitions. Each
-    /// entry in the list can either be an ARN of the form
+    /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
     /// <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version
     /// using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
     pub job_definitions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6407,8 +6372,7 @@ pub struct DescribeJobDefinitionsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeJobDefinitionsInput {
-    /// <p>A list of up to 100 job definitions. Each
-    /// entry in the list can either be an ARN of the form
+    /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
     /// <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version
     /// using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
     pub fn job_definitions(&self) -> std::option::Option<&[std::string::String]> {
@@ -6542,13 +6506,11 @@ impl std::fmt::Debug for DeregisterJobDefinitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSchedulingPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the scheduling policy to
-    /// delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the scheduling policy to delete.</p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteSchedulingPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the scheduling policy to
-    /// delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the scheduling policy to delete.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -6607,11 +6569,10 @@ impl std::fmt::Debug for DeleteComputeEnvironmentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSchedulingPolicyInput {
-    /// <p>The name of the scheduling
-    /// policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
+    /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase
+    /// letters, numbers, hyphens (-), and underscores (_).</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The fair share policy of the scheduling
-    /// policy.</p>
+    /// <p>The fair share policy of the scheduling policy.</p>
     pub fairshare_policy: std::option::Option<crate::model::FairsharePolicy>,
     /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag
     /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
@@ -6621,13 +6582,12 @@ pub struct CreateSchedulingPolicyInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateSchedulingPolicyInput {
-    /// <p>The name of the scheduling
-    /// policy. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
+    /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase
+    /// letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The fair share policy of the scheduling
-    /// policy.</p>
+    /// <p>The fair share policy of the scheduling policy.</p>
     pub fn fairshare_policy(&self) -> std::option::Option<&crate::model::FairsharePolicy> {
         self.fairshare_policy.as_ref()
     }
@@ -6656,20 +6616,20 @@ impl std::fmt::Debug for CreateSchedulingPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobQueueInput {
-    /// <p>The name of the job queue. Up to 128 letters (uppercase and lowercase), numbers, and underscores are
-    /// allowed.</p>
+    /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters,
+    /// numbers, hyphens (-), and underscores (_).</p>
     pub job_queue_name: std::option::Option<std::string::String>,
     /// <p>The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the
     /// job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can
     /// finish.</p>
     pub state: std::option::Option<crate::model::JqState>,
-    /// <p>Amazon Resource Name (ARN) of the fair share scheduling
-    /// policy. If this parameter is specified, the job queue will use a fair share scheduling policy. If this parameter is
-    /// not specified, the job queue will use a first in, first out (FIFO) scheduling policy. Once a job queue is created,
-    /// the fair share scheduling policy can be replaced but not removed. The format is
+    /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair
+    /// share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO)
+    /// scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy.
+    /// The format is
     /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
     /// </code>.
-    /// For example,
+    /// An example is
     /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
     pub scheduling_policy_arn: std::option::Option<std::string::String>,
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
@@ -6697,8 +6657,8 @@ pub struct CreateJobQueueInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateJobQueueInput {
-    /// <p>The name of the job queue. Up to 128 letters (uppercase and lowercase), numbers, and underscores are
-    /// allowed.</p>
+    /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters,
+    /// numbers, hyphens (-), and underscores (_).</p>
     pub fn job_queue_name(&self) -> std::option::Option<&str> {
         self.job_queue_name.as_deref()
     }
@@ -6708,13 +6668,13 @@ impl CreateJobQueueInput {
     pub fn state(&self) -> std::option::Option<&crate::model::JqState> {
         self.state.as_ref()
     }
-    /// <p>Amazon Resource Name (ARN) of the fair share scheduling
-    /// policy. If this parameter is specified, the job queue will use a fair share scheduling policy. If this parameter is
-    /// not specified, the job queue will use a first in, first out (FIFO) scheduling policy. Once a job queue is created,
-    /// the fair share scheduling policy can be replaced but not removed. The format is
+    /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair
+    /// share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO)
+    /// scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy.
+    /// The format is
     /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
     /// </code>.
-    /// For example,
+    /// An example is
     /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
     pub fn scheduling_policy_arn(&self) -> std::option::Option<&str> {
         self.scheduling_policy_arn.as_deref()
@@ -6769,8 +6729,8 @@ impl std::fmt::Debug for CreateJobQueueInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComputeEnvironmentInput {
-    /// <p>The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-    /// underscores are allowed.</p>
+    /// <p>The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and
+    /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub compute_environment_name: std::option::Option<std::string::String>,
     /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see
     /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
@@ -6786,11 +6746,9 @@ pub struct CreateComputeEnvironmentInput {
     /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
     /// <code>minvCpus</code> value after instances become idle.</p>
     pub state: std::option::Option<crate::model::CeState>,
-    /// <p>The maximum number of vCPUs for an
-    /// unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new
-    /// share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
-    /// reserved.</p>
-    ///
+    /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share
+    /// scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job
+    /// queue, no vCPU capacity is reserved.</p>
     /// <note>
     /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/</p>
     /// </note>
@@ -6827,8 +6785,8 @@ pub struct CreateComputeEnvironmentInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateComputeEnvironmentInput {
-    /// <p>The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-    /// underscores are allowed.</p>
+    /// <p>The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and
+    /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn compute_environment_name(&self) -> std::option::Option<&str> {
         self.compute_environment_name.as_deref()
     }
@@ -6850,11 +6808,9 @@ impl CreateComputeEnvironmentInput {
     pub fn state(&self) -> std::option::Option<&crate::model::CeState> {
         self.state.as_ref()
     }
-    /// <p>The maximum number of vCPUs for an
-    /// unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new
-    /// share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be
-    /// reserved.</p>
-    ///
+    /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share
+    /// scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job
+    /// queue, no vCPU capacity is reserved.</p>
     /// <note>
     /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/</p>
     /// </note>

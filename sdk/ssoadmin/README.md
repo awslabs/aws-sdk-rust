@@ -1,6 +1,6 @@
 # aws-sdk-ssoadmin
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 Amazon Web Services Single Sign On (SSO) is a cloud SSO service that makes it easy to centrally manage SSO access to multiple Amazon Web Services accounts and business applications. This guide provides information on SSO operations which could be used for access management of Amazon Web Services accounts. For information about Amazon Web Services SSO features, see the [Amazon Web Services Single Sign-On User Guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html).
@@ -18,8 +18,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-ssoadmin = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-ssoadmin = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

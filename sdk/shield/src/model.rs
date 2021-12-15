@@ -476,6 +476,155 @@ impl EmergencyContact {
     }
 }
 
+/// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
+/// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
+/// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseAction {
+    /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p>
+    /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
+    pub block: std::option::Option<crate::model::BlockAction>,
+    /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p>
+    /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
+    pub count: std::option::Option<crate::model::CountAction>,
+}
+impl ResponseAction {
+    /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p>
+    /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
+    pub fn block(&self) -> std::option::Option<&crate::model::BlockAction> {
+        self.block.as_ref()
+    }
+    /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p>
+    /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
+    pub fn count(&self) -> std::option::Option<&crate::model::CountAction> {
+        self.count.as_ref()
+    }
+}
+impl std::fmt::Debug for ResponseAction {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseAction");
+        formatter.field("block", &self.block);
+        formatter.field("count", &self.count);
+        formatter.finish()
+    }
+}
+/// See [`ResponseAction`](crate::model::ResponseAction)
+pub mod response_action {
+    /// A builder for [`ResponseAction`](crate::model::ResponseAction)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) block: std::option::Option<crate::model::BlockAction>,
+        pub(crate) count: std::option::Option<crate::model::CountAction>,
+    }
+    impl Builder {
+        /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p>
+        /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
+        pub fn block(mut self, input: crate::model::BlockAction) -> Self {
+            self.block = Some(input);
+            self
+        }
+        /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p>
+        /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
+        pub fn set_block(mut self, input: std::option::Option<crate::model::BlockAction>) -> Self {
+            self.block = input;
+            self
+        }
+        /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p>
+        /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
+        pub fn count(mut self, input: crate::model::CountAction) -> Self {
+            self.count = Some(input);
+            self
+        }
+        /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p>
+        /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
+        pub fn set_count(mut self, input: std::option::Option<crate::model::CountAction>) -> Self {
+            self.count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseAction`](crate::model::ResponseAction)
+        pub fn build(self) -> crate::model::ResponseAction {
+            crate::model::ResponseAction {
+                block: self.block,
+                count: self.count,
+            }
+        }
+    }
+}
+impl ResponseAction {
+    /// Creates a new builder-style object to manufacture [`ResponseAction`](crate::model::ResponseAction)
+    pub fn builder() -> crate::model::response_action::Builder {
+        crate::model::response_action::Builder::default()
+    }
+}
+
+/// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p>
+/// <p>This is only used in the context of the <code>ResponseAction</code> setting. </p>
+/// <p>JSON specification: <code>"Count": {}</code>
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CountAction {}
+impl std::fmt::Debug for CountAction {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CountAction");
+        formatter.finish()
+    }
+}
+/// See [`CountAction`](crate::model::CountAction)
+pub mod count_action {
+    /// A builder for [`CountAction`](crate::model::CountAction)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`CountAction`](crate::model::CountAction)
+        pub fn build(self) -> crate::model::CountAction {
+            crate::model::CountAction {}
+        }
+    }
+}
+impl CountAction {
+    /// Creates a new builder-style object to manufacture [`CountAction`](crate::model::CountAction)
+    pub fn builder() -> crate::model::count_action::Builder {
+        crate::model::count_action::Builder::default()
+    }
+}
+
+/// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p>
+/// <p>This is only used in the context of the <code>ResponseAction</code> setting. </p>
+/// <p>JSON specification: <code>"Block": {}</code>
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BlockAction {}
+impl std::fmt::Debug for BlockAction {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BlockAction");
+        formatter.finish()
+    }
+}
+/// See [`BlockAction`](crate::model::BlockAction)
+pub mod block_action {
+    /// A builder for [`BlockAction`](crate::model::BlockAction)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`BlockAction`](crate::model::BlockAction)
+        pub fn build(self) -> crate::model::BlockAction {
+            crate::model::BlockAction {}
+        }
+    }
+}
+impl BlockAction {
+    /// Creates a new builder-style object to manufacture [`BlockAction`](crate::model::BlockAction)
+    pub fn builder() -> crate::model::block_action::Builder {
+        crate::model::block_action::Builder::default()
+    }
+}
+
 /// <p>A tag associated with an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -559,10 +708,15 @@ pub struct Protection {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The unique identifier (ID) for the Route 53 health check that's associated with the protection. </p>
+    /// <p>The unique identifier (ID) for the Route 53 health check that's associated with the protection. </p>
     pub health_check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN (Amazon Resource Name) of the protection.</p>
     pub protection_arn: std::option::Option<std::string::String>,
+    /// <p>The automatic application layer DDoS mitigation settings for the protection.
+    /// This configuration determines whether Shield Advanced automatically
+    /// manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
+    pub application_layer_automatic_response_configuration:
+        std::option::Option<crate::model::ApplicationLayerAutomaticResponseConfiguration>,
 }
 impl Protection {
     /// <p>The unique identifier (ID) of the protection.</p>
@@ -577,13 +731,22 @@ impl Protection {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The unique identifier (ID) for the Route 53 health check that's associated with the protection. </p>
+    /// <p>The unique identifier (ID) for the Route 53 health check that's associated with the protection. </p>
     pub fn health_check_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.health_check_ids.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the protection.</p>
     pub fn protection_arn(&self) -> std::option::Option<&str> {
         self.protection_arn.as_deref()
+    }
+    /// <p>The automatic application layer DDoS mitigation settings for the protection.
+    /// This configuration determines whether Shield Advanced automatically
+    /// manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
+    pub fn application_layer_automatic_response_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationLayerAutomaticResponseConfiguration> {
+        self.application_layer_automatic_response_configuration
+            .as_ref()
     }
 }
 impl std::fmt::Debug for Protection {
@@ -594,6 +757,10 @@ impl std::fmt::Debug for Protection {
         formatter.field("resource_arn", &self.resource_arn);
         formatter.field("health_check_ids", &self.health_check_ids);
         formatter.field("protection_arn", &self.protection_arn);
+        formatter.field(
+            "application_layer_automatic_response_configuration",
+            &self.application_layer_automatic_response_configuration,
+        );
         formatter.finish()
     }
 }
@@ -608,6 +775,8 @@ pub mod protection {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) health_check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) protection_arn: std::option::Option<std::string::String>,
+        pub(crate) application_layer_automatic_response_configuration:
+            std::option::Option<crate::model::ApplicationLayerAutomaticResponseConfiguration>,
     }
     impl Builder {
         /// <p>The unique identifier (ID) of the protection.</p>
@@ -644,14 +813,14 @@ pub mod protection {
         ///
         /// To override the contents of this collection use [`set_health_check_ids`](Self::set_health_check_ids).
         ///
-        /// <p>The unique identifier (ID) for the Route 53 health check that's associated with the protection. </p>
+        /// <p>The unique identifier (ID) for the Route 53 health check that's associated with the protection. </p>
         pub fn health_check_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.health_check_ids.unwrap_or_default();
             v.push(input.into());
             self.health_check_ids = Some(v);
             self
         }
-        /// <p>The unique identifier (ID) for the Route 53 health check that's associated with the protection. </p>
+        /// <p>The unique identifier (ID) for the Route 53 health check that's associated with the protection. </p>
         pub fn set_health_check_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -672,6 +841,28 @@ pub mod protection {
             self.protection_arn = input;
             self
         }
+        /// <p>The automatic application layer DDoS mitigation settings for the protection.
+        /// This configuration determines whether Shield Advanced automatically
+        /// manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
+        pub fn application_layer_automatic_response_configuration(
+            mut self,
+            input: crate::model::ApplicationLayerAutomaticResponseConfiguration,
+        ) -> Self {
+            self.application_layer_automatic_response_configuration = Some(input);
+            self
+        }
+        /// <p>The automatic application layer DDoS mitigation settings for the protection.
+        /// This configuration determines whether Shield Advanced automatically
+        /// manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
+        pub fn set_application_layer_automatic_response_configuration(
+            mut self,
+            input: std::option::Option<
+                crate::model::ApplicationLayerAutomaticResponseConfiguration,
+            >,
+        ) -> Self {
+            self.application_layer_automatic_response_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Protection`](crate::model::Protection)
         pub fn build(self) -> crate::model::Protection {
             crate::model::Protection {
@@ -680,6 +871,8 @@ pub mod protection {
                 resource_arn: self.resource_arn,
                 health_check_ids: self.health_check_ids,
                 protection_arn: self.protection_arn,
+                application_layer_automatic_response_configuration: self
+                    .application_layer_automatic_response_configuration,
             }
         }
     }
@@ -688,6 +881,156 @@ impl Protection {
     /// Creates a new builder-style object to manufacture [`Protection`](crate::model::Protection)
     pub fn builder() -> crate::model::protection::Builder {
         crate::model::protection::Builder::default()
+    }
+}
+
+/// <p>The automatic application layer DDoS mitigation settings for a <a>Protection</a>.
+/// This configuration determines whether Shield Advanced automatically
+/// manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ApplicationLayerAutomaticResponseConfiguration {
+    /// <p>Indicates whether automatic application layer DDoS mitigation is enabled for the protection. </p>
+    pub status: std::option::Option<crate::model::ApplicationLayerAutomaticResponseStatus>,
+    /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
+    /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
+    /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+    pub action: std::option::Option<crate::model::ResponseAction>,
+}
+impl ApplicationLayerAutomaticResponseConfiguration {
+    /// <p>Indicates whether automatic application layer DDoS mitigation is enabled for the protection. </p>
+    pub fn status(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationLayerAutomaticResponseStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
+    /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
+    /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+    pub fn action(&self) -> std::option::Option<&crate::model::ResponseAction> {
+        self.action.as_ref()
+    }
+}
+impl std::fmt::Debug for ApplicationLayerAutomaticResponseConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ApplicationLayerAutomaticResponseConfiguration");
+        formatter.field("status", &self.status);
+        formatter.field("action", &self.action);
+        formatter.finish()
+    }
+}
+/// See [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration)
+pub mod application_layer_automatic_response_configuration {
+    /// A builder for [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status:
+            std::option::Option<crate::model::ApplicationLayerAutomaticResponseStatus>,
+        pub(crate) action: std::option::Option<crate::model::ResponseAction>,
+    }
+    impl Builder {
+        /// <p>Indicates whether automatic application layer DDoS mitigation is enabled for the protection. </p>
+        pub fn status(
+            mut self,
+            input: crate::model::ApplicationLayerAutomaticResponseStatus,
+        ) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Indicates whether automatic application layer DDoS mitigation is enabled for the protection. </p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ApplicationLayerAutomaticResponseStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
+        /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
+        /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+        pub fn action(mut self, input: crate::model::ResponseAction) -> Self {
+            self.action = Some(input);
+            self
+        }
+        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
+        /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
+        /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+        pub fn set_action(
+            mut self,
+            input: std::option::Option<crate::model::ResponseAction>,
+        ) -> Self {
+            self.action = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration)
+        pub fn build(self) -> crate::model::ApplicationLayerAutomaticResponseConfiguration {
+            crate::model::ApplicationLayerAutomaticResponseConfiguration {
+                status: self.status,
+                action: self.action,
+            }
+        }
+    }
+}
+impl ApplicationLayerAutomaticResponseConfiguration {
+    /// Creates a new builder-style object to manufacture [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration)
+    pub fn builder() -> crate::model::application_layer_automatic_response_configuration::Builder {
+        crate::model::application_layer_automatic_response_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ApplicationLayerAutomaticResponseStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ApplicationLayerAutomaticResponseStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => ApplicationLayerAutomaticResponseStatus::Disabled,
+            "ENABLED" => ApplicationLayerAutomaticResponseStatus::Enabled,
+            other => ApplicationLayerAutomaticResponseStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ApplicationLayerAutomaticResponseStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ApplicationLayerAutomaticResponseStatus::from(s))
+    }
+}
+impl ApplicationLayerAutomaticResponseStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ApplicationLayerAutomaticResponseStatus::Disabled => "DISABLED",
+            ApplicationLayerAutomaticResponseStatus::Enabled => "ENABLED",
+            ApplicationLayerAutomaticResponseStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for ApplicationLayerAutomaticResponseStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -920,9 +1263,9 @@ pub struct AttackSummary {
     pub attack_id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The start time of the attack, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    /// <p>The start time of the attack, in Unix time in seconds. </p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end time of the attack, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    /// <p>The end time of the attack, in Unix time in seconds. </p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of attacks for a specified time period.</p>
     pub attack_vectors: std::option::Option<std::vec::Vec<crate::model::AttackVectorDescription>>,
@@ -936,11 +1279,11 @@ impl AttackSummary {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The start time of the attack, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    /// <p>The start time of the attack, in Unix time in seconds. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end time of the attack, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    /// <p>The end time of the attack, in Unix time in seconds. </p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -994,12 +1337,12 @@ pub mod attack_summary {
             self.resource_arn = input;
             self
         }
-        /// <p>The start time of the attack, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        /// <p>The start time of the attack, in Unix time in seconds. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The start time of the attack, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        /// <p>The start time of the attack, in Unix time in seconds. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1007,12 +1350,12 @@ pub mod attack_summary {
             self.start_time = input;
             self
         }
-        /// <p>The end time of the attack, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        /// <p>The end time of the attack, in Unix time in seconds. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The end time of the attack, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        /// <p>The end time of the attack, in Unix time in seconds. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1343,17 +1686,17 @@ impl AttackVectorDescription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeRange {
-    /// <p>The start time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    /// <p>The start time, in Unix time in seconds. </p>
     pub from_inclusive: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    /// <p>The end time, in Unix time in seconds. </p>
     pub to_exclusive: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimeRange {
-    /// <p>The start time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    /// <p>The start time, in Unix time in seconds. </p>
     pub fn from_inclusive(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.from_inclusive.as_ref()
     }
-    /// <p>The end time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    /// <p>The end time, in Unix time in seconds. </p>
     pub fn to_exclusive(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.to_exclusive.as_ref()
     }
@@ -1376,12 +1719,12 @@ pub mod time_range {
         pub(crate) to_exclusive: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The start time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        /// <p>The start time, in Unix time in seconds. </p>
         pub fn from_inclusive(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.from_inclusive = Some(input);
             self
         }
-        /// <p>The start time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        /// <p>The start time, in Unix time in seconds. </p>
         pub fn set_from_inclusive(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1389,12 +1732,12 @@ pub mod time_range {
             self.from_inclusive = input;
             self
         }
-        /// <p>The end time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        /// <p>The end time, in Unix time in seconds. </p>
         pub fn to_exclusive(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.to_exclusive = Some(input);
             self
         }
-        /// <p>The end time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        /// <p>The end time, in Unix time in seconds. </p>
         pub fn set_to_exclusive(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1477,7 +1820,7 @@ impl AsRef<str> for SubscriptionState {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Subscription {
-    /// <p>The start time of the subscription, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    /// <p>The start time of the subscription, in Unix time in seconds. </p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time your subscription will end.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1498,7 +1841,7 @@ pub struct Subscription {
     pub subscription_arn: std::option::Option<std::string::String>,
 }
 impl Subscription {
-    /// <p>The start time of the subscription, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    /// <p>The start time of the subscription, in Unix time in seconds. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -1573,12 +1916,12 @@ pub mod subscription {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The start time of the subscription, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        /// <p>The start time of the subscription, in Unix time in seconds. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The start time of the subscription, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        /// <p>The start time of the subscription, in Unix time in seconds. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2441,15 +2784,15 @@ pub struct AttackDetail {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
     pub sub_resources: std::option::Option<std::vec::Vec<crate::model::SubResourceSummary>>,
-    /// <p>The time the attack started, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    /// <p>The time the attack started, in Unix time in seconds. </p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time the attack ended, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    /// <p>The time the attack ended, in Unix time in seconds. </p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>List of counters that describe the attack for the specified time period.</p>
     pub attack_counters: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
     /// <p>The array of objects that provide details of the Shield event. </p>
     /// <p>For infrastructure  
-    /// layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top contributors in Amazon CloudWatch metrics.
+    /// layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics.
     /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
     /// in the <i>WAF Developer Guide</i>. </p>
     pub attack_properties: std::option::Option<std::vec::Vec<crate::model::AttackProperty>>,
@@ -2469,11 +2812,11 @@ impl AttackDetail {
     pub fn sub_resources(&self) -> std::option::Option<&[crate::model::SubResourceSummary]> {
         self.sub_resources.as_deref()
     }
-    /// <p>The time the attack started, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    /// <p>The time the attack started, in Unix time in seconds. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The time the attack ended, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    /// <p>The time the attack ended, in Unix time in seconds. </p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -2483,7 +2826,7 @@ impl AttackDetail {
     }
     /// <p>The array of objects that provide details of the Shield event. </p>
     /// <p>For infrastructure  
-    /// layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top contributors in Amazon CloudWatch metrics.
+    /// layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics.
     /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
     /// in the <i>WAF Developer Guide</i>. </p>
     pub fn attack_properties(&self) -> std::option::Option<&[crate::model::AttackProperty]> {
@@ -2566,12 +2909,12 @@ pub mod attack_detail {
             self.sub_resources = input;
             self
         }
-        /// <p>The time the attack started, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        /// <p>The time the attack started, in Unix time in seconds. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The time the attack started, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        /// <p>The time the attack started, in Unix time in seconds. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2579,12 +2922,12 @@ pub mod attack_detail {
             self.start_time = input;
             self
         }
-        /// <p>The time the attack ended, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        /// <p>The time the attack ended, in Unix time in seconds. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The time the attack ended, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        /// <p>The time the attack ended, in Unix time in seconds. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2620,7 +2963,7 @@ pub mod attack_detail {
         ///
         /// <p>The array of objects that provide details of the Shield event. </p>
         /// <p>For infrastructure  
-        /// layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top contributors in Amazon CloudWatch metrics.
+        /// layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics.
         /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
         /// in the <i>WAF Developer Guide</i>. </p>
         pub fn attack_properties(mut self, input: impl Into<crate::model::AttackProperty>) -> Self {
@@ -2631,7 +2974,7 @@ pub mod attack_detail {
         }
         /// <p>The array of objects that provide details of the Shield event. </p>
         /// <p>For infrastructure  
-        /// layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top contributors in Amazon CloudWatch metrics.
+        /// layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics.
         /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
         /// in the <i>WAF Developer Guide</i>. </p>
         pub fn set_attack_properties(
@@ -2746,7 +3089,7 @@ pub struct AttackProperty {
     /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code>
     /// indicates layer 7 events.</p>
     /// <p>For infrastructure  
-    /// layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top contributors in Amazon CloudWatch metrics.
+    /// layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics.
     /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
     /// in the <i>WAF Developer Guide</i>. </p>
     pub attack_layer: std::option::Option<crate::model::AttackLayer>,
@@ -2754,7 +3097,7 @@ pub struct AttackProperty {
     /// <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code>
     /// values are valid only for WordPress reflective pingback events.</p>
     pub attack_property_identifier: std::option::Option<crate::model::AttackPropertyIdentifier>,
-    /// <p>Contributor objects for the top five contributors to a Shield event. </p>
+    /// <p>Contributor objects for the top five contributors to a Shield event. A contributor is a source of traffic that Shield Advanced identifies as responsible for some or all of an event.</p>
     pub top_contributors: std::option::Option<std::vec::Vec<crate::model::Contributor>>,
     /// <p>The unit used for the <code>Contributor</code>
     /// <code>Value</code> property. </p>
@@ -2766,7 +3109,7 @@ impl AttackProperty {
     /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code>
     /// indicates layer 7 events.</p>
     /// <p>For infrastructure  
-    /// layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top contributors in Amazon CloudWatch metrics.
+    /// layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics.
     /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
     /// in the <i>WAF Developer Guide</i>. </p>
     pub fn attack_layer(&self) -> std::option::Option<&crate::model::AttackLayer> {
@@ -2780,7 +3123,7 @@ impl AttackProperty {
     ) -> std::option::Option<&crate::model::AttackPropertyIdentifier> {
         self.attack_property_identifier.as_ref()
     }
-    /// <p>Contributor objects for the top five contributors to a Shield event. </p>
+    /// <p>Contributor objects for the top five contributors to a Shield event. A contributor is a source of traffic that Shield Advanced identifies as responsible for some or all of an event.</p>
     pub fn top_contributors(&self) -> std::option::Option<&[crate::model::Contributor]> {
         self.top_contributors.as_deref()
     }
@@ -2825,7 +3168,7 @@ pub mod attack_property {
         /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code>
         /// indicates layer 7 events.</p>
         /// <p>For infrastructure  
-        /// layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top contributors in Amazon CloudWatch metrics.
+        /// layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics.
         /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
         /// in the <i>WAF Developer Guide</i>. </p>
         pub fn attack_layer(mut self, input: crate::model::AttackLayer) -> Self {
@@ -2835,7 +3178,7 @@ pub mod attack_property {
         /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code>
         /// indicates layer 7 events.</p>
         /// <p>For infrastructure  
-        /// layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top contributors in Amazon CloudWatch metrics.
+        /// layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics.
         /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
         /// in the <i>WAF Developer Guide</i>. </p>
         pub fn set_attack_layer(
@@ -2869,14 +3212,14 @@ pub mod attack_property {
         ///
         /// To override the contents of this collection use [`set_top_contributors`](Self::set_top_contributors).
         ///
-        /// <p>Contributor objects for the top five contributors to a Shield event. </p>
+        /// <p>Contributor objects for the top five contributors to a Shield event. A contributor is a source of traffic that Shield Advanced identifies as responsible for some or all of an event.</p>
         pub fn top_contributors(mut self, input: impl Into<crate::model::Contributor>) -> Self {
             let mut v = self.top_contributors.unwrap_or_default();
             v.push(input.into());
             self.top_contributors = Some(v);
             self
         }
-        /// <p>Contributor objects for the top five contributors to a Shield event. </p>
+        /// <p>Contributor objects for the top five contributors to a Shield event. A contributor is a source of traffic that Shield Advanced identifies as responsible for some or all of an event.</p>
         pub fn set_top_contributors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Contributor>>,
@@ -2988,17 +3331,17 @@ impl AsRef<str> for Unit {
     }
 }
 
-/// <p>A contributor to the attack and their contribution.</p>
+/// <p>A contributor to the attack and their contribution. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Contributor {
-    /// <p>The name of the contributor. This is dependent on the <code>AttackPropertyIdentifier</code>. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
+    /// <p>The name of the contributor. The type of name that you'll find here depends on the <code>AttackPropertyIdentifier</code> setting in the <code>AttackProperty</code> where this contributor is defined. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The contribution of this contributor expressed in <a>Protection</a> units. For example <code>10,000</code>.</p>
     pub value: i64,
 }
 impl Contributor {
-    /// <p>The name of the contributor. This is dependent on the <code>AttackPropertyIdentifier</code>. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
+    /// <p>The name of the contributor. The type of name that you'll find here depends on the <code>AttackPropertyIdentifier</code> setting in the <code>AttackProperty</code> where this contributor is defined. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -3025,12 +3368,12 @@ pub mod contributor {
         pub(crate) value: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The name of the contributor. This is dependent on the <code>AttackPropertyIdentifier</code>. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
+        /// <p>The name of the contributor. The type of name that you'll find here depends on the <code>AttackPropertyIdentifier</code> setting in the <code>AttackProperty</code> where this contributor is defined. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the contributor. This is dependent on the <code>AttackPropertyIdentifier</code>. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
+        /// <p>The name of the contributor. The type of name that you'll find here depends on the <code>AttackPropertyIdentifier</code> setting in the <code>AttackProperty</code> where this contributor is defined. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self

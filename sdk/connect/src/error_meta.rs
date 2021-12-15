@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>You do not have sufficient access to perform this action.</p>
+    /// <p>You do not have sufficient permissions to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The contact flow has not been published.</p>
     ContactFlowNotPublishedException(crate::error::ContactFlowNotPublishedException),
@@ -13,10 +13,14 @@ pub enum Error {
     DestinationNotAllowedException(crate::error::DestinationNotAllowedException),
     /// <p>A resource with the specified name already exists.</p>
     DuplicateResourceException(crate::error::DuplicateResourceException),
+    /// <p>An entity with the same name already exists.</p>
+    IdempotencyException(crate::error::IdempotencyException),
     /// <p>Request processing failed because of an error or failure with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The contact flow is not valid.</p>
     InvalidContactFlowException(crate::error::InvalidContactFlowException),
+    /// <p>The problems with the module. Please fix before trying again.</p>
+    InvalidContactFlowModuleException(crate::error::InvalidContactFlowModuleException),
     /// <p>One or more of the specified parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request is not valid.</p>
@@ -48,8 +52,10 @@ impl std::fmt::Display for Error {
             Error::ContactNotFoundException(inner) => inner.fmt(f),
             Error::DestinationNotAllowedException(inner) => inner.fmt(f),
             Error::DuplicateResourceException(inner) => inner.fmt(f),
+            Error::IdempotencyException(inner) => inner.fmt(f),
             Error::InternalServiceException(inner) => inner.fmt(f),
             Error::InvalidContactFlowException(inner) => inner.fmt(f),
+            Error::InvalidContactFlowModuleException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
@@ -423,6 +429,32 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateContactFlowModuleError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateContactFlowModuleError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateContactFlowModuleErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::CreateContactFlowModuleErrorKind::DuplicateResourceException(inner) => Error::DuplicateResourceException(inner),
+                crate::error::CreateContactFlowModuleErrorKind::IdempotencyException(inner) => Error::IdempotencyException(inner),
+                crate::error::CreateContactFlowModuleErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+                crate::error::CreateContactFlowModuleErrorKind::InvalidContactFlowModuleException(inner) => Error::InvalidContactFlowModuleException(inner),
+                crate::error::CreateContactFlowModuleErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::CreateContactFlowModuleErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::CreateContactFlowModuleErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::CreateContactFlowModuleErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::CreateContactFlowModuleErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::CreateContactFlowModuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateHoursOfOperationError, R>>
     for Error
 where
@@ -774,6 +806,77 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteContactFlowError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteContactFlowError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteContactFlowErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DeleteContactFlowErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::DeleteContactFlowErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::DeleteContactFlowErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DeleteContactFlowErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteContactFlowErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DeleteContactFlowErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteContactFlowModuleError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteContactFlowModuleError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteContactFlowModuleErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DeleteContactFlowModuleErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::DeleteContactFlowModuleErrorKind::InvalidParameterException(
+                    inner,
+                ) => Error::InvalidParameterException(inner),
+                crate::error::DeleteContactFlowModuleErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DeleteContactFlowModuleErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DeleteContactFlowModuleErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DeleteContactFlowModuleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteHoursOfOperationError, R>>
     for Error
 where
@@ -1107,6 +1210,42 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeContactFlowErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeContactFlowModuleError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeContactFlowModuleError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeContactFlowModuleErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DescribeContactFlowModuleErrorKind::InternalServiceException(
+                    inner,
+                ) => Error::InternalServiceException(inner),
+                crate::error::DescribeContactFlowModuleErrorKind::InvalidParameterException(
+                    inner,
+                ) => Error::InvalidParameterException(inner),
+                crate::error::DescribeContactFlowModuleErrorKind::InvalidRequestException(
+                    inner,
+                ) => Error::InvalidRequestException(inner),
+                crate::error::DescribeContactFlowModuleErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeContactFlowModuleErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DescribeContactFlowModuleErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -1890,6 +2029,42 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListBotsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListContactFlowModulesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListContactFlowModulesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListContactFlowModulesErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::ListContactFlowModulesErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::ListContactFlowModulesErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::ListContactFlowModulesErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::ListContactFlowModulesErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::ListContactFlowModulesErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListContactFlowModulesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -3070,6 +3245,95 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateContactFlowMetadataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateContactFlowMetadataError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateContactFlowMetadataErrorKind::DuplicateResourceException(
+                    inner,
+                ) => Error::DuplicateResourceException(inner),
+                crate::error::UpdateContactFlowMetadataErrorKind::InternalServiceException(
+                    inner,
+                ) => Error::InternalServiceException(inner),
+                crate::error::UpdateContactFlowMetadataErrorKind::InvalidParameterException(
+                    inner,
+                ) => Error::InvalidParameterException(inner),
+                crate::error::UpdateContactFlowMetadataErrorKind::InvalidRequestException(
+                    inner,
+                ) => Error::InvalidRequestException(inner),
+                crate::error::UpdateContactFlowMetadataErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateContactFlowMetadataErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::UpdateContactFlowMetadataErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::UpdateContactFlowModuleContentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateContactFlowModuleContentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateContactFlowModuleContentErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::UpdateContactFlowModuleContentErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+                crate::error::UpdateContactFlowModuleContentErrorKind::InvalidContactFlowModuleException(inner) => Error::InvalidContactFlowModuleException(inner),
+                crate::error::UpdateContactFlowModuleContentErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::UpdateContactFlowModuleContentErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateContactFlowModuleContentErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::UpdateContactFlowModuleContentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::UpdateContactFlowModuleMetadataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateContactFlowModuleMetadataError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateContactFlowModuleMetadataErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::UpdateContactFlowModuleMetadataErrorKind::DuplicateResourceException(inner) => Error::DuplicateResourceException(inner),
+                crate::error::UpdateContactFlowModuleMetadataErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+                crate::error::UpdateContactFlowModuleMetadataErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::UpdateContactFlowModuleMetadataErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::UpdateContactFlowModuleMetadataErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateContactFlowModuleMetadataErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::UpdateContactFlowModuleMetadataErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

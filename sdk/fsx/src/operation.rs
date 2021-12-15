@@ -131,6 +131,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackup {
     }
 }
 
+/// Operation shape for `CreateDataRepositoryAssociation`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_data_repository_association`](crate::client::Client::create_data_repository_association).
+///
+/// See [`crate::client::fluent_builders::CreateDataRepositoryAssociation`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateDataRepositoryAssociation {
+    _private: (),
+}
+impl CreateDataRepositoryAssociation {
+    /// Creates a new builder-style object to manufacture [`CreateDataRepositoryAssociationInput`](crate::input::CreateDataRepositoryAssociationInput)
+    pub fn builder() -> crate::input::create_data_repository_association_input::Builder {
+        crate::input::create_data_repository_association_input::Builder::default()
+    }
+    /// Creates a new `CreateDataRepositoryAssociation` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateDataRepositoryAssociation {
+    type Output = std::result::Result<
+        crate::output::CreateDataRepositoryAssociationOutput,
+        crate::error::CreateDataRepositoryAssociationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_data_repository_association_error(response)
+        } else {
+            crate::operation_deser::parse_create_data_repository_association_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateDataRepositoryTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -229,6 +263,38 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFileSystemFromBack
             crate::operation_deser::parse_create_file_system_from_backup_error(response)
         } else {
             crate::operation_deser::parse_create_file_system_from_backup_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateSnapshot`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_snapshot`](crate::client::Client::create_snapshot).
+///
+/// See [`crate::client::fluent_builders::CreateSnapshot`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateSnapshot {
+    _private: (),
+}
+impl CreateSnapshot {
+    /// Creates a new builder-style object to manufacture [`CreateSnapshotInput`](crate::input::CreateSnapshotInput)
+    pub fn builder() -> crate::input::create_snapshot_input::Builder {
+        crate::input::create_snapshot_input::Builder::default()
+    }
+    /// Creates a new `CreateSnapshot` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateSnapshot {
+    type Output =
+        std::result::Result<crate::output::CreateSnapshotOutput, crate::error::CreateSnapshotError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_snapshot_error(response)
+        } else {
+            crate::operation_deser::parse_create_snapshot_response(response)
         }
     }
 }
@@ -365,6 +431,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackup {
     }
 }
 
+/// Operation shape for `DeleteDataRepositoryAssociation`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_data_repository_association`](crate::client::Client::delete_data_repository_association).
+///
+/// See [`crate::client::fluent_builders::DeleteDataRepositoryAssociation`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteDataRepositoryAssociation {
+    _private: (),
+}
+impl DeleteDataRepositoryAssociation {
+    /// Creates a new builder-style object to manufacture [`DeleteDataRepositoryAssociationInput`](crate::input::DeleteDataRepositoryAssociationInput)
+    pub fn builder() -> crate::input::delete_data_repository_association_input::Builder {
+        crate::input::delete_data_repository_association_input::Builder::default()
+    }
+    /// Creates a new `DeleteDataRepositoryAssociation` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteDataRepositoryAssociation {
+    type Output = std::result::Result<
+        crate::output::DeleteDataRepositoryAssociationOutput,
+        crate::error::DeleteDataRepositoryAssociationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_data_repository_association_error(response)
+        } else {
+            crate::operation_deser::parse_delete_data_repository_association_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteFileSystem`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -395,6 +495,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFileSystem {
             crate::operation_deser::parse_delete_file_system_error(response)
         } else {
             crate::operation_deser::parse_delete_file_system_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteSnapshot`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_snapshot`](crate::client::Client::delete_snapshot).
+///
+/// See [`crate::client::fluent_builders::DeleteSnapshot`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteSnapshot {
+    _private: (),
+}
+impl DeleteSnapshot {
+    /// Creates a new builder-style object to manufacture [`DeleteSnapshotInput`](crate::input::DeleteSnapshotInput)
+    pub fn builder() -> crate::input::delete_snapshot_input::Builder {
+        crate::input::delete_snapshot_input::Builder::default()
+    }
+    /// Creates a new `DeleteSnapshot` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteSnapshot {
+    type Output =
+        std::result::Result<crate::output::DeleteSnapshotOutput, crate::error::DeleteSnapshotError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_snapshot_error(response)
+        } else {
+            crate::operation_deser::parse_delete_snapshot_response(response)
         }
     }
 }
@@ -499,6 +631,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBackups {
     }
 }
 
+/// Operation shape for `DescribeDataRepositoryAssociations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_data_repository_associations`](crate::client::Client::describe_data_repository_associations).
+///
+/// See [`crate::client::fluent_builders::DescribeDataRepositoryAssociations`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeDataRepositoryAssociations {
+    _private: (),
+}
+impl DescribeDataRepositoryAssociations {
+    /// Creates a new builder-style object to manufacture [`DescribeDataRepositoryAssociationsInput`](crate::input::DescribeDataRepositoryAssociationsInput)
+    pub fn builder() -> crate::input::describe_data_repository_associations_input::Builder {
+        crate::input::describe_data_repository_associations_input::Builder::default()
+    }
+    /// Creates a new `DescribeDataRepositoryAssociations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeDataRepositoryAssociations {
+    type Output = std::result::Result<
+        crate::output::DescribeDataRepositoryAssociationsOutput,
+        crate::error::DescribeDataRepositoryAssociationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_data_repository_associations_error(response)
+        } else {
+            crate::operation_deser::parse_describe_data_repository_associations_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeDataRepositoryTasks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -597,6 +763,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFileSystems {
             crate::operation_deser::parse_describe_file_systems_error(response)
         } else {
             crate::operation_deser::parse_describe_file_systems_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeSnapshots`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_snapshots`](crate::client::Client::describe_snapshots).
+///
+/// See [`crate::client::fluent_builders::DescribeSnapshots`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeSnapshots {
+    _private: (),
+}
+impl DescribeSnapshots {
+    /// Creates a new builder-style object to manufacture [`DescribeSnapshotsInput`](crate::input::DescribeSnapshotsInput)
+    pub fn builder() -> crate::input::describe_snapshots_input::Builder {
+        crate::input::describe_snapshots_input::Builder::default()
+    }
+    /// Creates a new `DescribeSnapshots` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeSnapshots {
+    type Output = std::result::Result<
+        crate::output::DescribeSnapshotsOutput,
+        crate::error::DescribeSnapshotsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_snapshots_error(response)
+        } else {
+            crate::operation_deser::parse_describe_snapshots_response(response)
         }
     }
 }
@@ -737,6 +937,74 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     }
 }
 
+/// Operation shape for `ReleaseFileSystemNfsV3Locks`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`release_file_system_nfs_v3_locks`](crate::client::Client::release_file_system_nfs_v3_locks).
+///
+/// See [`crate::client::fluent_builders::ReleaseFileSystemNfsV3Locks`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ReleaseFileSystemNfsV3Locks {
+    _private: (),
+}
+impl ReleaseFileSystemNfsV3Locks {
+    /// Creates a new builder-style object to manufacture [`ReleaseFileSystemNfsV3LocksInput`](crate::input::ReleaseFileSystemNfsV3LocksInput)
+    pub fn builder() -> crate::input::release_file_system_nfs_v3_locks_input::Builder {
+        crate::input::release_file_system_nfs_v3_locks_input::Builder::default()
+    }
+    /// Creates a new `ReleaseFileSystemNfsV3Locks` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ReleaseFileSystemNfsV3Locks {
+    type Output = std::result::Result<
+        crate::output::ReleaseFileSystemNfsV3LocksOutput,
+        crate::error::ReleaseFileSystemNfsV3LocksError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_release_file_system_nfs_v3_locks_error(response)
+        } else {
+            crate::operation_deser::parse_release_file_system_nfs_v3_locks_response(response)
+        }
+    }
+}
+
+/// Operation shape for `RestoreVolumeFromSnapshot`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`restore_volume_from_snapshot`](crate::client::Client::restore_volume_from_snapshot).
+///
+/// See [`crate::client::fluent_builders::RestoreVolumeFromSnapshot`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RestoreVolumeFromSnapshot {
+    _private: (),
+}
+impl RestoreVolumeFromSnapshot {
+    /// Creates a new builder-style object to manufacture [`RestoreVolumeFromSnapshotInput`](crate::input::RestoreVolumeFromSnapshotInput)
+    pub fn builder() -> crate::input::restore_volume_from_snapshot_input::Builder {
+        crate::input::restore_volume_from_snapshot_input::Builder::default()
+    }
+    /// Creates a new `RestoreVolumeFromSnapshot` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RestoreVolumeFromSnapshot {
+    type Output = std::result::Result<
+        crate::output::RestoreVolumeFromSnapshotOutput,
+        crate::error::RestoreVolumeFromSnapshotError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_restore_volume_from_snapshot_error(response)
+        } else {
+            crate::operation_deser::parse_restore_volume_from_snapshot_response(response)
+        }
+    }
+}
+
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -801,6 +1069,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     }
 }
 
+/// Operation shape for `UpdateDataRepositoryAssociation`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_data_repository_association`](crate::client::Client::update_data_repository_association).
+///
+/// See [`crate::client::fluent_builders::UpdateDataRepositoryAssociation`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateDataRepositoryAssociation {
+    _private: (),
+}
+impl UpdateDataRepositoryAssociation {
+    /// Creates a new builder-style object to manufacture [`UpdateDataRepositoryAssociationInput`](crate::input::UpdateDataRepositoryAssociationInput)
+    pub fn builder() -> crate::input::update_data_repository_association_input::Builder {
+        crate::input::update_data_repository_association_input::Builder::default()
+    }
+    /// Creates a new `UpdateDataRepositoryAssociation` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateDataRepositoryAssociation {
+    type Output = std::result::Result<
+        crate::output::UpdateDataRepositoryAssociationOutput,
+        crate::error::UpdateDataRepositoryAssociationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_data_repository_association_error(response)
+        } else {
+            crate::operation_deser::parse_update_data_repository_association_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdateFileSystem`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -831,6 +1133,38 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFileSystem {
             crate::operation_deser::parse_update_file_system_error(response)
         } else {
             crate::operation_deser::parse_update_file_system_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateSnapshot`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_snapshot`](crate::client::Client::update_snapshot).
+///
+/// See [`crate::client::fluent_builders::UpdateSnapshot`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateSnapshot {
+    _private: (),
+}
+impl UpdateSnapshot {
+    /// Creates a new builder-style object to manufacture [`UpdateSnapshotInput`](crate::input::UpdateSnapshotInput)
+    pub fn builder() -> crate::input::update_snapshot_input::Builder {
+        crate::input::update_snapshot_input::Builder::default()
+    }
+    /// Creates a new `UpdateSnapshot` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateSnapshot {
+    type Output =
+        std::result::Result<crate::output::UpdateSnapshotOutput, crate::error::UpdateSnapshotError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_snapshot_error(response)
+        } else {
+            crate::operation_deser::parse_update_snapshot_response(response)
         }
     }
 }

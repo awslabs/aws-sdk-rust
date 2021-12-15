@@ -20,7 +20,7 @@ use tracing::Instrument;
 ///
 /// # Examples
 ///
-/// ```rust
+/// ```no_run
 /// use aws_config::meta::credentials::CredentialsProviderChain;
 /// use aws_config::environment::credentials::EnvironmentVariableCredentialsProvider;
 /// use aws_config::profile::ProfileFileCredentialsProvider;
