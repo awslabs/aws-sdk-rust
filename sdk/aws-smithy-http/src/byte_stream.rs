@@ -10,7 +10,7 @@
 //! # Examples
 //!
 //! ### Writing a ByteStream into a file:
-//! ```rust
+//! ```no_run
 //! use aws_smithy_http::byte_stream::ByteStream;
 //! use std::error::Error;
 //! use tokio::fs::File;
@@ -30,7 +30,7 @@
 //! ```
 //!
 //! ### Converting a ByteStream into Bytes
-//! ```rust
+//! ```no_run
 //! use bytes::Bytes;
 //! use aws_smithy_http::byte_stream::ByteStream;
 //! use std::error::Error;
@@ -48,7 +48,7 @@
 //! The previous example is recommended in cases where loading the entire file into memory first is desirable. For extremely large
 //! files, you may wish to stream the data directly to the file system, chunk by chunk. This is posible using the `futures::Stream` implementation.
 //!
-//! ```rust
+//! ```no_run
 //! use bytes::{Buf, Bytes};
 //! use aws_smithy_http::byte_stream::ByteStream;
 //! use std::error::Error;
@@ -76,7 +76,9 @@
 //!
 //! _Note: This is only available with `rt-tokio` enabled._
 //!
-//! ```rust
+//! ```no_run
+//! # #[cfg(feature = "rt-tokio")]
+//! {
 //! use aws_smithy_http::byte_stream::ByteStream;
 //! use std::path::Path;
 //! struct GetObjectInput {
@@ -88,6 +90,7 @@
 //!         .await
 //!         .expect("valid path");
 //!     GetObjectInput { body: bytestream }
+//! }
 //! }
 //! ```
 
@@ -116,7 +119,7 @@ mod bytestream_util;
 /// 1. With `.collect()`:
 /// [`.collect()`](crate::byte_stream::ByteStream::collect) reads the complete ByteStream into memory and stores it in `AggregatedBytes`,
 /// a non-contiguous ByteBuffer.
-///     ```rust
+///     ```no_run
 ///     use aws_smithy_http::byte_stream::{ByteStream, AggregatedBytes};
 ///     use aws_smithy_http::body::SdkBody;
 ///     use bytes::Buf;
@@ -134,7 +137,7 @@ mod bytestream_util;
 ///
 ///     For use-cases where holding the entire ByteStream in memory is unnecessary, use the
 ///     `Stream` implementation:
-///     ```rust
+///     ```no_run
 ///     # mod crc32 {
 ///     #   pub struct Digest { }
 ///     #   impl Digest {
@@ -162,7 +165,7 @@ mod bytestream_util;
 /// ByteStreams can be created in one of three ways:
 /// 1. **From in-memory binary data**: ByteStreams created from in-memory data are always retryable. Data
 /// will be converted into `Bytes` enabling a cheap clone during retries.
-///     ```rust
+///     ```no_run
 ///     use bytes::Bytes;
 ///     use aws_smithy_http::byte_stream::ByteStream;
 ///     let stream = ByteStream::from(vec![1,2,3]);
@@ -170,15 +173,18 @@ mod bytestream_util;
 ///     ```
 ///
 /// 2. **From a file**: ByteStreams created from a path can be retried. A new file descriptor will be opened if a retry occurs.
-///     ```rust
+///     ```no_run
+///     #[cfg(feature = "tokio-rt")]
+///     # {
 ///     use aws_smithy_http::byte_stream::ByteStream;
 ///     let stream = ByteStream::from_path("big_file.csv");
+///     # }
 ///     ```
 ///
 /// 3. **From an `SdkBody` directly**: For more advanced / custom use cases, a ByteStream can be created directly
 /// from an SdkBody. **When created from an SdkBody, care must be taken to ensure retriability.** An SdkBody is retryable
 /// when constructed from in-memory data or when using [`SdkBody::retryable`](crate::body::SdkBody::retryable).
-///     ```rust
+///     ```no_run
 ///     use aws_smithy_http::byte_stream::ByteStream;
 ///     use aws_smithy_http::body::SdkBody;
 ///     use bytes::Bytes;
@@ -217,7 +223,7 @@ impl ByteStream {
     ///
     /// Data is read into an `AggregatedBytes` that stores data non-contiguously as it was received
     /// over the network. If a contiguous slice is required, use `into_bytes()`.
-    /// ```rust
+    /// ```no_run
     /// use bytes::Bytes;
     /// use aws_smithy_http::body;
     /// use aws_smithy_http::body::SdkBody;
@@ -244,7 +250,7 @@ impl ByteStream {
     /// Furthermore, a partial write MAY seek in the file and resume from the previous location.
     ///
     /// # Examples
-    /// ```rust
+    /// ```no_run
     /// use aws_smithy_http::byte_stream::ByteStream;
     /// use std::path::Path;
     ///  async fn make_bytestream() -> ByteStream {
@@ -447,10 +453,8 @@ where
 
 #[cfg(test)]
 mod tests {
-    use crate::byte_stream::{ByteStream, Inner};
-    use bytes::{Buf, Bytes};
-    use http_body::Body;
-    use std::error::Error;
+    use crate::byte_stream::Inner;
+    use bytes::Bytes;
 
     #[tokio::test]
     async fn read_from_string_body() {
@@ -482,7 +486,10 @@ mod tests {
 
     #[cfg(feature = "rt-tokio")]
     #[tokio::test]
-    async fn path_based_bytestreams() -> Result<(), Box<dyn Error>> {
+    async fn path_based_bytestreams() -> Result<(), Box<dyn std::error::Error>> {
+        use super::ByteStream;
+        use bytes::Buf;
+        use http_body::Body;
         use std::io::Write;
         use tempfile::NamedTempFile;
         let mut file = NamedTempFile::new()?;

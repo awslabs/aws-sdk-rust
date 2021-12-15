@@ -1,0 +1,22 @@
+[package]
+name = "telephone-game"
+version = "0.1.0"
+authors = ["Zelda Hessler <zhessler@amazon.com>"]
+edition = "2018"
+description = "Play a game of telephone with AWS"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+aws-config = { path = "../../sdk/aws-config" }
+aws-sdk-polly = { package = "aws-sdk-polly", path = "../../sdk/polly" }
+aws-sdk-s3 = { package = "aws-sdk-s3", path = "../../sdk/s3" }
+aws-sdk-transcribe = { package = "aws-sdk-transcribe", path = "../../sdk/transcribe" }
+anyhow = "1.0.44"
+clap = "2.33.3"
+rodio = "0.14.0"
+serde_json = "1.0.68"
+tempdir = "0.3.7"
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1.28"
+tracing-subscriber = { version = "0.2.24", features = ["fmt"] }
